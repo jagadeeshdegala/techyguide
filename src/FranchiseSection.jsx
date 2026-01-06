@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './FranchiseSection.css';
 
 function FranchiseSection(){
@@ -11,6 +12,7 @@ function FranchiseSection(){
                             Partner with us to bring quality STEM education to your region. We
                             offer comprehensive support and proven business models.
                         </p>
+                        <Link className="franchise-cta" to="/franchise">Become a Franchise Partner</Link>
                     </div>
 
                     <div className="features-grid">

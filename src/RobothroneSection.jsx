@@ -10,7 +10,7 @@ function RobothroneSection() {
             <div className="event-text">
               <h2>ROBOTHRONE 2.0</h2>
               <p className="subtitle">
-                India's Premier Annual Robotics Competition
+                India's Premier Robotics Competition
               </p>
               <p>
                 Where innovation meets competition. Join hundreds of students
@@ -65,7 +65,7 @@ function RobothroneSection() {
                 </p>
                 <a href="https://www.techyguide.in/robothrone/register.html" className="btn btn-primary" target="_blank"  rel="noopener noreferrer">
                  
-                  Register Now
+                  Register for Robothrone
                 </a>
                
               </div>
@@ -73,7 +73,7 @@ function RobothroneSection() {
             <div className="event-image">
               <img
                 src={StemStudentsImage}
-                alt="Robothrone Event"
+                alt="Students participating in Robothrone robotics competition"
               />
             </div>
           </div>

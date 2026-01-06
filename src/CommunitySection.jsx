@@ -34,9 +34,8 @@ function CommunitySection(){
                                 <div className="quote-icon">"</div>
                                 <p>
                                     "TechyGuide transformed our school's approach to STEM education.
-                                    The AI & Robotics Lab has sparked unprecedented interest among
-                                    students, and we've seen remarkable improvement in their
-                                    problem-solving skills."
+                                   The AI & Robotics Lab sparked unprecedented interest among 
+                                   students and improved problem-solving skills."
                                 </p>
                                 <div className="author">
                                     <div className="avatar" style={{background: "#003366"}}>PS</div>
@@ -51,9 +50,8 @@ function CommunitySection(){
                             <div className="testimonial-card">
                                 <div className="quote-icon">"</div>
                                 <p>
-                                    "The DIY kits and virtual courses are exceptional. Our students
-                                    are now participating in national-level competitions and
-                                    winning! The support from TechyGuide team has been outstanding."
+                                    "DIY kits and virtual courses helped our students win
+                                 national-level competitions. Outstanding support from TechyGuide!"
                                 </p>
                                 <div className="author">
                                     <div className="avatar">RK</div>
@@ -68,9 +66,8 @@ function CommunitySection(){
                             <div className="testimonial-card">
                                 <div className="quote-icon">"</div>
                                 <p>
-                                    "Learning robotics at TechyGuide lab changed my life! I went
-                                    from being afraid of technology to winning the Robothrone
-                                    competition. Now I want to become an AI engineer."
+                                    "Learning robotics changed my life! I went from being afraid of technology
+                                     to winning Robothrone and now aim to become an AI engineer."
                                 </p>
                                 <div className="author">
                                     <div className="avatar">AP</div>

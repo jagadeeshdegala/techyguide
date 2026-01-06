@@ -89,7 +89,7 @@ function Header() {
                 </ul>
               </li>
 
-              <li><a href="#courses" onClick={(e) => handleAnchorClick(e, '#courses')}>Courses</a></li>
+              <li><Link to="/courses" onClick={closeMenu}>Courses</Link></li>
               
               <li className="dropdown">
                 <a href="#schools" onClick={(e) => handleAnchorClick(e, '#schools')}>

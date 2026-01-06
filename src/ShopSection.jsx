@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import DIYKIT from '/src/assets/diy-kits.jpg'
 import VirtualLearningImage from '/src/assets/virtual-learning.jpg'
 import StemWorkShopImage from '/src/assets/stem-workshop-students.jpg'
@@ -46,20 +47,22 @@ function ShopSection(){
                                 <ul className="tab-list">
                                     <li>
                                         <strong>Robotics DIY Kit</strong>
-                                        <p>Build and program your own robots with Arduino</p>
+                                        <p>Build and program your own robots with Arduino.</p>
                                     </li>
                                     <li>
                                         <strong>IoT & Electronics Kit</strong>
-                                        <p>Create smart devices with sensors and circuits</p>
+                                        <p>Create smart devices with sensors and circuits.</p>
+                                        <p>Practical learning for circuits and sensors.</p>
                                     </li>
                                     <li>
                                         <strong>3D Printing & Maker Kit</strong>
-                                        <p>Design and prototype with 3D printing tools</p>
+                                        <p>Design and prototype with 3D printing tools.</p>
                                     </li>
                                 </ul>
+                                <Link className="tab-cta" to="/shop">Shop DIY Kits</Link>
                             </div>
                             <div className="tab-image">
-                                <img src={DIYKIT} alt="DIY Electronics Kit" />
+                                <img src={DIYKIT} alt="Student building robot with TechyGuide DIY kit" />
                             </div>
                         </div>
                     </div>
@@ -68,12 +71,13 @@ function ShopSection(){
                         <div className="tab-grid">
                             <div className="tab-text">
                                 <h2 style={{color: '#F09A2D'}}>Virtual Learning Courses</h2>
-                                <p className="tab-desc">Interactive online courses that bring expert instruction directly to your students.</p>
+                                <p className="tab-desc">Online courses covering AI, Robotics, Coding, IoT, and 3D Printing.</p>
                                 
                                 <ul className="tab-list">
                                     <li>
                                         <strong>Interactive Online Classes</strong>
-                                        <p>Live sessions with expert instructors</p>
+                                        <p>Live sessions with expert instructors.</p>
+                                        <p>Accessible anywhere with LMS login </p>
                                     </li>
                                     <li>
                                         <strong>Coding & Programming</strong>
@@ -81,12 +85,13 @@ function ShopSection(){
                                     </li>
                                     <li>
                                         <strong>Collaborative Learning</strong>
-                                        <p>Team-based STEM challenges and activities</p>
+                                        <p>Team-based STEM challenges and activities.Project-based learning for school students.</p>
                                     </li>
                                 </ul>
+                                <Link className="tab-cta" to="/courses">View Courses</Link>
                             </div>
                             <div className="tab-image">
-                                <img src={VirtualLearningImage} alt="Virtual Learning" />
+                                <img src={VirtualLearningImage} alt="Students attending virtual STEM course on TechyGuide platform" />
                             </div>
                         </div>
                     </div>

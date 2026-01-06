@@ -133,7 +133,7 @@ function SchoolSection() {
                   </ul>
                 </div>
                 <div className="tab-image">
-                  <img src={LabViewImage} alt="ATL Lab" />
+                  <img src={LabViewImage} alt="We have the best 3D equipment in our ATL Labs" />
                 </div>
               </div>
             </div>
