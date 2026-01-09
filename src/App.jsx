@@ -22,6 +22,7 @@ import WhatsAppButton from './WhatsAppButton.jsx'
 import AIRoboticsLabCBSE from './ForschoolsPages/AI-RoboticLabCBSE.jsx'
 import AIRoboticLabICSE from './ForschoolsPages/AI-RoboticLabICSE.jsx'
 import StemTinkeringLab from './ForschoolsPages/StemTinkeringLab.jsx'
+import CompositeSkillLab from './ForschoolsPages/CompositeSkillLab.jsx'
 import CoursesPage from './coursesPage.jsx'
 import ShopPage from './ShopPage.jsx'
 import CheckOutPage from './CheckOutPage.jsx'
@@ -39,6 +40,7 @@ function App() {
       <Route path="/ai-roboticslab-cbse" element={<AIRoboticsLabCBSEPage />} />
       <Route path="/ai-roboticslab-icse" element={<AIRoboticLabICSEPage />} />
       <Route path="/schools/stem-tinkering-lab" element={<StemTinkeringLabPage />} />
+      <Route path="/schools/composite-skill-lab" element={<CompositeSkillLabPage />} />
       <Route path="/franchise" element={<FranchisePageWrapper />} />
       <Route path="/courses" element={<CoursesPageWrapper />} />
       <Route path="/shop" element={<ShopPageWrapper />} />
@@ -107,6 +109,15 @@ function StemTinkeringLabPage() {
   return (
     <>
       <StemTinkeringLab />
+      <FooterSection />
+    </>
+  );
+}
+
+function CompositeSkillLabPage() {
+  return (
+    <>
+      <CompositeSkillLab />
       <FooterSection />
     </>
   );

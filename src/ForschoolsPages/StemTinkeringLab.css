@@ -1017,11 +1017,13 @@
    ========================================= */
 .stem-tinkering-lab-root .faq-section { padding: 80px 0; background: #fff; }
 .stem-tinkering-lab-root .accordion { margin-top: 40px; }
-.stem-tinkering-lab-root .accordion-item { background: var(--light); margin-bottom: 10px; border-radius: 8px; overflow: hidden; }
-.stem-tinkering-lab-root .accordion-header { width: 100%; padding: 20px; border: none; background: none; text-align: left; font-weight: 600; cursor: pointer; color: var(--dark); font-size: 1rem; pointer-events: auto !important; }
-.stem-tinkering-lab-root .accordion-body { max-height: 0; overflow: hidden; transition: 0.3s; padding: 0 20px; }
+.stem-tinkering-lab-root .accordion-item { background: var(--light); margin-bottom: 10px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: all 0.3s; }
+.stem-tinkering-lab-root .accordion-item:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+.stem-tinkering-lab-root .accordion-header { width: 100%; padding: 20px; border: none; background: none; text-align: left; font-weight: 600; cursor: pointer; color: var(--dark); font-size: 1rem; pointer-events: auto !important; display: flex; justify-content: space-between; align-items: center; transition: background 0.3s; }
+.stem-tinkering-lab-root .accordion-header:hover { background: rgba(255,255,255,0.8); }
+.stem-tinkering-lab-root .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 20px; }
 .stem-tinkering-lab-root .accordion-header.active + .accordion-body { padding-bottom: 20px; }
-.stem-tinkering-lab-root .accordion-body p { color: var(--text); line-height: 1.7; }
+.stem-tinkering-lab-root .accordion-body p { color: var(--text); line-height: 1.7; margin: 0; }
 
 /* =========================================
    CONTACT SECTION

@@ -101,7 +101,7 @@ function Header() {
                   <li><Link to="/schools/stem-tinkering-lab" onClick={closeMenu}>STEM Tinkering Lab</Link></li>
                   <li><a href="#" onClick={closeMenu}>STEM Lab </a></li>
                   <li><a href="#" onClick={closeMenu}>Workshop</a></li>
-                  <li><a href="#" onClick={closeMenu}>Composite Skill Lab</a></li>
+                  <li><Link to="/schools/composite-skill-lab" onClick={closeMenu}>Composite Skill Lab</Link></li>
 
                 </ul>
               </li>
