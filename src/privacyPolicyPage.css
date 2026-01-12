@@ -21,6 +21,8 @@
     overflow-x: hidden;
     min-height: 100vh;
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .privacy-policy-page-root * {
@@ -28,6 +30,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family: inherit;
+    pointer-events: auto;
+}
+
+.privacy-policy-page-root a {
+    pointer-events: auto !important;
+    cursor: pointer !important;
 }
 
 /* Background Decoration (Orbs) */
@@ -74,6 +82,7 @@
     width: 280px !important;
     height: fit-content !important;
     margin-bottom: 100px !important;
+    z-index: 10 !important;
 }
 
 .privacy-policy-page-root .sticky-wrapper {
@@ -85,7 +94,7 @@
     max-height: none !important;
     overflow: visible !important;
     overflow-y: visible !important;
-    z-index: 100 !important;
+    z-index: 10 !important;
     padding-bottom: 20px !important;
 }
 
