@@ -371,25 +371,20 @@
 /* Responsive */
 @media (max-width: 900px) {
     .privacy-policy-page-root .container {
-        grid-template-columns: 1fr !important;
-        padding: 40px 20px !important;
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
     }
 
     .privacy-policy-page-root .sidebar {
-        position: relative !important;
-        left: auto !important;
-        top: auto !important;
-        width: 100% !important;
-        max-height: none !important;
         margin-bottom: 20px;
     }
 
     .privacy-policy-page-root .sticky-wrapper {
-        position: static !important;
+        position: static;
     }
     
     .privacy-policy-page-root .toc {
-        display: none; /* Hide TOC on tablet for cleanliness */
+        display: none; /* Hide TOC on mobile for cleanliness */
     }
 
     .privacy-policy-page-root .card-header, .privacy-policy-page-root .card-content {
@@ -404,7 +399,7 @@
     }
 
     .privacy-policy-page-root .container {
-        padding: 20px 15px !important;
+        padding: 20px 15px;
     }
 
     .privacy-policy-page-root h1 {
