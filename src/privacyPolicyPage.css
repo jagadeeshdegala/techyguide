@@ -59,27 +59,44 @@
 .privacy-policy-page-root .container {
     max-width: 1200px !important;
     margin: 0 auto !important;
-    padding: 60px 20px !important;
+    padding: 60px 20px 120px !important;
     display: grid !important;
     grid-template-columns: 280px 1fr !important;
     gap: 60px !important;
     align-items: start !important;
+    position: relative !important;
+    min-height: 100vh !important;
 }
 
 /* Sidebar */
 .privacy-policy-page-root .sidebar {
     position: relative !important;
     width: 280px !important;
+    height: fit-content !important;
+    margin-bottom: 100px !important;
 }
 
 .privacy-policy-page-root .sticky-wrapper {
-    position: fixed !important;
-    top: 60px !important;
-    left: 20px !important;
+    position: sticky !important;
+    top: 80px !important;
+    bottom: 20px !important;
     width: 280px !important;
-    max-height: calc(100vh - 80px) !important;
-    overflow-y: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    overflow-y: visible !important;
     z-index: 100 !important;
+    padding-bottom: 20px !important;
+}
+
+/* Hide scrollbar completely */
+.privacy-policy-page-root .sticky-wrapper::-webkit-scrollbar {
+    display: none !important;
+}
+
+.privacy-policy-page-root .sticky-wrapper {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
 }
 
 .privacy-policy-page-root .header-group {
@@ -371,16 +388,21 @@
 /* Responsive */
 @media (max-width: 900px) {
     .privacy-policy-page-root .container {
-        grid-template-columns: 1fr;
-        padding: 40px 20px;
+        grid-template-columns: 1fr !important;
+        padding: 40px 20px 60px !important;
     }
 
     .privacy-policy-page-root .sidebar {
-        margin-bottom: 20px;
+        margin-bottom: 20px !important;
+        position: relative !important;
+        height: auto !important;
     }
 
     .privacy-policy-page-root .sticky-wrapper {
-        position: static;
+        position: static !important;
+        max-height: none !important;
+        overflow-y: visible !important;
+        padding-bottom: 0 !important;
     }
     
     .privacy-policy-page-root .toc {
