@@ -15,7 +15,7 @@
 }
 
 .composite-skill-lab-root * { margin: 0; padding: 0; box-sizing: border-box; }
-.composite-skill-lab-root { font-family: var(--font-body); color: var(--text); background-color: var(--white); overflow-x: hidden; line-height: 1.6; }
+.composite-skill-lab-root { font-family: var(--font-body); color: var(--text); background-color: var(--white); overflow-x: hidden; line-height: 1.6; padding-top: 113px; }
 
 .composite-skill-lab-root h1, .composite-skill-lab-root h2, .composite-skill-lab-root h3, .composite-skill-lab-root h4, .composite-skill-lab-root h5 { font-family: var(--font-heading); color: var(--dark); line-height: 1.2; }
 .composite-skill-lab-root a { text-decoration: none; }

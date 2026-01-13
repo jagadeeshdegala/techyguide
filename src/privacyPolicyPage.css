@@ -22,17 +22,7 @@
     position: relative;
     z-index: 1;
     pointer-events: auto;
-}
-
-/* Ensure header and footer are not blocked */
-header, footer {
-    position: relative !important;
-    z-index: 1000 !important;
-    pointer-events: auto !important;
-}
-
-header *, footer * {
-    pointer-events: auto !important;
+    padding-top: 113px;
 }
 
 .privacy-policy-page-root * {

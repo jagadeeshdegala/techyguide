@@ -20,6 +20,7 @@
 	overflow-x: hidden;
 	line-height: 1.6;
 	scroll-behavior: smooth;
+	padding-top: 113px;
 }
 
 .ai-roboticlab-icse-root * {

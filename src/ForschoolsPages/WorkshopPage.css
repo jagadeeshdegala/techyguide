@@ -12,7 +12,7 @@
 }
 
 .workshop-page-root * { margin: 0; padding: 0; box-sizing: border-box; }
-.workshop-page-root { font-family: var(--font-body); color: var(--dark); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+.workshop-page-root { font-family: var(--font-body); color: var(--dark); background: var(--white); line-height: 1.6; overflow-x: hidden; padding-top: 113px; }
 
 .workshop-page-root h1, .workshop-page-root h2, .workshop-page-root h3, .workshop-page-root h4 { font-family: var(--font-head); text-transform: uppercase; font-weight: 700; }
 .workshop-page-root .text-orange { color: var(--orange); }

@@ -29,6 +29,7 @@ import ShopPage from './ShopPage.jsx'
 import CheckOutPage from './CheckOutPage.jsx'
 import PrivacyPolicyPage from './privacyPolicypage.jsx'
 import TeBoT from './productPages/TeBoT.jsx'
+import EBlox from './productPages/E-Blox.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -41,6 +42,7 @@ function App() {
       <Route path="/impact-program" element={<ImpactProgram />} />
       <Route path="/i-bot" element={<IBoTPage />} />
       <Route path="/tebot" element={<TeBoTPage />} />
+      <Route path="/e-blox" element={<EBloxPage />} />
       <Route path="/ai-roboticslab-cbse" element={<AIRoboticsLabCBSEPage />} />
       <Route path="/ai-roboticslab-icse" element={<AIRoboticLabICSEPage />} />
       <Route path="/schools/stem-tinkering-lab" element={<StemTinkeringLabPage />} />
@@ -88,6 +90,15 @@ function TeBoTPage() {
   return (
     <>
       <TeBoT />
+      <FooterSection />
+    </>
+  );
+}
+
+function EBloxPage() {
+  return (
+    <>
+      <EBlox />
       <FooterSection />
     </>
   );

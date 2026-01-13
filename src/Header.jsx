@@ -124,7 +124,7 @@ function Header() {
                 <ul className={`dropdown-menu ${productsOpen ? 'active' : ''}`}>
                   <li><Link to="/tebot" onClick={closeMenu}>TeBoT</Link></li>
                   <li><Link to="/i-bot" onClick={closeMenu}>I-BoT</Link></li>
-                  <li><a href="#" onClick={closeMenu}>E- Blox </a></li>
+                  <li><Link to="/e-blox" onClick={closeMenu}>E- Blox</Link></li>
                   <li><a href="#" onClick={closeMenu}>Add On Kits</a></li>
                 </ul>
               </li>

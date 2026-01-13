@@ -28,6 +28,7 @@
   color: var(--text) !important;
   background-color: #fff !important;
   overflow-x: hidden;
+  padding-top: 113px;
   line-height: 1.6 !important;
   /* Reset any inherited parent styles */
   font-size: 16px;

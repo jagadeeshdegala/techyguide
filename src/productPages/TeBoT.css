@@ -12,10 +12,10 @@
     scroll-padding-top: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background:
-        radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.15), transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.15), transparent 50%),
-        radial-gradient(circle at 40% 20%, rgba(138, 43, 226, 0.1), transparent 50%),
-        linear-gradient(135deg, #0a4d68 0%, #05386b 100%),
+        linear-gradient(rgba(0, 255, 149, 0.267), rgba(0, 130, 115, 0.25)),
+        url('data:image/svg+xml;utf8,<svg></svg>'),
+        linear-gradient(rgba(0, 130, 115, 0.6), rgba(0, 130, 115, 0.6)),
+        url('data:image/svg+xml;utf8,<svg></svg>'),
         #008273;
     background-repeat: no-repeat;
     background-position: 60% 30%;
@@ -24,6 +24,7 @@
     color: white;
     overflow-x: hidden;
     min-height: 100vh;
+    padding-top: 113px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -344,29 +345,28 @@
 
 .tebot-page-root .kit-info h3 {
     font-size: 1.8rem;
-    color: #92400e;
+    color: #d97706;
     margin-bottom: 15px;
 }
 
 .tebot-page-root .kit-info > p {
     font-size: 1rem;
-    color: #78350f;
+    color: #555;
     margin-bottom: 30px;
-    line-height: 1.6;
+    line-height: 1.8;
 }
 
 .tebot-page-root .kit-components {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    gap: 25px;
 }
 
 .tebot-page-root .component-column h4 {
     font-size: 1.1rem;
-    color: #92400e;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #fbbf24;
-    padding-bottom: 5px;
+    color: #d97706;
+    margin-bottom: 12px;
+    font-weight: 700;
 }
 
 .tebot-page-root .component-column ul {
@@ -377,63 +377,64 @@
 
 .tebot-page-root .component-column li {
     padding: 8px 0;
-    color: #78350f;
+    color: #555;
     font-size: 0.9rem;
     padding-left: 20px;
     position: relative;
 }
 
 .tebot-page-root .component-column li::before {
-    content: '▸';
+    content: "✓";
     position: absolute;
     left: 0;
-    color: #f59e0b;
+    color: #d97706;
     font-weight: bold;
 }
 
 /* ===== TECHNOLOGY SECTION ===== */
 .tebot-page-root .technology-section {
     padding: clamp(40px, 8vw, 80px) clamp(15px, 4vw, 20px);
-    background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+    background: linear-gradient(135deg, #e8f5e9 0%, #e3f2fd 100%);
 }
 
 .tebot-page-root .technology-section h2 {
     font-family: var(--font-tech);
     font-size: clamp(1.5rem, 5vw, 2.5rem);
-    color: #1e3a8a;
+    color: #1976d2;
     text-align: center;
     margin-bottom: 15px;
 }
 
 .tebot-page-root .section-intro {
     text-align: center;
-    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-    color: #475569;
-    margin-bottom: clamp(30px, 6vw, 60px);
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 50px;
 }
 
 .tebot-page-root .tech-grid {
-    max-width: 1200px;
-    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 30px;
-    padding: 0 20px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 .tebot-page-root .tech-card {
     background: white;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
     text-align: center;
-    transition: all 0.3s ease;
-    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-top: 4px solid #1976d2;
+    will-change: transform, box-shadow;
 }
 
 .tebot-page-root .tech-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
 }
 
 .tebot-page-root .tech-icon {
@@ -443,116 +444,122 @@
 
 .tebot-page-root .tech-card h3 {
     font-size: 1.3rem;
-    color: #1e3a8a;
-    margin-bottom: 10px;
+    color: #1976d2;
+    margin-bottom: 15px;
 }
 
 .tebot-page-root .tech-card p {
     font-size: 0.95rem;
-    color: #64748b;
+    color: #555;
     line-height: 1.6;
 }
 
 /* ===== PROJECTS SECTION ===== */
 .tebot-page-root .projects-section {
     padding: clamp(40px, 8vw, 80px) clamp(15px, 4vw, 20px);
-    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
 }
 
 .tebot-page-root .projects-section h2 {
     font-family: var(--font-tech);
     font-size: clamp(1.5rem, 5vw, 2.5rem);
-    color: #0f172a;
+    color: #1e40af;
     text-align: center;
     margin-bottom: 15px;
 }
 
 .tebot-page-root .projects-scroll {
     display: flex;
-    gap: 30px;
-    overflow-x: auto;
-    padding: 20px 0;
-    scroll-behavior: smooth;
+    gap: 25px;
+    overflow-x: scroll;
+    padding: 30px 20px;
+    margin: 0 auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    width: 100%;
+    max-width: 1100px;
+    will-change: scroll-position;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: #cbd5e1 #f1f5f9;
 }
 
 .tebot-page-root .projects-scroll::-webkit-scrollbar {
-    height: 8px;
+    display: none;
 }
 
 .tebot-page-root .project-card {
     min-width: 280px;
     background: white;
-    border-radius: 15px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     flex-shrink: 0;
+    will-change: transform, box-shadow;
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 .tebot-page-root .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 .tebot-page-root .project-card img {
     width: 100%;
-    height: 200px;
+    height: 180px;
     object-fit: cover;
-    border-bottom: 3px solid #3b82f6;
     display: block;
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 .tebot-page-root .project-card h4 {
-    font-size: 1.2rem;
-    color: #1e3a8a;
-    padding: 15px 20px 10px;
+    font-size: 1.1rem;
+    color: #1e40af;
+    padding: 15px 15px 8px;
     margin: 0;
 }
 
 .tebot-page-root .project-card p {
-    font-size: 0.9rem;
-    color: #64748b;
-    padding: 0 20px 20px;
+    padding: 0 15px 15px;
+    font-size: 0.85rem;
+    color: #666;
     margin: 0;
 }
 
 /* ===== FORM SECTION ===== */
 .tebot-page-root .form-section {
     padding: clamp(40px, 8vw, 80px) clamp(15px, 4vw, 20px);
-    background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%);
-    color: white;
+    background: linear-gradient(135deg, #6b5b95 0%, #2d3436 100%);
     position: relative;
+    overflow: hidden;
 }
 
 .tebot-page-root .form-section::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    opacity: 0.1;
-    animation: float 30s infinite linear;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 107, 157, 0.1);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
 }
 
 @keyframes float {
-    from { background-position: 0 0; }
-    to { background-position: 60px 60px; }
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(20px); }
 }
 
 @keyframes shake {
     0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-10px); }
-    75% { transform: translateX(10px); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
 }
 
 .tebot-page-root .form-container {
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
@@ -560,381 +567,407 @@
 
 .tebot-page-root .form-section h2 {
     font-family: var(--font-tech);
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-size: 2rem;
+    color: white;
     text-align: center;
-    margin-bottom: 15px;
-    color: white !important;
+    margin-bottom: 10px;
 }
 
 .tebot-page-root .form-container > p {
     text-align: center;
-    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-    margin-bottom: clamp(30px, 6vw, 50px);
-    opacity: 0.9;
-    color: white !important;
+    color: #ffd700;
+    font-family: var(--font-body);
+    margin-bottom: 40px;
+    font-size: 1.1rem;
 }
 
 .tebot-page-root .inquiry-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .tebot-page-root .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 15px;
+    margin-bottom: 15px;
 }
 
 .tebot-page-root .form-row input,
 .tebot-page-root .form-row select,
 .tebot-page-root .inquiry-form textarea {
-    padding: 15px;
-    border: 2px solid rgba(255,255,255,0.2);
+    padding: 14px;
+    border: 2px solid #e0e0e0;
     border-radius: 10px;
-    background: rgba(255,255,255,0.1);
-    color: white !important;
-    font-size: 1rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
     transition: all 0.3s ease;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.tebot-page-root .form-row input::placeholder,
-.tebot-page-root .form-row select::placeholder,
-.tebot-page-root .inquiry-form textarea::placeholder {
-    color: rgba(255, 255, 255, 0.85) !important;
-    opacity: 1 !important;
-    font-weight: 400;
-}
-
-.tebot-page-root .form-row input::-webkit-input-placeholder,
-.tebot-page-root .form-row select::-webkit-input-placeholder,
-.tebot-page-root .inquiry-form textarea::-webkit-input-placeholder {
-    color: rgba(255, 255, 255, 0.85) !important;
-    opacity: 1 !important;
-}
-
-.tebot-page-root .form-row input::-moz-placeholder,
-.tebot-page-root .form-row select::-moz-placeholder,
-.tebot-page-root .inquiry-form textarea::-moz-placeholder {
-    color: rgba(255, 255, 255, 0.85) !important;
-    opacity: 1 !important;
-}
-
-.tebot-page-root .form-row input:-ms-input-placeholder,
-.tebot-page-root .form-row select:-ms-input-placeholder,
-.tebot-page-root .inquiry-form textarea:-ms-input-placeholder {
-    color: rgba(255, 255, 255, 0.85) !important;
-    opacity: 1 !important;
 }
 
 .tebot-page-root .form-row input:focus,
 .tebot-page-root .form-row select:focus,
 .tebot-page-root .inquiry-form textarea:focus {
     outline: none;
-    border-color: #60a5fa;
-    background: rgba(255,255,255,0.15);
-    color: white !important;
+    border-color: #1976d2;
+    box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
 }
 
 .tebot-page-root .inquiry-form textarea {
+    width: 100%;
     resize: vertical;
-    min-height: 120px;
+    margin-bottom: 15px;
 }
 
 .tebot-page-root .form-btn {
+    width: 100%;
+    padding: 16px;
     background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
-    color: white !important;
+    color: white;
     border: none;
-    padding: 18px 40px;
-    border-radius: 30px;
+    border-radius: 10px;
+    font-family: var(--font-body);
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-    margin-top: 10px;
-    width: 100%;
-    max-width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+    box-shadow: 0 8px 20px rgba(25, 118, 210, 0.3);
 }
 
 .tebot-page-root .form-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(25, 118, 210, 0.4);
 }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 850px) {
+    .tebot-page-root {
+        background:
+            linear-gradient(
+                rgba(0, 255, 149, 0.267),
+                rgba(0, 130, 115, 0.25)
+            ),
+            url('data:image/svg+xml;utf8,<svg></svg>'),
+            linear-gradient(
+                rgba(0, 130, 115, 0.6),
+                rgba(0, 130, 115, 0.6)
+            ),
+            url('data:image/svg+xml;utf8,<svg></svg>'),
+            #008273;
+        background-repeat: no-repeat;
+        background-position: 85% 30%;
+        background-attachment: fixed;
+        background-size: cover;
+        color: white;
+        overflow-x: hidden;
+    }
+    
+    .tebot-page-root .background-container {
+        padding: 15px;
+        min-height: 100vh;
+    }
+    
     .tebot-page-root .content-layout {
         flex-direction: column;
         text-align: center;
-        gap: 40px;
+        justify-content: center;
+        transform: translateY(-40px);
+        gap: 30px;
     }
 
     .tebot-page-root .image-section {
-        order: 2;
+        justify-content: center;
     }
-
+    
     .tebot-page-root .info-section {
-        order: 1;
         max-width: 100%;
     }
-
-    .tebot-page-root .info-section h1 {
-        font-size: clamp(2rem, 10vw, 3rem);
+    
+    .tebot-page-root .image-section img {
+        width: 100%;
+        max-width: 90vw;
+        min-width: auto;
+        height: auto;
+        object-fit: contain;
+        padding-top: 20px;
     }
-
+    
     .tebot-page-root .btn-secondary {
+        max-width: 100%;
         margin: 20px auto 0;
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .tebot-page-root .features-section {
+        padding: 10px 0 0;
     }
 
     .tebot-page-root .feature-item {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: 1fr;
+        gap: 20px;
         min-height: auto;
-        padding: 40px 20px;
+        padding: 30px 15px;
+        text-align: center;
     }
 
     .tebot-page-root .feature-item.feature-left .feature-image,
-    .tebot-page-root .feature-item.feature-right .feature-image {
-        grid-column: 1;
-        grid-row: 1;
-    }
-
     .tebot-page-root .feature-item.feature-left .feature-content,
+    .tebot-page-root .feature-item.feature-right .feature-image,
     .tebot-page-root .feature-item.feature-right .feature-content {
-        grid-column: 1;
-        grid-row: 2;
+        grid-column: auto;
+    }
+    
+    .tebot-page-root .feature-image {
+        max-width: 380px;
+    }
+    
+    .tebot-page-root .feature-image img {
+        max-height: 320px;
     }
 
     .tebot-page-root .kit-container {
         grid-template-columns: 1fr;
         gap: 30px;
     }
+    
+    .tebot-page-root .kit-image {
+        max-width: 400px;
+    }
+    
+    .tebot-page-root .kit-image img {
+        max-height: 380px;
+    }
 
     .tebot-page-root .kit-components {
         grid-template-columns: 1fr;
     }
-}
 
-@media (max-width: 768px) {
-    .tebot-page-root .background-container {
-        padding: 20px;
+    .tebot-page-root .tech-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 20px;
     }
 
-    .tebot-page-root .content-layout {
-        transform: translateY(-20px);
+    .tebot-page-root .projects-scroll {
+        padding: 20px 10px;
     }
 
-    .tebot-page-root .image-section img {
-        width: 100%;
-        max-width: 400px;
-    }
-
-    .tebot-page-root .info-section h1 {
-        font-size: 2rem;
-    }
-
-    .tebot-page-root .info-section h2 {
-        font-size: 1.1rem;
-    }
-
-    .tebot-page-root .btn-secondary {
-        padding: 14px 30px;
-        font-size: 1rem;
-    }
-
-    .tebot-page-root .intro-section,
-    .tebot-page-root .kit-section,
-    .tebot-page-root .technology-section,
-    .tebot-page-root .projects-section,
-    .tebot-page-root .form-section {
-        padding: 40px 15px;
-    }
-
-    .tebot-page-root .features-section h2,
-    .tebot-page-root .intro-section h2,
-    .tebot-page-root .kit-section h2,
-    .tebot-page-root .technology-section h2,
-    .tebot-page-root .projects-section h2,
-    .tebot-page-root .form-section h2 {
-        font-size: 1.8rem;
-    }
-
-    .tebot-page-root .feature-item {
-        padding: 30px 15px;
+    .tebot-page-root .project-card {
+        min-width: 250px;
     }
 
     .tebot-page-root .form-row {
         grid-template-columns: 1fr;
     }
 
-    .tebot-page-root .tech-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+    .tebot-page-root .form-section {
+        padding: 40px 15px;
+    }
+
+    .tebot-page-root .inquiry-form {
+        padding: 20px;
     }
 }
 
+/* Tablet breakpoint for tech grid */
 @media (max-width: 1024px) and (min-width: 769px) {
     .tebot-page-root .tech-grid {
         grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 25px;
     }
 }
 
 @media (max-width: 480px) {
     .tebot-page-root .background-container {
-        padding: 15px;
-        min-height: 90vh;
+        padding: 10px;
     }
-
-    .tebot-page-root .info-section h1 {
-        font-size: 1.75rem;
+    
+    .tebot-page-root .content-layout {
+        transform: translateY(-10px);
+        gap: 15px;
     }
-
-    .tebot-page-root .info-section h2 {
-        font-size: 1rem;
+    
+    .tebot-page-root .image-section img {
+        width: 90vw;
+        max-width: 300px;
+        min-width: 220px;
+        padding-top: 10px;
     }
-
+    
     .tebot-page-root .btn-secondary {
         padding: 12px 24px;
-        font-size: 0.95rem;
-    }
-
-    .tebot-page-root .feature-content h3 {
-        font-size: 1.3rem;
-    }
-
-    .tebot-page-root .feature-content p {
         font-size: 0.9rem;
     }
 
-    .tebot-page-root .project-card {
-        min-width: 240px;
+    .tebot-page-root .feature-item {
+        padding: 20px 10px;
     }
 
-    .tebot-page-root .form-btn {
-        padding: 15px 30px;
-        font-size: 1rem;
+    .tebot-page-root .tech-card {
+        padding: 20px;
+    }
+
+    .tebot-page-root .project-card {
+        min-width: 220px;
+    }
+    
+    .tebot-page-root .project-card img {
+        height: 140px;
+    }
+
+    .tebot-page-root .form-section {
+        padding: 30px 10px;
+    }
+
+    .tebot-page-root .inquiry-form {
+        padding: 15px;
     }
 }
 
 @media (max-width: 360px) {
     .tebot-page-root .background-container {
-        padding: 10px;
+        padding: 8px;
     }
-
-    .tebot-page-root .info-section h1 {
-        font-size: 1.5rem;
+    
+    .tebot-page-root .image-section img {
+        width: 95vw;
+        max-width: 250px;
+        min-width: 200px;
     }
-
-    .tebot-page-root .info-section h2 {
-        font-size: 0.9rem;
-    }
-
+    
     .tebot-page-root .btn-secondary {
         padding: 10px 20px;
-        font-size: 0.9rem;
-        max-width: 200px;
+        font-size: 0.85rem;
     }
-
-    .tebot-page-root .intro-section,
-    .tebot-page-root .kit-section,
-    .tebot-page-root .technology-section,
-    .tebot-page-root .projects-section,
+    
+    .tebot-page-root .feature-item {
+        padding: 15px 8px;
+    }
+    
+    .tebot-page-root .project-card {
+        min-width: 200px;
+    }
+    
+    .tebot-page-root .tech-card {
+        padding: 15px;
+    }
+    
     .tebot-page-root .form-section {
-        padding: 30px 10px;
+        padding: 20px 8px;
     }
-
-    .tebot-page-root .features-section h2,
-    .tebot-page-root .intro-section h2,
-    .tebot-page-root .kit-section h2,
-    .tebot-page-root .technology-section h2,
-    .tebot-page-root .projects-section h2 {
-        font-size: 1.5rem;
+    
+    .tebot-page-root .inquiry-form {
+        padding: 12px;
     }
 }
 
 /* ===== PERFORMANCE & ACCESSIBILITY OPTIMIZATIONS ===== */
+
+/* Reduced motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
     .tebot-page-root * {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
     }
-
+    
+    .tebot-page-root {
+        scroll-behavior: auto;
+    }
+    
     .tebot-page-root .image-section img:hover,
-    .tebot-page-root .btn-secondary:hover,
     .tebot-page-root .tech-card:hover,
-    .tebot-page-root .project-card:hover {
-        transform: none !important;
+    .tebot-page-root .project-card:hover,
+    .tebot-page-root .btn-secondary:hover {
+        transform: none;
+        filter: none;
     }
 }
 
+/* High contrast mode support */
 @media (prefers-contrast: high) {
-    .tebot-page-root .btn-secondary,
-    .tebot-page-root .form-btn {
-        border: 2px solid white;
+    .tebot-page-root .info-section h1 {
+        color: #ffff00;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
     }
-
+    
+    .tebot-page-root .btn-secondary {
+        border: 2px solid #fff;
+    }
+    
     .tebot-page-root .tech-card,
     .tebot-page-root .project-card {
-        border: 2px solid #000;
+        border: 2px solid #333;
     }
 }
 
+/* Focus styles for accessibility */
 .tebot-page-root .btn-secondary:focus-visible,
 .tebot-page-root .form-row input:focus-visible,
 .tebot-page-root .form-row select:focus-visible,
 .tebot-page-root .inquiry-form textarea:focus-visible {
-    outline: 3px solid #60a5fa;
+    outline: 3px solid #fff;
     outline-offset: 2px;
 }
 
+/* Smooth scrolling for all browsers */
 @supports (scroll-behavior: smooth) {
     .tebot-page-root {
         scroll-behavior: smooth;
     }
 }
 
+/* GPU acceleration for better performance */
 .tebot-page-root .image-section img,
 .tebot-page-root .tech-card,
 .tebot-page-root .project-card,
 .tebot-page-root .btn-secondary,
 .tebot-page-root .content-layout {
     transform: translateZ(0);
-    will-change: transform;
+    backface-visibility: hidden;
 }
 
+/* Optimize font rendering */
 .tebot-page-root {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Container queries for better responsive design */
 @container (max-width: 480px) {
-    .tebot-page-root .btn-secondary {
-        max-width: 100%;
+    .tebot-page-root .feature-item {
+        padding: 15px 10px;
     }
 }
 
+/* Print styles */
 @media print {
-    .tebot-page-root .background-container,
+    .tebot-page-root .projects-scroll,
     .tebot-page-root .form-section {
         display: none;
     }
-
-    .tebot-page-root .ibot-page {
+    
+    .tebot-page-root {
         background: white;
         color: black;
     }
-
-    .tebot-page-root .feature-item,
+    
+    .tebot-page-root .hero,
     .tebot-page-root .intro-section,
+    .tebot-page-root .features-section,
     .tebot-page-root .kit-section,
     .tebot-page-root .technology-section {
-        page-break-inside: avoid;
+        break-inside: avoid;
     }
+}
+
+.tebot-page-root .form-row input::placeholder,
+.tebot-page-root .form-row select::placeholder,
+.tebot-page-root .inquiry-form textarea::placeholder {
+    color: rgba(0, 0, 0, 0.5);
 }

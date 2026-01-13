@@ -9,6 +9,8 @@ import project1 from '../assets/ProductTeBoTImages/robotics_12775607.png';
 import project2 from '../assets/ProductTeBoTImages/robot_3558910.png';
 import project3 from '../assets/ProductTeBoTImages/robot_4512237.png';
 import project4 from '../assets/ProductTeBoTImages/robot_2582246.png';
+import bgImage1 from '../assets/ProductTeBoTImages/9743539.png';
+import bgImage2 from '../assets/ProductTeBoTImages/5073198.jpg';
 
 function TeBoT() {
     useEffect(() => {
@@ -180,7 +182,7 @@ function TeBoT() {
         
         setTimeout(() => {
             if (projectsContainer) {
-                const stopProjects = createAutoScroll(projectsContainer, 100);
+                const stopProjects = createAutoScroll(projectsContainer, 30);
                 if (stopProjects) stopFns.push(stopProjects);
             }
         }, 2000);
@@ -213,13 +215,36 @@ function TeBoT() {
                 
                 setTimeout(() => {
                     if (isValid) {
+                        // Collect form data
+                        const schoolName = form.querySelector('input[name="school_name"]').value;
+                        const contactPerson = form.querySelector('input[name="contact_person"]').value;
+                        const email = form.querySelector('input[name="email"]').value;
+                        const phone = form.querySelector('input[name="phone"]').value;
+                        const message = form.querySelector('textarea[name="message"]').value;
+                        
+                        // Format WhatsApp message
+                        const whatsappMessage = `*New Inquiry from TeBoT Product Page*%0A%0A` +
+                            `*School Name:* ${encodeURIComponent(schoolName)}%0A` +
+                            `*Contact Person:* ${encodeURIComponent(contactPerson)}%0A` +
+                            `*Email:* ${encodeURIComponent(email)}%0A` +
+                            `*Phone:* ${encodeURIComponent(phone)}%0A` +
+                            `*Message:* ${encodeURIComponent(message)}%0A%0A` +
+                            `*Page:* TeBoT Product Page`;
+                        
+                        // WhatsApp number
+                        const whatsappNumber = '918197984847';
+                        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+                        
                         const button = form.querySelector('.form-btn');
                         const originalText = button.textContent;
                         button.style.transform = 'translateY(-1px)';
                         setTimeout(() => {
-                            button.textContent = '✅ Inquiry Sent!';
+                            button.textContent = '✅ Opening WhatsApp...';
                             button.style.background = 'linear-gradient(135deg, #4caf50 0%, #45a049 100%)';
                             button.style.transform = 'translateY(-2px)';
+                            
+                            // Open WhatsApp
+                            window.open(whatsappUrl, '_blank');
                         }, 150);
                         
                         setTimeout(() => {
@@ -293,7 +318,19 @@ function TeBoT() {
     }, []);
 
     return (
-        <div className="tebot-page-root">
+        <div className="tebot-page-root" style={{
+            background: `
+                linear-gradient(rgba(0, 255, 149, 0.267), rgba(0, 130, 115, 0.25)),
+                url(${bgImage1}),
+                linear-gradient(rgba(0, 130, 115, 0.6), rgba(0, 130, 115, 0.6)),
+                url(${bgImage2}),
+                #008273
+            `,
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: '60% 30%',
+            backgroundAttachment: 'fixed',
+            backgroundSize: 'cover'
+        }}>
             <div className="background-container">
                 <main className="content-layout">
                     <div className="image-section">

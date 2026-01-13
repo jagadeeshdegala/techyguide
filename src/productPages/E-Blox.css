@@ -1,0 +1,1019 @@
+/* Import TeBOT/E-Blox Brand Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap');
+
+.eblox-page-root * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.eblox-page-root {
+    /* Updated font to TeBOT brand style (Inter/Sans-Serif) */
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    overflow-x: hidden;
+    padding-top: 113px;
+}
+
+.eblox-page-root .background-container {
+    min-height: 100vh;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+/* Subtle bottom shadow overlay that covers the lower half of the viewport */
+.eblox-page-root::after {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50vh; /* covers roughly half the page */
+    pointer-events: none;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.12));
+    z-index: 0; /* sits above the body background but below .background-container */
+}
+
+.eblox-page-root nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.eblox-page-root .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.eblox-page-root .btn-primary {
+    background: linear-gradient(45deg, #dc2626, #b91c1c);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.eblox-page-root .content-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+    transform: translateY(-40px);
+}
+
+.eblox-page-root .image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.eblox-page-root .image-section img {
+    max-width: 100%;
+    height: auto;
+    width: 450px;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+    transition: transform 0.3s ease;
+    will-change: transform;
+}
+
+.eblox-page-root .image-section img:hover {
+    filter: drop-shadow(0 15px 40px rgba(0,0,0,0.6));
+}
+
+.eblox-page-root .info-section {
+    flex: 1;
+    max-width: 500px;
+}
+
+.eblox-page-root .info-section h1 {
+    /* Apply TeBOT Header Font */
+    font-family: 'Orbitron', -apple-system, sans-serif;
+    font-size: 50px;
+    font-weight: 900;
+    color: #ff8a00 !important;
+    margin-bottom: 18px;
+    line-height: 2.0;
+    will-change: color;
+}
+
+.eblox-page-root .info-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 24px;
+    line-height: 1.3;
+}
+
+.eblox-page-root .btn-secondary {
+    background: linear-gradient(45deg, #ff8a00 0%, #ff6a00 100%);
+    border: none;
+    padding: 18px 40px;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.25s ease, filter 0.25s ease;
+    box-shadow: 0 8px 24px rgba(255, 138, 0, 0.18);
+    margin-top: 20px;
+    will-change: transform, box-shadow;
+}
+
+.eblox-page-root .btn-secondary:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(45deg, #ff6a00 0%, #ff8a00 100%);
+    filter: brightness(0.98);
+}
+
+@media (max-width: 850px) {
+    .eblox-page-root {
+        background-position: 60% 30% !important;
+    }
+
+    .eblox-page-root .content-layout {
+        flex-direction: column;
+        gap: 30px;
+        transform: translateY(-40px);
+    }
+
+    .eblox-page-root .image-section {
+        justify-content: center;
+    }
+    
+    .eblox-page-root .image-section img:active {
+        transform: scale(0.98);
+    }
+    
+    .eblox-page-root .info-section h1:active {
+        color: #00d4ff !important;
+        text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+    }
+    
+    .eblox-page-root .btn-secondary:active {
+        transform: translateY(-10px);
+        background: linear-gradient(45deg, #ff6a00 0%, #ff8a00 100%);
+        filter: brightness(1.1);
+    }
+}
+
+/* 1. Improved Navigation for Mobile */
+.eblox-page-root nav {
+    display: flex;
+    flex-direction: column; /* Stack logo and links on small screens */
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.eblox-page-root .logo-title {
+    /* Updated for TeBOT Brand Identity */
+    font-family: 'Orbitron', cursive; 
+    font-size: 2rem; 
+    font-weight: 900;
+    background: linear-gradient(45deg, #ef531a, #ffa726, #ff8a50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    
+    position: relative; 
+    left: auto;
+    transform: none;
+    
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 8px 16px;
+    border-radius: 20px;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(213, 213, 213, 0.4);
+    text-align: center;
+    width: fit-content;
+}
+
+/* 2. Content Layout Adjustments */
+.eblox-page-root .content-layout {
+    display: flex;
+    flex-direction: column; /* Column by default (Mobile) */
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.eblox-page-root .image-section img {
+    max-width: 80%; /* Don't let it hit the screen edges */
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+}
+
+.eblox-page-root .info-section h1 {
+    font-size: 1.2rem; /* Scaled down for readability */
+    padding: 0 10px;
+    font-family: 'Orbitron', cursive;
+}
+
+/* 3. Handling Floating Icons on Mobile */
+@media (max-width: 600px) {
+    .eblox-page-root .icon-3, .eblox-page-root .icon-6, .eblox-page-root .icon-7 {
+        display: none;
+    }
+}
+
+/* 4. Desktop Adjustments (Using Media Query to go back to Row) */
+@media (min-width: 850px) {
+    .eblox-page-root nav {
+        flex-direction: row;
+        margin-bottom: 60px;
+    }
+
+    .eblox-page-root .logo-title {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .eblox-page-root .content-layout {
+        flex-direction: row;
+        gap: 100px;
+        text-align: left;
+    }
+
+    .eblox-page-root .image-section img {
+        max-width: 100%;
+    }
+
+    .eblox-page-root .info-section h1 {
+        font-size: 50px;
+        padding: 0;
+    }
+}
+
+.eblox-page-root .background-container {
+    min-height: 100vh;
+    padding: 20px; 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-x: hidden; 
+}
+
+/* Adjustments for larger screens */
+@media (min-width: 768px) {
+    .eblox-page-root .background-container {
+        padding: 40px;
+    }
+}
+
+/* ===== IBOT PAGE SECTIONS ===== */
+.eblox-page-root .ibot-page {
+    --primary-orange: #ff6b35;
+    --primary-blue: #2563eb;
+    --primary-green: #10b981;
+    --primary-purple: #8b5cf6;
+    --primary-pink: #ec4899;
+    --primary-teal: #14b8a6;
+    --text-dark: #1f2937;
+    --text-white: #ffffff;
+}
+
+.eblox-page-root .ibot-page h1, 
+.eblox-page-root .ibot-page h2, 
+.eblox-page-root .ibot-page h3, 
+.eblox-page-root .ibot-page h4 {
+    font-family: 'Orbitron', -apple-system, sans-serif;
+}
+
+.eblox-page-root .ibot-page a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== INTRODUCTION SECTION ===== */
+.eblox-page-root .intro-section {
+    padding: 80px 20px;
+    background: var(--text-white);
+}
+
+.eblox-page-root .intro-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.eblox-page-root .intro-section h2 {
+    font-size: 2.5rem;
+    color: var(--primary-orange);
+    text-align: center;
+    margin-bottom: 16px;
+    font-weight: 900;
+}
+
+.eblox-page-root .intro-tagline {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #64748b;
+    margin-bottom: 40px;
+}
+
+.eblox-page-root .video-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.eblox-page-root .intro-video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    display: block;
+    background: #000;
+}
+
+/* ===== FEATURES SECTION ===== */
+.eblox-page-root .features-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+}
+
+.eblox-page-root .features-section h2 {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 900;
+}
+
+.eblox-page-root .features-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.eblox-page-root .feature-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+}
+
+.eblox-page-root .feature-item.feature-left .feature-image { grid-column: 1; }
+.eblox-page-root .feature-item.feature-left .feature-content { grid-column: 2; }
+.eblox-page-root .feature-item.feature-right .feature-content { grid-column: 1; }
+.eblox-page-root .feature-item.feature-right .feature-image { grid-column: 2; }
+
+.eblox-page-root .feature-bg-1 { background: linear-gradient(135deg, #eef2ff 0%, #e0f2fe 100%); }
+.eblox-page-root .feature-bg-2 { background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%); }
+.eblox-page-root .feature-bg-3 { background: linear-gradient(135deg, #ecfdf3 0%, #dcfce7 100%); }
+.eblox-page-root .feature-bg-4 { background: linear-gradient(135deg, #fdf2f8 0%, #ffe4e6 100%); }
+
+.eblox-page-root .feature-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+}
+
+.eblox-page-root .feature-image img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+.eblox-page-root .feature-content h3 {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+}
+
+.eblox-page-root .feature-content p {
+    font-size: 1rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.eblox-page-root .feature-points {
+    list-style: none;
+    padding: 0;
+}
+
+.eblox-page-root .feature-points li {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+/* ===== KIT SECTION ===== */
+.eblox-page-root .kit-section {
+    padding: 80px 20px;
+    background: var(--text-white);
+}
+
+.eblox-page-root .kit-section h2 {
+    font-size: 2.5rem;
+    color: var(--primary-orange);
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.eblox-page-root .kit-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.eblox-page-root .kit-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+}
+
+.eblox-page-root .kit-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+.eblox-page-root .kit-info h3 {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+}
+
+.eblox-page-root .kit-info > p {
+    font-size: 1rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.eblox-page-root .kit-components {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.eblox-page-root .component-column h4 {
+    font-size: 1.2rem;
+    color: var(--primary-blue);
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.eblox-page-root .component-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.eblox-page-root .component-column li {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.eblox-page-root .component-column li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary-orange);
+    font-weight: bold;
+}
+
+/* ===== TECHNOLOGY SECTION ===== */
+.eblox-page-root .technology-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+}
+
+.eblox-page-root .technology-section h2 {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 900;
+}
+
+.eblox-page-root .section-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #64748b;
+    margin-bottom: 60px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.eblox-page-root .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.eblox-page-root .tech-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.eblox-page-root .tech-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.eblox-page-root .tech-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.eblox-page-root .tech-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.eblox-page-root .tech-card p {
+    font-size: 1rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* Responsive fix: Stacks cards on mobile so they remain tight */
+@media (max-width: 768px) {
+    .eblox-page-root .tech-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== PROJECTS SECTION ===== */
+.eblox-page-root .projects-section {
+    padding: 80px 20px;
+    background: var(--text-white);
+}
+
+.eblox-page-root .projects-section h2 {
+    font-size: 2.5rem;
+    color: var(--primary-orange);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.eblox-page-root .projects-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 40px 20px;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    will-change: scroll-position;
+    -webkit-overflow-scrolling: touch;
+    min-width: 0;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.eblox-page-root .projects-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.eblox-page-root .project-card {
+    min-width: 286px;
+    max-width: 286px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform, box-shadow;
+    flex-shrink: 0;
+    transform: translateZ(0);
+}
+
+.eblox-page-root .project-card img {
+    width: 100%;
+    height: 185px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--primary-orange);
+    transform: translateZ(0);
+}
+
+.eblox-page-root .project-card h4 {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    padding: 20px 20px 10px;
+}
+
+.eblox-page-root .project-card p {
+    font-size: 0.95rem;
+    color: #64748b;
+    padding: 0 20px 20px;
+}
+
+
+/* ===== FORM SECTION ===== */
+.eblox-page-root .form-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.eblox-page-root .form-section::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 138, 0, 0.2), transparent);
+    border-radius: 50%;
+    top: -200px;
+    right: -200px;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(20px); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.eblox-page-root .form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.eblox-page-root .form-section h2 {
+    font-size: 2.5rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 16px;
+    font-weight: 900;
+}
+
+.eblox-page-root .form-container > p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+}
+
+.eblox-page-root .inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.eblox-page-root .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+
+.eblox-page-root .form-row input,
+.eblox-page-root .form-row select,
+.eblox-page-root .inquiry-form textarea {
+    padding: 15px;
+    border-radius: 10px;
+    border: 2.5px solid #bdbdbd;
+    background: rgba(255, 255, 255, 0.13);
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 1.5px rgba(189,189,189,0.18);
+}
+
+.eblox-page-root .form-row input:focus,
+.eblox-page-root .form-row select:focus,
+.eblox-page-root .inquiry-form textarea:focus {
+    outline: none;
+    border-color: #ff9800;
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 0 0 2.5px #ff980044;
+}
+
+.eblox-page-root .inquiry-form textarea {
+    grid-column: 1 / -1;
+    resize: vertical;
+}
+
+.eblox-page-root .form-btn {
+    background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+    color: white;
+    padding: 18px 40px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.eblox-page-root .form-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 850px) {
+    .eblox-page-root .content-layout {
+        flex-direction: column;
+        gap: 30px;
+        transform: translateY(-40px);
+    }
+
+    .eblox-page-root .image-section img {
+        width: 350px;
+    }
+
+    .eblox-page-root .info-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .eblox-page-root .feature-item {
+        grid-template-columns: 1fr;
+    }
+
+    .eblox-page-root .feature-item.feature-left .feature-image,
+    .eblox-page-root .feature-item.feature-right .feature-image { 
+        grid-column: 1;
+        grid-row: 1; 
+    }
+
+    .eblox-page-root .feature-item.feature-left .feature-content,
+    .eblox-page-root .feature-item.feature-right .feature-content { 
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .eblox-page-root .kit-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .eblox-page-root .kit-components {
+        grid-template-columns: 1fr;
+    }
+
+    .eblox-page-root .projects-scroll {
+        padding: 20px 10px;
+    }
+
+    .eblox-page-root .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .eblox-page-root .features-section h2,
+    .eblox-page-root .kit-section h2,
+    .eblox-page-root .technology-section h2,
+    .eblox-page-root .projects-section h2,
+    .eblox-page-root .form-section h2 {
+        font-size: 2rem;
+    }
+
+    .eblox-page-root .intro-section h2 {
+        font-size: 2rem;
+    }
+
+    .eblox-page-root .feature-item {
+        padding: 30px 20px;
+    }
+
+    .eblox-page-root .feature-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .eblox-page-root .kit-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .eblox-page-root .tech-card {
+        padding: 30px 20px;
+    }
+
+    .eblox-page-root .tech-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .eblox-page-root .project-card {
+        min-width: 250px;
+    }
+
+    .eblox-page-root .project-card h4 {
+        font-size: 1.1rem;
+    }
+
+    .eblox-page-root .form-container {
+        padding: 0 10px;
+    }
+}
+
+/* Tablet breakpoint for tech grid */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .eblox-page-root .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .eblox-page-root .background-container {
+        padding: 20px;
+    }
+
+    .eblox-page-root .image-section img {
+        width: 280px;
+    }
+
+    .eblox-page-root .info-section h1 {
+        font-size: 2rem;
+    }
+
+    .eblox-page-root .info-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .eblox-page-root .btn-secondary {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+
+    .eblox-page-root .intro-section,
+    .eblox-page-root .features-section,
+    .eblox-page-root .kit-section,
+    .eblox-page-root .technology-section,
+    .eblox-page-root .projects-section,
+    .eblox-page-root .form-section {
+        padding: 60px 15px;
+    }
+
+    .eblox-page-root .feature-item {
+        padding: 20px 15px;
+    }
+
+    .eblox-page-root .project-card {
+        min-width: 220px;
+    }
+}
+
+@media (max-width: 360px) {
+    .eblox-page-root .image-section img {
+        width: 240px;
+    }
+
+    .eblox-page-root .info-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .eblox-page-root .btn-secondary {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+    }
+
+    .eblox-page-root .features-section h2,
+    .eblox-page-root .kit-section h2,
+    .eblox-page-root .technology-section h2,
+    .eblox-page-root .projects-section h2,
+    .eblox-page-root .form-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .eblox-page-root .intro-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .eblox-page-root .project-card {
+        min-width: 200px;
+    }
+}
+
+/* ===== PERFORMANCE & ACCESSIBILITY OPTIMIZATIONS ===== */
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    .eblox-page-root *,
+    .eblox-page-root *::before,
+    .eblox-page-root *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .eblox-page-root .image-section img:hover,
+    .eblox-page-root .btn-secondary:hover,
+    .eblox-page-root .tech-card:hover,
+    .eblox-page-root .project-card:hover {
+        transform: none !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .eblox-page-root .btn-secondary,
+    .eblox-page-root .tech-card,
+    .eblox-page-root .project-card,
+    .eblox-page-root .form-row input,
+    .eblox-page-root .form-row select,
+    .eblox-page-root .inquiry-form textarea {
+        border: 2px solid currentColor;
+    }
+
+    .eblox-page-root .feature-item {
+        border: 1px solid currentColor;
+    }
+}
+
+/* Focus styles for accessibility */
+.eblox-page-root .btn-secondary:focus-visible,
+.eblox-page-root .form-row input:focus-visible,
+.eblox-page-root .form-row select:focus-visible,
+.eblox-page-root .inquiry-form textarea:focus-visible {
+    outline: 3px solid var(--primary-orange);
+    outline-offset: 2px;
+}
+
+/* Smooth scrolling for all browsers */
+@supports (scroll-behavior: smooth) {
+    .eblox-page-root {
+        scroll-behavior: smooth;
+    }
+}
+
+/* GPU acceleration for better performance */
+.eblox-page-root .image-section img,
+.eblox-page-root .tech-card,
+.eblox-page-root .project-card,
+.eblox-page-root .btn-secondary,
+.eblox-page-root .content-layout {
+    transform: translateZ(0);
+}
+
+/* Optimize font rendering */
+.eblox-page-root {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container queries for better responsive design */
+@container (max-width: 480px) {
+    .eblox-page-root .project-card {
+        min-width: 180px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .eblox-page-root .form-section,
+    .eblox-page-root nav,
+    .eblox-page-root .btn-secondary,
+    .eblox-page-root .projects-scroll {
+        display: none;
+    }
+
+    .eblox-page-root {
+        background: white !important;
+        color: black !important;
+    }
+
+    .eblox-page-root * {
+        box-shadow: none !important;
+    }
+}

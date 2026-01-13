@@ -63,12 +63,13 @@
 /* ============ 4. HERO SECTION ============ */
 .franchise-page .hero {
     position: relative;
-    min-height: 80vh;
+    min-height: calc(80vh + 113px);
     background: url('./assets/FranchisePageImages/creates.jpg') no-repeat center center/cover;
     background-attachment: fixed;
     display: flex; align-items: center; justify-content: center;
     text-align: center;
     z-index: 0;
+    padding-top: 153px;
 }
 
 .franchise-page .hero::before {
@@ -89,7 +90,7 @@
 .franchise-page .btn-orange { background: var(--primary-orange); color: white; border: 2px solid var(--primary-orange); }
 .franchise-page .btn-orange:hover { background: transparent; color: white; transform: translateY(-5px); }
 .franchise-page .btn-glass { background: rgba(255, 255, 255, 0.107); border: 1px solid rgba(255, 255, 255, 0.345); color: white; backdrop-filter: blur(4px); margin-left: 20px; }
-.franchise-page .hero-buttons { margin-top: 2rem; }
+.franchise-page .hero-buttons { margin-top: 2rem; margin-bottom: 80px; }
 
 /* ============ 5. PILLAR CARDS (Perfect Fit) ============ */
 .franchise-page .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
