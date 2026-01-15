@@ -166,6 +166,24 @@
         background: linear-gradient(45deg, #ff6a00 0%, #ff8a00 100%);
         filter: brightness(1.1);
     }
+
+    /* Center features block on mobile: center image and text */
+    .eblox-page-root .features-section .feature-item {
+        text-align: center;
+        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .eblox-page-root .features-section .feature-image {
+        margin: 0 auto;
+        justify-self: center;
+    }
+
+    .eblox-page-root .features-section .feature-content {
+        text-align: center;
+    }
 }
 
 /* 1. Improved Navigation for Mobile */

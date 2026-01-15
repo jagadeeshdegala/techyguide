@@ -22,6 +22,7 @@ import WhatsAppButton from './WhatsAppButton.jsx'
 import AIRoboticsLabCBSE from './ForschoolsPages/AI-RoboticLabCBSE.jsx'
 import AIRoboticLabICSE from './ForschoolsPages/AI-RoboticLabICSE.jsx'
 import StemTinkeringLab from './ForschoolsPages/StemTinkeringLab.jsx'
+import StemLab from './ForschoolsPages/StemLab.jsx'
 import CompositeSkillLab from './ForschoolsPages/CompositeSkillLab.jsx'
 import WorkshopPage from './ForschoolsPages/WorkshopPage.jsx'
 import CoursesPage from './coursesPage.jsx'
@@ -30,6 +31,7 @@ import CheckOutPage from './CheckOutPage.jsx'
 import PrivacyPolicyPage from './privacyPolicypage.jsx'
 import TeBoT from './productPages/TeBoT.jsx'
 import EBlox from './productPages/E-Blox.jsx'
+import EAddOnKit from './productPages/AddOnKit.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -43,8 +45,10 @@ function App() {
       <Route path="/i-bot" element={<IBoTPage />} />
       <Route path="/tebot" element={<TeBoTPage />} />
       <Route path="/e-blox" element={<EBloxPage />} />
+      <Route path="/add-on-kits" element={<EAddOnKitPage />} />
       <Route path="/ai-roboticslab-cbse" element={<AIRoboticsLabCBSEPage />} />
       <Route path="/ai-roboticslab-icse" element={<AIRoboticLabICSEPage />} />
+      <Route path="/schools/stem-lab" element={<StemLabPage />} />
       <Route path="/schools/stem-tinkering-lab" element={<StemTinkeringLabPage />} />
       <Route path="/schools/composite-skill-lab" element={<CompositeSkillLabPage />} />
       <Route path="/schools/workshop" element={<WorkshopPageWrapper />} />
@@ -140,6 +144,15 @@ function StemTinkeringLabPage() {
   );
 }
 
+function StemLabPage() {
+  return (
+    <>
+      <StemLab />
+      <FooterSection />
+    </>
+  );
+}
+
 function CompositeSkillLabPage() {
   return (
     <>
@@ -180,6 +193,15 @@ function PrivacyPolicyPageWrapper() {
   return (
     <>
       <PrivacyPolicyPage />
+      <FooterSection />
+    </>
+  );
+}
+
+function EAddOnKitPage() {
+  return (
+    <>
+      <EAddOnKit />
       <FooterSection />
     </>
   );

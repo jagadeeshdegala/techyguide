@@ -1,0 +1,46 @@
+@media (max-width: 850px) {
+  /* Product pages mobile-friendly stack and image sizing */
+  .tebot-page-root .content-layout,
+  .eblox-page-root .content-layout,
+  .ibot-page .content-layout {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+    padding: 10px !important;
+    text-align: center !important;
+  }
+
+  .tebot-page-root .image-section img,
+  .eblox-page-root .image-section img,
+  .ibot-page .image-section img,
+  .ibot-page .feature-image img,
+  .eblox-page-root .feature-image img,
+  .tebot-page-root .feature-image img {
+    width: 90vw !important;
+    max-width: 420px !important;
+    height: auto !important;
+    object-fit: contain !important;
+    margin: 0 auto !important;
+  }
+
+  .tebot-page-root .feature-item,
+  .eblox-page-root .feature-item,
+  .ibot-page .feature-item {
+    grid-template-columns: 1fr !important;
+    padding: 18px !important;
+    gap: 18px !important;
+    text-align: center !important;
+  }
+
+  .tebot-page-root .feature-content,
+  .eblox-page-root .feature-content,
+  .ibot-page .feature-content {
+    text-align: center !important;
+    padding: 0 10px !important;
+  }
+
+  /* Prevent horizontal overflow caused by images or grids */
+  .tebot-page-root, .eblox-page-root, .ibot-page {
+    overflow-x: hidden !important;
+  }
+}

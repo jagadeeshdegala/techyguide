@@ -30,16 +30,16 @@ function FooterSection(){
 
                         </ul>
                     </div>
-                    <div className="footer-col">
-                        <h3>Our Offerings</h3>
-                        <ul>
-                            <li><a href="#">Robotics Products</a></li>
-                            <li><a href="#">IoT Solutions</a></li>
-                            <li><a href="#">AI Courses</a></li>
-                            <li><a href="#">Coding Courses</a></li>
-                            <li><a href="#">3D Printing</a></li>
-                        </ul>
-                    </div>
+                        <div className="footer-col">
+                            <h3>Our Offerings</h3>
+                            <ul className="offerings-list">
+                                <li><a href="#">Robotics Products</a></li>
+                                <li className="hide-mobile"><a href="#">IoT Solutions</a></li>
+                                <li><a href="#">AI Courses</a></li>
+                                <li><a href="#">Coding Courses</a></li>
+                                <li><a href="#">3D Printing</a></li>
+                            </ul>
+                        </div>
                 </div>
                 <div className="bottom-bar">
                     <p>&copy; 2021 TechyGuide Private Limited. All Rights Reserved.</p>

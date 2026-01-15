@@ -1,0 +1,1175 @@
+/* Fully sandboxed: every selector is prefixed with .addonkit-page-root */
+
+.addonkit-page-root {
+	width: 100%;
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+.addonkit-page-root * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.addonkit-page-root img,
+.addonkit-page-root video,
+.addonkit-page-root svg {
+	max-width: 100%;
+}
+
+.addonkit-page-root html, .addonkit-page-root body {
+	font-family: 'Inter', -apple-system, sans-serif;
+	overflow-x: hidden;
+}
+
+.addonkit-page-root .addonkit {
+	font-family: 'Inter', -apple-system, sans-serif;
+	line-height: 1.6;
+	color: #333;
+	background: linear-gradient(135deg, #e8f5e8 0%, #f0f8ff 100%);
+	min-height: 100vh;
+	overflow-x: hidden;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.addonkit-page-root .container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.addonkit-page-root .addonkit {
+	font-family: 'Inter', -apple-system, sans-serif;
+	background:
+		linear-gradient(rgba(0, 255, 149, 0.267), rgba(0, 130, 115, 0.25)),
+		url('../assets/ProductsAddOnImages/9058106.png'),
+		linear-gradient(rgba(0, 130, 115, 0.6), rgba(0, 130, 115, 0.6)),
+		url('../assets/ProductsAddOnImages/5073198.jpg'),
+		#008273;
+	background-repeat: no-repeat;
+	background-position: 60% 30%;
+	background-attachment: fixed;
+	background-size: cover;
+	color: white;
+	overflow-x: hidden;
+	min-height: 100vh;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Hero Section */
+.addonkit-page-root .content-layout {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 50px 40px;
+	gap: 40px;
+	margin: 25px auto;
+	max-width: 1200px;
+}
+.addonkit-page-root .products-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.addonkit-page-root .image-section {
+	flex: 1;
+	padding: 10px;
+	position: relative;
+	min-width: 250px;
+}
+
+.addonkit-page-root .image-section img {
+	width: 100%;
+	height: auto;
+	max-width: 100%;
+	border-radius: 20px;
+	box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+	transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	display: block;
+}
+
+.addonkit-page-root .image-section img:hover {
+	transform: scale(1.05) rotate(1deg);
+	box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.addonkit-page-root .info-section {
+	flex: 1;
+	padding: 20px;
+	min-width: 250px;
+}
+
+.addonkit-page-root .hero::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(76, 175, 80, 0.15);
+	pointer-events: none;
+	z-index: 1;
+}
+
+.addonkit-page-root .hero-content {
+	position: relative;
+	z-index: 3;
+	max-width: 800px;
+	padding: 3rem;
+	background: rgba(76, 175, 80, 0.35);
+	border-radius: 25px;
+	border: 2px solid rgba(76, 175, 80, 0.5);
+	box-shadow: 
+		0 25px 80px rgba(0, 0, 0, 0.3),
+		inset 0 1px 0 rgba(76, 175, 80, 0.4);
+	transition: all 0.3s ease;
+	word-wrap: break-word;
+	word-break: break-word;
+}
+
+.addonkit-page-root .hero-content:hover {
+	transform: translateY(-5px);
+	box-shadow: 
+		0 35px 100px rgba(0, 0, 0, 0.4),
+		inset 0 1px 0 rgba(76, 175, 80, 0.5);
+}
+
+.addonkit-page-root .hero h1 {
+	font-size: clamp(2.5rem, 5vw, 4.5rem);
+	margin-bottom: 20px;
+	text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+	color: #ff8c00;
+	background-clip: text;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+}
+
+.addonkit-page-root .hero p {
+	font-size: clamp(1.1rem, 2vw, 1.4rem);
+	max-width: 600px;
+	margin: 0 auto 2rem;
+	text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+	opacity: 0.95;
+	line-height: 1.6;
+	font-weight: 300;
+}
+
+.addonkit-page-root .hero-particles {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: 
+		radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 20%),
+		radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.04) 0%, transparent 25%),
+		radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.03) 0%, transparent 30%);
+	pointer-events: none;
+	z-index: 1;
+}
+
+.addonkit-page-root .content-layout:first-of-type {
+	background: transparent;
+	padding: 30px 0 30px 0;
+	margin: 0 auto 20px auto;
+}
+
+.addonkit-page-root .content-layout:first-of-type .image-section img {
+	border-radius: 0;
+	box-shadow: none;
+}
+
+.addonkit-page-root .content-layout:first-of-type .image-section {
+	padding: 0;
+}
+
+.addonkit-page-root .content-layout:first-of-type .info-section {
+	padding: 0 20px;
+}
+
+.addonkit-page-root .content-layout:first-of-type .image-section img {
+	width: 80%;
+	max-width: 500px;
+	margin: 90px auto;
+	display: block;
+}
+
+@media (max-width: 600px) {
+	.addonkit-page-root .content-layout:first-of-type {
+		flex-direction: column;
+		padding: 30px 12px;
+		gap: 16px;
+	}
+
+	.addonkit-page-root .content-layout:first-of-type .image-section {
+		padding: 0;
+		order: 0;
+	}
+
+	.addonkit-page-root .content-layout:first-of-type .image-section img {
+		width: 100%;
+		max-width: 100%;
+		border-radius: 8px;
+	}
+
+	.addonkit-page-root .content-layout:first-of-type .info-section {
+		padding: 8px 12px;
+		text-align: center;
+	}
+}
+
+.addonkit-page-root .hero-stats {
+	display: flex;
+	gap: 3rem;
+	margin-top: 3rem;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.addonkit-page-root .stat {
+	text-align: center;
+	padding: 1.5rem;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 20px;
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	min-width: 120px;
+}
+
+.addonkit-page-root .stat-number {
+	display: block;
+	font-size: 2.8rem;
+	font-weight: 800;
+	background: linear-gradient(135deg, #ffffff 0%, #4fc3f7 50%, #29b6f6 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-shadow: none;
+	margin-bottom: 0.5rem;
+}
+
+.addonkit-page-root .stat-label {
+	font-size: 1rem;
+	opacity: 0.9;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.addonkit-page-root .scroll-indicator {
+	position: absolute;
+	bottom: 40px;
+	left: 50%;
+	transform: translateX(-50%);
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 1.8rem;
+	cursor: pointer;
+	padding: 15px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.1);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Product Sections Wrapper */
+.addonkit-page-root .products-wrapper {
+    padding: 60px 0;
+    background: #f8f9fa;
+    position: relative;
+    z-index: 1;
+}
+
+/* Product Sections */
+.addonkit-page-root .product-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 40px;
+    gap: 40px;
+    margin: 0 auto 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    flex-wrap: wrap;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    max-width: 1200px;
+    position: relative;
+    z-index: 2;
+    transform: translateZ(0);
+	color: #2c3e50;
+}
+
+.addonkit-page-root .product-section:nth-child(2) {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	color: white;
+}
+
+.addonkit-page-root .product-section:nth-child(3) {
+	background: #fff3e0;
+	color: #2c3e50;
+}
+
+.addonkit-page-root .product-section:nth-child(4) {
+	background: #f3e5f5;
+	color: #2c3e50;
+}
+
+.addonkit-page-root .product-section:nth-child(5) {
+	background: #e3f2fd;
+	color: #2c3e50;
+}
+
+.addonkit-page-root .product-section:nth-child(6) {
+	background: #fce4ec;
+	color: #2c3e50;
+}
+
+.addonkit-page-root .product-section:nth-child(7) {
+	background: #f1f8e9;
+	color: #2c3e50;
+}
+
+.addonkit-page-root .product-section.reverse {
+	flex-direction: row-reverse;
+}
+
+.addonkit-page-root .info-box {
+	flex: 1;
+	padding: 20px;
+}
+
+.addonkit-page-root .category-tag {
+	background: linear-gradient(135deg, #4fc3f7 0%, #29b6f6 100%);
+	color: white;
+	padding: 8px 16px;
+	border-radius: 25px;
+	font-size: 0.85rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	display: inline-block;
+	margin-bottom: 15px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.addonkit-page-root .info-box h2 {
+	font-size: clamp(1.8rem, 4vw, 2.5rem);
+	margin: 15px 0;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+	color: #000000;
+}
+
+.addonkit-page-root .feature-list {
+	list-style: none;
+	margin-top: 25px;
+}
+
+.addonkit-page-root .feature-list li {
+	margin-bottom: 12px;
+	padding-left: 30px;
+	position: relative;
+	font-size: 1.1rem;
+}
+
+.addonkit-page-root .feature-list li::before {
+	content: '✓';
+	position: absolute;
+	left: 0;
+	color: #4caf50;
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+/* Image Styling */
+.addonkit-page-root .image-box {
+	flex: 1;
+	padding: 10px;
+	position: relative;
+}
+
+.addonkit-page-root .product-image {
+	width: 100%;
+	height: 350px;
+	object-fit: cover;
+	max-width: 100%;
+	border-radius: 20px;
+	box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+	transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.addonkit-page-root .product-image:hover {
+	transform: scale(1.05) rotate(1deg);
+	box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.addonkit-page-root .placeholder-img {
+	width: 100%;
+	height: 350px;
+	background: linear-gradient(135deg, #81c784 0%, #4fc3f7 100%);
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	color: white;
+	box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+	font-size: 1.1rem;
+}
+
+/* Glass-morphism Effect */
+.addonkit-page-root .glass-morphism {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+	-webkit-backdrop-filter: blur(15px);
+	backdrop-filter: blur(15px);
+	border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Feature Grid */
+.addonkit-page-root .grid-features {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+	gap: 15px;
+	margin-top: 30px;
+}
+
+.addonkit-page-root .grid-item {
+	background: linear-gradient(135deg, #ffb74d 0%, #ff8a65 100%);
+	color: white;
+	padding: 20px 15px;
+	border-radius: 15px;
+	text-align: center;
+	font-size: 1rem;
+	font-weight: 600;
+	box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.addonkit-page-root .special-border {
+	border: 3px solid rgba(255, 255, 255, 0.5);
+	background: rgba(255, 255, 255, 0.95) !important;
+}
+
+.addonkit-page-root .tech-specs {
+	margin-top: 25px;
+	padding: 20px;
+	border-left: 5px solid rgba(255, 255, 255, 0.5);
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 10px;
+}
+
+/* Footer */
+.addonkit-page-root .footer {
+	background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+	color: white;
+	padding: 60px 0;
+	text-align: center;
+	margin-top: 0;
+	width: 100%;
+	position: relative;
+	z-index: 3;
+}
+
+.addonkit-page-root .footer-content {
+	max-width: 800px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 12px;
+}
+.addonkit-page-root .footer-content h3 {
+	font-size: 2rem;
+}
+.addonkit-page-root .footer-content p {
+	font-size: 1.2rem;
+	margin-bottom: 30px;
+	opacity: 0.9;
+}
+
+.addonkit-page-root .cta-button {
+	background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+	color: white;
+	padding: 15px 40px;
+	border: none;
+	border-radius: 50px;
+	font-size: 1.1rem;
+	font-weight: 600;
+	cursor: pointer;
+	box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.addonkit-page-root .cta-button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+}
+
+/* Enhanced Animations */
+.addonkit-page-root .placeholder-img:hover {
+	transform: scale(1.05);
+}
+
+.addonkit-page-root .grid-item:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.addonkit-page-root .category-tag:hover {
+	transform: scale(1.1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+	.addonkit-page-root .addonkit {
+		background-attachment: scroll;
+		background-position: center;
+	}
+
+	.addonkit-page-root .content-layout {
+		width: 100%;
+		max-width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 14px;
+		padding-right: 14px;
+		overflow: hidden;
+	}
+
+	.addonkit-page-root .product-section, .addonkit-page-root .product-section.reverse {
+		flex-direction: column;
+		text-align: center;
+		padding: 22px 16px;
+		gap: 18px;
+        margin: 0 auto 22px;
+		width: 100%;
+		max-width: calc(100% - 24px);
+	}
+
+	.addonkit-page-root .info-box,
+	.addonkit-page-root .image-box {
+		padding: 0;
+		width: 100%;
+	}
+    
+	.addonkit-page-root .hero-content {
+		padding: 1.5rem 1.2rem;
+		margin: 0 12px;
+		max-width: calc(100% - 24px);
+	}
+    
+	.addonkit-page-root .hero-stats {
+		gap: 1.5rem;
+		margin-top: 2rem;
+	}
+    
+	.addonkit-page-root .stat {
+		padding: 1rem;
+		min-width: 100px;
+	}
+    
+	.addonkit-page-root .grid-features {
+		grid-template-columns: 1fr;
+		gap: 10px;
+	}
+}
+
+@media (max-width: 600px) {
+	.addonkit-page-root body {
+		font-size: 14px;
+	}
+    
+	.addonkit-page-root .product-section {
+		padding: 16px 12px;
+		margin: 0 0 18px 0;
+		border-radius: 12px;
+		max-width: calc(100% - 20px);
+	}
+    
+	.addonkit-page-root .info-box, .addonkit-page-root .image-box {
+		padding: 0;
+	}
+    
+	.addonkit-page-root .product-image {
+		height: 210px;
+		border-radius: 12px;
+	}
+    
+	.addonkit-page-root .hero {
+		min-height: 80vh;
+	}
+    
+	.addonkit-page-root .hero-content {
+		padding: 1.25rem 1rem;
+		margin: 0 10px;
+		max-width: calc(100% - 20px);
+		border-radius: 14px;
+	}
+    
+	.addonkit-page-root .hero h1 {
+		font-size: clamp(1.8rem, 7vw, 2.8rem);
+		margin-bottom: 12px;
+	}
+    
+	.addonkit-page-root .hero p {
+		font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+		margin-bottom: 1.5rem;
+	}
+    
+	.addonkit-page-root .hero-stats {
+		flex-direction: row;
+		gap: 0.8rem;
+		margin-top: 1.5rem;
+		justify-content: space-around;
+	}
+    
+	.addonkit-page-root .stat {
+		padding: 0.7rem 0.5rem;
+		min-width: 70px;
+		flex: 1;
+		border-radius: 12px;
+	}
+    
+	.addonkit-page-root .stat-number {
+		font-size: 1.6rem;
+	}
+    
+	.addonkit-page-root .stat-label {
+		font-size: 0.7rem;
+	}
+    
+	.addonkit-page-root .info-box h2 {
+		font-size: 1.4rem;
+		margin: 12px 0;
+	}
+    
+	.addonkit-page-root .feature-list {
+		margin-top: 15px;
+	}
+    
+	.addonkit-page-root .feature-list li {
+		font-size: 0.95rem;
+		margin-bottom: 8px;
+		padding-left: 25px;
+	}
+    
+	.addonkit-page-root .category-tag {
+		padding: 5px 10px;
+		font-size: 0.7rem;
+	}
+    
+	.addonkit-page-root .cta-button {
+		padding: 12px 30px;
+		font-size: 1rem;
+		border-radius: 40px;
+	}
+}
+
+@media (max-width: 480px) {
+	.addonkit-page-root body {
+		font-size: 13px;
+	}
+    
+	.addonkit-page-root .container {
+		padding: 0 10px;
+	}
+    
+	.addonkit-page-root .product-section {
+		padding: 14px 10px;
+		margin: 0 0 16px 0;
+		gap: 12px;
+		max-width: calc(100% - 16px);
+	}
+    
+	.addonkit-page-root .info-box, .addonkit-page-root .image-box {
+		padding: 0;
+	}
+    
+	.addonkit-page-root .product-image {
+		height: 200px;
+		border-radius: 12px;
+	}
+    
+	.addonkit-page-root .hero {
+		min-height: 75vh;
+	}
+    
+	.addonkit-page-root .hero-content {
+		padding: 1rem 0.75rem;
+		margin: 0 8px;
+		max-width: calc(100% - 16px);
+		border-radius: 12px;
+	}
+    
+	.addonkit-page-root .hero h1 {
+		font-size: clamp(1.6rem, 6vw, 2.4rem);
+		margin-bottom: 10px;
+	}
+    
+	.addonkit-page-root .hero p {
+		font-size: clamp(0.9rem, 3vw, 1rem);
+		margin-bottom: 1.2rem;
+		line-height: 1.4;
+	}
+    
+	.addonkit-page-root .hero-stats {
+		gap: 0.6rem;
+		margin-top: 1rem;
+	}
+    
+	.addonkit-page-root .stat {
+		padding: 0.6rem 0.4rem;
+		min-width: 60px;
+	}
+    
+	.addonkit-page-root .stat-number {
+		font-size: 1.4rem;
+		margin-bottom: 0.3rem;
+	}
+    
+	.addonkit-page-root .stat-label {
+		font-size: 0.65rem;
+	}
+    
+	.addonkit-page-root .scroll-indicator {
+		bottom: 20px;
+		font-size: 1.5rem;
+		padding: 10px;
+	}
+    
+	.addonkit-page-root .info-box h2 {
+		font-size: 1.3rem;
+		margin: 10px 0;
+	}
+    
+	.addonkit-page-root .info-box p {
+		font-size: 0.95rem;
+		line-height: 1.5;
+	}
+    
+	.addonkit-page-root .feature-list {
+		margin-top: 12px;
+	}
+    
+	.addonkit-page-root .feature-list li {
+		font-size: 0.9rem;
+		margin-bottom: 6px;
+		padding-left: 22px;
+	}
+    
+	.addonkit-page-root .feature-list li::before {
+		font-size: 1rem;
+	}
+    
+	.addonkit-page-root .category-tag {
+		padding: 4px 8px;
+		font-size: 0.65rem;
+		margin-bottom: 10px;
+	}
+    
+	.addonkit-page-root .grid-item {
+		padding: 15px 10px;
+		font-size: 0.9rem;
+	}
+    
+	.addonkit-page-root .cta-button {
+		padding: 10px 25px;
+		font-size: 0.95rem;
+		border-radius: 35px;
+	}
+}
+
+/* Special Product Sections */
+.addonkit-page-root .product-section-special {
+	margin: 60px auto;
+	max-width: 1200px;
+	padding: 0 20px;
+}
+
+.addonkit-page-root .special-content {
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%);
+	border-radius: 30px;
+	padding: 3rem;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.addonkit-page-root .special-header {
+	text-align: center;
+	margin-bottom: 3rem;
+}
+
+.addonkit-page-root .category-tag-special {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	color: white;
+	padding: 10px 20px;
+	border-radius: 30px;
+	font-size: 0.9rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	display: inline-block;
+	margin-bottom: 1rem;
+	box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.addonkit-page-root .wifi-special .category-tag-special {
+	background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+	box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+.addonkit-page-root .special-header h2 {
+	font-size: clamp(2rem, 4vw, 3rem);
+	color: #2c3e50;
+	margin-bottom: 1rem;
+	font-weight: 700;
+}
+
+.addonkit-page-root .special-header p {
+	font-size: 1.2rem;
+	color: #666;
+	max-width: 600px;
+	margin: 0 auto;
+	line-height: 1.6;
+}
+
+.addonkit-page-root .special-features {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 3rem;
+	align-items: center;
+}
+
+.addonkit-page-root .special-features.reverse {
+	grid-template-columns: 1fr 1fr;
+}
+
+.addonkit-page-root .special-features.reverse .special-image {
+	order: 2;
+}
+
+.addonkit-page-root .special-features.reverse .tech-specs-special {
+	order: 1;
+}
+
+.addonkit-page-root .special-image {
+	position: relative;
+}
+
+.addonkit-page-root .special-product-image {
+	width: 100%;
+	height: 400px;
+	object-fit: cover;
+	border-radius: 25px;
+	box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+	transition: all 0.4s ease;
+}
+
+.addonkit-page-root .special-product-image:hover {
+	transform: scale(1.03) rotate(1deg);
+	box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
+.addonkit-page-root .tech-specs-special {
+	padding: 2rem;
+}
+
+.addonkit-page-root .tech-specs-special h3 {
+	font-size: 1.8rem;
+	color: #2c3e50;
+	margin-bottom: 2rem;
+	font-weight: 600;
+}
+
+.addonkit-page-root .spec-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1.5rem;
+}
+
+.addonkit-page-root .spec-item {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding: 1rem;
+	background: rgba(255, 255, 255, 0.7);
+	border-radius: 15px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+	transition: all 0.3s ease;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.addonkit-page-root .spec-item:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+	background: rgba(255, 255, 255, 0.9);
+}
+
+.addonkit-page-root .spec-item i {
+	font-size: 1.5rem;
+	color: #667eea;
+	min-width: 24px;
+}
+
+.addonkit-page-root .wifi-special .spec-item i {
+	color: #ff6b6b;
+}
+
+.addonkit-page-root .spec-item span {
+	font-weight: 500;
+	color: #2c3e50;
+	font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+	.addonkit-page-root .special-content {
+		padding: 2rem 1.5rem;
+		border-radius: 20px;
+		margin: 20px 15px;
+	}
+    
+	.addonkit-page-root .special-features {
+		grid-template-columns: 1fr;
+		gap: 2rem;
+	}
+    
+	.addonkit-page-root .special-features.reverse .special-image,
+	.addonkit-page-root .special-features.reverse .tech-specs-special {
+		order: unset;
+	}
+    
+	.addonkit-page-root .spec-grid {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+    
+	.addonkit-page-root .special-product-image {
+		height: 300px;
+		border-radius: 20px;
+	}
+    
+	.addonkit-page-root .special-header h2 {
+		font-size: 1.8rem;
+	}
+    
+	.addonkit-page-root .special-header p {
+		font-size: 1rem;
+	}
+    
+	.addonkit-page-root .tech-specs-special h3 {
+		font-size: 1.5rem;
+	}
+}
+
+@media (max-width: 600px) {
+	.addonkit-page-root .special-content {
+		padding: 1.5rem 1.2rem;
+		margin: 15px 10px;
+	}
+    
+	.addonkit-page-root .special-header {
+		margin-bottom: 1.5rem;
+	}
+    
+	.addonkit-page-root .special-header h2 {
+		font-size: 1.5rem;
+		margin-bottom: 0.8rem;
+	}
+    
+	.addonkit-page-root .special-header p {
+		font-size: 0.95rem;
+	}
+    
+	.addonkit-page-root .spec-grid {
+		grid-template-columns: 1fr;
+		gap: 0.8rem;
+	}
+    
+	.addonkit-page-root .special-product-image {
+		height: 250px;
+		border-radius: 15px;
+	}
+    
+	.addonkit-page-root .tech-specs-special {
+		padding: 1.2rem;
+	}
+    
+	.addonkit-page-root .tech-specs-special h3 {
+		font-size: 1.3rem;
+	}
+    
+	.addonkit-page-root .spec-item {
+		padding: 0.8rem;
+		border-radius: 10px;
+	}
+}
+
+@media (max-width: 480px) {
+	.addonkit-page-root .special-content {
+		padding: 1.2rem;
+		margin: 12px 8px;
+		border-radius: 12px;
+	}
+    
+	.addonkit-page-root .special-header {
+		margin-bottom: 1.2rem;
+	}
+    
+	.addonkit-page-root .special-header h2 {
+		font-size: 1.3rem;
+		margin-bottom: 0.6rem;
+	}
+    
+	.addonkit-page-root .special-header p {
+		font-size: 0.9rem;
+		line-height: 1.4;
+	}
+    
+	.addonkit-page-root .tech-specs-special {
+		padding: 1rem;
+	}
+    
+	.addonkit-page-root .tech-specs-special h3 {
+		font-size: 1.2rem;
+		margin-bottom: 1rem;
+	}
+    
+	.addonkit-page-root .spec-grid {
+		gap: 0.6rem;
+	}
+    
+	.addonkit-page-root .spec-item {
+		padding: 0.7rem;
+		border-radius: 8px;
+		gap: 0.8rem;
+	}
+    
+	.addonkit-page-root .spec-item i {
+		font-size: 1.3rem;
+	}
+    
+	.addonkit-page-root .spec-item span {
+		font-size: 0.9rem;
+	}
+    
+	.addonkit-page-root .special-product-image {
+		height: 200px;
+		border-radius: 12px;
+	}
+    
+	.addonkit-page-root .category-tag-special {
+		padding: 8px 15px;
+		font-size: 0.65rem;
+	}
+}
+
+.addonkit-page-root .info-section {
+	flex: 1;
+	max-width: 500px;
+}
+
+.addonkit-page-root .info-section h1 {
+	font-size: clamp(2rem, 8vw, 50px);
+	font-weight: 1000;
+	color: rgb(255, 153, 0);
+	margin-bottom: 18px;
+	line-height: 1.2;
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	cursor: pointer;
+	will-change: color;
+}
+
+.addonkit-page-root .info-section h2 {
+	font-size: clamp(1rem, 4vw, 1.5rem);
+	font-weight: 600;
+	color: rgba(255, 255, 255, 0.9);
+	margin-bottom: 24px;
+	line-height: 1.3;
+	transition: all 0.3s ease;
+  text-align: left;
+}
+
+.addonkit-page-root .btn-secondary {
+	background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 50%, #ffa726 100%);
+	border: none;
+	padding: clamp(12px, 3vw, 18px) clamp(24px, 6vw, 40px);
+	border-radius: 30px;
+	color: white;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	margin-top: 20px;
+	box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+	width: 100%;
+	max-width: 250px;
+	will-change: transform, box-shadow;
+}
+
+.addonkit-page-root .btn-secondary:hover {
+	transform: translateY(-2px);
+	background: linear-gradient(135deg, #ff8a31 0%, #ff7043 50%, #ff9800 100%);
+	box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6);
+}
+
+/* Extra small screens (phones < 480px) */
+@media (max-width: 320px) {
+	.addonkit-page-root .container {
+		padding: 0 10px;
+	}
+
+	.addonkit-page-root .content-layout {
+		padding: 20px 10px;
+		gap: 10px;
+	}
+
+	.addonkit-page-root .product-section {
+		padding: 15px 10px;
+		margin: 0 0 15px 0;
+		gap: 10px;
+	}
+
+	.addonkit-page-root .info-box, .addonkit-page-root .image-box {
+		padding: 5px;
+	}
+
+	.addonkit-page-root .product-image {
+		height: 180px;
+		border-radius: 10px;
+	}
+
+	.addonkit-page-root .info-box h2 {
+		font-size: 1.1rem;
+		margin: 8px 0;
+	}
+
+	.addonkit-page-root .feature-list li {
+		font-size: 0.85rem;
+		margin-bottom: 5px;
+		padding-left: 20px;
+	}
+
+	.addonkit-page-root .tech-specs {
+		margin-top: 15px;
+		padding: 10px;
+	}
+
+	.addonkit-page-root .footer {
+		padding: 40px 0;
+	}
+
+	.addonkit-page-root .footer-content h3 {
+		font-size: 2rem;
+	}
+
+	.addonkit-page-root .footer-content p {
+		font-size: 1rem;
+	}
+
+	.addonkit-page-root .cta-button {
+		padding: 10px 20px;
+		font-size: 0.9rem;
+	}
+}

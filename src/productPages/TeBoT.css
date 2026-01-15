@@ -695,7 +695,7 @@
     
     .tebot-page-root .btn-secondary {
         max-width: 100%;
-        margin: 20px auto 0;
+        margin: 8px auto 8px;
         display: block;
     }
 }
@@ -744,6 +744,10 @@
     .tebot-page-root .kit-components {
         grid-template-columns: 1fr;
     }
+
+    /* Ensure image appears before text on mobile */
+    .tebot-page-root .feature-item .feature-image { order: -1; }
+    .tebot-page-root .feature-item .feature-content { order: 0; }
 
     .tebot-page-root .tech-grid {
         grid-template-columns: 1fr;

@@ -214,7 +214,7 @@
     .franchise-page .text-overlay { width: 90%; left: 5% !important; bottom: 15px; }
 
     .franchise-page .stats-bar { flex-direction: column; gap: 40px; }
-    .franchise-page .hero-buttons { display: flex; flex-direction: column; gap: 15px; }
+    .franchise-page .hero-buttons { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
     .franchise-page .btn-glass {
         margin-left: 0 !important;
         width: 100%;

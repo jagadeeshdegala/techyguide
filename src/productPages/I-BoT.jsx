@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import './I-BoT.css';
-import heroBg from '../assets/ProductI-BoTImages/hero-I-BOT.jpg';
+import heroBgLayer from '../assets/ProductI-BoTImages/5073198.jpg';
+import heroPattern from '../assets/ProductI-BoTImages/10893802.png';
+import heroRobot from '../assets/ProductI-BoTImages/vecteezy_ai-generated-cute-robot-kids-with-isolated-transparant_38049144.png';
 import mainBoard from '../assets/ProductI-BoTImages/main board.png';
 import kitImage from '../assets/ProductI-BoTImages/kit.jpg';
 import homeAutomation from '../assets/ProductI-BoTImages/home automation.jpg';
@@ -15,6 +17,91 @@ function IBoT() {
     useEffect(() => {
         const root = rootRef.current;
         if (!root) return;
+
+        let stopFns = [];
+
+        // Hero-specific interactions (scoped)
+        const heroRoot = root.querySelector('.ibot-hero-root');
+        const heroImageEl = heroRoot ? heroRoot.querySelector('.image-section img') : null;
+        const heroTitleEl = heroRoot ? heroRoot.querySelector('.info-section h1') : null;
+        const heroButtonEl = heroRoot ? heroRoot.querySelector('.btn-secondary') : null;
+
+        const smoothScrollTo = (element, duration = 1000) => {
+            if (!element) return;
+            const targetPosition = element.getBoundingClientRect().top + window.pageYOffset - 20;
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition - startPosition;
+            let startTime = null;
+
+            const easeInOutCubic = (t, b, c, d) => {
+                let time = t / (d / 2);
+                if (time < 1) return (c / 2) * time * time * time + b;
+                time -= 2;
+                return (c / 2) * (time * time * time + 2) + b;
+            };
+
+            const animation = (currentTime) => {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const run = easeInOutCubic(timeElapsed, startPosition, distance, duration);
+                window.scrollTo(0, run);
+                if (timeElapsed < duration) requestAnimationFrame(animation);
+            };
+
+            requestAnimationFrame(animation);
+        };
+
+        if (heroImageEl) {
+            const handleImgEnter = () => { heroImageEl.style.filter = 'drop-shadow(0 15px 40px rgba(0,0,0,0.6))'; };
+            const handleImgLeave = () => { heroImageEl.style.filter = 'drop-shadow(0 10px 30px rgba(0,0,0,0.5))'; };
+            const handleImgClick = () => {
+                heroImageEl.style.filter = 'drop-shadow(0 20px 50px rgba(0,0,0,0.7))';
+                setTimeout(() => { heroImageEl.style.filter = 'drop-shadow(0 10px 30px rgba(0,0,0,0.5))'; }, 300);
+            };
+            heroImageEl.addEventListener('mouseenter', handleImgEnter);
+            heroImageEl.addEventListener('mouseleave', handleImgLeave);
+            heroImageEl.addEventListener('click', handleImgClick);
+            heroImageEl.addEventListener('touchstart', handleImgEnter);
+            heroImageEl.addEventListener('touchend', handleImgLeave);
+            stopFns.push(() => {
+                heroImageEl.removeEventListener('mouseenter', handleImgEnter);
+                heroImageEl.removeEventListener('mouseleave', handleImgLeave);
+                heroImageEl.removeEventListener('click', handleImgClick);
+                heroImageEl.removeEventListener('touchstart', handleImgEnter);
+                heroImageEl.removeEventListener('touchend', handleImgLeave);
+            });
+        }
+
+        if (heroTitleEl) {
+            const handleTitleEnter = () => {
+                heroTitleEl.style.color = '#00d4ff';
+                heroTitleEl.style.textShadow = '0 0 20px rgba(0, 212, 255, 0.5)';
+            };
+            const handleTitleLeave = () => {
+                heroTitleEl.style.color = 'rgb(255, 153, 0)';
+                heroTitleEl.style.textShadow = 'none';
+            };
+            heroTitleEl.addEventListener('mouseenter', handleTitleEnter);
+            heroTitleEl.addEventListener('mouseleave', handleTitleLeave);
+            stopFns.push(() => {
+                heroTitleEl.removeEventListener('mouseenter', handleTitleEnter);
+                heroTitleEl.removeEventListener('mouseleave', handleTitleLeave);
+            });
+        }
+
+        if (heroButtonEl) {
+            const handleBtnClick = (e) => {
+                e.preventDefault();
+                heroButtonEl.style.transform = 'translateY(-1px)';
+                setTimeout(() => {
+                    heroButtonEl.style.transform = 'translateY(-2px)';
+                    const introSection = root.querySelector('#introduction');
+                    smoothScrollTo(introSection, 1200);
+                }, 150);
+            };
+            heroButtonEl.addEventListener('click', handleBtnClick);
+            stopFns.push(() => heroButtonEl.removeEventListener('click', handleBtnClick));
+        }
 
         // Smooth scroll for anchor links (scoped to this page only)
         const handleAnchorClick = (e) => {
@@ -54,8 +141,6 @@ function IBoT() {
         const projectsContainer = projectsRef.current;
         const testimonialsContainer = testimonialsRef.current;
         
-        let stopFns = [];
-
         // True infinite circular scroll with dynamic measurement and proper cleanup
         const createAutoScroll = (container, pixelsPerSecond = 30) => {
             if (!container) return null;
@@ -113,22 +198,31 @@ function IBoT() {
         };
     }, []);
 
+    const heroBackgroundStyle = {
+        backgroundImage: `linear-gradient(90deg, rgba(0, 130, 115, 0.6), rgba(0, 130, 115, 0.6)), url(${heroPattern}), linear-gradient(120deg, rgba(0, 130, 115, 0.25), rgba(0, 130, 115, 0.25)), url(${heroBgLayer})`,
+        backgroundRepeat: 'no-repeat, no-repeat, no-repeat, no-repeat',
+        backgroundPosition: 'left center, left center, left center, center center',
+        backgroundAttachment: 'fixed, fixed, fixed, fixed',
+        backgroundSize: 'cover, cover, cover, cover'
+    };
+
     return (
         <div className="ibot-page" ref={rootRef}>
-            {/* Hero Section */}
-            <section className="hero" style={{ backgroundImage: `url(${heroBg})` }}>
-                <div className="hero-overlay"></div>
-                <div className="hero-content fade-in">
-                    <h1 className="brand-name">I-Bot Kit</h1>
-                    <p className="hero-desc">
-                        TechIoT is a super fun Robotics & IoT learning kit that helps kids aged 7-14 learn
-                        about Robotics, IoT and other development projects. The kit allows Kids to create a
-                        learning ecosystem that allows children to learn, innovate and grow by creating
-                        exciting real-world application-based DIY projects.
-                    </p>
-                    <a href="#introduction" className="btn btn-orange">Learn More</a>
+            {/* Hero Section (replaced with static hero) */}
+            <section className="ibot-hero-root" style={heroBackgroundStyle}>
+                <div className="background-container">
+                    <main className="content-layout">
+                        <div className="image-section">
+                            <img src={heroRobot} alt="TEBOT Robot" />
+                        </div>
+
+                        <div className="info-section">
+                            <h1>I-BOT</h1>
+                            <h2>TeBOT Robot is one of the Best Robot</h2>
+                            <button className="btn-secondary">Explore Features</button>
+                        </div>
+                    </main>
                 </div>
-                <div className="hero-bottom-fade"></div>
             </section>
 
             {/* Introduction Section */}

@@ -125,7 +125,7 @@ function Header() {
                   <li><Link to="/tebot" onClick={closeMenu}>TeBoT</Link></li>
                   <li><Link to="/i-bot" onClick={closeMenu}>I-BoT</Link></li>
                   <li><Link to="/e-blox" onClick={closeMenu}>E- Blox</Link></li>
-                  <li><a href="#" onClick={closeMenu}>Add On Kits</a></li>
+                  <li><Link to="/add-on-kits" onClick={closeMenu}>Add On Kits</Link></li>
                 </ul>
               </li>
 
@@ -139,7 +139,7 @@ function Header() {
                   <li><Link to="/ai-roboticslab-cbse" onClick={closeMenu}>AI & Robotics Lab CBSE</Link></li>
                   <li><Link to="/ai-roboticslab-icse" onClick={closeMenu}>AI & Robotics Lab ICSE</Link></li>
                   <li><Link to="/schools/stem-tinkering-lab" onClick={closeMenu}>STEM Tinkering Lab</Link></li>
-                  <li><a href="#" onClick={closeMenu}>STEM Lab </a></li>
+                  <li><Link to="/schools/stem-lab" onClick={closeMenu}>STEM Lab</Link></li>
                   <li><Link to="/schools/workshop" onClick={closeMenu}>Workshop</Link></li>
                   <li><Link to="/schools/composite-skill-lab" onClick={closeMenu}>Composite Skill Lab</Link></li>
 

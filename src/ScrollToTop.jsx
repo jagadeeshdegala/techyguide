@@ -4,6 +4,22 @@ import './ScrollToTop.css';
 function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
 
+  const schoolKeywords = ['ai-roboticslab', 'stem-tinkering', 'composite-skill', 'composite-skill-lab', 'workshop'];
+
+  const getPath = () => {
+    const hash = window.location.hash || '';
+    if (hash.startsWith('#')) return hash.slice(1);
+    return window.location.pathname || '';
+  };
+
+  const [currentPath, setCurrentPath] = useState(getPath());
+
+  const isSchoolRoute = (path = currentPath) => {
+    if (!path) return false;
+    const lower = path.toLowerCase();
+    return schoolKeywords.some(k => lower.includes(k));
+  };
+
   const toggleVisibility = () => {
     if (window.pageYOffset > 300) {
       setIsVisible(true);
@@ -14,20 +30,34 @@ function ScrollToTop() {
 
   const scrollToTop = (e) => {
     e.preventDefault();
-    const headerEl = document.querySelector('header');
-    const topBarEl = document.querySelector('.top-bar');
-    const extra = 12; // small buffer so previous section doesn't peek
-    const offset = (headerEl ? headerEl.offsetHeight : 0) + (topBarEl ? topBarEl.offsetHeight : 0) + extra;
-    const homeEl = document.querySelector('#home');
-    if (!homeEl) return;
-    const top = homeEl.getBoundingClientRect().top + window.pageYOffset - offset;
-    window.scrollTo({ top, behavior: 'smooth' });
+    // Hide on school routes
+    if (isSchoolRoute()) return;
+
+    // Scroll to absolute top of document for reliable behavior
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   useEffect(() => {
+    // track hash/path changes (HashRouter) and regular navigation
+    const onLocationChange = () => setCurrentPath(getPath());
+    window.addEventListener('hashchange', onLocationChange);
+    window.addEventListener('popstate', onLocationChange);
+
+    if (isSchoolRoute()) return () => {
+      window.removeEventListener('hashchange', onLocationChange);
+      window.removeEventListener('popstate', onLocationChange);
+    };
+
     window.addEventListener('scroll', toggleVisibility);
-    return () => window.removeEventListener('scroll', toggleVisibility);
-  }, []);
+
+    return () => {
+      window.removeEventListener('hashchange', onLocationChange);
+      window.removeEventListener('popstate', onLocationChange);
+      window.removeEventListener('scroll', toggleVisibility);
+    };
+  }, [currentPath]);
+
+  if (isSchoolRoute()) return null;
 
   return (
     <button

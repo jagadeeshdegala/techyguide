@@ -26,7 +26,35 @@ function WorkshopPage() {
 			marquee.addEventListener('mouseleave', onLeave);
 		}
 
+		// ========================================
+		// HERO-AWARE BUTTON POSITIONING
+		// ========================================
+		const heroSection = document.querySelector('.workshop-page-root .hero');
+		const handleScroll = () => {
+			if (!heroSection) return;
+			
+			const heroBottom = heroSection.offsetHeight;
+			const scrollToTopBtn = document.querySelector('button.scroll-to-top');
+			const whatsappBtn = document.querySelector('.whatsapp-button');
+
+			if (window.scrollY >= heroBottom) {
+				// Past hero - show scroll-to-top and position buttons side by side
+				if (scrollToTopBtn) scrollToTopBtn.classList.remove('hidden-from-hero');
+				if (whatsappBtn) whatsappBtn.classList.add('shifted');
+			} else {
+				// In hero - hide scroll-to-top
+				if (scrollToTopBtn) scrollToTopBtn.classList.add('hidden-from-hero');
+				if (whatsappBtn) whatsappBtn.classList.remove('shifted');
+			}
+		};
+
+		if (heroSection) {
+			window.addEventListener('scroll', handleScroll);
+			handleScroll(); // Call once on mount to set initial state
+		}
+
 		return () => {
+			window.removeEventListener('scroll', handleScroll);
 			anchors.forEach(anchor => {
 				anchor.replaceWith(anchor.cloneNode(true));
 			});

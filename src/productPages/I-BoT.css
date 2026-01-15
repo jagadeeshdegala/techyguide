@@ -1,6 +1,152 @@
 /* Scoped styles for I-Bot page */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
 
+/* ===== NEW HERO (SCOPED) ===== */
+.ibot-hero-root {
+    background:
+        /* Top color tint (light tech glow) */
+        linear-gradient(rgba(78, 224, 163, 0.25), rgba(61, 174, 161, 0.25)),
+        /* Foreground tech pattern */
+        url("../assets/ProductI-BoTImages/5073198.png"),
+        /* Deep overlay (to match static contrast) */
+        linear-gradient(rgba(30, 127, 116, 0.6), rgba(5, 123, 110, 0.6)),
+        /* Base background image */
+        url("../assets/ProductI-BoTImages/10893802.jpg"),
+        #008273;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    min-height: 100vh;
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.ibot-hero-root .background-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.ibot-hero-root .content-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+    transform: translateY(-40px);
+}
+
+.ibot-hero-root .image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.ibot-hero-root .image-section img {
+    max-width: 100%;
+    height: auto;
+    width: 450px;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+    transition: transform 0.3s ease, filter 0.3s ease;
+    margin-top: 2.5cm;
+}
+
+.ibot-hero-root .image-section img:hover {
+    transform: scale(1.1);
+}
+
+.ibot-hero-root .info-section {
+    flex: 1;
+    max-width: 500px;
+}
+
+.ibot-hero-root .info-section h1 {
+    font-size: 50px !important;
+    font-weight: 1000;
+    color: rgb(255, 153, 0);
+    margin-bottom: 18px;
+    line-height: 2;
+}
+
+.ibot-hero-root .info-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 24px;
+    line-height: 1.3;
+}
+
+.ibot-hero-root .btn-secondary {
+    background: linear-gradient(45deg, #ff8c00, #ff6600);
+    border: 3px solid rgba(255, 140, 0, 0.3);
+    padding: 18px 40px;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.ibot-hero-root .btn-secondary:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #ff9500, #ff7700);
+    border: 3px solid rgba(255, 140, 0, 0.5);
+}
+
+@media (max-width: 850px) {
+    .ibot-hero-root {
+        padding: 20px;
+    }
+
+    .ibot-hero-root .content-layout {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+        transform: translateY(0);
+    }
+
+    .ibot-hero-root .image-section img {
+        max-width: 80%;
+        width: auto;
+    }
+
+    .ibot-hero-root .info-section h1 {
+        font-size: 42px !important;
+        line-height: 1.4;
+    }
+
+    .ibot-hero-root .info-section h2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ibot-hero-root .image-section img {
+        max-width: 90%;
+    }
+
+    .ibot-hero-root .info-section h1 {
+        font-size: 36px !important;
+    }
+
+    .ibot-hero-root .info-section h2 {
+        font-size: 1.05rem;
+    }
+}
+
 .ibot-page {
     --primary-orange: #f5a623;
     --primary-blue: #0056b3;
@@ -714,6 +860,10 @@
     .ibot-page .hero-bottom-fade {
         height: 80px;
     }
+
+    /* On mobile, place image before content for stacked features */
+    .ibot-page .feature-item .feature-image { order: -1; }
+    .ibot-page .feature-item .feature-content { order: 0; }
 }
 
 @media (max-width: 480px) {

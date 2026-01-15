@@ -71,10 +71,21 @@ footer ul li a:hover {
 		display: grid !important;
 		grid-template-columns: 1fr 1fr !important;
 		gap: 10px !important;
-		text-align: left !important;
+		text-align: center !important;
 		list-style: none;
 		padding: 0;
 	}
+
+	/* Offerings: show 2 per row, hide IoT on mobile */
+	.offerings-list {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 10px;
+		padding: 0;
+		list-style: none;
+	}
+
+	.offerings-list li.hide-mobile { display: none; }
 
 	.quick-links-grid li {
 		margin-bottom: 0 !important;
