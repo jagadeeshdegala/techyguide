@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import './FranchisePage.css';
-import studentsImg from './assets/franchisepageimages/students.jpg';
-import testimonial1 from './assets/franchisepageimages/Website Testimonial_1.png';
-import testimonial11 from './assets/franchisepageimages/Website Testimonial_11.png';
-import testimonial13 from './assets/franchisepageimages/Website Testimonial_13.png';
-import testimonial14 from './assets/franchisepageimages/Website Testimonial_14.png';
-import testimonial15 from './assets/franchisepageimages/Website Testimonial_15.png';
+import studentsImg from './assets/FranchisePageImages/students.jpg';
+import testimonial1 from './assets/FranchisePageImages/Website Testimonial_1.png';
+import testimonial11 from './assets/FranchisePageImages/Website Testimonial_11.png';
+import testimonial13 from './assets/FranchisePageImages/Website Testimonial_13.png';
+import testimonial14 from './assets/FranchisePageImages/Website Testimonial_14.png';
+import testimonial15 from './assets/FranchisePageImages/Website Testimonial_15.png';
 
 function FranchisePage() {
     useEffect(() => {
