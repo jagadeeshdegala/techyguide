@@ -169,13 +169,14 @@
 
     .shop-page-wrapper .sidebar {
         position: fixed;
-        top: 0;
+        top: 75px;
         left: -100%;
         width: 280px;
-        height: 100%;
+        height: calc(100vh - 75px);
         z-index: 2500;
         border-radius: 0;
         transition: left 0.3s;
+        overflow-y: auto;
     }
     .shop-page-wrapper .sidebar.open { left: 0; }
 
