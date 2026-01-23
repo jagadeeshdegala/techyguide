@@ -1196,7 +1196,7 @@
 @media (max-width: 768px) {
 	.ai-roboticlab-icse-root .hero-btns {
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		gap: 12px;
 		align-items: center;
 		justify-content: center;
