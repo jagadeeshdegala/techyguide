@@ -1094,6 +1094,7 @@
 }
 
 @media (max-width: 768px) {
+  .stem-tinkering-lab-root .hero-section { margin-top: -20px; }
   .stem-tinkering-lab-root .hero-container { flex-direction: column; text-align: center; }
   .stem-tinkering-lab-root .hero-text h1 { font-size: 2.5rem; }
   .stem-tinkering-lab-root .hero-btns { justify-content: center; transform: none; margin-top: 0; margin-bottom: 20px; }

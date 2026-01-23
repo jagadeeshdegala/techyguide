@@ -886,6 +886,7 @@
         height: auto;
         min-height: 100vh;
         padding: 40px 0;
+        margin-top: -20px;
     }
     
     .impact-program .hero .container {

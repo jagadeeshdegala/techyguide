@@ -1159,6 +1159,7 @@
 }
 
 @media (max-width: 768px) {
+	.ai-roboticlab-icse-root .hero-section { margin-top: -20px; }
 	.ai-roboticlab-icse-root .hero-container { flex-direction: column; text-align: center; }
 	.ai-roboticlab-icse-root .hero-text h1 { font-size: 2.5rem; }
 	.ai-roboticlab-icse-root .hero-btns { justify-content: center; margin-bottom: 20px; }

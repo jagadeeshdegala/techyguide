@@ -280,7 +280,7 @@
 }
 
 @media (max-width: 768px) {
-    .composite-skill-lab-root .hero-section { min-height: auto; padding: 60px 0; }
+    .composite-skill-lab-root .hero-section { min-height: auto; padding: 60px 0; margin-top: -20px; }
     .composite-skill-lab-root .hero-container { flex-direction: column; text-align: center; padding: 40px 15px; gap: 30px; }
     .composite-skill-lab-root .hero-text { max-width: 100%; }
     .composite-skill-lab-root .hero-text h1 { font-size: 2rem; margin-bottom: 20px; }

@@ -1089,6 +1089,7 @@
 }
 
 @media (max-width: 768px) {
+	.ai-roboticslab-cbse-root .hero-section { margin-top: -20px; }
 	.ai-roboticslab-cbse-root .hero-text h1 { font-size: 2.4rem; }
 	.ai-roboticslab-cbse-root .section-heading { font-size: 2rem; }
 	.ai-roboticslab-cbse-root .floating-badge { display: none !important; }
