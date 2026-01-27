@@ -1,5 +1,5 @@
 import "./HeroSection.css";
-import herobgImage from "/src/assets/hero-bg.jpg";
+import herobgImage from "/src/assets/herobackgroundimage.jpg";
 import { Link } from 'react-router-dom';
 
 function HeroSection() {

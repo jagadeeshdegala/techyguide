@@ -247,15 +247,15 @@
 }
 
 .tebot-page-root .feature-bg-1 { 
-    background: linear-gradient(135deg, #eef2ff 0%, #e0f2fe 100%); 
+    background: #ffffff; 
 }
 
 .tebot-page-root .feature-bg-2 { 
-    background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%); 
+    background: #ffffff; 
 }
 
 .tebot-page-root .feature-bg-3 { 
-    background: linear-gradient(135deg, #ecfdf3 0%, #dcfce7 100%); 
+    background: #ffffff; 
 }
 
 .tebot-page-root .feature-bg-4 { 
@@ -394,7 +394,7 @@
 /* ===== TECHNOLOGY SECTION ===== */
 .tebot-page-root .technology-section {
     padding: clamp(40px, 8vw, 80px) clamp(15px, 4vw, 20px);
-    background: linear-gradient(135deg, #e8f5e9 0%, #e3f2fd 100%);
+    background: #ffffff;
 }
 
 .tebot-page-root .technology-section h2 {

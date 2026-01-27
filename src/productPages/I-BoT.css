@@ -335,10 +335,10 @@
 .ibot-page .feature-item.feature-right .feature-image { grid-column: 2; }
 
 /* Distinct backgrounds for each full-width block */
-.ibot-page .feature-bg-1 { background: linear-gradient(135deg, #eef2ff 0%, #e0f2fe 100%); }
-.ibot-page .feature-bg-2 { background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%); }
-.ibot-page .feature-bg-3 { background: linear-gradient(135deg, #ecfdf3 0%, #dcfce7 100%); }
-.ibot-page .feature-bg-4 { background: linear-gradient(135deg, #fdf2f8 0%, #ffe4e6 100%); }
+.ibot-page .feature-bg-1 { background: #ffffff; }
+.ibot-page .feature-bg-2 { background: #ffffff; }
+.ibot-page .feature-bg-3 { background: #ffffff; }
+.ibot-page .feature-bg-4 { background: #ffffff; }
 
 .ibot-page .feature-image {
     border-radius: 15px;
@@ -464,7 +464,7 @@
 /* ===== TECHNOLOGY SECTION ===== */
 .ibot-page .technology-section {
     padding: 80px 20px;
-    background: linear-gradient(135deg, #e8f5e9 0%, #e3f2fd 100%);
+    background: #ffffff;
 }
 
 .ibot-page .technology-section h2 {
@@ -607,7 +607,7 @@
 /* ===== TESTIMONIALS SECTION ===== */
 .ibot-page .testimonials-section {
     padding: 80px 20px;
-    background: linear-gradient(135deg, #fce7f3 0%, #dbeafe 100%);
+    background: #ffffff;
 }
 
 .ibot-page .testimonials-section h2 {

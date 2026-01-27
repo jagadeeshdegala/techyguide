@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import DIYKIT from '/src/assets/diy-kits.jpg'
-import VirtualLearningImage from '/src/assets/virtual-learning.jpg'
-import StemWorkShopImage from '/src/assets/stem-workshop-students.jpg'
+import VirtualLearningImage from '/src/assets/virtuallearningCoursesImage.jpg'
+import StemWorkShopImage from '/src/assets/workshopImage.jpg'
 import './ShopSection.css';
 
 function ShopSection(){

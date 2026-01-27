@@ -366,7 +366,7 @@
 /* ===== FEATURES SECTION ===== */
 .eblox-page-root .features-section {
     padding: 80px 20px;
-    background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+    background: #ffffff;
 }
 
 .eblox-page-root .features-section h2 {
@@ -396,10 +396,10 @@
 .eblox-page-root .feature-item.feature-right .feature-content { grid-column: 1; }
 .eblox-page-root .feature-item.feature-right .feature-image { grid-column: 2; }
 
-.eblox-page-root .feature-bg-1 { background: linear-gradient(135deg, #eef2ff 0%, #e0f2fe 100%); }
-.eblox-page-root .feature-bg-2 { background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%); }
-.eblox-page-root .feature-bg-3 { background: linear-gradient(135deg, #ecfdf3 0%, #dcfce7 100%); }
-.eblox-page-root .feature-bg-4 { background: linear-gradient(135deg, #fdf2f8 0%, #ffe4e6 100%); }
+.eblox-page-root .feature-bg-1 { background: #ffffff; }
+.eblox-page-root .feature-bg-2 { background: #ffffff; }
+.eblox-page-root .feature-bg-3 { background: #ffffff; }
+.eblox-page-root .feature-bg-4 { background: #ffffff; }
 
 .eblox-page-root .feature-image {
     display: flex;
@@ -523,7 +523,7 @@
 /* ===== TECHNOLOGY SECTION ===== */
 .eblox-page-root .technology-section {
     padding: 80px 20px;
-    background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+    background: #ffffff;
 }
 
 .eblox-page-root .technology-section h2 {
@@ -661,7 +661,7 @@
 /* ===== FORM SECTION ===== */
 .eblox-page-root .form-section {
     padding: 80px 20px;
-    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    background: linear-gradient(135deg, #3e4d78 0%, #0d617b 100%);
     position: relative;
     overflow: hidden;
 }
