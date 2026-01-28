@@ -775,7 +775,7 @@ const AIRoboticLabICSE = () => {
 			<section className="contact-area" id="contact-section">
 				<div className="container contact-grid">
 					<div className="contact-info fade-up">
-						<h2>Contact TechyGuide</h2>
+						<h2 >Contact TechyGuide</h2>
 						<p><strong>Corporate Office:</strong> #80, 2nd Floor, 1st Main, VSR Layout, A Narayanapura Main Road, Bangalore 560016.</p>
 						<p><strong>Registered Office:</strong> 1st &amp; 2nd Floor, Jyoti Complex, Bhoisahi, Balasore-756001, Odisha.</p>
             
