@@ -53,6 +53,60 @@ function WorkshopPage() {
 			handleScroll(); // Call once on mount to set initial state
 		}
 
+		// ========================================
+		// FORM HANDLING FOR ENQUIRY
+		// ========================================
+		const form = document.querySelector('.workshop-page-root #enquiryForm');
+		const formHandler = (e) => {
+			e.preventDefault();
+			
+			if (!form) return;
+			
+			const btn = form.querySelector('button');
+			if (!btn) return;
+			
+			const originalText = btn.innerHTML;
+			const school = form.querySelector('#schoolName')?.value || '';
+			const person = form.querySelector('#fullName')?.value || '';
+			const phone = form.querySelector('#phoneNumber')?.value || '';
+			const email = form.querySelector('#emailId')?.value || '';
+			const state = form.querySelector('#state')?.value || '';
+			const msg = form.querySelector('#message')?.value || '';
+			
+			// Validate required fields
+			if (!school || !person || !phone) {
+				alert('Please fill in all required fields');
+				return;
+			}
+			
+			btn.innerText = 'Opening WhatsApp...';
+			btn.style.opacity = '0.7';
+			
+			setTimeout(() => {
+				try {
+					const businessPhone = '918197984847';
+					const text = `*Workshop Proposal Request*%0a%0a` +
+						`*School Name:* ${school}%0a` +
+						`*Name:* ${person}%0a` +
+						`*Phone Number:* ${phone}%0a` +
+						`*Email:* ${email}%0a` +
+						`*State:* ${state}%0a` +
+						`*Message:* ${msg}%0a%0a` ;
+					const whatsappUrl = `https://wa.me/${businessPhone}?text=${text}`;
+					window.open(whatsappUrl, '_blank');
+					form.reset();
+					btn.innerHTML = originalText;
+					btn.style.opacity = '1';
+				} catch (error) {
+					console.error('Error opening WhatsApp:', error);
+					btn.innerHTML = originalText;
+					btn.style.opacity = '1';
+					alert('Error opening WhatsApp. Please try again.');
+				}
+			}, 1000);
+		};
+		if (form) form.addEventListener('submit', formHandler);
+
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
 			anchors.forEach(anchor => {
@@ -61,6 +115,7 @@ function WorkshopPage() {
 			if (marquee) {
 				marquee.style.animationPlayState = '';
 			}
+			if (form) form.removeEventListener('submit', formHandler);
 		};
 	}, []);
 
@@ -436,18 +491,66 @@ function WorkshopPage() {
 			</section>
 
 			{/* Contact */}
-			<section id="contact" className="cta-banner">
-				<div className="container">
-					<div className="cta-content">
-						<h2>Book A Workshop Today</h2>
-						<p>TechyGuide Private Limited</p>
-						<div className="contact-details">
-							<p><i className="fas fa-phone"></i> +91 91140 36376</p>
-							<p><i className="fas fa-envelope"></i> reachus@techyguide.in</p>
-							<p><i className="fas fa-globe"></i> www.techyguide.in</p>
+			<section className="contact-area" id="contact-section">
+				<div className="container contact-grid">
+					<div className="contact-info fade-up">
+						<h2>Contact TechyGuide</h2>
+						<p><strong>Corporate Office:</strong> #80, 2nd Floor, 1st Main, VSR Layout, A Narayanapura Main Road, Bangalore 560016.</p>
+						<p><strong>Registered Office:</strong> 1st & 2nd Floor, Jyoti Complex, Bhoisahi, Balasore-756001, Odisha.</p>
+						<div className="info-box">
+							<i className="fas fa-phone-alt"></i>
+							<div>
+								<strong>Call Us</strong>
+								<p>+91 91140 36376</p>
+							</div>
+						</div>
+						<div className="info-box">
+							<i className="fas fa-envelope"></i>
+							<div>
+								<strong>Email Us</strong>
+								<p>Sales@techyguide.in</p>
+							</div>
 						</div>
 					</div>
+
+					<div className="contact-form-wrapper fade-up">
+						<form id="enquiryForm">
+							<div className="form-group">
+								<label htmlFor="schoolName">School Name</label>
+								<input type="text" id="schoolName" name="schoolName" required placeholder="Enter School Name" />
+							</div>
+
+							<div className="form-row">
+								<div className="form-group">
+									<label htmlFor="fullName">Name</label>
+									<input type="text" id="fullName" name="fullName" required placeholder="Your Name" />
+								</div>
+								<div className="form-group">
+									<label htmlFor="phoneNumber">Phone Number</label>
+									<input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="Mobile Number" />
+								</div>
+							</div>
+
+							<div className="form-row">
+								<div className="form-group">
+									<label htmlFor="emailId">Email ID</label>
+									<input type="email" id="emailId" name="emailId" required placeholder="email@example.com" />
+								</div>
+								<div className="form-group">
+									<label htmlFor="state">State</label>
+									<input type="text" id="state" name="state" required placeholder="State" />
+								</div>
+							</div>
+
+							<div className="form-group">
+								<label htmlFor="message">Message</label>
+								<textarea id="message" name="message" rows="3" placeholder="Any specific requirement?"></textarea>
+							</div>
+							<button type="submit" className="btn btn-full">Send via WhatsApp <i className="fab fa-whatsapp"></i></button>
+						</form>
+					</div>
 				</div>
+				
 			</section>
 		</div>
 	);

@@ -833,9 +833,7 @@ const AIRoboticLabICSE = () => {
 						</form>
 					</div>
 				</div>
-				<div className="copyright">
-					<p>© 2026 TechyGuide OPC Pvt. Ltd. All Rights Reserved.</p>
-				</div>
+				
 			</section>
 		</div>
 	);

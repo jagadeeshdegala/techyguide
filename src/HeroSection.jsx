@@ -24,7 +24,7 @@ function HeroSection() {
       linear-gradient(
         to bottom,
         rgba(0, 130, 115, 0.86) 75%,
-        rgba(255, 255, 255, 0.86) 100%
+        rgba(255, 255, 295, 1.4) 100%
       ),
       url(${herobgImage})
     `,
