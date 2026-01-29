@@ -1,8 +1,17 @@
 
 import './FooterSection.css';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function FooterSection(){
+    const navigate = useNavigate();
+
+    const handlePageNavigation = (path) => {
+        navigate(path);
+        setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 50);
+    };
+
     return(
         <>
             <footer>
@@ -23,10 +32,10 @@ function FooterSection(){
                         <ul className="quick-links-grid">
                             <li><a href="/">Home</a></li>
                             <li><a href="#shop">Shop</a></li>
-                            <li><Link to="/franchise">Franchise</Link></li>
+                            <li><a href="/franchise" onClick={(e) => { e.preventDefault(); handlePageNavigation('/franchise'); }}>Franchise</a></li>
                            <li><a href="https://www.techyguide.in/robothrone/" target="_blank" rel="noopener noreferrer">Robothrone</a></li>
-                            <li><Link to="/courses">Contact us</Link></li>
-                            <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+                            <li><a href="/courses" onClick={(e) => { e.preventDefault(); handlePageNavigation('/courses'); }}>Contact us</a></li>
+                            <li><a href="/privacy-policy" onClick={(e) => { e.preventDefault(); handlePageNavigation('/privacy-policy'); }}>Privacy Policy</a></li>
 
                         </ul>
                     </div>

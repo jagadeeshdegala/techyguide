@@ -58,6 +58,18 @@ function Header() {
     }
   };
 
+  const handlePageNavigation = (path) => {
+    closeMenu();
+    setProductsOpen(false);
+    setSchoolsOpen(false);
+    
+    // Always navigate and scroll to top
+    navigate(path);
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 50);
+  };
+
   const handleAnchorClick = (e, selector) => {
     e.preventDefault();
     closeMenu();
@@ -115,44 +127,44 @@ function Header() {
           <nav>
             <ul id="nav-links" className={menuOpen ? 'active' : ''}>
 
-              <li><Link to="/" onClick={closeMenu}>Home</Link></li>
+              <li><a href="/" onClick={(e) => { e.preventDefault(); handlePageNavigation('/'); }}>Home</a></li>
 
               <li className="dropdown">
                 <a href="#shop" onClick={toggleProductsDropdown}>
                   Products <i className="fas fa-chevron-down"></i>
                 </a>
                 <ul className={`dropdown-menu ${productsOpen ? 'active' : ''}`}>
-                  <li><Link to="/tebot" onClick={closeMenu}>TeBoT</Link></li>
-                  <li><Link to="/i-bot" onClick={closeMenu}>I-BoT</Link></li>
-                  <li><Link to="/e-blox" onClick={closeMenu}>E- Blox</Link></li>
-                  <li><Link to="/add-on-kits" onClick={closeMenu}>Add On Kits</Link></li>
+                  <li><a href="/tebot" onClick={(e) => { e.preventDefault(); handlePageNavigation('/tebot'); }}>TeBoT</a></li>
+                  <li><a href="/i-bot" onClick={(e) => { e.preventDefault(); handlePageNavigation('/i-bot'); }}>I-BoT</a></li>
+                  <li><a href="/e-blox" onClick={(e) => { e.preventDefault(); handlePageNavigation('/e-blox'); }}>E- Blox</a></li>
+                  <li><a href="/add-on-kits" onClick={(e) => { e.preventDefault(); handlePageNavigation('/add-on-kits'); }}>Add On Kits</a></li>
                 </ul>
               </li>
 
-              <li><Link to="/courses" onClick={closeMenu}>Courses</Link></li>
+              <li><a href="/courses" onClick={(e) => { e.preventDefault(); handlePageNavigation('/courses'); }}>Courses</a></li>
               
               <li className="dropdown">
                 <a href="#schools" onClick={toggleSchoolsDropdown}>
                   Schools <i className="fas fa-chevron-down"></i>
                 </a>
                 <ul className={`dropdown-menu ${schoolsOpen ? 'active' : ''}`}>
-                  <li><Link to="/ai-roboticslab-cbse" onClick={closeMenu}>AI & Robotics Lab CBSE</Link></li>
-                  <li><Link to="/ai-roboticslab-icse" onClick={closeMenu}>AI & Robotics Lab ICSE</Link></li>
-                  <li><Link to="/schools/stem-tinkering-lab" onClick={closeMenu}>STEM Tinkering Lab</Link></li>
-                  <li><Link to="/schools/composite-skill-lab" onClick={closeMenu}>Composite Skill Lab</Link></li>
+                  <li><a href="/ai-roboticslab-cbse" onClick={(e) => { e.preventDefault(); handlePageNavigation('/ai-roboticslab-cbse'); }}>AI & Robotics Lab CBSE</a></li>
+                  <li><a href="/ai-roboticslab-icse" onClick={(e) => { e.preventDefault(); handlePageNavigation('/ai-roboticslab-icse'); }}>AI & Robotics Lab ICSE</a></li>
+                  <li><a href="/schools/stem-tinkering-lab" onClick={(e) => { e.preventDefault(); handlePageNavigation('/schools/stem-tinkering-lab'); }}>STEM Tinkering Lab</a></li>
+                  <li><a href="/schools/composite-skill-lab" onClick={(e) => { e.preventDefault(); handlePageNavigation('/schools/composite-skill-lab'); }}>Composite Skill Lab</a></li>
 
-                  <li><Link to="/schools/stem-lab" onClick={closeMenu}>STEM Lab</Link></li>
-                  <li><Link to="/schools/workshop" onClick={closeMenu}>Workshop</Link></li>
+                  <li><a href="/schools/stem-lab" onClick={(e) => { e.preventDefault(); handlePageNavigation('/schools/stem-lab'); }}>STEM Lab</a></li>
+                  <li><a href="/schools/workshop" onClick={(e) => { e.preventDefault(); handlePageNavigation('/schools/workshop'); }}>Workshop</a></li>
 
                 </ul>
               </li>
               
-              <li><Link to="/impact-program" onClick={closeMenu}>Impact Program</Link></li>
+              <li><a href="/impact-program" onClick={(e) => { e.preventDefault(); handlePageNavigation('/impact-program'); }}>Impact Program</a></li>
               <li><a href="https://www.techyguide.in/robothrone/" target="_blank" rel="noopener noreferrer"> Robothrone </a></li>
 
-              <li><Link to="/franchise" onClick={closeMenu}>Franchise</Link></li>
+              <li><a href="/franchise" onClick={(e) => { e.preventDefault(); handlePageNavigation('/franchise'); }}>Franchise</a></li>
 {/* <li><a href="#contact" onClick={(e) => handleAnchorClick(e, '#contact')}>Contact</a></li> */}             
-                <li><Link to="/shop" className="btn-nav nav-shop-cta" onClick={closeMenu}>Shop</Link></li>
+                <li><a href="/shop" className="btn-nav nav-shop-cta" onClick={(e) => { e.preventDefault(); handlePageNavigation('/shop'); }}>Shop</a></li>
               <li>
                <a
                   href="https://course.techyguide.in"

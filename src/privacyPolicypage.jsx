@@ -111,9 +111,6 @@ export default function PrivacyPolicyPage() {
             <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
             <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
-            <div className="bg-orb orb-1"></div>
-            <div className="bg-orb orb-2"></div>
-
             <div className="container">
                 
                 <aside className="sidebar">
