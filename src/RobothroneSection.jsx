@@ -1,4 +1,4 @@
-import StemStudentsImage from '/src/assets/stem-workshop-students.jpg'
+import StemStudentsImage from '/src/assets/Robothrone.jpg'
 import './RobothroneSection.css';
 
 function RobothroneSection() {
