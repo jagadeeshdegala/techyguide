@@ -160,7 +160,7 @@ function Header() {
               </li>
               
               <li><a href="/impact-program" onClick={(e) => { e.preventDefault(); handlePageNavigation('/impact-program'); }}>Impact Program</a></li>
-              <li><a href="https://www.techyguide.in/robothrone/" target="_blank" rel="noopener noreferrer"> Robothrone </a></li>
+              <li><a href="/robothrone" onClick={(e) => { e.preventDefault(); handlePageNavigation('/robothrone'); }}> Robothrone </a></li>
 
               <li><a href="/franchise" onClick={(e) => { e.preventDefault(); handlePageNavigation('/franchise'); }}>Franchise</a></li>
 {/* <li><a href="#contact" onClick={(e) => handleAnchorClick(e, '#contact')}>Contact</a></li> */}             

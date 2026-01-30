@@ -14,6 +14,7 @@ import SchoolSection from './SchoolSection'
 import CollaborationSection from './CollaborationSection'
 import FranchiseSection from './FranchiseSection'
 import RobothroneSection from './RobothroneSection.jsx'
+import RobothronePage from './RobothronePage.jsx'
 import GallerySection from './GallerySection.jsx'
 import CommunitySection from './CommunitySection.jsx'
 import FooterSection from './FooterSection.jsx'
@@ -46,6 +47,7 @@ function App() {
       <Route path="/tebot" element={<TeBoTPage />} />
       <Route path="/e-blox" element={<EBloxPage />} />
       <Route path="/add-on-kits" element={<EAddOnKitPage />} />
+      <Route path="/robothrone" element={<RobothronePageWrapper />} />
       <Route path="/ai-roboticslab-cbse" element={<AIRoboticsLabCBSEPage />} />
       <Route path="/ai-roboticslab-icse" element={<AIRoboticLabICSEPage />} />
       <Route path="/schools/stem-lab" element={<StemLabPage />} />
@@ -202,6 +204,15 @@ function EAddOnKitPage() {
   return (
     <>
       <EAddOnKit />
+      <FooterSection />
+    </>
+  );
+}
+
+function RobothronePageWrapper() {
+  return (
+    <>
+      <RobothronePage />
       <FooterSection />
     </>
   );
