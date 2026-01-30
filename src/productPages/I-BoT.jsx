@@ -199,7 +199,7 @@ function IBoT() {
     }, []);
 
     const heroBackgroundStyle = {
-        backgroundImage: `linear-gradient(90deg, rgba(0, 130, 115, 0.6), rgba(0, 130, 115, 0.6)), url(${heroPattern}), linear-gradient(120deg, rgba(0, 130, 115, 0.25), rgba(0, 130, 115, 0.25)), url(${heroBgLayer})`,
+        backgroundImage: `linear-gradient(120deg, rgba(0, 130, 115, 0.25), rgba(0, 130, 115, 0.25)), url(${heroPattern}), linear-gradient(90deg, rgba(0, 130, 115, 0.6), rgba(0, 130, 115, 0.6)), url(${heroBgLayer})`,
         backgroundRepeat: 'no-repeat, no-repeat, no-repeat, no-repeat',
         backgroundPosition: 'left center, left center, left center, center center',
         backgroundAttachment: 'fixed, fixed, fixed, fixed',
