@@ -12,7 +12,7 @@ function GallerySection(){
             <section className="gallery">
                 <div className="container">
                     <div className="section-header center-text">
-                        <h2>Our Labs & Events</h2>
+          <h2 className="collaboration-h2">Our <span className="collaboration-h2-span">Labs & Events</span></h2>
                         <p>
                             Explore our state-of-the-art facilities, workshops, and student
                             achievements

@@ -21,12 +21,12 @@ function AboutSection(){
                             <p>Schools Served</p>
                         </div>
                         <div className="stat-item">
-                            <h3>50K+</h3>
-                            <p>Students Trained</p>
+                            <h3>2 Lakh+</h3>
+                            <p>Students Benefited</p>
                         </div>
                         <div className="stat-item">
-                            <h3>200+</h3>
-                            <p>Labs Established</p>
+                            <h3>2500+</h3>
+                            <p>Teachers Trained</p>
                         </div>
                     </div>
                     <div className="stats-footer">

@@ -116,6 +116,8 @@ function ShopSection(){
                                         <p>Develop confidence through project showcases</p>
                                     </li>
                                 </ul>
+                                 <Link className="tab-cta" to="/schools/workshop">View Workshop</Link>
+
                             </div>
                             <div className="tab-image">
                                 <img src={StemWorkShopImage} alt="STEM Workshop" />

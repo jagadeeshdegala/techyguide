@@ -7,7 +7,7 @@ function FranchiseSection(){
             <section  className="franchise" id="franchise">
                 <div className="container" >
                     <div className="franchise-header">
-                        <h2>Our Franchise</h2>
+          <h2 className="franchise-h2">Our <span className="franchise-h2-span">Franchise</span></h2>
                         <p>
                             Partner with us to bring quality STEM education to your region. We
                             offer comprehensive support and proven business models.

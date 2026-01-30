@@ -2,7 +2,12 @@
 	padding: 50px 0;
 	background: #eef2f5;
 }
-
+.collaboration-h2{
+	color: rgb(0, 0, 0);
+}
+.collaboration-h2-span{
+	color: teal;
+}
 .partners {
 	margin-top: 20px;
 	display: flex;
@@ -12,11 +17,12 @@
 }
 
 .partner-box {
-	background: var(--white);
+	background: orange;
 	padding: 15px 30px;
 	border-radius: 50px;
-	font-weight: 600;
+	font-weight: 900;
 	box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+	color: white;
 }
 
 /* Mobile Responsiveness */

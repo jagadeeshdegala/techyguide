@@ -5,7 +5,7 @@ function CommunitySection(){
         <>
             <section className="testimonials">
                 <div className="container">
-                    <h2>What Our Community Says</h2>
+          <h2 className="collaboration-h2">What Our <span className="collaboration-h2-span">Community Says</span></h2>
                     <p className="center-text">
                         Hear from educators, students, and parents who are part of the
                         TechyGuide revolution

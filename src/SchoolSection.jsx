@@ -44,7 +44,7 @@ function SchoolSection() {
               className={`school-tab-link ${activeTab === 'atl-lab' ? 'active' : ''}`}
               onClick={() => openSchoolTab('atl-lab')}
             >
-              ATL Lab
+              Composite Skill Lab
             </button>
             <button
               className={`school-tab-link ${activeTab === 'stem-workshop-school' ? 'active' : ''}`}
@@ -70,12 +70,9 @@ function SchoolSection() {
                     <li>Teacher training included. </li>
                   </ul>
                   <div>
-                    <Link
-                      to="/ai-roboticslab-icse"
-                      style={{ textDecoration: 'underline', fontWeight: 700, color: 'var(--accent-color)' }}
-                    >
-                      Explore AI Labs
-                    </Link>
+                   
+                    <Link className="tab-cta" to="/ai-roboticslab-cbse"> Explore AI Labs</Link>
+
                   </div>
                 </div>
                 <div className="tab-image">
@@ -100,12 +97,9 @@ function SchoolSection() {
                     <li>Encourages creative problem-solving and innovation.</li>
                   </ul>
                   <div>
-                    <Link
-                      to="/schools/stem-tinkering-lab"
-                      style={{ textDecoration: 'underline', fontWeight: 700, color: 'var(--accent-color)' }}
-                    >
-                      Explore STEM Labs
-                    </Link>
+                    
+                    <Link className="tab-cta" to="/schools/stem-tinkering-lab">Explore STEM Labs</Link>
+
                   </div>
                 </div>
                 <div className="tab-image">
@@ -120,7 +114,7 @@ function SchoolSection() {
             <div id="atl-lab" className="school-tab-content" style={{display: activeTab === 'atl-lab' ? 'block' : 'none'}}>
               <div className="tab-grid">
                 <div className="tab-text">
-                  <h3>ATL Lab</h3>
+                  <h3>Composite Skill Lab</h3>
                   <p className="school-desc">
                     Government-compliant Atal Tinkering Lab setup following NITI
                     Aayog guidelines for innovation and technology.
@@ -131,6 +125,11 @@ function SchoolSection() {
                     <li>Robotics modules and sensors</li>
                     <li>IoT devices and connectivity solutions</li>
                   </ul>
+                  <div>
+                    
+                    <Link className="tab-cta" to="/schools/composite-skill-lab">Explore Composite Skill Lab</Link>
+
+                  </div>
                 </div>
                 <div className="tab-image">
                   <img src={LabViewImage} alt="We have the best 3D equipment in our ATL Labs" />
@@ -152,6 +151,11 @@ function SchoolSection() {
                     <li>Certification in emerging technologies</li>
                     <li>Professional development for educators</li>
                   </ul>
+                  <div>
+                    
+                    <Link className="tab-cta" to="/schools/workshop">Explore Workshop</Link>
+
+                  </div>
                 </div>
                 <div className="tab-image">
                   <img

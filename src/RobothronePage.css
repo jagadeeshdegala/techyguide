@@ -43,7 +43,7 @@
   padding: 10px 12px;
   border-radius: 999px;
   font-weight: 600;
-  z-index: 9999;
+  z-index: 99;
   
 }
 
@@ -1357,7 +1357,7 @@
 
   /* Top Badge */
   .robothrone-page-root .robothrone-top-badge {
-    top: 10px;
+    top: 120px;
     right: 10px;
     font-size: 0.75rem;
     padding: 8px 14px;

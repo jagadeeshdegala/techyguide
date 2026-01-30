@@ -1,4 +1,5 @@
-import StemStudentsImage from '/src/assets/Robothrone.jpg'
+import robothroneImage from '/src/assets/Robothrone.jpg';
+import robothroneLogo from '/src/assets/Robothrone Logo.png';
 import './RobothroneSection.css';
 
 function RobothroneSection() {
@@ -8,7 +9,13 @@ function RobothroneSection() {
         <div className="container">
           <div className="event-banner">
             <div className="event-text">
-              <h2>ROBOTHRONE 2.0</h2>
+              <div className="robothroneLogo">
+                <img
+                src={robothroneLogo}
+                alt="Students participating in Robothrone robotics competition"
+              />
+              <h2>ROBOTHRONE</h2></div>
+              
               <p className="subtitle">
                 India's Premier Robotics Competition
               </p>
@@ -19,16 +26,13 @@ function RobothroneSection() {
               </p>
 
               <div className="event-stats">
-                <div className="e-stat">
-                  <strong>10+</strong>
-                  <span>Competition Tracks</span>
-                </div>
+                
                 <div className="e-stat">
                   <strong>1000+</strong>
                   <span>Participants</span>
                 </div>
                 <div className="e-stat">
-                  <strong>50+</strong>
+                  <strong>100+</strong>
                   <span>Schools</span>
                 </div>
               </div>
@@ -72,7 +76,7 @@ function RobothroneSection() {
             </div>
             <div className="event-image">
               <img
-                src={StemStudentsImage}
+                src={robothroneImage}
                 alt="Students participating in Robothrone robotics competition"
               />
             </div>
