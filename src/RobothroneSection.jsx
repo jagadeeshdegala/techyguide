@@ -7,35 +7,24 @@ function RobothroneSection() {
     <>
       <section className="robothrone" id='robothrone'>
         <div className="container">
+          <h1 className="mainHeading"><span className="NationalHeading">National</span> Robotic Innovation Fest</h1>
+
           <div className="event-banner">
             <div className="event-text">
               <div className="robothroneLogo">
                 <img
                 src={robothroneLogo}
                 alt="Students participating in Robothrone robotics competition"
-              />
-              <h2>ROBOTHRONE</h2></div>
+               />
+              </div>
               
-              <p className="subtitle">
-                India's Premier Robotics Competition
-              </p>
+             
               <p>
                 Where innovation meets competition. Join hundreds of students
                 showcasing their robotics prowess, competing for glory, and
                 shaping the future of technology.
-              </p>
-
-              <div className="event-stats">
-                
-                <div className="e-stat">
-                  <strong>1000+</strong>
-                  <span>Participants</span>
-                </div>
-                <div className="e-stat">
-                  <strong>100+</strong>
-                  <span>Schools</span>
-                </div>
-              </div>
+              </p><br>
+              </br>
 
               <div className="event-details-grid">
                 <div className="detail">
@@ -74,12 +63,27 @@ function RobothroneSection() {
                
               </div>
             </div>
-            <div className="event-image">
-              <img
+            <div className="imageContainer">
+              <div className="event-image">
+               <img
                 src={robothroneImage}
                 alt="Students participating in Robothrone robotics competition"
-              />
+               />
+              </div>
+             <div className="event-stats">
+                
+                <div className="e-stat">
+                  <strong>1000+</strong>
+                  <span>Participants</span>
+                </div>
+                <div className="e-stat">
+                  <strong>100+</strong>
+                  <span>Schools</span>
+                </div>
+              </div>
             </div>
+            
+            
           </div>
         </div>
       </section>

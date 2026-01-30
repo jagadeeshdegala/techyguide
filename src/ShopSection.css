@@ -158,17 +158,19 @@
 }
 
 .tab-cta {
-	display: inline-block;
-	margin-top: 10px;
-	padding: 12px 18px;
-	background-color: #F09A2D;
-	color: #fff;
-	border-radius: 10px;
-	text-decoration: none;
-	font-weight: 700;
-	box-shadow: 0 10px 30px rgba(240, 154, 45, 0.35);
-	transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  display: block;
+  width: fit-content;
+  margin: 10px auto;
+  padding: 12px 18px;
+  background-color: #F09A2D;
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(240, 154, 45, 0.35);
+  transition: all 0.3s ease;
 }
+
 
 .tab-cta:hover {
 	transform: translateY(-1px);

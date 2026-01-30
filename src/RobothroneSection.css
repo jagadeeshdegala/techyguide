@@ -21,8 +21,10 @@ flex-direction: row;
 gap: 20px;
 }
 .robothroneLogo img {
-  width: 100px;     /* adjust size here */
-  height: 50px;     /* keeps aspect ratio */
+  width: 140px;     /* adjust size here */
+  height: 80px; 
+  margin-bottom: 10px; 
+  margin-top: -90px;   /* keeps aspect ratio */
 }
 /* Default (Desktop) */
 .event-image {
@@ -31,8 +33,11 @@ gap: 20px;
   overflow: hidden;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 100px;
 }
-
+.imageContainer{
+	margin-top: -30px;
+}
 .event-image img {
   display: block;
   width: 100%;
@@ -65,11 +70,12 @@ gap: 20px;
 
 .event-stats {
 	display: flex;
-	gap: 30px;
+	gap: 60px;
 	margin: 30px 0;
 	border-top: 1px solid rgba(255,255,255,0.1);
 	border-bottom: 1px solid rgba(255,255,255,0.1);
 	padding: 20px 0;
+	justify-content: center;
 }
 
 .e-stat {
@@ -104,7 +110,16 @@ gap: 20px;
 .cta-box p {
 	margin-bottom: 0;
 }
-
+.mainHeading {
+	font-size: 3.5rem;
+	color: teal;
+text-align: center;
+margin-bottom: 40px;
+margin-top: -70px;
+}
+.NationalHeading {
+	color: #000;
+}
 .cta-box .btn {
 	margin-top: 20px;
 	display: inline-block;
