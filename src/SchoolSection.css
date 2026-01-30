@@ -31,10 +31,10 @@
 	color: white;
 }
 
-.school-tab-link.active:nth-child(1) { background-color: var(--primary-color); color: white; }
-.school-tab-link.active:nth-child(2) { background-color: #F09A2D; color: white; }
-.school-tab-link.active:nth-child(3) { background-color: #a855f7; color: white; }
-.school-tab-link.active:nth-child(4) { background-color: #0d1b2a; color: white; }
+.school-tab-link.active:nth-child(1) { background-color: #008080; color: white; }
+.school-tab-link.active:nth-child(2) { background-color: #008080; color: white; }
+.school-tab-link.active:nth-child(3) { background-color: #008080; color: white; }
+.school-tab-link.active:nth-child(4) { background-color: #008080; color: white; }
 
 .school-content-box {
 	background: white;

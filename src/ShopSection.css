@@ -33,17 +33,17 @@
 }
 
 .tab-link.active:nth-child(1) {
-	background-color: #0d1b2a;
+	background-color: #008080;
 	color: white;
 }
 
 .tab-link.active:nth-child(2) {
-	background-color: #F09A2D;
+	background-color: #008080;
 	color: white;
 }
 
 .tab-link.active:nth-child(3) {
-	background-color: #8A2BE2;
+	background-color: #008080;
 	color: white;
 }
 

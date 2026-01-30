@@ -1,6 +1,6 @@
 .robothrone {
-	background: var(--dark-bg);
-	color: var(--white);
+	color: var(--dark-bg);
+	background: var(--white);
 	padding: 80px 0;
 }
 
@@ -24,6 +24,43 @@ gap: 20px;
   width: 100px;     /* adjust size here */
   height: 50px;     /* keeps aspect ratio */
 }
+/* Default (Desktop) */
+.event-image {
+  display: inline-block;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-image img {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Hover only for desktop */
+@media (hover: hover) {
+  .event-image:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .event-image {
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    margin: 0 auto !important;   /* center image */
+	margin-top: -30px !important;
+  }
+
+  .event-image img {
+    max-width: 100%;
+  }
+}
+
 
 
 .event-stats {
@@ -53,14 +90,14 @@ gap: 20px;
 }
 
 .detail h4 {
-	color: var(--white);
+	color: var(--dark-bg);
 	border-bottom: 2px solid var(--accent-color);
 	display: inline-block;
 	margin-bottom: 10px;
 }
 
 .cta-box h3 {
-	color: var(--white);
+	color: var(--dark-bg);
 	margin-bottom: 10px;
 }
 
@@ -87,31 +124,54 @@ gap: 20px;
 	}
 
 	.event-banner {
-		grid-template-columns: 1fr;
+		display: flex;
+		flex-direction: column;
 		gap: 30px;
 	}
 
+	.event-text {
+		display: contents;
+	}
+
+	.robothroneLogo {
+		order: 1;
+	}
+
+	.subtitle {
+		order: 2;
+	}
+
+	.event-text > p {
+		order: 3;
+	}
+
+	.event-stats {
+		order: 4;
+		gap: 20px;
+		padding: 15px 0;
+	}
+
 	.event-image {
-		order: -1;
-		margin-bottom: 20px;
+		order: 5;
+		margin: 20px 0;
+	}
+
+	.event-details-grid {
+		order: 6;
+		grid-template-columns: 1fr;
+		gap: 15px;
+	}
+
+	.cta-box {
+		order: 7;
 	}
 
 	.robothrone h2 {
 		font-size: 1.8rem;
 	}
 
-	.event-stats {
-		gap: 20px;
-		padding: 15px 0;
-	}
-
 	.e-stat strong {
 		font-size: 1.5rem;
-	}
-
-	.event-details-grid {
-		grid-template-columns: 1fr;
-		gap: 15px;
 	}
 }
 
@@ -121,9 +181,11 @@ gap: 20px;
 	}
 
 	.event-stats {
-		flex-direction: column;
-		gap: 15px;
+		flex-direction: row;
+		gap: 55px;
 		text-align: center;
+		justify-content: center;
+		margin-top: -20px;
 	}
 
 	.e-stat strong {
