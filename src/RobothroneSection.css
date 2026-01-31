@@ -148,16 +148,21 @@ margin-top: -70px;
 		display: contents;
 	}
 
+	.imageContainer {
+		display: contents;
+	}
+
 	.robothroneLogo {
 		order: 1;
 	}
 
-	.subtitle {
+	.event-text > p {
 		order: 2;
 	}
 
-	.event-text > p {
+	.event-image {
 		order: 3;
+		margin: 20px 0;
 	}
 
 	.event-stats {
@@ -166,19 +171,14 @@ margin-top: -70px;
 		padding: 15px 0;
 	}
 
-	.event-image {
-		order: 5;
-		margin: 20px 0;
-	}
-
 	.event-details-grid {
-		order: 6;
+		order: 5;
 		grid-template-columns: 1fr;
 		gap: 15px;
 	}
 
 	.cta-box {
-		order: 7;
+		order: 6;
 	}
 
 	.robothrone h2 {
