@@ -203,9 +203,12 @@
 
 /* ===== FEATURES SECTION ===== */
 .tebot-page-root .features-section {
-    padding: 0;
-    background: #ffffff;
+    padding: clamp(50px, 8vw, 90px) 20px;
+    background: linear-gradient(180deg, #f8fbff 0%, #ffffff 55%, #f4fbf7 100%);
+    position: relative;
+    overflow: hidden;
 }
+
 
 .tebot-page-root .features-section h2 {
     font-family: var(--font-tech);
@@ -213,12 +216,16 @@
     color: #1e40af;
     text-align: center;
     margin-bottom: clamp(15px, 4vw, 30px);
-    padding-top: clamp(25px, 6vw, 50px);
+    padding-top: 0;
+    position: relative;
+    z-index: 1;
 }
 
 .tebot-page-root .features-container {
     width: 100%;
     margin: 0;
+    position: relative;
+    z-index: 1;
 }
 
 .tebot-page-root .feature-item {
@@ -226,8 +233,22 @@
     grid-template-columns: 1fr 1fr;
     gap: clamp(20px, 5vw, 40px);
     align-items: center;
-    padding: clamp(35px, 8vw, 70px) clamp(20px, 6vw, 6vw);
-    min-height: clamp(60vh, 70vh, 80vh);
+    padding: clamp(30px, 6vw, 60px) clamp(20px, 5vw, 60px);
+    min-height: auto;
+    margin: 0 auto 28px;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+    backdrop-filter: blur(6px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.tebot-page-root .feature-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 28px 70px rgba(15, 23, 42, 0.12);
+    border-color: rgba(79, 195, 247, 0.25);
 }
 
 .tebot-page-root .feature-item.feature-left .feature-image { 
@@ -247,25 +268,26 @@
 }
 
 .tebot-page-root .feature-bg-1 { 
-    background: #ffffff; 
+    background: transparent; 
 }
 
 .tebot-page-root .feature-bg-2 { 
-    background: #ffffff; 
+    background: transparent; 
 }
 
 .tebot-page-root .feature-bg-3 { 
-    background: #ffffff; 
+    background: transparent; 
 }
 
 .tebot-page-root .feature-bg-4 { 
-    background: linear-gradient(135deg, #fdf2f8 0%, #ffe4e6 100%); 
+    background: transparent; 
 }
 
 .tebot-page-root .feature-image {
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.2);
+    border: 1px solid rgba(15, 23, 42, 0.08);
     max-width: 500px;
     margin: 0 auto;
 }

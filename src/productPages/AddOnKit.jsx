@@ -215,7 +215,6 @@ const AddOnKit = () => {
 			<section className="products-wrapper">
 				<div className="product-section">
 					<div className="info-box" data-aos="fade-right">
-						<span className="category-tag">Robotics</span>
 						<h2>Robotic Arm Kit</h2>
 						<p>Teaches functionality and mechanics of a robotic arm including practical pick-and-place activities supported by structured course content.</p>
 						<ul className="feature-list">
@@ -228,13 +227,13 @@ const AddOnKit = () => {
 						</div>
 					</div>
 					<div className="image-box" data-aos="fade-left">
+						<span className="category-tag">Robotics</span>
 						<img src={armKitImg} alt="Robotic Arm Kit" className="product-image" />
 					</div>
 				</div>
 
 				<div className="product-section reverse">
 					<div className="info-box" data-aos="fade-left">
-						<span className="category-tag">Electronics</span>
 						<h2>TechBoT Electronics Kit</h2>
 						<p>Covers fundamentals of electronics and circuits with 30+ interactive projects and comprehensive learning materials. Suitable for Grade 3+.</p>
 						<ul className="feature-list">
@@ -247,13 +246,13 @@ const AddOnKit = () => {
 						</div>
 					</div>
 					<div className="image-box" data-aos="fade-right">
+						<span className="category-tag">Electronics</span>
 						<img src={armKitImg} alt="TechBoT Electronics Kit" className="product-image" />
 					</div>
 				</div>
 
 				<div className="product-section">
 					<div className="info-box" data-aos="fade-up">
-						<span className="category-tag">Advanced Robotics</span>
 						<h2>Humanoid Kit (I-BOT)</h2>
 						<p>A fully functional humanoid robot compatible with Bluetooth, voice commands, and AI. Features 32 acrylic parts for a detailed build.</p>
 						<ul className="feature-list">
@@ -266,13 +265,13 @@ const AddOnKit = () => {
 						</div>
 					</div>
 					<div className="image-box" data-aos="zoom-in">
+						<span className="category-tag">Advanced Robotics</span>
 						<img src={armKitImg} alt="Humanoid Kit" className="product-image" />
 					</div>
 				</div>
 
 				<div className="product-section reverse">
 					<div className="info-box" data-aos="fade-left">
-						<span className="category-tag">Robotics</span>
 						<h2>Otto Starter Kit</h2>
 						<p>The perfect entry point for robotics. A mini humanoid robot that can walk, dance, and play tunes while teaching coding basics.</p>
 						<ul className="feature-list">
@@ -285,13 +284,13 @@ const AddOnKit = () => {
 						</div>
 					</div>
 					<div className="image-box" data-aos="fade-right">
+						<span className="category-tag">Robotics</span>
 						<img src={armKitImg} alt="Otto Starter Kit" className="product-image" />
 					</div>
 				</div>
 
 				<div className="product-section">
 					<div className="info-box" data-aos="fade-up">
-						<span className="category-tag">Advanced Robotics</span>
 						<h2>Otto Lee Kit</h2>
 						<p>An advanced Bluetooth-controlled humanoid that supports multiple build configurations and dynamic custom movements.</p>
 						<ul className="feature-list">
@@ -304,13 +303,13 @@ const AddOnKit = () => {
 						</div>
 					</div>
 					<div className="image-box" data-aos="zoom-in">
+						<span className="category-tag">Advanced Robotics</span>
 						<img src={armKitImg} alt="Otto Lee Kit" className="product-image" />
 					</div>
 				</div>
 
 				<div className="product-section reverse">
 					<div className="info-box" data-aos="fade-left">
-						<span className="category-tag">Manufacturing</span>
 						<h2>Otto Spider Kit</h2>
 						<p>Spider-inspired robot with 8 degrees of movement. It can perform complex routines like dances and push-ups via Bluetooth control.</p>
 						<ul className="feature-list">
@@ -323,6 +322,7 @@ const AddOnKit = () => {
 						</div>
 					</div>
 					<div className="image-box" data-aos="fade-right">
+						<span className="category-tag">Manufacturing</span>
 						<img src={armKitImg} alt="Otto Spider Kit" className="product-image" />
 					</div>
 				</div>
