@@ -663,6 +663,9 @@
     max-height: 90vh;
     overflow-y: auto;
     text-align: center;
+    margin-top: 390px;
+    margin-bottom: 280px;
+    height: 450px;
 }
 
 .courses-page-root .close-modal {
@@ -938,6 +941,10 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 25px;
     }
+    .courses-page-root .hero {
+        max-height: 100vh;
+    
+    }
 }
 
 @media (max-width: 900px) {
@@ -1067,7 +1074,10 @@
         margin: 0 auto;
     }
 
-    .courses-page-root .modal-content { padding: 20px; }
+    .courses-page-root .modal-content {
+         padding: 20px;
+        height: 700px;
+        }
 
     .courses-page-root .main-title {
         font-size: 2rem !important;

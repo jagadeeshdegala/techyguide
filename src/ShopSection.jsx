@@ -61,7 +61,7 @@ function ShopSection(){
                                 </ul>
                                 <Link className="tab-cta" to="/shop">Shop DIY Kits</Link>
                             </div>
-                            <div className="tab-image">
+                            <div className="tab-image1">
                                 <img src={DIYKIT} alt="Student building robot with TechyGuide DIY kit" />
                             </div>
                         </div>
@@ -90,7 +90,7 @@ function ShopSection(){
                                 </ul>
                                 <Link className="tab-cta" to="/courses">View Courses</Link>
                             </div>
-                            <div className="tab-image">
+                            <div className="tab-image1">
                                 <img src={VirtualLearningImage} alt="Students attending virtual STEM course on TechyGuide platform" />
                             </div>
                         </div>
@@ -119,7 +119,7 @@ function ShopSection(){
                                  <Link className="tab-cta" to="/schools/workshop">View Workshop</Link>
 
                             </div>
-                            <div className="tab-image">
+                            <div className="tab-image1">
                                 <img src={StemWorkShopImage} alt="STEM Workshop" />
                             </div>
                         </div>

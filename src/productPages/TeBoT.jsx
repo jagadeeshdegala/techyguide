@@ -1,10 +1,12 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './TeBoT.css';
 import robotImage from '../assets/ProductTeBoTImages/7.png';
 import reusableIcon from '../assets/ProductTeBoTImages/robot_2582246.png';
 import safetyIcon from '../assets/ProductTeBoTImages/robotics_12775607.png';
 import warrantyIcon from '../assets/ProductTeBoTImages/robot_3558910.png';
 import componentsImage from '../assets/ProductTeBoTImages/robotics_1434292.png';
+import componentsImage2 from '../assets/ProductTeBoTImages/robot_4512237.png';
+import componentsImage3 from '../assets/ProductTeBoTImages/hacker_10817459.png';
 import project1 from '../assets/ProductTeBoTImages/robotics_12775607.png';
 import project2 from '../assets/ProductTeBoTImages/robot_3558910.png';
 import project3 from '../assets/ProductTeBoTImages/robot_4512237.png';
@@ -13,6 +15,98 @@ import bgImage1 from '../assets/ProductTeBoTImages/9743539.png';
 import bgImage2 from '../assets/ProductTeBoTImages/5073198.jpg';
 
 function TeBoT() {
+    const [activeKitIndex, setActiveKitIndex] = useState(0);
+    const [isPaused, setIsPaused] = useState(false);
+
+    const kitItems = [
+        {
+            image: componentsImage,
+            title: "Everything You Need for Your Projects",
+            description: "This kit includes a comprehensive set of high-quality components for robotics and IoT innovation:",
+            components: [
+                {
+                    title: "Controllers & Power",
+                    items: ["IoT Board x1", "Mini USB Cable x1", "Rechargeable Battery Jack x1", "Wire and Plug x1", "1 Channel Relay Module x1"]
+                },
+                {
+                    title: "Sensors (A-M)",
+                    items: ["Ultrasonic Sensor x2", "IR Sensor x2", "DHT 11 (Temp/Humidity) x1", "MQ 2 & MQ 3 Gas Sensors x1 each", "Soil Moisture Sensor x1"]
+                },
+                {
+                    title: "Sensors (P-Z) & Modules",
+                    items: ["PIR Motion Sensor x1", "Flame Sensor x1", "Sound Sensor x1", "Vibration Sensor x1", "Heart Rate Sensor x1", "BMP 180 (Barometric) x1", "MPU 6050 (Gyro/Accel) x1"]
+                },
+                {
+                    title: "Hardware & Build",
+                    items: ["BO Motor with Jack x2 & BO Wheel x2", "Servo Motor SG 90 x2", "Breadboard 400 Pin x1", "Water Pump Module & Pipe x1", "LCD I2C Display x1", "LED Packet x1"]
+                }
+            ]
+        },
+        {
+            image: componentsImage2,
+            title: "Advanced Components Package",
+            description: "Extended kit with advanced sensors and connectivity modules for complex projects:",
+            components: [
+                {
+                    title: "Controllers & Power",
+                    items: ["IoT Board x1", "Mini USB Cable x1", "Rechargeable Battery Jack x1", "Wire and Plug x1", "1 Channel Relay Module x1"]
+                },
+                {
+                    title: "Sensors (A-M)",
+                    items: ["Ultrasonic Sensor x2", "IR Sensor x2", "DHT 11 (Temp/Humidity) x1", "MQ 2 & MQ 3 Gas Sensors x1 each", "Soil Moisture Sensor x1"]
+                },
+                {
+                    title: "Sensors (P-Z) & Modules",
+                    items: ["PIR Motion Sensor x1", "Flame Sensor x1", "Sound Sensor x1", "Vibration Sensor x1", "Heart Rate Sensor x1", "BMP 180 (Barometric) x1", "MPU 6050 (Gyro/Accel) x1"]
+                },
+                {
+                    title: "Hardware & Build",
+                    items: ["BO Motor with Jack x2 & BO Wheel x2", "Servo Motor SG 90 x2", "Breadboard 400 Pin x1", "Water Pump Module & Pipe x1", "LCD I2C Display x1", "LED Packet x1"]
+                }
+            ]
+        },
+        {
+            image: componentsImage3,
+            title: "Premium Robotics Collection",
+            description: "Professional-grade components for advanced robotics and AI integration:",
+            components: [
+                {
+                    title: "Controllers & Power",
+                    items: ["IoT Board x1", "Mini USB Cable x1", "Rechargeable Battery Jack x1", "Wire and Plug x1", "1 Channel Relay Module x1"]
+                },
+                {
+                    title: "Sensors (A-M)",
+                    items: ["Ultrasonic Sensor x2", "IR Sensor x2", "DHT 11 (Temp/Humidity) x1", "MQ 2 & MQ 3 Gas Sensors x1 each", "Soil Moisture Sensor x1"]
+                },
+                {
+                    title: "Sensors (P-Z) & Modules",
+                    items: ["PIR Motion Sensor x1", "Flame Sensor x1", "Sound Sensor x1", "Vibration Sensor x1", "Heart Rate Sensor x1", "BMP 180 (Barometric) x1", "MPU 6050 (Gyro/Accel) x1"]
+                },
+                {
+                    title: "Hardware & Build",
+                    items: ["BO Motor with Jack x2 & BO Wheel x2", "Servo Motor SG 90 x2", "Breadboard 400 Pin x1", "Water Pump Module & Pipe x1", "LCD I2C Display x1", "LED Packet x1"]
+                }
+            ]
+        }
+    ];
+
+    useEffect(() => {
+        let sliderTimeout;
+        if (!isPaused && kitItems.length > 0) {
+            const showSlides = () => {
+                setActiveKitIndex((prev) => {
+                    const next = prev + 1;
+                    return next >= kitItems.length ? 0 : next;
+                });
+                sliderTimeout = setTimeout(showSlides, 3000);
+            };
+            sliderTimeout = setTimeout(showSlides, 3000);
+        }
+        return () => {
+            if (sliderTimeout) clearTimeout(sliderTimeout);
+        };
+    }, [isPaused, kitItems.length]);
+
     useEffect(() => {
         console.log('TeBoT page loaded successfully');
         
@@ -415,62 +509,54 @@ function TeBoT() {
 
                 <section className="kit-section" id="kit-details">
                     <h2>TeBOT Kit Contents</h2>
-                    <div className="kit-container">
-                        <div className="kit-image">
-                            <img src={componentsImage} alt="TeBOT Components" />
+                    <div 
+                        className="kit-slider-wrapper"
+                        onMouseEnter={() => setIsPaused(true)}
+                        onMouseLeave={() => setIsPaused(false)}
+                    >
+                        <div className="kit-slider-image">
+                            {kitItems.map((item, index) => (
+                                <div 
+                                    key={index}
+                                    className="kit-slide fade"
+                                    style={{ display: index === activeKitIndex ? 'block' : 'none' }}
+                                >
+                                    <img src={item.image} alt={`Kit ${index + 1}`} />
+                                    <div className="slide-caption">Kit Package {index + 1}</div>
+                                </div>
+                            ))}
                         </div>
                         <div className="kit-info">
-                            <h3>Everything You Need for Your Projects</h3>
-                            <p>This kit includes a comprehensive set of high-quality components for robotics and IoT innovation:</p>
-                            
-                            <div className="kit-components">
-                                <div className="component-column">
-                                    <h4>Controllers & Power</h4>
-                                    <ul>
-                                        <li>IoT Board x1</li>
-                                        <li>Mini USB Cable x1</li>
-                                        <li>Rechargeable Battery Jack x1</li>
-                                        <li>Wire and Plug x1</li>
-                                        <li>1 Channel Relay Module x1</li>
-                                    </ul>
-                                </div>
-
-                                <div className="component-column">
-                                    <h4>Sensors (A-M)</h4>
-                                    <ul>
-                                        <li>Ultrasonic Sensor x2</li>
-                                        <li>IR Sensor x2</li>
-                                        <li>DHT 11 (Temp/Humidity) x1</li>
-                                        <li>MQ 2 & MQ 3 Gas Sensors x1 each</li>
-                                        <li>Soil Moisture Sensor x1</li>
-                                    </ul>
-                                </div>
-
-                                <div className="component-column">
-                                    <h4>Sensors (P-Z) & Modules</h4>
-                                    <ul>
-                                        <li>PIR Motion Sensor x1</li>
-                                        <li>Flame Sensor x1</li>
-                                        <li>Sound Sensor x1</li>
-                                        <li>Vibration Sensor x1</li>
-                                        <li>Heart Rate Sensor x1</li>
-                                        <li>BMP 180 (Barometric) x1</li>
-                                        <li>MPU 6050 (Gyro/Accel) x1</li>
-                                    </ul>
-                                </div>
-
-                                <div className="component-column">
-                                    <h4>Hardware & Build</h4>
-                                    <ul>
-                                        <li>BO Motor with Jack x2 & BO Wheel x2</li>
-                                        <li>Servo Motor SG 90 x2</li>
-                                        <li>Breadboard 400 Pin x1</li>
-                                        <li>Water Pump Module & Pipe x1</li>
-                                        <li>LCD I2C Display x1</li>
-                                        <li>LED Packet x1</li>
-                                    </ul>
+                            <div className="kit-content fade" style={{ display: activeKitIndex >= 0 ? 'block' : 'none' }}>
+                                <h3>{kitItems[activeKitIndex].title}</h3>
+                                <p>{kitItems[activeKitIndex].description}</p>
+                                
+                                <div className="kit-components">
+                                    {kitItems[activeKitIndex].components.map((column, idx) => (
+                                        <div key={idx} className="component-column">
+                                            <h4>{column.title}</h4>
+                                            <ul>
+                                                {column.items.map((item, itemIdx) => (
+                                                    <li key={itemIdx}>{item}</li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
+
+                            {kitItems.length > 1 && (
+                                <div className="kit-indicators">
+                                    {kitItems.map((_, index) => (
+                                        <button
+                                            key={index}
+                                            className={`kit-indicator ${index === activeKitIndex ? 'active' : ''}`}
+                                            onClick={() => setActiveKitIndex(index)}
+                                            aria-label={`View kit ${index + 1}`}
+                                        />
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     </div>
                 </section>

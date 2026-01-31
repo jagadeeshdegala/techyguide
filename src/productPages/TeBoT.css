@@ -340,7 +340,7 @@
     margin-bottom: clamp(30px, 6vw, 60px);
 }
 
-.tebot-page-root .kit-container {
+.tebot-page-root .kit-slider-wrapper {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
@@ -349,26 +349,62 @@
     align-items: center;
 }
 
-.tebot-page-root .kit-image {
+.tebot-page-root .kit-slider-image {
+    position: relative;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 15px 40px rgba(0,0,0,0.15);
     max-width: 550px;
     margin: 0 auto;
+    height: 500px;
+    background: #0b1a3a;
 }
 
-.tebot-page-root .kit-image img {
+.tebot-page-root .kit-slide {
+    height: 100%;
+    position: relative;
+}
+
+.tebot-page-root .kit-slide.fade {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.tebot-page-root .kit-slide img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
-    max-height: 500px;
-    object-fit: contain;
+}
+
+.tebot-page-root .slide-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
 }
 
 .tebot-page-root .kit-info h3 {
     font-size: 1.8rem;
     color: #d97706;
     margin-bottom: 15px;
+}
+
+.tebot-page-root .kit-content {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.tebot-page-root .kit-content.fade {
+    animation: fadeIn 1s ease-in-out;
 }
 
 .tebot-page-root .kit-info > p {
@@ -382,6 +418,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 25px;
+    margin-bottom: 30px;
 }
 
 .tebot-page-root .component-column h4 {
@@ -413,7 +450,136 @@
     font-weight: bold;
 }
 
-/* ===== TECHNOLOGY SECTION ===== */
+.tebot-page-root .kit-indicators {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.tebot-page-root .kit-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #d97706;
+    background: rgba(217, 119, 6, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.tebot-page-root .kit-indicator.active {
+    background: #d97706;
+    width: 14px;
+    height: 14px;
+}
+
+.tebot-page-root .kit-indicator:hover {
+    background: #d97706;
+    transform: scale(1.2);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .tebot-page-root .kit-slider-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        max-width: 100%;
+    }
+
+    .tebot-page-root .kit-slider-image {
+        max-width: 100%;
+        height: 300px;
+    }
+
+    .tebot-page-root .kit-info {
+        padding: 0;
+    }
+
+    .tebot-page-root .kit-components {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    .tebot-page-root .kit-info h3 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+
+    .tebot-page-root .kit-info > p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    .tebot-page-root .component-column h4 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .tebot-page-root .component-column li {
+        font-size: 0.85rem;
+        padding: 6px 0;
+    }
+
+    .tebot-page-root .kit-indicators {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tebot-page-root .kit-section {
+        padding: 30px 15px;
+    }
+
+    .tebot-page-root .kit-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+
+    .tebot-page-root .kit-slider-image {
+        height: 250px;
+        border-radius: 12px;
+    }
+
+    .tebot-page-root .slide-caption {
+        font-size: 0.8rem;
+        padding: 10px 12px;
+        bottom: 15px;
+        left: 15px;
+    }
+
+    .tebot-page-root .kit-info h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .tebot-page-root .kit-info > p {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+    }
+
+    .tebot-page-root .component-column h4 {
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+    }
+
+    .tebot-page-root .component-column li {
+        font-size: 0.8rem;
+        padding: 5px 0;
+        padding-left: 18px;
+    }
+
+    .tebot-page-root .kit-indicator {
+        width: 10px;
+        height: 10px;
+    }
+
+    .tebot-page-root .kit-indicator.active {
+        width: 12px;
+        height: 12px;
+    }
+}/* ===== TECHNOLOGY SECTION ===== */
 .tebot-page-root .technology-section {
     padding: clamp(40px, 8vw, 80px) clamp(15px, 4vw, 20px);
     background: #ffffff;

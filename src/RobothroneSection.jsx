@@ -17,6 +17,7 @@ function RobothroneSection() {
                 alt="Students participating in Robothrone robotics competition"
                />
               </div>
+              <br></br>
               
              
               <p>

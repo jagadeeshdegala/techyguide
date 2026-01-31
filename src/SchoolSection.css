@@ -55,7 +55,7 @@
 
 .school-desc {
 	color: #666;
-	margin-bottom: 25px;
+	margin-bottom: 18px;
 	font-size: 1.05rem;
 }
 
@@ -64,7 +64,7 @@
 }
 
 .school-list li {
-	margin-bottom: 15px;
+	margin-bottom: 11px;
 	padding-left: 25px;
 	position: relative;
 	color: #374151;
@@ -84,19 +84,22 @@
 .tab-grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: 50px;
+	gap: 15px;
 	align-items: center;
 }
 
 .tab-text h3 {
 	font-size: 2rem;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 }
 
 .tab-image img {
 	border-radius: 15px;
 	box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-	width: 100%;
+	width: 100% !important;
+	height: auto !important;
+	transform: scale(1.1) !important;
+	margin-left: 19px !important;
 }
 
 /* Mobile Responsiveness */
@@ -179,5 +182,6 @@
 
 	.tab-image {
 		order: -1;
+		width: 300px;
 	}
 }

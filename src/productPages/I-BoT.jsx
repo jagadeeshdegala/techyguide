@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './I-BoT.css';
 import heroBgLayer from '../assets/ProductI-BoTImages/5073198.jpg';
 import heroPattern from '../assets/ProductI-BoTImages/10893802.png';
@@ -13,6 +13,76 @@ function IBoT() {
     const rootRef = useRef(null);
     const testimonialsRef = useRef(null);
     const projectsRef = useRef(null);
+    const [currentKitIndex, setCurrentKitIndex] = useState(0);
+    const [isKitPaused, setIsKitPaused] = useState(false);
+
+    const ibotKitData = [
+        {
+            image: kitImage,
+            imageAlt: "I-BoT Kit Contents",
+            title: "Everything You Need to Get Started",
+            description: "The I-BoT kit includes 29 essential components designed to teach robotics and IoT concepts from beginner to advanced levels.",
+            components: [
+                {
+                    title: "Controllers & Boards",
+                    items: ["TechIoT ESP32 Board", "2-Channel Relay Module", "I2C OLED Display", "LCD Display"]
+                },
+                {
+                    title: "Sensors & Actuators",
+                    items: ["PIR Motion Sensor", "Ultrasonic Sensor", "IR Sensor", "Temperature & Humidity (DHT11)", "Pressure Sensor (BMP180)"]
+                },
+                {
+                    title: "Motors & Mechanics",
+                    items: ["BO Motors with Wheels", "Servo Motors", "Motor Driver Module", "Water Pump Module"]
+                },
+                {
+                    title: "Power & Connectivity",
+                    items: ["12V Rechargeable Battery", "Battery Charger", "JST Connectors", "Built-in WiFi"]
+                }
+            ]
+        },
+        {
+            image: mainBoard,
+            imageAlt: "I-BoT Main Board",
+            title: "Advanced Control System",
+            description: "TechIoT ESP32-based controller with WiFi connectivity and multiple sensor interfaces for sophisticated IoT projects.",
+            components: [
+                {
+                    title: "Controllers & Boards",
+                    items: ["TechIoT ESP32 Board", "2-Channel Relay Module", "I2C OLED Display", "LCD Display"]
+                },
+                {
+                    title: "Sensors & Actuators",
+                    items: ["PIR Motion Sensor", "Ultrasonic Sensor", "IR Sensor", "Temperature & Humidity (DHT11)", "Pressure Sensor (BMP180)"]
+                },
+                {
+                    title: "Motors & Mechanics",
+                    items: ["BO Motors with Wheels", "Servo Motors", "Motor Driver Module", "Water Pump Module"]
+                },
+                {
+                    title: "Power & Connectivity",
+                    items: ["12V Rechargeable Battery", "Battery Charger", "JST Connectors", "Built-in WiFi"]
+                }
+            ]
+        }
+    ];
+
+    useEffect(() => {
+        let sliderTimeout;
+        if (!isKitPaused && ibotKitData.length > 1) {
+            const showSlides = () => {
+                setCurrentKitIndex((prev) => {
+                    const next = prev + 1;
+                    return next >= ibotKitData.length ? 0 : next;
+                });
+                sliderTimeout = setTimeout(showSlides, 3000);
+            };
+            sliderTimeout = setTimeout(showSlides, 3000);
+        }
+        return () => {
+            if (sliderTimeout) clearTimeout(sliderTimeout);
+        };
+    }, [isKitPaused, ibotKitData.length]);
 
     useEffect(() => {
         const root = rootRef.current;
@@ -328,55 +398,54 @@ function IBoT() {
             {/* Kit Details Section */}
             <section className="kit-section" id="kit-details">
                 <h2>Complete I-BoT Kit Contents</h2>
-                <div className="kit-container">
-                    <div className="kit-image">
-                        <img src={kitImage} alt="I-BoT Kit Contents" />
+                <div 
+                    className="kit-slider-wrapper"
+                    onMouseEnter={() => setIsKitPaused(true)}
+                    onMouseLeave={() => setIsKitPaused(false)}
+                >
+                    <div className="kit-slider-image">
+                        {ibotKitData.map((item, index) => (
+                            <div 
+                                key={index}
+                                className="kit-slide fade"
+                                style={{ display: index === currentKitIndex ? 'block' : 'none' }}
+                            >
+                                <img src={item.image} alt={item.imageAlt} />
+                                <div className="slide-caption">Kit Package {index + 1}</div>
+                            </div>
+                        ))}
                     </div>
                     <div className="kit-info">
-                        <h3>Everything You Need to Get Started</h3>
-                        <p>
-                            The I-BoT kit includes 29 essential components designed to teach robotics and IoT concepts
-                            from beginner to advanced levels.
-                        </p>
-                        <div className="kit-components">
-                            <div className="component-column">
-                                <h4>Controllers & Boards</h4>
-                                <ul>
-                                    <li>TechIoT ESP32 Board</li>
-                                    <li>2-Channel Relay Module</li>
-                                    <li>I2C OLED Display</li>
-                                    <li>LCD Display</li>
-                                </ul>
-                            </div>
-                            <div className="component-column">
-                                <h4>Sensors & Actuators</h4>
-                                <ul>
-                                    <li>PIR Motion Sensor</li>
-                                    <li>Ultrasonic Sensor</li>
-                                    <li>IR Sensor</li>
-                                    <li>Temperature & Humidity (DHT11)</li>
-                                    <li>Pressure Sensor (BMP180)</li>
-                                </ul>
-                            </div>
-                            <div className="component-column">
-                                <h4>Motors & Mechanics</h4>
-                                <ul>
-                                    <li>BO Motors with Wheels</li>
-                                    <li>Servo Motors</li>
-                                    <li>Motor Driver Module</li>
-                                    <li>Water Pump Module</li>
-                                </ul>
-                            </div>
-                            <div className="component-column">
-                                <h4>Power & Connectivity</h4>
-                                <ul>
-                                    <li>12V Rechargeable Battery</li>
-                                    <li>Battery Charger</li>
-                                    <li>JST Connectors</li>
-                                    <li>Built-in WiFi</li>
-                                </ul>
+                        <div className="kit-content fade" style={{ display: currentKitIndex >= 0 ? 'block' : 'none' }}>
+                            <h3>{ibotKitData[currentKitIndex].title}</h3>
+                            <p>{ibotKitData[currentKitIndex].description}</p>
+                            
+                            <div className="kit-components">
+                                {ibotKitData[currentKitIndex].components.map((column, colIdx) => (
+                                    <div key={colIdx} className="component-column">
+                                        <h4>{column.title}</h4>
+                                        <ul>
+                                            {column.items.map((componentItem, itemIdx) => (
+                                                <li key={itemIdx}>{componentItem}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
                             </div>
                         </div>
+
+                        {ibotKitData.length > 1 && (
+                            <div className="kit-indicators">
+                                {ibotKitData.map((_, index) => (
+                                    <button
+                                        key={index}
+                                        className={`kit-indicator ${index === currentKitIndex ? 'active' : ''}`}
+                                        onClick={() => setCurrentKitIndex(index)}
+                                        aria-label={`View kit ${index + 1}`}
+                                    />
+                                ))}
+                            </div>
+                        )}
                     </div>
                 </div>
             </section>

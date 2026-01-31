@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './E-Blox.css';
 
 // Import images
@@ -13,6 +13,10 @@ import bgImage1 from '../assets/ProductE-BloxImages/9743528.png';
 import bgImage2 from '../assets/ProductE-BloxImages/5073198.jpg';
 
 export default function EBlox() {
+        const [isKitPaused, setIsKitPaused] = useState(false);
+        const [kitSlideIndex, setKitSlideIndex] = useState(0);
+        const ebloxKitImages = [robot5, hacker];
+
         // WhatsApp form submission handler
         useEffect(() => {
             const form = document.getElementById('inquiry-form');
@@ -44,6 +48,24 @@ export default function EBlox() {
             return () => form.removeEventListener('submit', handleSubmit);
         }, []);
     const rootRef = useRef(null);
+
+    // Kit slider auto-scroll
+    useEffect(() => {
+        let sliderTimeout;
+        if (!isKitPaused && ebloxKitImages.length > 1) {
+            const showSlides = () => {
+                setKitSlideIndex((prev) => {
+                    const next = prev + 1;
+                    return next >= ebloxKitImages.length ? 0 : next;
+                });
+                sliderTimeout = setTimeout(showSlides, 3000);
+            };
+            sliderTimeout = setTimeout(showSlides, 3000);
+        }
+        return () => {
+            if (sliderTimeout) clearTimeout(sliderTimeout);
+        };
+    }, [isKitPaused, ebloxKitImages.length]);
 
     useEffect(() => {
         const root = rootRef.current;
@@ -245,42 +267,75 @@ export default function EBlox() {
 
                 <section className="kit-section" id="kit-details">
                     <h2> E-Blox Kit Contents</h2>
-                    <div className="kit-container">
-                        <div className="kit-image">
-                            <img src={robot5} alt="E-Blox Components" />
+                    <div 
+                        className="kit-slider-wrapper"
+                        onMouseEnter={() => setIsKitPaused(true)}
+                        onMouseLeave={() => setIsKitPaused(false)}
+                    >
+                        <div className="kit-slider-image">
+                            <div 
+                                className="kit-slide fade"
+                                style={{ display: kitSlideIndex === 0 ? 'block' : 'none' }}
+                            >
+                                <img src={robot5} alt="E-Blox Kit 1" />
+                                <div className="slide-caption">Kit Package 1</div>
+                            </div>
+
+                            <div 
+                                className="kit-slide fade"
+                                style={{ display: kitSlideIndex === 1 ? 'block' : 'none' }}
+                            >
+                                <img src={hacker} alt="E-Blox Kit 2" />
+                                <div className="slide-caption">Kit Package 2</div>
+                            </div>
                         </div>
                         <div className="kit-info">
-                            <h3>Official Component List</h3>
-                            <p>The E-Blox kit includes specialized blocks and connectors for building over 20 unique electronics products.</p>
-                            <div className="kit-components">
-                                <div className="component-column">
-                                    <h4>Logic & Sensors</h4>
-                                    <ul>
-                                        <li>Dark Block x1</li>
-                                        <li>Light Block x1</li>
-                                        <li>Sound Sensor Block x1</li>
-                                        <li>IR Block x1</li>
-                                        <li>Distance Block x1</li>
-                                    </ul>
-                                </div>
-                                <div className="component-column">
-                                    <h4>Output & Sound</h4>
-                                    <ul>
-                                        <li>Sound Block x1</li>
-                                        <li>Buzzer x1</li>
+                            <div className="kit-content fade" style={{ display: kitSlideIndex >= 0 ? 'block' : 'none' }}>
+                                <h3>Official Component List</h3>
+                                <p>The E-Blox kit includes specialized blocks and connectors for building over 20 unique electronics products.</p>
+                                <div className="kit-components">
+                                    <div className="component-column">
+                                        <h4>Logic & Sensors</h4>
+                                        <ul>
+                                            <li>Dark Block x1</li>
+                                            <li>Light Block x1</li>
+                                            <li>Sound Sensor Block x1</li>
+                                            <li>IR Block x1</li>
+                                            <li>Distance Block x1</li>
+                                        </ul>
+                                    </div>
+                                    <div className="component-column">
+                                        <h4>Output & Sound</h4>
+                                        <ul>
+                                            <li>Sound Block x1</li>
+                                            <li>Buzzer x1</li>
                         <li>Invert Block x1</li>
-                                        <li>Motor Driver Block x2</li>
-                                    </ul>
+                                            <li>Motor Driver Block x2</li>
+                                        </ul>
+                                    </div>
+                                    <div className="component-column">
+                                        <h4>Power & Motors</h4>
+                                        <ul>
+                                            <li>Power Block x1</li>
+                                            <li>I Shape BO motor (JST) x2</li>
+                                            <li>Wire Tap Block x2</li>
+                                            <li>JST Connector Wires x4</li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div className="component-column">
-                                    <h4>Power & Motors</h4>
-                                    <ul>
-                                        <li>Power Block x1</li>
-                                        <li>I Shape BO motor (JST) x2</li>
-                                        <li>Wire Tap Block x2</li>
-                                        <li>JST Connector Wires x4</li>
-                                    </ul>
-                                </div>
+                            </div>
+
+                            <div className="kit-indicators">
+                                <button
+                                    className={`kit-indicator ${kitSlideIndex === 0 ? 'active' : ''}`}
+                                    onClick={() => setKitSlideIndex(0)}
+                                    aria-label="View kit 1"
+                                />
+                                <button
+                                    className={`kit-indicator ${kitSlideIndex === 1 ? 'active' : ''}`}
+                                    onClick={() => setKitSlideIndex(1)}
+                                    aria-label="View kit 2"
+                                />
                             </div>
                         </div>
                     </div>
