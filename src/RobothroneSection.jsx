@@ -7,7 +7,7 @@ function RobothroneSection() {
     <>
       <section className="robothrone" id='robothrone'>
         <div className="container">
-          <h1 className="mainHeading"><span className="NationalHeading">National</span> Robotic Innovation Fest</h1>
+          <h1 className="mainHeading"><span className="NationalHeading">National</span> Robotic Innovation Fest</h1><br></br>
 
           <div className="event-banner">
             <div className="event-text">
