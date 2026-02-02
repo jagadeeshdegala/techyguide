@@ -438,7 +438,7 @@ function CoursesPage() {
       </section>
 
       <section className="stats-ribbon-section">
-        <h2 className="section-title">Proven Results Across India</h2>
+        <h2 className="section-title2">Proven Results Across India</h2>
         <div className="stats-ribbon-container">
           <div className="stat-box">
             <div className="stat-number" data-target="1500">0</div>

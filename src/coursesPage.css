@@ -500,7 +500,7 @@
 }
 
 .courses-page-root .section-title {
-    color: #0d47a1;
+    color: #07080b;
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 50px;
@@ -851,9 +851,19 @@
 .courses-page-root .section { padding: 20px 0; }
 
 .courses-page-root .section-title {
+    font-size: 2.9rem;
+    text-align: center;
+    color: teal;
+    margin-bottom: 3.5rem;
+    margin-top: 30px;
+    position: relative;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+}
+.courses-page-root .section-title2 {
     font-size: 4rem;
     text-align: center;
-    color: white;
+    color: rgb(255, 255, 255);
     margin-bottom: 3.5rem;
     position: relative;
     font-weight: 700;
