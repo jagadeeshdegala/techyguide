@@ -20,6 +20,56 @@ function FooterSection(){
                             <p>
                                 <i className="fas fa-map-marker-alt"></i> Serving students & schools across India 
                             </p>
+ 
+
+<div className="footer-maps-single">
+  {/* Map Preview */}
+  <div
+    className="map-box"
+    onClick={() =>
+      window.open(
+        "https://www.google.com/maps/d/viewer?mid=1qtGl_MVXXa3y3qnzDehhWhRfeW4_Zac",
+        "_blank"
+      )
+    }
+    role="link"
+    aria-label="Open all TechyGuide offices in Maps"
+  >
+    <iframe
+      title="TechyGuide Offices Map"
+      src="https://www.google.com/maps/d/embed?mid=1qtGl_MVXXa3y3qnzDehhWhRfeW4_Zac"
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    />
+    <span>Our Offices (Odisha & Bangalore)</span>
+  </div>
+
+  {/* Buttons */}
+  <div className="map-buttons">
+    <button
+      onClick={() =>
+        window.open(
+          "https://maps.app.goo.gl/DFFaPgpLexm2tggD8",
+          "_blank"
+        )
+      }
+    >
+      Open Odisha in Maps
+    </button>
+
+    <button
+      onClick={() =>
+        window.open(
+          "https://maps.app.goo.gl/vJEWcwmuaNF6xK3H8",
+          "_blank"
+        )
+      }
+    >
+      Open Bangalore in Maps
+    </button>
+  </div>
+</div>
+
                         </div>
                     </div>
                     <div className="footer-col">
@@ -29,7 +79,7 @@ function FooterSection(){
                             <li><Link to="/shop" onClick={scrollToTop}>Shop</Link></li>
                             <li><Link to="/franchise" onClick={scrollToTop}>Franchise</Link></li>
                             <li><Link to="/robothrone" onClick={scrollToTop}> Robothrone </Link></li>
-                            <li><Link to="/courses" onClick={scrollToTop}>Contact us</Link></li>
+                            <li><a href="https://www.techyguide.in/contact/" target="_blank" onClick={scrollToTop}>Contact us</a></li>
                             <li><Link to="/privacy-policy" onClick={scrollToTop}>Privacy Policy</Link></li>
 
                         </ul>
