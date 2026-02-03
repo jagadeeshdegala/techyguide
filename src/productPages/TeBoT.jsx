@@ -442,7 +442,7 @@ function TeBoT() {
 
                 <section className="intro-section" id="introduction">
                     <div className="intro-container">
-                        <h2>Introduction to TeBOT Advance Kit</h2>
+          <h2 className="our-text">Introduction to <span> TeBOT Advance Kit</span></h2>
                         <p className="intro-tagline">Watch how students are learning and building 50+ amazing projects with TeBOT</p>
                         <div className="video-container">
                             <iframe
@@ -458,7 +458,7 @@ function TeBoT() {
                 </section>
 
                 <section className="features-section" id="features">
-                    <h2>Why TeBOT is the Best Choice</h2>
+          <h2 >Why <span> TeBOT is the Best Choice</span></h2>
                     <div className="features-container">
                         <div className="feature-item feature-left feature-bg-1">
                             <div className="feature-image">
@@ -508,7 +508,7 @@ function TeBoT() {
                 </section>
 
                 <section className="kit-section" id="kit-details">
-                    <h2>TeBOT Kit Contents</h2>
+                    <h2>TeBOT Offerings</h2>
                     <div 
                         className="kit-slider-wrapper"
                         onMouseEnter={() => setIsPaused(true)}
@@ -562,7 +562,7 @@ function TeBoT() {
                 </section>
 
                 <section className="technology-section" id="technology">
-                    <h2>Technologies Covered in TeBOT</h2>
+                    <h2>Technologies <span>Covered in TeBOT</span></h2>
                     <p className="section-intro">Master multiple STEM domains with a single platform</p>
                     <div className="tech-grid">
                         <div className="tech-card">
@@ -589,7 +589,7 @@ function TeBoT() {
                 </section>
 
                 <section className="projects-section" id="projects">
-                    <h2>Featured TeBOT Projects</h2>
+                    <h2>Featured <span>TeBOT Projects</span></h2>
                     <p className="section-intro">Choose from over 50 projects including:</p>
                     <div className="projects-scroll" id="projects-scroll">
                         <div className="project-card">

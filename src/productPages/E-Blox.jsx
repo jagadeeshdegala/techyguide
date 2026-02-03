@@ -201,7 +201,7 @@ export default function EBlox() {
                 </section>
 
                 <section className="features-section" id="features">
-                    <h2>Why E-Blox is the Best Choice</h2>
+                    <h2>Why <span>E-Blox is the Best Choice</span></h2>
                     <div className="features-container">
                         <div className="feature-item feature-left feature-bg-1">
                             <div className="feature-image">
@@ -266,7 +266,7 @@ export default function EBlox() {
                 </section>
 
                 <section className="kit-section" id="kit-details">
-                    <h2> E-Blox Kit Contents</h2>
+                    <h2> E-Blox Offerings</h2>
                     <div 
                         className="kit-slider-wrapper"
                         onMouseEnter={() => setIsKitPaused(true)}
@@ -342,7 +342,7 @@ export default function EBlox() {
                 </section>
 
                 <section className="technology-section" id="technology">
-                    <h2>STEM Concepts Covered in E-Blox</h2>
+                    <h2>STEM <span>Concepts Covered in E-Blox</span></h2>
                     <p className="section-intro">Master foundational electronics through block-based learning</p>
                     <div className="tech-grid">
                         <div className="tech-card">
@@ -364,7 +364,7 @@ export default function EBlox() {
                 </section>
 
                 <section className="projects-section" id="projects">
-                    <h2>20+ Practical Projects</h2>
+                    <h2>20+ <span>Practical Projects</span></h2>
                     <p className="section-intro">Building real-world electronics applications</p>
                     <div className="projects-scroll" id="projects-scroll">
                         <div className="project-card">

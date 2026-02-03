@@ -170,11 +170,13 @@
 .tebot-page-root .intro-section h2 {
     font-family: var(--font-tech);
     font-size: clamp(1.5rem, 5vw, 2.5rem);
-    color: var(--primary-blue);
+    color: black;
     text-align: center;
     margin-bottom: 15px;
 }
-
+.tebot-page-root .intro-section span{
+    color: orange;
+}
 .tebot-page-root .intro-tagline {
     text-align: center;
     font-size: clamp(0.9rem, 2.5vw, 1.1rem);
@@ -213,14 +215,23 @@
 .tebot-page-root .features-section h2 {
     font-family: var(--font-tech);
     font-size: clamp(1.5rem, 5vw, 2.5rem);
-    color: #1e40af;
+    color: #000000;
     text-align: center;
     margin-bottom: clamp(15px, 4vw, 30px);
     padding-top: 0;
     position: relative;
     z-index: 1;
 }
-
+.tebot-page-root .features-section span {
+    font-family: var(--font-tech);
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    color: teal;
+    text-align: center;
+    margin-bottom: clamp(15px, 4vw, 30px);
+    padding-top: 0;
+    position: relative;
+    z-index: 1;
+}
 .tebot-page-root .features-container {
     width: 100%;
     margin: 0;
@@ -302,7 +313,7 @@
 
 .tebot-page-root .feature-content h3 {
     font-size: clamp(1.2rem, 4vw, 1.8rem);
-    color: #1e40af;
+    color: orange;
     margin-bottom: 15px;
 }
 
@@ -321,7 +332,7 @@
 
 .tebot-page-root .feature-points li {
     padding: 10px 0;
-    color: #1e40af;
+    color: #020202;
     font-weight: 600;
     font-size: clamp(0.8rem, 2vw, 0.95rem);
 }
@@ -588,11 +599,13 @@
 .tebot-page-root .technology-section h2 {
     font-family: var(--font-tech);
     font-size: clamp(1.5rem, 5vw, 2.5rem);
-    color: #1976d2;
+    color: black;
     text-align: center;
     margin-bottom: 15px;
 }
-
+.tebot-page-root .technology-section span{
+    color: teal;
+}
 .tebot-page-root .section-intro {
     text-align: center;
     font-size: 1.1rem;
@@ -632,7 +645,7 @@
 
 .tebot-page-root .tech-card h3 {
     font-size: 1.3rem;
-    color: #1976d2;
+    color: #0a0a0a;
     margin-bottom: 15px;
 }
 
@@ -651,11 +664,13 @@
 .tebot-page-root .projects-section h2 {
     font-family: var(--font-tech);
     font-size: clamp(1.5rem, 5vw, 2.5rem);
-    color: #1e40af;
+    color: #030303;
     text-align: center;
     margin-bottom: 15px;
 }
-
+.tebot-page-root .projects-section span{
+    color: teal;
+}
 .tebot-page-root .projects-scroll {
     display: flex;
     gap: 25px;
@@ -703,7 +718,7 @@
 
 .tebot-page-root .project-card h4 {
     font-size: 1.1rem;
-    color: #1e40af;
+    color: black;
     padding: 15px 15px 8px;
     margin: 0;
 }

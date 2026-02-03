@@ -1,15 +1,10 @@
 
 import './FooterSection.css';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function FooterSection(){
-    const navigate = useNavigate();
-
-    const handlePageNavigation = (path) => {
-        navigate(path);
-        setTimeout(() => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }, 50);
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     return(
@@ -30,12 +25,12 @@ function FooterSection(){
                     <div className="footer-col">
                         <h3>Quick Links</h3>
                         <ul className="quick-links-grid">
-                            <li><a href="/">Home</a></li>
-                            <li><a href="#shop">Shop</a></li>
-                            <li><a href="/franchise" onClick={(e) => { e.preventDefault(); handlePageNavigation('/franchise'); }}>Franchise</a></li>
-                           <li><a href="https://www.techyguide.in/robothrone/" target="_blank" rel="noopener noreferrer">Robothrone</a></li>
-                            <li><a href="/courses" onClick={(e) => { e.preventDefault(); handlePageNavigation('/courses'); }}>Contact us</a></li>
-                            <li><a href="/privacy-policy" onClick={(e) => { e.preventDefault(); handlePageNavigation('/privacy-policy'); }}>Privacy Policy</a></li>
+                            <li><Link to="/" onClick={scrollToTop}>Home</Link></li>
+                            <li><Link to="/shop" onClick={scrollToTop}>Shop</Link></li>
+                            <li><Link to="/franchise" onClick={scrollToTop}>Franchise</Link></li>
+                            <li><Link to="/robothrone" onClick={scrollToTop}> Robothrone </Link></li>
+                            <li><Link to="/courses" onClick={scrollToTop}>Contact us</Link></li>
+                            <li><Link to="/privacy-policy" onClick={scrollToTop}>Privacy Policy</Link></li>
 
                         </ul>
                     </div>

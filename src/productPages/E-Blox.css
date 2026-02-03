@@ -374,14 +374,16 @@
 
 .eblox-page-root .features-section h2 {
     font-size: 2.5rem;
-    color: var(--primary-blue);
+    color: black;
     text-align: center;
     margin-bottom: 40px;
     font-weight: 900;
     position: relative;
     z-index: 1;
 }
-
+.eblox-page-root .features-section span{
+    color: teal;
+}
 .eblox-page-root .features-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -441,7 +443,7 @@
 
 .eblox-page-root .feature-content h3 {
     font-size: 1.8rem;
-    color: var(--text-dark);
+    color: orange;
     margin-bottom: 16px;
 }
 
@@ -471,7 +473,7 @@
 
 .eblox-page-root .kit-section h2 {
     font-size: 2.5rem;
-    color: var(--primary-orange);
+    color: teal;
     text-align: center;
     margin-bottom: 60px;
 }
@@ -531,7 +533,7 @@
 
 .eblox-page-root .kit-info h3 {
     font-size: 1.8rem;
-    color: var(--text-dark);
+    color: orange;
     margin-bottom: 16px;
 }
 
@@ -723,12 +725,14 @@
 
 .eblox-page-root .technology-section h2 {
     font-size: 2.5rem;
-    color: var(--primary-blue);
+    color: black;
     text-align: center;
     margin-bottom: 20px;
     font-weight: 900;
 }
-
+.eblox-page-root .technology-section span{
+    color: teal !important;
+}
 .eblox-page-root .section-intro {
     text-align: center;
     font-size: 1.1rem;
@@ -794,11 +798,13 @@
 
 .eblox-page-root .projects-section h2 {
     font-size: 2.5rem;
-    color: var(--primary-orange);
+    color: black;
     text-align: center;
     margin-bottom: 20px;
 }
-
+.eblox-page-root .projects-section span{
+    color: teal !important;
+}
 .eblox-page-root .projects-scroll {
     display: flex;
     gap: 20px;
@@ -926,7 +932,7 @@
     border-radius: 10px;
     border: 2.5px solid #bdbdbd;
     background: rgba(255, 255, 255, 0.13);
-    color: #fff;
+    color: #000000;
     font-size: 1rem;
     transition: all 0.3s ease;
     box-shadow: 0 0 0 1.5px rgba(189,189,189,0.18);

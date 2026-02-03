@@ -298,7 +298,7 @@ function IBoT() {
             {/* Introduction Section */}
             <section className="intro-section" id="introduction">
                 <div className="intro-container">
-                    <h2>Introduction to I-BoT Kit</h2>
+                    <h2>Introduction <span>to I-BoT Kit</span></h2>
                     <p className="intro-tagline">Watch how students are learning and building amazing projects with I-BoT</p>
                     <div className="video-container">
                         <iframe 
@@ -315,7 +315,7 @@ function IBoT() {
 
             {/* Features Section */}
             <section className="features-section" id="features">
-                <h2>Why I-BoT is the Best Choice</h2>
+                <h2>Why <span>I-BoT is the Best Choice</span></h2>
                 <div className="features-container">
                     {/* Feature 1 */}
                     <div className="feature-item feature-left feature-bg-1">
@@ -397,7 +397,7 @@ function IBoT() {
 
             {/* Kit Details Section */}
             <section className="kit-section" id="kit-details">
-                <h2>Complete I-BoT Kit Contents</h2>
+                <h2> I-BoT Offerings</h2>
                 <div 
                     className="kit-slider-wrapper"
                     onMouseEnter={() => setIsKitPaused(true)}
@@ -452,7 +452,7 @@ function IBoT() {
 
             {/* Technology Section */}
             <section className="technology-section" id="technology">
-                <h2>Technologies Covered in I-BoT</h2>
+                <h2>Technologies <span>Covered in I-BoT</span></h2>
                 <p className="section-intro">Master multiple STEM domains with a single platform</p>
                 <div className="tech-grid">
                     <div className="tech-card">
@@ -490,7 +490,7 @@ function IBoT() {
 
             {/* Projects Section */}
             <section className="projects-section" id="projects">
-                <h2>80+ Amazing Projects</h2>
+                <h2>80+ <span>Amazing Projects</span></h2>
                 <p className="section-intro">From Home Automation to Advanced Robotics</p>
                 <div className="projects-scroll" ref={projectsRef}>
                     <div className="project-card">
@@ -549,7 +549,7 @@ function IBoT() {
 
             {/* Testimonials Section */}
             <section className="testimonials-section" id="testimonials">
-                <h2>What Schools & Students Say</h2>
+                <h2>What Schools <span>&</span> Students Say</h2>
                 <div className="testimonials-scroll" ref={testimonialsRef}>
                     <div className="testimonial-card">
                         <div className="stars">⭐⭐⭐⭐⭐</div>

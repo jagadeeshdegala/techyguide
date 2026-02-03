@@ -259,11 +259,13 @@
 .ibot-page .intro-section h2 {
     font-family: var(--font-tech);
     font-size: 2.5rem;
-    color: #1e40af;
+    color: #000000;
     text-align: center;
     margin-bottom: 15px;
 }
-
+.ibot-page .intro-section span{
+    color: teal;
+}
 .ibot-page .intro-tagline {
     text-align: center;
     font-size: 1.1rem;
@@ -302,12 +304,15 @@
 .ibot-page .features-section h2 {
     font-family: var(--font-tech);
     font-size: 2.5rem;
-    color: #1e40af;
+    color: #000000;
     text-align: center;
     margin-bottom: 30px;
     padding-top: 0;
     position: relative;
     z-index: 1;
+}
+.ibot-page .features-section span{
+    color: teal;
 }
 
 .ibot-page .features-container {
@@ -382,7 +387,7 @@
 
 .ibot-page .feature-content h3 {
     font-size: 1.8rem;
-    color: #1e40af;
+    color:orange;
     margin-bottom: 15px;
 }
 
@@ -401,7 +406,7 @@
 
 .ibot-page .feature-points li {
     padding: 10px 0;
-    color: #1e40af;
+    color: #000000;
     font-weight: 600;
     font-size: 0.95rem;
 }
@@ -781,11 +786,13 @@
 .ibot-page .technology-section h2 {
     font-family: var(--font-tech);
     font-size: 2.5rem;
-    color: #1976d2;
+    color: #000000;
     text-align: center;
     margin-bottom: 15px;
 }
-
+.ibot-page .technology-section span{
+    color:teal
+}
 .ibot-page .section-intro {
     text-align: center;
     font-size: 1.1rem;
@@ -823,7 +830,7 @@
 
 .ibot-page .tech-card h3 {
     font-size: 1.3rem;
-    color: #1976d2;
+    color: black;
     margin-bottom: 15px;
 }
 
@@ -842,11 +849,13 @@
 .ibot-page .projects-section h2 {
     font-family: var(--font-tech);
     font-size: 2.5rem;
-    color: #1e40af;
+    color: black;
     text-align: center;
     margin-bottom: 15px;
 }
-
+.ibot-page .projects-section span{
+    color: teal;
+}
 .ibot-page .projects-scroll {
     display: flex;
     gap: 25px;
@@ -903,7 +912,7 @@
 
 .ibot-page .project-card h4 {
     font-size: 1.1rem;
-    color: #1e40af;
+    color: black;
     padding: 15px 15px 8px;
     margin: 0;
 }
@@ -924,11 +933,13 @@
 .ibot-page .testimonials-section h2 {
     font-family: var(--font-tech);
     font-size: 2.5rem;
-    color: #e11d48;
+    color: teal;
     text-align: center;
     margin-bottom: 50px;
 }
-
+.ibot-page .testimonials-section span{
+    color: black;
+}
 .ibot-page .testimonials-scroll {
     display: flex;
     gap: 25px;
@@ -981,7 +992,7 @@
 
 .ibot-page .testimonial-author {
     font-weight: 700;
-    color: #1e40af;
+    color: black;
     font-size: 0.9rem;
     margin: 10px 0 0;
 }
