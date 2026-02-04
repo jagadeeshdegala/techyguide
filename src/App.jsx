@@ -33,6 +33,7 @@ import PrivacyPolicyPage from './privacyPolicypage.jsx'
 import TeBoT from './productPages/TeBoT.jsx'
 import EBlox from './productPages/E-Blox.jsx'
 import EAddOnKit from './productPages/AddOnKit.jsx'
+import OpenResources from './OpenResources.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -58,6 +59,7 @@ function App() {
       <Route path="/courses" element={<CoursesPageWrapper />} />
       <Route path="/shop" element={<ShopPageWrapper />} />
       <Route path="/checkout" element={<CheckOutPage />} />
+      <Route path="/open-resources" element={<OpenResourcesWrapper />} />
       <Route path="/privacy-policy" element={<PrivacyPolicyPageWrapper />} />
     </Routes>
     <ScrollToTop/>
@@ -213,6 +215,15 @@ function RobothronePageWrapper() {
   return (
     <>
       <RobothronePage />
+      <FooterSection />
+    </>
+  );
+}
+
+function OpenResourcesWrapper() {
+  return (
+    <>
+      <OpenResources />
       <FooterSection />
     </>
   );
