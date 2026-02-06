@@ -1236,6 +1236,6 @@
 
 .ai-roboticslab-cbse-root .btn-primary:active, .ai-roboticslab-cbse-root .btn:active { transform: translateY(0); }
 .ai-roboticslab-cbse-root .guide-img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent, rgba(0,0,0,0.2)); }
-.ai-roboticslab-cbse-root .pricing-card.popular::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(37, 99, 235, 0.05), transparent); }
+.ai-roboticslab-cbse-root .pricing-card.popular::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(37, 99, 235, 0.05), transparent); pointer-events: none; }
 .ai-roboticslab-cbse-root .diy-section .container { position: relative; z-index: 2; }
 .ai-roboticslab-cbse-root .slider:hover .slide-track { animation-play-state: paused; }

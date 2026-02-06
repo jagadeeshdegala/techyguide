@@ -1,0 +1,635 @@
+/* ================================================================
+   COMPANY JOURNEY WAVE - PREMIUM ANIMATED SECTION
+   Root Class: .about-journey-wave
+   All styles scoped to this container - ZERO global impact
+   ================================================================ */
+
+.about-journey-wave {
+  background: linear-gradient(135deg, #0d5f52 0%, #008273 50%, #006b60 100%);
+  padding: 100px 0 80px;
+  position: relative;
+  overflow: hidden;
+  min-height: 700px;
+}
+
+/* Decorative background elements */
+.about-journey-wave::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 188, 212, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.about-journey-wave::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(233, 30, 99, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.journey-wave-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Title */
+.journey-wave-title {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 80px 0;
+  font-family: 'Rajdhani', sans-serif;
+  letter-spacing: -2px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* SVG Container */
+.journey-wave-svg {
+  width: 100%;
+  height: 300px;
+  display: block;
+  margin-bottom: 80px;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+}
+
+/* Wave path styling */
+.journey-wave-svg .wave-path {
+  animation: wave-flow 0.3s ease-out;
+}
+
+@keyframes wave-flow {
+  from {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    opacity: 0;
+  }
+  to {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+/* Destination marker - glows at end point */
+.destination-marker {
+  pointer-events: none;
+}
+
+.destination-ring {
+  animation: destination-pulse 2s ease-in-out infinite;
+  transition: opacity 0.5s ease;
+}
+
+.destination-fill {
+  animation: destination-fill-pulse 2s ease-in-out infinite;
+  transition: opacity 0.5s ease;
+}
+
+@keyframes destination-pulse {
+  0%, 100% {
+    r: 35;
+    opacity: 0.2;
+  }
+  50% {
+    r: 42;
+    opacity: 0.05;
+  }
+}
+
+@keyframes destination-fill-pulse {
+  0%, 100% {
+    r: 25;
+    opacity: 0;
+  }
+  50% {
+    r: 28;
+    opacity: 0.25;
+  }
+}
+
+/* Milestone markers */
+.journey-wave-svg .milestone-marker-outer {
+  animation: pulse-ring 2s ease-in-out infinite;
+  transition: opacity 0.4s ease;
+}
+
+.journey-wave-svg .milestone-marker-outer.active-milestone {
+  animation: pulse-ring-active 0.8s ease-in-out;
+}
+
+.journey-wave-svg .milestone-marker-inner {
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.journey-wave-svg .milestone-marker-inner.pulse-active {
+  animation: marker-glow 0.6s ease-out;
+}
+
+@keyframes pulse-ring {
+  0%, 100% {
+    r: 28;
+    opacity: 0.3;
+  }
+  50% {
+    r: 35;
+    opacity: 0.1;
+  }
+}
+
+@keyframes pulse-ring-active {
+  0% {
+    r: 28;
+  }
+  50% {
+    r: 40;
+  }
+  100% {
+    r: 28;
+  }
+}
+
+@keyframes marker-glow {
+  0% {
+    r: 16;
+    filter: drop-shadow(0 0 4px currentColor);
+  }
+  50% {
+    r: 20;
+    filter: drop-shadow(0 0 12px currentColor);
+  }
+  100% {
+    r: 16;
+    filter: drop-shadow(0 0 4px currentColor);
+  }
+}
+
+/* Rocket animations */
+.rocket-group {
+  filter: drop-shadow(0 8px 20px rgba(255, 107, 53, 0.5));
+  animation: rocket-tilt 1.5s ease-in-out infinite;
+}
+
+@keyframes rocket-tilt {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(3deg);
+  }
+}
+
+.rocket-body {
+  animation: rocket-pulse 0.8s ease-in-out infinite;
+}
+
+@keyframes rocket-pulse {
+  0%, 100% {
+    r: 14;
+    filter: drop-shadow(0 0 8px rgba(255, 107, 53, 0.6));
+  }
+  50% {
+    r: 16;
+    filter: drop-shadow(0 0 16px rgba(255, 107, 53, 0.8));
+  }
+}
+
+.rocket-flame {
+  animation: flame-flicker 0.4s ease-in-out infinite;
+  transform-origin: 0px -20px;
+}
+
+.rocket-flame-inner {
+  animation: flame-flicker-inner 0.3s ease-in-out infinite;
+  transform-origin: 0px -18px;
+}
+
+@keyframes flame-flicker {
+  0%, 100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scaleY(0.9);
+  }
+}
+
+@keyframes flame-flicker-inner {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.rocket-glow {
+  animation: rocket-glow-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes rocket-glow-pulse {
+  0%, 100% {
+    r: 20;
+    opacity: 0.25;
+  }
+  50% {
+    r: 28;
+    opacity: 0.08;
+  }
+}
+
+/* Milestones Content Wrapper - positioned to align with wave points */
+.milestones-content-wrapper {
+  position: relative;
+  height: 260px;
+  margin-bottom: 50px;
+}
+
+.milestone-content-item {
+  position: absolute;
+  left: var(--milestone-left, 50%);
+  transform: translateX(-50%) translateY(30px) scale(0.95);
+  opacity: 0;
+  transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition-delay: var(--reveal-delay, 0s);
+  width: 240px;
+  max-width: 260px;
+}
+
+/* Top positioned cards - above the wave */
+.milestone-content-item.milestone-top {
+  top: -10px;
+}
+
+/* Bottom positioned cards - below the wave */
+.milestone-content-item.milestone-bottom {
+  bottom: -10px;
+}
+
+.milestone-content-item.revealed {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.milestone-content-box {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 28px 24px;
+  border-left: 6px solid var(--milestone-color);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.milestone-content-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    var(--milestone-color, #008273) 0%,
+    transparent 100%
+  );
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+.milestone-year {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: var(--milestone-color);
+  margin: 0 0 8px 0;
+  font-family: 'Rajdhani', sans-serif;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.milestone-title-box {
+  display: inline-block;
+  background: white;
+  border: 2px solid var(--milestone-color);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1b262c;
+  font-family: 'Rajdhani', sans-serif;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+
+.milestone-content-item.revealed .milestone-title-box {
+  background: var(--milestone-color);
+  color: white;
+}
+
+.milestone-description {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #444;
+  font-family: 'Outfit', sans-serif;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Decorative bottom dots */
+.journey-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 50px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.dot.active {
+  background: white;
+  transform: scale(1.3);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.6);
+}
+
+/* ================================================================
+   RESPONSIVE DESIGN - TABLET (1024px and below)
+   ================================================================ */
+
+@media (max-width: 1024px) {
+  .about-journey-wave {
+    padding: 80px 0 60px;
+    min-height: 600px;
+  }
+
+  .journey-wave-title {
+    font-size: 3.2rem;
+    margin-bottom: 60px;
+  }
+
+  .journey-wave-svg {
+    height: 280px;
+    margin-bottom: 60px;
+  }
+
+  .milestones-content-wrapper {
+    height: 280px;
+    margin-bottom: 40px;
+  }
+
+  .milestone-content-item {
+    width: 220px;
+    max-width: 240px;
+  }
+
+  .milestone-content-box {
+    padding: 24px 20px;
+  }
+
+  .milestone-year {
+    font-size: 2.8rem;
+    margin-bottom: 6px;
+  }
+
+  .milestone-title-box {
+    padding: 6px 14px;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+
+  .milestone-description {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+}
+
+/* ================================================================
+   RESPONSIVE DESIGN - TABLET-SMALL (768px and below)
+   Vertical mobile-friendly layout
+   ================================================================ */
+
+@media (max-width: 768px) {
+  .about-journey-wave {
+    padding: 60px 0 50px;
+    min-height: 800px;
+  }
+
+  .journey-wave-container {
+    padding: 0 20px;
+  }
+
+  .journey-wave-title {
+    font-size: 2.4rem;
+    margin-bottom: 50px;
+    letter-spacing: -1px;
+  }
+
+  .journey-wave-svg {
+    height: 900px;
+    margin-bottom: 50px;
+  }
+
+  /* On mobile, stack all cards in center (no alternating) */
+  .milestones-content-wrapper {
+    position: static;
+    height: auto;
+    display: grid;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .milestone-content-item {
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    transform: translateY(30px) scale(0.95);
+  }
+
+  .milestone-content-item.revealed {
+    transform: translateY(0) scale(1);
+  }
+
+  .milestone-content-box {
+    padding: 22px 18px;
+    border-left-width: 5px;
+  }
+
+  .milestone-year {
+    font-size: 2.4rem;
+    margin-bottom: 6px;
+  }
+
+  .milestone-title-box {
+    font-size: 0.88rem;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+  }
+
+  .milestone-description {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .journey-dots {
+    gap: 10px;
+    margin-top: 30px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* ================================================================
+   RESPONSIVE DESIGN - MOBILE (600px and below)
+   ================================================================ */
+
+@media (max-width: 600px) {
+  .about-journey-wave {
+    padding: 50px 0 40px;
+    min-height: 700px;
+  }
+
+  .about-journey-wave::before {
+    width: 400px;
+    height: 400px;
+    top: -20%;
+    right: -20%;
+  }
+
+  .about-journey-wave::after {
+    width: 300px;
+    height: 300px;
+    bottom: -30%;
+  }
+
+  .journey-wave-container {
+    padding: 0 16px;
+  }
+
+  .journey-wave-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .journey-wave-svg {
+    height: 850px;
+    margin-bottom: 40px;
+  }
+
+  .milestone-content-box {
+    padding: 20px 16px;
+  }
+
+  .milestone-year {
+    font-size: 2rem;
+  }
+
+  .milestone-description {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+}
+
+/* ================================================================
+   RESPONSIVE DESIGN - SMALL MOBILE (below 480px)
+   ================================================================ */
+
+@media (max-width: 480px) {
+  .about-journey-wave {
+    padding: 40px 0 30px;
+    min-height: 650px;
+  }
+
+  .journey-wave-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .journey-wave-svg {
+    height: 800px;
+    margin-bottom: 30px;
+  }
+
+  .milestones-content-wrapper {
+    gap: 12px;
+  }
+
+  .milestone-content-box {
+    padding: 18px 14px;
+    border-left-width: 4px;
+    border-radius: 12px;
+  }
+
+  .milestone-year {
+    font-size: 1.8rem;
+    margin-bottom: 4px;
+  }
+
+  .milestone-title-box {
+    font-size: 0.82rem;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+  }
+
+  .milestone-description {
+    font-size: 0.78rem;
+  }
+
+  .journey-dots {
+    gap: 8px;
+  }
+
+  .dot {
+    width: 7px;
+    height: 7px;
+  }
+}
+
+/* ================================================================
+   ANIMATION PERFORMANCE & ACCESSIBILITY
+   ================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-journey-wave .milestone-content-item,
+  .about-journey-wave .journey-wave-svg .wave-path,
+  .about-journey-wave .rocket-group,
+  .about-journey-wave .dot,
+  .about-journey-wave .destination-marker {
+    animation: none;
+    transition: none;
+  }
+
+  .about-journey-wave .milestone-content-item.revealed {
+    opacity: 1;
+    transform: none;
+  }
+}

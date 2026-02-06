@@ -1,5 +1,6 @@
 import './AboutSection.css';
 import { Link } from 'react-router-dom';
+import CompanyJourneyWave from './CompanyJourneyWave';
 
 function AboutSection(){
     return(
@@ -13,6 +14,7 @@ function AboutSection(){
                     </div>
                 </div>
             </section>
+           {/*<CompanyJourneyWave /> */}
             <section className="stats">
                 <div className="container">
                     <div className="stats-grid">

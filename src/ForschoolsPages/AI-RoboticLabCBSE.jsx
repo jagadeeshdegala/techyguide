@@ -531,7 +531,7 @@ function AIRoboticsLabCBSE() {
                 <li><i className="fas fa-spider"></i> Spider Kit &amp; Robotic Arm</li>
                 <li><i className="fas fa-chalkboard-teacher"></i> 15 Online Training Sessions</li>
               </ul>
-              <a href="#contact-section" className="btn btn-primary">Request Details</a>
+              <a href="#contact-section" className="btn btn-orange">Request Details</a>
             </div>
 
             <div className="pricing-card fade-up">

@@ -23,53 +23,44 @@ function FooterSection(){
  
 
 <div className="footer-maps-single">
-  {/* Map Preview */}
-  <div
-    className="map-box"
-    onClick={() =>
-      window.open(
-        "https://www.google.com/maps/d/viewer?mid=1qtGl_MVXXa3y3qnzDehhWhRfeW4_Zac",
-        "_blank"
-      )
-    }
-    role="link"
-    aria-label="Open all TechyGuide offices in Maps"
-  >
-    <iframe
-      title="TechyGuide Offices Map"
-      src="https://www.google.com/maps/d/embed?mid=1qtGl_MVXXa3y3qnzDehhWhRfeW4_Zac"
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-    />
-    <span>Our Offices (Odisha & Bangalore)</span>
-  </div>
-
-  {/* Buttons */}
-  <div className="map-buttons">
-    <button
-      onClick={() =>
-        window.open(
-          "https://maps.app.goo.gl/DFFaPgpLexm2tggD8",
-          "_blank"
-        )
-      }
-    >
-      Open Odisha in Maps
-    </button>
-
-    <button
-      onClick={() =>
-        window.open(
-          "https://maps.app.goo.gl/vJEWcwmuaNF6xK3H8",
-          "_blank"
-        )
-      }
-    >
-      Open Bangalore in Maps
-    </button>
-  </div>
+  <div className="maps-grid">
+    {/* Bangalore Location */}
+    <div
+  className="map-box"
+  onClick={() =>
+    window.open(
+      "https://maps.app.goo.gl/DnJKoVwhpUKaxcPGA",
+      "_blank"
+    )
+  }
+>
+  <iframe
+    title="Bangalore Office"
+    src="https://www.google.com/maps?q=TechyGuide%20Bangalore&output=embed"
+    loading="lazy"
+  />
+  <span>Bangalore Office</span>
 </div>
 
+    {/* Odisha Location */}
+    <div
+  className="map-box"
+  onClick={() =>
+    window.open(
+      "https://maps.app.goo.gl/LCWgjAsz1PrJ5tAK9",
+      "_blank"
+    )
+  }
+>
+  <iframe
+    title="Odisha Headquarters"
+    src="https://www.google.com/maps?q=TechyGuide%20Odisha&output=embed"
+    loading="lazy"
+  />
+  <span>Odisha Headquarters</span>
+</div>
+  </div>
+</div>
                         </div>
                     </div>
                     <div className="footer-col">
