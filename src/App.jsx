@@ -34,6 +34,7 @@ import TeBoT from './productPages/TeBoT.jsx'
 import EBlox from './productPages/E-Blox.jsx'
 import EAddOnKit from './productPages/AddOnKit.jsx'
 import OpenResources from './OpenResources.jsx'
+import AboutUsPage from './AboutUsPage.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -60,6 +61,7 @@ function App() {
       <Route path="/shop" element={<ShopPageWrapper />} />
       <Route path="/checkout" element={<CheckOutPage />} />
       <Route path="/open-resources" element={<OpenResourcesWrapper />} />
+      <Route path="/about-us" element={<AboutUsPageWrapper />} />
       <Route path="/privacy-policy" element={<PrivacyPolicyPageWrapper />} />
     </Routes>
     <ScrollToTop/>
@@ -224,6 +226,15 @@ function OpenResourcesWrapper() {
   return (
     <>
       <OpenResources />
+      <FooterSection />
+    </>
+  );
+}
+
+function AboutUsPageWrapper() {
+  return (
+    <>
+      <AboutUsPage />
       <FooterSection />
     </>
   );

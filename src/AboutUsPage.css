@@ -1,0 +1,144 @@
+ .aboutus-page-root * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Segoe UI", sans-serif;
+}
+
+.aboutus-page-root {
+	color: #333;
+	background: #f4f6f9;
+}
+
+.aboutus-page-root .container {
+	width: 90%;
+	max-width: 1200px;
+	margin: auto;
+}
+
+/* HERO */
+.aboutus-page-root .hero {
+	height: 70vh;
+	display: flex;
+    background-color: #008273;
+	align-items: center;
+	text-align: center;
+	color: #fff;
+    margin-top: 100px;
+}
+
+.aboutus-page-root .hero-content {
+	width: 100%;
+}
+
+.aboutus-page-root .hero h1 {
+	font-size: 48px;
+	margin-bottom: 15px;
+}
+
+.aboutus-page-root .hero p {
+	font-size: 18px;
+	max-width: 700px;
+	margin: auto;
+}
+
+/* ABOUT */
+.aboutus-page-root .about {
+	padding: 70px 0;
+}
+
+.aboutus-page-root .about-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 40px;
+	align-items: center;
+}
+/* Mobile view */
+@media (max-width: 768px) {
+  .aboutus-page-root .about-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+
+  }
+   .aboutus-page-root .about-grid h2 {
+   padding-bottom: 20px;
+
+  }
+}
+.aboutus-page-root .about img {
+	width: 100%;
+	border-radius: 10px;
+}
+
+/* VALUES */
+.aboutus-page-root .values {
+	background: #0a2540;
+	color: #fff;
+	padding: 70px 0;
+	text-align: center;
+}
+.aboutus-page-root .values h2,
+.aboutus-page-root .values h3{
+    color: white;
+}
+.aboutus-page-root .values-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 30px;
+	margin-top: 40px;
+}
+
+.aboutus-page-root .value-card {
+	background: #123c66;
+	padding: 30px;
+	border-radius: 10px;
+}
+
+/* TEAM */
+.aboutus-page-root .team {
+	padding: 70px 0;
+	text-align: center;
+}
+
+.aboutus-page-root .team-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+	gap: 10px;
+	margin-top: 40px;
+}
+
+.aboutus-page-root .team-card {
+	background: #fff;
+	padding: 25px;
+	border-radius: 12px;
+	box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+	transition: transform 0.3s;
+}
+
+.aboutus-page-root .team-card:hover {
+	transform: translateY(-10px);
+}
+
+.aboutus-page-root .team-card img {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-bottom: 15px;
+}
+
+/* GALLERY */
+.aboutus-page-root .gallery {
+	padding: 70px 0;
+}
+
+.aboutus-page-root .gallery-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 20px;
+}
+
+.aboutus-page-root .gallery img {
+	width: 100%;
+	border-radius: 10px;
+}

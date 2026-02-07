@@ -71,6 +71,7 @@ function FooterSection(){
                             <li><Link to="/franchise" onClick={scrollToTop}>Franchise</Link></li>
                             <li><Link to="/robothrone" onClick={scrollToTop}> Robothrone </Link></li>
                             <li><Link to="/open-resources" onClick={scrollToTop}>Open Resources</Link></li>
+                            <li><Link to="/about-us" onClick={scrollToTop}>About Us</Link></li>
                             <li><a href="https://www.techyguide.in/contact/" target="_blank" onClick={scrollToTop}>Contact us</a></li>
                             <li><Link to="/privacy-policy" onClick={scrollToTop}>Privacy Policy</Link></li>
 
