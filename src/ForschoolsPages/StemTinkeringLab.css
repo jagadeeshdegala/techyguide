@@ -1139,9 +1139,8 @@
   }
 }
 @media (max-width: 600px) {
-  /* Hide WhatsApp and ScrollToTop buttons on mobile for this page */
-  .stem-tinkering-lab-root ~ .whatsapp-button,
-  .stem-tinkering-lab-root ~ button.scroll-to-top {
+  /* Hide WhatsApp button on mobile for this page */
+  .stem-tinkering-lab-root ~ .whatsapp-button {
     display: none !important;
   }
 }

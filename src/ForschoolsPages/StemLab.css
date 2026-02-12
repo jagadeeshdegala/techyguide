@@ -5,11 +5,6 @@
     box-sizing: border-box;
 }
 
-/* --- Global Button Controls --- */
-.scroll-to-top.hidden-from-hero {
-	display: none !important;
-}
-
 .stemlab-page-root {
     --primary-teal: #008080;
     --dark-teal: #004d4d;

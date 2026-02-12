@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Outfit:wght@300;400;600&display=swap');
 
-/* --- Global Button Controls --- */
-.scroll-to-top.hidden-from-hero {
-	display: none !important;
-}
-
 /* --- Variables --- */
 .workshop-page-root {
 	--teal: #008273;

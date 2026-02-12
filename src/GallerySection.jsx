@@ -1,5 +1,5 @@
 import g1 from '/src/assets/g1.jpg'
-import g2 from '/src/assets/g2.jpg'
+import g2 from '/src/assets/studentAtRoboticWorkshop.jpg'
 import g3 from '/src/assets/g3.jpg'
 import g4 from '/src/assets/g4.jpg'
 import g5 from '/src/assets/g5.jpg'

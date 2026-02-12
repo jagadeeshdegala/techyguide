@@ -125,3 +125,12 @@ h2 {
     background-color: var(--primary-color);
     color: var(--white);
 }
+
+/* Keep the chatbot fixed in the corner */
+#tawkchat-container,
+#tawkchat-iframe-container {
+    position: fixed !important;
+    right: 20px !important;
+    bottom: 20px !important;
+    z-index: 9999 !important;
+}

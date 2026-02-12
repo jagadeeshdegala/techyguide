@@ -1430,8 +1430,7 @@
 		gap: 0;
 	}
 
-	/* Hide WhatsApp and ScrollToTop buttons on mobile for this page */
-	.ai-roboticlab-icse-root ~ .whatsapp-button,
-	.ai-roboticlab-icse-root ~ button.scroll-to-top {
+	/* Hide WhatsApp button on mobile for this page */
+	.ai-roboticlab-icse-root ~ .whatsapp-button {
 		display: none !important;
 	}}

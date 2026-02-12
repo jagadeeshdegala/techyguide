@@ -7,16 +7,17 @@ function RobothroneSection() {
     <>
       <section className="robothrone" id='robothrone'>
         <div className="container">
-          <h1 className="mainHeading"><span className="NationalHeading">National</span> Robotic Innovation Fest</h1><br></br>
-
-          <div className="event-banner">
-            <div className="event-text">
-              <div className="robothroneLogo">
+          <div className="robothroneLogo">
                 <img
                 src={robothroneLogo}
                 alt="Students participating in Robothrone robotics competition"
                />
               </div>
+          <h1 className="mainHeading"><span className="NationalHeading">National</span> Robotic Innovation Fest</h1><br></br>
+
+          <div className="event-banner">
+            <div className="event-text">
+              
               <br></br>
               
              
@@ -57,10 +58,13 @@ function RobothroneSection() {
                   Register your school or team for Robothrone and be part of
                   India's most exciting robotics competition.
                 </p>
-                <a href="https://www.techyguide.in/robothrone/register.html" className="btn btn-primary" target="_blank"  rel="noopener noreferrer">
+                <div className="register-btn"> 
+                  <a href="https://www.techyguide.in/robothrone/register.html" className="btn btn-primary" target="_blank"  rel="noopener noreferrer">
                  
                   Register for Robothrone
                 </a>
+                </div>
+                
                
               </div>
             </div>

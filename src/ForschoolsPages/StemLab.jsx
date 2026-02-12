@@ -141,34 +141,7 @@ function StemLab() {
         }
 
         // ==========================================
-        // 7. HERO-AWARE BUTTON POSITIONING
-        // ==========================================
-        const introSection = document.querySelector('.stemlab-page-root .intro-section');
-        const handleScroll = () => {
-            if (!introSection) return;
-            
-            const introBottom = introSection.offsetHeight;
-            const scrollToTopBtn = document.querySelector('button.scroll-to-top');
-            const whatsappBtn = document.querySelector('.whatsapp-button');
-
-            if (window.scrollY >= introBottom) {
-                // Past hero - show scroll-to-top and position buttons side by side
-                if (scrollToTopBtn) scrollToTopBtn.classList.remove('hidden-from-hero');
-                if (whatsappBtn) whatsappBtn.classList.add('shifted');
-            } else {
-                // In hero - hide scroll-to-top
-                if (scrollToTopBtn) scrollToTopBtn.classList.add('hidden-from-hero');
-                if (whatsappBtn) whatsappBtn.classList.remove('shifted');
-            }
-        };
-
-        if (introSection) {
-            window.addEventListener('scroll', handleScroll);
-            handleScroll(); // Call once on mount to set initial state
-        }
-
-        // ==========================================
-        // 8. FORM HANDLING FOR ENQUIRY
+        // 7. FORM HANDLING FOR ENQUIRY
         // ==========================================
         const form = document.querySelector('.stemlab-page-root #enquiryForm');
         const formHandler = (e) => {
@@ -226,7 +199,6 @@ function StemLab() {
             document.body.removeEventListener('click', handleClick);
             if (statsObserver) statsObserver.disconnect();
             if (vpObserver) vpObserver.disconnect();
-            window.removeEventListener('scroll', handleScroll);
             if (form) form.removeEventListener('submit', formHandler);
         };
     }, []);

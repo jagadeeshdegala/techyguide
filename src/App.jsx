@@ -18,9 +18,8 @@ import RobothronePage from './RobothronePage.jsx'
 import GallerySection from './GallerySection.jsx'
 import CommunitySection from './CommunitySection.jsx'
 import FooterSection from './FooterSection.jsx'
-import ScrollToTop from './ScrollToTop.jsx'
 import WhatsAppButton from './WhatsAppButton.jsx'
-import SocialMediaIcons from './SocialMediaIcons.jsx'
+//import SocialMediaIcons from './SocialMediaIcons.jsx'
 import AIRoboticsLabCBSE from './ForschoolsPages/AI-RoboticLabCBSE.jsx'
 import AIRoboticLabICSE from './ForschoolsPages/AI-RoboticLabICSE.jsx'
 import StemTinkeringLab from './ForschoolsPages/StemTinkeringLab.jsx'
@@ -42,7 +41,7 @@ function App() {
 
  return (
   <>
-    <SocialMediaIcons />
+    {/* <SocialMediaIcons /> */}
     <Header/>
     <Routes>
       <Route path="/" element={<HomePage />} />
@@ -66,7 +65,6 @@ function App() {
       <Route path="/about-us" element={<AboutUsPageWrapper />} />
       <Route path="/privacy-policy" element={<PrivacyPolicyPageWrapper />} />
     </Routes>
-    <ScrollToTop/>
     <WhatsAppButton/>
   </>
 )

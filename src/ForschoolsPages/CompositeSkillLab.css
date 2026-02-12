@@ -345,9 +345,8 @@
     
     .composite-skill-lab-root .tab-btn { padding: 10px 15px; font-size: 0.85rem; }
 
-    /* Hide WhatsApp and ScrollToTop buttons on mobile for this page */
-    .composite-skill-lab-root ~ .whatsapp-button,
-    .composite-skill-lab-root ~ button.scroll-to-top {
+    /* Hide WhatsApp button on mobile for this page */
+    .composite-skill-lab-root ~ .whatsapp-button {
         display: none !important;
     }
 }
