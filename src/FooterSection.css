@@ -94,7 +94,6 @@ footer ul li a:hover {
 
 	.footer-content {
 		grid-template-columns: 1fr;
-		gap: 30px;
 		padding-bottom: 30px;
 		text-align: center;
 	}
@@ -116,7 +115,18 @@ footer ul li a:hover {
 		list-style: none;
 		padding: 0;
 	}
-
+	.footerQuicklinks{
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+.footer-social-links {
+	display: flex;
+	flex-direction: row;
+	gap: 12px;
+justify-content: center;
+	margin: 8px 0 16px;
+}
 	/* Offerings: show 2 per row, hide IoT on mobile */
 	.offerings-list {
 		display: grid;
