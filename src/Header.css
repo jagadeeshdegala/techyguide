@@ -103,6 +103,40 @@ nav ul li a:hover {
     white-space: nowrap;
 }
 
+/* Shop Icon Styling */
+.shop-icon {
+    padding: 8px 14px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shop-icon i {
+    font-size: 1.1rem;
+    margin: 0;
+    animation: cartBounce 2s ease-in-out infinite;
+}
+
+/* Cart Animation */
+@keyframes cartBounce {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(3px);
+    }
+}
+
+.shop-icon:hover i {
+    animation: cartShake 0.5s ease-in-out;
+}
+
+@keyframes cartShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+}
+
 /* --- Dropdown Menu Styles --- */
 
 /* Parent List Item */

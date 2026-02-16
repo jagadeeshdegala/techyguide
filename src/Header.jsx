@@ -164,7 +164,7 @@ function Header() {
 
               <li><a href="/franchise" onClick={(e) => { e.preventDefault(); handlePageNavigation('/franchise'); }}>Franchise</a></li>
 {/* <li><a href="#contact" onClick={(e) => handleAnchorClick(e, '#contact')}>Contact</a></li> */}             
-                <li><a href="/shop" className="btn-nav nav-shop-cta" onClick={(e) => { e.preventDefault(); handlePageNavigation('/shop'); }}>Shop</a></li>
+                <li><a href="/shop" className="btn-nav nav-shop-cta shop-icon" onClick={(e) => { e.preventDefault(); handlePageNavigation('/shop'); }}><i className="fas fa-cart-shopping"></i></a></li>
               <li>
                <a
                   href="https://course.techyguide.in"

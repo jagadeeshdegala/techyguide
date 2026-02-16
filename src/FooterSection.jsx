@@ -154,6 +154,11 @@ function FooterSection() {
                   </Link>
                 </li>
                 <li>
+                  <Link to="/partners" onClick={scrollToTop}>
+                    Partners
+                  </Link>
+                </li>
+                <li>
                   <a
                     href="https://www.techyguide.in/contact/"
                     target="_blank"

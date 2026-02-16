@@ -325,25 +325,25 @@ function StemLab() {
                         </div>
 
                         <div className="models-grid">
-                            <div className="model-card" data-video-id="M7lc1UVf-VE">
+                            <div className="model-card" data-video-id="kCOVtB8gL_A">
                                 <div className="model-media">
                                     <iframe title="Robotics Kit" src={undefined} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                                 </div>
-                                <h4>Robotics Kit</h4>
+                                <h4>Solar System</h4>
                             </div>
 
-                            <div className="model-card" data-video-id="M7lc1UVf-VE">
+                            <div className="model-card" data-video-id="-U4jj5uXi5w">
                                 <div className="model-media">
                                     <iframe title="Smart Car" src={undefined} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                                 </div>
-                                <h4>Smart Car</h4>
+                                <h4>Newton Color Disc</h4>
                             </div>
 
-                            <div className="model-card" data-video-id="M7lc1UVf-VE">
+                            <div className="model-card" data-video-id="ndWN-X3uIi0">
                                 <div className="model-media">
                                     <iframe title="Hydraulics Demo" src={undefined} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                                 </div>
-                                <h4>Hydraulics Demo</h4>
+                                <h4>Newtons cradle</h4>
                             </div>
 
                             <div className="model-card" data-video-id="M7lc1UVf-VE">
