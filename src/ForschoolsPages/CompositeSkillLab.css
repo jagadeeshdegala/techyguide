@@ -231,9 +231,7 @@
 .composite-skill-lab-root .gallery-item.large { grid-column: span 2 !important; grid-row: span 2 !important; }
 .composite-skill-lab-root .gallery-item img { display: block; width: 100% !important; height: 100% !important; object-fit: cover !important; transition: 0.5s; }
 .composite-skill-lab-root .gallery-item:hover img { transform: scale(1.1); }
-.composite-skill-lab-root .gallery-overlay { position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0,0,0,0.6); color: var(--white); padding: 15px; opacity: 0; transition: 0.3s; }
-.composite-skill-lab-root .gallery-overlay h5 { color: var(--white) !important; margin: 0; }
-.composite-skill-lab-root .gallery-item:hover .gallery-overlay { opacity: 1; }
+.composite-skill-lab-root .gallery-overlay { display: none; }
 
 /* =========================================
    9. FAQ & CONTACT

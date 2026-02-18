@@ -1,6 +1,12 @@
 import { useEffect } from 'react';
 import './StemTinkeringLab.css';
 import logoImg from '../assets/ForSchoolsStemTinkeringLabImages/Logo_TG_Tagline 2.png';
+import GalleryImg1 from '../assets/ForSchoolsStemTinkeringLabImages/IMG-20240805-WA0001.jpg';
+import GalleryImg2 from '../assets/ForSchoolsStemTinkeringLabImages/IMG20230907100904.jpg';
+import GalleryImg3 from '../assets/ForSchoolsStemTinkeringLabImages/IMG20241106123513.jpg';
+import GalleryImg4 from '../assets/ForSchoolsStemTinkeringLabImages/IMG20241226143613.jpg';
+import GalleryImg5 from '../assets/ForSchoolsStemTinkeringLabImages/IMG20251016105208.jpg';
+import GalleryImg6 from '../assets/ForSchoolsStemTinkeringLabImages/IMG20251017160909.jpg';
 
 function StemTinkeringLab() {
   useEffect(() => {
@@ -603,12 +609,12 @@ function StemTinkeringLab() {
           <h2 className="section-heading text-center fade-up">Our Labs in Action</h2>
           <p className="section-subtext text-center fade-up">Deployed in 350+ Schools.</p>
           <div className="gallery-grid">
-            <div className="gallery-item large fade-up"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800" alt="Robotics" /><div className="gallery-overlay"><h5>Hands-on Learning</h5></div></div>
-            <div className="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1555664424-778a69022365?auto=format&fit=crop&q=80&w=600" alt="Electronics" /><div className="gallery-overlay"><h5>Electronics</h5></div></div>
-            <div className="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&q=80&w=600" alt="3D Printing" /><div className="gallery-overlay"><h5>3D Printing</h5></div></div>
-            <div className="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=600" alt="AI Coding" /><div className="gallery-overlay"><h5>AI Programming</h5></div></div>
-            <div className="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?auto=format&fit=crop&q=80&w=600" alt="Competition" /><div className="gallery-overlay"><h5>RoboThrone</h5></div></div>
-            <div className="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?auto=format&fit=crop&q=80&w=600" alt="Competition" /><div className="gallery-overlay"><h5>RoboThrone</h5></div></div>
+            <div className="gallery-item large fade-up"><img src={GalleryImg1} alt="Hands-on Learning" /><div className="gallery-overlay"><h5>Hands-on Learning</h5></div></div>
+            <div className="gallery-item fade-up"><img src={GalleryImg2} alt="Student Workshop" /><div className="gallery-overlay"><h5>Student Workshop</h5></div></div>
+            <div className="gallery-item fade-up"><img src={GalleryImg3} alt="Lab Activities" /><div className="gallery-overlay"><h5>Lab Activities</h5></div></div>
+            <div className="gallery-item fade-up"><img src={GalleryImg4} alt="STEM Projects" /><div className="gallery-overlay"><h5>STEM Projects</h5></div></div>
+            <div className="gallery-item fade-up"><img src={GalleryImg5} alt="Tinkering Session" /><div className="gallery-overlay"><h5>Tinkering Session</h5></div></div>
+            <div className="gallery-item fade-up"><img src={GalleryImg6} alt="Student Innovation" /><div className="gallery-overlay"><h5>Student Innovation</h5></div></div>
           </div>
         </div>
       </section>

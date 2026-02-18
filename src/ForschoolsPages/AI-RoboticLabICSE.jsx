@@ -1,6 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import "./AI-RoboticLabICSE.css";
 import logoTagline from "../assets/ForSchools_AI-RoboticsLabICSE_images/Logo_TG_Tagline 2.png";
+import GalleryImg1 from "../assets/ForSchools_AI-RoboticsLabICSE_images/2023-03-22 at 14.56.19.jpg";
+import GalleryImg2 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Gitanjali Vidhyalay_ Students Doing Coding.jpg";
+import GalleryImg3 from "../assets/ForSchools_AI-RoboticsLabICSE_images/HZ1A9459.JPG";
+import GalleryImg4 from "../assets/ForSchools_AI-RoboticsLabICSE_images/IMG-20230317-WA0002.jpg";
+import GalleryImg5 from "../assets/ForSchools_AI-RoboticsLabICSE_images/IMG-20230925-WA0025.jpg";
+import GalleryImg6 from "../assets/ForSchools_AI-RoboticsLabICSE_images/IMG_20240415_111354.jpg";
+import GalleryImg7 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Robotic Lap.jpg";
 
 const AIRoboticLabICSE = () => {
 	const rootRef = useRef(null);
@@ -651,12 +658,12 @@ const AIRoboticLabICSE = () => {
 					<h2 className="section-heading text-center fade-up">Our Labs in Action</h2>
 					<p className="section-subtext text-center fade-up">Deployed in 350+ Schools including Gitanjali Vidyalaya, Millenium Public School, and more.</p>
 					<div className="gallery-grid">
-						<div className="gallery-item large fade-up"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800" alt="Robotics" /><div className="gallery-overlay"><h5>Hands-on Learning</h5></div></div>
-						<div className="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1555664424-778a69022365?auto=format&fit=crop&q=80&w=600" alt="Electronics" /><div className="gallery-overlay"><h5>Electronics</h5></div></div>
-						<div className="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&q=80&w=600" alt="3D Printing" /><div className="gallery-overlay"><h5>3D Printing</h5></div></div>
-						<div className="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=600" alt="AI Coding" /><div className="gallery-overlay"><h5>AI Programming</h5></div></div>
-						<div className="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?auto=format&fit=crop&q=80&w=600" alt="Competition" /><div className="gallery-overlay"><h5>RoboThrone</h5></div></div>
-						<div className="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?auto=format&fit=crop&q=80&w=600" alt="Competition" /><div className="gallery-overlay"><h5>RoboThrone</h5></div></div>
+						<div className="gallery-item large fade-up"><img src={GalleryImg1} alt="Hands-on Learning" /><div className="gallery-overlay"><h5>Hands-on Learning</h5></div></div>
+						<div className="gallery-item fade-up"><img src={GalleryImg2} alt="Student Coding" /><div className="gallery-overlay"><h5>Student Coding</h5></div></div>
+						<div className="gallery-item fade-up"><img src={GalleryImg3} alt="Lab Workshop" /><div className="gallery-overlay"><h5>Lab Workshop</h5></div></div>
+						<div className="gallery-item fade-up"><img src={GalleryImg4} alt="AI Programming" /><div className="gallery-overlay"><h5>AI Programming</h5></div></div>
+						<div className="gallery-item fade-up"><img src={GalleryImg5} alt="Robotics Activity" /><div className="gallery-overlay"><h5>Robotics Activity</h5></div></div>
+						<div className="gallery-item fade-up"><img src={GalleryImg6} alt="Student Project" /><div className="gallery-overlay"><h5>Student Project</h5></div></div>
 					</div>
 				</div>
 			</section>

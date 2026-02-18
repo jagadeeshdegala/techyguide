@@ -1,6 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import "./AI-RoboticLabCBSE.css";
 import Logo from "../assets/ForSchoolsAI-RoboticslabCBSE/Logo_TG_Tagline 2.png";
+import GalleryImg1 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG20240428131408.jpg";
+import GalleryImg2 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG20240606112350.jpg";
+import GalleryImg3 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG_20221125_104735.jpg";
+import GalleryImg4 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG_20240128_131052.jpg";
+import GalleryImg5 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG_8545.JPG";
+import GalleryImg6 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG_9372.JPG";
 
 function AIRoboticsLabCBSE() {
   const rootRef = useRef(null);
@@ -704,28 +710,28 @@ function AIRoboticsLabCBSE() {
           <h2 className="section-heading text-center fade-up">Our Labs in Action</h2>
           <div className="gallery-grid">
             <div className="gallery-item large fade-up">
-              <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800" alt="Robotics Class" />
+              <img src={GalleryImg1} alt="Hands-on Learning" />
               <div className="gallery-overlay"><h5>Hands-on Learning</h5></div>
             </div>
             <div className="gallery-item fade-up">
-              <img src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?auto=format&fit=crop&q=80&w=600" alt="Electronics" />
-              <div className="gallery-overlay"><h5>Electronics</h5></div>
+              <img src={GalleryImg2} alt="Student Projects" />
+              <div className="gallery-overlay"><h5>Student Projects</h5></div>
             </div>
             <div className="gallery-item fade-up">
-              <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&q=80&w=600" alt="3D Printing" />
-              <div className="gallery-overlay"><h5>3D Printing</h5></div>
+              <img src={GalleryImg3} alt="Lab Activities" />
+              <div className="gallery-overlay"><h5>Lab Activities</h5></div>
             </div>
             <div className="gallery-item fade-up">
-              <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=600" alt="AI Coding" />
+              <img src={GalleryImg4} alt="AI Programming" />
               <div className="gallery-overlay"><h5>AI Programming</h5></div>
             </div>
             <div className="gallery-item fade-up">
-              <img src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?auto=format&fit=crop&q=80&w=600" alt="RoboThrone" />
-              <div className="gallery-overlay"><h5>RoboThrone</h5></div>
+              <img src={GalleryImg5} alt="Robotics Workshop" />
+              <div className="gallery-overlay"><h5>Robotics Workshop</h5></div>
             </div>
             <div className="gallery-item fade-up">
-              <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&q=80&w=600" alt="3D Printing" />
-              <div className="gallery-overlay"><h5>3D Printing</h5></div>
+              <img src={GalleryImg6} alt="Student Showcase" />
+              <div className="gallery-overlay"><h5>Student Showcase</h5></div>
             </div>
           </div>
         </div>

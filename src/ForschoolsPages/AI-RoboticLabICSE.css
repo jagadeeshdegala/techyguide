@@ -1068,18 +1068,8 @@
 }
 .ai-roboticlab-icse-root .gallery-item:hover img { transform: scale(1.1); }
 .ai-roboticlab-icse-root .gallery-overlay { 
-	position: absolute !important; 
-	bottom: 0 !important; 
-	left: 0 !important; 
-	width: 100% !important; 
-	background: rgba(210, 210, 210, 0.66) !important; 
-	color: #fff !important; 
-	padding: 15px !important; 
-	opacity: 0 !important; 
-	transition: 0.3s !important; 
-	box-sizing: border-box !important;
+	display: none !important;
 }
-.ai-roboticlab-icse-root .gallery-item:hover .gallery-overlay { opacity: 1 !important; }
 
 /* =========================================
    13. TESTIMONIALS (Auto Scroll)

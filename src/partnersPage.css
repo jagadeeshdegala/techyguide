@@ -92,10 +92,11 @@
 }
 
 .partners-page-root .partners-gradient-text {
-	/* Brighter gradient for dark bg */
-	background: linear-gradient(to right, #20c9b0, #ff9e42);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+  /* Brighter gradient for dark bg */
+  background: linear-gradient(to right, #20c9b0, #ff9e42);
+  background-clip: text;              /* ✅ standard property */
+  -webkit-background-clip: text;      /* ✅ Safari / Chrome */
+  -webkit-text-fill-color: transparent;
 }
 
 .partners-page-root .partners-hero-content p { font-size: 1.2rem; color: #eee; max-width: 600px; margin: 0 auto 50px auto; }
