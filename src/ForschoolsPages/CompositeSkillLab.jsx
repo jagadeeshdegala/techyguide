@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './CompositeSkillLab.css';
 import LogoImg from '../assets/ForSchoolsCompositeSkillLabImages/Logo_TG_Tagline 2.png';
+import LabImage1 from '../assets/ForSchoolsCompositeSkillLabImages/IMG20240604113822.jpg';
+import LabImage2 from '../assets/ForSchoolsCompositeSkillLabImages/IMG20241003111950.jpg';
+import LabImage3 from '../assets/ForSchoolsCompositeSkillLabImages/Media (8).jpeg';
+import LabImage4 from '../assets/ForSchoolsCompositeSkillLabImages/WhatsApp Image 2021-10-04 at 11.56.27 AM (2).jpeg';
+import LabImage5 from '../assets/ForSchoolsCompositeSkillLabImages/WhatsApp Image 2021-08-14 at 17.56.00 (1).jpeg';
+import LabImage6 from '../assets/ForSchoolsCompositeSkillLabImages/WhatsApp Image 2021-09-01 at 23.11.56.jpeg';
 
 export default function CompositeSkillLab() {
   const [activeTab, setActiveTab] = useState('digital');
@@ -467,14 +473,14 @@ export default function CompositeSkillLab() {
 
       <section className="gallery-section">
         <div className="container">
-          <h2 className="section-heading text-center fade-up">Lab Visualization</h2>
+          <h2 className="section-heading text-center fade-up">Our Labs in Action</h2>
           <div className="gallery-grid">
-            <div className="gallery-item large fade-up"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800" alt="Composite Lab View" /><div className="gallery-overlay"><h5>Multi-Skill Environment</h5></div></div>
-            <div className="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&q=80&w=600" alt="3D Printing" /><div className="gallery-overlay"><h5>3D Printing Zone</h5></div></div>
-            <div className="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1555664424-778a69022365?auto=format&fit=crop&q=80&w=600" alt="Electronics" /><div className="gallery-overlay"><h5>Electronics Workbench</h5></div></div>
-            <div className="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600" alt="Skill Training" /><div className="gallery-overlay"><h5>Vocational Training</h5></div></div>
-            <div className="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?auto=format&fit=crop&q=80&w=600" alt="Robotics" /><div className="gallery-overlay"><h5>Robotics Arena</h5></div></div>
-            <div className="gallery-item fade-up"><img src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?auto=format&fit=crop&q=80&w=600" alt="Robotics" /><div className="gallery-overlay"><h5>Robotics Arena</h5></div></div>
+            <div className="gallery-item large fade-up"><img src={LabImage1} alt="Composite Lab View" /><div className="gallery-overlay"><h5>Multi-Skill Environment</h5></div></div>
+            <div className="gallery-item fade-up"><img src={LabImage2} alt="Lab Setup" /><div className="gallery-overlay"><h5>Lab Activities</h5></div></div>
+            <div className="gallery-item fade-up"><img src={LabImage3} alt="Skill Training" /><div className="gallery-overlay"><h5>Hands-on Learning</h5></div></div>
+            <div className="gallery-item fade-up"><img src={LabImage4} alt="Robotics Lab" /><div className="gallery-overlay"><h5>Robotics Arena</h5></div></div>
+            <div className="gallery-item fade-up"><img src={LabImage5} alt="Student Activities" /><div className="gallery-overlay"><h5>Student Projects</h5></div></div>
+            <div className="gallery-item fade-up"><img src={LabImage6} alt="Practical Learning" /><div className="gallery-overlay"><h5>Practical Sessions</h5></div></div>
 
           </div>
         </div>

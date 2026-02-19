@@ -1,6 +1,12 @@
 import React, { useEffect } from 'react';
 import './StemLab.css';
 import heroImage from '../assets/ForSchoolsStemLabImages/virtual-learning-MZKzsgnz.jpg';
+import GalleryImage1 from '../assets/ForSchoolsStemLabImages/IMG20240112172931.jpg';
+import GalleryImage2 from '../assets/ForSchoolsStemLabImages/IMG20240606114358.jpg';
+import GalleryImage3 from '../assets/ForSchoolsStemLabImages/RLS3jpg.jpg';
+import GalleryImage4 from '../assets/ForSchoolsStemLabImages/WhatsApp Image 2021-09-08 at 18.57.35.jpeg';
+import GalleryImage5 from '../assets/ForSchoolsStemLabImages/WhatsApp Image 2021-10-04 at 11.56.30 AM (2).jpeg';
+import GalleryImage6 from '../assets/ForSchoolsStemLabImages/WhatsApp Image 2025-06-04 at 11.12.23_14c0422d.jpg';
 
 function StemLab() {
     useEffect(() => {
@@ -387,45 +393,45 @@ function StemLab() {
                         <div className="gallery-grid">
                             <div className="gallery-item">
                                 <div className="gallery-overlay">
-                                    <h4>Robotic Arm</h4>
-                                    <p>Hydraulics & Mechanics</p>
+                                    <h4>STEM Lab</h4>
+                                    <p>Hands-on Learning</p>
                                 </div>
-                                <img src={heroImage} alt="Robotic Arm" />
+                                <img src={GalleryImage1} alt="STEM Lab" />
                             </div>
                             <div className="gallery-item">
                                 <div className="gallery-overlay">
-                                    <h4>Smart Car</h4>
-                                    <p>Sensors & Automation</p>
+                                    <h4>Student Projects</h4>
+                                    <p>Innovative Creations</p>
                                 </div>
-                                <img src={heroImage} alt="Smart Car" />
+                                <img src={GalleryImage2} alt="Student Projects" />
                             </div>
                             <div className="gallery-item">
                                 <div className="gallery-overlay">
-                                    <h4>Industrial Crane</h4>
-                                    <p>Pulleys & Gears</p>
+                                    <h4>Lab Activities</h4>
+                                    <p>Practical Experience</p>
                                 </div>
-                                <img src={heroImage} alt="Industrial Crane" />
+                                <img src={GalleryImage3} alt="Lab Activities" />
                             </div>
                             <div className="gallery-item">
                                 <div className="gallery-overlay">
-                                    <h4>Wind Energy</h4>
-                                    <p>Renewable Power Models</p>
+                                    <h4>Learning Environment</h4>
+                                    <p>Interactive Sessions</p>
                                 </div>
-                                <img src={heroImage} alt="Windmill" />
+                                <img src={GalleryImage4} alt="Learning Environment" />
                             </div>
                             <div className="gallery-item">
                                 <div className="gallery-overlay">
-                                    <h4>Space Rover</h4>
-                                    <p>Advanced Exploration</p>
+                                    <h4>STEM Models</h4>
+                                    <p>Student Achievements</p>
                                 </div>
-                                <img src={heroImage} alt="Mars Rover" />
+                                <img src={GalleryImage5} alt="STEM Models" />
                             </div>
                             <div className="gallery-item">
                                 <div className="gallery-overlay">
-                                    <h4>Automated Bridge</h4>
-                                    <p>Civil Engineering</p>
+                                    <h4>Lab Setup</h4>
+                                    <p>Modern Facilities</p>
                                 </div>
-                                <img src={heroImage} alt="Bridge" />
+                                <img src={GalleryImage6} alt="Lab Setup" />
                             </div>
                         </div>
                     </div>

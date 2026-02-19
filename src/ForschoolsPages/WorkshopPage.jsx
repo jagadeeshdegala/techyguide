@@ -1,5 +1,12 @@
 import { useEffect } from 'react';
 import './WorkshopPage.css';
+import LabImage5 from '../assets/ForSchoolsWorkShopImages/IMG-20230430-WA0001.jpg';
+import LabImage1 from '../assets/ForSchoolsWorkShopImages/IMG20230601140547.jpg';
+import LabImage3 from '../assets/ForSchoolsWorkShopImages/IMG20230924102104.jpg';
+import LabImage4 from '../assets/ForSchoolsWorkShopImages/IMG_20221114_094422.jpg';
+import LabImage2 from '../assets/ForSchoolsWorkShopImages/IMG20241005152514.jpg';
+import LabImage6 from '../assets/ForSchoolsWorkShopImages/WhatsApp Image 2021-08-15 at 15.20.01.jpeg';
+import LabImage7 from '../assets/ForSchoolsWorkShopImages/WhatsApp Image 2023-06-05 at 13.02.06.jpg';
 
 function WorkshopPage() {
 	useEffect(() => {
@@ -303,96 +310,68 @@ function WorkshopPage() {
 			<section id="gallery" className="section-padding">
 				<div className="container">
 					<div className="gallery-header">
-						<h2>Innovation <span className="text-orange">In Action</span></h2>
+						<h2>Our Labs <span className="text-orange">In Action</span></h2>
 						<p>A snapshot of our learning ecosystem.</p>
 					</div>
 
 					<div className="bento-grid">
 						<div className="bento-item main-feature">
-							<img src="https://images.unsplash.com/photo-1563968743333-044cef800494?q=80&w=2070&auto=format&fit=crop" alt="Students Learning" />
-							<div className="bento-overlay">
+							<img src={LabImage1} alt="Workshop Activities" />
+							{/* <div className="bento-overlay">
 								<div className="tech-badge">PRIMARY FOCUS</div>
 								<h3>Student Engagement</h3>
 								<p>Active learning environments where students lead the way.</p>
-							</div>
+							</div> */}
 						</div>
 
 						<div className="bento-item">
-							<img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=2070&auto=format&fit=crop" alt="Circuits" />
-							<div className="bento-overlay">
-								<div className="tech-badge">ELECTRONICS</div>
-								<h3>Circuit Design</h3>
-							</div>
+							<img src={LabImage2} alt="Hands-on Learning" />
+							{/* <div className="bento-overlay">
+								<div className="tech-badge">PRACTICAL</div>
+								<h3>Hands-on Training</h3>
+							</div> */}
 						</div>
 
 						<div className="bento-item">
-							<img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=2070&auto=format&fit=crop" alt="Circuits" />
-							<div className="bento-overlay">
-								<div className="tech-badge">ELECTRONICS</div>
-								<h3>Circuit Design</h3>
-							</div>
+							<img src={LabImage3} alt="STEM Activities" />
+							{/* <div className="bento-overlay">
+								<div className="tech-badge">STEM</div>
+								<h3>STEM Projects</h3>
+							</div> */}
 						</div>
 
 						<div className="bento-item">
-							<img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=1974&auto=format&fit=crop" alt="3D Printing" />
-							<div className="bento-overlay">
-								<div className="tech-badge">PROTOTYPING</div>
-								<h3>3D Printing</h3>
-							</div>
+							<img src={LabImage4} alt="Student Projects" />
+							{/* <div className="bento-overlay">
+								<div className="tech-badge">INNOVATION</div>
+								<h3>Creative Solutions</h3>
+							</div> */}
 						</div>
 
 						<div className="bento-item">
-							<img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?q=80&w=2032&auto=format&fit=crop" alt="Coding" />
-							<div className="bento-overlay">
-								<div className="tech-badge">SOFTWARE</div>
-								<h3>Python / AI</h3>
-							</div>
-						</div>
-
-						<div className="bento-item wide-feature">
-							<img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop" alt="Robotics Team" />
-							<div className="bento-overlay">
-								<div className="tech-badge">TEAMWORK</div>
-								<h3>Robothrone Competition</h3>
-								<p>Annual robotics challenges fostering competitive spirit.</p>
-							</div>
+							<img src={LabImage6} alt="Workshop Session" />
+							{/* <div className="bento-overlay">
+								<div className="tech-badge">WORKSHOP</div>
+								<h3>Skill Development</h3>
+							</div> */}
 						</div>
 
 						<div className="bento-item wide-feature">
-							<img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop" alt="Robotics Team" />
-							<div className="bento-overlay">
+							<img src={LabImage5} alt="Robotics Lab" />
+							{/* <div className="bento-overlay">
+								<div className="tech-badge">ROBOTICS</div>
+								<h3>Robotics Lab</h3>
+								<p>State-of-the-art robotics facility for hands-on learning.</p>
+							</div> */}
+						</div>
+
+						<div className="bento-item wide-feature">
+							<img src={LabImage7} alt="Learning Environment" />
+							{/* <div className="bento-overlay">
 								<div className="tech-badge">TEAMWORK</div>
-								<h3>Robothrone Competition</h3>
-								<p>Annual robotics challenges fostering competitive spirit.</p>
-							</div>
-						</div>
-						<div className="bento-item">
-							<img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=1974&auto=format&fit=crop" alt="3D Printing" />
-							<div className="bento-overlay">
-								<div className="tech-badge">PROTOTYPING</div>
-								<h3>3D Printing</h3>
-							</div>
-						</div>
-						<div className="bento-item">
-							<img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=1974&auto=format&fit=crop" alt="3D Printing" />
-							<div className="bento-overlay">
-								<div className="tech-badge">PROTOTYPING</div>
-								<h3>3D Printing</h3>
-							</div>
-						</div>
-						<div className="bento-item">
-							<img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=1974&auto=format&fit=crop" alt="3D Printing" />
-							<div className="bento-overlay">
-								<div className="tech-badge">PROTOTYPING</div>
-								<h3>3D Printing</h3>
-							</div>
-						</div>
-						<div className="bento-item">
-							<img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=1974&auto=format&fit=crop" alt="3D Printing" />
-							<div className="bento-overlay">
-								<div className="tech-badge">PROTOTYPING</div>
-								<h3>3D Printing</h3>
-							</div>
+								<h3>Collaborative Learning</h3>
+								<p>Students working together on innovative projects.</p>
+							</div> */}
 						</div>
 					</div>
 				</div>
