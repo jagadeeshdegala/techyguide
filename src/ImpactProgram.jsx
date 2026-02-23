@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import "./ImpactProgram.css";
 import FooterSection from "./FooterSection";
 
@@ -28,70 +28,21 @@ function ImpactProgram() {
     workshop: new URL("./assets/impactImages/Workshop.jpg", import.meta.url).href,
   };
   const galleryImages = [
-    { src: images.stemLab, alt: "STEM Lab", category: "lab" },
-    { src: images.lab1, alt: "Lab 1", category: "lab" },
-    { src: images.lab2, alt: "Lab 2", category: "lab" },
-    { src: images.lab3, alt: "Lab 3", category: "lab" },
-    { src: images.lab4, alt: "Lab 4", category: "lab" },
-    { src: images.lab5, alt: "Lab 5", category: "lab" },
-    { src: images.lab6, alt: "Lab 6", category: "lab" },
-    { src: images.diyKit1, alt: "DIY Kit", category: "kit" },
-    { src: images.workshop, alt: "Workshop", category: "workshop" },
+    { src: images.stemLab, alt: "Children building robots during STEM learning session", category: "lab" },
+    { src: images.lab1, alt: "Children building robots during STEM learning session", category: "lab" },
+    { src: images.lab2, alt: "Children building robots during STEM learning session", category: "lab" },
+    { src: images.lab3, alt: "Children building robots during STEM learning session", category: "lab" },
+    { src: images.lab4, alt: "Children building robots during STEM learning session", category: "lab" },
+    { src: images.lab5, alt: "Children building robots during STEM learning session", category: "lab" },
+    { src: images.lab6, alt: "Children building robots during STEM learning session", category: "lab" },
+    { src: images.diyKit1, alt: "Children building robots during STEM learning session", category: "kit" },
+    { src: images.workshop, alt: "Children building robots during STEM learning session", category: "workshop" },
   ];
   const [lightbox, setLightbox] = useState({ open: false, src: "", alt: "" });
   const [galleryFilter, setGalleryFilter] = useState("all");
-  const rootRef = useRef(null);
-
-  useEffect(() => {
-    const root = rootRef.current;
-    if (!root) return;
-
-    // Counter animation when hero enters viewport
-    const counters = root.querySelectorAll(".counter");
-    const speed = 200;
-    let hasAnimated = false;
-
-    const animateCounters = () => {
-      counters.forEach((counter) => {
-        const updateCount = () => {
-          const target = +counter.getAttribute("data-target");
-          const count = +counter.innerText;
-          const inc = target / speed;
-
-          if (count < target) {
-            counter.innerText = Math.ceil(count + inc);
-            requestAnimationFrame(updateCount);
-          } else {
-            counter.innerText = `${target}+`;
-          }
-        };
-        updateCount();
-      });
-    };
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAnimated) {
-            hasAnimated = true;
-            animateCounters();
-            observer.disconnect();
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    const heroSection = root.querySelector(".hero");
-    if (heroSection) observer.observe(heroSection);
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
   return (
     <>
-      <div className="impact-program" ref={rootRef}>
+      <div className="impact-program">
         <section
           className="hero"
           style={{
@@ -111,28 +62,20 @@ function ImpactProgram() {
                 Impact That Shapes <span className="">Tomorrow</span>
               </h1>
               <p>
-                Empowering students nationwide through Government & CSR
-                partnerships. We are shaping the future with STEM and AI
-                Innovation.
+               Empowering students across India through strong Government and CSR partnerships. We are shaping the future of education with hands-on STEM, AI, and robotics innovation. 
               </p>
 
               <div className="hero-stats">
                 <div className="stat-item">
-                  <h3 className="counter" data-target="10">
-                    0
-                  </h3>
+                  <h3>10+</h3>
                   <span>Projects</span>
                 </div>
                 <div className="stat-item">
-                  <h3 className="counter" data-target="247">
-                    0
-                  </h3>
+                  <h3>247+</h3>
                   <span>Schools</span>
                 </div>
                 <div className="stat-item">
-                  <h3 className="counter" data-target="28516">
-                    0
-                  </h3>
+                  <h3>28516+</h3>
                   <span>Students</span>
                 </div>
               </div>
@@ -149,10 +92,7 @@ function ImpactProgram() {
             <div className="mission-text">
               <h2>Breaking Barriers in STEM</h2>
               <p>
-                TechyGuide is an innovative tech-education ecosystem. Designed
-                for kids aged 7-18, our solutions empower educators and learners
-                with tools to build coding, robotics, and problem-solving
-                skills.
+                TechyGuide is an innovative education technology ecosystem designed for students aged 7–18. Our impact programs empower educators and learners with tools to build coding, robotics, and problem-solving skills. By promoting creativity, innovation, and inclusion, we contribute to the United Nations Sustainable Development Goals — advancing quality education, gender equality, and industry-driven innovation. 
               </p>
               <p>
                 <strong>
@@ -168,15 +108,7 @@ function ImpactProgram() {
           <div className="container">
             <h2>Shaping the Future with Government & CSR in STEM and AI Innovation</h2>
             <p className="section-intro">
-              TechyGuide is an innovative tech-education ecosystem trusted by teachers and
-              loved by students for transforming classroom learning. Designed for kids aged 7–18,
-              our tailored solutions empower educators and learners with the tools to build
-              coding, robotics, and problem-solving skills—driving quality education, fostering
-              innovation, and contributing towards achieving the United Nations Sustainable
-              Development Goals. Through strategic partnerships with government bodies and CSR 
-              initiatives, we implement Smart STEM & Robotics Labs, deliver comprehensive teacher 
-              training, and provide hands-on learning experiences that prepare students for future 
-              technological challenges.
+              TechyGuide is a trusted education partner delivering transformative learning experiences across India. Our programs are designed to build strong foundations in coding, robotics, and problem-solving through innovation-driven education. Through strategic partnerships with government bodies and CSR organizations, we establish modern STEM & robotics labs, provide structured teacher training, and enable experiential learning that prepares students for future technological challenges. 
             </p>
 
             <div className="sdg-badges">
@@ -215,20 +147,15 @@ function ImpactProgram() {
                   </div>
                   <h4>Impact</h4>
                   <p>
-                    The program empowers students and teachers with practical STEM and robotics
-                    skills, fostering creativity and innovation. By bridging the digital divide,
-                    it promotes entrepreneurship, career readiness, and builds resilient,
-                    technology-driven communities.
+                   Our programs empower students and teachers with practical STEM and robotics skills, fostering creativity and innovation. By bridging the digital divide, we promote entrepreneurship, career readiness, and build resilient, technology-driven communities. 
                   </p>
                 </div>
                 
                 <div className="gov-image">
-                  <img src={images.governmentPrograms} alt="Government Programs" />
+                  <img src={images.governmentPrograms} alt="Teacher guiding students in robotics lab under government STEM initiative " />
                 </div>
                 <p className="initiative-intro">
-                  Through our Government impact programs, we are opening doors to cutting-edge
-                  technology, vital resources, and transformative education igniting curiosity,
-                  empowering young minds, and shaping the innovators and change-makers of tomorrow.
+                 Through our government impact initiatives, we open doors to cutting-edge technology, skill-based learning, and inclusive education — igniting curiosity, empowering young minds, and shaping the innovators of tomorrow. 
                 </p>
                 
                 {/* Activities and Beneficiaries removed as requested */}
@@ -246,20 +173,15 @@ function ImpactProgram() {
                   </div>
                   <h4>Impact</h4>
                   <p>
-                    The program bridges educational gaps and builds digital confidence. It fosters
-                    creativity, problem-solving, and innovation while promoting inclusive growth,
-                    equal opportunities, and preparing communities for sustainable, technology driven
-                    futures.
+                   Our CSR programs bridge educational gaps and build digital confidence. They foster creativity, problem-solving, and innovation while promoting inclusive growth, equal opportunities, and sustainable learning ecosystems. 
                   </p>
                 </div>
                 
                 <div className="csr-image">
-                  <img src={images.csrInitiatives} alt="CSR Initiative" />
+                  <img src={images.csrInitiatives} alt="Students participating in CSR-supported STEM learning session " />
                 </div>
                 <p className="initiative-intro">
-                  Our CSR Programs are nurturing a new generation of global innovators, empowering
-                  students to master STEM, AI, Coding, Tinkering, and Robotics, and preparing them
-                  to thrive in the opportunities of the 21st century.
+                 Our CSR partnerships nurture a new generation of global innovators by empowering students to master STEM, AI, coding, and robotics — preparing them to thrive in the opportunities of the 21st century. 
                 </p>
                 
                 {/* Activities and Beneficiaries removed as requested */}
@@ -275,13 +197,12 @@ function ImpactProgram() {
             <div className="project-grid">
               <div className="card">
                 <div style={{ width: '100%', height: '200px', overflow: 'hidden' }}>
-                  <img src={images.lab1} alt="Jharkhand Lab" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  <img src={images.lab1} alt="Students engaged in hands-on robotics learning in school STEM lab " style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
                 <div className="card-body">
                   <h3>STEM & Robotics Lab - Jharkhand</h3>
                   <p>
-                    Established fully equipped STEM labs and structured teacher
-                    training. Enhancing experiential learning.
+                    Established fully equipped STEM labs and structured teacher training, enhancing experiential and technology-enabled learning. 
                   </p>
                   <div className="card-stats">
                     <div>
@@ -299,13 +220,12 @@ function ImpactProgram() {
 
               <div className="card">
                 <div style={{ width: '100%', height: '200px', overflow: 'hidden' }}>
-                  <img src={images.lab2} alt="Odisha Workshop" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  <img src={images.lab2} alt="Students engaged in hands-on robotics learning in school STEM lab p" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
                 <div className="card-body">
                   <h3>STEM Learning - Keonjhar, Odisha</h3>
                   <p>
-                    Delivering short-term STEM workshops and robotics
-                    activities. Fast-track exposure to digital learning.
+                     Delivering short-term STEM workshops and robotics activities that provide fast-track exposure to digital and innovation skills.
                   </p>
                   <div className="card-stats">
                     <div>
@@ -323,13 +243,12 @@ function ImpactProgram() {
 
               <div className="card">
                 <div style={{ width: '100%', height: '200px', overflow: 'hidden' }}>
-                  <img src={images.lab3} alt="Gujarat Lab" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  <img src={images.lab3} alt="Students engaged in hands-on robotics learning in school STEM lab " style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
                 <div className="card-body">
                   <h3>Innovators in Ahmedabad, Gujarat</h3>
                   <p>
-                    State-of-the-art STEM labs and student innovation projects.
-                    Integrating experiential learning.
+                    Setting up advanced STEM labs and student innovation projects that integrate hands-on, experiential learning. 
                   </p>
                   <div className="card-stats">
                     <div>
@@ -347,13 +266,12 @@ function ImpactProgram() {
 
               <div className="card">
                 <div style={{ width: '100%', height: '200px', overflow: 'hidden' }}>
-                  <img src={images.lab4} alt="Lucknow Hub" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  <img src={images.lab4} alt="Students engaged in hands-on robotics learning in school STEM lab " style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
                 <div className="card-body">
                   <h3>Innovation Hub - Lucknow, UP</h3>
                   <p>
-                    Transforming classrooms into thriving innovation hubs with
-                    comprehensive teacher training and labs.
+                    Transforming classrooms into innovation hubs with comprehensive teacher training and future-ready learning labs. 
                   </p>
                   <div className="card-stats">
                     <div>
@@ -371,13 +289,12 @@ function ImpactProgram() {
 
               <div className="card">
                 <div style={{ width: '100%', height: '200px', overflow: 'hidden' }}>
-                  <img src={images.lab5} alt="Haryana Workshop" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  <img src={images.lab5} alt="Students engaged in hands-on robotics learning in school STEM lab " style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
                 <div className="card-body">
                   <h3>Future Skills Workshop - Haryana</h3>
                   <p>
-                    Collaborating with Literacy India, Gurgaon. Student-led
-                    robotics experiments for underprivileged learners.
+                    In collaboration with Literacy India, Gurgaon, we conduct structured robotics workshops for underserved learners to build confidence and technical skills.
                   </p>
                   <div className="card-stats">
                     <div>
@@ -395,13 +312,12 @@ function ImpactProgram() {
 
               <div className="card">
                 <div style={{ width: '100%', height: '200px', overflow: 'hidden' }}>
-                  <img src={images.lab6} alt="Hyderabad Workshop" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  <img src={images.lab6} alt="Students engaged in hands-on robotics learning in school STEM lab " style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
                 <div className="card-body">
                   <h3>STEM Workshop - Hyderabad</h3>
                   <p>
-                    CSR-driven interactive sessions. Fostering curiosity and
-                    strengthening foundational digital skills.
+                   CSR-driven interactive STEM sessions that foster curiosity and strengthen foundational digital skills. 
                   </p>
                   <div className="card-stats">
                     <div>
@@ -426,35 +342,32 @@ function ImpactProgram() {
             <div className="offering-grid">
               <div className="offer-box">
                 <div className="offer-image-wrap">
-                  <img src={images.stemLab} alt="Future-Ready Labs" className="offer-image" />
+                  <img src={images.stemLab} alt="Fully equipped STEM and robotics lab classroom " className="offer-image" />
                 </div>
                 <i className="fa-solid fa-microchip"></i>
                 <h3>Future-Ready Labs</h3>
                 <p>
-                  Transform classrooms into innovation hubs with fully equipped
-                  STEM and robotics labs.
+                 Transform classrooms into innovation hubs with fully equipped STEM and robotics labs that support experiential, project-based learning. 
                 </p>
               </div>
               <div className="offer-box">
                 <div className="offer-image-wrap">
-                  <img src={images.diyKit1} alt="DIY Learning Kits" className="offer-image" />
+                  <img src={images.diyKit1} alt="Educational DIY robotics kits for students " className="offer-image" />
                 </div>
                 <i className="fa-solid fa-puzzle-piece"></i>
                 <h3>DIY Learning Kits</h3>
                 <p>
-                  Interactive kits that make coding and robotics simple and fun
-                  for sparking imagination.
+                  Interactive kits that make coding and robotics simple, engaging, and fun — sparking imagination and hands-on discovery.
                 </p>
               </div>
               <div className="offer-box">
                 <div className="offer-image-wrap">
-                  <img src={images.workshop} alt="Engaging Workshops" className="offer-image" />
+                  <img src={images.workshop} alt="Students attending hands-on STEM innovation workshop" className="offer-image" />
                 </div>
                 <i className="fa-solid fa-users-gear"></i>
                 <h3>Engaging Workshops</h3>
                 <p>
-                  Immersive workshops for students and teachers to explore
-                  technology and innovation.
+                  Immersive workshops for students and teachers to explore technology, innovation, and real-world problem solving. 
                 </p>
               </div>
             </div>
@@ -490,8 +403,7 @@ function ImpactProgram() {
           <div className="container">
             <h2>Testimonials</h2>
             <p className="center-text">
-              Hear from educators, students, and parents who are part of the TechyGuide revolution
-            </p>
+Hear from educators, students, and parents who are part of the TechyGuide impact journey.             </p>
 
             <div className="testimonial-slider">
               <div className="testimonial-track">
@@ -655,8 +567,7 @@ function ImpactProgram() {
           <div className="container">
             <h2>Ready to Empower Communities?</h2>
             <p>
-              Together, Let's Empower Communities with the Power of Education!
-            </p>
+Together, let’s empower communities with the power of education, innovation, and technology.         </p>
             <div className="contact-details">
               <a href="tel:+919114036376" className="btn">
                 <i className="fa-solid fa-phone"></i> +91 91140 36376
