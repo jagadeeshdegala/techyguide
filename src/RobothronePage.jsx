@@ -229,23 +229,15 @@ export default function RobothronePage() {
           {/* LEFT CARD */}
           <div className="robothrone-about-left">
             <p>
-              Robothrone is an exciting inter-school competition designed to ignite
-              the passion for robotics and IoT among young learners. This platform
-              provides students from grades 3 to 9 with the opportunity to showcase
-              their innovative ideas and technical skills.
+             Robothrone is a dynamic inter-school competition designed to ignite students’ passion for robotics, IoT, and innovation. This platform enables learners from grades 3 to 9 to showcase their creative ideas, technical abilities, and problem-solving skills through hands-on STEM experiences.
             </p>
 
             <p>
-              Participants will work in teams to design, build, and program robots or
-              IoT devices that address real-world challenges. The competition
-              emphasizes creativity, problem-solving, and collaboration while
-              fostering STEM education.
+             Participants work in collaborative teams to design, build, and program robots or smart IoT solutions that address real-world challenges. The competition promotes creativity, critical thinking, and teamwork while strengthening foundational knowledge in science, technology, engineering, and mathematics. 
             </p>
 
             <p>
-              With expert mentorship, workshops, and resources, Robothrone aims to be
-              more than just a competition – it's a journey of discovery and innovation 
-              that prepares students for the technological challenges of tomorrow.
+             With expert mentorship, guided workshops, and structured learning resources, Robothrone goes beyond a typical competition. It is a journey of exploration and innovation that equips students with future-ready skills and prepares them to meet the technological challenges of tomorrow. 
             </p>
 
             <div className="robothrone-about-powered">

@@ -39,6 +39,11 @@ function AIRoboticsLabCBSE() {
 
     const statsSection = root.querySelector(".stats-section");
     let counted = false;
+
+    const formatNumber = (num) => {
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    };
+
     const statsObserver = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && !counted) {
@@ -49,10 +54,10 @@ function AIRoboticsLabCBSE() {
             const update = () => {
               count += inc;
               if (count < target) {
-                counter.innerText = Math.ceil(count);
+                counter.innerText = formatNumber(Math.ceil(count));
                 requestAnimationFrame(update);
               } else {
-                counter.innerText = target;
+                counter.innerText = formatNumber(target);
               }
             };
             update();
@@ -327,23 +332,19 @@ function AIRoboticsLabCBSE() {
       <section className="stats-section">
         <div className="container stats-grid">
           <div className="stat-item fade-up">
-            <h2 className="counter" data-target="350">0</h2>
-            <span>+</span>
+            <h2><span className="counter" data-target="500">0</span>+</h2>
             <p>Robotics Labs</p>
           </div>
           <div className="stat-item fade-up">
-            <h2 className="counter" data-target="50">0</h2>
-            <span>+</span>
+            <h2><span className="counter" data-target="50">0</span>+</h2>
             <p>ATL Labs Setup</p>
           </div>
           <div className="stat-item fade-up">
-            <h2 className="counter" data-target="100">0</h2>
-            <span>+</span>
+            <h2><span className="counter" data-target="100">0</span>+</h2>
             <p>Govt Schools (Tender)</p>
           </div>
           <div className="stat-item fade-up">
-            <h2 className="counter" data-target="150000">0</h2>
-            <span>+</span>
+            <h2><span className="counter" data-target="150000">0</span>+</h2>
             <p>Students Impacted</p>
           </div>
         </div>

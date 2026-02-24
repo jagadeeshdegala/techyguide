@@ -67,10 +67,15 @@
 }
 
 .stem-tinkering-lab-root .section-subtext {
-  max-width: 600px;
+  width: 85%;
+  max-width: 85%;
   margin: 0 auto 50px;
   color: #64748b;
   font-size: 1.1rem;
+}
+
+.stem-tinkering-lab-root .section-subtext-title {
+  font-size: 1.2em;
 }
 
 .stem-tinkering-lab-root .text-center { text-align: center; }

@@ -30,6 +30,10 @@ function StemTinkeringLab() {
     const statsSection = document.querySelector(".stats-section");
     let counted = false;
 
+    const formatNumber = (num) => {
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    };
+
     const statsObserver = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && !counted) {
@@ -40,10 +44,10 @@ function StemTinkeringLab() {
             const update = () => {
               count += inc;
               if (count < target) {
-                counter.innerText = Math.ceil(count);
+                counter.innerText = formatNumber(Math.ceil(count));
                 requestAnimationFrame(update);
               } else {
-                counter.innerText = target;
+                counter.innerText = formatNumber(target);
               }
             };
             update();
@@ -189,7 +193,7 @@ function StemTinkeringLab() {
           <div className="hero-text hidden-left">
             <div className="brand-tag">
               <img src={logoImg} alt="TechyGuide Logo" className="hero-logo" />
-              <span>NEP 2020 Aligned</span>
+              <span>NEP 2020 Aligned STEM Tinkering Labs for Schools </span>
             </div>
             <h1>Igniting Young Minds with <br /><span className="highlight-text">STEM Tinkering Labs</span></h1>
             <p>A space for "Making, Breaking, and Creating." Empowering students with hands-on skills in <strong>Robotics, IoT, 3D Printing, and AI</strong> to solve real-world problems.</p>
@@ -206,7 +210,7 @@ function StemTinkeringLab() {
                 <span>Innovation Hub</span>
               </div>
             </div>
-            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=600" alt="STEM Student" className="main-hero-img" />
+            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=600" alt="Students learning robotics and electronics in TechyGuide STEM Tinkering Lab in India " className="main-hero-img" />
           </div>
         </div>
       </section>
@@ -214,8 +218,8 @@ function StemTinkeringLab() {
       <section className="guidelines-section" id="mandates">
         <div className="container">
           <div className="guideline-header text-center fade-up">
-            <h2 className="section-heading">Why Establish a STEM Lab?</h2>
-            <p className="section-subtext">Aligned with National Education Policy (NEP) 2020 & 21st Century Skills</p>
+            <h2 className="section-heading">WHY STEM TINKERING LABS?</h2>
+            <p className="section-subtext"><span className="section-subtext-title">Why Establish a STEM Tinkering Lab in Your School?</span><br></br><br /><span>STEM Tinkering Labs are experiential learning spaces designed to align with NEP 2020 and 21st-century skill development. These labs enable students to apply theoretical knowledge into real-world problem solving using technology. </span></p>
           </div>
 
           <div className="guidelines-grid">
@@ -226,7 +230,7 @@ function StemTinkeringLab() {
               </div>
               <div className="guide-content">
                 <h3>Skill Development</h3>
-                <p>Provides hands-on experience in coding, robotics, and AI applications. Encourages students to become "Job Creators" rather than just "Job Seekers".</p>
+                <p>Hands-on learning in coding, robotics, AI, and electronics, nurturing critical thinking and entrepreneurial mindset. </p>
               </div>
             </div>
 
@@ -236,8 +240,8 @@ function StemTinkeringLab() {
                 <div className="guide-badge">Innovation</div>
               </div>
               <div className="guide-content">
-                <h3>Fostering Innovation</h3>
-                <p>Creates a culture of creativity where students identify local community problems and design working prototypes to solve them.</p>
+                <h3> Innovation Culture</h3>
+                <p>Encourages students to identify local challenges and build functional prototypes as solutions. </p>
               </div>
             </div>
 
@@ -248,7 +252,7 @@ function StemTinkeringLab() {
               </div>
               <div className="guide-content">
                 <h3>Interdisciplinary Learning</h3>
-                <p>Promotes the integration of concepts from Science, Technology, Engineering, and Mathematics (STEM) into a unified learning experience.</p>
+                <p>Brings Science, Technology, Engineering, and Mathematics together through a cohesive, project-driven learning model.</p>
               </div>
             </div>
 
@@ -259,7 +263,7 @@ function StemTinkeringLab() {
               </div>
               <div className="guide-content">
                 <h3>Career Readiness</h3>
-                <p>Equips students with knowledge of emerging technologies like IoT and 3D Printing, preparing them for higher education and professional careers.</p>
+                <p>Prepares learners to explore and apply next-generation technologies like IoT, AI, and 3D Printing, shaping future innovators. </p>
               </div>
             </div>
           </div>
@@ -269,19 +273,19 @@ function StemTinkeringLab() {
       <section className="stats-section">
         <div className="container stats-grid">
           <div className="stat-item fade-up">
-            <h2 className="counter" data-target="350">0</h2><span>+</span>
+            <h2><span className="counter" data-target="500">0</span>+</h2>
             <p>Labs Setup Pan-India</p>
           </div>
           <div className="stat-item fade-up">
-            <h2 className="counter" data-target="50">0</h2><span>+</span>
+            <h2><span className="counter" data-target="50">0</span>+</h2>
             <p>ATL Labs Established</p>
           </div>
           <div className="stat-item fade-up">
-            <h2 className="counter" data-target="150000">0</h2><span>+</span>
+            <h2><span className="counter" data-target="150000">0</span>+</h2>
             <p>Students Impacted</p>
           </div>
           <div className="stat-item fade-up">
-            <h2 className="counter" data-target="100">0</h2><span>+</span>
+            <h2><span className="counter" data-target="100">0</span>+</h2>
             <p>Govt Schools (Tender)</p>
           </div>
         </div>
