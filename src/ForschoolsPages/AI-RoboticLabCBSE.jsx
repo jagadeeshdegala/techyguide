@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import "./AI-RoboticLabCBSE.css";
 import Logo from "../assets/ForSchoolsAI-RoboticslabCBSE/Logo_TG_Tagline 2.png";
 import GalleryImg1 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG20240428131408.jpg";
-import GalleryImg2 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG20240606112350.jpg";
+import GalleryImg2 from "../assets/ForSchoolsAI-RoboticslabCBSE/HZ1A9459.JPG";
 import GalleryImg3 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG_20221125_104735.jpg";
 import GalleryImg4 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG_20240128_131052.jpg";
 import GalleryImg5 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG_8545.JPG";

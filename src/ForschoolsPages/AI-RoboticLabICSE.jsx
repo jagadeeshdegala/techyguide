@@ -3,10 +3,10 @@ import "./AI-RoboticLabICSE.css";
 import logoTagline from "../assets/ForSchools_AI-RoboticsLabICSE_images/Logo_TG_Tagline 2.png";
 import GalleryImg1 from "../assets/ForSchools_AI-RoboticsLabICSE_images/2023-03-22 at 14.56.19.jpg";
 import GalleryImg2 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Gitanjali Vidhyalay_ Students Doing Coding.jpg";
-import GalleryImg3 from "../assets/ForSchools_AI-RoboticsLabICSE_images/HZ1A9459.JPG";
+import GalleryImg3 from "../assets/ForSchools_AI-RoboticsLabICSE_images/IMG_20240415_111354.jpg";
 import GalleryImg4 from "../assets/ForSchools_AI-RoboticsLabICSE_images/IMG-20230317-WA0002.jpg";
 import GalleryImg5 from "../assets/ForSchools_AI-RoboticsLabICSE_images/IMG-20230925-WA0025.jpg";
-import GalleryImg6 from "../assets/ForSchools_AI-RoboticsLabICSE_images/IMG_20240415_111354.jpg";
+import GalleryImg6 from "../assets/ForSchools_AI-RoboticsLabICSE_images/20210727_134924.jpg";
 import GalleryImg7 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Robotic Lap.jpg";
 
 const AIRoboticLabICSE = () => {
