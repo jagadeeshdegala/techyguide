@@ -368,7 +368,7 @@
 .stem-tinkering-lab-root .guide-card {
   display: flex;
   background: #fff;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #008273;
   border-radius: 16px;
   overflow: hidden;
   transition: 0.3s;
@@ -377,8 +377,8 @@
 
 .stem-tinkering-lab-root .guide-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.1);
-  border-color: var(--primary);
+  box-shadow: 0 15px 35px rgba(0, 130, 115, 0.1);
+  border-color: #008273;
 }
 
 .stem-tinkering-lab-root .guide-img {
@@ -459,8 +459,8 @@
   text-align: center;
 }
 
-.stem-tinkering-lab-root .stat-item h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 5px; }
-.stem-tinkering-lab-root .stat-item span { font-size: 2.5rem; color: var(--primary); font-weight: bold; }
+.stem-tinkering-lab-root .stat-item h2 { font-size: 2.5rem; color: #008273; margin-bottom: 5px; }
+.stem-tinkering-lab-root .stat-item span { font-size: 2.5rem; color: #008273; font-weight: bold; }
 .stem-tinkering-lab-root .stat-item p { font-weight: 600; color: #888; }
 
 /* =========================================
@@ -499,7 +499,7 @@
 }
 
 .stem-tinkering-lab-root .tab-btn.active {
-  background: var(--primary);
+  background: #008273;
   color: #fff;
 }
 
@@ -518,7 +518,7 @@
 
 .stem-tinkering-lab-root .curr-card {
   background: #fff;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #f59e0b;
   padding: 25px;
   border-radius: 15px;
 }
@@ -527,7 +527,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--primary);
+  color: #008273;
   margin-bottom: 15px;
   font-size: 1.2rem;
 }
@@ -594,7 +594,7 @@
 
 .stem-tinkering-lab-root .pricing-card {
   background: #fff;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #008273;
   padding: 40px;
   border-radius: 16px;
   width: 350px;
@@ -609,7 +609,7 @@
 }
 
 .stem-tinkering-lab-root .pricing-card.popular {
-  border: 2px solid var(--primary);
+  border: 2px solid #008273;
   transform: scale(1.05);
   z-index: 2;
 }
@@ -619,7 +619,7 @@
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--primary);
+  background: #008273;
   color: #fff;
   padding: 4px 12px;
   border-radius: 20px;
@@ -628,7 +628,7 @@
 }
 
 .stem-tinkering-lab-root .price-tag {
-  color: var(--primary);
+  color: #008273;
   font-weight: 700;
   font-size: 2rem;
   margin: 15px 0 5px;
@@ -662,7 +662,18 @@
   gap: 10px;
 }
 
-.stem-tinkering-lab-root .pricing-card ul li i { color: var(--primary); margin-top: 4px; }
+.stem-tinkering-lab-root .pricing-card ul li i { color: #008273; margin-top: 4px; }
+
+/* =========================================
+   SECTION HEADING POSITIONING
+   ========================================= */
+.stem-tinkering-lab-root .packages-section .section-heading {
+  margin-top: -0.8cm;
+}
+
+.stem-tinkering-lab-root .infra-section .section-heading {
+  margin-top: -0.8cm;
+}
 
 /* =========================================
    DIY SECTION
@@ -895,7 +906,7 @@
   width: 60px;
   height: 60px;
   background: #fff;
-  color: var(--primary);
+  color: #008273;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -990,7 +1001,7 @@
 .stem-tinkering-lab-root .timeline-section { padding: 80px 0; background: var(--light); }
 .stem-tinkering-lab-root .timeline-box { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-top: 40px; max-width: 900px; margin: 0 auto; }
 .stem-tinkering-lab-root .t-item { text-align: center; position: relative; width: 100px; }
-.stem-tinkering-lab-root .t-item span { display: block; background: var(--dark); color: #fff; padding: 5px 10px; border-radius: 20px; font-size: 0.8rem; margin-bottom: 10px; font-weight: bold; }
+.stem-tinkering-lab-root .t-item span { display: block; background: #008273; color: #fff; padding: 5px 10px; border-radius: 20px; font-size: 0.8rem; margin-bottom: 10px; font-weight: bold; }
 .stem-tinkering-lab-root .t-item p { font-size: 0.9rem; font-weight: 600; }
 .stem-tinkering-lab-root .t-line { flex: 1; height: 2px; background: #cbd5e1; margin: 0 10px 25px; }
 
@@ -1037,7 +1048,7 @@
 .stem-tinkering-lab-root .contact-area .section-heading { color: #fff; margin-bottom: 60px; }
 .stem-tinkering-lab-root .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 60px; }
 .stem-tinkering-lab-root .info-box { display: flex; align-items: center; gap: 20px; margin-top: 20px; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; }
-.stem-tinkering-lab-root .info-box i { font-size: 1.5rem; color: var(--primary); }
+.stem-tinkering-lab-root .info-box i { font-size: 1.5rem; color: #008273; }
 .stem-tinkering-lab-root .contact-form-wrapper { background: #fff; padding: 40px; border-radius: 20px; color: var(--dark); }
 .stem-tinkering-lab-root .form-group { margin-bottom: 20px; }
 .stem-tinkering-lab-root .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }

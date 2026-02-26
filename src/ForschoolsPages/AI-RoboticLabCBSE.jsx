@@ -395,14 +395,6 @@ function AIRoboticsLabCBSE() {
               <div className="tab-pane active" id="primary">
                 <div className="curr-grid">
                   <div className="curr-card">
-                    <h4><i className="fas fa-shapes"></i> Mechatronics</h4>
-                    <ul>
-                      <li>Lego-based structures (Bridges, Towers)</li>
-                      <li>Simple Machines (Levers, Pulleys)</li>
-                      <li>Humanoid Robot introduction</li>
-                    </ul>
-                  </div>
-                  <div className="curr-card">
                     <h4><i className="fas fa-bolt"></i> Electronics</h4>
                     <ul>
                       <li>LED Circuits &amp; Switches</li>
@@ -416,6 +408,14 @@ function AIRoboticsLabCBSE() {
                       <li>Animations &amp; Storytelling</li>
                       <li>Interactive Games (Catch the Ball)</li>
                       <li>Drawing Shapes &amp; Loops</li>
+                    </ul>
+                  </div>
+                  <div className="curr-card">
+                    <h4><i className="fas fa-robot"></i> Robotics</h4>
+                    <ul>
+                      <li>Introduction to Robotics</li>
+                      <li>Simple projects using Sensors</li>
+                      <li>Smart Doorbell, Blind Stick</li>
                     </ul>
                   </div>
                 </div>
@@ -513,16 +513,21 @@ function AIRoboticsLabCBSE() {
       <section className="packages-section" id="packages">
         <div className="container">
           <h2 className="section-heading text-center fade-up">Select Your Lab Package</h2>
+          <br />
           <div className="pricing-wrapper">
             <div className="pricing-card fade-up">
               <h3>Mini Lab</h3>
-              <div className="capacity">Up to 300 Students</div>
+              <div className="capacity">Up to 500 Students</div>
               <ul>
                 <li><i className="fas fa-box"></i> <strong>6</strong> I-BOT Starter Kits</li>
                 <li><i className="fas fa-microchip"></i> <strong>6</strong> TechBoT Electronics Kits</li>
-                <li><i className="fas fa-robot"></i> <strong>1</strong> Humanoid Add-on</li>
-                <li><i className="fas fa-chalkboard-teacher"></i> 10 Online Training Sessions</li>
-                <li><i className="fas fa-user-graduate"></i> 1 LMS Access per Student</li>
+                <li><i className="fas fa-cube"></i> <strong>1</strong> E-Blox Kit</li>
+                <li><i className="fas fa-box-open"></i> <strong>3</strong> Set of Consumables</li>
+                <li><i className="fas fa-chalkboard-teacher"></i> 3 Days Physical Training</li>
+                <li><i className="fas fa-video"></i> 10 Online Training Sessions</li>
+                <li><i className="fas fa-paint-roller"></i> Lab Decorations</li>
+                <li><i className="fas fa-book"></i> Content from Grade 3 to 12</li>
+                <li><i className="fas fa-user-graduate"></i> LMS Access for Students &amp; Teachers</li>
               </ul>
               <a href="#contact-section" className="btn btn-outline-dark">Request Details</a>
             </div>
@@ -530,26 +535,38 @@ function AIRoboticsLabCBSE() {
             <div className="pricing-card popular fade-up">
               <div className="badge">Best Value</div>
               <h3>Medium Lab</h3>
-              <div className="capacity">Up to 700 Students</div>
+              <div className="capacity">Up to 1000 Students</div>
               <ul>
-                <li><i className="fas fa-box"></i> <strong>12</strong> I-BOT Starter Kits</li>
+                <li><i className="fas fa-box"></i> <strong>12</strong> I-BoT Starter Kits</li>
                 <li><i className="fas fa-microchip"></i> <strong>12</strong> TechBoT Electronics Kits</li>
-                <li><i className="fas fa-robot"></i> <strong>1</strong> Humanoid Add-on</li>
-                <li><i className="fas fa-spider"></i> Spider Kit &amp; Robotic Arm</li>
-                <li><i className="fas fa-chalkboard-teacher"></i> 15 Online Training Sessions</li>
+                <li><i className="fas fa-cube"></i> <strong>2</strong> E-Blox Kit</li>
+                <li><i className="fas fa-robot"></i> <strong>1</strong> Set of Humanoid &amp; Spider Bot</li>
+                <li><i className="fas fa-tools"></i> <strong>1</strong> Set of Lee &amp; Robotic Arm Kit</li>
+                <li><i className="fas fa-box-open"></i> <strong>5</strong> Set of Consumables</li>
+                <li><i className="fas fa-chalkboard-teacher"></i> 3 Days Physical Training</li>
+                <li><i className="fas fa-video"></i> 15 Online Training Sessions</li>
+                <li><i className="fas fa-paint-roller"></i> Lab Decorations</li>
+                <li><i className="fas fa-book"></i> Content from Grade 3 to 12</li>
+                <li><i className="fas fa-user-graduate"></i> LMS Access for Students &amp; Teachers</li>
               </ul>
               <a href="#contact-section" className="btn btn-orange">Request Details</a>
             </div>
 
             <div className="pricing-card fade-up">
               <h3>Large Lab</h3>
-              <div className="capacity">Up to 1200 Students</div>
+              <div className="capacity">Up to 1500 Students</div>
               <ul>
-                <li><i className="fas fa-box"></i> <strong>20</strong> I-BOT Starter Kits</li>
+                <li><i className="fas fa-box"></i> <strong>20</strong> I-BoT Starter Kits</li>
                 <li><i className="fas fa-microchip"></i> <strong>20</strong> TechBoT Electronics Kits</li>
-                <li><i className="fas fa-robot"></i> <strong>2</strong> Humanoid Add-ons</li>
-                <li><i className="fas fa-tools"></i> 2 Spider Kits &amp; 2 Robotic Arms</li>
-                <li><i className="fas fa-chalkboard-teacher"></i> 24 Online Training Sessions</li>
+                <li><i className="fas fa-cube"></i> <strong>3</strong> E-Blox Kit</li>
+                <li><i className="fas fa-robot"></i> <strong>2</strong> Set of Humanoid &amp; Spider Bot</li>
+                <li><i className="fas fa-tools"></i> <strong>2</strong> Set of Lee &amp; Robotic Arm Kit</li>
+                <li><i className="fas fa-box-open"></i> <strong>10</strong> Set of Consumables</li>
+                <li><i className="fas fa-chalkboard-teacher"></i> 3 Days Physical Training</li>
+                <li><i className="fas fa-video"></i> 24 Online Training Sessions</li>
+                <li><i className="fas fa-paint-roller"></i> Lab Decorations</li>
+                <li><i className="fas fa-book"></i> Content from Grade 3 to 12</li>
+                <li><i className="fas fa-user-graduate"></i> LMS Access for Students &amp; Teachers</li>
               </ul>
               <a href="#contact-section" className="btn btn-outline-dark">Request Details</a>
             </div>

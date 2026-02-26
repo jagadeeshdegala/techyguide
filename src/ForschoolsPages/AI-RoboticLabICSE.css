@@ -338,8 +338,8 @@
 
 .ai-roboticlab-icse-root .guide-card:hover {
 	transform: translateY(-5px);
-	box-shadow: 0 15px 35px rgba(37, 99, 235, 0.1);
-	border-color: var(--primary);
+	box-shadow: 0 15px 35px rgba(0, 130, 115, 0.1);
+	border-color: #008273;
 }
 
 .ai-roboticlab-icse-root .guide-img {
@@ -420,8 +420,8 @@
 	text-align: center;
 }
 
-.ai-roboticlab-icse-root .stat-item h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 5px; }
-.ai-roboticlab-icse-root .stat-item span { font-size: 2.5rem; color: var(--primary); font-weight: bold; }
+.ai-roboticlab-icse-root .stat-item h2 { font-size: 2.5rem; color: #008273; margin-bottom: 5px; }
+.ai-roboticlab-icse-root .stat-item span { font-size: 2.5rem; color: #008273; font-weight: bold; }
 .ai-roboticlab-icse-root .stat-item p { font-weight: 600; color: #888; }
 
 /* =========================================
@@ -460,7 +460,7 @@
 }
 
 .ai-roboticlab-icse-root .tab-btn.active {
-	background: var(--primary);
+	background: #008273;
 	color: #fff;
 }
 
@@ -478,23 +478,64 @@
 }
 
 .ai-roboticlab-icse-root .curr-card {
-	background: #fff;
-	border: 1px solid #e2e8f0;
+	background: linear-gradient(135deg, #f0fdfa 0%, #fff7ed 100%);
+	border: 2px solid #e2e8f0;
 	padding: 25px;
 	border-radius: 15px;
+	transition: 0.3s;
+	box-shadow: 0 4px 10px rgba(0, 130, 115, 0.1);
+}
+
+.ai-roboticlab-icse-root .curr-card:hover {
+	transform: translateY(-5px);
+	border-color: #008273;
+	box-shadow: 0 10px 25px rgba(0, 130, 115, 0.2);
+}
+
+.ai-roboticlab-icse-root .curr-card:nth-child(odd) {
+	background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 100%);
+}
+
+.ai-roboticlab-icse-root .curr-card:nth-child(even) {
+	background: linear-gradient(135deg, #fff7ed 0%, #ffffff 100%);
 }
 
 .ai-roboticlab-icse-root .curr-card h4 {
 	display: flex;
 	align-items: center;
 	gap: 10px;
-	color: var(--primary);
+	color: #008273;
 	margin-bottom: 15px;
 	font-size: 1.2rem;
+	font-weight: 700;
 }
 
-.ai-roboticlab-icse-root .curr-card ul { padding-left: 20px; color: var(--text); }
-.ai-roboticlab-icse-root .curr-card li { margin-bottom: 8px; }
+.ai-roboticlab-icse-root .curr-card h4 i {
+	color: #f59e0b;
+	font-size: 1.3rem;
+}
+
+.ai-roboticlab-icse-root .curr-card ul { 
+	list-style: none;
+	padding-left: 0;
+	color: var(--text); 
+}
+
+.ai-roboticlab-icse-root .curr-card li { 
+	margin-bottom: 12px;
+	padding-left: 25px;
+	position: relative;
+	line-height: 1.6;
+}
+
+.ai-roboticlab-icse-root .curr-card li::before {
+	content: "▸";
+	position: absolute;
+	left: 0;
+	color: #008273;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
 
 @keyframes fadeIn {
 	from { opacity: 0; transform: translateY(10px); }
@@ -508,6 +549,10 @@
 	padding: 100px 0;
 	background: var(--dark);
 	color: #fff;
+}
+
+.ai-roboticlab-icse-root .infra-section h2 {
+	margin-top: -0.8cm;
 }
 
 .ai-roboticlab-icse-root .infra-grid {
@@ -549,6 +594,7 @@
 .ai-roboticlab-icse-root .pricing-wrapper {
 	display: flex;
 	justify-content: center;
+	align-items: stretch;
 	gap: 30px;
 	flex-wrap: wrap;
 }
@@ -562,6 +608,8 @@
 	text-align: center;
 	position: relative;
 	transition: 0.3s;
+	display: flex;
+	flex-direction: column;
 }
 
 .ai-roboticlab-icse-root .pricing-card:hover {
@@ -570,8 +618,7 @@
 }
 
 .ai-roboticlab-icse-root .pricing-card.popular {
-	border: 2px solid var(--primary);
-	transform: scale(1.05);
+	border: 2px solid #008273;
 	z-index: 2;
 }
 
@@ -580,7 +627,7 @@
 	top: -12px;
 	left: 50%;
 	transform: translateX(-50%);
-	background: var(--primary);
+	background: #008273;
 	color: #fff;
 	padding: 4px 12px;
 	border-radius: 20px;
@@ -612,6 +659,7 @@
 	margin-bottom: 30px;
 	text-align: left;
 	padding-left: 10px;
+	flex: 1;
 }
 
 .ai-roboticlab-icse-root .pricing-card ul li {
@@ -623,7 +671,7 @@
 	gap: 10px;
 }
 
-.ai-roboticlab-icse-root .pricing-card ul li i { color: var(--primary); margin-top: 4px; }
+.ai-roboticlab-icse-root .pricing-card ul li i { color: #008273; margin-top: 4px; }
 
 /* =========================================
    9. INDIVIDUAL MODULES SECTION
@@ -777,7 +825,7 @@
 	border-radius: 16px;
 	overflow: hidden;
 	box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-	border: 1px solid #e2e8f0;
+	border: 1px solid #008273;
 	transition: 0.3s;
 	display: flex;
 	flex-direction: column;
@@ -785,8 +833,8 @@
 
 .ai-roboticlab-icse-root .support-card:hover {
 	transform: translateY(-10px);
-	box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
-	border-color: var(--primary);
+	box-shadow: 0 20px 40px rgba(0, 130, 115, 0.1);
+	border-color: #008273;
 }
 
 .ai-roboticlab-icse-root .card-image {
@@ -817,7 +865,7 @@
 	width: 60px;
 	height: 60px;
 	background: #fff;
-	color: var(--primary);
+	color: #008273;
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
@@ -1030,7 +1078,7 @@
 .ai-roboticlab-icse-root .timeline-section { padding: 80px 0; background: var(--light); }
 .ai-roboticlab-icse-root .timeline-box { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-top: 40px; max-width: 900px; margin: 0 auto; }
 .ai-roboticlab-icse-root .t-item { text-align: center; position: relative; width: 100px; }
-.ai-roboticlab-icse-root .t-item span { display: block; background: var(--dark); color: #fff; padding: 5px 10px; border-radius: 20px; font-size: 0.8rem; margin-bottom: 10px; font-weight: bold; }
+.ai-roboticlab-icse-root .t-item span { display: block; background: #008273; color: #fff; padding: 5px 10px; border-radius: 20px; font-size: 0.8rem; margin-bottom: 10px; font-weight: bold; }
 .ai-roboticlab-icse-root .t-item p { font-size: 0.9rem; font-weight: 600; }
 .ai-roboticlab-icse-root .t-line { flex: 1; height: 2px; background: #cbd5e1; margin: 0 10px 25px; }
 

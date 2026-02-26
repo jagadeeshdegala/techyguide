@@ -307,27 +307,27 @@ function StemTinkeringLab() {
               <div className="tab-pane active" id="primary">
                 <div className="curr-grid">
                   <div className="curr-card">
-                    <h4><i className="fas fa-palette"></i> Arts & Crafts</h4>
+                    <h4><i className="fas fa-cube"></i> Mechatronics & 3D Pens</h4>
                     <ul>
-                      <li>Paper Craft & Origami</li>
-                      <li>Clay Modeling & Pottery</li>
-                      <li>Thread Art & Stone Painting</li>
+                      <li>▸ Lego-based structures (Bridges, Towers)  </li>
+                      <li>▸ Simple Machines (Levers, Pulleys) </li>
+                      <li>▸ Introduction to 3D Pen</li>
                     </ul>
                   </div>
                   <div className="curr-card">
-                    <h4><i className="fas fa-bolt"></i> Basic Electronics</h4>
+                    <h4><i className="fas fa-bolt"></i> Basic Electronics & Robotics</h4>
                     <ul>
-                      <li>Introduction to LED & Batteries</li>
-                      <li>Simple & Parallel Circuits</li>
-                      <li>Fun with Switches & Buzzers</li>
+                      <li>▸ Introduction to LED & Batteries</li>
+                      <li>▸ Simple & Parallel Circuits</li>
+                      <li>▸ Fun with Switches & Buzzers </li>
                     </ul>
                   </div>
                   <div className="curr-card">
-                    <h4><i className="fas fa-cubes"></i> Intro to Coding</h4>
+                    <h4><i className="fas fa-code"></i> Intro to Coding</h4>
                     <ul>
-                      <li>Block-based Coding</li>
-                      <li>Sequencing & Loops</li>
-                      <li>Creating Simple Animations</li>
+                      <li>▸ Block-based Coding</li>
+                      <li>▸ Sequencing & Loops</li>
+                      <li>▸ Creating Simple Animations</li>
                     </ul>
                   </div>
                 </div>
@@ -336,27 +336,26 @@ function StemTinkeringLab() {
               <div className="tab-pane" id="middle">
                 <div className="curr-grid">
                   <div className="curr-card">
-                    <h4><i className="fas fa-robot"></i> Robotics & Automation</h4>
+                    <h4><i className="fas fa-robot"></i> Robotics, Electronics & IoT </h4>
                     <ul>
-                      <li>Line Follower & Obstacle Avoider</li>
-                      <li>Automatic Street Light</li>
-                      <li>Bluetooth Controlled Car</li>
+                      <li>▸ Line Follower & Obstacle Avoider </li>
+                      <li>▸ Automatic Street Light </li>
+                      <li>▸ Home Automation & Control </li>
                     </ul>
                   </div>
                   <div className="curr-card">
                     <h4><i className="fas fa-cube"></i> 3D Printing & Design</h4>
                     <ul>
-                      <li>Introduction to 3D Pens</li>
-                      <li>3D Design Software (Tinkercad)</li>
-                      <li>Slicing & Printing Models</li>
+                      <li>▸ Introduction to 3D Design Software  </li>
+                      <li>▸ Operation of 3D Printers </li>
+                      <li>▸ Slicing & Printing Models </li>
                     </ul>
                   </div>
                   <div className="curr-card">
-                    <h4><i className="fas fa-plane"></i> Drone Technology</h4>
+                    <h4><i className="fas fa-plane"></i>     AI & Coding </h4>
                     <ul>
-                      <li>Aerodynamics Basics</li>
-                      <li>Assembly of Mini Drones</li>
-                      <li>Flight Mechanics & Control</li>
+                      <li>▸ AI Applications & Projects  </li>
+                      <li>▸ Introduction to Python Programming </li>
                     </ul>
                   </div>
                 </div>
@@ -365,27 +364,27 @@ function StemTinkeringLab() {
               <div className="tab-pane" id="senior">
                 <div className="curr-grid">
                   <div className="curr-card">
-                    <h4><i className="fas fa-wifi"></i> Internet of Things (IoT)</h4>
+                    <h4><i className="fas fa-wifi"></i> Robotics & IoT </h4>
                     <ul>
-                      <li>Smart Home Automation</li>
-                      <li>Cloud Integration (Blynk/ThinkSpeak)</li>
-                      <li>Sensors & Data Logging</li>
+                      <li>▸ Humanoid Robot Building </li>
+                      <li>▸ Advance IoT Projects C</li>
+                      <li>▸ Milestone Projects </li>
                     </ul>
                   </div>
                   <div className="curr-card">
-                    <h4><i className="fab fa-python"></i> Python & AI</h4>
+                    <h4><i className="fab fa-python"></i> 3D Printing & Drone  </h4>
                     <ul>
-                      <li>Python Programming Basics</li>
-                      <li>Face Detection & Recognition</li>
-                      <li>Computer Vision Projects</li>
+                      <li>▸ Aerodynamics Basics </li>
+                      <li>▸ Drone Mechanics & Control </li>
+                      <li>▸ Advance Project in 3D Printing </li>
                     </ul>
                   </div>
                   <div className="curr-card">
-                    <h4><i className="fas fa-microchip"></i> Raspberry Pi</h4>
+                    <h4><i className="fas fa-microchip"></i>  AI & Coding </h4>
                     <ul>
-                      <li>Introduction to Single Board Computers</li>
-                      <li>OS Installation & Configuration</li>
-                      <li>Interfacing Sensors with Pi</li>
+                      <li>▸ AI Hardware Integration</li>
+                      <li>▸ Computer Vision & Machine Learning </li>
+                      <li>▸ Face Detection & Recognition </li>
                     </ul>
                   </div>
                 </div>
@@ -424,17 +423,30 @@ function StemTinkeringLab() {
 
       <section className="packages-section" id="packages">
         <div className="container">
-          <h2 className="section-heading text-center fade-up">STEM Lab Packages</h2>
+          <h2 className="section-heading text-center fade-up">STEM Tinkering Lab Packages</h2><br></br>
           <div className="pricing-wrapper">
             <div className="pricing-card fade-up">
               <h3>Mini Lab</h3>
-              <div className="capacity">Up to 300 Students</div>
+              <div className="capacity">Up to 500 Students</div>
               <ul>
-                <li><i className="fas fa-box"></i> <strong>6</strong> I-BOT Starter Kits</li>
-                <li><i className="fas fa-microchip"></i> <strong>6</strong> TechBoT Electronics Kits</li>
-                <li><i className="fas fa-robot"></i> <strong>1</strong> Humanoid Add-on Kit</li>
-                <li><i className="fas fa-chalkboard-teacher"></i> 10 Online Training Sessions</li>
-                <li><i className="fas fa-user-graduate"></i> 3 Days Physical Training</li>
+                <li><i className="fas fa-box"></i> 5 I-BoT Starter Kits</li>
+                <li><i className="fas fa-box"></i> 5 TeBoT Champ Kit</li>
+                <li><i className="fas fa-microchip"></i> 5 TechBoT Electronics Kit</li>
+                <li><i className="fas fa-box"></i> 5 E-Blox Kit</li>
+                <li><i className="fas fa-robot"></i> 5 Mechatronics Kit</li>
+                <li><i className="fas fa-cube"></i> 1 3D Printer &amp; Consumables</li>
+                <li><i className="fas fa-pen"></i> 5 3D Pen</li>
+                <li><i className="fas fa-plane"></i> 1 Drone</li>
+                <li><i className="fas fa-wifi"></i> 5 Set of sensors pack</li>
+                <li><i className="fas fa-microchip"></i> 10 set of Resistor Pack</li>
+                <li><i className="fas fa-tools"></i> 2 set of Mechanical tools</li>
+                <li><i className="fas fa-shield-alt"></i> 10 set of safety materials</li>
+                <li><i className="fas fa-book"></i> 5 set of Books</li>
+                <li><i className="fas fa-chalkboard-teacher"></i> 5 days Physical Training</li>
+                <li><i className="fas fa-laptop"></i> 10 Online Training Session</li>
+                <li><i className="fas fa-paint-brush"></i> Lab decorations</li>
+                <li><i className="fas fa-graduation-cap"></i> Content from grade 1 to 12</li>
+                <li><i className="fas fa-lock"></i> LMS Access for Students &amp; teachers</li>
               </ul>
               <a href="#contact-section" className="btn btn-outline-dark">Request Details</a>
             </div>
@@ -442,26 +454,52 @@ function StemTinkeringLab() {
             <div className="pricing-card popular fade-up">
               <div className="badge">Most Popular</div>
               <h3>Medium Lab</h3>
-              <div className="capacity">Up to 700 Students</div>
+              <div className="capacity">Up to 1000 Students</div>
               <ul>
-                <li><i className="fas fa-box"></i> <strong>12</strong> I-BOT Starter Kits</li>
-                <li><i className="fas fa-microchip"></i> <strong>12</strong> TechBoT Electronics Kits</li>
-                <li><i className="fas fa-spider"></i> <strong>1</strong> Spider Kit & 1 Humanoid</li>
-                <li><i className="fas fa-tools"></i> <strong>1</strong> Robotic Arm Kit</li>
-                <li><i className="fas fa-chalkboard-teacher"></i> 15 Online Training Sessions</li>
+                <li><i className="fas fa-box"></i> 8 I-BoT Starter Kits</li>
+                <li><i className="fas fa-box"></i> 8 TeBoT Champ Kit</li>
+                <li><i className="fas fa-microchip"></i> 8 TechBoT Electronics Kit</li>
+                <li><i className="fas fa-box"></i> 8 E-Blox Kit</li>
+                <li><i className="fas fa-robot"></i> 8 Mechatronics Kit</li>
+                <li><i className="fas fa-cube"></i> 1 3D Printer &amp; Consumables</li>
+                <li><i className="fas fa-pen"></i> 8 3D Pen</li>
+                <li><i className="fas fa-plane"></i> 1 Drone</li>
+                <li><i className="fas fa-wifi"></i> 8 Set of sensors pack</li>
+                <li><i className="fas fa-microchip"></i> 20 set of Resistor Pack</li>
+                <li><i className="fas fa-tools"></i> 2 set of Mechanical tools</li>
+                <li><i className="fas fa-shield-alt"></i> 10 set of safety materials</li>
+                <li><i className="fas fa-book"></i> 8 set of Books</li>
+                <li><i className="fas fa-chalkboard-teacher"></i> 5 days Physical Training</li>
+                <li><i className="fas fa-laptop"></i> 15 Online Training Session</li>
+                <li><i className="fas fa-paint-brush"></i> Lab decorations</li>
+                <li><i className="fas fa-graduation-cap"></i> Content from grade 1 to 12</li>
+                <li><i className="fas fa-lock"></i> LMS Access for Students &amp; teachers</li>
               </ul>
               <a href="#contact-section" className="btn btn-orange">Request Details</a>
             </div>
 
             <div className="pricing-card fade-up">
               <h3>Large Lab</h3>
-              <div className="capacity">Up to 1200 Students</div>
+              <div className="capacity">Up to 1500 Students</div>
               <ul>
-                <li><i className="fas fa-box"></i> <strong>20</strong> I-BOT Starter Kits</li>
-                <li><i className="fas fa-microchip"></i> <strong>20</strong> TechBoT Electronics Kits</li>
-                <li><i className="fas fa-spider"></i> <strong>2</strong> Spider & 2 Humanoid Kits</li>
-                <li><i className="fas fa-tools"></i> <strong>2</strong> Robotic Arm Kits</li>
-                <li><i className="fas fa-chalkboard-teacher"></i> 24 Online Training Sessions</li>
+                <li><i className="fas fa-box"></i> 10 I-BoT Starter Kits</li>
+                <li><i className="fas fa-box"></i> 10 TeBoT Champ Kit</li>
+                <li><i className="fas fa-microchip"></i> 10 TechBoT Electronics Kit</li>
+                <li><i className="fas fa-box"></i> 10 E-Blox Kit</li>
+                <li><i className="fas fa-robot"></i> 10 Mechatronics Kit</li>
+                <li><i className="fas fa-cube"></i> 1 3D Printer &amp; Consumables</li>
+                <li><i className="fas fa-pen"></i> 10 3D Pen</li>
+                <li><i className="fas fa-plane"></i> 1 Drone</li>
+                <li><i className="fas fa-wifi"></i> 10 Set of sensors pack</li>
+                <li><i className="fas fa-microchip"></i> 30 set of Resistor Pack</li>
+                <li><i className="fas fa-tools"></i> 2 set of Mechanical tools</li>
+                <li><i className="fas fa-shield-alt"></i> 10 set of safety materials</li>
+                <li><i className="fas fa-book"></i> 10 set of Books</li>
+                <li><i className="fas fa-chalkboard-teacher"></i> 5 days Physical Training</li>
+                <li><i className="fas fa-laptop"></i> 20 Online Training Session</li>
+                <li><i className="fas fa-paint-brush"></i> Lab decorations</li>
+                <li><i className="fas fa-graduation-cap"></i> Content from grade 1 to 12</li>
+                <li><i className="fas fa-lock"></i> LMS Access for Students &amp; teachers</li>
               </ul>
               <a href="#contact-section" className="btn btn-outline-dark">Request Details</a>
             </div>

@@ -13,7 +13,7 @@ function RobothroneSection() {
                 alt="Students participating in Robothrone robotics competition"
                />
               </div>
-          <h1 className="mainHeading"><span className="NationalHeading">National</span> Robotic Innovation Fest</h1><br></br>
+          <h1 className="mainHeading"><span className="NationalHeading">National</span> Robotic Innovation Fest</h1>
 
           <div className="event-banner">
             <div className="event-text">

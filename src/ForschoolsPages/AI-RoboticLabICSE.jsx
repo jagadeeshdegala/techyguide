@@ -325,27 +325,27 @@ const AIRoboticLabICSE = () => {
 							<div className="tab-pane active" id="primary">
 								<div className="curr-grid">
 									<div className="curr-card">
-										<h4><i className="fas fa-shapes" /> Mechatronics</h4>
+										<h4><i className="fas fa-bolt" /> Electronics</h4>
 										<ul>
-											<li>Simple Machines (Levers, Pulleys)</li>
-											<li>Lego-based Structures</li>
-											<li>Introduction to Bots</li>
+											<li>LED Circuits &amp; Switches</li>
+											<li>Understanding Sensors (IR, Sound)</li>
+											<li>Batteries &amp; Motors</li>
 										</ul>
 									</div>
 									<div className="curr-card">
-										<h4><i className="fas fa-cat" /> Graphical Coding</h4>
+										<h4><i className="fas fa-cat" /> Coding (Scratch)</h4>
 										<ul>
-											<li>Scratch Programming</li>
-											<li>Logic & Loops</li>
-											<li>Interactive Storytelling</li>
+											<li>Animations &amp; Storytelling</li>
+											<li>Interactive Games (Catch the Ball)</li>
+											<li>Drawing Shapes &amp; Loops</li>
 										</ul>
 									</div>
 									<div className="curr-card">
-										<h4><i className="fas fa-bolt" /> Basic Electronics</h4>
+										<h4><i className="fas fa-robot" /> Robotics</h4>
 										<ul>
-											<li>LEDs & Circuits</li>
-											<li>Motors & Batteries</li>
-											<li>Understanding Sensors</li>
+											<li>Introduction to Robotics</li>
+											<li>Simple projects using Sensors</li>
+											<li>Smart Doorbell, Blind Stick</li>
 										</ul>
 									</div>
 								</div>
@@ -445,17 +445,22 @@ const AIRoboticLabICSE = () => {
 			<section className="packages-section" id="packages">
 				<div className="container">
 					<h2 className="section-heading text-center fade-up">ICSE Lab Packages</h2>
+					<br />
 					<div className="pricing-wrapper">
 						<div className="pricing-card fade-up">
 							<h3>Mini Lab</h3>
 							{/* <div className="price-tag">₹ 90,000 <small>(GST Inc.)</small></div> */}
-							<div className="capacity">Up to 300 Students</div>
+							<div className="capacity">Up to 500 Students</div>
 							<ul>
-								<li><i className="fas fa-box" /> <strong>6</strong> I-BOT Starter Kits</li>
-								<li><i className="fas fa-microchip" /> <strong>6</strong> TechBoT Electronics Kits</li>
-								<li><i className="fas fa-robot" /> <strong>1</strong> Humanoid &amp; 1 Spider Kit</li>
-								<li><i className="fas fa-chalkboard-teacher" /> 10 Online Training Sessions</li>
-								<li><i className="fas fa-user-graduate" /> 3 Days Physical Training</li>
+								<li><i className="fas fa-box" /> <strong>6</strong> I-BoT Starter Kits</li>
+								<li><i className="fas fa-microchip" /> <strong>6</strong> TechBoT Electronics Kit</li>
+								<li><i className="fas fa-cube" /> <strong>1</strong> E-Blox Kit</li>
+								<li><i className="fas fa-box-open" /> <strong>3</strong> Set of Consumables</li>
+								<li><i className="fas fa-chalkboard-teacher" /> 3 Days Physical Training</li>
+								<li><i className="fas fa-video" /> 10 Online Training Session</li>
+								<li><i className="fas fa-paint-roller" /> Lab Decorations</li>
+								<li><i className="fas fa-book" /> Content from Grade 3 to 12</li>
+								<li><i className="fas fa-user-graduate" /> LMS Access for Students &amp; Teachers</li>
 							</ul>
 							<a href="#contact-section" className="btn btn-outline-dark">Request Details</a>
 						</div>
@@ -464,13 +469,19 @@ const AIRoboticLabICSE = () => {
 							<div className="badge">Recommended</div>
 							<h3>Medium Lab</h3>
 							{/* <div className="price-tag">₹ 2,20,000 <small>(GST Inc.)</small></div> */}
-							<div className="capacity">Up to 700 Students</div>
+							<div className="capacity">Up to 1000 Students</div>
 							<ul>
-								<li><i className="fas fa-box" /> <strong>12</strong> I-BOT Starter Kits</li>
-								<li><i className="fas fa-microchip" /> <strong>12</strong> TechBoT Electronics Kits</li>
-								<li><i className="fas fa-robot" /> <strong>2</strong> Humanoid &amp; 2 Spider Kits</li>
-								<li><i className="fas fa-chalkboard-teacher" /> 15 Online Training Sessions</li>
-								<li><i className="fas fa-user-graduate" /> 3 Days Physical Training</li>
+								<li><i className="fas fa-box" /> <strong>12</strong> I-BoT Starter Kits</li>
+								<li><i className="fas fa-microchip" /> <strong>12</strong> TechBoT Electronics Kit</li>
+								<li><i className="fas fa-cube" /> <strong>2</strong> E-Blox Kit</li>
+								<li><i className="fas fa-robot" /> <strong>1</strong> Set of Humanoid &amp; Spider Bot</li>
+								<li><i className="fas fa-tools" /> <strong>1</strong> Set of Lee &amp; Robotic Arm Kit</li>
+								<li><i className="fas fa-box-open" /> <strong>5</strong> Set of Consumables</li>
+								<li><i className="fas fa-chalkboard-teacher" /> 3 Days Physical Training</li>
+								<li><i className="fas fa-video" /> 15 Online Training Session</li>
+								<li><i className="fas fa-paint-roller" /> Lab Decorations</li>
+								<li><i className="fas fa-book" /> Content from Grade 3 to 12</li>
+								<li><i className="fas fa-user-graduate" /> LMS Access for Students &amp; Teachers</li>
 							</ul>
 							<a href="#contact-section" className="btn btn-orange">Request Details</a>
 						</div>
@@ -478,13 +489,19 @@ const AIRoboticLabICSE = () => {
 						<div className="pricing-card fade-up">
 							<h3>Large Lab</h3>
 							{/* <div className="price-tag">₹ 3,40,000 <small>(GST Inc.)</small></div> */}
-							<div className="capacity">Up to 1200 Students</div>
+							<div className="capacity">Up to 1500 Students</div>
 							<ul>
-								<li><i className="fas fa-box" /> <strong>20</strong> I-BOT Starter Kits</li>
-								<li><i className="fas fa-microchip" /> <strong>20</strong> TechBoT Electronics Kits</li>
-								<li><i className="fas fa-robot" /> Advanced Add-on Kits</li>
-								<li><i className="fas fa-chalkboard-teacher" /> 24 Online Training Sessions</li>
-								<li><i className="fas fa-user-graduate" /> 3 Days Physical Training</li>
+								<li><i className="fas fa-box" /> <strong>20</strong> I-BoT Starter Kits</li>
+								<li><i className="fas fa-microchip" /> <strong>20</strong> TechBoT Electronics Kit</li>
+								<li><i className="fas fa-cube" /> <strong>3</strong> E-Blox Kit</li>
+								<li><i className="fas fa-robot" /> <strong>2</strong> Set of Humanoid &amp; Spider Bot</li>
+								<li><i className="fas fa-tools" /> <strong>2</strong> Set of Lee &amp; Robotic Arm Kit</li>
+								<li><i className="fas fa-box-open" /> <strong>10</strong> Set of Consumables</li>
+								<li><i className="fas fa-chalkboard-teacher" /> 3 Days Physical Training</li>
+								<li><i className="fas fa-video" /> 24 Online Training Session</li>
+								<li><i className="fas fa-paint-roller" /> Lab Decorations</li>
+								<li><i className="fas fa-book" /> Content from Grade 3 to 12</li>
+								<li><i className="fas fa-user-graduate" /> LMS Access for Students &amp; Teachers</li>
 							</ul>
 							<a href="#contact-section" className="btn btn-outline-dark">Request Details</a>
 						</div>
