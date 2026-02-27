@@ -7,9 +7,38 @@ import GalleryImg3 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG_20221125_104
 import GalleryImg4 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG_20240128_131052.jpg";
 import GalleryImg5 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG_8545.JPG";
 import GalleryImg6 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG_9372.JPG";
-
+import q1234 from "../assets/ForSchoolsAI-RoboticslabCBSE/Comprehensive Support Ecosystem - 1.jpg";
 function AIRoboticsLabCBSE() {
   const rootRef = useRef(null);
+
+  // SEO Head Management
+  useEffect(() => {
+    // Set page title
+    document.title = "AI & Robotics Lab Setup for Schools | CBSE 417 & NEP 2020 | TechyGuide";
+
+    // Set or update meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement("meta");
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.content = "GeM Registered AI & Robotics Lab Setup Company for Schools in India. 500+ Labs Installed. CBSE 417 Compliant & NEP 2020 Aligned Curriculum. Get Proposal Today.";
+
+    // Set or update canonical link
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement("link");
+      canonicalLink.rel = "canonical";
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.href = "https://yourdomain.com/cbse-ai-robotics-lab-setup-nep-2020";
+
+    return () => {
+      // Cleanup: Remove added elements on unmount if needed
+      // Note: Typically, you'd keep title and meta tags, but this ensures clean removal
+    };
+  }, []);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -201,13 +230,11 @@ function AIRoboticsLabCBSE() {
               <span>GeM Registered Vendor</span>
             </div>
             <h1>
-              Building Future Innovators with <br />
-              <span className="highlight-text">AI & Robotics</span>
+             AI & Robotics Lab Setup for  <br />
+              <span className="highlight-text">CBSE Schools</span>
             </h1>
             <p>
-              We transform traditional education through hands-on learning.
-              <strong>350+ Labs</strong> installed across India. Fully aligned
-              with <strong>NEP 2020</strong> and CBSE Skill Education.
+              Complete AI & Robotics Lab Setup for Schools with <strong>NEP 2020 </strong> & CBSE Alignment.
             </p>
             <div className="hero-btns">
               <a href="#packages" className="btn btn-orange">Setup Lab</a>
@@ -234,7 +261,7 @@ function AIRoboticsLabCBSE() {
       <section className="guidelines-section" id="mandates">
         <div className="container">
           <div className="guideline-header text-center fade-up">
-            <h2 className="section-heading">Why Establish an AI & Robotics Lab?</h2>
+            <h2 className="section-heading">Why TechyGuide for Your School's AI & Robotics Lab?</h2>
             <p className="section-subtext">
               Aligned with Government Mandates &amp; National Education Policy (NEP) 2020
             </p>
@@ -354,14 +381,13 @@ function AIRoboticsLabCBSE() {
         <div className="container">
           <div className="video-content-wrapper">
             <h2 className="section-heading text-center text-white fade-up">
-              Experience the Future of Learning
+              Experience the Future of Learning in Action
             </h2>
             <p
               className="section-subtext text-center text-white fade-up"
               style={{ opacity: 0.9, maxWidth: "700px", marginLeft: "auto", marginRight: "auto" }}
             >
-              Watch how TechyGuide's state-of-the-art AI &amp; Robotics labs are revolutionizing education across <strong>350+ schools</strong>. From hands-on coding to building humanoid robots, we turn classrooms into innovation hubs.
-            </p>
+Watch how TechyGuide’s state-of-the-art AI & Robotics Labs are transforming classrooms across India. Installed in <strong>500+ schools</strong>, our innovation labs enable students to move beyond theory into hands-on learning aligned with the National Education Policy and Central Board of Secondary Education Skill Education framework.             </p>
 
             <div className="video-container fade-up">
               <iframe
@@ -381,7 +407,7 @@ function AIRoboticsLabCBSE() {
             Curriculum Roadmap (Grades 1-12)
           </h2>
           <p className="section-subtext text-center fade-up">
-            A structured learning path covering Mechatronics, Coding, IoT, and AI.
+            A structured learning path covering Electronics, Coding, IoT, and AI.
           </p>
 
           <div className="tabs-wrapper fade-up">
@@ -485,7 +511,7 @@ function AIRoboticsLabCBSE() {
 
       <section className="infra-section">
         <div className="container">
-          <h2 className="section-heading text-white fade-up">Lab Infrastructure Requirements</h2>
+          <h2 className="section-heading text-white fade-up">AI & Robotics Lab Infrastructure Requirements</h2>
           <div className="infra-grid">
             <div className="infra-box fade-up">
               <i className="fas fa-laptop"></i>
@@ -512,7 +538,7 @@ function AIRoboticsLabCBSE() {
 
       <section className="packages-section" id="packages">
         <div className="container">
-          <h2 className="section-heading text-center fade-up">Select Your Lab Package</h2>
+          <h2 className="section-heading text-center fade-up">AI Robotics Lab Packages for Schools</h2>
           <br />
           <div className="pricing-wrapper">
             <div className="pricing-card fade-up">
@@ -576,18 +602,18 @@ function AIRoboticsLabCBSE() {
 
       <section className="support-section">
         <div className="container">
-          <h2 className="section-heading text-center fade-up">Comprehensive Support Ecosystem</h2>
-          <p className="section-subtext text-center fade-up">We partner with you for success with a year-round support structure.</p>
+          <h2 className="section-heading text-center fade-up">Comprehensive AI & Robotics Lab Support</h2>
+          <p className="section-subtext text-center fade-up">TechyGuide provides complete post-installation support. </p>
 
           <div className="support-grid fade-up">
             <div className="support-card">
               <div className="card-image">
-                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600" alt="Curriculum" />
+                <img src={q1234} alt="Curriculum" />
               </div>
               <div className="card-content">
                 <div className="card-icon"><i className="fas fa-book-reader"></i></div>
-                <h4>Gradewise Curriculum</h4>
-                <p>Structured, NEP-aligned lesson plans tailored for Grades 1-12 covering coding &amp; robotics.</p>
+                <h4>NEP-Aligned Curriculum</h4>
+                <p>Grade-wise structured lesson plans aligned with NEP 2020 for holistic learning.</p>
               </div>
             </div>
 
@@ -597,8 +623,8 @@ function AIRoboticsLabCBSE() {
               </div>
               <div className="card-content">
                 <div className="card-icon"><i className="fas fa-chalkboard-teacher"></i></div>
-                <h4>5 Days Teacher Training</h4>
-                <p>Intensive onsite workshops at your school to certify and empower your faculty.</p>
+                <h4>5 Days Teacher Training & Certification</h4>
+                <p>Onsite workshops for faculty empowerment. </p>
               </div>
             </div>
 
@@ -608,8 +634,8 @@ function AIRoboticsLabCBSE() {
               </div>
               <div className="card-content">
                 <div className="card-icon"><i className="fas fa-laptop-code"></i></div>
-                <h4>LMS Access</h4>
-                <p>24/7 digital platform access for students &amp; teachers with tutorials and quizzes.</p>
+                <h4>LMS Access(24/7)</h4>
+                <p>Digital learning portal for students & teachers. </p>
               </div>
             </div>
 
@@ -619,8 +645,8 @@ function AIRoboticsLabCBSE() {
               </div>
               <div className="card-content">
                 <div className="card-icon"><i className="fas fa-headset"></i></div>
-                <h4>Monthly Tech Support</h4>
-                <p>Dedicated account managers to resolve hardware or software queries instantly.</p>
+                <h4>Monthly Technical Support</h4>
+                <p>Dedicated account managers for troubleshooting. </p>
               </div>
             </div>
 
@@ -631,7 +657,7 @@ function AIRoboticsLabCBSE() {
               <div className="card-content">
                 <div className="card-icon"><i className="fas fa-video"></i></div>
                 <h4>Live Webinars</h4>
-                <p>Monthly expert-led online sessions to introduce new technologies and projects.</p>
+                <p>Monthly expert sessions on AI & Robotics innovations. </p>
               </div>
             </div>
 
@@ -641,8 +667,8 @@ function AIRoboticsLabCBSE() {
               </div>
               <div className="card-content">
                 <div className="card-icon"><i className="fas fa-clipboard-check"></i></div>
-                <h4>Certification</h4>
-                <p>Official course completion certificates for the School, Teachers, and Students.</p>
+                <h4>Official Certification</h4>
+                <p>Certification for School, Teachers, and Students. </p>
               </div>
             </div>
           </div>
@@ -704,7 +730,7 @@ function AIRoboticsLabCBSE() {
             <div className="t-line"></div>
             <div className="t-item">
               <span>Day 30</span>
-              <p>Setup &amp; Training</p>
+              <p>Setup &amp;Teacher Training</p>
             </div>
             <div className="t-line"></div>
             <div className="t-item">
@@ -934,7 +960,7 @@ function AIRoboticsLabCBSE() {
 
       <section className="faq-section">
         <div className="container small-container">
-          <h2 className="section-heading fade-up">Frequently Asked Questions</h2>
+          <h2 className="section-heading fade-up">Frequently Asked Questions(FAQ)</h2>
 
           <div className="accordion fade-up">
             
