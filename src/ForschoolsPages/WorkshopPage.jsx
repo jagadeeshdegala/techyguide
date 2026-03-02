@@ -190,82 +190,121 @@ function WorkshopPage() {
 					<div className="pricing-grid">
 						<div className="pricing-card">
 							<div className="p-header">
-								<h3>1 Day Workshop</h3>
+								<h3>Beginner Workshop</h3>
 								{/* <div className="price">₹5,999 <span className="small"></span></div> */}
 							</div>
 							<div className="p-body">
 								<ul>
-									<li><i className="fas fa-clock"></i> 2-3 Hours / 2-3 Batches</li>
-									<li><i className="fas fa-cubes"></i> 4 Activities Covered</li>
-									<li><i className="fas fa-gift"></i> <strong>Takeaway:</strong> 1 3D Model (Keychain)</li>
+									<li><strong>Duration:</strong></li>
+									<li><i className="fas fa-clock"></i> 2 Hours | 2 Batches | 20 Students (per batch)</li>
+								</ul>
+								<ul>
+									<li><strong>Activities Covered:</strong></li>
+									<li><i className="fas fa-cubes"></i> 3 Hands-on Activities</li>
+								</ul>
+								<ul>
+									<li><strong>Takeaway:</strong></li>
+									<li><i className="fas fa-gift"></i> 1 Customized 3D Model (Keychain)</li>
+								</ul>
+								<ul>
+									<li><strong>Certification:</strong></li>
 									<li><i className="fas fa-certificate"></i> Certificate of Participation</li>
 								</ul>
 								<div className="curriculum-box">
 									<h4>Curriculum:</h4>
 									<ul>
-										<li>Intro to Robotics & TeBoT</li>
-										<li>Maze Solving Robot</li>
-										<li>Waving Robot</li>
-										<li>Automatic Street Light</li>
-										<li>Electronics & 3D Pen</li>
+										<li>• Introduction to Robotics & I-BoT</li>
+										<li>• Obstacle Avoider Robot</li>
+										<li>• Automatic Street Light Project</li>
+										<li>• 3D Pen Creativity</li>
 									</ul>
 								</div>
-								<a href="#contact" className="btn-primary full-width">Book Now</a>
+								<div className="curriculum-box">
+									<h4>Learning Outcome:</h4>
+									<p>Participants will understand basic robotics concepts, simple mechanisms, beginner electronics, and hands-on creative prototyping.</p>
+								</div>
+							<a href="#contact-section" className="btn-primary full-width">Book Now</a>
 							</div>
 						</div>
 
 						<div className="pricing-card featured">
 							<div className="badge">Most Popular</div>
 							<div className="p-header">
-								<h3>3 Day Workshop</h3>
+								<h3>Intermediate Workshop</h3>
 								{/* <div className="price">₹17,999 <span className="small"></span></div> */}
 							</div>
 							<div className="p-body">
 								<ul>
-									<li><i className="fas fa-clock"></i> 2-3 Hours / 2-3 Batches</li>
-									<li><i className="fas fa-cubes"></i> 10 Activities Covered</li>
-									<li><i className="fas fa-gift"></i> <strong>Takeaway:</strong> 1 3D Model</li>
+									<li><strong>Duration:</strong></li>
+									<li><i className="fas fa-clock"></i> 2 Hours per Day | 2 Batches | 20 Students (per Batch)</li>
+								</ul>
+								<ul>
+									<li><strong>Activities Covered:</strong></li>
+									<li><i className="fas fa-cubes"></i> 7 Practical Activities</li>
+								</ul>
+								<ul>
+									<li><strong>Takeaway:</strong></li>
+									<li><i className="fas fa-gift"></i> 1 Customized 3D Printed Model</li>
+								</ul>
+								<ul>
+									<li><strong>Certification:</strong></li>
 									<li><i className="fas fa-certificate"></i> Certificate of Participation</li>
 								</ul>
 								<div className="curriculum-box">
 									<h4>Curriculum:</h4>
+									<h5>Day 1 Topics:</h5>
 									<ul>
-										<li><strong>All 1-Day Topics +</strong></li>
-										<li>Print Name on TeBoT</li>
-										<li>Soccer Robot</li>
-										<li>Make a Swing</li>
-										<li>Pasta Maker & Crawler</li>
-										<li>Line Follower Robot</li>
+										<li>• Smart Irrigation System</li>
+										<li>• Danger Detector</li>
+										<li>• Real time temperature and humidity detector</li>
+										<li>• Virtual Assistant Based Home Automation</li>
 									</ul>
 								</div>
-								<a href="#contact" className="btn-primary full-width">Book Now</a>
+								<div className="curriculum-box">
+									<h4>Learning Outcome:</h4>
+									<p>Participants will gain practical exposure to robotics, motion mechanisms, sensors, and real-world robot applications with hands-on building experience.</p>
+								</div>
+							<a href="#contact-section" className="btn-primary full-width">Book Now</a>
 							</div>
 						</div>
 
 						<div className="pricing-card">
 							<div className="p-header">
-								<h3>5 Day Workshop</h3>
+								<h3>Advanced Workshop</h3>
 								{/* <div className="price">₹29,999 <span className="small"></span></div> */}
 							</div>
 							<div className="p-body">
 								<ul>
-									<li><i className="fas fa-clock"></i> 2-3 Hours / 2-3 Batches</li>
-									<li><i className="fas fa-cubes"></i> 15 Activities Covered</li>
-									<li><i className="fas fa-gift"></i> <strong>Takeaway:</strong> 1 3D Model</li>
+									<li><strong>Duration:</strong></li>
+									<li><i className="fas fa-clock"></i> 2 Hours per Day | 2 Batches | 20 Students (per batch)</li>
+								</ul>
+								<ul>
+									<li><strong>Activities Covered:</strong></li>
+									<li><i className="fas fa-cubes"></i> 12 Advanced Activities</li>
+								</ul>
+								<ul>
+									<li><strong>Takeaway:</strong></li>
+									<li><i className="fas fa-gift"></i> 1 Advanced 3D Printed Model</li>
+								</ul>
+								<ul>
+									<li><strong>Certification:</strong></li>
 									<li><i className="fas fa-certificate"></i> Certificate of Participation</li>
 								</ul>
 								<div className="curriculum-box">
 									<h4>Curriculum:</h4>
 									<ul>
-										<li><strong>All 3-Day Topics +</strong></li>
-										<li>Series & Parallel Connections</li>
-										<li>Obstacle Avoiding Car</li>
-										<li>Home Automation</li>
-										<li>Counter Balance Mechanism</li>
-										<li>IoT Integration</li>
+										<li>• All 3-Day Topics +</li>
+										<li>• Series & Parallel Circuit connections</li>
+										<li>• Design Beetle in a maze game</li>
+										<li>• Wifi car</li>
+										<li>• Water Level Indicator</li>
 									</ul>
 								</div>
-								<a href="#contact" className="btn-primary full-width">Book Now</a>
+								<div className="curriculum-box">
+									<h4>Learning Outcome:</h4>
+									<p>Participants will develop strong fundamentals in robotics, electronics, automation, and IoT-based smart systems with real implementation experience.</p>
+								</div>
+								<a href="#contact-section" className="btn-primary full-width">Book Now</a>
 							</div>
 						</div>
 

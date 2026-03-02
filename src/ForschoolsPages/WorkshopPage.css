@@ -82,10 +82,10 @@
 
 /* --- Pricing/Workshop Grid --- */
 .workshop-page-root .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-.workshop-page-root .pricing-card { background: white; border: 1px solid #eee; border-radius: 10px; overflow: hidden; position: relative; transition: 0.3s; display: flex; flex-direction: column; }
+.workshop-page-root .pricing-card { background: white; border: 1px solid #eee; border-radius: 10px; overflow: hidden; position: relative; transition: 0.3s; display: flex; flex-direction: column; height: auto; }
 .workshop-page-root .pricing-card:hover { box-shadow: 0 15px 40px rgba(0,0,0,0.1); transform: translateY(-5px); }
 
-.workshop-page-root .pricing-card.featured { border: 2px solid var(--orange); transform: scale(1.05); z-index: 2; }
+.workshop-page-root .pricing-card.featured { border: 2px solid var(--orange); box-shadow: 0 10px 30px rgba(255, 123, 0, 0.2); z-index: 2; }
 .workshop-page-root .badge { position: absolute; top: 0; left: 50%; transform: translateX(-50%); background: var(--orange); color: white; padding: 5px 15px; font-size: 0.8rem; font-weight: 700; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; }
 
 .workshop-page-root .p-header { background: var(--teal); color: white; padding: 30px 20px; text-align: center; }
@@ -93,17 +93,17 @@
 .workshop-page-root .price { font-size: 2.5rem; font-weight: 700; font-family: var(--font-head); }
 .workshop-page-root .small { font-size: 0.8rem; opacity: 0.8; }
 
-.workshop-page-root .p-body { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
-.workshop-page-root .p-body ul { margin-bottom: 20px; list-style: none; }
-.workshop-page-root .p-body li { margin-bottom: 10px; font-size: 0.95rem; color: #555; display: flex; gap: 10px; align-items: center; }
+.workshop-page-root .p-body { padding: 30px; display: flex; flex-direction: column; flex-grow: 1; }
+.workshop-page-root .p-body ul { margin-bottom: 10px; list-style: none; }
+.workshop-page-root .p-body li { margin-bottom: 5px; font-size: 0.95rem; color: #555; display: flex; gap: 10px; align-items: center; }
 .workshop-page-root .p-body li i { color: var(--teal); width: 20px; }
 
-.workshop-page-root .curriculum-box { background: #f9f9f9; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 3px solid var(--orange); }
-.workshop-page-root .curriculum-box h4 { font-size: 1rem; margin-bottom: 10px; color: var(--dark); }
+.workshop-page-root .curriculum-box { background: #f9f9f9; padding: 15px; border-radius: 8px; margin-bottom: 10px; border-left: 3px solid var(--orange); }
+.workshop-page-root .curriculum-box h4 { font-size: 1rem; margin-bottom: 5px; color: var(--dark); }
 .workshop-page-root .curriculum-box ul { margin: 0; padding-left: 15px; list-style: disc; }
-.workshop-page-root .curriculum-box li { display: list-item; font-size: 0.85rem; margin-bottom: 5px; }
+.workshop-page-root .curriculum-box li { display: list-item; font-size: 0.85rem; margin-bottom: 2px; }
 
-.workshop-page-root .full-width { display: block; text-align: center; margin-top: auto; }
+.workshop-page-root .full-width { display: block; text-align: center; width: 100%; padding: 12px 20px; font-weight: 700; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s; margin-top: auto; }
 
 /* --- Requirements Section --- */
 .workshop-page-root .req-section { padding: 60px 0; }

@@ -1,123 +1,111 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './TeBoT.css';
 import robotImage from '../assets/ProductTeBoTImages/7.png';
-import reusableIcon from '../assets/ProductTeBoTImages/robot_2582246.png';
-import safetyIcon from '../assets/ProductTeBoTImages/robotics_12775607.png';
-import warrantyIcon from '../assets/ProductTeBoTImages/robot_3558910.png';
-import componentsImage from '../assets/ProductTeBoTImages/robotics_1434292.png';
-import componentsImage2 from '../assets/ProductTeBoTImages/robot_4512237.png';
-import componentsImage3 from '../assets/ProductTeBoTImages/hacker_10817459.png';
-import project1 from '../assets/ProductTeBoTImages/robotics_12775607.png';
-import project2 from '../assets/ProductTeBoTImages/robot_3558910.png';
-import project3 from '../assets/ProductTeBoTImages/robot_4512237.png';
-import project4 from '../assets/ProductTeBoTImages/robot_2582246.png';
 import bgImage1 from '../assets/ProductTeBoTImages/9743539.png';
 import bgImage2 from '../assets/ProductTeBoTImages/5073198.jpg';
+import tebotWebsiteImage from '../assets/ProductTeBoTImages/Website Tebt.png';
+import tebotComponentsImage from '../assets/ProductTeBoTImages/robotics_1434292.png';
+import tebotProjectsImage from '../assets/ProductTeBoTImages/robot_2582246.png';
+import tebotChampImage from '../assets/ProductTeBoTImages/robot_4512237.png';
+import tebotChampProjectImage from '../assets/ProductTeBoTImages/robotics_12775607.png';
+import tebotAdvanceImage from '../assets/ProductTeBoTImages/pexels-photo-35542404.jpeg';
+// import ZohoBiginForm from '../components/ZohoBiginForm';
 
 function TeBoT() {
-    const [activeKitIndex, setActiveKitIndex] = useState(0);
-    const [isPaused, setIsPaused] = useState(false);
+    const [activeKitSlide, setActiveKitSlide] = useState(0);
+    const touchStartXRef = useRef(0);
+    const touchEndXRef = useRef(0);
 
-    const kitItems = [
+    const projectsList = [
+        { title: "Button Games", description: "Interactive gaming with button controls" },
+        { title: "LED Patterns", description: "Creative light pattern programming" },
+        { title: "Smart Bridge", description: "Automated bridge infrastructure control" },
+        { title: "Line Follower", description: "Precision navigation using sensor paths" },
+        { title: "Flame Detector", description: "Automated fire safety and alert system" },
+        { title: "Smart Garden", description: "Soil and moisture monitoring for plants" },
+        { title: "Obstacle Avoider", description: "Autonomous navigation around obstacles" },
+        { title: "Gesture Controlled Car", description: "Hand gesture-based vehicle control" },
+        { title: "RFID Door Lock", description: "Secure access with RFID technology" },
+        { title: "Voice Controlled Car", description: "Voice command-driven robotics" },
+        { title: "Smart Home Automation", description: "Connected home devices control" },
+        { title: "Motion Sensing System", description: "Advanced motion detection and tracking" }
+    ];
+
+    const kitOfferings = [
         {
-            image: componentsImage,
-            title: "Everything You Need for Your Projects",
-            description: "This kit includes a comprehensive set of high-quality components for robotics and IoT innovation:",
-            components: [
-                {
-                    title: "Controllers & Power",
-                    items: ["IoT Board x1", "Mini USB Cable x1", "Rechargeable Battery Jack x1", "Wire and Plug x1", "1 Channel Relay Module x1"]
-                },
-                {
-                    title: "Sensors (A-M)",
-                    items: ["Ultrasonic Sensor x2", "IR Sensor x2", "DHT 11 (Temp/Humidity) x1", "MQ 2 & MQ 3 Gas Sensors x1 each", "Soil Moisture Sensor x1"]
-                },
-                {
-                    title: "Sensors (P-Z) & Modules",
-                    items: ["PIR Motion Sensor x1", "Flame Sensor x1", "Sound Sensor x1", "Vibration Sensor x1", "Heart Rate Sensor x1", "BMP 180 (Barometric) x1", "MPU 6050 (Gyro/Accel) x1"]
-                },
-                {
-                    title: "Hardware & Build",
-                    items: ["BO Motor with Jack x2 & BO Wheel x2", "Servo Motor SG 90 x2", "Breadboard 400 Pin x1", "Water Pump Module & Pipe x1", "LCD I2C Display x1", "LED Packet x1"]
-                }
-            ]
+            number: "1️⃣",
+            name: "TeBot Basic Kit",
+            description: "The ideal entry-level robotics kit for beginners to build a solid STEM foundation.",
+            projects: "10+ interactive projects",
+            image: robotImage,
+            imageAlt: 'TeBot Basic Kit visual'
         },
         {
-            image: componentsImage2,
-            title: "Advanced Components Package",
-            description: "Extended kit with advanced sensors and connectivity modules for complex projects:",
-            components: [
-                {
-                    title: "Controllers & Power",
-                    items: ["IoT Board x1", "Mini USB Cable x1", "Rechargeable Battery Jack x1", "Wire and Plug x1", "1 Channel Relay Module x1"]
-                },
-                {
-                    title: "Sensors (A-M)",
-                    items: ["Ultrasonic Sensor x2", "IR Sensor x2", "DHT 11 (Temp/Humidity) x1", "MQ 2 & MQ 3 Gas Sensors x1 each", "Soil Moisture Sensor x1"]
-                },
-                {
-                    title: "Sensors (P-Z) & Modules",
-                    items: ["PIR Motion Sensor x1", "Flame Sensor x1", "Sound Sensor x1", "Vibration Sensor x1", "Heart Rate Sensor x1", "BMP 180 (Barometric) x1", "MPU 6050 (Gyro/Accel) x1"]
-                },
-                {
-                    title: "Hardware & Build",
-                    items: ["BO Motor with Jack x2 & BO Wheel x2", "Servo Motor SG 90 x2", "Breadboard 400 Pin x1", "Water Pump Module & Pipe x1", "LCD I2C Display x1", "LED Packet x1"]
-                }
-            ]
+            number: "2️⃣",
+            name: "TeBot Champ Kit",
+            description: "An advanced robotics kit designed for young innovators ready for more complexity and sensor experimentation.",
+            projects: "40+ engaging projects",
+            image: tebotWebsiteImage,
+            imageAlt: 'TeBot Champ Kit visual'
         },
         {
-            image: componentsImage3,
-            title: "Premium Robotics Collection",
-            description: "Professional-grade components for advanced robotics and AI integration:",
-            components: [
-                {
-                    title: "Controllers & Power",
-                    items: ["IoT Board x1", "Mini USB Cable x1", "Rechargeable Battery Jack x1", "Wire and Plug x1", "1 Channel Relay Module x1"]
-                },
-                {
-                    title: "Sensors (A-M)",
-                    items: ["Ultrasonic Sensor x2", "IR Sensor x2", "DHT 11 (Temp/Humidity) x1", "MQ 2 & MQ 3 Gas Sensors x1 each", "Soil Moisture Sensor x1"]
-                },
-                {
-                    title: "Sensors (P-Z) & Modules",
-                    items: ["PIR Motion Sensor x1", "Flame Sensor x1", "Sound Sensor x1", "Vibration Sensor x1", "Heart Rate Sensor x1", "BMP 180 (Barometric) x1", "MPU 6050 (Gyro/Accel) x1"]
-                },
-                {
-                    title: "Hardware & Build",
-                    items: ["BO Motor with Jack x2 & BO Wheel x2", "Servo Motor SG 90 x2", "Breadboard 400 Pin x1", "Water Pump Module & Pipe x1", "LCD I2C Display x1", "LED Packet x1"]
-                }
-            ]
+            number: "3️⃣",
+            name: "TeBot Advance Kit",
+            description: "The flagship innovator's toolkit. It combines advanced Robotics, IoT, and AI capabilities into one package, featuring professional modules like RFID and Bluetooth.",
+            projects: "50+ high-level projects",
+            image: tebotAdvanceImage,
+            imageAlt: 'TeBot Advance Kit visual'
         }
     ];
 
     useEffect(() => {
-        let sliderTimeout;
-        if (!isPaused && kitItems.length > 0) {
-            const showSlides = () => {
-                setActiveKitIndex((prev) => {
-                    const next = prev + 1;
-                    return next >= kitItems.length ? 0 : next;
-                });
-                sliderTimeout = setTimeout(showSlides, 3000);
-            };
-            sliderTimeout = setTimeout(showSlides, 3000);
+        const timer = setInterval(() => {
+            setActiveKitSlide((prevSlide) => (prevSlide + 1) % kitOfferings.length);
+        }, 3500);
+
+        return () => clearInterval(timer);
+    }, []);
+
+    const goToKitSlide = (slideIndex) => {
+        setActiveKitSlide(slideIndex);
+    };
+
+    const moveKitSlide = (direction) => {
+        setActiveKitSlide((prevSlide) => {
+            const totalSlides = kitOfferings.length;
+            return (prevSlide + direction + totalSlides) % totalSlides;
+        });
+    };
+
+    const handleKitTouchStart = (event) => {
+        touchStartXRef.current = event.touches[0].clientX;
+    };
+
+    const handleKitTouchMove = (event) => {
+        touchEndXRef.current = event.touches[0].clientX;
+    };
+
+    const handleKitTouchEnd = () => {
+        const distance = touchStartXRef.current - touchEndXRef.current;
+        const swipeThreshold = 50;
+
+        if (Math.abs(distance) > swipeThreshold) {
+            if (distance > 0) {
+                moveKitSlide(1);
+            } else {
+                moveKitSlide(-1);
+            }
         }
-        return () => {
-            if (sliderTimeout) clearTimeout(sliderTimeout);
-        };
-    }, [isPaused, kitItems.length]);
+    };
 
     useEffect(() => {
         console.log('TeBoT page loaded successfully');
         
-        // Get main elements
         const root = document.getElementById('tebot-root');
-        const projectsContainer = document.getElementById('projects-scroll');
         const heroImage = document.querySelector('.tebot-page-root .image-section img');
         const heroTitle = document.querySelector('.tebot-page-root .info-section h1');
         const heroButton = document.querySelector('.tebot-page-root .btn-secondary');
 
-        // Enhanced smooth scrolling function
         function smoothScrollTo(element, duration = 1000) {
             const targetPosition = element.offsetTop - 20;
             const startPosition = window.pageYOffset;
@@ -187,7 +175,6 @@ function TeBoT() {
             heroButton.addEventListener('click', handleButtonClick);
         }
 
-        // Enhanced smooth scroll for anchor links
         const handleAnchorClick = (e) => {
             const target = e.target.closest('a[href^="#"]');
             if (target && root && root.contains(target)) {
@@ -204,7 +191,6 @@ function TeBoT() {
             root.addEventListener('click', handleAnchorClick);
         }
 
-        // Enhanced Intersection Observer for smoother fade-in animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
@@ -220,8 +206,10 @@ function TeBoT() {
             rootMargin: '0px 0px -50px 0px'
         });
 
-        // Apply enhanced fade-in animation to elements
-        const elements = document.querySelectorAll('.tebot-page-root .feature-item, .tebot-page-root .tech-card, .tebot-page-root .project-card');
+        const elements = document.querySelectorAll(
+            '.tebot-page-root .reveal-card, ' +
+            '.tebot-page-root .section-header'
+        );
         elements.forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
@@ -229,59 +217,6 @@ function TeBoT() {
             observer.observe(el);
         });
 
-        // Enhanced auto-scroll function with smoother animation
-        const createAutoScroll = (container, pixelsPerSecond = 30) => {
-            if (!container) return null;
-
-            let lastTimestamp = 0;
-            let animationId = null;
-            let stopped = false;
-            let isPaused = false;
-
-            container.addEventListener('mouseenter', () => isPaused = true);
-            container.addEventListener('mouseleave', () => isPaused = false);
-            container.addEventListener('touchstart', () => isPaused = true);
-            container.addEventListener('touchend', () => isPaused = false);
-
-            const scroll = (timestamp) => {
-                if (stopped) return;
-
-                if (!lastTimestamp) lastTimestamp = timestamp;
-                const delta = timestamp - lastTimestamp;
-                lastTimestamp = timestamp;
-
-                if (!isPaused) {
-                    const increment = (pixelsPerSecond / 1000) * delta;
-                    container.scrollLeft += increment;
-
-                    const singleSetWidth = container.scrollWidth / 2;
-                    if (container.scrollLeft >= singleSetWidth) {
-                        container.scrollLeft -= singleSetWidth;
-                    }
-                }
-
-                animationId = requestAnimationFrame(scroll);
-            };
-
-            animationId = requestAnimationFrame(scroll);
-
-            return () => {
-                stopped = true;
-                if (animationId) cancelAnimationFrame(animationId);
-            };
-        };
-
-        // Start enhanced auto-scroll for projects after delay
-        let stopFns = [];
-        
-        setTimeout(() => {
-            if (projectsContainer) {
-                const stopProjects = createAutoScroll(projectsContainer, 30);
-                if (stopProjects) stopFns.push(stopProjects);
-            }
-        }, 2000);
-
-        // Enhanced form submission handler
         const form = document.getElementById('inquiry-form');
         if (form) {
             form.addEventListener('submit', function(e) {
@@ -309,23 +244,20 @@ function TeBoT() {
                 
                 setTimeout(() => {
                     if (isValid) {
-                        // Collect form data
                         const schoolName = form.querySelector('input[name="school_name"]').value;
                         const contactPerson = form.querySelector('input[name="contact_person"]').value;
                         const email = form.querySelector('input[name="email"]').value;
                         const phone = form.querySelector('input[name="phone"]').value;
                         const message = form.querySelector('textarea[name="message"]').value;
                         
-                        // Format WhatsApp message
-                        const whatsappMessage = `*New Inquiry from TeBoT Product Page*%0A%0A` +
+                        const whatsappMessage = `*New Inquiry from TeBot Product Page*%0A%0A` +
                             `*School Name:* ${encodeURIComponent(schoolName)}%0A` +
                             `*Contact Person:* ${encodeURIComponent(contactPerson)}%0A` +
                             `*Email:* ${encodeURIComponent(email)}%0A` +
                             `*Phone:* ${encodeURIComponent(phone)}%0A` +
                             `*Message:* ${encodeURIComponent(message)}%0A%0A` +
-                            `*Page:* TeBoT Product Page`;
+                            `*Page:* TeBot Product Page`;
                         
-                        // WhatsApp number
                         const whatsappNumber = '918197984847';
                         const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
                         
@@ -337,7 +269,6 @@ function TeBoT() {
                             button.style.background = 'linear-gradient(135deg, #4caf50 0%, #45a049 100%)';
                             button.style.transform = 'translateY(-2px)';
                             
-                            // Open WhatsApp
                             window.open(whatsappUrl, '_blank');
                         }, 150);
                         
@@ -356,7 +287,6 @@ function TeBoT() {
             });
         }
 
-        // Enhanced loading animation for content
         const contentLayout = document.querySelector('.tebot-page-root .content-layout');
         if (contentLayout) {
             contentLayout.style.opacity = '0';
@@ -369,7 +299,6 @@ function TeBoT() {
             }, 300);
         }
 
-        // Enhanced keyboard navigation
         const handleKeyDown = function(e) {
             if (e.key === 'Enter' && e.target === heroButton) {
                 heroButton.click();
@@ -389,7 +318,6 @@ function TeBoT() {
         
         document.addEventListener('keydown', handleKeyDown);
 
-        // Enhanced touch support for mobile without zoom
         if (heroImage && 'ontouchstart' in window) {
             heroImage.addEventListener('touchstart', function() {
                 this.style.filter = 'drop-shadow(0 15px 40px rgba(0,0,0,0.6))';
@@ -400,9 +328,7 @@ function TeBoT() {
             });
         }
 
-        // Cleanup function
         return () => {
-            stopFns.forEach(stop => stop());
             if (root) {
                 root.removeEventListener('click', handleAnchorClick);
             }
@@ -425,6 +351,7 @@ function TeBoT() {
             backgroundAttachment: 'fixed',
             backgroundSize: 'cover'
         }}>
+            {/* ===== HERO SECTION - EXACTLY PRESERVED ===== */}
             <div className="background-container">
                 <main className="content-layout">
                     <div className="image-section">
@@ -438,206 +365,253 @@ function TeBoT() {
                 </main>
             </div>
 
+            {/* ===== CONTENT SECTIONS ===== */}
             <div className="ibot-page" id="tebot-root">
 
-                <section className="intro-section" id="introduction">
-                    <div className="intro-container">
-          <h2 className="our-text">Introduction to <span> TeBOT Advance Kit</span></h2>
-                        <p className="intro-tagline">Watch how students are learning and building 50+ amazing projects with TeBOT</p>
-                        <div className="video-container">
-                            <iframe
-                                className="intro-video"
-                                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                                title="TeBOT Kit Introduction"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen>
-                            </iframe>
+                {/* Introduction Section */}
+                <section className="intro-section section-block section-soft" id="introduction">
+                    <div className="intro-container section-container">
+                        <div className="section-header">
+                            <h2>Introduction to <span>TeBot Advance Kit</span></h2>
+                        </div>
+                        <p className="intro-description">
+                            The TeBot Advance Kit is the ultimate toolkit for ambitious young innovators. It integrates a vast array of high-tech sensors—including RFID, Bluetooth, and Soil Moisture modules—enabling students to execute over 50 professional-grade projects. From building an RFID Door Lock to a Voice Controlled Car, this kit is designed for those who want to master Robotics, IoT, and AI in a single, comprehensive package.
+                        </p>
+                    </div>
+                </section>
+
+                {/* Explore, Create, Innovate Section */}
+                <section className="explore-section section-block section-plain" id="explore">
+                    <div className="explore-container section-container">
+                        <div className="section-header">
+                            <h2>Explore, Create, and Innovate with TeBot</h2>
+                        </div>
+                        <p className="explore-tagline">Your Gateway to the Future of Tech</p>
+                        <p className="explore-subheading">
+                            TeBot is a versatile, all-in-one robotics companion designed to transform young learners into tech creators. From simple LED patterns to advanced AI-driven robots, TeBot makes complex technology accessible.
+                        </p>
+                        <ul className="explore-list">
+                            <li className="explore-point reveal-card">
+                                <span className="explore-icon">🔄</span>
+                                <div>
+                                    <h3>Reusable Learning</h3>
+                                    <p>Use, rebuild, and innovate—again and again with a modular design.</p>
+                                </div>
+                            </li>
+                            <li className="explore-point reveal-card">
+                                <span className="explore-icon">🎯</span>
+                                <div>
+                                    <h3>Comprehensive Projects</h3>
+                                    <p>Dive into 50+ hands-on projects across Robotics, IoT, and AI.</p>
+                                </div>
+                            </li>
+                            <li className="explore-point reveal-card">
+                                <span className="explore-icon">🏢</span>
+                                <div>
+                                    <h3>Industry Aligned</h3>
+                                    <p>Bridge the gap between classroom theory and real-world technology.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                {/* Technologies at Focus Section */}
+                <section className="technologies-section section-block section-mist" id="technologies">
+                    <div className="tech-container section-container">
+                        <div className="section-header">
+                            <h2>Master the Technologies of Tomorrow</h2>
+                        </div>
+                        <div className="tech-grid">
+                            <div className="tech-card reveal-card">
+                                <div className="tech-icon">🤖</div>
+                                <h3>Robotics & Engineering</h3>
+                                <p>Build autonomous machines like Line Followers, Obstacle Avoiders, and Gesture Controlled Cars.</p>
+                            </div>
+                            <div className="tech-card reveal-card">
+                                <div className="tech-icon">🧠</div>
+                                <h3>Artificial Intelligence (AI)</h3>
+                                <p>Explore the future with AI-ready applications including face detection and motion sensing.</p>
+                            </div>
+                            <div className="tech-card reveal-card">
+                                <div className="tech-icon">🌐</div>
+                                <h3>Internet of Things (IoT)</h3>
+                                <p>Connect to the world via Bluetooth and Wi-Fi to create Smart Home Automation and remote data monitoring.</p>
+                            </div>
+                            <div className="tech-card reveal-card">
+                                <div className="tech-icon">💻</div>
+                                <h3>Coding & Programming</h3>
+                                <p>Master logic using Scratch (Graphical) for beginners and C++ (Arduino IDE) for advanced mastery.</p>
+                            </div>
                         </div>
                     </div>
                 </section>
 
-                <section className="features-section" id="features">
-          <h2 >Why <span> TeBOT is the Best Choice</span></h2>
-                    <div className="features-container">
-                        <div className="feature-item feature-left feature-bg-1">
-                            <div className="feature-image">
-                                <img src={reusableIcon} alt="Reusable Icon" />
-                            </div>
-                            <div className="feature-content">
-                                <h3>Reusable Design</h3>
-                                <p>The TeBOT kit is designed for endless innovation. Use, rebuild, and innovate - again and again to master robotics concepts.</p>
-                                <ul className="feature-points">
-                                    <li>✓ Durable Components</li>
-                                    <li>✓ Multi-Project Integration</li>
-                                    <li>✓ Easy Handling</li>
-                                </ul>
-                            </div>
+                {/* Hardware Specifications Section */}
+                <section className="specs-section section-block section-soft" id="specifications">
+                    <div className="specs-container section-container">
+                        <div className="section-header">
+                            <h2>The Advanced Tech Inside TeBot</h2>
                         </div>
-
-                        <div className="feature-item feature-right feature-bg-2">
-                            <div className="feature-content">
-                                <h3>Certified Child Safe</h3>
-                                <p>Safety is our priority. The kit uses low voltage and non-toxic materials, making it perfectly classroom-safe for students.</p>
-                                <ul className="feature-points">
-                                    <li>✓ Low Voltage System</li>
-                                    <li>✓ Non-toxic Materials</li>
-                                    <li>✓ Short Circuit Protected</li>
-                                </ul>
-                            </div>
-                            <div className="feature-image">
-                                <img src={safetyIcon} alt="Safety Icon" />
-                            </div>
+                        <div className="specs-table-wrapper">
+                            <table className="specs-table">
+                                <tbody>
+                                    <tr className="spec-row reveal-card">
+                                        <td className="spec-label">🤖 Microcontroller</td>
+                                        <td className="spec-detail">Powered by the high-performance Raspberry Pi Pico W</td>
+                                    </tr>
+                                    <tr className="spec-row reveal-card">
+                                        <td className="spec-label">📡 Inbuilt Sensors</td>
+                                        <td className="spec-detail">Dual IR Sensors, MPU6050 Motion Sensor, Speaker, and 2 Input Buttons</td>
+                                    </tr>
+                                    <tr className="spec-row reveal-card">
+                                        <td className="spec-label">💡 Visual Display</td>
+                                        <td className="spec-detail">8x5 (40) RGB NeoPixel LED lines for emojis, patterns, and indicators</td>
+                                    </tr>
+                                    <tr className="spec-row reveal-card">
+                                        <td className="spec-label">🔗 Connectivity</td>
+                                        <td className="spec-detail">Bluetooth Slot, Ultrasonic Slot, and Edge Connector for unlimited sensor expansion</td>
+                                    </tr>
+                                    <tr className="spec-row reveal-card">
+                                        <td className="spec-label">🔋 Power System</td>
+                                        <td className="spec-detail">3.7V 500mAh Li-ion battery with integrated charging and short-circuit protection</td>
+                                    </tr>
+                                    <tr className="spec-row reveal-card">
+                                        <td className="spec-label">🛡️ Durability</td>
+                                        <td className="spec-detail">Built with non-toxic, low-voltage materials, making it classroom-safe and ready for heavy reuse</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
+                    </div>
+                </section>
 
-                        <div className="feature-item feature-left feature-bg-3">
-                            <div className="feature-image">
-                                <img src={warrantyIcon} alt="Warranty Icon" />
+                {/* Why TeBot Section */}
+                <section className="why-tebot-section section-block section-plain" id="why-tebot">
+                    <div className="why-container section-container">
+                        <div className="section-header">
+                            <h2>Why TeBot is the Ultimate Learning Choice</h2>
+                        </div>
+                        <div className="benefits-grid">
+                            <div className="benefit-item reveal-card">
+                                <div className="benefit-icon">✅</div>
+                                <h3>Child Safe & Durable</h3>
+                                <p>Built with non-toxic, low-voltage materials, making it classroom-safe and ready for heavy reuse.</p>
                             </div>
-                            <div className="feature-content">
-                                <h3>Guaranteed Reliability</h3>
-                                <p>Every TeBOT Advance Kit comes with a standard 1-year manufacturing warranty on the Microcontroller for long-term use.</p>
-                                <ul className="feature-points">
-                                    <li>✓ 1-Year Microcontroller Warranty</li>
-                                    <li>✓ Professional Support</li>
-                                    <li>✓ Quality Circuitry</li>
-                                </ul>
+                            <div className="benefit-item reveal-card">
+                                <div className="benefit-icon">⚡</div>
+                                <h3>Plug & Play Simplicity</h3>
+                                <p>Ready-to-use components and inbuilt sensors ensure quick setup—start coding in minutes.</p>
+                            </div>
+                            <div className="benefit-item reveal-card">
+                                <div className="benefit-icon">🏆</div>
+                                <h3>Proven Impact</h3>
+                                <p>Developed by Techyguide, a pioneer with 350+ AI/Robotics labs and over 100,000 students trained across India.</p>
+                            </div>
+                            <div className="benefit-item reveal-card">
+                                <div className="benefit-icon">🛡️</div>
+                                <h3>Guaranteed Quality</h3>
+                                <p>Every TeBot includes a 1-year manufacturing warranty on the microcontroller.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section className="kit-section" id="kit-details">
-                    <h2>TeBOT Offerings</h2>
-                    <div 
-                        className="kit-slider-wrapper"
-                        onMouseEnter={() => setIsPaused(true)}
-                        onMouseLeave={() => setIsPaused(false)}
-                    >
-                        <div className="kit-slider-image">
-                            {kitItems.map((item, index) => (
-                                <div 
-                                    key={index}
-                                    className="kit-slide fade"
-                                    style={{ display: index === activeKitIndex ? 'block' : 'none' }}
+                {/* Kit Offerings Section */}
+                <section className="kits-offerings-section section-block section-mist" id="kits">
+                    <div className="kits-container section-container">
+                        <div className="section-header">
+                            <h2>TeBot Kits for Students</h2>
+                        </div>
+                        <div
+                            className="kits-main-slider reveal-card"
+                            onTouchStart={handleKitTouchStart}
+                            onTouchMove={handleKitTouchMove}
+                            onTouchEnd={handleKitTouchEnd}
+                        >
+                            <div className="kits-slider-window">
+                                <div
+                                    className="kits-slider-track"
+                                    style={{ transform: `translateX(-${activeKitSlide * 100}%)` }}
                                 >
-                                    <img src={item.image} alt={`Kit ${index + 1}`} />
-                                    <div className="slide-caption">Kit Package {index + 1}</div>
+                                    {kitOfferings.map((kit, index) => (
+                                        <article
+                                            key={index}
+                                            className={`kit-main-slide ${index % 2 === 1 ? 'is-reverse' : ''} ${kit.name === 'TeBot Advance Kit' ? 'is-advance' : ''}`}
+                                        >
+                                            <div className="kit-main-image-card">
+                                                <img src={kit.image} alt={kit.imageAlt} loading="lazy" />
+                                            </div>
+                                            <div className="kit-main-content-card">
+                                                <div className="kit-number">{kit.number}</div>
+                                                <h3>{kit.name}</h3>
+                                                <p className="kit-description">{kit.description}</p>
+                                                <div className="projects-badge">
+                                                    📚 <strong>{kit.projects}</strong>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <button
+                                type="button"
+                                className="kits-main-arrow prev"
+                                aria-label="Previous kit"
+                                onClick={() => moveKitSlide(-1)}
+                            >
+                                ‹
+                            </button>
+                            <button
+                                type="button"
+                                className="kits-main-arrow next"
+                                aria-label="Next kit"
+                                onClick={() => moveKitSlide(1)}
+                            >
+                                ›
+                            </button>
+
+                            <div className="kits-main-dots">
+                                {kitOfferings.map((kit, slideIndex) => (
+                                    <button
+                                        key={kit.name}
+                                        type="button"
+                                        className={`kits-main-dot ${activeKitSlide === slideIndex ? 'active' : ''}`}
+                                        aria-label={`Go to ${kit.name}`}
+                                        onClick={() => goToKitSlide(slideIndex)}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Featured Projects Section */}
+                <section className="featured-projects-section section-block section-soft" id="projects">
+                    <div className="projects-container section-container">
+                        <div className="section-header">
+                            <h2>Featured TeBot Projects</h2>
+                        </div>
+                        <p className="projects-intro">Explore some of our 50+ amazing projects students can build:</p>
+                        <div className="projects-grid">
+                            {projectsList.map((project, index) => (
+                                <div key={index} className="project-card reveal-card">
+                                    <div className="project-number">{index + 1}</div>
+                                    <h3>{project.title}</h3>
+                                    <p>{project.description}</p>
                                 </div>
                             ))}
                         </div>
-                        <div className="kit-info">
-                            <div className="kit-content fade" style={{ display: activeKitIndex >= 0 ? 'block' : 'none' }}>
-                                <h3>{kitItems[activeKitIndex].title}</h3>
-                                <p>{kitItems[activeKitIndex].description}</p>
-                                
-                                <div className="kit-components">
-                                    {kitItems[activeKitIndex].components.map((column, idx) => (
-                                        <div key={idx} className="component-column">
-                                            <h4>{column.title}</h4>
-                                            <ul>
-                                                {column.items.map((item, itemIdx) => (
-                                                    <li key={itemIdx}>{item}</li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-
-                            {kitItems.length > 1 && (
-                                <div className="kit-indicators">
-                                    {kitItems.map((_, index) => (
-                                        <button
-                                            key={index}
-                                            className={`kit-indicator ${index === activeKitIndex ? 'active' : ''}`}
-                                            onClick={() => setActiveKitIndex(index)}
-                                            aria-label={`View kit ${index + 1}`}
-                                        />
-                                    ))}
-                                </div>
-                            )}
-                        </div>
                     </div>
                 </section>
 
-                <section className="technology-section" id="technology">
-                    <h2>Technologies <span>Covered in TeBOT</span></h2>
-                    <p className="section-intro">Master multiple STEM domains with a single platform</p>
-                    <div className="tech-grid">
-                        <div className="tech-card">
-                            <div className="tech-icon">🤖</div>
-                            <h3>Robotics</h3>
-                            <p>Build autonomous systems and learn path planning using the provided line follower paper and sensors.</p>
+                {/* Inquiry Form Section
+                <section className="form-section section-block" id="interest-form">
+                    <div className="form-container section-container">
+                        <div className="section-header">
+                            <h2>Get TeBot Advance for Your School! 📬</h2>
                         </div>
-                        <div className="tech-card">
-                            <div className="tech-icon">📡</div>
-                            <h3>Smart Automation</h3>
-                            <p>Create real-world solutions like the Smart Bridge using multi-sensor integration.</p>
-                        </div>
-                        <div className="tech-card">
-                            <div className="tech-icon">💻</div>
-                            <h3>Coding</h3>
-                            <p>Master programming with 50+ projects supported by comprehensive course materials.</p>
-                        </div>
-                        <div className="tech-card">
-                            <div className="tech-icon">⚙️</div>
-                            <h3>Electronics</h3>
-                            <p>Understand circuit building with breadboards, resistors, and various jumper cables.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="projects-section" id="projects">
-                    <h2>Featured <span>TeBOT Projects</span></h2>
-                    <p className="section-intro">Choose from over 50 projects including:</p>
-                    <div className="projects-scroll" id="projects-scroll">
-                        <div className="project-card">
-                            <img src={project1} alt="Smart Bridge" />
-                            <h4>Smart Bridge</h4>
-                            <p>Automated bridge infrastructure control</p>
-                        </div>
-                        <div className="project-card">
-                            <img src={project2} alt="Line Follower" />
-                            <h4>Line Follower</h4>
-                            <p>Precision navigation using sensor paths</p>
-                        </div>
-                        <div className="project-card">
-                            <img src={project3} alt="Flame Detector" />
-                            <h4>Flame Detector</h4>
-                            <p>Automated fire safety and alert system</p>
-                        </div>
-                        <div className="project-card">
-                            <img src={project4} alt="Smart Garden" />
-                            <h4>Smart Garden</h4>
-                            <p>Soil and moisture monitoring for plants</p>
-                        </div>
-                        <div className="project-card">
-                            <img src={project1} alt="Smart Bridge" />
-                            <h4>Smart Bridge</h4>
-                            <p>Automated bridge infrastructure control</p>
-                        </div>
-                        <div className="project-card">
-                            <img src={project2} alt="Line Follower" />
-                            <h4>Line Follower</h4>
-                            <p>Precision navigation using sensor paths</p>
-                        </div>
-                        <div className="project-card">
-                            <img src={project3} alt="Flame Detector" />
-                            <h4>Flame Detector</h4>
-                            <p>Automated fire safety and alert system</p>
-                        </div>
-                        <div className="project-card">
-                            <img src={project4} alt="Smart Garden" />
-                            <h4>Smart Garden</h4>
-                            <p>Soil and moisture monitoring for plants</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="form-section" id="interest-form">
-                    <div className="form-container">
-                        <h2>Get TeBOT Advance for Your School! 📬</h2>
                         <p>Join the STEM revolution with 50+ hands-on projects</p>
                         <form className="inquiry-form" id="inquiry-form">
                             <div className="form-row">
@@ -648,11 +622,15 @@ function TeBoT() {
                                 <input type="email" name="email" placeholder="Email Address" required />
                                 <input type="tel" name="phone" placeholder="Phone Number" required />
                             </div>
-                            <textarea name="message" placeholder="Tell us how we can help your students innovate with TeBOT..." rows="3" required></textarea>
+                            <textarea name="message" placeholder="Tell us how we can help your students innovate with TeBot..." rows="3" required></textarea>
                             <button type="submit" className="form-btn">📧 Send Inquiry Now</button>
                         </form>
                     </div>
-                </section>
+                </section> */}
+
+                {/* ===== ZOHO BIGIN CRM PROPOSAL FORM SECTION ===== */}
+                {/* <ZohoBiginForm /> */}
+
             </div>
         </div>
     );

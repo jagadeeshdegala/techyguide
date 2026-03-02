@@ -1,0 +1,411 @@
+/* ===== ZOHO BIGIN FORM SECTION ===== */
+
+.zoho-proposal-section {
+    background: linear-gradient(135deg, rgba(240, 248, 255, 0.8) 0%, rgba(230, 245, 250, 0.9) 100%);
+    padding: 60px 20px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(0, 130, 115, 0.1);
+}
+
+.zoho-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.zoho-header {
+    text-align: center;
+    margin-bottom: 40px;
+    animation: fadeInDown 0.6s ease-out;
+}
+
+.zoho-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0c5460;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+.zoho-header h2::before {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 4px;
+    background: linear-gradient(90deg, #1976d2, #00bcd4);
+    margin-right: 15px;
+    border-radius: 2px;
+    vertical-align: middle;
+}
+
+.zoho-subtitle {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+/* Button Container */
+.zoho-button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.request-proposal-btn {
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+    text-decoration: none;
+}
+
+.request-proposal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(25, 118, 210, 0.4);
+    background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+}
+
+.request-proposal-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.3);
+}
+
+/* iframe Wrapper */
+.zoho-form-wrapper {
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.zoho-form-container {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 130, 115, 0.08);
+}
+
+.zoho-iframe {
+    width: 100%;
+    height: 700px;
+    border: none;
+    display: block;
+}
+
+/* ===== MODAL POPUP VERSION ===== */
+
+.zoho-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+    animation: fadeIn 0.3s ease-out;
+    backdrop-filter: blur(3px);
+}
+
+.zoho-modal-content {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    animation: slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.zoho-modal-header {
+    padding: 24px;
+    border-bottom: 1px solid rgba(0, 130, 115, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(25, 118, 210, 0.05) 0%, rgba(0, 188, 212, 0.05) 100%);
+}
+
+.zoho-modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #0c5460;
+    font-weight: 600;
+}
+
+.zoho-modal-close {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #999;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.zoho-modal-close:hover {
+    color: #333;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.zoho-modal-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0;
+}
+
+.zoho-modal-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    min-height: 600px;
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 1024px) {
+    .zoho-proposal-section {
+        padding: 50px 20px;
+    }
+
+    .zoho-header h2 {
+        font-size: 2rem;
+    }
+
+    .zoho-subtitle {
+        font-size: 1rem;
+    }
+
+    .zoho-iframe {
+        height: 650px;
+    }
+
+    .zoho-modal-content {
+        max-height: 95vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .zoho-proposal-section {
+        padding: 40px 16px;
+        margin-top: 30px;
+    }
+
+    .zoho-header {
+        margin-bottom: 30px;
+    }
+
+    .zoho-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .zoho-header h2::before {
+        width: 30px;
+        height: 3px;
+        margin-right: 10px;
+    }
+
+    .zoho-subtitle {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .zoho-button-container {
+        margin-bottom: 30px;
+    }
+
+    .request-proposal-btn {
+        padding: 12px 28px;
+        font-size: 0.95rem;
+    }
+
+    .zoho-iframe {
+        height: 550px;
+    }
+
+    .zoho-modal-overlay {
+        padding: 16px;
+    }
+
+    .zoho-modal-content {
+        max-height: 90vh;
+    }
+
+    .zoho-modal-header {
+        padding: 16px;
+    }
+
+    .zoho-modal-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .zoho-modal-iframe {
+        min-height: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    .zoho-proposal-section {
+        padding: 30px 12px;
+    }
+
+    .zoho-header {
+        margin-bottom: 24px;
+    }
+
+    .zoho-header h2 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+
+    .zoho-header h2::before {
+        content: none;
+    }
+
+    .zoho-subtitle {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .zoho-button-container {
+        margin-bottom: 24px;
+    }
+
+    .request-proposal-btn {
+        padding: 11px 24px;
+        font-size: 0.9rem;
+        width: 100%;
+    }
+
+    .zoho-iframe {
+        height: 480px;
+    }
+
+    .zoho-modal-header {
+        padding: 14px 16px;
+    }
+
+    .zoho-modal-header h2 {
+        font-size: 1.1rem;
+    }
+
+    .zoho-form-container {
+        border-radius: 8px;
+    }
+
+    .zoho-modal-content {
+        border-radius: 8px;
+    }
+}
+
+/* ===== SECTION BLOCK STYLING (consistent with other sections) ===== */
+
+.section-light-gradient {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-light-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Fallback text styling */
+.zoho-iframe::fallback,
+.zoho-modal-iframe::fallback {
+    padding: 20px;
+    text-align: center;
+    color: #666;
+}
+
+.zoho-iframe::fallback a,
+.zoho-modal-iframe::fallback a {
+    color: #1976d2;
+    text-decoration: none;
+}
+
+.zoho-iframe::fallback a:hover,
+.zoho-modal-iframe::fallback a:hover {
+    text-decoration: underline;
+}

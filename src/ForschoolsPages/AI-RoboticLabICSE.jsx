@@ -209,8 +209,8 @@ const AIRoboticLabICSE = () => {
 							<span>ICSE Aligned</span>
 						</div>
 						<h1>
-							Empowering Schools with <br />
-							<span className="highlight-text">ICSE AI & Robotics</span>
+							AI & Robotics Lab Setup for  <br />
+							<span className="highlight-text">ICSE Schools in India</span>
 						</h1>
 						<p>
 							Comprehensive Lab Solutions for <strong>Subject Code 066 (AI)</strong>. Fully aligned with CISCE guidelines and NEP 2020 to foster innovation and hands-on learning.
@@ -228,7 +228,7 @@ const AIRoboticLabICSE = () => {
 								<span>ICSE Compliant</span>
 							</div>
 						</div>
-						<img src="https://images.unsplash.com/photo-1518107616985-bd48230d3b20?auto=format&fit=crop&q=80&w=600" alt="ICSE Student Robotics" className="main-hero-img" />
+						<img src="https://images.unsplash.com/photo-1518107616985-bd48230d3b20?auto=format&fit=crop&q=80&w=600" alt="500 plus AI and Robotics Labs installed across ICSE schools in India" className="main-hero-img" />
 					</div>
 				</div>
 			</section>
@@ -236,14 +236,14 @@ const AIRoboticLabICSE = () => {
 			<section className="guidelines-section" id="mandates">
 				<div className="container">
 					<div className="guideline-header text-center fade-up">
-						<h2 className="section-heading">Why Setup an AI Lab?</h2>
-						<p className="section-subtext">Meeting the Council for the Indian School Certificate Examinations (CISCE) Standards</p>
+						<h2 className="section-heading">Why Setup an AI Lab for ICSE Schools?</h2>
+						<p className="section-subtext">Establishing an AI & Robotics Lab in ICSE schools strengthens academic excellence while meeting modern technology education standards defined by the Council for the Indian School Certificate Examinations (CISCE). </p>
 					</div>
 
 					<div className="guidelines-grid">
 						<div className="guide-card fade-up">
 							<div className="guide-img">
-								<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600" alt="AI Code 066" />
+								<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600" alt="Robotics Lab Setup for ICSE Schools following CISCE AI Subject Code 066 guidelines " />
 								<div className="guide-badge">Subject Code 066</div>
 							</div>
 							<div className="guide-content">
@@ -254,18 +254,18 @@ const AIRoboticLabICSE = () => {
 
 						<div className="guide-card fade-up">
 							<div className="guide-img">
-								<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=600" alt="Experiential Learning" />
+								<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=600" alt="CSE Artificial Intelligence Subject Code 066 practical coding session " />
 								<div className="guide-badge">NEP 2020</div>
 							</div>
 							<div className="guide-content">
-								<h3>Experiential Learning</h3>
+								<h3>Experiential Learning Approach</h3>
 								<p>Aligned with <strong>NEP 2020</strong>, the curriculum supports project-based learning. It bridges the gap between theory and real-world application through hands-on robotics.</p>
 							</div>
 						</div>
 
 						<div className="guide-card fade-up">
 							<div className="guide-img">
-								<img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600" alt="Skills" />
+								<img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600" alt="Project-based robotics learning for ICSE schools under NEP 2020 framework " />
 								<div className="guide-badge">21st Century Skills</div>
 							</div>
 							<div className="guide-content">
@@ -276,7 +276,7 @@ const AIRoboticLabICSE = () => {
 
 						<div className="guide-card fade-up">
 							<div className="guide-img">
-								<img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600" alt="STEM" />
+								<img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600" alt="ICSE students developing problem-solving skills through AI and robotics lab" />
 								<div className="guide-badge">Integrated STEM</div>
 							</div>
 							<div className="guide-content">
@@ -304,7 +304,7 @@ const AIRoboticLabICSE = () => {
 					</div>
 					<div className="stat-item fade-up">
 						<h2><span className="counter" data-target="100">0</span>+</h2>
-						<p>Govt Schools (Tender)</p>
+						<p>Govt Schools (Tender Projects)</p>
 					</div>
 				</div>
 			</section>
@@ -552,11 +552,11 @@ const AIRoboticLabICSE = () => {
 					<div className="diy-container fade-up">
 						<div className="diy-content">
 							<div className="badge-diy">Hardware</div>
-							<h2>Proprietary DIY Kits</h2>
+							<h2>Proprietary DIY Robotics Kits</h2>
 							<p>Our labs feature in-house developed kits like I-BoT and TeBoT, designed for infinite prototyping and durability.</p>
               
 							<ul className="diy-features">
-								<li><i className="fas fa-microchip" /> <strong>Core:</strong> Arduino / ESP32 Compatible</li>
+								<li><i className="fas fa-microchip" /> <strong>Core  Compatibility :</strong> Arduino / ESP32 Compatible</li>
 								<li><i className="fas fa-plug" /> <strong>Parts:</strong> Sensors, Motors, Jumpers</li>
 								<li><i className="fas fa-tools" /> <strong>Build:</strong> Modular &amp; Reusable</li>
 								<li><i className="fas fa-wifi" /> <strong>Tech:</strong> Bluetooth/WiFi Enabled</li>
@@ -566,11 +566,11 @@ const AIRoboticLabICSE = () => {
             
 						<div className="diy-image slider-wrapper">
 							<div className="diy-slide fade">
-								<img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800" alt="I-BoT Kit" />
+								<img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800" alt="Modular I-BoT robotics kit compatible with Arduino and ESP32 for ICSE labs " />
 								<div className="slide-caption">I-BoT Starter Kit</div>
 							</div>
 							<div className="diy-slide fade">
-								<img src="https://images.unsplash.com/photo-1563968743333-044cef80426d?auto=format&fit=crop&q=80&w=800" alt="TeBoT Kit" />
+								<img src="https://images.unsplash.com/photo-1563968743333-044cef80426d?auto=format&fit=crop&q=80&w=800" alt="TeBoT DIY robotics kit for ICSE AI and robotics lab projects " />
 								<div className="slide-caption">TeBoT Kit</div>
 							</div>
 							<div className="diy-slide fade">
@@ -590,7 +590,7 @@ const AIRoboticLabICSE = () => {
 
 					<div className="support-grid fade-up">
 						<div className="support-card">
-							<div className="card-image"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=600" alt="Training" /></div>
+							<div className="card-image"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=600" alt="Onsite teacher training for ICSE AI and Robotics Lab implementation " /></div>
 							<div className="card-content">
 								<div className="card-icon"><i className="fas fa-chalkboard-teacher" /></div>
 								<h4>3 Days Onsite Training</h4>
@@ -598,7 +598,7 @@ const AIRoboticLabICSE = () => {
 							</div>
 						</div>
 						<div className="support-card">
-							<div className="card-image"><img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=600" alt="Virtual Training" /></div>
+							<div className="card-image"><img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=600" alt=" Annual innovation competition for ICSE robotics lab students" /></div>
 							<div className="card-content">
 								<div className="card-icon"><i className="fas fa-laptop-code" /></div>
 								<h4>24 Days Virtual Training</h4>
@@ -606,7 +606,7 @@ const AIRoboticLabICSE = () => {
 							</div>
 						</div>
 						<div className="support-card">
-							<div className="card-image"><img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?auto=format&fit=crop&q=80&w=600" alt="Monitoring" /></div>
+							<div className="card-image"><img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?auto=format&fit=crop&q=80&w=600" alt="35 day execution timeline for ICSE AI and Robotics Lab setup" /></div>
 							<div className="card-content">
 								<div className="card-icon"><i className="fas fa-eye" /></div>
 								<h4>Quarterly Monitoring</h4>
@@ -614,7 +614,7 @@ const AIRoboticLabICSE = () => {
 							</div>
 						</div>
 						<div className="support-card">
-							<div className="card-image"><img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?auto=format&fit=crop&q=80&w=600" alt="Certification" /></div>
+							<div className="card-image"><img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?auto=format&fit=crop&q=80&w=600" alt="ICSE school testimonial for AI and Robotics Lab services " /></div>
 							<div className="card-content">
 								<div className="card-icon"><i className="fas fa-certificate" /></div>
 								<h4>Certification</h4>
@@ -622,7 +622,7 @@ const AIRoboticLabICSE = () => {
 							</div>
 						</div>
 						<div className="support-card">
-							<div className="card-image"><img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=600" alt="Assessment" /></div>
+							<div className="card-image"><img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=600" alt="Frequently asked questions about AI and Robotics Lab for ICSE schools " /></div>
 							<div className="card-content">
 								<div className="card-icon"><i className="fas fa-clipboard-list" /></div>
 								<h4>Assessment &amp; Question Bank</h4>
@@ -630,7 +630,7 @@ const AIRoboticLabICSE = () => {
 							</div>
 						</div>
 						<div className="support-card">
-							<div className="card-image"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=600" alt="Competition" /></div>
+							<div className="card-image"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=600" alt="AI and Robotics Lab provider serving ICSE schools across India " /></div>
 							<div className="card-content">
 								<div className="card-icon"><i className="fas fa-trophy" /></div>
 								<h4>Innovation Fest</h4>
@@ -691,14 +691,14 @@ const AIRoboticLabICSE = () => {
 
 			<section className="testimonial-section">
 				<div className="container">
-					<h2 className="section-heading text-center fade-up">Trusted by Educators</h2>
+					<h2 className="section-heading text-center fade-up">TESTIMONIALS (SOCIAL PROOF)</h2>
 				</div>
 				<div className="slider">
 					<div className="slide-track">
 						{/* First set of cards */}
 						<div className="testimonial-card">
 							<div className="stars">★★★★★</div>
-							<p>"We have used TechyGuide's ATL service. Their services were very good and always respond to our queries promptly."</p>
+							<p>“TechyGuide’s ICSE lab services are excellent and highly responsive.” </p>
 							<div className="profile">
 								<div className="profile-icon">GJ</div>
 								<div className="profile-info">
@@ -709,7 +709,7 @@ const AIRoboticLabICSE = () => {
 						</div>
 						<div className="testimonial-card">
 							<div className="stars">★★★★★</div>
-							<p>"I have learned AI, Robotics, Coding, and 3D printing. These courses are very interesting to me and helpful for my students."</p>
+							<p>“AI, robotics and coding courses helped my students immensely.”</p>
 							<div className="profile">
 								<div className="profile-icon">PD</div>
 								<div className="profile-info">

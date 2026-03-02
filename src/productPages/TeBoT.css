@@ -158,8 +158,9 @@
 
 /* ===== INTRODUCTION SECTION ===== */
 .tebot-page-root .intro-section {
-    padding: clamp(40px, 8vw, 80px) clamp(15px, 4vw, 20px);
-    background: linear-gradient(135deg, #e0f2fe 0%, #f3e5f5 100%);
+    padding: clamp(60px, 10vw, 100px) clamp(15px, 4vw, 20px);
+    background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 50%, #f3e5f5 100%);
+    text-align: center;
 }
 
 .tebot-page-root .intro-container {
@@ -168,326 +169,617 @@
 }
 
 .tebot-page-root .intro-section h2 {
-    font-family: var(--font-tech);
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
-    color: black;
-    text-align: center;
-    margin-bottom: 15px;
-}
-.tebot-page-root .intro-section span{
-    color: orange;
-}
-.tebot-page-root .intro-tagline {
-    text-align: center;
-    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-    color: var(--text-gray);
-    margin-bottom: clamp(20px, 5vw, 40px);
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    color: #1f2937;
+    margin-bottom: 10px;
+    font-weight: 700;
 }
 
-.tebot-page-root .video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+.tebot-page-root .intro-section span {
+    color: #ff6b35;
 }
 
-.tebot-page-root .intro-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 15px;
+.tebot-page-root .intro-description {
+    font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+    color: #555;
+    line-height: 1.8;
+    margin-top: 20px;
 }
 
-/* ===== FEATURES SECTION ===== */
-.tebot-page-root .features-section {
-    padding: clamp(50px, 8vw, 90px) 20px;
-    background: linear-gradient(180deg, #f8fbff 0%, #ffffff 55%, #f4fbf7 100%);
-    position: relative;
-    overflow: hidden;
+/* ===== EXPLORE, CREATE & INNOVATE SECTION ===== */
+.tebot-page-root .explore-section {
+    padding: clamp(60px, 10vw, 100px) clamp(15px, 4vw, 20px);
+    background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
 }
 
-
-.tebot-page-root .features-section h2 {
-    font-family: var(--font-tech);
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
-    color: #000000;
-    text-align: center;
-    margin-bottom: clamp(15px, 4vw, 30px);
-    padding-top: 0;
-    position: relative;
-    z-index: 1;
-}
-.tebot-page-root .features-section span {
-    font-family: var(--font-tech);
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
-    color: teal;
-    text-align: center;
-    margin-bottom: clamp(15px, 4vw, 30px);
-    padding-top: 0;
-    position: relative;
-    z-index: 1;
-}
-.tebot-page-root .features-container {
-    width: 100%;
-    margin: 0;
-    position: relative;
-    z-index: 1;
-}
-
-.tebot-page-root .feature-item {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(20px, 5vw, 40px);
-    align-items: center;
-    padding: clamp(30px, 6vw, 60px) clamp(20px, 5vw, 60px);
-    min-height: auto;
-    margin: 0 auto 28px;
+.tebot-page-root .explore-container {
     max-width: 1200px;
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(15, 23, 42, 0.08);
-    border-radius: 24px;
-    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
-    backdrop-filter: blur(6px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.tebot-page-root .feature-item:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 28px 70px rgba(15, 23, 42, 0.12);
-    border-color: rgba(79, 195, 247, 0.25);
-}
-
-.tebot-page-root .feature-item.feature-left .feature-image { 
-    grid-column: 1; 
-}
-
-.tebot-page-root .feature-item.feature-left .feature-content { 
-    grid-column: 2; 
-}
-
-.tebot-page-root .feature-item.feature-right .feature-content { 
-    grid-column: 1; 
-}
-
-.tebot-page-root .feature-item.feature-right .feature-image { 
-    grid-column: 2; 
-}
-
-.tebot-page-root .feature-bg-1 { 
-    background: transparent; 
-}
-
-.tebot-page-root .feature-bg-2 { 
-    background: transparent; 
-}
-
-.tebot-page-root .feature-bg-3 { 
-    background: transparent; 
-}
-
-.tebot-page-root .feature-bg-4 { 
-    background: transparent; 
-}
-
-.tebot-page-root .feature-image {
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.2);
-    border: 1px solid rgba(15, 23, 42, 0.08);
-    max-width: 500px;
     margin: 0 auto;
 }
 
-.tebot-page-root .feature-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    max-height: 420px;
-    object-fit: contain;
+.tebot-page-root .explore-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    color: #1f2937;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
 }
 
-.tebot-page-root .feature-content h3 {
-    font-size: clamp(1.2rem, 4vw, 1.8rem);
-    color: orange;
-    margin-bottom: 15px;
-}
-
-.tebot-page-root .feature-content p {
-    font-size: clamp(0.85rem, 2.5vw, 1rem);
-    color: #555;
+.tebot-page-root .explore-tagline {
+    text-align: center;
+    font-size: clamp(1rem, 3vw, 1.4rem);
+    color: #ff6b35;
+    font-weight: 600;
     margin-bottom: 20px;
-    line-height: 1.8;
 }
 
-.tebot-page-root .feature-points {
+.tebot-page-root .explore-subheading {
+    text-align: center;
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tebot-page-root .explore-list {
     list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.tebot-page-root .explore-point {
+    display: flex;
+    gap: 20px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-left: 4px solid #ff6b35;
+}
+
+.tebot-page-root .explore-point:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.tebot-page-root .explore-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.tebot-page-root .explore-point h3 {
+    font-size: 1.2rem;
+    color: #1f2937;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+}
+
+.tebot-page-root .explore-point p {
+    margin: 0;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ===== TECHNOLOGIES AT FOCUS SECTION ===== */
+.tebot-page-root .technologies-section {
+    padding: clamp(60px, 10vw, 100px) clamp(15px, 4vw, 20px);
+    background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+}
+
+.tebot-page-root .tech-container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.tebot-page-root .technologies-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    color: #1f2937;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 700;
+}
+
+.tebot-page-root .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.tebot-page-root .tech-card {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-top: 4px solid #ff6b35;
+    display: flex;
+    flex-direction: column;
+}
+
+.tebot-page-root .tech-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.tebot-page-root .tech-icon {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    line-height: 1;
+}
+
+.tebot-page-root .tech-card h3 {
+    font-size: 1.4rem;
+    color: #1f2937;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.tebot-page-root .tech-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.7;
+    flex-grow: 1;
+}
+
+/* ===== HARDWARE SPECIFICATIONS SECTION ===== */
+.tebot-page-root .specs-section {
+    padding: clamp(60px, 10vw, 100px) clamp(15px, 4vw, 20px);
+    background: linear-gradient(135deg, #fef3c7 0%, #f0fdf4 100%);
+}
+
+.tebot-page-root .specs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tebot-page-root .specs-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    color: #1f2937;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 700;
+}
+
+.tebot-page-root .specs-table-wrapper {
+    overflow-x: auto;
+    background: transparent;
+}
+
+.tebot-page-root .specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+.tebot-page-root .specs-table tbody {
+    display: contents;
+}
+
+.tebot-page-root .spec-row {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 25px;
+    padding: 25px 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #10b981;
+    margin-bottom: 18px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    align-items: center;
+}
+
+.tebot-page-root .spec-row:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    border-left-color: #1976d2;
+}
+
+.tebot-page-root .spec-label {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #1f2937;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     padding: 0;
     margin: 0;
 }
 
-.tebot-page-root .feature-points li {
-    padding: 10px 0;
-    color: #020202;
-    font-weight: 600;
-    font-size: clamp(0.8rem, 2vw, 0.95rem);
+.tebot-page-root .spec-detail {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
 }
 
-/* ===== KIT SECTION ===== */
+/* ===== WHY TEBOT SECTION ===== */
+.tebot-page-root .why-tebot-section {
+    padding: clamp(60px, 10vw, 100px) clamp(15px, 4vw, 20px);
+    background: linear-gradient(135deg, #f3e5f5 0%, #e0f2fe 100%);
+}
+
+.tebot-page-root .why-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tebot-page-root .why-tebot-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    color: #1f2937;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 700;
+}
+
+.tebot-page-root .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.tebot-page-root .benefit-item {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-top: 4px solid #8b5cf6;
+}
+
+.tebot-page-root .benefit-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.tebot-page-root .benefit-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    line-height: 1;
+}
+
+.tebot-page-root .benefit-item h3 {
+    font-size: 1.3rem;
+    color: #1f2937;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.tebot-page-root .benefit-item p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ===== KIT OFFERINGS SECTION ===== */
+.tebot-page-root .kits-offerings-section {
+    padding: clamp(60px, 10vw, 100px) clamp(15px, 4vw, 20px);
+    background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+}
+
+.tebot-page-root .kits-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tebot-page-root .kits-offerings-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    color: #1f2937;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 700;
+}
+
+.tebot-page-root .kits-main-slider {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(170deg, #f8fcff 0%, #eff7ff 100%);
+    border: 1px solid #dbe8ff;
+    border-radius: 20px;
+    box-shadow: 0 16px 42px rgba(15, 31, 58, 0.16);
+    padding: 16px;
+}
+
+.tebot-page-root .kits-slider-window {
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.tebot-page-root .kits-slider-track {
+    display: flex;
+    transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.tebot-page-root .kit-main-slide {
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: minmax(280px, 1fr) minmax(320px, 1fr);
+    gap: 24px;
+    align-items: stretch;
+}
+
+.tebot-page-root .kit-main-slide.is-reverse .kit-main-image-card {
+    order: 2;
+}
+
+.tebot-page-root .kit-main-slide.is-reverse .kit-main-content-card {
+    order: 1;
+}
+
+.tebot-page-root .kit-main-image-card {
+    border-radius: 16px;
+    overflow: hidden;
+    background: #eaf2ff;
+    min-height: 320px;
+    border: 1px solid #d7e4fb;
+}
+
+.tebot-page-root .kit-main-image-card img {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.tebot-page-root .kit-main-slide:hover .kit-main-image-card img {
+    transform: scale(1.03);
+}
+
+.tebot-page-root .kit-main-content-card {
+    background: linear-gradient(170deg, #ffffff 0%, #f7fbff 100%);
+    border: 1px solid #dbe8ff;
+    border-radius: 16px;
+    padding: clamp(22px, 3vw, 36px);
+    box-shadow: 0 12px 28px rgba(15, 31, 58, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.tebot-page-root .kit-main-slide.is-advance .kit-main-content-card {
+    background: linear-gradient(165deg, #fff7ed 0%, #fef3c7 100%);
+    border-color: #f59e0b;
+    box-shadow: 0 16px 34px rgba(245, 158, 11, 0.22);
+}
+
+.tebot-page-root .kits-main-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.72);
+    color: #ffffff;
+    font-size: 1.45rem;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 3;
+    transition: all 0.25s ease;
+}
+
+.tebot-page-root .kits-main-arrow.prev {
+    left: 26px;
+}
+
+.tebot-page-root .kits-main-arrow.next {
+    right: 26px;
+}
+
+.tebot-page-root .kits-main-arrow:hover {
+    background: rgba(37, 99, 235, 0.92);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.tebot-page-root .kits-main-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 3;
+}
+
+.tebot-page-root .kits-main-dot {
+    width: 10px;
+    height: 10px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.85);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.tebot-page-root .kits-main-dot.active {
+    width: 24px;
+    background: #2563eb;
+}
+
+.tebot-page-root .kit-number {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    line-height: 1;
+}
+
+.tebot-page-root .kit-card h3 {
+    font-size: 1.5rem;
+    color: #1f2937;
+    margin: 15px 0;
+    font-weight: 700;
+}
+
+.tebot-page-root .kit-description {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    min-height: 60px;
+}
+
+.tebot-page-root .projects-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    width: fit-content;
+}
+
+@media (max-width: 980px) {
+    .tebot-page-root .kit-main-slide,
+    .tebot-page-root .kit-main-slide.is-reverse {
+        grid-template-columns: 1fr;
+    }
+
+    .tebot-page-root .kit-main-slide.is-reverse .kit-main-image-card,
+    .tebot-page-root .kit-main-slide.is-reverse .kit-main-content-card {
+        order: initial;
+    }
+
+    .tebot-page-root .kit-main-image-card,
+    .tebot-page-root .kit-main-image-card img {
+        min-height: 280px;
+    }
+}
+
+@media (max-width: 640px) {
+    .tebot-page-root .kits-main-slider {
+        padding: 10px;
+    }
+
+    .tebot-page-root .kit-main-slide {
+        gap: 12px;
+    }
+
+    .tebot-page-root .kit-main-content-card {
+        padding: 18px;
+    }
+
+    .tebot-page-root .kit-main-image-card,
+    .tebot-page-root .kit-main-image-card img {
+        min-height: 220px;
+    }
+
+    .tebot-page-root .kits-main-arrow.prev {
+        left: 14px;
+    }
+
+    .tebot-page-root .kits-main-arrow.next {
+        right: 14px;
+    }
+}
+
+/* ===== FEATURED PROJECTS SECTION ===== */
+.tebot-page-root .featured-projects-section {
+    padding: clamp(60px, 10vw, 100px) clamp(15px, 4vw, 20px);
+    background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+}
+
+.tebot-page-root .projects-container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.tebot-page-root .featured-projects-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    color: #1f2937;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.tebot-page-root .projects-intro {
+    text-align: center;
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    color: #555;
+    margin-bottom: 50px;
+}
+
+.tebot-page-root .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.tebot-page-root .project-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-left: 4px solid #1976d2;
+    text-align: center;
+}
+
+.tebot-page-root .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.tebot-page-root .project-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.tebot-page-root .project-card h3 {
+    font-size: 1.1rem;
+    color: #1f2937;
+    margin: 15px 0;
+    font-weight: 700;
+}
+
+.tebot-page-root .project-card p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ===== KIT SECTION (OLD - NO LONGER USED) ===== */
 .tebot-page-root .kit-section {
     padding: clamp(40px, 8vw, 80px) clamp(15px, 4vw, 20px);
     background: linear-gradient(135deg, #fef3c7 0%, #fce7f3 100%);
 }
 
-.tebot-page-root .kit-section h2 {
-    font-family: var(--font-tech);
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
-    color: #d97706;
-    text-align: center;
-    margin-bottom: clamp(30px, 6vw, 60px);
-}
-
-.tebot-page-root .kit-slider-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-}
-
-.tebot-page-root .kit-slider-image {
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-    max-width: 550px;
-    margin: 0 auto;
-    height: 500px;
-    background: #0b1a3a;
-}
-
-.tebot-page-root .kit-slide {
-    height: 100%;
-    position: relative;
-}
-
-.tebot-page-root .kit-slide.fade {
-    animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.tebot-page-root .kit-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.tebot-page-root .slide-caption {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    padding: 12px 16px;
-    border-radius: 12px;
-    background: rgba(0,0,0,0.7);
-    color: #fff;
-    font-weight: 700;
-    font-size: 0.9rem;
-}
-
-.tebot-page-root .kit-info h3 {
-    font-size: 1.8rem;
-    color: #d97706;
-    margin-bottom: 15px;
-}
-
-.tebot-page-root .kit-content {
-    animation: fadeIn 1s ease-in-out;
-}
-
-.tebot-page-root .kit-content.fade {
-    animation: fadeIn 1s ease-in-out;
-}
-
-.tebot-page-root .kit-info > p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 30px;
-    line-height: 1.8;
-}
-
-.tebot-page-root .kit-components {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-    margin-bottom: 30px;
-}
-
-.tebot-page-root .component-column h4 {
-    font-size: 1.1rem;
-    color: #d97706;
-    margin-bottom: 12px;
-    font-weight: 700;
-}
-
-.tebot-page-root .component-column ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.tebot-page-root .component-column li {
-    padding: 8px 0;
-    color: #555;
-    font-size: 0.9rem;
-    padding-left: 20px;
-    position: relative;
-}
-
-.tebot-page-root .component-column li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #d97706;
-    font-weight: bold;
-}
-
-.tebot-page-root .kit-indicators {
-    display: flex;
-    gap: 10px;
-    justify-content: flex-start;
-}
-
-.tebot-page-root .kit-indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: 2px solid #d97706;
-    background: rgba(217, 119, 6, 0.3);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    padding: 0;
-}
-
-.tebot-page-root .kit-indicator.active {
-    background: #d97706;
-    width: 14px;
-    height: 14px;
-}
-
-.tebot-page-root .kit-indicator:hover {
-    background: #d97706;
-    transform: scale(1.2);
-}
+/* ===== OLD KIT SECTION STYLES - NO LONGER IN USE ===== */
+/* These styles are preserved for reference but kit section has been redesigned */
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
@@ -590,145 +882,11 @@
         width: 12px;
         height: 12px;
     }
-}/* ===== TECHNOLOGY SECTION ===== */
-.tebot-page-root .technology-section {
-    padding: clamp(40px, 8vw, 80px) clamp(15px, 4vw, 20px);
-    background: #ffffff;
-}
+}/* ===== OLD TECHNOLOGY SECTION STYLES - NO LONGER IN USE ===== */
+/* Section restructured - see .technologies-section styles below */
 
-.tebot-page-root .technology-section h2 {
-    font-family: var(--font-tech);
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
-    color: black;
-    text-align: center;
-    margin-bottom: 15px;
-}
-.tebot-page-root .technology-section span{
-    color: teal;
-}
-.tebot-page-root .section-intro {
-    text-align: center;
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 50px;
-}
-
-.tebot-page-root .tech-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 30px;
-    max-width: 1300px;
-    margin: 0 auto;
-}
-
-.tebot-page-root .tech-card {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border-top: 4px solid #1976d2;
-    will-change: transform, box-shadow;
-}
-
-.tebot-page-root .tech-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-}
-
-.tebot-page-root .tech-icon {
-    font-size: 3rem;
-    margin-bottom: 15px;
-}
-
-.tebot-page-root .tech-card h3 {
-    font-size: 1.3rem;
-    color: #0a0a0a;
-    margin-bottom: 15px;
-}
-
-.tebot-page-root .tech-card p {
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.6;
-}
-
-/* ===== PROJECTS SECTION ===== */
-.tebot-page-root .projects-section {
-    padding: clamp(40px, 8vw, 80px) clamp(15px, 4vw, 20px);
-    background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
-}
-
-.tebot-page-root .projects-section h2 {
-    font-family: var(--font-tech);
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
-    color: #030303;
-    text-align: center;
-    margin-bottom: 15px;
-}
-.tebot-page-root .projects-section span{
-    color: teal;
-}
-.tebot-page-root .projects-scroll {
-    display: flex;
-    gap: 25px;
-    overflow-x: scroll;
-    padding: 30px 20px;
-    margin: 0 auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    width: 100%;
-    max-width: 1100px;
-    will-change: scroll-position;
-    -webkit-overflow-scrolling: touch;
-}
-
-.tebot-page-root .projects-scroll::-webkit-scrollbar {
-    display: none;
-}
-
-.tebot-page-root .project-card {
-    min-width: 280px;
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    flex-shrink: 0;
-    will-change: transform, box-shadow;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-}
-
-.tebot-page-root .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.tebot-page-root .project-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-}
-
-.tebot-page-root .project-card h4 {
-    font-size: 1.1rem;
-    color: black;
-    padding: 15px 15px 8px;
-    margin: 0;
-}
-
-.tebot-page-root .project-card p {
-    padding: 0 15px 15px;
-    font-size: 0.85rem;
-    color: #666;
-    margin: 0;
-}
+/* ===== OLD PROJECTS SECTION STYLES - NO LONGER IN USE ===== */
+/* Projects section restructured - see .featured-projects-section and .projects-grid styles */
 
 /* ===== FORM SECTION ===== */
 .tebot-page-root .form-section {
@@ -901,73 +1059,59 @@
         margin: 8px auto 8px;
         display: block;
     }
-}
 
-@media (max-width: 768px) {
-    .tebot-page-root .features-section {
-        padding: 10px 0 0;
-    }
-
-    .tebot-page-root .feature-item {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        min-height: auto;
-        padding: 30px 15px;
-        text-align: center;
-    }
-
-    .tebot-page-root .feature-item.feature-left .feature-image,
-    .tebot-page-root .feature-item.feature-left .feature-content,
-    .tebot-page-root .feature-item.feature-right .feature-image,
-    .tebot-page-root .feature-item.feature-right .feature-content {
-        grid-column: auto;
-    }
-    
-    .tebot-page-root .feature-image {
-        max-width: 380px;
-    }
-    
-    .tebot-page-root .feature-image img {
-        max-height: 320px;
-    }
-
-    .tebot-page-root .kit-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    
-    .tebot-page-root .kit-image {
-        max-width: 400px;
-    }
-    
-    .tebot-page-root .kit-image img {
-        max-height: 380px;
-    }
-
-    .tebot-page-root .kit-components {
+    .tebot-page-root .explore-list {
         grid-template-columns: 1fr;
     }
-
-    /* Ensure image appears before text on mobile */
-    .tebot-page-root .feature-item .feature-image { order: -1; }
-    .tebot-page-root .feature-item .feature-content { order: 0; }
 
     .tebot-page-root .tech-grid {
         grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        gap: 20px;
     }
 
-    .tebot-page-root .projects-scroll {
-        padding: 20px 10px;
-    }
-
-    .tebot-page-root .project-card {
-        min-width: 250px;
-    }
-
-    .tebot-page-root .form-row {
+    .tebot-page-root .specs-grid {
         grid-template-columns: 1fr;
+    }
+
+    .tebot-page-root .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tebot-page-root .kits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tebot-page-root .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .tebot-page-root .intro-section {
+        padding: 40px 20px;
+    }
+
+    .tebot-page-root .explore-section {
+        padding: 40px 20px;
+    }
+
+    .tebot-page-root .technologies-section {
+        padding: 40px 20px;
+    }
+
+    .tebot-page-root .specs-section {
+        padding: 40px 20px;
+    }
+
+    .tebot-page-root .why-tebot-section {
+        padding: 40px 20px;
+    }
+
+    .tebot-page-root .kits-offerings-section {
+        padding: 40px 20px;
+    }
+
+    .tebot-page-root .featured-projects-section {
+        padding: 40px 20px;
     }
 
     .tebot-page-root .form-section {
@@ -977,14 +1121,33 @@
     .tebot-page-root .inquiry-form {
         padding: 20px;
     }
-}
 
-/* Tablet breakpoint for tech grid */
-@media (max-width: 1024px) and (min-width: 769px) {
-    .tebot-page-root .tech-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        gap: 25px;
+    .tebot-page-root .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .tebot-page-root .explore-point {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .tebot-page-root .explore-point h3 {
+        margin-top: 10px;
+    }
+
+    .tebot-page-root .spec-row {
+        grid-template-columns: 180px 1fr;
+        gap: 20px;
+        padding: 20px 25px;
+        margin-bottom: 15px;
+    }
+
+    .tebot-page-root .spec-label {
+        font-size: 0.95rem;
+    }
+
+    .tebot-page-root .spec-detail {
+        font-size: 0.9rem;
     }
 }
 
@@ -1010,20 +1173,34 @@
         font-size: 0.9rem;
     }
 
-    .tebot-page-root .feature-item {
-        padding: 20px 10px;
+    .tebot-page-root .intro-section h2,
+    .tebot-page-root .explore-section h2,
+    .tebot-page-root .technologies-section h2,
+    .tebot-page-root .specs-section h2,
+    .tebot-page-root .why-tebot-section h2,
+    .tebot-page-root .kits-offerings-section h2,
+    .tebot-page-root .featured-projects-section h2 {
+        font-size: 1.4rem;
     }
 
-    .tebot-page-root .tech-card {
+    .tebot-page-root .intro-description,
+    .tebot-page-root .explore-subheading,
+    .tebot-page-root .projects-intro {
+        font-size: 0.85rem;
+    }
+
+    .tebot-page-root .tech-card,
+    .tebot-page-root .spec-item,
+    .tebot-page-root .benefit-item {
         padding: 20px;
     }
 
-    .tebot-page-root .project-card {
-        min-width: 220px;
+    .tebot-page-root .kit-card {
+        padding: 25px;
     }
-    
-    .tebot-page-root .project-card img {
-        height: 140px;
+
+    .tebot-page-root .project-card {
+        padding: 18px;
     }
 
     .tebot-page-root .form-section {
@@ -1032,6 +1209,30 @@
 
     .tebot-page-root .inquiry-form {
         padding: 15px;
+    }
+
+    .tebot-page-root .form-row input,
+    .tebot-page-root .form-row select,
+    .tebot-page-root .inquiry-form textarea {
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+
+    .tebot-page-root .spec-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 18px 20px;
+        margin-bottom: 12px;
+    }
+
+    .tebot-page-root .spec-label {
+        font-size: 0.9rem;
+        font-weight: 700;
+    }
+
+    .tebot-page-root .spec-detail {
+        font-size: 0.85rem;
+        line-height: 1.5;
     }
 }
 
@@ -1050,25 +1251,263 @@
         padding: 10px 20px;
         font-size: 0.85rem;
     }
-    
-    .tebot-page-root .feature-item {
-        padding: 15px 8px;
+
+    .tebot-page-root .explore-point {
+        padding: 20px;
+        gap: 15px;
     }
-    
-    .tebot-page-root .project-card {
-        min-width: 200px;
-    }
-    
-    .tebot-page-root .tech-card {
+
+    .tebot-page-root .tech-card,
+    .tebot-page-root .spec-item,
+    .tebot-page-root .benefit-item,
+    .tebot-page-root .kit-card {
         padding: 15px;
     }
-    
+
+    .tebot-page-root .project-card {
+        padding: 12px;
+    }
+
     .tebot-page-root .form-section {
         padding: 20px 8px;
     }
-    
+
     .tebot-page-root .inquiry-form {
         padding: 12px;
+    }
+}
+
+/* ===== POST-HERO REDESIGN OVERRIDES ===== */
+.tebot-page-root .ibot-page {
+    --surface-white: #ffffff;
+    --surface-soft: #f6fbff;
+    --surface-mist: #f3f8ff;
+    --surface-warm: #fffdf7;
+    --heading: #0f1f3a;
+    --body: #324765;
+    --line: #dde8f8;
+    --brand: #2563eb;
+    --brand-2: #06b6d4;
+    --accent: #f97316;
+    --shadow-soft: 0 12px 35px rgba(15, 31, 58, 0.08);
+    --shadow-hover: 0 22px 55px rgba(15, 31, 58, 0.15);
+}
+
+.tebot-page-root .section-block {
+    position: relative;
+    padding: clamp(56px, 8vw, 92px) clamp(16px, 3.6vw, 24px);
+}
+
+.tebot-page-root .section-soft {
+    background:
+        radial-gradient(circle at 15% 0%, rgba(37, 99, 235, 0.08), transparent 45%),
+        linear-gradient(160deg, var(--surface-soft) 0%, #ffffff 100%);
+}
+
+.tebot-page-root .section-plain {
+    background:
+        radial-gradient(circle at 100% 20%, rgba(6, 182, 212, 0.07), transparent 40%),
+        linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+}
+
+.tebot-page-root .section-mist {
+    background:
+        radial-gradient(circle at 0% 100%, rgba(249, 115, 22, 0.08), transparent 38%),
+        linear-gradient(170deg, var(--surface-mist) 0%, var(--surface-warm) 100%);
+}
+
+.tebot-page-root .section-container {
+    max-width: 1220px;
+    margin: 0 auto;
+}
+
+.tebot-page-root .section-header {
+    text-align: center;
+    margin-bottom: clamp(22px, 3vw, 34px);
+}
+
+.tebot-page-root .section-header h2 {
+    color: var(--heading);
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.65rem, 4vw, 2.65rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.tebot-page-root .intro-description,
+.tebot-page-root .explore-subheading,
+.tebot-page-root .projects-intro,
+.tebot-page-root .spec-item p,
+.tebot-page-root .project-card p,
+.tebot-page-root .benefit-item p,
+.tebot-page-root .explore-point p,
+.tebot-page-root .tech-card p,
+.tebot-page-root .kit-description {
+    color: var(--body);
+}
+
+.tebot-page-root .reveal-card {
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(2px);
+}
+
+.tebot-page-root .explore-point,
+.tebot-page-root .tech-card,
+.tebot-page-root .spec-item,
+.tebot-page-root .benefit-item,
+.tebot-page-root .kit-card,
+.tebot-page-root .project-card {
+    border-radius: 18px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.tebot-page-root .explore-point:hover,
+.tebot-page-root .tech-card:hover,
+.tebot-page-root .spec-item:hover,
+.tebot-page-root .benefit-item:hover,
+.tebot-page-root .kit-card:hover,
+.tebot-page-root .project-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(37, 99, 235, 0.35);
+    box-shadow: var(--shadow-hover);
+}
+
+.tebot-page-root .explore-point {
+    background: linear-gradient(180deg, #ffffff 0%, #f9fcff 100%);
+    border-left: 5px solid var(--accent);
+}
+
+.tebot-page-root .explore-tagline {
+    color: var(--brand);
+    font-weight: 700;
+}
+
+.tebot-page-root .tech-grid,
+.tebot-page-root .benefits-grid,
+.tebot-page-root .kits-grid,
+.tebot-page-root .projects-grid {
+    gap: clamp(16px, 2.3vw, 26px);
+}
+
+.tebot-page-root .tech-card {
+    text-align: left;
+    border-top: 5px solid var(--brand-2);
+    background: linear-gradient(180deg, #ffffff 0%, #f8fcff 100%);
+}
+
+.tebot-page-root .tech-icon,
+.tebot-page-root .benefit-icon {
+    line-height: 1;
+}
+
+.tebot-page-root .specs-grid {
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+}
+
+.tebot-page-root .spec-item {
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 251, 255, 0.96) 100%);
+    border-left: 0;
+    border-top: 5px solid #0ea5e9;
+}
+
+.tebot-page-root .spec-item h3 {
+    color: #0d3a69;
+}
+
+.tebot-page-root .benefit-item {
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    border-top: 5px solid #8b5cf6;
+}
+
+.tebot-page-root .kit-card {
+    text-align: left;
+    border-top: 5px solid var(--brand);
+    background:
+        linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+}
+
+.tebot-page-root .kit-card h3 {
+    margin-top: 8px;
+}
+
+.tebot-page-root .projects-badge {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+    border-radius: 999px;
+}
+
+.tebot-page-root .project-card {
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    border-left: 0;
+    border-top: 5px solid var(--brand);
+}
+
+.tebot-page-root .project-number {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
+}
+
+.tebot-page-root .form-section {
+    background:
+        radial-gradient(circle at 10% 20%, rgba(6, 182, 212, 0.22), transparent 38%),
+        radial-gradient(circle at 90% 0%, rgba(249, 115, 22, 0.2), transparent 35%),
+        linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+}
+
+.tebot-page-root .form-section h2 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.tebot-page-root .inquiry-form {
+    border: 1px solid #dbe8ff;
+}
+
+.tebot-page-root .form-btn {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+}
+
+@media (max-width: 900px) {
+    .tebot-page-root .section-block {
+        padding: 48px 18px;
+    }
+
+    .tebot-page-root .explore-list,
+    .tebot-page-root .tech-grid,
+    .tebot-page-root .benefits-grid,
+    .tebot-page-root .kits-grid,
+    .tebot-page-root .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tebot-page-root .kit-card,
+    .tebot-page-root .explore-point {
+        text-align: left;
+    }
+}
+
+@media (max-width: 640px) {
+    .tebot-page-root .section-header {
+        margin-bottom: 18px;
+    }
+
+    .tebot-page-root .section-header h2 {
+        font-size: 1.45rem;
+    }
+
+    .tebot-page-root .explore-point,
+    .tebot-page-root .tech-card,
+    .tebot-page-root .spec-item,
+    .tebot-page-root .benefit-item,
+    .tebot-page-root .kit-card,
+    .tebot-page-root .project-card,
+    .tebot-page-root .inquiry-form {
+        padding: 18px;
+    }
+
+    .tebot-page-root .explore-point {
+        flex-direction: row;
+        align-items: flex-start;
     }
 }
 
