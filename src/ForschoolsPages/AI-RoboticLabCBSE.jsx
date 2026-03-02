@@ -367,8 +367,8 @@ function AIRoboticsLabCBSE() {
             <p>ATL Labs Setup</p>
           </div>
           <div className="stat-item fade-up">
-            <h2><span className="counter" data-target="100">0</span>+</h2>
-            <p>Govt Schools (Tender)</p>
+            <h2><span className="counter" data-target="300">0</span>+</h2>
+            <p>Govt Schools (Tender Projects)</p>
           </div>
           <div className="stat-item fade-up">
             <h2><span className="counter" data-target="150000">0</span>+</h2>

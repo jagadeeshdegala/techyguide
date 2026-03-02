@@ -71,7 +71,7 @@ function SchoolSection() {
                   </ul>
                   <div>
                    
-                    <Link className="tab-cta" to="/ai-roboticslab-cbse"> Explore AI Labs</Link>
+                    <Link className="tab-cta" to="/cbse-ai-robotics-lab-setup-nep-2020"> Explore AI Labs</Link>
 
                   </div>
                 </div>
@@ -98,7 +98,7 @@ function SchoolSection() {
                   </ul>
                   <div>
                     
-                    <Link className="tab-cta" to="/schools/stem-tinkering-lab">Explore STEM Labs</Link>
+                    <Link className="tab-cta" to="/stem-tinkering-lab-for-schools-india">Explore STEM Labs</Link>
 
                   </div>
                 </div>

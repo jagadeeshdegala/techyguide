@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 //import reactLogo from './assets/react.svg'
 import viteLogo from '/TG-Square-Logo 3.png'
 //import './App.css'
@@ -52,10 +52,13 @@ function App() {
       <Route path="/e-blox" element={<EBloxPage />} />
       <Route path="/add-on-kits" element={<EAddOnKitPage />} />
       <Route path="/robothrone" element={<RobothronePageWrapper />} />
-      <Route path="/ai-roboticslab-cbse" element={<AIRoboticsLabCBSEPage />} />
-      <Route path="/ai-roboticslab-icse" element={<AIRoboticLabICSEPage />} />
+      <Route path="/cbse-ai-robotics-lab-setup-nep-2020" element={<AIRoboticsLabCBSEPage />} />
+      <Route path="/ai-roboticslab-cbse" element={<Navigate to="/cbse-ai-robotics-lab-setup-nep-2020" replace />} />
+      <Route path="/ai-robotics-lab-icse-schools-india" element={<AIRoboticLabICSEPage />} />
+      <Route path="/ai-roboticslab-icse" element={<Navigate to="/ai-robotics-lab-icse-schools-india" replace />} />
       <Route path="/schools/stem-lab" element={<StemLabPage />} />
-      <Route path="/schools/stem-tinkering-lab" element={<StemTinkeringLabPage />} />
+      <Route path="/stem-tinkering-lab-for-schools-india" element={<StemTinkeringLabPage />} />
+      <Route path="/schools/stem-tinkering-lab" element={<Navigate to="/stem-tinkering-lab-for-schools-india" replace />} />
       <Route path="/schools/composite-skill-lab" element={<CompositeSkillLabPage />} />
       <Route path="/schools/workshop" element={<WorkshopPageWrapper />} />
       <Route path="/franchise" element={<FranchisePageWrapper />} />

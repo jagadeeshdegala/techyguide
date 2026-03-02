@@ -54,22 +54,28 @@ export default function CompositeSkillLab() {
     // 3. Tab Functionality (Curriculum Zones)
     const tabBtns = document.querySelectorAll('.composite-skill-lab-root .tab-btn');
     const tabPanes = document.querySelectorAll('.composite-skill-lab-root .tab-pane');
+    const tabCleanups = [];
 
     tabBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
+      const handleTabClick = () => {
         tabBtns.forEach(b => b.classList.remove('active'));
         tabPanes.forEach(p => p.classList.remove('active'));
 
         btn.classList.add('active');
         const target = btn.getAttribute('data-tab');
         document.getElementById(target).classList.add('active');
-      });
+      };
+
+      btn.addEventListener('click', handleTabClick);
+      tabCleanups.push(() => btn.removeEventListener('click', handleTabClick));
     });
 
     // 4. FAQ Accordion
     const accordionHeaders = document.querySelectorAll('.composite-skill-lab-root .accordion-header');
+    const accordionCleanups = [];
+
     accordionHeaders.forEach(header => {
-      header.addEventListener('click', () => {
+      const handleAccordionClick = () => {
         const body = header.nextElementSibling;
         header.classList.toggle('active');
 
@@ -78,14 +84,18 @@ export default function CompositeSkillLab() {
         } else {
           body.style.maxHeight = 0;
         }
-      });
+      };
+
+      header.addEventListener('click', handleAccordionClick);
+      accordionCleanups.push(() => header.removeEventListener('click', handleAccordionClick));
     });
 
     // 5. Contact Form Handling (WhatsApp Redirect)
     const form = document.getElementById('enquiryForm');
+    let handleSubmit;
 
     if (form) {
-      form.addEventListener('submit', (e) => {
+      handleSubmit = (e) => {
         e.preventDefault();
 
         const btn = form.querySelector('button');
@@ -115,12 +125,17 @@ export default function CompositeSkillLab() {
           btn.innerHTML = originalText;
           btn.style.opacity = '1';
         }, 1000);
-      });
+      };
+
+      form.addEventListener('submit', handleSubmit);
     }
 
     // 6. Smooth Scroll for Anchor Links
-    document.querySelectorAll('.composite-skill-lab-root a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+    const anchors = document.querySelectorAll('.composite-skill-lab-root a[href^="#"]');
+    const anchorCleanups = [];
+
+    anchors.forEach(anchor => {
+      const handleAnchorClick = function (e) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
@@ -130,12 +145,21 @@ export default function CompositeSkillLab() {
             behavior: 'smooth'
           });
         }
-      });
+      };
+
+      anchor.addEventListener('click', handleAnchorClick);
+      anchorCleanups.push(() => anchor.removeEventListener('click', handleAnchorClick));
     });
 
     return () => {
       observer.disconnect();
       statsObserver.disconnect();
+      tabCleanups.forEach((cleanup) => cleanup());
+      accordionCleanups.forEach((cleanup) => cleanup());
+      anchorCleanups.forEach((cleanup) => cleanup());
+      if (form && handleSubmit) {
+        form.removeEventListener('submit', handleSubmit);
+      }
     };
   }, []);
 

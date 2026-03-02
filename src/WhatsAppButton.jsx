@@ -4,7 +4,7 @@ import './WhatsAppButton.css';
 function WhatsAppButton() {
   const [isShifted, setIsShifted] = useState(false);
 
-  const schoolKeywords = ['ai-roboticslab', 'stem-tinkering', 'composite-skill', 'composite-skill-lab', 'workshop'];
+  const schoolKeywords = ['ai-roboticslab', 'ai-robotics-lab-icse-schools-india', 'stem-tinkering', 'composite-skill', 'composite-skill-lab', 'workshop'];
 
   const getPath = () => {
     const hash = window.location.hash || '';

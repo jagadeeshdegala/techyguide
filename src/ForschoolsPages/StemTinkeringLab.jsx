@@ -9,6 +9,54 @@ import GalleryImg5 from '../assets/ForSchoolsStemTinkeringLabImages/IMG202510161
 import GalleryImg6 from '../assets/ForSchoolsStemTinkeringLabImages/IMG20251017160909.jpg';
 
 function StemTinkeringLab() {
+  // SEO Configuration
+  useEffect(() => {
+    // Helper function to set or update meta tags without creating duplicates
+    const setMetaTag = (name, content) => {
+      const isPropertyTag = name.startsWith('og:') || name.startsWith('twitter:');
+      const selector = isPropertyTag 
+        ? `meta[property="${name}"]` 
+        : `meta[name="${name}"]`;
+      
+      let element = document.querySelector(selector);
+      if (!element) {
+        element = document.createElement('meta');
+        element.setAttribute(isPropertyTag ? 'property' : 'name', name);
+        document.head.appendChild(element);
+      }
+      element.setAttribute('content', content);
+    };
+
+    // Set page title
+    document.title = 'STEM Tinkering Lab for Schools | NEP 2020 Aligned Setup';
+
+    // Set meta description
+    setMetaTag('description', 'Install NEP 2020 aligned STEM Tinkering Labs in schools. Robotics, AI, IoT & 3D Printing setup with training, curriculum & nationwide support.');
+
+    // Set robots meta tag
+    setMetaTag('robots', 'index, follow');
+
+    // Set canonical link
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', 'https://yourdomain.com/stem-tinkering-lab-for-schools-india');
+
+    // Open Graph Tags
+    setMetaTag('og:title', 'STEM Tinkering Lab for Schools | NEP 2020 Aligned Setup');
+    setMetaTag('og:description', 'Install NEP 2020 aligned STEM Tinkering Labs in schools. Robotics, AI, IoT & 3D Printing setup with training, curriculum & nationwide support.');
+    setMetaTag('og:type', 'website');
+    setMetaTag('og:url', 'https://yourdomain.com/stem-tinkering-lab-for-schools-india');
+
+    // Twitter Card Tags
+    setMetaTag('twitter:card', 'summary_large_image');
+    setMetaTag('twitter:title', 'STEM Tinkering Lab for Schools | NEP 2020 Aligned Setup');
+    setMetaTag('twitter:description', 'Install NEP 2020 aligned STEM Tinkering Labs in schools. Robotics, AI, IoT & 3D Printing setup with training, curriculum & nationwide support.');
+  }, []);
+
   useEffect(() => {
     // 1. Scroll Animation Observer
     const observer = new IntersectionObserver(
@@ -274,7 +322,7 @@ function StemTinkeringLab() {
         <div className="container stats-grid">
           <div className="stat-item fade-up">
             <h2><span className="counter" data-target="500">0</span>+</h2>
-            <p>Labs Setup Pan-India</p>
+            <p>STEM Labs Installed Pan-India</p>
           </div>
           <div className="stat-item fade-up">
             <h2><span className="counter" data-target="50">0</span>+</h2>
@@ -285,8 +333,8 @@ function StemTinkeringLab() {
             <p>Students Impacted</p>
           </div>
           <div className="stat-item fade-up">
-            <h2><span className="counter" data-target="100">0</span>+</h2>
-            <p>Govt Schools (Tender)</p>
+            <h2><span className="counter" data-target="300">0</span>+</h2>
+            <p> Govt School Projects Executed</p>
           </div>
         </div>
       </section>
@@ -294,7 +342,7 @@ function StemTinkeringLab() {
       <section className="curriculum-section" id="curriculum">
         <div className="container">
           <h2 className="section-heading text-center fade-up">Grade-Wise Curriculum Roadmap</h2>
-          <p className="section-subtext text-center fade-up">A structured learning path covering Arts, Electronics, Robotics, and Coding.</p>
+          <p className="section-subtext text-center fade-up">A structured progression from foundational tinkering to advanced AI and robotics innovation. </p>
 
           <div className="tabs-wrapper fade-up">
             <div className="tabs-header">
@@ -691,7 +739,7 @@ function StemTinkeringLab() {
             </div>
             <div className="testimonial-card">
               <div className="stars">★★★★★</div>
-              <p>"Trainers are exceptionally good at their knowledge. They did amazing to our skills. Thank you!"</p>
+              <p>“Trainers are exceptionally good at their knowledge. They improved our skills significantly. Thank you!”</p>
               <div className="profile">
                 <div className="profile-icon">JS</div>
                 <div className="profile-info">
@@ -787,7 +835,7 @@ function StemTinkeringLab() {
 
       <section className="contact-area" id="contact-section">
         <div className="container">
-          <h2 className="section-heading text-center fade-up">Get Your STEM Lab Proposal</h2>
+          <h2 className="section-heading text-center fade-up">Get Your Customized STEM Lab Proposal Today</h2>
         </div>
         <div className="container contact-grid">
           <div className="contact-info fade-up">

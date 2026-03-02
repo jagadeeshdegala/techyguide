@@ -43,15 +43,15 @@ const AIRoboticLabICSE = () => {
 				canonicalLink.setAttribute("rel", "canonical");
 				document.head.appendChild(canonicalLink);
 			}
-			canonicalLink.setAttribute("href", "https://techyguide.in/ai-robotics-lab-icse-schools-india");
+			canonicalLink.setAttribute("href", "https://yourdomain.com/ai-robotics-lab-icse-schools-india");
 
 			// Open Graph Tags
 			const ogTags = [
 				{ property: "og:title", content: "AI & Robotics Lab for ICSE Schools | NEP 2020" },
 				{ property: "og:description", content: "Install AI & Robotics Lab for ICSE schools aligned with NEP 2020. Complete all setup, curriculum, teacher training & nationwide support." },
 				{ property: "og:type", content: "website" },
-				{ property: "og:url", content: "https://techyguide.in/ai-robotics-lab-icse-schools-india" },
-				{ property: "og:image", content: "https://techyguide.in/og-image-icse-lab.jpg" },
+				{ property: "og:url", content: "https://yourdomain.com/ai-robotics-lab-icse-schools-india" },
+				{ property: "og:image", content: "https://yourdomain.com/og-image-icse-lab.jpg" },
 			];
 
 			ogTags.forEach(({ property, content }) => {
@@ -69,7 +69,7 @@ const AIRoboticLabICSE = () => {
 				{ name: "twitter:card", content: "summary_large_image" },
 				{ name: "twitter:title", content: "AI & Robotics Lab for ICSE Schools | NEP 2020" },
 				{ name: "twitter:description", content: "Install AI & Robotics Lab for ICSE schools aligned with NEP 2020. Complete all setup, curriculum, teacher training & nationwide support." },
-				{ name: "twitter:image", content: "https://techyguide.in/twitter-image-icse-lab.jpg" },
+				{ name: "twitter:image", content: "https://yourdomain.com/twitter-image-icse-lab.jpg" },
 			];
 
 			twitterTags.forEach(({ name, content }) => {
@@ -375,7 +375,7 @@ const AIRoboticLabICSE = () => {
 						<p>Students Trained</p>
 					</div>
 					<div className="stat-item fade-up">
-						<h2><span className="counter" data-target="100">0</span>+</h2>
+						<h2><span className="counter" data-target="300">0</span>+</h2>
 						<p>Govt Schools (Tender Projects)</p>
 					</div>
 				</div>
