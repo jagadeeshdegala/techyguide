@@ -13,6 +13,78 @@ const AIRoboticLabICSE = () => {
 	const rootRef = useRef(null);
 
 	useEffect(() => {
+		// SEO Configuration
+		const updateSEO = () => {
+			// Set page title
+			document.title = "AI & Robotics Lab for ICSE Schools | NEP 2020";
+
+			// Update or create meta description
+			let metaDescription = document.querySelector('meta[name="description"]');
+			if (!metaDescription) {
+				metaDescription = document.createElement("meta");
+				metaDescription.setAttribute("name", "description");
+				document.head.appendChild(metaDescription);
+			}
+			metaDescription.setAttribute("content", "Install AI & Robotics Lab for ICSE schools aligned with NEP 2020. Complete all setup, curriculum, teacher training & nationwide support.");
+
+			// Set robots meta tag
+			let metaRobots = document.querySelector('meta[name="robots"]');
+			if (!metaRobots) {
+				metaRobots = document.createElement("meta");
+				metaRobots.setAttribute("name", "robots");
+				document.head.appendChild(metaRobots);
+			}
+			metaRobots.setAttribute("content", "index, follow");
+
+			// Set canonical URL
+			let canonicalLink = document.querySelector('link[rel="canonical"]');
+			if (!canonicalLink) {
+				canonicalLink = document.createElement("link");
+				canonicalLink.setAttribute("rel", "canonical");
+				document.head.appendChild(canonicalLink);
+			}
+			canonicalLink.setAttribute("href", "https://techyguide.in/ai-robotics-lab-icse-schools-india");
+
+			// Open Graph Tags
+			const ogTags = [
+				{ property: "og:title", content: "AI & Robotics Lab for ICSE Schools | NEP 2020" },
+				{ property: "og:description", content: "Install AI & Robotics Lab for ICSE schools aligned with NEP 2020. Complete all setup, curriculum, teacher training & nationwide support." },
+				{ property: "og:type", content: "website" },
+				{ property: "og:url", content: "https://techyguide.in/ai-robotics-lab-icse-schools-india" },
+				{ property: "og:image", content: "https://techyguide.in/og-image-icse-lab.jpg" },
+			];
+
+			ogTags.forEach(({ property, content }) => {
+				let tag = document.querySelector(`meta[property="${property}"]`);
+				if (!tag) {
+					tag = document.createElement("meta");
+					tag.setAttribute("property", property);
+					document.head.appendChild(tag);
+				}
+				tag.setAttribute("content", content);
+			});
+
+			// Twitter Card Tags
+			const twitterTags = [
+				{ name: "twitter:card", content: "summary_large_image" },
+				{ name: "twitter:title", content: "AI & Robotics Lab for ICSE Schools | NEP 2020" },
+				{ name: "twitter:description", content: "Install AI & Robotics Lab for ICSE schools aligned with NEP 2020. Complete all setup, curriculum, teacher training & nationwide support." },
+				{ name: "twitter:image", content: "https://techyguide.in/twitter-image-icse-lab.jpg" },
+			];
+
+			twitterTags.forEach(({ name, content }) => {
+				let tag = document.querySelector(`meta[name="${name}"]`);
+				if (!tag) {
+					tag = document.createElement("meta");
+					tag.setAttribute("name", name);
+					document.head.appendChild(tag);
+				}
+				tag.setAttribute("content", content);
+			});
+		};
+
+		updateSEO();
+
 		const root = rootRef.current;
 		if (!root) return;
 
@@ -236,8 +308,8 @@ const AIRoboticLabICSE = () => {
 			<section className="guidelines-section" id="mandates">
 				<div className="container">
 					<div className="guideline-header text-center fade-up">
-						<h2 className="section-heading">Why Setup an AI Lab for ICSE Schools?</h2>
-						<p className="section-subtext">Establishing an AI & Robotics Lab in ICSE schools strengthens academic excellence while meeting modern technology education standards defined by the Council for the Indian School Certificate Examinations (CISCE). </p>
+						<h2 className="section-heading">AI & Robotics Lab for ICSE Schools: Why Setup Now?</h2>
+						<p className="section-subtext">The AI & Robotics Lab for ICSE Schools strengthens academic excellence while meeting modern technology education standards defined by the Council for the Indian School Certificate Examinations (CISCE). With NEP 2020 alignment, ICSE schools now have the perfect framework to establish world-class labs that prepare students for the future.</p>
 					</div>
 
 					<div className="guidelines-grid">
@@ -311,8 +383,8 @@ const AIRoboticLabICSE = () => {
 
 			<section className="curriculum-section" id="curriculum">
 				<div className="container">
-					<h2 className="section-heading text-center fade-up">ICSE Curriculum Roadmap</h2>
-					<p className="section-subtext text-center fade-up">Covering Subject Code 066, Coding, and Robotics from Grades 1-10.</p>
+					<h2 className="section-heading text-center fade-up">Comprehensive Curriculum for AI & Robotics Lab in ICSE Schools</h2>
+					<p className="section-subtext text-center fade-up">Our AI & Robotics Lab for ICSE Schools covers Subject Code 066, Coding, and Robotics from Grades 1-10, aligned with latest NEP 2020 standards.</p>
 
 					<div className="tabs-wrapper fade-up">
 						<div className="tabs-header">
