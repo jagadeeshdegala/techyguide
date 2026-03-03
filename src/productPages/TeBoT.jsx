@@ -377,6 +377,16 @@ function TeBoT() {
                         <p className="intro-description">
                             The TeBot Advance Kit is the ultimate toolkit for ambitious young innovators. It integrates a vast array of high-tech sensors—including RFID, Bluetooth, and Soil Moisture modules—enabling students to execute over 50 professional-grade projects. From building an RFID Door Lock to a Voice Controlled Car, this kit is designed for those who want to master Robotics, IoT, and AI in a single, comprehensive package.
                         </p>
+                        <div className="tebot-video-container reveal-card">
+                            <iframe
+                                className="tebot-intro-video"
+                                src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1"
+                                title="Introduction to TeBot Advance Kit"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            />
+                        </div>
                     </div>
                 </section>
 
@@ -392,22 +402,37 @@ function TeBoT() {
                         </p>
                         <ul className="explore-list">
                             <li className="explore-point reveal-card">
-                                <span className="explore-icon">🔄</span>
-                                <div>
+                                <img
+                                    className="explore-image"
+                                    src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=640&q=80"
+                                    alt="Reusable Learning"
+                                    loading="lazy"
+                                />
+                                <div className="explore-content">
                                     <h3>Reusable Learning</h3>
                                     <p>Use, rebuild, and innovate—again and again with a modular design.</p>
                                 </div>
                             </li>
                             <li className="explore-point reveal-card">
-                                <span className="explore-icon">🎯</span>
-                                <div>
+                                <img
+                                    className="explore-image"
+                                    src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&w=640&q=80"
+                                    alt="Comprehensive Projects"
+                                    loading="lazy"
+                                />
+                                <div className="explore-content">
                                     <h3>Comprehensive Projects</h3>
                                     <p>Dive into 50+ hands-on projects across Robotics, IoT, and AI.</p>
                                 </div>
                             </li>
                             <li className="explore-point reveal-card">
-                                <span className="explore-icon">🏢</span>
-                                <div>
+                                <img
+                                    className="explore-image"
+                                    src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=640&q=80"
+                                    alt="Industry Aligned"
+                                    loading="lazy"
+                                />
+                                <div className="explore-content">
                                     <h3>Industry Aligned</h3>
                                     <p>Bridge the gap between classroom theory and real-world technology.</p>
                                 </div>
@@ -429,16 +454,6 @@ function TeBoT() {
                                 <p>Build autonomous machines like Line Followers, Obstacle Avoiders, and Gesture Controlled Cars.</p>
                             </div>
                             <div className="tech-card reveal-card">
-                                <div className="tech-icon">🧠</div>
-                                <h3>Artificial Intelligence (AI)</h3>
-                                <p>Explore the future with AI-ready applications including face detection and motion sensing.</p>
-                            </div>
-                            <div className="tech-card reveal-card">
-                                <div className="tech-icon">🌐</div>
-                                <h3>Internet of Things (IoT)</h3>
-                                <p>Connect to the world via Bluetooth and Wi-Fi to create Smart Home Automation and remote data monitoring.</p>
-                            </div>
-                            <div className="tech-card reveal-card">
                                 <div className="tech-icon">💻</div>
                                 <h3>Coding & Programming</h3>
                                 <p>Master logic using Scratch (Graphical) for beginners and C++ (Arduino IDE) for advanced mastery.</p>
@@ -453,35 +468,20 @@ function TeBoT() {
                         <div className="section-header">
                             <h2>The Advanced Tech Inside TeBot</h2>
                         </div>
-                        <div className="specs-table-wrapper">
-                            <table className="specs-table">
-                                <tbody>
-                                    <tr className="spec-row reveal-card">
-                                        <td className="spec-label">🤖 Microcontroller</td>
-                                        <td className="spec-detail">Powered by the high-performance Raspberry Pi Pico W</td>
-                                    </tr>
-                                    <tr className="spec-row reveal-card">
-                                        <td className="spec-label">📡 Inbuilt Sensors</td>
-                                        <td className="spec-detail">Dual IR Sensors, MPU6050 Motion Sensor, Speaker, and 2 Input Buttons</td>
-                                    </tr>
-                                    <tr className="spec-row reveal-card">
-                                        <td className="spec-label">💡 Visual Display</td>
-                                        <td className="spec-detail">8x5 (40) RGB NeoPixel LED lines for emojis, patterns, and indicators</td>
-                                    </tr>
-                                    <tr className="spec-row reveal-card">
-                                        <td className="spec-label">🔗 Connectivity</td>
-                                        <td className="spec-detail">Bluetooth Slot, Ultrasonic Slot, and Edge Connector for unlimited sensor expansion</td>
-                                    </tr>
-                                    <tr className="spec-row reveal-card">
-                                        <td className="spec-label">🔋 Power System</td>
-                                        <td className="spec-detail">3.7V 500mAh Li-ion battery with integrated charging and short-circuit protection</td>
-                                    </tr>
-                                    <tr className="spec-row reveal-card">
-                                        <td className="spec-label">🛡️ Durability</td>
-                                        <td className="spec-detail">Built with non-toxic, low-voltage materials, making it classroom-safe and ready for heavy reuse</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div className="specs-card reveal-card">
+                            <div className="specs-image-wrap">
+                                <img src={tebotComponentsImage} alt="TeBot advanced components" loading="lazy" />
+                            </div>
+                            <div className="specs-points-wrap">
+                                <ul className="specs-points-list">
+                                    <li><strong>🤖 Microcontroller:</strong> Powered by the high-performance Raspberry Pi Pico W</li>
+                                    <li><strong>📡 Inbuilt Sensors:</strong> Dual IR Sensors, MPU6050 Motion Sensor, Speaker, and 2 Input Buttons</li>
+                                    <li><strong>💡 Visual Display:</strong> 8x5 (40) RGB NeoPixel LED lines for emojis, patterns, and indicators</li>
+                                    <li><strong>🔗 Connectivity:</strong> Bluetooth Slot, Ultrasonic Slot, and Edge Connector for unlimited sensor expansion</li>
+                                    <li><strong>🔋 Power System:</strong> 3.7V 500mAh Li-ion battery with integrated charging and short-circuit protection</li>
+                                    <li><strong>🛡️ Durability:</strong> Built with non-toxic, low-voltage materials, making it classroom-safe and ready for heavy reuse</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -494,22 +494,30 @@ function TeBoT() {
                         </div>
                         <div className="benefits-grid">
                             <div className="benefit-item reveal-card">
-                                <div className="benefit-icon">✅</div>
+                                <div className="benefit-icon">
+                                    <img src={tebotProjectsImage} alt="Child Safe and Durable icon" loading="lazy" />
+                                </div>
                                 <h3>Child Safe & Durable</h3>
                                 <p>Built with non-toxic, low-voltage materials, making it classroom-safe and ready for heavy reuse.</p>
                             </div>
                             <div className="benefit-item reveal-card">
-                                <div className="benefit-icon">⚡</div>
+                                <div className="benefit-icon">
+                                    <img src={tebotChampImage} alt="Plug and Play Simplicity icon" loading="lazy" />
+                                </div>
                                 <h3>Plug & Play Simplicity</h3>
                                 <p>Ready-to-use components and inbuilt sensors ensure quick setup—start coding in minutes.</p>
                             </div>
                             <div className="benefit-item reveal-card">
-                                <div className="benefit-icon">🏆</div>
+                                <div className="benefit-icon">
+                                    <img src={tebotChampProjectImage} alt="Proven Impact icon" loading="lazy" />
+                                </div>
                                 <h3>Proven Impact</h3>
                                 <p>Developed by Techyguide, a pioneer with 350+ AI/Robotics labs and over 100,000 students trained across India.</p>
                             </div>
                             <div className="benefit-item reveal-card">
-                                <div className="benefit-icon">🛡️</div>
+                                <div className="benefit-icon">
+                                    <img src={tebotComponentsImage} alt="Guaranteed Quality icon" loading="lazy" />
+                                </div>
                                 <h3>Guaranteed Quality</h3>
                                 <p>Every TeBot includes a 1-year manufacturing warranty on the microcontroller.</p>
                             </div>
@@ -594,14 +602,16 @@ function TeBoT() {
                             <h2>Featured TeBot Projects</h2>
                         </div>
                         <p className="projects-intro">Explore some of our 50+ amazing projects students can build:</p>
-                        <div className="projects-grid">
-                            {projectsList.map((project, index) => (
-                                <div key={index} className="project-card reveal-card">
-                                    <div className="project-number">{index + 1}</div>
-                                    <h3>{project.title}</h3>
-                                    <p>{project.description}</p>
-                                </div>
-                            ))}
+                        <div className="projects-scroll-wrap">
+                            <div className="projects-scroll-track">
+                                {[...projectsList, ...projectsList].map((project, index) => (
+                                    <div key={`${project.title}-${index}`} className="project-card reveal-card">
+                                        <div className="project-number">{(index % projectsList.length) + 1}</div>
+                                        <h3>{project.title}</h3>
+                                        <p>{project.description}</p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </section>

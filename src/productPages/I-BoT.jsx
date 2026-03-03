@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './I-BoT.css';
 import heroBgLayer from '../assets/ProductI-BoTImages/5073198.jpg';
 import heroPattern from '../assets/ProductI-BoTImages/10893802.png';
@@ -13,8 +14,10 @@ function IBoT() {
     const rootRef = useRef(null);
     const testimonialsRef = useRef(null);
     const projectsRef = useRef(null);
+    const navigate = useNavigate();
     const [currentKitIndex, setCurrentKitIndex] = useState(0);
     const [isKitPaused, setIsKitPaused] = useState(false);
+    const [expandedAccordion, setExpandedAccordion] = useState(0);
 
     const ibotKitData = [
         {
@@ -83,6 +86,43 @@ function IBoT() {
             if (sliderTimeout) clearTimeout(sliderTimeout);
         };
     }, [isKitPaused, ibotKitData.length]);
+
+    useEffect(() => {
+        const root = rootRef.current;
+        if (!root) return;
+
+        // Accordion functionality
+        const accordionHeaders = root.querySelectorAll('.tg-ibot-accordion-header');
+        const handleAccordionClick = (e) => {
+            const headerEl = e.currentTarget;
+            const itemEl = headerEl.closest('.tg-ibot-accordion-item');
+            const itemIndex = Array.from(root.querySelectorAll('.tg-ibot-accordion-item')).indexOf(itemEl);
+            setExpandedAccordion(expandedAccordion === itemIndex ? -1 : itemIndex);
+        };
+
+        accordionHeaders.forEach((header) => {
+            header.addEventListener('click', handleAccordionClick);
+        });
+
+        // Update accordion active state based on state
+        const accordionItems = root.querySelectorAll('.tg-ibot-accordion-item');
+        accordionItems.forEach((item, index) => {
+            if (index === expandedAccordion) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+
+        let stopFns = [];
+        
+        return () => {
+            accordionHeaders.forEach((header) => {
+                header.removeEventListener('click', handleAccordionClick);
+            });
+            stopFns.forEach(stop => stop?.());
+        };
+    }, [expandedAccordion]);
 
     useEffect(() => {
         const root = rootRef.current;
@@ -277,382 +317,264 @@ function IBoT() {
     };
 
     return (
-        <div className="ibot-page" ref={rootRef}>
-            {/* Hero Section (replaced with static hero) */}
-            <section className="ibot-hero-root" style={heroBackgroundStyle}>
-                <div className="background-container">
-                    <main className="content-layout">
-                        <div className="image-section">
-                            <img src={heroRobot} alt="TEBOT Robot" />
-                        </div>
-
-                        <div className="info-section">
-                            <h1>I-BOT</h1>
-                            <h2>TeBOT Robot is one of the Best Robot</h2>
-                            <button className="btn-secondary">Explore Features</button>
-                        </div>
-                    </main>
-                </div>
-            </section>
-
-            {/* Introduction Section */}
-            <section className="intro-section" id="introduction">
-                <div className="intro-container">
-                    <h2>Introduction <span>to I-BoT Kit</span></h2>
-                    <p className="intro-tagline">Watch how students are learning and building amazing projects with I-BoT</p>
-                    <div className="video-container">
-                        <iframe 
-                            className="intro-video"
-                            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                            title="I-BoT Kit Introduction"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen>
-                        </iframe>
+        <div className="ibot-page-root" style={heroBackgroundStyle}>
+            <div className="background-container">
+                <main className="content-layout">
+                    <div className="image-section">
+                        <img src={heroRobot} alt="I-BoT Robot" />
                     </div>
-                </div>
-            </section>
+                    <div className="info-section">
+                        <h1>I-BoT Kit</h1>
+                        <h2>Smart IoT robotics kit for young innovators with 50+ projects</h2>
+                        <button className="btn-secondary">Explore Features</button>
+                    </div>
+                </main>
+            </div>
 
-            {/* Features Section */}
-            <section className="features-section" id="features">
-                <h2>Why <span>I-BoT is the Best Choice</span></h2>
-                <div className="features-container">
-                    {/* Feature 1 */}
-                    <div className="feature-item feature-left feature-bg-1">
-                        <div className="feature-image">
-                            <img src={mainBoard} alt="ESP32 Board" />
+            <div className="tg-ibot-page" ref={rootRef}>
+                {/* 1. Immersive Split Intro Section */}
+                <section className="tg-ibot-split-intro" id="split-intro">
+                    <div className="tg-ibot-split-content">
+                        <div className="tg-ibot-split-text">
+                            <h2>Bringing <span className="tg-ibot-highlight">Robotics to Life</span> with I-BoT</h2>
+                            <p>The ultimate toolkit for young innovators combining 50+ projects with cutting-edge IoT and AI technologies.</p>
+                            <button className="tg-ibot-cta-btn">Start Building Today</button>
                         </div>
-                        <div className="feature-content">
-                            <h3>Powerful Microcontroller</h3>
-                            <p>
-                                The I-BoT kit is powered by ESP32 Chip with 4MB memory and built-in WiFi connectivity.
-                                This allows students to build IoT projects that communicate over the internet.
-                            </p>
-                            <ul className="feature-points">
-                                <li>✓ Built-in WiFi Module</li>
-                                <li>✓ 4MB Memory Capacity</li>
-                                <li>✓ Low Power Consumption</li>
-                            </ul>
+                        <div className="tg-ibot-split-image">
+                            <img src={heroRobot} alt="I-BoT Kit" loading="lazy" />
                         </div>
                     </div>
+                </section>
 
-                    {/* Feature 2 */}
-                    <div className="feature-item feature-right feature-bg-2">
-                        <div className="feature-content">
-                            <h3>Home Automation Projects</h3>
-                            <p>
-                                Build real-world home automation systems with the I-BoT kit. Control lights, security systems,
-                                and appliances using voice commands and mobile apps.
-                            </p>
-                            <ul className="feature-points">
-                                <li>✓ Smart Lighting Control</li>
-                                <li>✓ Security Integration</li>
-                                <li>✓ Mobile App Control</li>
-                            </ul>
-                        </div>
-                        <div className="feature-image">
-                            <img src={homeAutomation} alt="Home Automation" />
+                {/* Introduction to I-Bot */}
+                <section className="tg-ibot-introduction" id="introduction">
+                    <div className="tg-ibot-intro-container">
+                        <h2>Introduction to I-BoT Advance Kit</h2>
+                        <p className="tg-ibot-intro-desc">
+                            The I-BoT Advance Kit is the ultimate toolkit for ambitious young innovators. It integrates a vast array of high-tech sensors including WiFi, Bluetooth, and IoT modules, enabling students to execute 50+ professional-grade projects. From building autonomous robots to smart home systems, this kit is designed for those who want to master Robotics, IoT, and AI in one comprehensive package.
+                        </p>
+                        <div className="tg-ibot-video-wrapper">
+                            <iframe
+                                width="100%"
+                                height="400"
+                                src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1"
+                                title="Introduction to I-BoT Advance Kit"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            />
                         </div>
                     </div>
+                </section>
 
-                    {/* Feature 3 */}
-                    <div className="feature-item feature-left feature-bg-3">
-                        <div className="feature-image">
-                            <img src={plantMonitor} alt="Plant Monitoring" />
-                        </div>
-                        <div className="feature-content">
-                            <h3>IoT Monitoring Systems</h3>
-                            <p>
-                                Create advanced monitoring systems for plants, weather, air quality, and more.
-                                Students learn real-world IoT applications that solve everyday problems.
-                            </p>
-                            <ul className="feature-points">
-                                <li>✓ Real-time Monitoring</li>
-                                <li>✓ Data Analytics</li>
-                                <li>✓ Cloud Integration</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    {/* Feature 4 */}
-                    <div className="feature-item feature-right feature-bg-4">
-                        <div className="feature-content">
-                            <h3>Advanced Robotics</h3>
-                            <p>
-                                The ESP32 can control multiple motors, servos, and sensors simultaneously,
-                                making it perfect for building robotic systems including humanoid robots and robotic arms.
-                            </p>
-                            <ul className="feature-points">
-                                <li>✓ Multi-Motor Control</li>
-                                <li>✓ Sensor Integration</li>
-                                <li>✓ AI & Machine Learning Ready</li>
-                            </ul>
-                        </div>
-                        <div className="feature-image">
-                            <img src={smokeDetection} alt="Robotics" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Kit Details Section */}
-            <section className="kit-section" id="kit-details">
-                <h2> I-BoT Offerings</h2>
-                <div 
-                    className="kit-slider-wrapper"
-                    onMouseEnter={() => setIsKitPaused(true)}
-                    onMouseLeave={() => setIsKitPaused(false)}
-                >
-                    <div className="kit-slider-image">
-                        {ibotKitData.map((item, index) => (
-                            <div 
-                                key={index}
-                                className="kit-slide fade"
-                                style={{ display: index === currentKitIndex ? 'block' : 'none' }}
-                            >
-                                <img src={item.image} alt={item.imageAlt} />
-                                <div className="slide-caption">Kit Package {index + 1}</div>
+                {/* 2. Dynamic Feature Blocks (Staggered Layout) */}
+                <section className="tg-ibot-features-staggered" id="features-staggered">
+                    <div className="tg-ibot-features-container">
+                        <h2 className="tg-ibot-section-title">Why I-BoT?</h2>
+                        <div className="tg-ibot-staggered-blocks">
+                            <div className="tg-ibot-feature-block tg-ibot-block-1">
+                                <div className="tg-ibot-block-icon">🎯</div>
+                                <h3>50+ Real Projects</h3>
+                                <p>From LED patterns to autonomous robots, students execute industry-ready projects that build practical skills.</p>
                             </div>
-                        ))}
+                            <div className="tg-ibot-feature-block tg-ibot-block-2">
+                                <div className="tg-ibot-block-icon">🔧</div>
+                                <h3>Reusable Components</h3>
+                                <p>Modular design lets students deconstruct, modify, and rebuild for endless creative possibilities.</p>
+                            </div>
+                            <div className="tg-ibot-feature-block tg-ibot-block-3">
+                                <div className="tg-ibot-block-icon">🚀</div>
+                                <h3>WiFi Connected</h3>
+                                <p>Built-in ESP32 with WiFi enables IoT projects, cloud connectivity, and smart home automation.</p>
+                            </div>
+                            <div className="tg-ibot-feature-block tg-ibot-block-4">
+                                <div className="tg-ibot-block-icon">⚡</div>
+                                <h3>Beginner to Pro</h3>
+                                <p>Scratch programming for newbies, C++ for advanced learners—one kit scales with their journey.</p>
+                            </div>
+                            <div className="tg-ibot-feature-block tg-ibot-block-5">
+                                <div className="tg-ibot-block-icon">🎨</div>
+                                <h3>RGB LED Display</h3>
+                                <p>40 NeoPixel LEDs create vibrant visual feedback, emojis, and lighting effects for engaging projects.</p>
+                            </div>
+                            <div className="tg-ibot-feature-block tg-ibot-block-6">
+                                <div className="tg-ibot-block-icon">🛡️</div>
+                                <h3>Safety Certified</h3>
+                                <p>Non-toxic, low-voltage materials with 1-year warranty built for classroom environments.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div className="kit-info">
-                        <div className="kit-content fade" style={{ display: currentKitIndex >= 0 ? 'block' : 'none' }}>
-                            <h3>{ibotKitData[currentKitIndex].title}</h3>
-                            <p>{ibotKitData[currentKitIndex].description}</p>
-                            
-                            <div className="kit-components">
-                                {ibotKitData[currentKitIndex].components.map((column, colIdx) => (
-                                    <div key={colIdx} className="component-column">
-                                        <h4>{column.title}</h4>
-                                        <ul>
-                                            {column.items.map((componentItem, itemIdx) => (
-                                                <li key={itemIdx}>{componentItem}</li>
-                                            ))}
-                                        </ul>
+                </section>
+
+                {/* 3. Full-Width Visual Impact Section */}
+                <section className="tg-ibot-visual-impact">
+                    <div className="tg-ibot-impact-content">
+                        <h2>Transform Learning with Hands-On Technology</h2>
+                        <p>Trusted by 350+ schools, I-BoT has trained over 100,000 students in robotics, IoT, and AI.</p>
+                        <button className="tg-ibot-impact-btn" onClick={() => navigate('/impact-program')}>Explore Our Impact</button>
+                    </div>
+                </section>
+
+                {/* 4. Zig-Zag Capability Section */}
+                <section className="tg-ibot-zigzag" id="zigzag">
+                    <div className="tg-ibot-zigzag-item tg-ibot-zigzag-left">
+                        <div className="tg-ibot-zigzag-text">
+                            <h3>Smart Sensors</h3>
+                            <p>PIR motion detection, ultrasonic distance sensing, temperature & humidity monitoring, and IR receiver module for complete environmental perception.</p>
+                        </div>
+                        <div className="tg-ibot-zigzag-image">
+                            <img src={mainBoard} alt="Smart Sensors" loading="lazy" />
+                        </div>
+                    </div>
+
+                    <div className="tg-ibot-zigzag-item tg-ibot-zigzag-right">
+                        <div className="tg-ibot-zigzag-image">
+                            <img src={kitImage} alt="Motor Control" loading="lazy" />
+                        </div>
+                        <div className="tg-ibot-zigzag-text">
+                            <h3>Powerful Motors</h3>
+                            <p>Dual BO motors with wheels, servo motors for precise control, and a water pump module for automation experiments.</p>
+                        </div>
+                    </div>
+
+                    <div className="tg-ibot-zigzag-item tg-ibot-zigzag-left">
+                        <div className="tg-ibot-zigzag-text">
+                            <h3>Wireless Control</h3>
+                            <p>Bluetooth connectivity and WiFi module enable remote control, telemetry data streaming, and IoT cloud integration.</p>
+                        </div>
+                        <div className="tg-ibot-zigzag-image">
+                            <img src={homeAutomation} alt="Wireless Control" loading="lazy" />
+                        </div>
+                    </div>
+                </section>
+
+                {/* 5. Interactive Accordion / Expandable Section */}
+                <section className="tg-ibot-accordion" id="accordion">
+                    <div className="tg-ibot-accordion-container">
+                        <h2>Technical Specifications</h2>
+                        <div className="tg-ibot-accordion-items">
+                            {[
+                                {
+                                    title: 'Processing Power',
+                                    content: 'Powered by Raspberry Pi Pico W with dual-core ARM Cortex M0+, 264KB SRAM, WiFi 802.11b/g/n, and 2MB Flash storage for sophisticated multi-threaded applications.'
+                                },
+                                {
+                                    title: 'Sensor Suite',
+                                    content: 'Includes PIR motion, ultrasonic distance, IR receiver, DHT11 temperature/humidity, BMP180 pressure, dual MPU6050 motion, and RFID modules with unlimited expansion.'
+                                },
+                                {
+                                    title: 'Power & Battery',
+                                    content: '3.7V 500mAh rechargeable Li-ion battery with integrated charging circuit, protection from over-discharge and short-circuit, lasting up to 6 hours per charge.'
+                                },
+                                {
+                                    title: 'Display & Output',
+                                    content: '8x5 RGB NeoPixel LED array, I2C OLED display, 16x2 LCD interface, and buzzer for visual and audio feedback in projects.'
+                                }
+                            ].map((item, index) => (
+                                <div key={index} className="tg-ibot-accordion-item">
+                                    <button className="tg-ibot-accordion-header">
+                                        <span>{item.title}</span>
+                                        <span className="tg-ibot-accordion-icon">+</span>
+                                    </button>
+                                    <div className="tg-ibot-accordion-content">
+                                        <p>{item.content}</p>
                                     </div>
-                                ))}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* 6. Horizontal Scroll Showcase */}
+                <section className="tg-ibot-scroll-showcase" id="scroll-showcase">
+                    <div className="tg-ibot-showcase-header">
+                        <h2>Featured Projects</h2>
+                    </div>
+                    <div className="tg-ibot-showcase-scroll" ref={projectsRef}>
+                        <div className="tg-ibot-showcase-track">
+                            {[
+                                { title: 'Line Follower Robot', desc: 'Autonomous navigation', image: mainBoard },
+                                { title: 'Smart Home Hub', desc: 'IoT control center', image: homeAutomation },
+                                { title: 'Plant Monitor', desc: 'Soil moisture tracking', image: plantMonitor },
+                                { title: 'Flame Detector', desc: 'Fire safety system', image: smokeDetection },
+                                { title: 'Door Lock', desc: 'RFID access control', image: kitImage },
+                                { title: 'Obstacle Avoider', desc: 'Autonomous robot', image: mainBoard }
+                            ].concat([
+                                { title: 'Line Follower Robot', desc: 'Autonomous navigation', image: mainBoard },
+                                { title: 'Smart Home Hub', desc: 'IoT control center', image: homeAutomation },
+                                { title: 'Plant Monitor', desc: 'Soil moisture tracking', image: plantMonitor },
+                                { title: 'Flame Detector', desc: 'Fire safety system', image: smokeDetection },
+                                { title: 'Door Lock', desc: 'RFID access control', image: kitImage },
+                                { title: 'Obstacle Avoider', desc: 'Autonomous robot', image: mainBoard }
+                            ]).map((project, index) => (
+                                <div key={`${project.title}-${index}`} className="tg-ibot-showcase-card">
+                                    <img src={project.image} alt={project.title} loading="lazy" />
+                                    <h4>{project.title}</h4>
+                                    <p>{project.desc}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* 7. Strong CTA Section Before Footer */}
+                <section className="tg-ibot-cta-final" id="cta-final">
+                    <div className="tg-ibot-cta-wrapper">
+                        <h2>Ready to Inspire the Next Generation of Innovators?</h2>
+                        <p>Join 350+ schools already transforming STEM education with I-BoT</p>
+                        <button className="tg-ibot-cta-submit">Get I-BoT for Your School</button>
+                    </div>
+                </section>
+
+                {/* WhatsApp Form Section */}
+                <section className="tg-ibot-whatsapp-form-section">
+                    <div className="tg-ibot-form-container">
+                        <h2>Get I-BoT for Your School</h2>
+                        <p>Fill in your details and we'll connect with you via WhatsApp</p>
+                        <form id="inquiry-form" className="tg-ibot-inquiry-form">
+                            <div className="tg-ibot-form-row">
+                                <input 
+                                    type="text" 
+                                    name="School Name" 
+                                    placeholder="School Name" 
+                                    required 
+                                    className="tg-ibot-form-input"
+                                />
+                                <input 
+                                    type="text" 
+                                    name="Contact Person Name" 
+                                    placeholder="Contact Person Name" 
+                                    required 
+                                    className="tg-ibot-form-input"
+                                />
                             </div>
-                        </div>
-
-                        {ibotKitData.length > 1 && (
-                            <div className="kit-indicators">
-                                {ibotKitData.map((_, index) => (
-                                    <button
-                                        key={index}
-                                        className={`kit-indicator ${index === currentKitIndex ? 'active' : ''}`}
-                                        onClick={() => setCurrentKitIndex(index)}
-                                        aria-label={`View kit ${index + 1}`}
-                                    />
-                                ))}
+                            <div className="tg-ibot-form-row">
+                                <input 
+                                    type="email" 
+                                    name="Email Address" 
+                                    placeholder="Email Address" 
+                                    required 
+                                    className="tg-ibot-form-input"
+                                />
+                                <input 
+                                    type="tel" 
+                                    name="Phone Number" 
+                                    placeholder="Phone Number" 
+                                    required 
+                                    className="tg-ibot-form-input"
+                                />
                             </div>
-                        )}
+                            <textarea 
+                                name="Message" 
+                                placeholder="Tell us about your school and requirements..." 
+                                rows="5"
+                                className="tg-ibot-form-textarea"
+                            ></textarea>
+                            <button type="submit" className="tg-ibot-form-submit">Send via WhatsApp</button>
+                        </form>
                     </div>
-                </div>
-            </section>
-
-            {/* Technology Section */}
-            <section className="technology-section" id="technology">
-                <h2>Technologies <span>Covered in I-BoT</span></h2>
-                <p className="section-intro">Master multiple STEM domains with a single platform</p>
-                <div className="tech-grid">
-                    <div className="tech-card">
-                        <div className="tech-icon">🤖</div>
-                        <h3>Robotics</h3>
-                        <p>Build autonomous robots, robotic arms, humanoids, and learn motor control, sensor integration, and path planning algorithms.</p>
-                    </div>
-                    <div className="tech-card">
-                        <div className="tech-icon">📡</div>
-                        <h3>IoT (Internet of Things)</h3>
-                        <p>Create connected devices, home automation systems, and learn WiFi communication, cloud integration, and data transmission.</p>
-                    </div>
-                    <div className="tech-card">
-                        <div className="tech-icon">💻</div>
-                        <h3>Coding & Programming</h3>
-                        <p>Master C++ and Arduino IDE with hands-on projects. Learn loops, conditionals, functions, and debugging techniques.</p>
-                    </div>
-                    <div className="tech-card">
-                        <div className="tech-icon">🧠</div>
-                        <h3>Artificial Intelligence</h3>
-                        <p>Explore AI basics with gesture recognition, voice control, and machine learning concepts for intelligent robotics.</p>
-                    </div>
-                    <div className="tech-card">
-                        <div className="tech-icon">⚙️</div>
-                        <h3>Electronics & Hardware</h3>
-                        <p>Understand circuits, sensors, actuators, and how hardware components work together to create intelligent systems.</p>
-                    </div>
-                    <div className="tech-card">
-                        <div className="tech-icon">🌐</div>
-                        <h3>Networking & Connectivity</h3>
-                        <p>Learn WiFi protocols, Blynk IoT platform, cloud services, and how devices communicate in real-time.</p>
-                    </div>
-                </div>
-            </section>
-
-            {/* Projects Section */}
-            <section className="projects-section" id="projects">
-                <h2>80+ <span>Amazing Projects</span></h2>
-                <p className="section-intro">From Home Automation to Advanced Robotics</p>
-                <div className="projects-scroll" ref={projectsRef}>
-                    <div className="project-card">
-                        <img src={homeAutomation} alt="Home Automation" />
-                        <h4>Home Automation</h4>
-                        <p>Smart lighting, security, and appliance control</p>
-                    </div>
-                    <div className="project-card">
-                        <img src={plantMonitor} alt="Plant Monitoring" />
-                        <h4>Plant Monitoring</h4>
-                        <p>Automated irrigation and growth tracking</p>
-                    </div>
-                    <div className="project-card">
-                        <img src={smokeDetection} alt="Robotics" />
-                        <h4>Robotics</h4>
-                        <p>Line followers, obstacle avoiders, humanoids</p>
-                    </div>
-                    <div className="project-card">
-                        <img src={mainBoard} alt="IoT Systems" />
-                        <h4>IoT Systems</h4>
-                        <p>Weather monitoring, traffic control, parking</p>
-                    </div>
-                    <div className="project-card">
-                        <img src={kitImage} alt="Smart Devices" />
-                        <h4>Smart Devices</h4>
-                        <p>Digital scales, sanitizer dispensers, alarms</p>
-                    </div>
-                    {/* Duplicate cards for infinite scroll effect */}
-                    <div className="project-card">
-                        <img src={homeAutomation} alt="Home Automation" />
-                        <h4>Home Automation</h4>
-                        <p>Smart lighting, security, and appliance control</p>
-                    </div>
-                    <div className="project-card">
-                        <img src={plantMonitor} alt="Plant Monitoring" />
-                        <h4>Plant Monitoring</h4>
-                        <p>Automated irrigation and growth tracking</p>
-                    </div>
-                    <div className="project-card">
-                        <img src={smokeDetection} alt="Robotics" />
-                        <h4>Robotics</h4>
-                        <p>Line followers, obstacle avoiders, humanoids</p>
-                    </div>
-                    <div className="project-card">
-                        <img src={mainBoard} alt="IoT Systems" />
-                        <h4>IoT Systems</h4>
-                        <p>Weather monitoring, traffic control, parking</p>
-                    </div>
-                    <div className="project-card">
-                        <img src={kitImage} alt="Smart Devices" />
-                        <h4>Smart Devices</h4>
-                        <p>Digital scales, sanitizer dispensers, alarms</p>
-                    </div>
-                </div>
-            </section>
-
-            {/* Testimonials Section */}
-            <section className="testimonials-section" id="testimonials">
-                <h2>What Schools <span>&</span> Students Say</h2>
-                <div className="testimonials-scroll" ref={testimonialsRef}>
-                    <div className="testimonial-card">
-                        <div className="stars">⭐⭐⭐⭐⭐</div>
-                        <p className="testimonial-text">
-                            "I-BoT has transformed our robotics lab. Students are engaged and learning real-world skills!"
-                        </p>
-                        <p className="testimonial-author">- Mr. Sharma, School Principal</p>
-                    </div>
-                    <div className="testimonial-card">
-                        <div className="stars">⭐⭐⭐⭐⭐</div>
-                        <p className="testimonial-text">
-                            "The variety of projects keeps students motivated. From beginners to advanced, there's always something new to learn."
-                        </p>
-                        <p className="testimonial-author">- Ms. Priya, Teacher</p>
-                    </div>
-                    <div className="testimonial-card">
-                        <div className="stars">⭐⭐⭐⭐⭐</div>
-                        <p className="testimonial-text">
-                            "Building a humanoid robot was my dream, and I-BoT made it possible. Amazing kit!"
-                        </p>
-                        <p className="testimonial-author">- Arjun, Grade 9 Student</p>
-                    </div>
-                    <div className="testimonial-card">
-                        <div className="stars">⭐⭐⭐⭐⭐</div>
-                        <p className="testimonial-text">
-                            "The documentation is clear, components are reliable, and support is excellent. Highly recommended!"
-                        </p>
-                        <p className="testimonial-author">- Ms. Anjali, School Director</p>
-                    </div>
-                    <div className="testimonial-card">
-                        <div className="stars">⭐⭐⭐⭐⭐</div>
-                        <p className="testimonial-text">
-                            "I-BoT sparked my interest in IoT. I've already built 5 different smart home projects!"
-                        </p>
-                        <p className="testimonial-author">- Ravi, Grade 8 Student</p>
-                    </div>
-                    {/* Duplicate cards for infinite scroll effect */}
-                    <div className="testimonial-card">
-                        <div className="stars">⭐⭐⭐⭐⭐</div>
-                        <p className="testimonial-text">
-                            "I-BoT has transformed our robotics lab. Students are engaged and learning real-world skills!"
-                        </p>
-                        <p className="testimonial-author">- Mr. Sharma, School Principal</p>
-                    </div>
-                    <div className="testimonial-card">
-                        <div className="stars">⭐⭐⭐⭐⭐</div>
-                        <p className="testimonial-text">
-                            "The variety of projects keeps students motivated. From beginners to advanced, there's always something new to learn."
-                        </p>
-                        <p className="testimonial-author">- Ms. Priya, Teacher</p>
-                    </div>
-                    <div className="testimonial-card">
-                        <div className="stars">⭐⭐⭐⭐⭐</div>
-                        <p className="testimonial-text">
-                            "Building a humanoid robot was my dream, and I-BoT made it possible. Amazing kit!"
-                        </p>
-                        <p className="testimonial-author">- Arjun, Grade 9 Student</p>
-                    </div>
-                    <div className="testimonial-card">
-                        <div className="stars">⭐⭐⭐⭐⭐</div>
-                        <p className="testimonial-text">
-                            "The documentation is clear, components are reliable, and support is excellent. Highly recommended!"
-                        </p>
-                        <p className="testimonial-author">- Ms. Anjali, School Director</p>
-                    </div>
-                    <div className="testimonial-card">
-                        <div className="stars">⭐⭐⭐⭐⭐</div>
-                        <p className="testimonial-text">
-                            "I-BoT sparked my interest in IoT. I've already built 5 different smart home projects!"
-                        </p>
-                        <p className="testimonial-author">- Ravi, Grade 8 Student</p>
-                    </div>
-                </div>
-            </section>
-
-            {/* CTA Form Section */}
-            <section className="form-section" id="interest-form">
-                <div className="form-container">
-                    <h2>Get I-Bot Lab for Your School Today! 📬</h2>
-                    <p>Join 500+ schools using I-Bot to transform student learning</p>
-                    <form className="inquiry-form" onSubmit={(e) => e.preventDefault()}>
-                        <div className="form-row">
-                            <input type="text" placeholder="School Name" required />
-                            <input type="text" placeholder="Contact Person Name" required />
-                        </div>
-                        <div className="form-row">
-                            <input type="email" placeholder="Email Address" required />
-                            <input type="tel" placeholder="Phone Number" required />
-                        </div>
-                        <div className="form-row">
-                            <input type="text" placeholder="City/Location" required />
-                            <select required>
-                                <option value="">Select Grade Level</option>
-                                <option value="primary">Primary (Classes 3-5)</option>
-                                <option value="middle">Middle School (Classes 6-8)</option>
-                                <option value="secondary">Secondary (Classes 9-12)</option>
-                            </select>
-                        </div>
-                        <textarea placeholder="Tell us about your school and students..." rows="3" required></textarea>
-                        <button type="submit" className="form-btn">📧 Send Inquiry Now</button>
-                    </form>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
     );
 }

@@ -9,6 +9,63 @@ import GalleryImage5 from '../assets/ForSchoolsStemLabImages/WhatsApp Image 2021
 import GalleryImage6 from '../assets/ForSchoolsStemLabImages/WhatsApp Image 2025-06-04 at 11.12.23_14c0422d.jpg';
 
 function StemLab() {
+    // ==========================================
+    // SEO META TAGS
+    // ==========================================
+    useEffect(() => {
+        // Set document title
+        document.title = "STEM Labs for Schools in India | Hands-on STEM Education | TechyGuide";
+
+        // Update or create meta description
+        let metaDescription = document.querySelector('meta[name="description"]');
+        if (!metaDescription) {
+            metaDescription = document.createElement('meta');
+            metaDescription.name = 'description';
+            document.head.appendChild(metaDescription);
+        }
+        metaDescription.content = "TechyGuide STEM Labs empower students through hands-on Science, Technology, Engineering & Math learning. Practical STEM programs for schools across India.";
+
+        // Add or update meta keywords
+        let metaKeywords = document.querySelector('meta[name="keywords"]');
+        if (!metaKeywords) {
+            metaKeywords = document.createElement('meta');
+            metaKeywords.name = 'keywords';
+            document.head.appendChild(metaKeywords);
+        }
+        metaKeywords.content = "STEM labs, STEM education India, school STEM labs, hands-on STEM learning, robotics STEM labs, TechyGuide StemLabs";
+
+        // Add canonical link
+        let canonical = document.querySelector('link[rel="canonical"]');
+        if (!canonical) {
+            canonical = document.createElement('link');
+            canonical.rel = 'canonical';
+            document.head.appendChild(canonical);
+        }
+        canonical.href = 'https://techyguide.com/stem-labs-for-schools';
+
+        // Add Open Graph tags
+        const ogTags = [
+            { property: 'og:title', content: 'STEM Labs for Schools in India | Hands-on STEM Education | TechyGuide' },
+            { property: 'og:description', content: 'TechyGuide STEM Labs empower students through hands-on Science, Technology, Engineering & Math learning. Practical STEM programs for schools across India.' },
+            { property: 'og:url', content: 'https://techyguide.com/stem-labs-for-schools' },
+            { property: 'og:type', content: 'website' }
+        ];
+
+        ogTags.forEach(tagData => {
+            let tag = document.querySelector(`meta[property="${tagData.property}"]`);
+            if (!tag) {
+                tag = document.createElement('meta');
+                tag.setAttribute('property', tagData.property);
+                document.head.appendChild(tag);
+            }
+            tag.content = tagData.content;
+        });
+
+        return () => {
+            // Cleanup is handled by document.title and meta tags remaining on page
+        };
+    }, []);
+
     useEffect(() => {
         let statsObserver = null;
         let vpObserver = null;
@@ -216,12 +273,9 @@ function StemLab() {
                     <div className="container hero-grid">
                         <div className="hero-text">
                             <span className="sub-heading">Welcome to StemLabs</span>
-                            <h1 className="section-title">Developing Minds for a <span className="highlight-orange">Better Tomorrow</span></h1>
+                            <h1 className="section-title"> STEM Lab <span className="highlight-orange">School Innovation Learning</span></h1>
                             <p className="section-desc">
-                                We spark curiosity through our unique <strong>DICE</strong> methodology: 
-                                Design Thinking, Innovation, Creativity, and Entrepreneurship. 
-                                Our mission is to foster a deep interest in Science, Technology, Engineering, and Math 
-                                through hands-on practical learning.
+                                Welcome to StemLabs, where we nurture young innovators through experiential STEM education. Our unique DICE methodology—Design Thinking, Innovation, Creativity, and Entrepreneurship—sparks curiosity and builds future-ready skills through hands-on, practical learning. 
                             </p>
                             <div className="intro-buttons">
                                 <button className="btn-primary">Our Programs</button>
@@ -326,7 +380,7 @@ function StemLab() {
                 <section className="models-section">
                     <div className="container">
                         <div className="section-header">
-                            <h2>STEM <span className="highlight-teal">Models</span></h2>
+                            <h2> Featured <span className="highlight-teal">Stem Models</span></h2>
                             <p>Short videos showcasing our STEM products and student projects.</p>
                         </div>
 
@@ -335,7 +389,7 @@ function StemLab() {
                                 <div className="model-media">
                                     <iframe title="Robotics Kit" src={undefined} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                                 </div>
-                                <h4>Solar System</h4>
+                                <h4>Solar System Model</h4>
                             </div>
 
                             <div className="model-card" data-video-id="-U4jj5uXi5w">

@@ -1,1213 +1,829 @@
-/* Scoped styles for I-Bot page */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
+/* Redesigned I-Bot Product Page - New Structure */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700;800;900&display=swap');
 
-/* ===== NEW HERO (SCOPED) ===== */
-.ibot-hero-root {
-    background:
-        /* Top color tint (light tech glow) */
-        linear-gradient(rgba(78, 224, 163, 0.25), rgba(61, 174, 161, 0.25)),
-        /* Foreground tech pattern */
-        url("../assets/ProductI-BoTImages/5073198.png"),
-        /* Deep overlay (to match static contrast) */
-        linear-gradient(rgba(30, 127, 116, 0.6), rgba(5, 123, 110, 0.6)),
-        /* Base background image */
-        url("../assets/ProductI-BoTImages/10893802.jpg"),
-        #008273;
+/* ===== HERO SECTION ===== */
+.ibot-page-root * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
-
-    min-height: 100vh;
-    width: 100%;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.ibot-page-root {
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
     overflow-x: hidden;
+    min-height: 100vh;
+    padding-top: 113px;
 }
 
-.ibot-hero-root .background-container {
-    width: 100%;
+.ibot-page-root .background-container {
     min-height: 100vh;
+    padding: clamp(20px, 5vw, 40px);
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
-.ibot-hero-root .content-layout {
+.ibot-page-root .content-layout {
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 1;
-    gap: 100px;
+    gap: clamp(30px, 8vw, 100px);
     max-width: 1200px;
     margin: 0 auto;
     transform: translateY(-40px);
+    padding: 0 20px;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.ibot-hero-root .image-section {
+.ibot-page-root .image-section {
     flex: 1;
     display: flex;
     justify-content: center;
 }
 
-.ibot-hero-root .image-section img {
+.ibot-page-root .image-section img {
     max-width: 100%;
     height: auto;
-    width: 450px;
+    width: min(90%, 450px);
     filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
-    transition: transform 0.3s ease, filter 0.3s ease;
-    margin-top: 2.5cm;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
 }
 
-.ibot-hero-root .image-section img:hover {
-    transform: scale(1.1);
+.ibot-page-root .image-section img:hover {
+    filter: drop-shadow(0 15px 40px rgba(0,0,0,0.6));
 }
 
-.ibot-hero-root .info-section {
+.ibot-page-root .info-section {
     flex: 1;
     max-width: 500px;
 }
 
-.ibot-hero-root .info-section h1 {
-    font-size: 50px !important;
+.ibot-page-root .info-section h1 {
+    font-size: clamp(2rem, 8vw, 50px);
     font-weight: 1000;
     color: rgb(255, 153, 0);
     margin-bottom: 18px;
-    line-height: 2;
+    line-height: 1.2;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.ibot-hero-root .info-section h2 {
-    font-size: 1.5rem;
+.ibot-page-root .info-section h2 {
+    font-size: clamp(1rem, 4vw, 1.5rem);
     font-weight: 600;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 24px;
     line-height: 1.3;
 }
 
-.ibot-hero-root .btn-secondary {
-    background: linear-gradient(45deg, #ff8c00, #ff6600);
-    border: 3px solid rgba(255, 140, 0, 0.3);
-    padding: 18px 40px;
+.ibot-page-root .btn-secondary {
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 50%, #ffa726 100%);
+    border: none;
+    padding: clamp(12px, 3vw, 18px) clamp(24px, 6vw, 40px);
     border-radius: 30px;
     color: white;
     cursor: pointer;
     font-weight: bold;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     margin-top: 20px;
-}
-
-.ibot-hero-root .btn-secondary:hover {
-    transform: scale(1.05);
-    background: linear-gradient(45deg, #ff9500, #ff7700);
-    border: 3px solid rgba(255, 140, 0, 0.5);
-}
-
-@media (max-width: 850px) {
-    .ibot-hero-root {
-        padding: 20px;
-    }
-
-    .ibot-hero-root .content-layout {
-        flex-direction: column;
-        gap: 30px;
-        text-align: center;
-        transform: translateY(0);
-    }
-
-    .ibot-hero-root .image-section img {
-        max-width: 80%;
-        width: auto;
-    }
-
-    .ibot-hero-root .info-section h1 {
-        font-size: 42px !important;
-        line-height: 1.4;
-    }
-
-    .ibot-hero-root .info-section h2 {
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .ibot-hero-root .image-section img {
-        max-width: 90%;
-    }
-
-    .ibot-hero-root .info-section h1 {
-        font-size: 36px !important;
-    }
-
-    .ibot-hero-root .info-section h2 {
-        font-size: 1.05rem;
-    }
-}
-
-.ibot-page {
-    --primary-orange: #f5a623;
-    --primary-blue: #0056b3;
-    --text-dark: #333;
-    --text-white: #ffffff;
-    --bg-light: #f4f7f6;
-    --font-tech: 'Orbitron', sans-serif;
-    --font-body: 'Poppins', sans-serif;
-    font-family: var(--font-body);
-    color: var(--text-dark);
-    line-height: 1.6;
-    background: #ffffff;
-}
-
-.ibot-page * { box-sizing: border-box; }
-.ibot-page h1, .ibot-page h2, .ibot-page h3, .ibot-page h4 { font-weight: 700; }
-.ibot-page a { text-decoration: none; color: inherit; }
-
-/* ===== HERO SECTION ===== */
-.ibot-page .hero {
-    position: relative;
-    min-height: 100vh;
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
     width: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    max-width: 250px;
+}
+
+.ibot-page-root .btn-secondary:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #ff8a31 0%, #ff7043 50%, #ff9800 100%);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6);
+}
+
+/* ===== MAIN PAGE CONTAINER ===== */
+.tg-ibot-page {
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* ===== SECTION 1: SPLIT INTRO ===== */
+.tg-ibot-split-intro {
+    padding: 80px 40px;
+    background: linear-gradient(135deg, #f0fffe 0%, #ffffff 100%);
+    position: relative;
+}
+
+.tg-ibot-split-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.tg-ibot-split-text h2 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #005a55;
+}
+
+.tg-ibot-highlight {
+    color: #ff8c00;
+    position: relative;
+    display: inline-block;
+}
+
+.tg-ibot-split-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.tg-ibot-cta-btn {
+    padding: 14px 35px;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #006d66 0%, #008273 100%);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 130, 115, 0.3);
+}
+
+.tg-ibot-cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 130, 115, 0.4);
+    background: linear-gradient(135deg, #004d47 0%, #006d66 100%);
+}
+
+.tg-ibot-split-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tg-ibot-split-image img {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(0, 130, 115, 0.15));
+}
+
+/* ===== SECTION 1.5: INTRODUCTION ===== */
+.tg-ibot-introduction {
+    padding: 60px 40px;
+    background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    padding-bottom: 50px;
-    padding-top: 163px;
-    color: var(--text-white);
-    overflow: hidden;
 }
 
-.ibot-page .hero-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(120deg, rgba(7, 89, 232, 0.731) 0%, rgba(95, 92, 237, 0.356) 100%);
-    z-index: 1;
-}
-
-.ibot-page .hero-content {
-    position: relative;
-    z-index: 3;
-    max-width: 900px;
-    padding: 0 20px;
-    color: var(--text-white);
-    margin-top: -20px;
-}
-
-.ibot-page .brand-name {
-    font-family: var(--font-tech);
-    font-size: 2.5rem;
-    color: var(--text-white);
-    letter-spacing: 2px;
-    margin-bottom: 0.5rem;
-    text-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-.ibot-page .hero-desc {
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.95);
-    margin-bottom: 2rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    font-weight: 300;
-}
-
-.ibot-page .hero-bottom-fade {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 150px;
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-    z-index: 2;
-    pointer-events: none;
-}
-
-.ibot-page .btn {
-    padding: 14px 35px;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    font-size: 1rem;
-}
-.ibot-page .btn-orange {
-    background-color: var(--primary-orange);
-    color: white;
-    border: none;
-    box-shadow: 0 4px 15px rgba(245, 166, 35, 0.4);
-}
-.ibot-page .btn-orange:hover { transform: translateY(-3px); background-color: #e09612; }
-
-/* ===== INTRODUCTION SECTION ===== */
-.ibot-page .intro-section {
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #f5f7fa 0%, #e8f1f8 100%);
-}
-
-.ibot-page .intro-container {
+.tg-ibot-intro-container {
     max-width: 1000px;
     margin: 0 auto;
+    text-align: center;
 }
 
-.ibot-page .intro-section h2 {
-    font-family: var(--font-tech);
-    font-size: 2.5rem;
-    color: #000000;
-    text-align: center;
-    margin-bottom: 15px;
+.tg-ibot-introduction h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #005a55;
+    margin-bottom: 20px;
+    line-height: 1.2;
 }
-.ibot-page .intro-section span{
-    color: teal;
-}
-.ibot-page .intro-tagline {
-    text-align: center;
-    font-size: 1.1rem;
-    color: #666;
+
+.tg-ibot-intro-desc {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
     margin-bottom: 40px;
+    font-weight: 400;
 }
 
-.ibot-page .video-container {
+.tg-ibot-video-wrapper {
     position: relative;
+    width: 100%;
     padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 130, 115, 0.15);
 }
 
-.ibot-page .intro-video {
+.tg-ibot-video-wrapper iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    border-radius: 12px;
     border: none;
-    border-radius: 15px;
 }
 
-/* ===== FEATURES SECTION ===== */
-.ibot-page .features-section {
-    padding: clamp(50px, 8vw, 90px) 20px;
-    background: linear-gradient(180deg, #f8fbff 0%, #ffffff 55%, #f4fbf7 100%);
-    position: relative;
-    overflow: hidden;
+/* ===== SECTION 2: STAGGERED FEATURE BLOCKS ===== */
+.tg-ibot-features-staggered {
+    padding: 100px 40px;
+    background: white;
 }
 
-
-.ibot-page .features-section h2 {
-    font-family: var(--font-tech);
-    font-size: 2.5rem;
-    color: #000000;
-    text-align: center;
-    margin-bottom: 30px;
-    padding-top: 0;
-    position: relative;
-    z-index: 1;
-}
-.ibot-page .features-section span{
-    color: teal;
-}
-
-.ibot-page .features-container {
-    width: 100%;
-    margin: 0;
-    position: relative;
-    z-index: 1;
-}
-
-.ibot-page .feature-item {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
-    margin: 0 auto 28px;
-    padding: clamp(30px, 6vw, 60px) clamp(20px, 5vw, 60px);
-    min-height: auto;
+.tg-ibot-features-container {
     max-width: 1200px;
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(15, 23, 42, 0.08);
-    border-radius: 24px;
-    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
-    backdrop-filter: blur(6px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    margin: 0 auto;
 }
 
-.ibot-page .feature-item:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 28px 70px rgba(15, 23, 42, 0.12);
-    border-color: rgba(79, 195, 247, 0.25);
-}
-
-.ibot-page .feature-item.feature-left {
-    grid-template-columns: 1fr 1fr;
-}
-
-.ibot-page .feature-item.feature-right {
-    grid-template-columns: 1fr 1fr;
-}
-
-/* Explicit grid placement to alternate image alignment */
-.ibot-page .feature-item.feature-left .feature-image { grid-column: 1; }
-.ibot-page .feature-item.feature-left .feature-content { grid-column: 2; }
-.ibot-page .feature-item.feature-right .feature-content { grid-column: 1; }
-.ibot-page .feature-item.feature-right .feature-image { grid-column: 2; }
-
-/* Distinct backgrounds for each full-width block */
-.ibot-page .feature-bg-1 { background: #ffffff; }
-.ibot-page .feature-bg-2 { background: #ffffff; }
-.ibot-page .feature-bg-3 { background: #ffffff; }
-.ibot-page .feature-bg-4 { background: #ffffff; }
-
-.ibot-page .feature-bg-1,
-.ibot-page .feature-bg-2,
-.ibot-page .feature-bg-3,
-.ibot-page .feature-bg-4 {
-    background: transparent;
-}
-
-.ibot-page .feature-image {
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.2);
-    border: 1px solid rgba(15, 23, 42, 0.08);
-}
-
-.ibot-page .feature-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.ibot-page .feature-content h3 {
-    font-size: 1.8rem;
-    color:orange;
-    margin-bottom: 15px;
-}
-
-.ibot-page .feature-content p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 20px;
-    line-height: 1.8;
-}
-
-.ibot-page .feature-points {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.ibot-page .feature-points li {
-    padding: 10px 0;
-    color: #000000;
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-/* ===== KIT SECTION ===== */
-.ibot-page .kit-section {
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #fef3c7 0%, #fce7f3 100%);
-}
-
-.ibot-page .kit-section h2 {
-    font-family: var(--font-tech);
-    font-size: 2.5rem;
-    color: #d97706;
+.tg-ibot-section-title {
+    font-size: 42px;
+    font-weight: 800;
     text-align: center;
     margin-bottom: 60px;
+    color: #005a55;
 }
 
-/* Kit Slider Styles */
-.ibot-page .kit-slider-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-}
-
-.ibot-page .kit-slider-image {
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-    max-width: 550px;
-    margin: 0 auto;
-    height: 500px;
-    background: #0b1a3a;
-}
-
-.ibot-page .kit-slide {
-    height: 100%;
-    position: relative;
-}
-
-.ibot-page .kit-slide.fade {
-    animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.ibot-page .kit-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.ibot-page .slide-caption {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    padding: 12px 16px;
-    border-radius: 12px;
-    background: rgba(0,0,0,0.7);
-    color: #fff;
-    font-weight: 700;
-    font-size: 0.9rem;
-}
-
-.ibot-page .kit-info h3 {
-    font-size: 1.8rem;
-    color: #d97706;
-    margin-bottom: 15px;
-}
-
-.ibot-page .kit-content {
-    animation: fadeIn 1s ease-in-out;
-}
-
-.ibot-page .kit-content.fade {
-    animation: fadeIn 1s ease-in-out;
-}
-
-.ibot-page .kit-info > p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 30px;
-    line-height: 1.8;
-}
-
-.ibot-page .kit-components {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-    margin-bottom: 30px;
-}
-
-.ibot-page .component-column h4 {
-    font-size: 1.1rem;
-    color: #d97706;
-    margin-bottom: 12px;
-    font-weight: 700;
-}
-
-.ibot-page .component-column ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.ibot-page .component-column li {
-    padding: 8px 0;
-    color: #555;
-    font-size: 0.9rem;
-    padding-left: 20px;
-    position: relative;
-}
-
-.ibot-page .component-column li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #d97706;
-    font-weight: bold;
-}
-
-.ibot-page .kit-indicators {
-    display: flex;
-    gap: 10px;
-    justify-content: flex-start;
-}
-
-.ibot-page .kit-indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: 2px solid #d97706;
-    background: rgba(217, 119, 6, 0.3);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    padding: 0;
-}
-
-.ibot-page .kit-indicator.active {
-    background: #d97706;
-    width: 14px;
-    height: 14px;
-}
-
-.ibot-page .kit-indicator:hover {
-    background: #d97706;
-    transform: scale(1.2);
-}
-
-.ibot-page .kit-slider-prev {
-    left: 15px;
-}
-
-.ibot-page .kit-slider-next {
-    right: 15px;
-}
-
-/* Mobile Responsive Styles */
-@media (max-width: 768px) {
-    .ibot-page .kit-slider-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        max-width: 100%;
-    }
-
-    .ibot-page .kit-slider-image {
-        max-width: 100%;
-        height: 300px;
-    }
-
-    .ibot-page .kit-info {
-        padding: 0;
-    }
-
-    .ibot-page .kit-components {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        margin-bottom: 20px;
-    }
-
-    .ibot-page .kit-info h3 {
-        font-size: 1.4rem;
-        margin-bottom: 12px;
-    }
-
-    .ibot-page .kit-info > p {
-        font-size: 0.9rem;
-        margin-bottom: 20px;
-    }
-
-    .ibot-page .component-column h4 {
-        font-size: 1rem;
-        margin-bottom: 10px;
-    }
-
-    .ibot-page .component-column li {
-        font-size: 0.85rem;
-        padding: 6px 0;
-    }
-
-    .ibot-page .kit-indicators {
-        margin-top: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .ibot-page .kit-section {
-        padding: 30px 15px;
-    }
-
-    .ibot-page .kit-section h2 {
-        font-size: 1.5rem;
-        margin-bottom: 25px;
-    }
-
-    .ibot-page .kit-slider-image {
-        height: 250px;
-        border-radius: 12px;
-    }
-
-    .ibot-page .slide-caption {
-        font-size: 0.8rem;
-        padding: 10px 12px;
-        bottom: 15px;
-        left: 15px;
-    }
-
-    .ibot-page .kit-info h3 {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
-    }
-
-    .ibot-page .kit-info > p {
-        font-size: 0.85rem;
-        margin-bottom: 15px;
-    }
-
-    .ibot-page .component-column h4 {
-        font-size: 0.95rem;
-        margin-bottom: 8px;
-    }
-
-    .ibot-page .component-column li {
-        font-size: 0.8rem;
-        padding: 5px 0;
-        padding-left: 18px;
-    }
-
-    .ibot-page .kit-indicator {
-        width: 10px;
-        height: 10px;
-    }
-
-    .ibot-page .kit-indicator.active {
-        width: 12px;
-        height: 12px;
-    }
-}
-
-/* Dots Navigation */
-.ibot-page .kit-slider-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 10;
-}
-
-.ibot-page .kit-slider-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: 2px solid #d97706;
-    background: rgba(255, 255, 255, 0.7);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    padding: 0;
-}
-
-.ibot-page .kit-slider-dot:hover {
-    background: rgba(217, 119, 6, 0.5);
-    transform: scale(1.2);
-}
-
-.ibot-page .kit-slider-dot.active {
-    background: #d97706;
-    width: 14px;
-    height: 14px;
-}
-
-.ibot-page .kit-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-}
-
-.ibot-page .kit-image {
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-}
-
-.ibot-page .kit-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.ibot-page .kit-info h3 {
-    font-size: 1.8rem;
-    color: #d97706;
-    margin-bottom: 15px;
-}
-
-.ibot-page .kit-info > p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 30px;
-    line-height: 1.8;
-}
-
-.ibot-page .kit-components {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-}
-
-.ibot-page .component-column h4 {
-    font-size: 1.1rem;
-    color: #d97706;
-    margin-bottom: 12px;
-    font-weight: 700;
-}
-
-.ibot-page .component-column ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.ibot-page .component-column li {
-    padding: 8px 0;
-    color: #555;
-    font-size: 0.9rem;
-    padding-left: 20px;
-    position: relative;
-}
-
-.ibot-page .component-column li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #d97706;
-    font-weight: bold;
-}
-
-/* ===== TECHNOLOGY SECTION ===== */
-.ibot-page .technology-section {
-    padding: 80px 20px;
-    background: #ffffff;
-}
-
-.ibot-page .technology-section h2 {
-    font-family: var(--font-tech);
-    font-size: 2.5rem;
-    color: #000000;
-    text-align: center;
-    margin-bottom: 15px;
-}
-.ibot-page .technology-section span{
-    color:teal
-}
-.ibot-page .section-intro {
-    text-align: center;
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 50px;
-}
-
-.ibot-page .tech-grid {
+.tg-ibot-staggered-blocks {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    max-width: 1300px;
-    margin: 0 auto;
+    grid-template-areas:
+        "block1 block2 block3"
+        "block4 block5 block6";
 }
 
-.ibot-page .tech-card {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-    border-top: 4px solid #1976d2;
-}
-
-.ibot-page .tech-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-}
-
-.ibot-page .tech-icon {
-    font-size: 3rem;
-    margin-bottom: 15px;
-}
-
-.ibot-page .tech-card h3 {
-    font-size: 1.3rem;
-    color: black;
-    margin-bottom: 15px;
-}
-
-.ibot-page .tech-card p {
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.6;
-}
-
-/* ===== PROJECTS SECTION ===== */
-.ibot-page .projects-section {
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
-}
-
-.ibot-page .projects-section h2 {
-    font-family: var(--font-tech);
-    font-size: 2.5rem;
-    color: black;
-    text-align: center;
-    margin-bottom: 15px;
-}
-.ibot-page .projects-section span{
-    color: teal;
-}
-.ibot-page .projects-scroll {
-    display: flex;
-    gap: 25px;
-    overflow-x: scroll;
-    padding: 30px 20px;
-    margin: 0 auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    width: 100%;
-    max-width: 1300px;
-    will-change: scroll-position;
-    -webkit-overflow-scrolling: touch;
-}
-
-.ibot-page .projects-scroll::-webkit-scrollbar {
-    display: none;
-}
-
-.ibot-page .project-card {
-    min-width: 280px;
-    background: white;
+.tg-ibot-feature-block {
+    padding: 40px;
     border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-    will-change: transform;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-}
-
-.ibot-page .project-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-}
-
-.ibot-page .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.ibot-page .project-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-}
-
-.ibot-page .project-card h4 {
-    font-size: 1.1rem;
-    color: black;
-    padding: 15px 15px 8px;
-    margin: 0;
-}
-
-.ibot-page .project-card p {
-    padding: 0 15px 15px;
-    font-size: 0.85rem;
-    color: #666;
-    margin: 0;
-}
-
-/* ===== TESTIMONIALS SECTION ===== */
-.ibot-page .testimonials-section {
-    padding: 80px 20px;
-    background: #ffffff;
-}
-
-.ibot-page .testimonials-section h2 {
-    font-family: var(--font-tech);
-    font-size: 2.5rem;
-    color: teal;
-    text-align: center;
-    margin-bottom: 50px;
-}
-.ibot-page .testimonials-section span{
-    color: black;
-}
-.ibot-page .testimonials-scroll {
-    display: flex;
-    gap: 25px;
-    overflow-x: scroll;
-    padding: 20px;
-    margin: 0 auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    width: 100%;
-    max-width: 1300px;
-    will-change: scroll-position;
-    -webkit-overflow-scrolling: touch;
-}
-
-.ibot-page .testimonials-scroll::-webkit-scrollbar {
-    display: none;
-}
-
-.ibot-page .testimonial-card {
-    min-width: 320px;
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-    will-change: transform;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-}
-
-.ibot-page .testimonial-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-}
-
-.ibot-page .stars {
-    font-size: 1.2rem;
-    margin-bottom: 12px;
-    letter-spacing: 3px;
-}
-
-.ibot-page .testimonial-text {
-    font-size: 0.95rem;
-    color: #555;
-    font-style: italic;
-    margin: 15px 0;
-    line-height: 1.6;
-}
-
-.ibot-page .testimonial-author {
-    font-weight: 700;
-    color: black;
-    font-size: 0.9rem;
-    margin: 10px 0 0;
-}
-
-/* ===== FORM SECTION ===== */
-.ibot-page .form-section {
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #6b5b95 0%, #2d3436 100%);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
     position: relative;
     overflow: hidden;
 }
 
-.ibot-page .form-section::before {
+.tg-ibot-feature-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 140, 0, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.tg-ibot-feature-block:hover::before {
+    left: 100%;
+}
+
+.tg-ibot-block-1 { grid-area: block1; background: linear-gradient(135deg, #e8f5f4 0%, #f0fffe 100%); border-left: 4px solid #ff8c00; }
+.tg-ibot-block-2 { grid-area: block2; background: linear-gradient(135deg, #f0fffe 0%, #e8f5f4 100%); border-top: 4px solid #ff8c00; transform: translateY(20px); }
+.tg-ibot-block-3 { grid-area: block3; background: linear-gradient(135deg, #e8f5f4 0%, #f0fffe 100%); border-right: 4px solid #ff8c00; }
+.tg-ibot-block-4 { grid-area: block4; background: linear-gradient(135deg, #f0fffe 0%, #e8f5f4 100%); border-bottom: 4px solid #ff8c00; transform: translateY(-10px); }
+.tg-ibot-block-5 { grid-area: block5; background: linear-gradient(135deg, #e8f5f4 0%, #f0fffe 100%); border-left: 4px solid #ff8c00; }
+.tg-ibot-block-6 { grid-area: block6; background: linear-gradient(135deg, #f0fffe 0%, #e8f5f4 100%); border-right: 4px solid #ff8c00; transform: translateY(15px); }
+
+.tg-ibot-feature-block:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 130, 115, 0.2);
+}
+
+.tg-ibot-block-icon {
+    font-size: 32px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.tg-ibot-feature-block h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #005a55;
+}
+
+.tg-ibot-feature-block p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* ===== SECTION 3: VISUAL IMPACT ===== */
+.tg-ibot-visual-impact {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #005a55 0%, #006d66 100%);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.tg-ibot-visual-impact::before {
     content: '';
     position: absolute;
     top: -50%;
     right: -10%;
-    width: 400px;
-    height: 400px;
-    background: rgba(255, 107, 157, 0.1);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 140, 0, 0.1), transparent);
     border-radius: 50%;
-    animation: float 6s ease-in-out infinite;
+    pointer-events: none;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(20px); }
-}
-
-.ibot-page .form-container {
-    max-width: 700px;
+.tg-ibot-impact-content {
+    max-width: 800px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
 }
 
-.ibot-page .form-section h2 {
-    font-family: var(--font-tech);
-    font-size: 2rem;
-    color: white;
-    text-align: center;
-    margin-bottom: 10px;
+.tg-ibot-visual-impact h2 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #ffffff;
 }
 
-.ibot-page .form-container > p {
-    text-align: center;
-    color: #ffd700;
-    font-family: var(--font-body);
-    margin-bottom: 40px;
-    font-size: 1.1rem;
+.tg-ibot-visual-impact p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.95;
 }
 
-.ibot-page .inquiry-form {
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-}
-
-.ibot-page .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-bottom: 15px;
-}
-
-.ibot-page .form-row input,
-.ibot-page .form-row select,
-.ibot-page .inquiry-form textarea {
-    padding: 14px;
-    border: 2px solid #e0e0e0;
-    border-radius: 10px;
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-}
-
-.ibot-page .form-row input:focus,
-.ibot-page .form-row select:focus,
-.ibot-page .inquiry-form textarea:focus {
-    outline: none;
-    border-color: #1976d2;
-    box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
-}
-
-.ibot-page .inquiry-form textarea {
-    width: 100%;
-    resize: vertical;
-    margin-bottom: 15px;
-}
-
-.ibot-page .form-btn {
-    width: 100%;
-    padding: 16px;
-    background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-family: var(--font-body);
-    font-size: 1.1rem;
-    font-weight: bold;
+.tg-ibot-impact-btn {
+    padding: 14px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    border: 2px solid #ff8c00;
+    border-radius: 8px;
+    background: transparent;
+    color: #ff8c00;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(25, 118, 210, 0.3);
 }
 
-.ibot-page .form-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(25, 118, 210, 0.4);
+.tg-ibot-impact-btn:hover {
+    background: #ff8c00;
+    color: white;
+    transform: scale(1.05);
 }
 
-.ibot-page .form-btn:active {
-    transform: translateY(-1px);
+/* ===== SECTION 4: ZIG-ZAG LAYOUT ===== */
+.tg-ibot-zigzag {
+    padding: 100px 40px;
+    background: white;
 }
 
-/* ===== RESPONSIVE ===== */
+.tg-ibot-zigzag-item {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.tg-ibot-zigzag-left {
+    grid-template-columns: 1fr 1fr;
+}
+
+.tg-ibot-zigzag-right {
+    grid-template-columns: 1fr 1fr;
+    direction: rtl;
+}
+
+.tg-ibot-zigzag-right > * {
+    direction: ltr;
+}
+
+.tg-ibot-zigzag-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 130, 115, 0.15);
+}
+
+.tg-ibot-zigzag-text h3 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #005a55;
+}
+
+.tg-ibot-zigzag-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+}
+
+/* ===== SECTION 5: ACCORDION ===== */
+.tg-ibot-accordion {
+    padding: 100px 40px;
+    background: linear-gradient(135deg, #f0fffe 0%, #e8f5f4 100%);
+}
+
+.tg-ibot-accordion-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.tg-ibot-accordion-container h2 {
+    font-size: 42px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #005a55;
+}
+
+.tg-ibot-accordion-item {
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 130, 115, 0.1);
+}
+
+.tg-ibot-accordion-header {
+    width: 100%;
+    padding: 20px;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: #005a55;
+    transition: all 0.3s ease;
+}
+
+.tg-ibot-accordion-header:hover {
+    background: #f9f9f9;
+    border-color: #ff8c00;
+    color: #ff8c00;
+}
+
+.tg-ibot-accordion-item.active .tg-ibot-accordion-header {
+    background: linear-gradient(135deg, #006d66 0%, #008273 100%);
+    color: white;
+    border-color: #006d66;
+}
+
+.tg-ibot-accordion-icon {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.tg-ibot-accordion-item.active .tg-ibot-accordion-icon {
+    transform: rotate(45deg);
+    color: #ff8c00;
+}
+
+.tg-ibot-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-top: none;
+    padding: 0;
+}
+
+.tg-ibot-accordion-item.active .tg-ibot-accordion-content {
+    max-height: 300px;
+    padding: 20px;
+}
+
+.tg-ibot-accordion-content p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #666;
+}
+
+/* ===== SECTION 6: HORIZONTAL SCROLL ===== */
+.tg-ibot-scroll-showcase {
+    padding: 100px 40px;
+    background: white;
+}
+
+.tg-ibot-showcase-header {
+    max-width: 1200px;
+    margin: 0 auto 50px;
+}
+
+.tg-ibot-showcase-header h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #005a55;
+}
+
+.tg-ibot-showcase-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 0 40px;
+    margin: 0 -40px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.tg-ibot-showcase-scroll::-webkit-scrollbar {
+    height: 0px;
+    display: none;
+}
+
+.tg-ibot-showcase-scroll::-webkit-scrollbar-track {
+    display: none;
+}
+
+.tg-ibot-showcase-scroll::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+.tg-ibot-showcase-track {
+    display: flex;
+    gap: 25px;
+    min-width: min-content;
+}
+
+.tg-ibot-showcase-card {
+    flex: 0 0 280px;
+    padding: 25px;
+    background: white;
+    border: 2px solid #e8f5f4;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.tg-ibot-showcase-card:hover {
+    border-color: #ff8c00;
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 130, 115, 0.2);
+}
+
+.tg-ibot-showcase-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.tg-ibot-showcase-card h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #005a55;
+    margin-bottom: 8px;
+}
+
+.tg-ibot-showcase-card p {
+    font-size: 13px;
+    color: #999;
+}
+
+/* ===== SECTION 7: FINAL CTA ===== */
+.tg-ibot-cta-final {
+    padding: 80px 40px;
+    background: #e0f4ff;
+    color: #005a55;
+    text-align: center;
+}
+
+.tg-ibot-cta-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.tg-ibot-cta-final h2 {
+    font-size: 44px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #005a55;
+}
+
+.tg-ibot-cta-final p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #005a55;
+    opacity: 1;
+}
+
+.tg-ibot-cta-submit {
+    padding: 16px 45px;
+    font-size: 16px;
+    font-weight: 700;
+    border: 2px solid #005a55;
+    border-radius: 8px;
+    background: #005a55;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tg-ibot-cta-submit:hover {
+    background: white;
+    color: #005a55;
+    transform: scale(1.05);
+}
+
+/* ===== WHATSAPP FORM SECTION ===== */
+.tg-ibot-whatsapp-form-section {
+    padding: 80px 40px;
+    background: linear-gradient(135deg, #f0fffe 0%, #ffffff 100%);
+}
+
+.tg-ibot-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 50px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 130, 115, 0.1);
+}
+
+.tg-ibot-form-container h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #005a55;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.tg-ibot-form-container > p {
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tg-ibot-inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tg-ibot-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.tg-ibot-form-input,
+.tg-ibot-form-textarea {
+    padding: 14px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    color: #333;
+}
+
+.tg-ibot-form-input::placeholder,
+.tg-ibot-form-textarea::placeholder {
+    color: #999;
+}
+
+.tg-ibot-form-input:focus,
+.tg-ibot-form-textarea:focus {
+    outline: none;
+    border-color: #006d66;
+    box-shadow: 0 0 0 3px rgba(0, 109, 102, 0.1);
+}
+
+.tg-ibot-form-textarea {
+    grid-column: 1 / -1;
+    resize: vertical;
+    min-height: 120px;
+}
+
+.tg-ibot-form-submit {
+    grid-column: 1 / -1;
+    padding: 16px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #006d66 0%, #008273 100%);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+}
+
+.tg-ibot-form-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 130, 115, 0.3);
+    background: linear-gradient(135deg, #004d47 0%, #006d66 100%);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
-    .ibot-page .features-section {
-        padding: 20px 0 0;
+    .ibot-page-root .content-layout {
+        flex-direction: column;
+        gap: 40px;
+        transform: translateY(-20px);
     }
 
-    .ibot-page .feature-item {
+    .ibot-page-root .info-section {
+        text-align: center;
+    }
+
+    .ibot-page-root .btn-secondary {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tg-ibot-split-content {
         grid-template-columns: 1fr;
-        gap: 25px;
-        margin-bottom: 0;
-        min-height: auto;
-        padding: 50px 20px;
+        gap: 40px;
     }
 
-    /* On mobile, reset explicit grid columns to stack naturally */
-    .ibot-page .feature-item.feature-left .feature-image,
-    .ibot-page .feature-item.feature-left .feature-content,
-    .ibot-page .feature-item.feature-right .feature-image,
-    .ibot-page .feature-item.feature-right .feature-content {
-        grid-column: auto;
+    .tg-ibot-split-text h2 {
+        font-size: 36px;
     }
 
-    .ibot-page .kit-container {
+    .tg-ibot-zigzag-item {
         grid-template-columns: 1fr;
         gap: 30px;
     }
 
-    .ibot-page .kit-components {
+    .tg-ibot-zigzag-right {
+        direction: ltr;
+    }
+
+    .tg-ibot-staggered-blocks {
         grid-template-columns: 1fr;
+        grid-template-areas: unset;
     }
 
-    .ibot-page .tech-grid {
-        grid-template-columns: 1fr;
+    .tg-ibot-block-2,
+    .tg-ibot-block-4,
+    .tg-ibot-block-6 {
+        transform: none;
     }
 
-    .ibot-page .projects-scroll {
-        padding: 20px 10px;
+    .tg-ibot-showcase-card {
+        flex: 0 0 240px;
     }
 
-    .ibot-page .project-card {
-        min-width: 250px;
+    .tg-ibot-visual-impact h2,
+    .tg-ibot-section-title {
+        font-size: 32px;
     }
 
-    .ibot-page .testimonials-scroll {
-        padding: 15px;
+    .tg-ibot-split-text p,
+    .tg-ibot-visual-impact p {
+        font-size: 16px;
     }
-
-    .ibot-page .testimonial-card {
-        min-width: 280px;
-    }
-
-    .ibot-page .form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .ibot-page .form-section {
-        padding: 50px 15px;
-    }
-
-    .ibot-page .inquiry-form {
-        padding: 25px;
-    }
-
-    .ibot-page .features-section h2,
-    .ibot-page .kit-section h2,
-    .ibot-page .technology-section h2,
-    .ibot-page .projects-section h2,
-    .ibot-page .testimonials-section h2 {
-        font-size: 2rem;
-    }
-
-    .ibot-page .hero-bottom-fade {
-        height: 80px;
-    }
-
-    /* On mobile, place image before content for stacked features */
-    .ibot-page .feature-item .feature-image { order: -1; }
-    .ibot-page .feature-item .feature-content { order: 0; }
 }
 
 @media (max-width: 480px) {
-    .ibot-page .brand-name {
-        font-size: 2rem;
+    .tg-ibot-split-intro,
+    .tg-ibot-features-staggered,
+    .tg-ibot-zigzag,
+    .tg-ibot-accordion,
+    .tg-ibot-cta-final {
+        padding: 50px 20px;
     }
 
-    .ibot-page .hero-desc {
-        font-size: 1rem;
+    .tg-ibot-split-text h2 {
+        font-size: 28px;
     }
 
-    .ibot-page .feature-content h3,
-    .ibot-page .kit-info h3 {
-        font-size: 1.5rem;
+    .tg-ibot-feature-block {
+        padding: 25px;
     }
 
-    .ibot-page .intro-section h2,
-    .ibot-page .features-section h2,
-    .ibot-page .kit-section h2,
-    .ibot-page .technology-section h2,
-    .ibot-page .projects-section h2,
-    .ibot-page .testimonials-section h2 {
-        font-size: 1.7rem;
+    .tg-ibot-showcase-card {
+        flex: 0 0 200px;
+    }
+
+    .tg-ibot-cta-btn, .tg-ibot-impact-btn, .tg-ibot-cta-submit {
+        width: 100%;
+    }
+
+    .tg-ibot-form-container {
+        padding: 30px 20px;
+    }
+
+    .tg-ibot-form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .tg-ibot-form-input,
+    .tg-ibot-form-textarea {
+        font-size: 14px;
+    }
+
+    .tg-ibot-form-submit {
+        font-size: 14px;
+        padding: 14px 30px;
     }
 }

@@ -151,7 +151,7 @@ function Header() {
                   <li><a href="/cbse-ai-robotics-lab-setup-nep-2020" onClick={(e) => { e.preventDefault(); handlePageNavigation('/cbse-ai-robotics-lab-setup-nep-2020'); }}>AI & Robotics Lab CBSE</a></li>
                   <li><a href="/ai-robotics-lab-icse-schools-india" onClick={(e) => { e.preventDefault(); handlePageNavigation('/ai-robotics-lab-icse-schools-india'); }}>AI & Robotics Lab ICSE</a></li>
                   <li><a href="/stem-tinkering-lab-for-schools-india" onClick={(e) => { e.preventDefault(); handlePageNavigation('/stem-tinkering-lab-for-schools-india'); }}>STEM Tinkering Lab</a></li>
-                  <li><a href="/schools/composite-skill-lab" onClick={(e) => { e.preventDefault(); handlePageNavigation('/schools/composite-skill-lab'); }}>Composite Skill Lab</a></li>
+                  <li><a href="/cbse-composite-skill-lab-setup-for-schools-india" onClick={(e) => { e.preventDefault(); handlePageNavigation('/cbse-composite-skill-lab-setup-for-schools-india'); }}>Composite Skill Lab</a></li>
 
                   <li><a href="/schools/stem-lab" onClick={(e) => { e.preventDefault(); handlePageNavigation('/schools/stem-lab'); }}>STEM Lab</a></li>
                   <li><a href="/schools/workshop" onClick={(e) => { e.preventDefault(); handlePageNavigation('/schools/workshop'); }}>Workshop</a></li>

@@ -56,11 +56,14 @@ function App() {
       <Route path="/ai-roboticslab-cbse" element={<Navigate to="/cbse-ai-robotics-lab-setup-nep-2020" replace />} />
       <Route path="/ai-robotics-lab-icse-schools-india" element={<AIRoboticLabICSEPage />} />
       <Route path="/ai-roboticslab-icse" element={<Navigate to="/ai-robotics-lab-icse-schools-india" replace />} />
-      <Route path="/schools/stem-lab" element={<StemLabPage />} />
+      <Route path="/stem-labs-for-schools" element={<StemLabPage />} />
+      <Route path="/schools/stem-lab" element={<Navigate to="/stem-labs-for-schools" replace />} />
       <Route path="/stem-tinkering-lab-for-schools-india" element={<StemTinkeringLabPage />} />
       <Route path="/schools/stem-tinkering-lab" element={<Navigate to="/stem-tinkering-lab-for-schools-india" replace />} />
-      <Route path="/schools/composite-skill-lab" element={<CompositeSkillLabPage />} />
-      <Route path="/schools/workshop" element={<WorkshopPageWrapper />} />
+      <Route path="/cbse-composite-skill-lab-setup-for-schools-india" element={<CompositeSkillLabPage />} />
+      <Route path="/schools/composite-skill-lab" element={<Navigate to="/cbse-composite-skill-lab-setup-for-schools-india" replace />} />
+      <Route path="/stem-robotics-workshops-for-schools-india" element={<WorkshopPageWrapper />} />
+      <Route path="/schools/workshop" element={<Navigate to="/stem-robotics-workshops-for-schools-india" replace />} />
       <Route path="/franchise" element={<FranchisePageWrapper />} />
       <Route path="/courses" element={<CoursesPageWrapper />} />
       <Route path="/shop" element={<ShopPageWrapper />} />

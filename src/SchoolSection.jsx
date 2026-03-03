@@ -127,7 +127,7 @@ function SchoolSection() {
                   </ul>
                   <div>
                     
-                    <Link className="tab-cta" to="/schools/composite-skill-lab">Explore Composite Skill Lab</Link>
+                    <Link className="tab-cta" to="/cbse-composite-skill-lab-setup-for-schools-india">Explore Composite Skill Lab</Link>
 
                   </div>
                 </div>

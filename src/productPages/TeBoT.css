@@ -187,6 +187,27 @@
     margin-top: 20px;
 }
 
+.tebot-page-root .tebot-video-container {
+    position: relative;
+    margin: clamp(26px, 4vw, 36px) auto 0;
+    width: 100%;
+    max-width: 900px;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #0f172a;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.tebot-page-root .tebot-intro-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
 /* ===== EXPLORE, CREATE & INNOVATE SECTION ===== */
 .tebot-page-root .explore-section {
     padding: clamp(60px, 10vw, 100px) clamp(15px, 4vw, 20px);
@@ -237,13 +258,15 @@
 
 .tebot-page-root .explore-point {
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    gap: 18px;
     background: white;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border-left: 4px solid #ff6b35;
+    height: 100%;
 }
 
 .tebot-page-root .explore-point:hover {
@@ -251,10 +274,20 @@
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 }
 
-.tebot-page-root .explore-icon {
-    font-size: 2.5rem;
-    flex-shrink: 0;
-    line-height: 1;
+.tebot-page-root .explore-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    border: 1px solid #dbe8ff;
+}
+
+.tebot-page-root .explore-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
 }
 
 .tebot-page-root .explore-point h3 {
@@ -293,8 +326,10 @@
 
 .tebot-page-root .tech-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
     gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .tebot-page-root .tech-card {
@@ -354,58 +389,56 @@
     font-weight: 700;
 }
 
-.tebot-page-root .specs-table-wrapper {
-    overflow-x: auto;
-    background: transparent;
-}
-
-.tebot-page-root .specs-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 0;
-}
-
-.tebot-page-root .specs-table tbody {
-    display: contents;
-}
-
-.tebot-page-root .spec-row {
+.tebot-page-root .specs-card {
     display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 25px;
-    padding: 25px 30px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    border-left: 4px solid #10b981;
-    margin-bottom: 18px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    grid-template-columns: minmax(280px, 0.95fr) minmax(320px, 1.05fr);
+    gap: clamp(20px, 3vw, 32px);
     align-items: center;
+    background: linear-gradient(180deg, #ffffff 0%, #f9fcff 100%);
+    border: 1px solid #dbe8ff;
+    border-radius: 18px;
+    padding: clamp(18px, 3vw, 26px);
 }
 
-.tebot-page-root .spec-row:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-    border-left-color: #1976d2;
-}
-
-.tebot-page-root .spec-label {
-    font-weight: 700;
-    font-size: 1.05rem;
-    color: #1f2937;
+.tebot-page-root .specs-image-wrap {
+    height: 100%;
+    min-height: 280px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #dbe8ff;
+    background: #edf4ff;
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 0;
-    margin: 0;
+    justify-content: center;
 }
 
-.tebot-page-root .spec-detail {
-    color: #555;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    padding: 0;
+.tebot-page-root .specs-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.tebot-page-root .specs-points-list {
+    list-style: none;
     margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+}
+
+.tebot-page-root .specs-points-list li {
+    color: #324765;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1px solid #dde8f8;
+}
+
+.tebot-page-root .specs-points-list li strong {
+    color: #0f1f3a;
 }
 
 /* ===== WHY TEBOT SECTION ===== */
@@ -450,7 +483,23 @@
 }
 
 .tebot-page-root .benefit-icon {
-    font-size: 3rem;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 15px;
+}
+
+.tebot-page-root .benefit-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    border-radius: 12px;
+    border: 1px solid #dbe8ff;
+    background: #f8fbff;
+    padding: 10px;
+}
+
+.tebot-page-root .benefit-icon {
     margin-bottom: 15px;
     line-height: 1;
 }
@@ -723,10 +772,21 @@
     margin-bottom: 50px;
 }
 
-.tebot-page-root .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+.tebot-page-root .projects-scroll-wrap {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.tebot-page-root .projects-scroll-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: tebotProjectScroll 44s linear infinite;
+}
+
+.tebot-page-root .projects-scroll-wrap:hover .projects-scroll-track {
+    animation-play-state: paused;
 }
 
 .tebot-page-root .project-card {
@@ -737,6 +797,8 @@
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border-left: 4px solid #1976d2;
     text-align: center;
+    width: clamp(230px, 28vw, 300px);
+    flex: 0 0 auto;
 }
 
 .tebot-page-root .project-card:hover {
@@ -770,6 +832,15 @@
     color: #555;
     line-height: 1.6;
     margin: 0;
+}
+
+@keyframes tebotProjectScroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-50% - 10px));
+    }
 }
 
 /* ===== KIT SECTION (OLD - NO LONGER USED) ===== */
@@ -1080,8 +1151,9 @@
         grid-template-columns: 1fr;
     }
 
-    .tebot-page-root .projects-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    .tebot-page-root .projects-scroll-track {
+        gap: 16px;
+        animation-duration: 36s;
     }
 }
 
@@ -1126,28 +1198,12 @@
         grid-template-columns: 1fr;
     }
 
-    .tebot-page-root .explore-point {
-        flex-direction: column;
-        text-align: center;
+    .tebot-page-root .specs-card {
+        grid-template-columns: 1fr;
     }
 
-    .tebot-page-root .explore-point h3 {
-        margin-top: 10px;
-    }
-
-    .tebot-page-root .spec-row {
-        grid-template-columns: 180px 1fr;
-        gap: 20px;
-        padding: 20px 25px;
-        margin-bottom: 15px;
-    }
-
-    .tebot-page-root .spec-label {
-        font-size: 0.95rem;
-    }
-
-    .tebot-page-root .spec-detail {
-        font-size: 0.9rem;
+    .tebot-page-root .specs-image-wrap {
+        min-height: 220px;
     }
 }
 
@@ -1218,21 +1274,22 @@
         padding: 12px;
     }
 
-    .tebot-page-root .spec-row {
-        grid-template-columns: 1fr;
-        gap: 12px;
-        padding: 18px 20px;
-        margin-bottom: 12px;
+    .tebot-page-root .tebot-video-container {
+        border-radius: 12px;
     }
 
-    .tebot-page-root .spec-label {
-        font-size: 0.9rem;
-        font-weight: 700;
+    .tebot-page-root .specs-card {
+        padding: 14px;
     }
 
-    .tebot-page-root .spec-detail {
+    .tebot-page-root .specs-points-list li {
         font-size: 0.85rem;
         line-height: 1.5;
+    }
+
+    .tebot-page-root .project-card {
+        width: 76vw;
+        max-width: 280px;
     }
 }
 

@@ -9,6 +9,54 @@ import LabImage6 from '../assets/ForSchoolsWorkShopImages/WhatsApp Image 2021-08
 import LabImage7 from '../assets/ForSchoolsWorkShopImages/WhatsApp Image 2023-06-05 at 13.02.06.jpg';
 
 function WorkshopPage() {
+	// ==========================================
+	// SEO META TAGS
+	// ==========================================
+	useEffect(() => {
+		// Set document title
+		document.title = "STEM Robotics Workshops for Schools | TechyGuide India";
+
+		// Update or create meta description
+		let metaDescription = document.querySelector('meta[name="description"]');
+		if (!metaDescription) {
+			metaDescription = document.createElement('meta');
+			metaDescription.name = 'description';
+			document.head.appendChild(metaDescription);
+		}
+		metaDescription.content = "Join TechyGuide STEM robotics workshops for schools. Practical learning in robotics, IoT, electronics & mechatronics with certifications nationwide.";
+
+		// Add canonical link
+		let canonical = document.querySelector('link[rel="canonical"]');
+		if (!canonical) {
+			canonical = document.createElement('link');
+			canonical.rel = 'canonical';
+			document.head.appendChild(canonical);
+		}
+		canonical.href = 'https://techyguide.com/stem-robotics-workshops-for-schools-india';
+
+		// Add Open Graph tags
+		const ogTags = [
+			{ property: 'og:title', content: 'STEM Robotics Workshops for Schools | TechyGuide India' },
+			{ property: 'og:description', content: 'Join TechyGuide STEM robotics workshops for schools. Practical learning in robotics, IoT, electronics & mechatronics with certifications nationwide.' },
+			{ property: 'og:url', content: 'https://techyguide.com/stem-robotics-workshops-for-schools-india' },
+			{ property: 'og:type', content: 'website' }
+		];
+
+		ogTags.forEach(tagData => {
+			let tag = document.querySelector(`meta[property="${tagData.property}"]`);
+			if (!tag) {
+				tag = document.createElement('meta');
+				tag.setAttribute('property', tagData.property);
+				document.head.appendChild(tag);
+			}
+			tag.content = tagData.content;
+		});
+
+		return () => {
+			// Cleanup is handled by document.title and meta tags remaining on page
+		};
+	}, []);
+
 	useEffect(() => {
 		// Smooth Scroll within workshop page root
 		const root = document.querySelector('.workshop-page-root');
@@ -107,8 +155,8 @@ function WorkshopPage() {
 				<div className="hero-split left">
 					<div className="content-box">
 						<div className="tagline"><i className="fas fa-child"></i> COMMUNITY OF LEARNERS</div>
-						<h1>Develop Independence <br /><span className="text-orange">Try New Adventures</span></h1>
-						<p>Our workshops and summer/winter camps create a safe environment where children have fun while learning lifelong lessons.</p>
+						<h1>STEM Robotics Workshops & <br /><span className="text-orange">Innovation Camps</span></h1>
+						<p>Interactive robotics workshops and camps building creativity, confidence, and future-ready skills in a safe, fun space.</p>
 
 						<div className="btn-group">
 							<a href="#workshops" className="btn-primary">Learn More</a>
@@ -122,7 +170,7 @@ function WorkshopPage() {
 							</div>
 							<div className="stat">
 								<h3>100%</h3>
-								<span>Hands-on Activity</span>
+								<span>Hands-on Practical Learning</span>
 							</div>
 						</div>
 					</div>
@@ -146,7 +194,7 @@ function WorkshopPage() {
 						<div className="tech-card glass">
 							<div className="card-icon"><i className="fas fa-cogs"></i></div>
 							<div className="card-body">
-								<h3>Mechatronics</h3>
+								<h3>Mechatronics Training</h3>
 								<p>Combining mechanics and electronics for advanced automation.</p>
 							</div>
 						</div>
@@ -355,7 +403,7 @@ function WorkshopPage() {
 
 					<div className="bento-grid">
 						<div className="bento-item main-feature">
-							<img src={LabImage1} alt="Workshop Activities" />
+							<img src={LabImage1} alt="Students participating in TechyGuide robotics lab activities " />
 							{/* <div className="bento-overlay">
 								<div className="tech-badge">PRIMARY FOCUS</div>
 								<h3>Student Engagement</h3>
@@ -364,7 +412,7 @@ function WorkshopPage() {
 						</div>
 
 						<div className="bento-item">
-							<img src={LabImage2} alt="Hands-on Learning" />
+							<img src={LabImage2} alt="Students participating in TechyGuide robotics lab activities " />
 							{/* <div className="bento-overlay">
 								<div className="tech-badge">PRACTICAL</div>
 								<h3>Hands-on Training</h3>
@@ -372,7 +420,7 @@ function WorkshopPage() {
 						</div>
 
 						<div className="bento-item">
-							<img src={LabImage3} alt="STEM Activities" />
+							<img src={LabImage3} alt="Students participating in TechyGuide robotics lab activities " />
 							{/* <div className="bento-overlay">
 								<div className="tech-badge">STEM</div>
 								<h3>STEM Projects</h3>
@@ -380,7 +428,7 @@ function WorkshopPage() {
 						</div>
 
 						<div className="bento-item">
-							<img src={LabImage4} alt="Student Projects" />
+							<img src={LabImage4} alt="Students participating in TechyGuide robotics lab activities " />
 							{/* <div className="bento-overlay">
 								<div className="tech-badge">INNOVATION</div>
 								<h3>Creative Solutions</h3>
@@ -388,7 +436,7 @@ function WorkshopPage() {
 						</div>
 
 						<div className="bento-item">
-							<img src={LabImage6} alt="Workshop Session" />
+							<img src={LabImage6} alt="Students participating in TechyGuide robotics lab activities " />
 							{/* <div className="bento-overlay">
 								<div className="tech-badge">WORKSHOP</div>
 								<h3>Skill Development</h3>
@@ -396,7 +444,7 @@ function WorkshopPage() {
 						</div>
 
 						<div className="bento-item wide-feature">
-							<img src={LabImage5} alt="Robotics Lab" />
+							<img src={LabImage5} alt="Students participating in TechyGuide robotics lab activities " />
 							{/* <div className="bento-overlay">
 								<div className="tech-badge">ROBOTICS</div>
 								<h3>Robotics Lab</h3>
@@ -405,7 +453,7 @@ function WorkshopPage() {
 						</div>
 
 						<div className="bento-item wide-feature">
-							<img src={LabImage7} alt="Learning Environment" />
+							<img src={LabImage7} alt="Students participating in TechyGuide robotics lab activities " />
 							{/* <div className="bento-overlay">
 								<div className="tech-badge">TEAMWORK</div>
 								<h3>Collaborative Learning</h3>

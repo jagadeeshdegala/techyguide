@@ -515,7 +515,7 @@ Watch how TechyGuide’s state-of-the-art AI & Robotics Labs are transforming cl
           <div className="infra-grid">
             <div className="infra-box fade-up">
               <i className="fas fa-laptop"></i>
-              <h3>Computing</h3>
+              <h3>Computing Device</h3>
               <p><strong>Ratio:</strong> 2:1 (Student to Device)</p>
               <p><strong>Specs:</strong> Intel i5, 8GB RAM, Win 10+</p>
               <p><strong>Features:</strong> Bluetooth, Webcam, Wi-Fi.</p>

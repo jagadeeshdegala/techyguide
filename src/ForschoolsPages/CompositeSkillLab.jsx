@@ -11,6 +11,53 @@ import LabImage6 from '../assets/ForSchoolsCompositeSkillLabImages/WhatsApp Imag
 export default function CompositeSkillLab() {
   const [activeTab, setActiveTab] = useState('digital');
 
+  // SEO Meta Tags & Document Title
+  useEffect(() => {
+    // Update document title
+    document.title = 'CBSE Composite Skill Lab Setup | 600 Sq Ft';
+
+    // Update or create meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = 'description';
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.content = 'Complete CBSE Composite Skill Lab setup for schools with 600 sq ft mandatory infrastructure. End-to-end lab design, equipment, training & compliance support.';
+
+    // Set canonical URL
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = 'https://techyguide.com/cbse-composite-skill-lab-setup-for-schools-india';
+
+    // Update or create Open Graph tags
+    const ogTags = {
+      'og:title': 'CBSE Composite Skill Lab Setup | 600 Sq Ft Mandatory',
+      'og:description': 'Complete CBSE Composite Skill Lab setup for schools with 600 sq ft mandatory infrastructure. End-to-end lab design, equipment, training & compliance support.',
+      'og:url': 'https://techyguide.com/cbse-composite-skill-lab-setup-for-schools-india',
+      'og:type': 'website'
+    };
+
+    Object.entries(ogTags).forEach(([property, content]) => {
+      let ogTag = document.querySelector(`meta[property="${property}"]`);
+      if (!ogTag) {
+        ogTag = document.createElement('meta');
+        ogTag.setAttribute('property', property);
+        document.head.appendChild(ogTag);
+      }
+      ogTag.content = content;
+    });
+
+    return () => {
+      document.title = 'TechyGuide';
+    };
+  }, []);
+
+  // DOM Interactions & Animations
   useEffect(() => {
     // 1. Scroll Animations (Fade Up / Slide In)
     const observer = new IntersectionObserver((entries) => {
@@ -177,8 +224,8 @@ export default function CompositeSkillLab() {
               <img src={LogoImg} alt="CBSE Logo" className="hero-logo" />
               <span>Circular No. Skill-75/2024</span>
             </div>
-            <h1>Mandatory <br /><span className="highlight-text">Composite Skill Lab</span></h1>
-            <p><strong>Bridge the Skill Gap:</strong> A dedicated space designed to prepare students for diverse career paths. We help you bridge the gap between theoretical knowledge and industry needs through a <strong>70% Practical / 30% Theory</strong> learning approach.</p>
+            <h1>CBSE <br /><span className="highlight-text">Composite Skill Lab Setup</span></h1>
+            <p><strong>Bridge the Skill Gap:</strong>Under Central Board of Secondary Education Circular Skill-75/2024, all affiliated schools must establish a Composite Skill Lab. Aligned with NEP 2020 and NCF-SE, it follows a 70% practical, 30% theory model. New schools must comply for affiliation; existing schools by Aug 2027. </p>
             <div className="hero-btns">
               <a href="#configurations" className="btn btn-orange">View Layout Options</a>
               <a href="#mandates" className="btn btn-glass">Implementation Rules</a>
@@ -267,7 +314,7 @@ export default function CompositeSkillLab() {
             </div>
             <div className="stat-item fade-up">
               <h2 className="counter" data-target="30">0</h2><span>%</span>
-              <p>Theory Concepts<br />(Foundational Knowledge)</p>
+              <p>Theory Concepts<br />(Theory Learning Model)</p>
             </div>
             <div className="stat-item fade-up">
               <h2 className="counter" data-target="100">0</h2><span>%</span>

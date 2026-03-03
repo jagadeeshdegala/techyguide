@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './E-Blox.css';
 
 // Import images
@@ -13,9 +14,12 @@ import bgImage1 from '../assets/ProductE-BloxImages/9743528.png';
 import bgImage2 from '../assets/ProductE-BloxImages/5073198.jpg';
 
 export default function EBlox() {
+        const navigate = useNavigate();
         const [isKitPaused, setIsKitPaused] = useState(false);
         const [kitSlideIndex, setKitSlideIndex] = useState(0);
         const ebloxKitImages = [robot5, hacker];
+        const projectsContainer = useRef(null);
+        const [expandedAccordion, setExpandedAccordion] = useState(0);
 
         // WhatsApp form submission handler
         useEffect(() => {
@@ -66,6 +70,35 @@ export default function EBlox() {
             if (sliderTimeout) clearTimeout(sliderTimeout);
         };
     }, [isKitPaused, ebloxKitImages.length]);
+
+    useEffect(() => {
+        const root = rootRef.current;
+
+        // Accordion functionality
+        if (root) {
+            const accordionHeaders = root.querySelectorAll('.tg-eblox-accordion-header');
+            const handleAccordionClick = (e) => {
+                const headerEl = e.currentTarget;
+                const itemEl = headerEl.closest('.tg-eblox-accordion-item');
+                const itemIndex = Array.from(root.querySelectorAll('.tg-eblox-accordion-item')).indexOf(itemEl);
+                setExpandedAccordion(expandedAccordion === itemIndex ? -1 : itemIndex);
+            };
+
+            accordionHeaders.forEach((header) => {
+                header.addEventListener('click', handleAccordionClick);
+            });
+
+            // Update accordion active state based on state
+            const accordionItems = root.querySelectorAll('.tg-eblox-accordion-item');
+            accordionItems.forEach((item, index) => {
+                if (index === expandedAccordion) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+    }, [expandedAccordion]);
 
     useEffect(() => {
         const root = rootRef.current;
@@ -159,7 +192,7 @@ export default function EBlox() {
     }, []);
 
     return (
-        <div className="eblox-page-root" ref={rootRef} style={{
+        <div className="eblox-page-root" style={{
             backgroundImage: `linear-gradient(rgba(0, 255, 149, 0.267), rgba(0, 130, 115, 0.25)), url(${bgImage1}), linear-gradient(rgba(0, 130, 115, 0.6), rgba(0, 130, 115, 0.6)), url(${bgImage2})`,
             backgroundColor: '#008273',
             backgroundRepeat: 'no-repeat',
@@ -172,248 +205,252 @@ export default function EBlox() {
                     <div className="image-section">
                         <img src={robotKids} alt="E-Blox Kit" />
                     </div>
-
                     <div className="info-section">
                         <h1>E-Blox Kit</h1>
-                        <h2>Multi-purpose electronics kit for young learners with 20+ products</h2>
+                        <h2>Modular electronics kit for engineering education with 20+ components</h2>
                         <button className="btn-secondary">Explore Features</button>
                     </div>
                 </main>
             </div>
 
-            <div className="ibot-page" id="root">
+            <div className="tg-eblox-page" ref={rootRef}>
+                {/* 1. Immersive Split Intro Section */}
+                <section className="tg-eblox-split-intro" id="split-intro">
+                    <div className="tg-eblox-split-content">
+                        <div className="tg-eblox-split-image">
+                            <img src={robot5} alt="E-Blox Electronics Kit" loading="lazy" />
+                        </div>
+                        <div className="tg-eblox-split-text">
+                            <h2>Modular Electronics for <span className="tg-eblox-highlight">Engineering Excellence</span></h2>
+                            <p>E-Blox delivers structured, component-based learning that scales from basic electronics to advanced IoT systems with precision engineering.</p>
+                            <button className="tg-eblox-cta-btn">Explore Components</button>
+                        </div>
+                    </div>
+                </section>
 
-                <section className="intro-section" id="introduction">
-                    <div className="intro-container">
-                        <h2>Introduction to E-Blox Kit</h2>
-                        <p className="intro-tagline">Encouraging hands-on exploration of electronics and renewable energy concepts</p>
-                        <div className="video-container">
+                {/* Introduction to E-Blox */}
+                <section className="tg-eblox-introduction" id="introduction">
+                    <div className="tg-eblox-intro-container">
+                        <h2>Introduction to E-Blox Electronics Kit</h2>
+                        <p className="tg-eblox-intro-desc">
+                            The E-Blox Kit is a modular electronics platform designed to teach circuit design, electronics fundamentals, and IoT integration. With 20+ components and industry-standard connectors, E-Blox bridges the gap between theoretical learning and practical engineering applications, enabling students to build real-world projects from day one.
+                        </p>
+                        <div className="tg-eblox-video-wrapper">
                             <iframe
-                                className="intro-video"
-                                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                                width="100%"
+                                height="400"
+                                src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0"
                                 title="E-Blox Kit Introduction"
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen>
-                            </iframe>
+                                allowFullScreen
+                            ></iframe>
                         </div>
                     </div>
                 </section>
 
-                <section className="features-section" id="features">
-                    <h2>Why <span>E-Blox is the Best Choice</span></h2>
-                    <div className="features-container">
-                        <div className="feature-item feature-left feature-bg-1">
-                            <div className="feature-image">
-                                <img src={robot1} alt="Modular Design" />
+                {/* 2. Dynamic Feature Blocks (Staggered Layout) */}
+                <section className="tg-eblox-features-staggered" id="features-staggered">
+                    <div className="tg-eblox-features-container">
+                        <h2 className="tg-eblox-section-title">Engineering Excellence</h2>
+                        <div className="tg-eblox-staggered-blocks">
+                            <div className="tg-eblox-feature-block tg-eblox-block-1">
+                                <div className="tg-eblox-block-icon">⚙️</div>
+                                <h3>Component Modularity</h3>
+                                <p>20+ discrete modules stack seamlessly for structured learning from basic circuits to complex systems.</p>
                             </div>
-                            <div className="feature-content">
-                                <h3>Constructive & Modular</h3>
-                                <p>Designed specifically for easy assembly and learning. The modular blocks allow students to build and rebuild with creativity.</p>
-                                <ul className="feature-points">
-                                    <li>✓ Designed for Assembly</li>
-                                    <li>✓ High Reusability</li>
-                                    <li>✓ Creative Freedom</li>
-                                </ul>
+                            <div className="tg-eblox-feature-block tg-eblox-block-2">
+                                <div className="tg-eblox-block-icon">🔌</div>
+                                <h3>Standard Connectors</h3>
+                                <p>Industry-standard connectors ensure compatibility and teach proper component integration practices.</p>
                             </div>
-                        </div>
-
-                        <div className="feature-item feature-right feature-bg-2">
-                            <div className="feature-content">
-                                <h3>Plug & Play Setup</h3>
-                                <p>Ready-to-use components with JST connectors enable quick setup, so students can focus on learning logic rather than complex wiring.</p>
-                                <ul className="feature-points">
-                                    <li>✓ Quick Setup</li>
-                                    <li>✓ JST Connectors</li>
-                                    <li>✓ Error-Free Wiring</li>
-                                </ul>
+                            <div className="tg-eblox-feature-block tg-eblox-block-3">
+                                <div className="tg-eblox-block-icon">📊</div>
+                                <h3>Structured Learning Path</h3>
+                                <p>Progressive complexity from circuits to IoT ensures fundamental understanding before advancement.</p>
                             </div>
-                            <div className="feature-image">
-                                <img src={robot2} alt="Plug and Play" />
+                            <div className="tg-eblox-feature-block tg-eblox-block-4">
+                                <div className="tg-eblox-block-icon">🔍</div>
+                                <h3>Real Schematics</h3>
+                                <p>Full circuit diagrams and technical documentation teach electronics engineering principles directly.</p>
                             </div>
-                        </div>
-
-                        <div className="feature-item feature-left feature-bg-3">
-                            <div className="feature-image">
-                                <img src={robot3} alt="Safety First" />
+                            <div className="tg-eblox-feature-block tg-eblox-block-5">
+                                <div className="tg-eblox-block-icon">💡</div>
+                                <h3>Breadboard Ready</h3>
+                                <p>Components work with standard breadboards for hands-on circuit prototyping and experimentation.</p>
                             </div>
-                            <div className="feature-content">
-                                <h3>Child Safe Design</h3>
-                                <p>Perfect for the classroom. Our components are low voltage, non-toxic, and certified safe for young innovators.</p>
-                                <ul className="feature-points">
-                                    <li>✓ Low Voltage System</li>
-                                    <li>✓ Non-toxic Materials</li>
-                                    <li>✓ Classroom-Safe</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div className="feature-item feature-right feature-bg-4">
-                            <div className="feature-content">
-                                <h3>Renewable Energy Concepts</h3>
-                                <p>Students can build practical projects that teach them about green energy, such as mini windmills and smart lighting.</p>
-                                <ul className="feature-points">
-                                    <li>✓ Solar & Wind Basics</li>
-                                    <li>✓ Energy Conversion</li>
-                                    <li>✓ Practical Applications</li>
-                                </ul>
-                            </div>
-                            <div className="feature-image">
-                                <img src={robot4} alt="Renewable Energy" />
+                            <div className="tg-eblox-feature-block tg-eblox-block-6">
+                                <div className="tg-eblox-block-icon">🏗️</div>
+                                <h3>Professional Grade</h3>
+                                <p>Industrial-quality components used in actual circuit design for authentic engineering experience.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section className="kit-section" id="kit-details">
-                    <h2> E-Blox Offerings</h2>
-                    <div 
-                        className="kit-slider-wrapper"
-                        onMouseEnter={() => setIsKitPaused(true)}
-                        onMouseLeave={() => setIsKitPaused(false)}
-                    >
-                        <div className="kit-slider-image">
-                            <div 
-                                className="kit-slide fade"
-                                style={{ display: kitSlideIndex === 0 ? 'block' : 'none' }}
-                            >
-                                <img src={robot5} alt="E-Blox Kit 1" />
-                                <div className="slide-caption">Kit Package 1</div>
-                            </div>
+                {/* 3. Full-Width Visual Impact Section */}
+                <section className="tg-eblox-visual-impact">
+                    <div className="tg-eblox-impact-content">
+                        <h2>Engineering the Future Through Structured Components</h2>
+                        <p>E-Blox teaches circuit design principles. Students graduate as capable electronics engineers.</p>
+                        <button className="tg-eblox-impact-btn" onClick={() => navigate('/impact-program')}>Learn Our Method</button>
+                    </div>
+                </section>
 
-                            <div 
-                                className="kit-slide fade"
-                                style={{ display: kitSlideIndex === 1 ? 'block' : 'none' }}
-                            >
-                                <img src={hacker} alt="E-Blox Kit 2" />
-                                <div className="slide-caption">Kit Package 2</div>
-                            </div>
+                {/* 4. Zig-Zag Capability Section */}
+                <section className="tg-eblox-zigzag" id="zigzag">
+                    <div className="tg-eblox-zigzag-item tg-eblox-zigzag-left">
+                        <div className="tg-eblox-zigzag-text">
+                            <h3>Power Management Module</h3>
+                            <p>Regulated power supplies, battery management, and voltage regulation circuits for safe, stable power distribution across all components.</p>
                         </div>
-                        <div className="kit-info">
-                            <div className="kit-content fade" style={{ display: kitSlideIndex >= 0 ? 'block' : 'none' }}>
-                                <h3>Official Component List</h3>
-                                <p>The E-Blox kit includes specialized blocks and connectors for building over 20 unique electronics products.</p>
-                                <div className="kit-components">
-                                    <div className="component-column">
-                                        <h4>Logic & Sensors</h4>
-                                        <ul>
-                                            <li>Dark Block x1</li>
-                                            <li>Light Block x1</li>
-                                            <li>Sound Sensor Block x1</li>
-                                            <li>IR Block x1</li>
-                                            <li>Distance Block x1</li>
-                                        </ul>
-                                    </div>
-                                    <div className="component-column">
-                                        <h4>Output & Sound</h4>
-                                        <ul>
-                                            <li>Sound Block x1</li>
-                                            <li>Buzzer x1</li>
-                        <li>Invert Block x1</li>
-                                            <li>Motor Driver Block x2</li>
-                                        </ul>
-                                    </div>
-                                    <div className="component-column">
-                                        <h4>Power & Motors</h4>
-                                        <ul>
-                                            <li>Power Block x1</li>
-                                            <li>I Shape BO motor (JST) x2</li>
-                                            <li>Wire Tap Block x2</li>
-                                            <li>JST Connector Wires x4</li>
-                                        </ul>
+                        <div className="tg-eblox-zigzag-image">
+                            <img src={robot1} alt="Power Management" loading="lazy" />
+                        </div>
+                    </div>
+
+                    <div className="tg-eblox-zigzag-item tg-eblox-zigzag-right">
+                        <div className="tg-eblox-zigzag-image">
+                            <img src={robot2} alt="Sensor Integration" loading="lazy" />
+                        </div>
+                        <div className="tg-eblox-zigzag-text">
+                            <h3>Sensor Integration Stack</h3>
+                            <p>Modular sensor boards for temperature, humidity, distance, light, and motion detection with standard interfaces.</p>
+                        </div>
+                    </div>
+
+                    <div className="tg-eblox-zigzag-item tg-eblox-zigzag-left">
+                        <div className="tg-eblox-zigzag-text">
+                            <h3>Communication Modules</h3>
+                            <p>WiFi, Bluetooth, and wired connection modules enable device-to-device and cloud integration.</p>
+                        </div>
+                        <div className="tg-eblox-zigzag-image">
+                            <img src={robot3} alt="Communication" loading="lazy" />
+                        </div>
+                    </div>
+                </section>
+
+                {/* 5. Interactive Accordion / Expandable Section */}
+                <section className="tg-eblox-accordion" id="accordion">
+                    <div className="tg-eblox-accordion-container">
+                        <h2>Module Specifications</h2>
+                        <div className="tg-eblox-accordion-items">
+                            {[
+                                {
+                                    title: 'Control & Processing',
+                                    content: 'Arduino-compatible microcontroller with ATmega328P processor, 32KB flash memory, 2KB SRAM, supporting C/C++ and Python programming languages.'
+                                },
+                                {
+                                    title: 'Sensor Array',
+                                    content: 'Includes DHT11 temperature/humidity, HC-SR04 ultrasonic, LDR light, Hall effect magnetic, and force sensitive resistor modules with analog/digital interfaces.'
+                                },
+                                {
+                                    title: 'Actuator Control',
+                                    content: 'Motor drivers for DC motors, servo control modules, relay circuits, and LED display drivers for comprehensive output control.'
+                                },
+                                {
+                                    title: 'Interface & Expansion',
+                                    content: 'Standard connector system (JST, DuPont) compatible with breadboards, Arduino shields, and third-party components for unlimited expansion.'
+                                }
+                            ].map((item, index) => (
+                                <div key={index} className="tg-eblox-accordion-item">
+                                    <button className="tg-eblox-accordion-header">
+                                        <span>{item.title}</span>
+                                        <span className="tg-eblox-accordion-icon">+</span>
+                                    </button>
+                                    <div className="tg-eblox-accordion-content">
+                                        <p>{item.content}</p>
                                     </div>
                                 </div>
-                            </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
 
-                            <div className="kit-indicators">
-                                <button
-                                    className={`kit-indicator ${kitSlideIndex === 0 ? 'active' : ''}`}
-                                    onClick={() => setKitSlideIndex(0)}
-                                    aria-label="View kit 1"
+                {/* 6. Horizontal Scroll Showcase */}
+                <section className="tg-eblox-scroll-showcase" id="scroll-showcase">
+                    <div className="tg-eblox-showcase-header">
+                        <h2>System Projects</h2>
+                    </div>
+                    <div className="tg-eblox-showcase-scroll" ref={projectsContainer}>
+                        <div className="tg-eblox-showcase-track" id="projects-scroll">
+                            {[
+                                { title: 'Smart Monitoring System', desc: 'Multi-sensor data logging', image: robot1 },
+                                { title: 'Home Automation Hub', desc: 'Centralized control system', image: robot2 },
+                                { title: 'Weather Station', desc: 'Environmental data collection', image: robot3 },
+                                { title: 'Access Control System', desc: 'Secure entry solution', image: robot4 },
+                                { title: 'IoT Gateway', desc: 'Cloud connectivity bridge', image: robot5 },
+                                { title: 'Data Visualization', desc: 'Real-time analytics display', image: hacker }
+                            ].map((project, index) => (
+                                <div key={`${project.title}-${index}`} className="tg-eblox-showcase-card">
+                                    <img src={project.image} alt={project.title} loading="lazy" />
+                                    <h4>{project.title}</h4>
+                                    <p>{project.desc}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* 7. Strong CTA Section Before Footer */}
+                <section className="tg-eblox-cta-final" id="cta-final">
+                    <div className="tg-eblox-cta-wrapper">
+                        <h2>Equip Your Engineering Lab Today</h2>
+                        <p>E-Blox: Where electronics meets education</p>
+                        <button className="tg-eblox-cta-submit">Request Demo Kit</button>
+                    </div>
+                </section>
+
+                {/* WhatsApp Form Section */}
+                <section className="tg-eblox-whatsapp-form-section">
+                    <div className="tg-eblox-form-container">
+                        <h2>Interested in E-Blox Labs?</h2>
+                        <p>Connect with us via WhatsApp to discuss your requirements</p>
+                        <form id="inquiry-form" className="tg-eblox-inquiry-form">
+                            <div className="tg-eblox-form-row">
+                                <input 
+                                    type="text" 
+                                    name="School Name" 
+                                    placeholder="School Name" 
+                                    required 
+                                    className="tg-eblox-form-input"
                                 />
-                                <button
-                                    className={`kit-indicator ${kitSlideIndex === 1 ? 'active' : ''}`}
-                                    onClick={() => setKitSlideIndex(1)}
-                                    aria-label="View kit 2"
+                                <input 
+                                    type="text" 
+                                    name="Contact Person Name" 
+                                    placeholder="Contact Person Name" 
+                                    required 
+                                    className="tg-eblox-form-input"
                                 />
                             </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="technology-section" id="technology">
-                    <h2>STEM <span>Concepts Covered in E-Blox</span></h2>
-                    <p className="section-intro">Master foundational electronics through block-based learning</p>
-                    <div className="tech-grid">
-                        <div className="tech-card">
-                            <div className="tech-icon">⚡</div>
-                            <h3>Basic Electronics</h3>
-                            <p>Learn about circuits, invert logic, and how power flows through different modular blocks.</p>
-                        </div>
-                        <div className="tech-card">
-                            <div className="tech-icon">🍃</div>
-                            <h3>Renewable Energy</h3>
-                            <p>Understand how windmills and solar-style sensors can be used to create sustainable tech models.</p>
-                        </div>
-                        <div className="tech-card">
-                            <div className="tech-icon">⚙️</div>
-                            <h3>Mechanical Motion</h3>
-                            <p>Explore motor drivers and BO motors to build moving projects like fans and vehicles.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="projects-section" id="projects">
-                    <h2>20+ <span>Practical Projects</span></h2>
-                    <p className="section-intro">Building real-world electronics applications</p>
-                    <div className="projects-scroll" id="projects-scroll">
-                        <div className="project-card">
-                            <img src={robot2} alt="Study Lamp" />
-                            <h4>Smart Study Lamp</h4>
-                            <p>A lamp that turns on automatically when it gets dark</p>
-                        </div>
-                        <div className="project-card">
-                            <img src={robot3} alt="Mini Windmill" />
-                            <h4>Mini Windmill</h4>
-                            <p>Learning mechanical energy and rotation</p>
-                        </div>
-                        <div className="project-card">
-                            <img src={robot4} alt="Table Fan" />
-                            <h4>Portable Table Fan</h4>
-                            <p>Building a motorized fan with the Motor Driver block</p>
-                        </div>
-                        <div className="project-card">
-                            <img src={robot1} alt="Proximity Alarm" />
-                            <h4>Proximity Alarm</h4>
-                            <p>Using Distance and Sound blocks to detect motion</p>
-                        </div>
-                        <div className="project-card">
-                            <img src={hacker} alt="Sound Sensor" />
-                            <h4>Clap Switch</h4>
-                            <p>Activating lights or motors using the Sound Sensor block</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="form-section" id="interest-form">
-                    <div className="form-container">
-                        <h2>Get E-Blox Lab for Your School! 📬</h2>
-                        <p>Start the electronics journey for young learners today</p>
-                        <form className="inquiry-form" id="inquiry-form">
-                            <div className="form-row">
-                                <input type="text" name="School Name" placeholder="School Name" required />
-                                <input type="text" name="Contact Person Name" placeholder="Contact Person Name" required />
+                            <div className="tg-eblox-form-row">
+                                <input 
+                                    type="email" 
+                                    name="Email Address" 
+                                    placeholder="Email Address" 
+                                    required 
+                                    className="tg-eblox-form-input"
+                                />
+                                <input 
+                                    type="tel" 
+                                    name="Phone Number" 
+                                    placeholder="Phone Number" 
+                                    required 
+                                    className="tg-eblox-form-input"
+                                />
                             </div>
-                            <div className="form-row">
-                                <input type="email" name="Email Address" placeholder="Email Address" required />
-                                <input type="tel" name="Phone Number" placeholder="Phone Number" required />
-                            </div>
-                            <textarea name="Message" placeholder="Tell us how E-Blox can help your students..." rows="3" required></textarea>
-                            <button type="submit" className="form-btn">📧 Send Inquiry Now</button>
+                            <textarea 
+                                name="Message" 
+                                placeholder="Tell us about your school and requirements..." 
+                                rows="5"
+                                className="tg-eblox-form-textarea"
+                            ></textarea>
+                            <button type="submit" className="tg-eblox-form-submit">Send via WhatsApp</button>
                         </form>
                     </div>
                 </section>
             </div>
+
         </div>
     );
 }
