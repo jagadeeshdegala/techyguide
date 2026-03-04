@@ -36,6 +36,7 @@ import EAddOnKit from './productPages/AddOnKit.jsx'
 import OpenResources from './OpenResources.jsx'
 import AboutUsPage from './AboutUsPage.jsx'
 import PartnersPage from './partnersPage.jsx'
+import ContactUs from './contactUs.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -72,6 +73,7 @@ function App() {
       <Route path="/about-us" element={<AboutUsPageWrapper />} />
       <Route path="/privacy-policy" element={<PrivacyPolicyPageWrapper />} />
       <Route path="/partners" element={<PartnersPageWrapper />} />
+      <Route path="/contact-us" element={<ContactUsPageWrapper />} />
     </Routes>
     <WhatsAppButton/>
   </>
@@ -252,6 +254,15 @@ function PartnersPageWrapper() {
   return (
     <>
       <PartnersPage />
+      <FooterSection />
+    </>
+  );
+}
+
+function ContactUsPageWrapper() {
+  return (
+    <>
+      <ContactUs />
       <FooterSection />
     </>
   );

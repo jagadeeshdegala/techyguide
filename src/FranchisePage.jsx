@@ -6,7 +6,12 @@ import testimonial11 from './assets/franchisepageimages/Website Testimonial_11.p
 import testimonial13 from './assets/franchisepageimages/Website Testimonial_13.png';
 import testimonial14 from './assets/franchisepageimages/Website Testimonial_14.png';
 import testimonial15 from './assets/franchisepageimages/Website Testimonial_15.png';
-
+import roboticCourse from './assets/FranchisePageImages/ROBOTICS COURSES FOR KIDS.png';
+import stemWorkshop from './assets/FranchisePageImages/STEMWORKSHOPSINSCHOOLS.png';
+import roboticCompetion from './assets/FranchisePageImages/ROBOTICS COMPETITIONS.png';
+import saleOfRoboticKits from './assets/FranchisePageImages/SALE OF ROBOTICS KITS & PRODUCTS.avif';
+import SoftwareHardware from './assets/FranchisePageImages/HARDWARE & SOFTWARE.png';
+import Training from './assets/FranchisePageImages/TRAINING & SUPPORT.png';
 function FranchisePage() {
     useEffect(() => {
         const counters = document.querySelectorAll('.counter');
@@ -178,7 +183,7 @@ function FranchisePage() {
 
                     <div className="pillars-grid">
                         <div className="pillar-card card">
-                            <div className="pillar-img" style={{backgroundImage: `url(${studentsImg})`}}></div>
+                            <div className="pillar-img" style={{backgroundImage: `url(${roboticCourse})`}}></div>
                             <div className="pillar-icon">🌍</div>
                             <h3>ROBOTICS COURSES FOR KIDS</h3>
                             <p>Recognized as India's No. 1 Robotics & Coding Learning Centre, ensuring brand trust and localized advantages.</p><br />
@@ -189,7 +194,7 @@ function FranchisePage() {
                         </div>
 
                         <div className="pillar-card card blue-accent">
-                            <div className="pillar-img" style={{backgroundImage: "url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=400&auto=format&fit=crop')"}}></div>
+                            <div className="pillar-img" style={{backgroundImage: `url(${stemWorkshop})`}}></div>
                             <div className="pillar-icon">📚</div>
                             <h3>STEM WORKSHOPS IN SCHOOLS</h3>
                             <p>The franchise model handles technical complexities so you can focus on business growth.</p><br />
@@ -200,7 +205,7 @@ function FranchisePage() {
                         </div>
 
                         <div className="pillar-card card teal-accent">
-                            <div className="pillar-img" style={{backgroundImage: "url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?q=80&w=400&auto=format&fit=crop')"}}></div>
+                            <div className="pillar-img" style={{backgroundImage: `url(${roboticCompetion})` }}></div>
                             <div className="pillar-icon">⚡</div>
                             <h3>ROBOTICS COMPETITIONS/EVENTS</h3>
                             <p>Streamline your operations with our proprietary tech-stack built for modern education.</p><br />
@@ -212,7 +217,7 @@ function FranchisePage() {
                         </div>
 
                         <div className="pillar-card card purple-accent">
-                            <div className="pillar-img" style={{backgroundImage: "url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400&auto=format&fit=crop')"}}></div>
+                            <div className="pillar-img" style={{backgroundImage: `url(${saleOfRoboticKits})`}}></div>
                             <div className="pillar-icon">🏆</div>
                             <h3>SALE OF ROBOTICS KITS & PRODUCTS</h3>
                             <p>We provide exclusive access and mentorship for national and international robotics olympiads.</p><br />
@@ -224,7 +229,7 @@ function FranchisePage() {
                         </div>
 
                         <div className="pillar-card card">
-                            <div className="pillar-img" style={{backgroundImage: "url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=400&auto=format&fit=crop')"}}></div>
+                            <div className="pillar-img" style={{backgroundImage: `url(${SoftwareHardware})` }}></div>
                             <div className="pillar-icon">💻</div>
                             <h3>HARDWARE & SOFTWARE </h3>
                             <p>Equipped with the latest tools and resources, our centers provide an immersive experience that prepares students for future careers in robotics.</p><br />
@@ -235,7 +240,7 @@ function FranchisePage() {
                         </div>
 
                         <div className="pillar-card card">
-                            <div className="pillar-img" style={{backgroundImage: "url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=400&auto=format&fit=crop')"}}></div>
+                            <div className="pillar-img" style={{backgroundImage: `url(${Training})`}}></div>
                             <div className="pillar-icon">🎓</div>
                             <h3>TRAINING & SUPPORT</h3>
                             <p>Become part of the largest tech community spread across nations.</p><br />
