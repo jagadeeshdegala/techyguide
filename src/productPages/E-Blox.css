@@ -109,84 +109,6 @@
     overflow-x: hidden;
 }
 
-/* ===== SECTION 1: SPLIT INTRO ===== */
-.tg-eblox-split-intro {
-    padding: 80px 40px;
-    background: linear-gradient(135deg, #f5f9f9 0%, #ffffff 100%);
-    position: relative;
-    border-bottom: 3px solid #006d66;
-}
-
-.tg-eblox-split-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-}
-
-.tg-eblox-split-text h2 {
-    font-size: 48px;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    color: #003d39;
-    letter-spacing: -0.5px;
-}
-
-.tg-eblox-highlight {
-    color: #ff8c00;
-    font-weight: 900;
-    position: relative;
-}
-
-.tg-eblox-split-text p {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 30px;
-    font-weight: 400;
-}
-
-.tg-eblox-cta-btn {
-    padding: 14px 35px;
-    font-size: 15px;
-    font-weight: 700;
-    border: 2px solid #006d66;
-    border-radius: 4px;
-    background: #006d66;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.tg-eblox-cta-btn:hover {
-    background: #005a55;
-    border-color: #005a55;
-    transform: translateX(4px);
-}
-
-.tg-eblox-split-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.tg-eblox-split-image img {
-    max-width: 100%;
-    height: auto;
-    filter: drop-shadow(0 8px 20px rgba(0, 130, 115, 0.2));
-    transition: transform 0.3s ease;
-}
-
-.tg-eblox-split-image:hover img {
-    transform: scale(1.05);
-}
-
 /* ===== SECTION 1.5: INTRODUCTION ===== */
 .tg-eblox-introduction {
     padding: 60px 40px;
@@ -582,6 +504,9 @@
     padding: 0 40px;
     margin: 0 -40px;
     -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .tg-eblox-showcase-scroll::-webkit-scrollbar {
@@ -601,6 +526,8 @@
     display: flex;
     gap: 25px;
     min-width: min-content;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .tg-eblox-showcase-card {
@@ -695,100 +622,6 @@
     transform: scale(1.05);
 }
 
-/* ===== WHATSAPP FORM SECTION ===== */
-.tg-eblox-whatsapp-form-section {
-    padding: 80px 40px;
-    background: linear-gradient(135deg, #f5f9f9 0%, #ffffff 100%);
-}
-
-.tg-eblox-form-container {
-    max-width: 600px;
-    margin: 0 auto;
-    background: white;
-    padding: 50px 40px;
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 130, 115, 0.1);
-}
-
-.tg-eblox-form-container h2 {
-    font-size: 36px;
-    font-weight: 800;
-    color: #003d39;
-    margin-bottom: 10px;
-    text-align: center;
-    letter-spacing: -0.5px;
-}
-
-.tg-eblox-form-container > p {
-    font-size: 16px;
-    color: #666;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.tg-eblox-inquiry-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.tg-eblox-form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.tg-eblox-form-input,
-.tg-eblox-form-textarea {
-    padding: 14px 16px;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 16px;
-    font-family: 'Inter', sans-serif;
-    transition: all 0.3s ease;
-    color: #333;
-}
-
-.tg-eblox-form-input::placeholder,
-.tg-eblox-form-textarea::placeholder {
-    color: #999;
-}
-
-.tg-eblox-form-input:focus,
-.tg-eblox-form-textarea:focus {
-    outline: none;
-    border-color: #006d66;
-    box-shadow: 0 0 0 3px rgba(0, 109, 102, 0.1);
-}
-
-.tg-eblox-form-textarea {
-    grid-column: 1 / -1;
-    resize: vertical;
-    min-height: 120px;
-}
-
-.tg-eblox-form-submit {
-    grid-column: 1 / -1;
-    padding: 16px 40px;
-    font-size: 16px;
-    font-weight: 700;
-    border: none;
-    border-radius: 8px;
-    background: #006d66;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-top: 10px;
-}
-
-.tg-eblox-form-submit:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 130, 115, 0.3);
-    background: #004d47;
-}
-
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
     .eblox-page-root .content-layout {
@@ -804,15 +637,6 @@
     .eblox-page-root .btn-secondary {
         margin-left: auto;
         margin-right: auto;
-    }
-
-    .tg-eblox-split-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .tg-eblox-split-text h2 {
-        font-size: 36px;
     }
 
     .tg-eblox-zigzag-item {
@@ -833,23 +657,17 @@
         font-size: 32px;
     }
 
-    .tg-eblox-split-text p,
     .tg-eblox-visual-impact p {
         font-size: 15px;
     }
 }
 
 @media (max-width: 480px) {
-    .tg-eblox-split-intro,
     .tg-eblox-features-staggered,
     .tg-eblox-zigzag,
     .tg-eblox-accordion,
     .tg-eblox-cta-final {
         padding: 50px 20px;
-    }
-
-    .tg-eblox-split-text h2 {
-        font-size: 28px;
     }
 
     .tg-eblox-feature-block {
@@ -867,23 +685,5 @@
     .tg-eblox-showcase-scroll {
         padding: 0 20px;
         margin: 0 -20px;
-    }
-
-    .tg-eblox-form-container {
-        padding: 30px 20px;
-    }
-
-    .tg-eblox-form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .tg-eblox-form-input,
-    .tg-eblox-form-textarea {
-        font-size: 14px;
-    }
-
-    .tg-eblox-form-submit {
-        font-size: 14px;
-        padding: 14px 30px;
     }
 }

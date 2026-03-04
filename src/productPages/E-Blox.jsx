@@ -20,37 +20,6 @@ export default function EBlox() {
         const ebloxKitImages = [robot5, hacker];
         const projectsContainer = useRef(null);
         const [expandedAccordion, setExpandedAccordion] = useState(0);
-
-        // WhatsApp form submission handler
-        useEffect(() => {
-            const form = document.getElementById('inquiry-form');
-            if (!form) return;
-            const handleSubmit = (e) => {
-                e.preventDefault();
-                const inputs = form.querySelectorAll('input, textarea');
-                const data = {};
-                inputs.forEach(input => {
-                    if (input.name || input.placeholder) {
-                        data[input.name || input.placeholder] = input.value;
-                    }
-                });
-                // Compose WhatsApp message in readable format
-                let message = `E-Blox Lab Proposal Request\n`;
-                if (data['School Name']) message += `School Name: ${data['School Name']}\n`;
-                if (data['Contact Person Name']) message += `Name: ${data['Contact Person Name']}\n`;
-                if (data['Phone Number']) message += `Phone Number: ${data['Phone Number']}\n`;
-                if (data['Email Address']) message += `Email: ${data['Email Address']}\n`;
-                if (data['State']) message += `State: ${data['State']}\n`;
-                if (data['Message']) message += `Message: ${data['Message']}\n`;
-                message += `From page: E-Blox`;
-                const phone = '8197984847';
-                const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-                window.open(url, '_blank');
-                form.reset();
-            };
-            form.addEventListener('submit', handleSubmit);
-            return () => form.removeEventListener('submit', handleSubmit);
-        }, []);
     const rootRef = useRef(null);
 
     // Kit slider auto-scroll
@@ -125,7 +94,7 @@ export default function EBlox() {
             projectsContainer.addEventListener('touchend', () => isPaused = false);
             // Increase speed and smoothness
             // Use a fixed increment per frame for ultra-smooth, buttery scroll
-            const pixelsPerFrame = 2.2; // adjust for desired speed (lower for smoother)
+            const pixelsPerFrame = 3.5; // adjust for desired speed (higher for faster)
             const scroll = () => {
                 if (stopped) return;
                 if (!isPaused) {
@@ -214,20 +183,6 @@ export default function EBlox() {
             </div>
 
             <div className="tg-eblox-page" ref={rootRef}>
-                {/* 1. Immersive Split Intro Section */}
-                <section className="tg-eblox-split-intro" id="split-intro">
-                    <div className="tg-eblox-split-content">
-                        <div className="tg-eblox-split-image">
-                            <img src={robot5} alt="E-Blox Electronics Kit" loading="lazy" />
-                        </div>
-                        <div className="tg-eblox-split-text">
-                            <h2>Modular Electronics for <span className="tg-eblox-highlight">Engineering Excellence</span></h2>
-                            <p>E-Blox delivers structured, component-based learning that scales from basic electronics to advanced IoT systems with precision engineering.</p>
-                            <button className="tg-eblox-cta-btn">Explore Components</button>
-                        </div>
-                    </div>
-                </section>
-
                 {/* Introduction to E-Blox */}
                 <section className="tg-eblox-introduction" id="introduction">
                     <div className="tg-eblox-intro-container">
@@ -398,55 +353,6 @@ export default function EBlox() {
                         <h2>Equip Your Engineering Lab Today</h2>
                         <p>E-Blox: Where electronics meets education</p>
                         <button className="tg-eblox-cta-submit">Request Demo Kit</button>
-                    </div>
-                </section>
-
-                {/* WhatsApp Form Section */}
-                <section className="tg-eblox-whatsapp-form-section">
-                    <div className="tg-eblox-form-container">
-                        <h2>Interested in E-Blox Labs?</h2>
-                        <p>Connect with us via WhatsApp to discuss your requirements</p>
-                        <form id="inquiry-form" className="tg-eblox-inquiry-form">
-                            <div className="tg-eblox-form-row">
-                                <input 
-                                    type="text" 
-                                    name="School Name" 
-                                    placeholder="School Name" 
-                                    required 
-                                    className="tg-eblox-form-input"
-                                />
-                                <input 
-                                    type="text" 
-                                    name="Contact Person Name" 
-                                    placeholder="Contact Person Name" 
-                                    required 
-                                    className="tg-eblox-form-input"
-                                />
-                            </div>
-                            <div className="tg-eblox-form-row">
-                                <input 
-                                    type="email" 
-                                    name="Email Address" 
-                                    placeholder="Email Address" 
-                                    required 
-                                    className="tg-eblox-form-input"
-                                />
-                                <input 
-                                    type="tel" 
-                                    name="Phone Number" 
-                                    placeholder="Phone Number" 
-                                    required 
-                                    className="tg-eblox-form-input"
-                                />
-                            </div>
-                            <textarea 
-                                name="Message" 
-                                placeholder="Tell us about your school and requirements..." 
-                                rows="5"
-                                className="tg-eblox-form-textarea"
-                            ></textarea>
-                            <button type="submit" className="tg-eblox-form-submit">Send via WhatsApp</button>
-                        </form>
                     </div>
                 </section>
             </div>

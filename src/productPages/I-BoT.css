@@ -109,74 +109,6 @@
     overflow-x: hidden;
 }
 
-/* ===== SECTION 1: SPLIT INTRO ===== */
-.tg-ibot-split-intro {
-    padding: 80px 40px;
-    background: linear-gradient(135deg, #f0fffe 0%, #ffffff 100%);
-    position: relative;
-}
-
-.tg-ibot-split-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-}
-
-.tg-ibot-split-text h2 {
-    font-size: 48px;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    color: #005a55;
-}
-
-.tg-ibot-highlight {
-    color: #ff8c00;
-    position: relative;
-    display: inline-block;
-}
-
-.tg-ibot-split-text p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #555;
-    margin-bottom: 30px;
-}
-
-.tg-ibot-cta-btn {
-    padding: 14px 35px;
-    font-size: 16px;
-    font-weight: 700;
-    border: none;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #006d66 0%, #008273 100%);
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 130, 115, 0.3);
-}
-
-.tg-ibot-cta-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 130, 115, 0.4);
-    background: linear-gradient(135deg, #004d47 0%, #006d66 100%);
-}
-
-.tg-ibot-split-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.tg-ibot-split-image img {
-    max-width: 100%;
-    height: auto;
-    filter: drop-shadow(0 10px 30px rgba(0, 130, 115, 0.15));
-}
-
 /* ===== SECTION 1.5: INTRODUCTION ===== */
 .tg-ibot-introduction {
     padding: 60px 40px;
@@ -528,6 +460,9 @@
     padding: 0 40px;
     margin: 0 -40px;
     -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .tg-ibot-showcase-scroll::-webkit-scrollbar {
@@ -547,6 +482,8 @@
     display: flex;
     gap: 25px;
     min-width: min-content;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .tg-ibot-showcase-card {
@@ -630,99 +567,6 @@
     transform: scale(1.05);
 }
 
-/* ===== WHATSAPP FORM SECTION ===== */
-.tg-ibot-whatsapp-form-section {
-    padding: 80px 40px;
-    background: linear-gradient(135deg, #f0fffe 0%, #ffffff 100%);
-}
-
-.tg-ibot-form-container {
-    max-width: 600px;
-    margin: 0 auto;
-    background: white;
-    padding: 50px 40px;
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 130, 115, 0.1);
-}
-
-.tg-ibot-form-container h2 {
-    font-size: 36px;
-    font-weight: 800;
-    color: #005a55;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.tg-ibot-form-container > p {
-    font-size: 16px;
-    color: #666;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.tg-ibot-inquiry-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.tg-ibot-form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.tg-ibot-form-input,
-.tg-ibot-form-textarea {
-    padding: 14px 16px;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 16px;
-    font-family: 'Poppins', sans-serif;
-    transition: all 0.3s ease;
-    color: #333;
-}
-
-.tg-ibot-form-input::placeholder,
-.tg-ibot-form-textarea::placeholder {
-    color: #999;
-}
-
-.tg-ibot-form-input:focus,
-.tg-ibot-form-textarea:focus {
-    outline: none;
-    border-color: #006d66;
-    box-shadow: 0 0 0 3px rgba(0, 109, 102, 0.1);
-}
-
-.tg-ibot-form-textarea {
-    grid-column: 1 / -1;
-    resize: vertical;
-    min-height: 120px;
-}
-
-.tg-ibot-form-submit {
-    grid-column: 1 / -1;
-    padding: 16px 40px;
-    font-size: 16px;
-    font-weight: 700;
-    border: none;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #006d66 0%, #008273 100%);
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-top: 10px;
-}
-
-.tg-ibot-form-submit:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 130, 115, 0.3);
-    background: linear-gradient(135deg, #004d47 0%, #006d66 100%);
-}
-
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
     .ibot-page-root .content-layout {
@@ -738,15 +582,6 @@
     .ibot-page-root .btn-secondary {
         margin-left: auto;
         margin-right: auto;
-    }
-
-    .tg-ibot-split-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .tg-ibot-split-text h2 {
-        font-size: 36px;
     }
 
     .tg-ibot-zigzag-item {
@@ -778,23 +613,17 @@
         font-size: 32px;
     }
 
-    .tg-ibot-split-text p,
     .tg-ibot-visual-impact p {
         font-size: 16px;
     }
 }
 
 @media (max-width: 480px) {
-    .tg-ibot-split-intro,
     .tg-ibot-features-staggered,
     .tg-ibot-zigzag,
     .tg-ibot-accordion,
     .tg-ibot-cta-final {
         padding: 50px 20px;
-    }
-
-    .tg-ibot-split-text h2 {
-        font-size: 28px;
     }
 
     .tg-ibot-feature-block {
@@ -807,23 +636,5 @@
 
     .tg-ibot-cta-btn, .tg-ibot-impact-btn, .tg-ibot-cta-submit {
         width: 100%;
-    }
-
-    .tg-ibot-form-container {
-        padding: 30px 20px;
-    }
-
-    .tg-ibot-form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .tg-ibot-form-input,
-    .tg-ibot-form-textarea {
-        font-size: 14px;
-    }
-
-    .tg-ibot-form-submit {
-        font-size: 14px;
-        padding: 14px 30px;
     }
 }

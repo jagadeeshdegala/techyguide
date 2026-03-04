@@ -252,27 +252,34 @@ function IBoT() {
         const testimonialsContainer = testimonialsRef.current;
         
         // True infinite circular scroll with dynamic measurement and proper cleanup
-        const createAutoScroll = (container, pixelsPerSecond = 30) => {
+        const createAutoScroll = (container, pixelsPerFrame = 3.5) => {
             if (!container) return null;
 
-            let lastTimestamp = 0;
             let animationId = null;
             let stopped = false;
+            let isPaused = false;
 
-            const scroll = (timestamp) => {
+            // Add pause on hover/touch
+            const handleMouseEnter = () => isPaused = true;
+            const handleMouseLeave = () => isPaused = false;
+            const handleTouchStart = () => isPaused = true;
+            const handleTouchEnd = () => isPaused = false;
+
+            container.addEventListener('mouseenter', handleMouseEnter);
+            container.addEventListener('mouseleave', handleMouseLeave);
+            container.addEventListener('touchstart', handleTouchStart);
+            container.addEventListener('touchend', handleTouchEnd);
+
+            const scroll = () => {
                 if (stopped) return;
-                if (!lastTimestamp) lastTimestamp = timestamp;
-                const delta = timestamp - lastTimestamp;
-                lastTimestamp = timestamp;
+                if (!isPaused) {
+                    container.scrollLeft += pixelsPerFrame;
 
-                // Smooth increment based on time
-                const increment = (pixelsPerSecond / 1000) * delta;
-                container.scrollLeft += increment;
-
-                // Measure half of the total content width (first set width)
-                const singleSetWidth = container.scrollWidth / 2;
-                if (container.scrollLeft >= singleSetWidth) {
-                    container.scrollLeft -= singleSetWidth;
+                    // Measure half of the total content width (first set width)
+                    const singleSetWidth = container.scrollWidth / 2;
+                    if (container.scrollLeft >= singleSetWidth) {
+                        container.scrollLeft -= singleSetWidth;
+                    }
                 }
 
                 animationId = requestAnimationFrame(scroll);
@@ -284,18 +291,22 @@ function IBoT() {
             return () => {
                 stopped = true;
                 if (animationId) cancelAnimationFrame(animationId);
+                container.removeEventListener('mouseenter', handleMouseEnter);
+                container.removeEventListener('mouseleave', handleMouseLeave);
+                container.removeEventListener('touchstart', handleTouchStart);
+                container.removeEventListener('touchend', handleTouchEnd);
             };
         };
         
         // Start scrolling after delay
         const timeoutId = setTimeout(() => {
             if (projectsContainer) {
-                const stop = createAutoScroll(projectsContainer, 50);
+                const stop = createAutoScroll(projectsContainer, 3.5);
                 if (stop) stopFns.push(stop);
             }
 
             if (testimonialsContainer) {
-                const stop = createAutoScroll(testimonialsContainer, 45);
+                const stop = createAutoScroll(testimonialsContainer, 3.2);
                 if (stop) stopFns.push(stop);
             }
         }, 1500);
@@ -332,20 +343,6 @@ function IBoT() {
             </div>
 
             <div className="tg-ibot-page" ref={rootRef}>
-                {/* 1. Immersive Split Intro Section */}
-                <section className="tg-ibot-split-intro" id="split-intro">
-                    <div className="tg-ibot-split-content">
-                        <div className="tg-ibot-split-text">
-                            <h2>Bringing <span className="tg-ibot-highlight">Robotics to Life</span> with I-BoT</h2>
-                            <p>The ultimate toolkit for young innovators combining 50+ projects with cutting-edge IoT and AI technologies.</p>
-                            <button className="tg-ibot-cta-btn">Start Building Today</button>
-                        </div>
-                        <div className="tg-ibot-split-image">
-                            <img src={heroRobot} alt="I-BoT Kit" loading="lazy" />
-                        </div>
-                    </div>
-                </section>
-
                 {/* Introduction to I-Bot */}
                 <section className="tg-ibot-introduction" id="introduction">
                     <div className="tg-ibot-intro-container">
@@ -523,55 +520,6 @@ function IBoT() {
                         <h2>Ready to Inspire the Next Generation of Innovators?</h2>
                         <p>Join 350+ schools already transforming STEM education with I-BoT</p>
                         <button className="tg-ibot-cta-submit">Get I-BoT for Your School</button>
-                    </div>
-                </section>
-
-                {/* WhatsApp Form Section */}
-                <section className="tg-ibot-whatsapp-form-section">
-                    <div className="tg-ibot-form-container">
-                        <h2>Get I-BoT for Your School</h2>
-                        <p>Fill in your details and we'll connect with you via WhatsApp</p>
-                        <form id="inquiry-form" className="tg-ibot-inquiry-form">
-                            <div className="tg-ibot-form-row">
-                                <input 
-                                    type="text" 
-                                    name="School Name" 
-                                    placeholder="School Name" 
-                                    required 
-                                    className="tg-ibot-form-input"
-                                />
-                                <input 
-                                    type="text" 
-                                    name="Contact Person Name" 
-                                    placeholder="Contact Person Name" 
-                                    required 
-                                    className="tg-ibot-form-input"
-                                />
-                            </div>
-                            <div className="tg-ibot-form-row">
-                                <input 
-                                    type="email" 
-                                    name="Email Address" 
-                                    placeholder="Email Address" 
-                                    required 
-                                    className="tg-ibot-form-input"
-                                />
-                                <input 
-                                    type="tel" 
-                                    name="Phone Number" 
-                                    placeholder="Phone Number" 
-                                    required 
-                                    className="tg-ibot-form-input"
-                                />
-                            </div>
-                            <textarea 
-                                name="Message" 
-                                placeholder="Tell us about your school and requirements..." 
-                                rows="5"
-                                className="tg-ibot-form-textarea"
-                            ></textarea>
-                            <button type="submit" className="tg-ibot-form-submit">Send via WhatsApp</button>
-                        </form>
                     </div>
                 </section>
             </div>
