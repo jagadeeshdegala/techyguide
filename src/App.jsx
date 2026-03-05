@@ -67,7 +67,8 @@ function App() {
       <Route path="/schools/composite-skill-lab" element={<Navigate to="/cbse-composite-skill-lab-setup-for-schools-india" replace />} />
       <Route path="/stem-robotics-workshops-for-schools-india" element={<WorkshopPageWrapper />} />
       <Route path="/schools/workshop" element={<Navigate to="/stem-robotics-workshops-for-schools-india" replace />} />
-      <Route path="/franchise" element={<FranchisePageWrapper />} />
+      <Route path="/robotics-coding-franchise-india" element={<FranchisePageWrapper />} />
+      <Route path="/franchise" element={<Navigate to="/robotics-coding-franchise-india" replace />} />
       <Route path="/courses" element={<CoursesPageWrapper />} />
       <Route path="/shop" element={<ShopPageWrapper />} />
       <Route path="/checkout" element={<CheckOutPage />} />

@@ -16,6 +16,30 @@ import Training from './assets/FranchisePageImages/TRAINING & SUPPORT.png';
 // Eligibility & Age Divisions section images
 
 function FranchisePage() {
+    // SEO Configuration
+    useEffect(() => {
+        // Set page title
+        document.title = "Start Robotics & Coding Franchise in India | STEM Business";
+
+        // Set or update meta description
+        let metaDescription = document.querySelector('meta[name="description"]');
+        if (!metaDescription) {
+            metaDescription = document.createElement('meta');
+            metaDescription.setAttribute('name', 'description');
+            document.head.appendChild(metaDescription);
+        }
+        metaDescription.setAttribute('content', 'Start a Robotics & Coding franchise in India with TechyGuide. Start a STEM learning center that delivers AI, robotics programs, DIY kits, and engaging workshops designed for young learners.');
+
+        // Set canonical link
+        let canonical = document.querySelector('link[rel="canonical"]');
+        if (!canonical) {
+            canonical = document.createElement('link');
+            canonical.setAttribute('rel', 'canonical');
+            document.head.appendChild(canonical);
+        }
+        canonical.setAttribute('href', 'https://techyguide.com/robotics-coding-franchise-india');
+    }, []);
+
     useEffect(() => {
         const counters = document.querySelectorAll('.counter');
         let started = false;

@@ -133,7 +133,7 @@ function FooterSection() {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/franchise" onClick={scrollToTop}>
+                  <Link to="/robotics-coding-franchise-india" onClick={scrollToTop}>
                     Franchise
                   </Link>
                 </li>

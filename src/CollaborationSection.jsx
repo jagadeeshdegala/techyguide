@@ -12,7 +12,7 @@ function Collaboration() {
           <div className="partners">
               <Link className="partner-box" to="/impact-program">Government & CSR</Link>
 
-            <Link className="partner-box" to="/franchise">Resellers & Distributors</Link>
+            <Link className="partner-box" to="/robotics-coding-franchise-india">Resellers & Distributors</Link>
           </div>
         </div>
       </section>

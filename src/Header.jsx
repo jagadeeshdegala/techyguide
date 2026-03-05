@@ -162,7 +162,7 @@ function Header() {
               <li><a href="/impact-program" onClick={(e) => { e.preventDefault(); handlePageNavigation('/impact-program'); }}>Impact Program</a></li>
               <li><a href="/robothrone" onClick={(e) => { e.preventDefault(); handlePageNavigation('/robothrone'); }}> Robothrone </a></li>
 
-              <li><a href="/franchise" onClick={(e) => { e.preventDefault(); handlePageNavigation('/franchise'); }}>Franchise</a></li>
+              <li><a href="/robotics-coding-franchise-india" onClick={(e) => { e.preventDefault(); handlePageNavigation('/robotics-coding-franchise-india'); }}>Franchise</a></li>
                 {/* <li><a href="#contact" onClick={(e) => handleAnchorClick(e, '#contact')}>Contact</a></li> */}             
                 <li><a href="/shop" className="btn-nav nav-shop-cta shop-icon" onClick={(e) => { e.preventDefault(); handlePageNavigation('/shop'); }}><i className="fas fa-cart-shopping"></i></a></li>
               <li>
