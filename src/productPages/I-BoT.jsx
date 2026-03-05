@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
 import './I-BoT.css';
 import heroBgLayer from '../assets/ProductI-BoTImages/5073198.jpg';
 import heroPattern from '../assets/ProductI-BoTImages/10893802.png';
@@ -11,311 +10,129 @@ import plantMonitor from '../assets/ProductI-BoTImages/plant monitor.jpg';
 import smokeDetection from '../assets/ProductI-BoTImages/smoke detection.jpg';
 
 function IBoT() {
-    const rootRef = useRef(null);
-    const testimonialsRef = useRef(null);
     const projectsRef = useRef(null);
-    const navigate = useNavigate();
-    const [currentKitIndex, setCurrentKitIndex] = useState(0);
-    const [isKitPaused, setIsKitPaused] = useState(false);
-    const [expandedAccordion, setExpandedAccordion] = useState(0);
-
-    const ibotKitData = [
-        {
-            image: kitImage,
-            imageAlt: "I-BoT Kit Contents",
-            title: "Everything You Need to Get Started",
-            description: "The I-BoT kit includes 29 essential components designed to teach robotics and IoT concepts from beginner to advanced levels.",
-            components: [
-                {
-                    title: "Controllers & Boards",
-                    items: ["TechIoT ESP32 Board", "2-Channel Relay Module", "I2C OLED Display", "LCD Display"]
-                },
-                {
-                    title: "Sensors & Actuators",
-                    items: ["PIR Motion Sensor", "Ultrasonic Sensor", "IR Sensor", "Temperature & Humidity (DHT11)", "Pressure Sensor (BMP180)"]
-                },
-                {
-                    title: "Motors & Mechanics",
-                    items: ["BO Motors with Wheels", "Servo Motors", "Motor Driver Module", "Water Pump Module"]
-                },
-                {
-                    title: "Power & Connectivity",
-                    items: ["12V Rechargeable Battery", "Battery Charger", "JST Connectors", "Built-in WiFi"]
-                }
-            ]
-        },
-        {
-            image: mainBoard,
-            imageAlt: "I-BoT Main Board",
-            title: "Advanced Control System",
-            description: "TechIoT ESP32-based controller with WiFi connectivity and multiple sensor interfaces for sophisticated IoT projects.",
-            components: [
-                {
-                    title: "Controllers & Boards",
-                    items: ["TechIoT ESP32 Board", "2-Channel Relay Module", "I2C OLED Display", "LCD Display"]
-                },
-                {
-                    title: "Sensors & Actuators",
-                    items: ["PIR Motion Sensor", "Ultrasonic Sensor", "IR Sensor", "Temperature & Humidity (DHT11)", "Pressure Sensor (BMP180)"]
-                },
-                {
-                    title: "Motors & Mechanics",
-                    items: ["BO Motors with Wheels", "Servo Motors", "Motor Driver Module", "Water Pump Module"]
-                },
-                {
-                    title: "Power & Connectivity",
-                    items: ["12V Rechargeable Battery", "Battery Charger", "JST Connectors", "Built-in WiFi"]
-                }
-            ]
-        }
-    ];
 
     useEffect(() => {
-        let sliderTimeout;
-        if (!isKitPaused && ibotKitData.length > 1) {
-            const showSlides = () => {
-                setCurrentKitIndex((prev) => {
-                    const next = prev + 1;
-                    return next >= ibotKitData.length ? 0 : next;
-                });
-                sliderTimeout = setTimeout(showSlides, 3000);
-            };
-            sliderTimeout = setTimeout(showSlides, 3000);
+        document.title = 'i-Bot IoT & Robotics Kit | 100+ Wireless STEM Projects | Techyguide';
+
+        const metaDescriptionText = 'Master IoT with the i-Bot Advance Kit. Build smart home systems, voice-controlled robots, and 100+ projects using the ESP32 chip.';
+        let metaDescription = document.querySelector('meta[name="description"]');
+        if (!metaDescription) {
+            metaDescription = document.createElement('meta');
+            metaDescription.setAttribute('name', 'description');
+            document.head.appendChild(metaDescription);
         }
-        return () => {
-            if (sliderTimeout) clearTimeout(sliderTimeout);
-        };
-    }, [isKitPaused, ibotKitData.length]);
+        metaDescription.setAttribute('content', metaDescriptionText);
+
+        let canonical = document.querySelector('link[rel="canonical"]');
+        if (!canonical) {
+            canonical = document.createElement('link');
+            canonical.setAttribute('rel', 'canonical');
+            document.head.appendChild(canonical);
+        }
+        canonical.setAttribute('href', 'https://techyguide.com/#/ibot');
+    }, []);
 
     useEffect(() => {
-        const root = rootRef.current;
-        if (!root) return;
+        const heroImage = document.querySelector('.ibot-page-root .image-section img');
+        const heroButton = document.querySelector('.ibot-page-root .btn-secondary');
 
-        // Accordion functionality
-        const accordionHeaders = root.querySelectorAll('.tg-ibot-accordion-header');
-        const handleAccordionClick = (e) => {
-            const headerEl = e.currentTarget;
-            const itemEl = headerEl.closest('.tg-ibot-accordion-item');
-            const itemIndex = Array.from(root.querySelectorAll('.tg-ibot-accordion-item')).indexOf(itemEl);
-            setExpandedAccordion(expandedAccordion === itemIndex ? -1 : itemIndex);
-        };
-
-        accordionHeaders.forEach((header) => {
-            header.addEventListener('click', handleAccordionClick);
-        });
-
-        // Update accordion active state based on state
-        const accordionItems = root.querySelectorAll('.tg-ibot-accordion-item');
-        accordionItems.forEach((item, index) => {
-            if (index === expandedAccordion) {
-                item.classList.add('active');
-            } else {
-                item.classList.remove('active');
-            }
-        });
-
-        let stopFns = [];
-        
-        return () => {
-            accordionHeaders.forEach((header) => {
-                header.removeEventListener('click', handleAccordionClick);
-            });
-            stopFns.forEach(stop => stop?.());
-        };
-    }, [expandedAccordion]);
-
-    useEffect(() => {
-        const root = rootRef.current;
-        if (!root) return;
-
-        let stopFns = [];
-
-        // Hero-specific interactions (scoped)
-        const heroRoot = root.querySelector('.ibot-hero-root');
-        const heroImageEl = heroRoot ? heroRoot.querySelector('.image-section img') : null;
-        const heroTitleEl = heroRoot ? heroRoot.querySelector('.info-section h1') : null;
-        const heroButtonEl = heroRoot ? heroRoot.querySelector('.btn-secondary') : null;
-
-        const smoothScrollTo = (element, duration = 1000) => {
-            if (!element) return;
-            const targetPosition = element.getBoundingClientRect().top + window.pageYOffset - 20;
-            const startPosition = window.pageYOffset;
-            const distance = targetPosition - startPosition;
-            let startTime = null;
-
-            const easeInOutCubic = (t, b, c, d) => {
-                let time = t / (d / 2);
-                if (time < 1) return (c / 2) * time * time * time + b;
-                time -= 2;
-                return (c / 2) * (time * time * time + 2) + b;
-            };
-
-            const animation = (currentTime) => {
-                if (startTime === null) startTime = currentTime;
-                const timeElapsed = currentTime - startTime;
-                const run = easeInOutCubic(timeElapsed, startPosition, distance, duration);
-                window.scrollTo(0, run);
-                if (timeElapsed < duration) requestAnimationFrame(animation);
-            };
-
-            requestAnimationFrame(animation);
-        };
-
-        if (heroImageEl) {
-            const handleImgEnter = () => { heroImageEl.style.filter = 'drop-shadow(0 15px 40px rgba(0,0,0,0.6))'; };
-            const handleImgLeave = () => { heroImageEl.style.filter = 'drop-shadow(0 10px 30px rgba(0,0,0,0.5))'; };
-            const handleImgClick = () => {
-                heroImageEl.style.filter = 'drop-shadow(0 20px 50px rgba(0,0,0,0.7))';
-                setTimeout(() => { heroImageEl.style.filter = 'drop-shadow(0 10px 30px rgba(0,0,0,0.5))'; }, 300);
-            };
-            heroImageEl.addEventListener('mouseenter', handleImgEnter);
-            heroImageEl.addEventListener('mouseleave', handleImgLeave);
-            heroImageEl.addEventListener('click', handleImgClick);
-            heroImageEl.addEventListener('touchstart', handleImgEnter);
-            heroImageEl.addEventListener('touchend', handleImgLeave);
-            stopFns.push(() => {
-                heroImageEl.removeEventListener('mouseenter', handleImgEnter);
-                heroImageEl.removeEventListener('mouseleave', handleImgLeave);
-                heroImageEl.removeEventListener('click', handleImgClick);
-                heroImageEl.removeEventListener('touchstart', handleImgEnter);
-                heroImageEl.removeEventListener('touchend', handleImgLeave);
-            });
-        }
-
-        if (heroTitleEl) {
-            const handleTitleEnter = () => {
-                heroTitleEl.style.color = '#00d4ff';
-                heroTitleEl.style.textShadow = '0 0 20px rgba(0, 212, 255, 0.5)';
-            };
-            const handleTitleLeave = () => {
-                heroTitleEl.style.color = 'rgb(255, 153, 0)';
-                heroTitleEl.style.textShadow = 'none';
-            };
-            heroTitleEl.addEventListener('mouseenter', handleTitleEnter);
-            heroTitleEl.addEventListener('mouseleave', handleTitleLeave);
-            stopFns.push(() => {
-                heroTitleEl.removeEventListener('mouseenter', handleTitleEnter);
-                heroTitleEl.removeEventListener('mouseleave', handleTitleLeave);
-            });
-        }
-
-        if (heroButtonEl) {
-            const handleBtnClick = (e) => {
-                e.preventDefault();
-                heroButtonEl.style.transform = 'translateY(-1px)';
-                setTimeout(() => {
-                    heroButtonEl.style.transform = 'translateY(-2px)';
-                    const introSection = root.querySelector('#introduction');
-                    smoothScrollTo(introSection, 1200);
-                }, 150);
-            };
-            heroButtonEl.addEventListener('click', handleBtnClick);
-            stopFns.push(() => heroButtonEl.removeEventListener('click', handleBtnClick));
-        }
-
-        // Smooth scroll for anchor links (scoped to this page only)
-        const handleAnchorClick = (e) => {
-            const target = e.target.closest('a[href^="#"]');
-            if (target && root.contains(target)) {
-                e.preventDefault();
-                const selector = target.getAttribute('href');
-                const element = selector ? root.querySelector(selector) : null;
-                if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                }
+        const handleButtonClick = (event) => {
+            event.preventDefault();
+            const target = document.getElementById('ibot-tech-focus');
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         };
 
-        root.addEventListener('click', handleAnchorClick);
+        const handleImgEnter = () => {
+            if (heroImage) heroImage.style.filter = 'drop-shadow(0 15px 40px rgba(0,0,0,0.6))';
+        };
 
-        // Intersection Observer for fade-in animations (scoped)
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                    observer.unobserve(entry.target);
-                }
+        const handleImgLeave = () => {
+            if (heroImage) heroImage.style.filter = 'drop-shadow(0 10px 30px rgba(0,0,0,0.5))';
+        };
+
+        if (heroButton) heroButton.addEventListener('click', handleButtonClick);
+        if (heroImage) {
+            heroImage.addEventListener('mouseenter', handleImgEnter);
+            heroImage.addEventListener('mouseleave', handleImgLeave);
+            heroImage.addEventListener('touchstart', handleImgEnter);
+            heroImage.addEventListener('touchend', handleImgLeave);
+        }
+
+        return () => {
+            if (heroButton) heroButton.removeEventListener('click', handleButtonClick);
+            if (heroImage) {
+                heroImage.removeEventListener('mouseenter', handleImgEnter);
+                heroImage.removeEventListener('mouseleave', handleImgLeave);
+                heroImage.removeEventListener('touchstart', handleImgEnter);
+                heroImage.removeEventListener('touchend', handleImgLeave);
+            }
+        };
+    }, []);
+
+    useEffect(() => {
+        const container = projectsRef.current;
+        if (!container) return;
+
+        const track = container.querySelector('.ibot-scroll-track');
+        if (!track) return;
+
+        if (track.children.length && !track.classList.contains('looped')) {
+            const cards = Array.from(track.children);
+            cards.forEach((card) => {
+                track.appendChild(card.cloneNode(true));
             });
-        }, { threshold: 0.15 });
+            track.classList.add('looped');
+        }
 
-        const elements = root.querySelectorAll('.feature-item, .tech-card, .project-card, .testimonial-card');
-        elements.forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease-out';
-            observer.observe(el);
-        });
+        let animationId = null;
+        let stopped = false;
+        let isPaused = false;
 
-        // Auto-scroll projects and testimonials with true circular infinite loop
-        const projectsContainer = projectsRef.current;
-        const testimonialsContainer = testimonialsRef.current;
-        
-        // True infinite circular scroll with dynamic measurement and proper cleanup
-        const createAutoScroll = (container, pixelsPerFrame = 3.5) => {
-            if (!container) return null;
+        const handleMouseEnter = () => {
+            isPaused = true;
+        };
 
-            let animationId = null;
-            let stopped = false;
-            let isPaused = false;
+        const handleMouseLeave = () => {
+            isPaused = false;
+        };
 
-            // Add pause on hover/touch
-            const handleMouseEnter = () => isPaused = true;
-            const handleMouseLeave = () => isPaused = false;
-            const handleTouchStart = () => isPaused = true;
-            const handleTouchEnd = () => isPaused = false;
+        const handleTouchStart = () => {
+            isPaused = true;
+        };
 
-            container.addEventListener('mouseenter', handleMouseEnter);
-            container.addEventListener('mouseleave', handleMouseLeave);
-            container.addEventListener('touchstart', handleTouchStart);
-            container.addEventListener('touchend', handleTouchEnd);
+        const handleTouchEnd = () => {
+            isPaused = false;
+        };
 
-            const scroll = () => {
-                if (stopped) return;
-                if (!isPaused) {
-                    container.scrollLeft += pixelsPerFrame;
+        container.addEventListener('mouseenter', handleMouseEnter);
+        container.addEventListener('mouseleave', handleMouseLeave);
+        container.addEventListener('touchstart', handleTouchStart);
+        container.addEventListener('touchend', handleTouchEnd);
 
-                    // Measure half of the total content width (first set width)
-                    const singleSetWidth = container.scrollWidth / 2;
-                    if (container.scrollLeft >= singleSetWidth) {
-                        container.scrollLeft -= singleSetWidth;
-                    }
+        const scroll = () => {
+            if (stopped) return;
+            if (!isPaused) {
+                container.scrollLeft += 2.9;
+                const singleSetWidth = track.scrollWidth / 2;
+                if (container.scrollLeft >= singleSetWidth) {
+                    container.scrollLeft -= singleSetWidth;
                 }
-
-                animationId = requestAnimationFrame(scroll);
-            };
-
+            }
             animationId = requestAnimationFrame(scroll);
-
-            // Return a stopper to cleanup correctly
-            return () => {
-                stopped = true;
-                if (animationId) cancelAnimationFrame(animationId);
-                container.removeEventListener('mouseenter', handleMouseEnter);
-                container.removeEventListener('mouseleave', handleMouseLeave);
-                container.removeEventListener('touchstart', handleTouchStart);
-                container.removeEventListener('touchend', handleTouchEnd);
-            };
         };
-        
-        // Start scrolling after delay
-        const timeoutId = setTimeout(() => {
-            if (projectsContainer) {
-                const stop = createAutoScroll(projectsContainer, 3.5);
-                if (stop) stopFns.push(stop);
-            }
 
-            if (testimonialsContainer) {
-                const stop = createAutoScroll(testimonialsContainer, 3.2);
-                if (stop) stopFns.push(stop);
-            }
-        }, 1500);
+        animationId = requestAnimationFrame(scroll);
 
         return () => {
-            clearTimeout(timeoutId);
-            stopFns.forEach(stop => stop());
-            root.removeEventListener('click', handleAnchorClick);
-            observer.disconnect();
+            stopped = true;
+            if (animationId) cancelAnimationFrame(animationId);
+            container.removeEventListener('mouseenter', handleMouseEnter);
+            container.removeEventListener('mouseleave', handleMouseLeave);
+            container.removeEventListener('touchstart', handleTouchStart);
+            container.removeEventListener('touchend', handleTouchEnd);
         };
     }, []);
 
@@ -342,184 +159,168 @@ function IBoT() {
                 </main>
             </div>
 
-            <div className="tg-ibot-page" ref={rootRef}>
-                {/* Introduction to I-Bot */}
-                <section className="tg-ibot-introduction" id="introduction">
-                    <div className="tg-ibot-intro-container">
-                        <h2>Introduction to I-BoT Advance Kit</h2>
-                        <p className="tg-ibot-intro-desc">
-                            The I-BoT Advance Kit is the ultimate toolkit for ambitious young innovators. It integrates a vast array of high-tech sensors including WiFi, Bluetooth, and IoT modules, enabling students to execute 50+ professional-grade projects. From building autonomous robots to smart home systems, this kit is designed for those who want to master Robotics, IoT, and AI in one comprehensive package.
-                        </p>
-                        <div className="tg-ibot-video-wrapper">
-                            <iframe
-                                width="100%"
-                                height="400"
-                                src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1"
-                                title="Introduction to I-BoT Advance Kit"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            />
-                        </div>
+            <div className="ibot-modern-page">
+                <section className="ibot-section ibot-tech-focus" id="ibot-tech-focus">
+                    <div className="ibot-section-head">
+                        <p className="ibot-eyebrow">Technologies at Focus</p>
+                        <h2>Future-Ready IoT and Robotics Learning Stack</h2>
+                    </div>
+                    <div className="ibot-hex-grid">
+                        <article className="ibot-hex-card">
+                            <span>🌐</span>
+                            <h3>Internet of Things (IoT)</h3>
+                            <p>Send data to the cloud and control devices using smartphone apps.</p>
+                        </article>
+                        <article className="ibot-hex-card">
+                            <span>📶</span>
+                            <h3>Wireless Communication</h3>
+                            <p>Learn Wi-Fi and Bluetooth automation.</p>
+                        </article>
+                        <article className="ibot-hex-card">
+                            <span>🧪</span>
+                            <h3>Advanced Sensors</h3>
+                            <p>Detect gas, flame, rain, and soil moisture.</p>
+                        </article>
+                        <article className="ibot-hex-card">
+                            <span>⚙️</span>
+                            <h3>Automation Engineering</h3>
+                            <p>Build projects such as smart baby cradles and sanitizer dispensers.</p>
+                        </article>
+                        <article className="ibot-hex-card">
+                            <span>💻</span>
+                            <h3>Dual Programming</h3>
+                            <p>Start with block coding and progress to Arduino C++.</p>
+                        </article>
                     </div>
                 </section>
 
-                {/* 2. Dynamic Feature Blocks (Staggered Layout) */}
-                <section className="tg-ibot-features-staggered" id="features-staggered">
-                    <div className="tg-ibot-features-container">
-                        <h2 className="tg-ibot-section-title">Why I-BoT?</h2>
-                        <div className="tg-ibot-staggered-blocks">
-                            <div className="tg-ibot-feature-block tg-ibot-block-1">
-                                <div className="tg-ibot-block-icon">🎯</div>
-                                <h3>50+ Real Projects</h3>
-                                <p>From LED patterns to autonomous robots, students execute industry-ready projects that build practical skills.</p>
-                            </div>
-                            <div className="tg-ibot-feature-block tg-ibot-block-2">
-                                <div className="tg-ibot-block-icon">🔧</div>
-                                <h3>Reusable Components</h3>
-                                <p>Modular design lets students deconstruct, modify, and rebuild for endless creative possibilities.</p>
-                            </div>
-                            <div className="tg-ibot-feature-block tg-ibot-block-3">
-                                <div className="tg-ibot-block-icon">🚀</div>
-                                <h3>WiFi Connected</h3>
-                                <p>Built-in ESP32 with WiFi enables IoT projects, cloud connectivity, and smart home automation.</p>
-                            </div>
-                            <div className="tg-ibot-feature-block tg-ibot-block-4">
-                                <div className="tg-ibot-block-icon">⚡</div>
-                                <h3>Beginner to Pro</h3>
-                                <p>Scratch programming for newbies, C++ for advanced learners—one kit scales with their journey.</p>
-                            </div>
-                            <div className="tg-ibot-feature-block tg-ibot-block-5">
-                                <div className="tg-ibot-block-icon">🎨</div>
-                                <h3>RGB LED Display</h3>
-                                <p>40 NeoPixel LEDs create vibrant visual feedback, emojis, and lighting effects for engaging projects.</p>
-                            </div>
-                            <div className="tg-ibot-feature-block tg-ibot-block-6">
-                                <div className="tg-ibot-block-icon">🛡️</div>
-                                <h3>Safety Certified</h3>
-                                <p>Non-toxic, low-voltage materials with 1-year warranty built for classroom environments.</p>
-                            </div>
-                        </div>
+                <section className="ibot-section ibot-technology">
+                    <div className="ibot-section-head">
+                        <p className="ibot-eyebrow">i-Bot Technology</p>
+                        <h2>Engineered for Reliable Classroom-to-Prototype Learning</h2>
                     </div>
-                </section>
-
-                {/* 3. Full-Width Visual Impact Section */}
-                <section className="tg-ibot-visual-impact">
-                    <div className="tg-ibot-impact-content">
-                        <h2>Transform Learning with Hands-On Technology</h2>
-                        <p>Trusted by 350+ schools, I-BoT has trained over 100,000 students in robotics, IoT, and AI.</p>
-                        <button className="tg-ibot-impact-btn" onClick={() => navigate('/impact-program')}>Explore Our Impact</button>
-                    </div>
-                </section>
-
-                {/* 4. Zig-Zag Capability Section */}
-                <section className="tg-ibot-zigzag" id="zigzag">
-                    <div className="tg-ibot-zigzag-item tg-ibot-zigzag-left">
-                        <div className="tg-ibot-zigzag-text">
-                            <h3>Smart Sensors</h3>
-                            <p>PIR motion detection, ultrasonic distance sensing, temperature & humidity monitoring, and IR receiver module for complete environmental perception.</p>
-                        </div>
-                        <div className="tg-ibot-zigzag-image">
-                            <img src={mainBoard} alt="Smart Sensors" loading="lazy" />
-                        </div>
-                    </div>
-
-                    <div className="tg-ibot-zigzag-item tg-ibot-zigzag-right">
-                        <div className="tg-ibot-zigzag-image">
-                            <img src={kitImage} alt="Motor Control" loading="lazy" />
-                        </div>
-                        <div className="tg-ibot-zigzag-text">
-                            <h3>Powerful Motors</h3>
-                            <p>Dual BO motors with wheels, servo motors for precise control, and a water pump module for automation experiments.</p>
-                        </div>
-                    </div>
-
-                    <div className="tg-ibot-zigzag-item tg-ibot-zigzag-left">
-                        <div className="tg-ibot-zigzag-text">
-                            <h3>Wireless Control</h3>
-                            <p>Bluetooth connectivity and WiFi module enable remote control, telemetry data streaming, and IoT cloud integration.</p>
-                        </div>
-                        <div className="tg-ibot-zigzag-image">
-                            <img src={homeAutomation} alt="Wireless Control" loading="lazy" />
-                        </div>
-                    </div>
-                </section>
-
-                {/* 5. Interactive Accordion / Expandable Section */}
-                <section className="tg-ibot-accordion" id="accordion">
-                    <div className="tg-ibot-accordion-container">
-                        <h2>Technical Specifications</h2>
-                        <div className="tg-ibot-accordion-items">
-                            {[
-                                {
-                                    title: 'Processing Power',
-                                    content: 'Powered by Raspberry Pi Pico W with dual-core ARM Cortex M0+, 264KB SRAM, WiFi 802.11b/g/n, and 2MB Flash storage for sophisticated multi-threaded applications.'
-                                },
-                                {
-                                    title: 'Sensor Suite',
-                                    content: 'Includes PIR motion, ultrasonic distance, IR receiver, DHT11 temperature/humidity, BMP180 pressure, dual MPU6050 motion, and RFID modules with unlimited expansion.'
-                                },
-                                {
-                                    title: 'Power & Battery',
-                                    content: '3.7V 500mAh rechargeable Li-ion battery with integrated charging circuit, protection from over-discharge and short-circuit, lasting up to 6 hours per charge.'
-                                },
-                                {
-                                    title: 'Display & Output',
-                                    content: '8x5 RGB NeoPixel LED array, I2C OLED display, 16x2 LCD interface, and buzzer for visual and audio feedback in projects.'
-                                }
-                            ].map((item, index) => (
-                                <div key={index} className="tg-ibot-accordion-item">
-                                    <button className="tg-ibot-accordion-header">
-                                        <span>{item.title}</span>
-                                        <span className="tg-ibot-accordion-icon">+</span>
-                                    </button>
-                                    <div className="tg-ibot-accordion-content">
-                                        <p>{item.content}</p>
-                                    </div>
+                    <div className="ibot-alt-stack">
+                        {[
+                            {
+                                title: 'ESP32 Chip Brain',
+                                description: 'Ultra-fast microcontroller with Wi-Fi and Bluetooth.',
+                                image: mainBoard
+                            },
+                            {
+                                title: 'All-in-One Controller',
+                                description: 'Integrated motor drivers, LED, buzzer, and sensor ports.',
+                                image: kitImage
+                            },
+                            {
+                                title: 'Safety Design',
+                                description: 'Double-layer PCB with short circuit protection.',
+                                image: smokeDetection
+                            },
+                            {
+                                title: 'Flexible Power',
+                                description: 'Supports 3.7V–12V rechargeable batteries.',
+                                image: homeAutomation
+                            }
+                        ].map((item, index) => (
+                            <article key={item.title} className={`ibot-alt-item ${index % 2 ? 'reverse' : ''}`}>
+                                <img src={item.image} alt={item.title} loading="lazy" />
+                                <div>
+                                    <h3>{item.title}</h3>
+                                    <p>{item.description}</p>
                                 </div>
-                            ))}
-                        </div>
+                            </article>
+                        ))}
                     </div>
                 </section>
 
-                {/* 6. Horizontal Scroll Showcase */}
-                <section className="tg-ibot-scroll-showcase" id="scroll-showcase">
-                    <div className="tg-ibot-showcase-header">
-                        <h2>Featured Projects</h2>
+                <section className="ibot-section ibot-why">
+                    <div className="ibot-section-head">
+                        <p className="ibot-eyebrow">Why i-Bot</p>
+                        <h2>Industrial-Grade Platform for 21st Century STEM</h2>
                     </div>
-                    <div className="tg-ibot-showcase-scroll" ref={projectsRef}>
-                        <div className="tg-ibot-showcase-track">
+                    <div className="ibot-stat-grid">
+                        <article className="ibot-stat-card main">
+                            <p className="stat-number">100+</p>
+                            <h3>Projects</h3>
+                            <p>From LED blinking to human-following robots.</p>
+                        </article>
+                        <article className="ibot-stat-card">
+                            <h3>Real-World Applications</h3>
+                            <p>Projects replicate smart agriculture and automation systems.</p>
+                        </article>
+                        <article className="ibot-stat-card">
+                            <h3>Modular System</h3>
+                            <p>Compatible with robotic arms, humanoid robots, and 3D printed parts.</p>
+                        </article>
+                        <article className="ibot-stat-card">
+                            <h3>Durable Hardware</h3>
+                            <p>Industrial-grade components with 1-year warranty.</p>
+                        </article>
+                    </div>
+                </section>
+
+                <section className="ibot-section ibot-kits">
+                    <div className="ibot-section-head">
+                        <p className="ibot-eyebrow">i-Bot Kits</p>
+                        <h2>Choose the Right Build Journey</h2>
+                    </div>
+                    <div className="ibot-kit-compare">
+                        <article className="ibot-kit-card">
+                            <h3>i-Bot Starter Kit</h3>
+                            <p><strong>Description</strong><br />Entry-level IoT robotics kit.</p>
+                            <p><strong>Projects</strong><br />20+ projects focused on sensors and motors.</p>
+                            <p><strong>Ideal For</strong><br />Beginners learning the Internet of Things.</p>
+                        </article>
+                        <article className="ibot-kit-card highlight">
+                            <h3>i-Bot Advance Kit</h3>
+                            <p><strong>Description</strong><br />Advanced IoT robotics kit with 45+ components.</p>
+                            <p><strong>Projects</strong><br />100+ IoT systems including home automation and radar projects.</p>
+                            <p><strong>Hardware Includes</strong><br />I2C LCD Display<br />Servo Motors<br />Water Pump<br />Pulse Rate Sensor<br />Environmental Sensors (Gas, Rain, Soil)</p>
+                        </article>
+                    </div>
+                </section>
+
+                <section className="ibot-section ibot-feature-panels">
+                    <div className="ibot-section-head">
+                        <p className="ibot-eyebrow">Build Domains</p>
+                        <h2>Applied IoT Learning Tracks</h2>
+                    </div>
+                    <div className="ibot-panel-grid">
+                        <article><img src={homeAutomation} alt="Smart home systems" loading="lazy" /><h3>Smart Home Systems</h3></article>
+                        <article><img src={plantMonitor} alt="Agriculture automation" loading="lazy" /><h3>Smart Agriculture</h3></article>
+                        <article><img src={smokeDetection} alt="Safety automation" loading="lazy" /><h3>Safety Automation</h3></article>
+                    </div>
+                </section>
+
+                <section className="ibot-section ibot-scroll-showcase">
+                    <div className="ibot-section-head">
+                        <p className="ibot-eyebrow">Featured Projects</p>
+                        <h2>Continuous Project Inspiration</h2>
+                    </div>
+                    <div className="ibot-scroll-wrap" ref={projectsRef}>
+                        <div className="ibot-scroll-track">
                             {[
-                                { title: 'Line Follower Robot', desc: 'Autonomous navigation', image: mainBoard },
-                                { title: 'Smart Home Hub', desc: 'IoT control center', image: homeAutomation },
-                                { title: 'Plant Monitor', desc: 'Soil moisture tracking', image: plantMonitor },
-                                { title: 'Flame Detector', desc: 'Fire safety system', image: smokeDetection },
-                                { title: 'Door Lock', desc: 'RFID access control', image: kitImage },
-                                { title: 'Obstacle Avoider', desc: 'Autonomous robot', image: mainBoard }
-                            ].concat([
-                                { title: 'Line Follower Robot', desc: 'Autonomous navigation', image: mainBoard },
-                                { title: 'Smart Home Hub', desc: 'IoT control center', image: homeAutomation },
-                                { title: 'Plant Monitor', desc: 'Soil moisture tracking', image: plantMonitor },
-                                { title: 'Flame Detector', desc: 'Fire safety system', image: smokeDetection },
-                                { title: 'Door Lock', desc: 'RFID access control', image: kitImage },
-                                { title: 'Obstacle Avoider', desc: 'Autonomous robot', image: mainBoard }
-                            ]).map((project, index) => (
-                                <div key={`${project.title}-${index}`} className="tg-ibot-showcase-card">
+                                { title: 'Home Automation', desc: 'App-controlled appliances', image: homeAutomation },
+                                { title: 'Radar Bot', desc: 'Obstacle scanning and alerts', image: mainBoard },
+                                { title: 'Smart Irrigation', desc: 'Soil-based watering', image: plantMonitor },
+                                { title: 'Fire Alert System', desc: 'Flame and gas safety', image: smokeDetection },
+                                { title: 'Sanitizer Dispenser', desc: 'Touchless automation', image: kitImage }
+                            ].map((project, index) => (
+                                <article key={`${project.title}-${index}`} className="ibot-scroll-card">
                                     <img src={project.image} alt={project.title} loading="lazy" />
-                                    <h4>{project.title}</h4>
+                                    <h3>{project.title}</h3>
                                     <p>{project.desc}</p>
-                                </div>
+                                </article>
                             ))}
                         </div>
                     </div>
                 </section>
 
-                {/* 7. Strong CTA Section Before Footer */}
-                <section className="tg-ibot-cta-final" id="cta-final">
-                    <div className="tg-ibot-cta-wrapper">
-                        <h2>Ready to Inspire the Next Generation of Innovators?</h2>
-                        <p>Join 350+ schools already transforming STEM education with I-BoT</p>
-                        <button className="tg-ibot-cta-submit">Get I-BoT for Your School</button>
+                <section className="ibot-section ibot-cta-final">
+                    <div className="ibot-cta-box">
+                        <h2>Launch Advanced IoT Learning with i-Bot</h2>
+                        <p>From beginner control logic to 100+ connected automation builds.</p>
+                        <a href="/contact-us" className="ibot-cta-btn">Request i-Bot Details</a>
                     </div>
                 </section>
             </div>

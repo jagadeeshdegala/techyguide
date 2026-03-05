@@ -8,6 +8,20 @@ import GalleryImg4 from "../assets/ForSchools_AI-RoboticsLabICSE_images/IMG-2023
 import GalleryImg5 from "../assets/ForSchools_AI-RoboticsLabICSE_images/IMG-20230925-WA0025.jpg";
 import GalleryImg6 from "../assets/ForSchools_AI-RoboticsLabICSE_images/20210727_134924.jpg";
 import GalleryImg7 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Robotic Lap.jpg";
+// hero section image
+import heroImage from "../assets/ForSchools_AI-RoboticsLabICSE_images/Hero section - AI & Robotics lab ICSE.jpg";
+// why setup an Ai-lab images
+import whyAiLab1 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Why Setup an AI Lab_ - 1.jpg";
+import whyAiLab2 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Why Setup an AI Lab_ - 2.jpg";
+import whyAiLab3 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Why Setup an AI Lab_ - 3.jpg";
+import whyAiLab4 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Why Setup an AI Lab_ - 4.jpg";
+// support ecosystem images
+import supportecosystem1 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Support Ecosystem - 1.jpg";
+import supportecosystem2 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Support Ecosystem - 2.jpg";
+import supportecosystem3 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Support Ecosystem - 3.jpg";
+import supportecosystem4 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Support Ecosystem - 4.jpg";
+import supportecosystem5 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Support Ecosystem - 5.jpg";
+import supportecosystem6 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Support Ecosystem - 6.jpg";
 
 const AIRoboticLabICSE = () => {
 	const rootRef = useRef(null);
@@ -300,7 +314,7 @@ const AIRoboticLabICSE = () => {
 								<span>ICSE Compliant</span>
 							</div>
 						</div>
-						<img src="https://images.unsplash.com/photo-1518107616985-bd48230d3b20?auto=format&fit=crop&q=80&w=600" alt="500 plus AI and Robotics Labs installed across ICSE schools in India" className="main-hero-img" />
+						<img src={heroImage} alt="500 plus AI and Robotics Labs installed across ICSE schools in India" className="main-hero-img" />
 					</div>
 				</div>
 			</section>
@@ -315,7 +329,7 @@ const AIRoboticLabICSE = () => {
 					<div className="guidelines-grid">
 						<div className="guide-card fade-up">
 							<div className="guide-img">
-								<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600" alt="Robotics Lab Setup for ICSE Schools following CISCE AI Subject Code 066 guidelines " />
+								<img src={whyAiLab1} alt="Robotics Lab Setup for ICSE Schools following CISCE AI Subject Code 066 guidelines " />
 								<div className="guide-badge">Subject Code 066</div>
 							</div>
 							<div className="guide-content">
@@ -326,7 +340,7 @@ const AIRoboticLabICSE = () => {
 
 						<div className="guide-card fade-up">
 							<div className="guide-img">
-								<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=600" alt="CSE Artificial Intelligence Subject Code 066 practical coding session " />
+								<img src={whyAiLab2} alt="CSE Artificial Intelligence Subject Code 066 practical coding session " />
 								<div className="guide-badge">NEP 2020</div>
 							</div>
 							<div className="guide-content">
@@ -337,7 +351,7 @@ const AIRoboticLabICSE = () => {
 
 						<div className="guide-card fade-up">
 							<div className="guide-img">
-								<img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600" alt="Project-based robotics learning for ICSE schools under NEP 2020 framework " />
+								<img src={whyAiLab3} alt="Project-based robotics learning for ICSE schools under NEP 2020 framework " />
 								<div className="guide-badge">21st Century Skills</div>
 							</div>
 							<div className="guide-content">
@@ -348,7 +362,7 @@ const AIRoboticLabICSE = () => {
 
 						<div className="guide-card fade-up">
 							<div className="guide-img">
-								<img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600" alt="ICSE students developing problem-solving skills through AI and robotics lab" />
+								<img src={whyAiLab4} alt="ICSE students developing problem-solving skills through AI and robotics lab" />
 								<div className="guide-badge">Integrated STEM</div>
 							</div>
 							<div className="guide-content">
@@ -662,7 +676,7 @@ const AIRoboticLabICSE = () => {
 
 					<div className="support-grid fade-up">
 						<div className="support-card">
-							<div className="card-image"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=600" alt="Onsite teacher training for ICSE AI and Robotics Lab implementation " /></div>
+							<div className="card-image"><img src={supportecosystem1} alt="Onsite teacher training for ICSE AI and Robotics Lab implementation " /></div>
 							<div className="card-content">
 								<div className="card-icon"><i className="fas fa-chalkboard-teacher" /></div>
 								<h4>3 Days Onsite Training</h4>
@@ -670,7 +684,7 @@ const AIRoboticLabICSE = () => {
 							</div>
 						</div>
 						<div className="support-card">
-							<div className="card-image"><img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=600" alt=" Annual innovation competition for ICSE robotics lab students" /></div>
+							<div className="card-image"><img src={supportecosystem2} alt=" Annual innovation competition for ICSE robotics lab students" /></div>
 							<div className="card-content">
 								<div className="card-icon"><i className="fas fa-laptop-code" /></div>
 								<h4>24 Days Virtual Training</h4>
@@ -678,7 +692,7 @@ const AIRoboticLabICSE = () => {
 							</div>
 						</div>
 						<div className="support-card">
-							<div className="card-image"><img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?auto=format&fit=crop&q=80&w=600" alt="35 day execution timeline for ICSE AI and Robotics Lab setup" /></div>
+							<div className="card-image"><img src={supportecosystem3} alt="35 day execution timeline for ICSE AI and Robotics Lab setup" /></div>
 							<div className="card-content">
 								<div className="card-icon"><i className="fas fa-eye" /></div>
 								<h4>Quarterly Monitoring</h4>
@@ -686,7 +700,7 @@ const AIRoboticLabICSE = () => {
 							</div>
 						</div>
 						<div className="support-card">
-							<div className="card-image"><img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?auto=format&fit=crop&q=80&w=600" alt="ICSE school testimonial for AI and Robotics Lab services " /></div>
+							<div className="card-image"><img src={supportecosystem4} alt="ICSE school testimonial for AI and Robotics Lab services " /></div>
 							<div className="card-content">
 								<div className="card-icon"><i className="fas fa-certificate" /></div>
 								<h4>Certification</h4>
@@ -694,7 +708,7 @@ const AIRoboticLabICSE = () => {
 							</div>
 						</div>
 						<div className="support-card">
-							<div className="card-image"><img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=600" alt="Frequently asked questions about AI and Robotics Lab for ICSE schools " /></div>
+							<div className="card-image"><img src={supportecosystem5} alt="Frequently asked questions about AI and Robotics Lab for ICSE schools " /></div>
 							<div className="card-content">
 								<div className="card-icon"><i className="fas fa-clipboard-list" /></div>
 								<h4>Assessment &amp; Question Bank</h4>
@@ -702,7 +716,7 @@ const AIRoboticLabICSE = () => {
 							</div>
 						</div>
 						<div className="support-card">
-							<div className="card-image"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=600" alt="AI and Robotics Lab provider serving ICSE schools across India " /></div>
+							<div className="card-image"><img src={supportecosystem6} alt="AI and Robotics Lab provider serving ICSE schools across India " /></div>
 							<div className="card-content">
 								<div className="card-icon"><i className="fas fa-trophy" /></div>
 								<h4>Innovation Fest</h4>

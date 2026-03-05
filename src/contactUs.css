@@ -36,8 +36,8 @@
 .tg-contactus-page .contact-footer { display: flex; gap: 30px; font-weight: 600; font-size: 0.95rem; }
 .tg-contactus-page .contact-footer i { color: var(--brand-orange); margin-right: 8px; }
 
-.tg-contactus-page .right-panel { background: var(--teal-bg); width: 50%; display: flex; align-items: center; justify-content: center; padding: 0; }
-.tg-contactus-page .form-card { background: white; width: 100%; max-width: none; padding: 0; border-radius: 0; border-top: none; box-shadow: none; }
+.tg-contactus-page .right-panel { background-color: orange; width: 50%; display: flex; align-items: center; justify-content: center; padding: 0; }
+.tg-contactus-page .form-card { background: teal; width: 100%; max-width: none; padding: 0; border-radius: 0; border-top: none; box-shadow: none; }
 .tg-contactus-page .field { margin-bottom: 15px; }
 .tg-contactus-page .field label { font-size: 0.85rem; font-weight: 600; color: #444; }
 .tg-contactus-page .input-container { position: relative; margin-top: 6px; }
@@ -147,6 +147,6 @@
 .tg-contactus-page .directions-btn { margin-top: 20px; background: var(--brand-orange); color: white; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
 
 /* Bigin CRM Form Styling */
-.tg-contactus-page .form-card iframe { width: 100%; height: 100%; min-height: 100vh; display: block; border: none; margin: 0; padding: 0; }
+.tg-contactus-page .right-panel iframe { width: 100%; height: 100%; display: block; border: none; margin: 0; padding: 0; }
 
 @media (max-width: 1024px) { .tg-contactus-page .split-container { flex-direction: column; } .tg-contactus-page .left-panel, .tg-contactus-page .right-panel { width: 100%; } }

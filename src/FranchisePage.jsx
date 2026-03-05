@@ -6,12 +6,15 @@ import testimonial11 from './assets/franchisepageimages/Website Testimonial_11.p
 import testimonial13 from './assets/franchisepageimages/Website Testimonial_13.png';
 import testimonial14 from './assets/franchisepageimages/Website Testimonial_14.png';
 import testimonial15 from './assets/franchisepageimages/Website Testimonial_15.png';
+//images
 import roboticCourse from './assets/FranchisePageImages/ROBOTICS COURSES FOR KIDS.png';
 import stemWorkshop from './assets/FranchisePageImages/STEMWORKSHOPSINSCHOOLS.png';
 import roboticCompetion from './assets/FranchisePageImages/ROBOTICS COMPETITIONS.png';
 import saleOfRoboticKits from './assets/FranchisePageImages/SALE OF ROBOTICS KITS & PRODUCTS.avif';
 import SoftwareHardware from './assets/FranchisePageImages/HARDWARE & SOFTWARE.png';
 import Training from './assets/FranchisePageImages/TRAINING & SUPPORT.png';
+// Eligibility & Age Divisions section images
+
 function FranchisePage() {
     useEffect(() => {
         const counters = document.querySelectorAll('.counter');
@@ -164,8 +167,8 @@ function FranchisePage() {
                 <div className="hero-bottom-fade"></div>
                 <div className="hero-content container">
                     <p className="tagline">FOLLOW INNOVATION!</p>
-                    <h1 className="kit-title">Start Business with India's <br /><span className="accent">No.1</span><br />Robotics & Coding Learning Centre</h1>
-                    <p className="hero-desc">Empowering the next generation with AI, Robotics, and 21st-century skills.</p>
+                    <h1 className="kit-title">Start <span className="accent">Robotics & Coding</span> Franchise <br/>in India</h1>
+                    <p className="hero-desc">Empowering Students with AI, Robotics and 21st-Century Skills </p>
                     
                     <div className="hero-buttons">
                         <a className="btn btn-orange" href="#requirements">Start Franchise</a>
@@ -318,7 +321,7 @@ function FranchisePage() {
                 </div>
                 <div className="stat-item">
                     <h2 className="counter" data-target="350">0</h2>
-                    <p>Labs Delivered</p>
+                    <p>STEM & Robotics Labs Delivered</p>
                 </div>
                 <div className="stat-item">
                     <h2 className="counter" data-target="1500">0</h2>

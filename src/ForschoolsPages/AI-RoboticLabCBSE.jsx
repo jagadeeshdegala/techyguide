@@ -7,7 +7,23 @@ import GalleryImg3 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG_20221125_104
 import GalleryImg4 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG_20240128_131052.jpg";
 import GalleryImg5 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG_8545.JPG";
 import GalleryImg6 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG_9372.JPG";
-import q1234 from "../assets/ForSchoolsAI-RoboticslabCBSE/Comprehensive Support Ecosystem - 1.jpg";
+//hero image
+import herosectionImage from "../assets/ForSchoolsAI-RoboticslabCBSE/Hero section.jpg";
+// why cbse lab for your school section
+import establishAiLab1 from "../assets/ForSchoolsAI-RoboticslabCBSE/Why Establish an AI & Robotics Lab_ - 1 V2.jpg";
+import establishAiLab2 from "../assets/ForSchoolsAI-RoboticslabCBSE/Why Establish an AI & Robotics Lab_ - 2 V2.jpg";
+import establishAiLab3 from "../assets/ForSchoolsAI-RoboticslabCBSE/Why Establish an AI & Robotics Lab_ - 3.jpg";
+import establishAiLab4 from "../assets/ForSchoolsAI-RoboticslabCBSE/Why Establish an AI & Robotics Lab_ - 4 V2.jpg";
+
+
+// support Ecosystem images
+import supportEcosystem1 from "../assets/ForSchoolsAI-RoboticslabCBSE/Comprehensive Support Ecosystem - 1.jpg";
+import supportEcosystem2 from "../assets/ForSchoolsAI-RoboticslabCBSE/Comprehensive Support Ecosystem - 2.jpg";
+import supportEcosystem3 from "../assets/ForSchoolsAI-RoboticslabCBSE/Comprehensive Support Ecosystem - 3.jpg";
+import supportEcosystem4 from "../assets/ForSchoolsAI-RoboticslabCBSE/Comprehensive Support Ecosystem - 4.jpg";
+import supportEcosystem5 from "../assets/ForSchoolsAI-RoboticslabCBSE/Comprehensive Support Ecosystem - 5.jpg";
+import supportEcosystem6 from "../assets/ForSchoolsAI-RoboticslabCBSE/Comprehensive Support Ecosystem - 6.jpg";
+
 function AIRoboticsLabCBSE() {
   const rootRef = useRef(null);
 
@@ -250,7 +266,7 @@ function AIRoboticsLabCBSE() {
               </div>
             </div>
             <img
-              src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=600"
+              src={herosectionImage}
               alt="Student with Robot"
               className="main-hero-img"
             />
@@ -271,7 +287,7 @@ function AIRoboticsLabCBSE() {
             <div className="guide-card fade-up">
               <div className="guide-img">
                 <img
-                  src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=600"
+                  src={establishAiLab1}
                   alt="NEP 2020"
                 />
                 <div className="guide-badge">NEP 2020 Core</div>
@@ -294,7 +310,7 @@ function AIRoboticsLabCBSE() {
             <div className="guide-card fade-up">
               <div className="guide-img">
                 <img
-                  src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600"
+                  src={establishAiLab2}
                   alt="CBSE Skill Education"
                 />
                 <div className="guide-badge">CBSE</div>
@@ -314,7 +330,7 @@ function AIRoboticsLabCBSE() {
             <div className="guide-card fade-up">
               <div className="guide-img">
                 <img
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=600"
+                  src={establishAiLab3}
                   alt="Future Skills"
                 />
                 <div className="guide-badge">Future Ready</div>
@@ -335,7 +351,7 @@ function AIRoboticsLabCBSE() {
             <div className="guide-card fade-up">
               <div className="guide-img">
                 <img
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600"
+                  src={establishAiLab4}
                   alt="STEM Integration"
                 />
                 <div className="guide-badge">STEM Pedagogy</div>
@@ -608,7 +624,7 @@ Watch how TechyGuide’s state-of-the-art AI & Robotics Labs are transforming cl
           <div className="support-grid fade-up">
             <div className="support-card">
               <div className="card-image">
-                <img src={q1234} alt="Curriculum" />
+                <img src={supportEcosystem1} alt="Curriculum" />
               </div>
               <div className="card-content">
                 <div className="card-icon"><i className="fas fa-book-reader"></i></div>
@@ -619,7 +635,7 @@ Watch how TechyGuide’s state-of-the-art AI & Robotics Labs are transforming cl
 
             <div className="support-card">
               <div className="card-image">
-                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=600" alt="Teacher Training" />
+                <img src={supportEcosystem2} alt="Teacher Training" />
               </div>
               <div className="card-content">
                 <div className="card-icon"><i className="fas fa-chalkboard-teacher"></i></div>
@@ -630,7 +646,7 @@ Watch how TechyGuide’s state-of-the-art AI & Robotics Labs are transforming cl
 
             <div className="support-card">
               <div className="card-image">
-                <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=600" alt="LMS" />
+                <img src={supportEcosystem3} alt="LMS" />
               </div>
               <div className="card-content">
                 <div className="card-icon"><i className="fas fa-laptop-code"></i></div>
@@ -641,7 +657,7 @@ Watch how TechyGuide’s state-of-the-art AI & Robotics Labs are transforming cl
 
             <div className="support-card">
               <div className="card-image">
-                <img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?auto=format&fit=crop&q=80&w=600" alt="Support" />
+                <img src={supportEcosystem4} alt="Support" />
               </div>
               <div className="card-content">
                 <div className="card-icon"><i className="fas fa-headset"></i></div>
@@ -652,7 +668,7 @@ Watch how TechyGuide’s state-of-the-art AI & Robotics Labs are transforming cl
 
             <div className="support-card">
               <div className="card-image">
-                <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=600" alt="Webinars" />
+                <img src={supportEcosystem5} alt="Webinars" />
               </div>
               <div className="card-content">
                 <div className="card-icon"><i className="fas fa-video"></i></div>
@@ -663,7 +679,7 @@ Watch how TechyGuide’s state-of-the-art AI & Robotics Labs are transforming cl
 
             <div className="support-card">
               <div className="card-image">
-                <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?auto=format&fit=crop&q=80&w=600" alt="Certification" />
+                <img src={supportEcosystem6} alt="Certification" />
               </div>
               <div className="card-content">
                 <div className="card-icon"><i className="fas fa-clipboard-check"></i></div>

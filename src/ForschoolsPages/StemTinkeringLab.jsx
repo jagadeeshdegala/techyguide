@@ -7,6 +7,21 @@ import GalleryImg3 from '../assets/ForSchoolsStemTinkeringLabImages/IMG202411061
 import GalleryImg4 from '../assets/ForSchoolsStemTinkeringLabImages/IMG20241226143613.jpg';
 import GalleryImg5 from '../assets/ForSchoolsStemTinkeringLabImages/IMG20251016105208.jpg';
 import GalleryImg6 from '../assets/ForSchoolsStemTinkeringLabImages/IMG20251017160909.jpg';
+//hero section images
+import herosectionimg from '../assets/ForSchoolsStemTinkeringLabImages/Hero section - STEM Tinkering lab.jpg';
+//WHY STEM TINKERING LABS? images
+import whystemTinkeringLab1 from '../assets/ForSchoolsStemTinkeringLabImages/WHY STEM TINKERING LABS_ - 1.jpg';
+import whystemTinkeringLab2 from '../assets/ForSchoolsStemTinkeringLabImages/WHY STEM TINKERING LABS_ - 2.jpg';
+import whystemTinkeringLab3 from '../assets/ForSchoolsStemTinkeringLabImages/WHY STEM TINKERING LABS_ - 3.jpg';
+import whystemTinkeringLab4 from '../assets/ForSchoolsStemTinkeringLabImages/WHY STEM TINKERING LABS_ - 4.jpg';
+//Support Ecosystem images
+import supportecosystem1 from '../assets/ForSchoolsStemTinkeringLabImages/Support Ecosystem - 1.jpg';
+import supportecosystem2 from '../assets/ForSchoolsStemTinkeringLabImages/Support Ecosystem - 2.jpg';
+import supportecosystem3 from '../assets/ForSchoolsStemTinkeringLabImages/Support Ecosystem - 3.jpg';
+import supportecosystem4 from '../assets/ForSchoolsStemTinkeringLabImages/Support Ecosystem - 4.jpg';
+import supportecosystem5 from '../assets/ForSchoolsStemTinkeringLabImages/Support Ecosystem - 5.jpg';
+import supportecosystem6 from '../assets/ForSchoolsStemTinkeringLabImages/Support Ecosystem - 6.jpg';
+
 
 function StemTinkeringLab() {
   // SEO Configuration
@@ -142,20 +157,20 @@ function StemTinkeringLab() {
       accordionCleanups.push(() => header.removeEventListener("click", handleAccordionClick));
     });
 
-    // 4b. Floating CTA smooth scroll
-    const floatingCtas = document.querySelectorAll(".stem-tinkering-lab-root .floating-cta");
+    // 4b. Smooth scroll for all links to contact section
+    const contactLinks = document.querySelectorAll('.stem-tinkering-lab-root a[href="#contact-section"]');
 
-    floatingCtas.forEach((cta) => {
-      const handleCtaClick = (e) => {
+    contactLinks.forEach((link) => {
+      const handleLinkClick = (e) => {
         e.preventDefault();
         const target = document.getElementById("contact-section");
         if (target) {
-          target.scrollIntoView({ behavior: "smooth" });
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
         }
       };
 
-      cta.addEventListener("click", handleCtaClick);
-      anchorCleanups.push(() => cta.removeEventListener("click", handleCtaClick));
+      link.addEventListener("click", handleLinkClick);
+      anchorCleanups.push(() => link.removeEventListener("click", handleLinkClick));
     });
 
     // 5. DIY Kit Slider Logic
@@ -258,7 +273,7 @@ function StemTinkeringLab() {
                 <span>Innovation Hub</span>
               </div>
             </div>
-            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=600" alt="Students learning robotics and electronics in TechyGuide STEM Tinkering Lab in India " className="main-hero-img" />
+            <img src={herosectionimg} alt="Students learning robotics and electronics in TechyGuide STEM Tinkering Lab in India " className="main-hero-img" />
           </div>
         </div>
       </section>
@@ -273,7 +288,7 @@ function StemTinkeringLab() {
           <div className="guidelines-grid">
             <div className="guide-card fade-up">
               <div className="guide-img">
-                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=600" alt="Skills" />
+                <img src={whystemTinkeringLab1} alt="Skills" />
                 <div className="guide-badge">Skill Building</div>
               </div>
               <div className="guide-content">
@@ -284,7 +299,7 @@ function StemTinkeringLab() {
 
             <div className="guide-card fade-up">
               <div className="guide-img">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600" alt="Innovation" />
+                <img src={whystemTinkeringLab2} alt="Innovation" />
                 <div className="guide-badge">Innovation</div>
               </div>
               <div className="guide-content">
@@ -295,7 +310,7 @@ function StemTinkeringLab() {
 
             <div className="guide-card fade-up">
               <div className="guide-img">
-                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=600" alt="Integration" />
+                <img src={whystemTinkeringLab3} alt="Integration" />
                 <div className="guide-badge">STEM Integration</div>
               </div>
               <div className="guide-content">
@@ -306,7 +321,7 @@ function StemTinkeringLab() {
 
             <div className="guide-card fade-up">
               <div className="guide-img">
-                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=600" alt="Career" />
+                <img src={whystemTinkeringLab4} alt="Career" />
                 <div className="guide-badge">Future Ready</div>
               </div>
               <div className="guide-content">
@@ -599,7 +614,7 @@ function StemTinkeringLab() {
           <div className="support-grid fade-up">
             <div className="support-card">
               <div className="card-image">
-                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=600" alt="Training" />
+                <img src={supportecosystem1} alt="Training" />
               </div>
               <div className="card-content">
                 <div className="card-icon"><i className="fas fa-chalkboard-teacher"></i></div>
@@ -609,7 +624,7 @@ function StemTinkeringLab() {
             </div>
             <div className="support-card">
               <div className="card-image">
-                <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=600" alt="Virtual Training" />
+                <img src={supportecosystem2} alt="Virtual Training" />
               </div>
               <div className="card-content">
                 <div className="card-icon"><i className="fas fa-laptop-code"></i></div>
@@ -619,7 +634,7 @@ function StemTinkeringLab() {
             </div>
             <div className="support-card">
               <div className="card-image">
-                <img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?auto=format&fit=crop&q=80&w=600" alt="Monitoring" />
+                <img src={supportecosystem3} alt="Monitoring" />
               </div>
               <div className="card-content">
                 <div className="card-icon"><i className="fas fa-eye"></i></div>
@@ -629,7 +644,7 @@ function StemTinkeringLab() {
             </div>
             <div className="support-card">
               <div className="card-image">
-                <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?auto=format&fit=crop&q=80&w=600" alt="Certification" />
+                <img src={supportecosystem4} alt="Certification" />
               </div>
               <div className="card-content">
                 <div className="card-icon"><i className="fas fa-certificate"></i></div>
@@ -639,7 +654,7 @@ function StemTinkeringLab() {
             </div>
             <div className="support-card">
               <div className="card-image">
-                <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=600" alt="Assessment" />
+                <img src={supportecosystem5} alt="Assessment" />
               </div>
               <div className="card-content">
                 <div className="card-icon"><i className="fas fa-clipboard-list"></i></div>
@@ -649,7 +664,7 @@ function StemTinkeringLab() {
             </div>
             <div className="support-card">
               <div className="card-image">
-                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=600" alt="Competition" />
+                <img src={supportecosystem6} alt="Competition" />
               </div>
               <div className="card-content">
                 <div className="card-icon"><i className="fas fa-trophy"></i></div>

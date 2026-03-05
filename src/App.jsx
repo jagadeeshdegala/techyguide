@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 //import reactLogo from './assets/react.svg'
 import viteLogo from '/TG-Square-Logo 3.png'
@@ -46,9 +46,11 @@ function App() {
     {/* <SocialMediaIcons /> */}
     <Header/>
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route path="/" element={<Navigate to="/ai-robotics-stem-education-india" replace />} />
+      <Route path="/ai-robotics-stem-education-india" element={<HomePage />} />
       <Route path="/impact-program" element={<ImpactProgram />} />
-      <Route path="/i-bot" element={<IBoTPage />} />
+      <Route path="/ibot" element={<IBoTPage />} />
+      <Route path="/i-bot" element={<Navigate to="/ibot" replace />} />
       <Route path="/tebot" element={<TeBoTPage />} />
       <Route path="/e-blox" element={<EBloxPage />} />
       <Route path="/add-on-kits" element={<EAddOnKitPage />} />
@@ -81,6 +83,31 @@ function App() {
 }
 
 function HomePage() {
+  useEffect(() => {
+    // Set page title
+    document.title = 'AI Robotics STEM Education India | Labs, Kits & Courses';
+
+    // Set or update meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Explore AI, Robotics & STEM education in India with TechyGuide. Build innovation labs, DIY kits, workshops & courses for schools and students.');
+    } else {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      metaDescription.setAttribute('content', 'Explore AI, Robotics & STEM education in India with TechyGuide. Build innovation labs, DIY kits, workshops & courses for schools and students.');
+      document.head.appendChild(metaDescription);
+    }
+
+    // Add or update canonical tag
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      canonicalLink.setAttribute('href', 'https://techyguide.com/ai-robotics-stem-education-india');
+      document.head.appendChild(canonicalLink);
+    }
+  }, []);
+
   return (
     <>
     <HeroSection/>

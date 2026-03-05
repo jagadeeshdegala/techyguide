@@ -90,7 +90,7 @@ function ContactUs() {
 					</section>
 
 					<section className="right-panel">
-						<div className="form-card">
+						{/* <div className="form-card"> */}
 							<iframe
 								src="https://in.bigin.online/org60029825901/forms/contact-us"
 								width="100%"
@@ -99,7 +99,7 @@ function ContactUs() {
 								title="Bigin Contact Us Form"
 								style={{ border: "none" }}
 							></iframe>
-						</div>
+						{/* </div> */}
 					</section>
 				</div>
 

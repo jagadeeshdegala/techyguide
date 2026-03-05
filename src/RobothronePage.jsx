@@ -8,6 +8,10 @@ import logoTG2 from './assets/RobothronePageImages/Logo_TG_Tagline 4.png';
 
 // Video import
 import heroVideo from './assets/RobothronePageImages/robothronebgvideo.mp4';
+//Eligibility & Age Divisions section images
+import junior from './assets/RobothronePageImages/Junior 8-10.png';
+import intermediate from './assets/RobothronePageImages/intermediate 11-13.png';
+import senior from './assets/RobothronePageImages/Senior 14-16.png';
 
 // NOTE: Binary files (.pdf, .docx) are served via URL, not imported
 // Video files are imported for better Vite handling
@@ -317,7 +321,7 @@ export default function RobothronePage() {
         <div className="robothrone-eligibility-grid">
           {/* JUNIOR */}
           <div className="robothrone-eligibility-card">
-            <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
+            <img src={junior} loading="lazy" decoding="async" width="400" height="250" alt="" />
             
             <div className="robothrone-card-head">
               <h3>🧒 Junior</h3>
@@ -335,7 +339,7 @@ export default function RobothronePage() {
 
           {/* INTERMEDIATE */}
           <div className="robothrone-eligibility-card">
-            <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
+            <img src={intermediate} loading="lazy" decoding="async" width="400" height="250" alt="" />
             
             <div className="robothrone-card-head">
               <h3>🧑‍💻 Intermediate</h3>
@@ -353,7 +357,7 @@ export default function RobothronePage() {
 
           {/* SENIOR */}
           <div className="robothrone-eligibility-card">
-            <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
+            <img src={senior} loading="lazy" decoding="async" width="400" height="250" alt="" />
             
             <div className="robothrone-card-head">
               <h3>🧠 Senior</h3>

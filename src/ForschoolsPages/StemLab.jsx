@@ -406,11 +406,11 @@ function StemLab() {
                                 <h4>Newtons cradle</h4>
                             </div>
 
-                            <div className="model-card" data-video-id="M7lc1UVf-VE">
+                            <div className="model-card" data-video-id="Sg1U0_yQhPg">
                                 <div className="model-media">
                                     <iframe title="Wind Energy Model" src={undefined} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                                 </div>
-                                <h4>Wind Energy Model</h4>
+                                <h4>Viscosity Measuring</h4>
                             </div>
                         </div>
                     </div>

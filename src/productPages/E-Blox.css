@@ -1,7 +1,5 @@
-/* Redesigned E-Blox Product Page - Engineering Focus */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Courier+Prime:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
 
-/* ===== HERO SECTION ===== */
 .eblox-page-root * {
     margin: 0;
     padding: 0;
@@ -68,7 +66,6 @@
     color: rgb(255, 153, 0);
     margin-bottom: 18px;
     line-height: 1.2;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .eblox-page-root .info-section h2 {
@@ -97,532 +94,317 @@
 
 .eblox-page-root .btn-secondary:hover {
     transform: translateY(-2px);
-    background: linear-gradient(135deg, #ff8a31 0%, #ff7043 50%, #ff9800 100%);
     box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6);
 }
 
-/* ===== MAIN PAGE CONTAINER ===== */
-.tg-eblox-page {
-    width: 100%;
+.eblox-modern-page {
     font-family: 'Inter', sans-serif;
-    color: #333;
-    overflow-x: hidden;
+    color: #134440;
+    background: linear-gradient(180deg, #f4fcfb 0%, #ffffff 100%);
 }
 
-/* ===== SECTION 1.5: INTRODUCTION ===== */
-.tg-eblox-introduction {
-    padding: 60px 40px;
-    background: linear-gradient(135deg, #ffffff 0%, #f5f9f9 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.tg-eblox-intro-container {
-    max-width: 1000px;
+.eblox-section {
+    max-width: 1200px;
     margin: 0 auto;
-    text-align: center;
+    padding: 88px 24px;
 }
 
-.tg-eblox-introduction h2 {
-    font-size: 42px;
-    font-weight: 800;
-    color: #003d39;
-    margin-bottom: 20px;
+.eblox-section-head {
+    margin-bottom: 36px;
+}
+
+.eyebrow {
+    color: #ff8c00;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.eblox-section-head h2 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    color: #005a55;
     line-height: 1.2;
-    letter-spacing: -0.5px;
 }
 
-.tg-eblox-intro-desc {
-    font-size: 18px;
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 40px;
-    font-weight: 400;
+.eblox-tech-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
 }
 
-.tg-eblox-video-wrapper {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0, 130, 115, 0.15);
+.eblox-tech-card {
+    background: linear-gradient(135deg, #006f69 0%, #008a82 100%);
+    color: #eafff9;
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 10px 28px rgba(0, 111, 105, 0.22);
 }
 
-.tg-eblox-video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
+.eblox-icon {
+    font-size: 1.7rem;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.eblox-tech-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.15rem;
+}
+
+.eblox-tech-card p {
+    line-height: 1.65;
+    color: #d8fffa;
+}
+
+.eblox-tech-split {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 28px;
+    align-items: stretch;
+}
+
+.eblox-split-media img {
     width: 100%;
     height: 100%;
-    border-radius: 12px;
-    border: none;
-}
-
-/* ===== SECTION 2: STAGGERED FEATURE BLOCKS ===== */
-.tg-eblox-features-staggered {
-    padding: 100px 40px;
-    background: linear-gradient(135deg, #ffffff 0%, #f5f9f9 100%);
-}
-
-.tg-eblox-features-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.tg-eblox-section-title {
-    font-size: 42px;
-    font-weight: 800;
-    text-align: left;
-    margin-bottom: 60px;
-    color: #003d39;
-    position: relative;
-    padding-bottom: 20px;
-}
-
-.tg-eblox-section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 4px;
-    background: #ff8c00;
-}
-
-.tg-eblox-staggered-blocks {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
-}
-
-.tg-eblox-feature-block {
-    padding: 35px;
-    border-radius: 0;
-    border: 2px solid #e0e0e0;
-    transition: all 0.4s ease;
-    cursor: pointer;
-    position: relative;
-    background: white;
-}
-
-.tg-eblox-feature-block::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 3px;
-    background: #ff8c00;
-    transition: width 0.4s ease;
-}
-
-.tg-eblox-feature-block:hover {
-    border-color: #006d66;
-    box-shadow: 0 8px 30px rgba(0, 130, 115, 0.15);
-    transform: translateY(-5px);
-}
-
-.tg-eblox-feature-block:hover::after {
-    width: 100%;
-}
-
-.tg-eblox-block-icon {
-    font-size: 32px;
-    margin-bottom: 15px;
-    display: inline-block;
-}
-
-.tg-eblox-feature-block h3 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: #003d39;
-    letter-spacing: -0.3px;
-}
-
-.tg-eblox-feature-block p {
-    font-size: 14px;
-    line-height: 1.7;
-    color: #666;
-    font-weight: 400;
-}
-
-/* ===== SECTION 3: VISUAL IMPACT ===== */
-.tg-eblox-visual-impact {
-    padding: 40px 20px;
-    background: linear-gradient(135deg, #003d39 0%, #004d47 100%);
-    color: white;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.tg-eblox-visual-impact::before {
-    content: '';
-    position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(255, 140, 0, 0.08), transparent);
-    border-radius: 50%;
-}
-
-.tg-eblox-impact-content {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-}
-
-.tg-eblox-visual-impact h2 {
-    font-size: 48px;
-    font-weight: 800;
-    margin-bottom: 20px;
-    letter-spacing: -0.5px;
-    color: #ffffff;
-}
-
-.tg-eblox-visual-impact p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    opacity: 0.95;
-    font-weight: 400;
-}
-
-.tg-eblox-impact-btn {
-    padding: 14px 40px;
-    font-size: 15px;
-    font-weight: 700;
-    border: 2px solid #ff8c00;
-    border-radius: 4px;
-    background: #ff8c00;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.tg-eblox-impact-btn:hover {
-    background: transparent;
-    color: #ff8c00;
-    transform: scale(1.05);
-}
-
-/* ===== SECTION 4: ZIG-ZAG LAYOUT ===== */
-.tg-eblox-zigzag {
-    padding: 100px 40px;
-    background: white;
-}
-
-.tg-eblox-zigzag-item {
-    max-width: 1200px;
-    margin: 0 auto 80px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-}
-
-.tg-eblox-zigzag-left {
-    grid-template-columns: 1fr 1fr;
-}
-
-.tg-eblox-zigzag-right {
-    grid-template-columns: 1fr 1fr;
-    direction: rtl;
-}
-
-.tg-eblox-zigzag-right > * {
-    direction: ltr;
-}
-
-.tg-eblox-zigzag-image {
-    position: relative;
-}
-
-.tg-eblox-zigzag-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 0;
-    box-shadow: 0 8px 25px rgba(0, 130, 115, 0.15);
-    border: 1px solid #e0e0e0;
-}
-
-.tg-eblox-zigzag-text h3 {
-    font-size: 32px;
-    font-weight: 800;
-    margin-bottom: 15px;
-    color: #003d39;
-    letter-spacing: -0.5px;
-}
-
-.tg-eblox-zigzag-text p {
-    font-size: 15px;
-    line-height: 1.9;
-    color: #666;
-    font-weight: 400;
-}
-
-/* ===== SECTION 5: ACCORDION ===== */
-.tg-eblox-accordion {
-    padding: 100px 40px;
-    background: #f5f9f9;
-}
-
-.tg-eblox-accordion-container {
-    max-width: 750px;
-    margin: 0 auto;
-}
-
-.tg-eblox-accordion-container h2 {
-    font-size: 42px;
-    font-weight: 800;
-    text-align: left;
-    margin-bottom: 50px;
-    color: #003d39;
-    position: relative;
-    padding-bottom: 20px;
-}
-
-.tg-eblox-accordion-container h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 4px;
-    background: #ff8c00;
-}
-
-.tg-eblox-accordion-item {
-    margin-bottom: 15px;
-    border-radius: 0;
-    overflow: hidden;
-    border: 2px solid #ddd;
-}
-
-.tg-eblox-accordion-header {
-    width: 100%;
-    padding: 20px 25px;
-    background: white;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 16px;
-    font-weight: 700;
-    color: #003d39;
-    transition: all 0.3s ease;
-    text-align: left;
-    font-family: 'Courier Prime', monospace;
-}
-
-.tg-eblox-accordion-header:hover {
-    background: #f9f9f9;
-    padding-left: 30px;
-    color: #ff8c00;
-}
-
-.tg-eblox-accordion-item.active .tg-eblox-accordion-header {
-    background: #006d66;
-    color: white;
-    border: none;
-}
-
-.tg-eblox-accordion-icon {
-    font-size: 18px;
-    transition: transform 0.3s ease;
-    font-weight: 900;
-}
-
-.tg-eblox-accordion-item.active .tg-eblox-accordion-icon {
-    transform: rotate(45deg);
-    color: #ff8c00;
-}
-
-.tg-eblox-accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    background: #fafafa;
-    padding: 0 25px;
-}
-
-.tg-eblox-accordion-item.active .tg-eblox-accordion-content {
-    max-height: 300px;
-    padding: 20px 25px;
-}
-
-.tg-eblox-accordion-content p {
-    font-size: 14px;
-    line-height: 1.9;
-    color: #555;
-    font-weight: 400;
-}
-
-/* ===== SECTION 6: HORIZONTAL SCROLL ===== */
-.tg-eblox-scroll-showcase {
-    padding: 100px 40px;
-    background: white;
-}
-
-.tg-eblox-showcase-header {
-    max-width: 1200px;
-    margin: 0 auto 50px;
-    position: relative;
-    padding-bottom: 30px;
-}
-
-.tg-eblox-showcase-header h2 {
-    font-size: 42px;
-    font-weight: 800;
-    color: #003d39;
-    position: relative;
-    padding-bottom: 20px;
-}
-
-.tg-eblox-showcase-header h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 4px;
-    background: #ff8c00;
-}
-
-.tg-eblox-showcase-scroll {
-    max-width: 100%;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 0 40px;
-    margin: 0 -40px;
-    -webkit-overflow-scrolling: touch;
-    will-change: scroll-position;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-}
-
-.tg-eblox-showcase-scroll::-webkit-scrollbar {
-    height: 0px;
-    display: none;
-}
-
-.tg-eblox-showcase-scroll::-webkit-scrollbar-track {
-    display: none;
-}
-
-.tg-eblox-showcase-scroll::-webkit-scrollbar-thumb {
-    display: none;
-}
-
-.tg-eblox-showcase-track {
-    display: flex;
-    gap: 25px;
-    min-width: min-content;
-    will-change: transform;
-    transform: translateZ(0);
-}
-
-.tg-eblox-showcase-card {
-    flex: 0 0 300px;
-    padding: 0;
-    background: white;
-    border: 2px solid #e0e0e0;
-    border-radius: 0;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    overflow: hidden;
-}
-
-.tg-eblox-showcase-card:hover {
-    border-color: #ff8c00;
-    transform: translateY(-8px);
-    box-shadow: 0 12px 35px rgba(0, 130, 115, 0.18);
-}
-
-.tg-eblox-showcase-card img {
-    width: 100%;
-    height: 200px;
+    min-height: 420px;
     object-fit: cover;
-    border-bottom: 2px solid #e0e0e0;
+    border-radius: 18px;
+    box-shadow: 0 12px 26px rgba(0, 90, 85, 0.2);
 }
 
-.tg-eblox-showcase-card:hover img {
-    border-bottom-color: #ff8c00;
+.eblox-split-content {
+    background: #ffffff;
+    border: 1px solid #dbefec;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 12px 26px rgba(0, 90, 85, 0.08);
 }
 
-.tg-eblox-showcase-card h4 {
-    font-size: 16px;
-    font-weight: 700;
-    color: #003d39;
-    margin: 15px;
-    letter-spacing: -0.3px;
+.eblox-split-content h2 {
+    color: #005a55;
+    margin-bottom: 16px;
 }
 
-.tg-eblox-showcase-card p {
-    font-size: 13px;
-    color: #999;
-    margin: 0 15px 15px;
-    font-weight: 400;
+.eblox-point-list {
+    list-style: none;
+    display: grid;
+    gap: 14px;
 }
 
-/* ===== SECTION 7: FINAL CTA ===== */
-.tg-eblox-cta-final {
-    padding: 80px 40px;
-    background: #e0f4ff;
-    color: #003d39;
+.eblox-point-list li {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 10px;
+    align-items: start;
+}
+
+.eblox-point-list h3 {
+    color: #005a55;
+    margin-bottom: 4px;
+}
+
+.eblox-point-list p {
+    color: #4e6d6a;
+    line-height: 1.65;
+}
+
+.eblox-why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.eblox-why-card {
+    background: #fff;
+    border: 2px solid #ffad4a;
+    border-radius: 14px;
+    padding: 20px;
+}
+
+.eblox-why-card h3 {
+    color: #005a55;
+    margin-bottom: 10px;
+}
+
+.eblox-why-card p {
+    color: #4e6d6a;
+    line-height: 1.65;
+}
+
+.eblox-kit-offering {
+    padding-top: 40px;
+}
+
+.eblox-kit-panel {
+    background: linear-gradient(135deg, #005a55 0%, #007b74 100%);
+    border-radius: 20px;
+    padding: 30px;
+    color: #edfffc;
+    box-shadow: 0 14px 30px rgba(0, 90, 85, 0.28);
+}
+
+.eblox-kit-header h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    margin-bottom: 12px;
+}
+
+.eblox-kit-header p {
+    color: #d8fffa;
+    line-height: 1.7;
+}
+
+.eblox-kit-projects {
+    margin-top: 10px;
+}
+
+.eblox-kit-specs {
+    margin-top: 24px;
+}
+
+.eblox-kit-specs h3 {
+    margin-bottom: 12px;
+}
+
+.eblox-spec-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.eblox-spec-grid span {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+}
+
+.eblox-project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.eblox-project-grid article {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #dff2ef;
+}
+
+.eblox-project-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.eblox-project-grid h3 {
+    color: #005a55;
+    padding: 16px;
+}
+
+.eblox-scroll-showcase {
+    padding-top: 24px;
+}
+
+.eblox-project-scroll {
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding-bottom: 10px;
+}
+
+.eblox-project-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.eblox-project-track {
+    display: flex;
+    gap: 16px;
+    width: max-content;
+}
+
+.eblox-project-card {
+    flex: 0 0 270px;
+    background: #ffffff;
+    border: 1px solid #dcedea;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 7px 20px rgba(0, 90, 85, 0.08);
+}
+
+.eblox-project-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+}
+
+.eblox-project-card h3 {
+    color: #005a55;
+    font-size: 1rem;
+    padding: 12px 14px 6px;
+}
+
+.eblox-project-card p {
+    color: #597876;
+    padding: 0 14px 16px;
+    font-size: 0.92rem;
+}
+
+.eblox-cta-final {
+    padding-top: 28px;
+    padding-bottom: 88px;
+}
+
+.eblox-cta-box {
+    border-radius: 18px;
+    background: linear-gradient(135deg, #ff8c00 0%, #ff6f3f 100%);
+    padding: 34px;
     text-align: center;
+    color: #fff;
 }
 
-.tg-eblox-cta-wrapper {
-    max-width: 700px;
-    margin: 0 auto;
+.eblox-cta-box h2 {
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    margin-bottom: 12px;
 }
 
-.tg-eblox-cta-final h2 {
-    font-size: 44px;
-    font-weight: 800;
-    margin-bottom: 15px;
-    letter-spacing: -0.5px;
-    color: #003d39;
+.eblox-cta-box p {
+    margin-bottom: 22px;
+    color: #fff5ea;
 }
 
-.tg-eblox-cta-final p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    color: #003d39;
-    opacity: 1;
-    font-weight: 400;
-}
-
-.tg-eblox-cta-submit {
-    padding: 16px 45px;
-    font-size: 15px;
+.eblox-cta-btn {
+    display: inline-block;
+    background: #005a55;
+    color: #ffffff;
+    text-decoration: none;
     font-weight: 700;
-    border: 2px solid #003d39;
-    border-radius: 4px;
-    background: #003d39;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    border-radius: 999px;
+    padding: 12px 22px;
 }
 
-.tg-eblox-cta-submit:hover {
-    background: white;
-    color: #003d39;
-    transform: scale(1.05);
+@media (max-width: 1024px) {
+    .eblox-tech-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .eblox-tech-split {
+        grid-template-columns: 1fr;
+    }
+
+    .eblox-split-media img {
+        min-height: 300px;
+    }
+
+    .eblox-spec-grid,
+    .eblox-project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
     .eblox-page-root .content-layout {
         flex-direction: column;
@@ -639,51 +421,14 @@
         margin-right: auto;
     }
 
-    .tg-eblox-zigzag-item {
+    .eblox-section {
+        padding: 68px 16px;
+    }
+
+    .eblox-why-grid,
+    .eblox-spec-grid,
+    .eblox-project-grid,
+    .eblox-tech-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .tg-eblox-zigzag-right {
-        direction: ltr;
-    }
-
-    .tg-eblox-showcase-card {
-        flex: 0 0 260px;
-    }
-
-    .tg-eblox-visual-impact h2,
-    .tg-eblox-section-title {
-        font-size: 32px;
-    }
-
-    .tg-eblox-visual-impact p {
-        font-size: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .tg-eblox-features-staggered,
-    .tg-eblox-zigzag,
-    .tg-eblox-accordion,
-    .tg-eblox-cta-final {
-        padding: 50px 20px;
-    }
-
-    .tg-eblox-feature-block {
-        padding: 20px;
-    }
-
-    .tg-eblox-showcase-card {
-        flex: 0 0 220px;
-    }
-
-    .tg-eblox-cta-btn, .tg-eblox-impact-btn, .tg-eblox-cta-submit {
-        width: 100%;
-    }
-
-    .tg-eblox-showcase-scroll {
-        padding: 0 20px;
-        margin: 0 -20px;
     }
 }
