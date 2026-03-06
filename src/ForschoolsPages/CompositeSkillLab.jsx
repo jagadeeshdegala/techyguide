@@ -7,6 +7,25 @@ import LabImage3 from '../assets/ForSchoolsCompositeSkillLabImages/Media (8).jpe
 import LabImage4 from '../assets/ForSchoolsCompositeSkillLabImages/WhatsApp Image 2021-10-04 at 11.56.27 AM (2).jpeg';
 import LabImage5 from '../assets/ForSchoolsCompositeSkillLabImages/WhatsApp Image 2021-08-14 at 17.56.00 (1).jpeg';
 import LabImage6 from '../assets/ForSchoolsCompositeSkillLabImages/WhatsApp Image 2021-09-01 at 23.11.56.jpeg';
+// hero image
+import HeroImage from '../assets/ForSchoolsCompositeSkillLabImages/Hero section - Composite skill lab V1.jpg';
+//Purpose & Strategic Benefits image
+import PurposeStrategicBenefits1 from '../assets/ForSchoolsCompositeSkillLabImages/Purpose & Strategic Benefits - 1.jpg';
+import PurposeStrategicBenefits2 from '../assets/ForSchoolsCompositeSkillLabImages/Purpose & Strategic Benefits - 2.jpg';
+import PurposeStrategicBenefits3 from '../assets/ForSchoolsCompositeSkillLabImages/Purpose & Strategic Benefits - 3.jpg';
+import PurposeStrategicBenefits4 from '../assets/ForSchoolsCompositeSkillLabImages/Purpose & Strategic Benefits - 4.jpg';
+//Curriculum & Skill Modules images
+import CurriculumSkillModules1 from '../assets/ForSchoolsCompositeSkillLabImages/Coding & Artificial Intelligence.png';
+import CurriculumSkillModules2 from '../assets/ForSchoolsCompositeSkillLabImages/AR_VR Technology.png';
+import CurriculumSkillModules3 from '../assets/ForSchoolsCompositeSkillLabImages/Design & Mass Media.png';
+import CurriculumSkillModules4 from '../assets/ForSchoolsCompositeSkillLabImages/STEM Robotics.png';
+import CurriculumSkillModules5 from '../assets/ForSchoolsCompositeSkillLabImages/3D Printing & CAD.png';
+import CurriculumSkillModules6 from '../assets/ForSchoolsCompositeSkillLabImages/Electronics & IoT.png';
+import CurriculumSkillModules7 from '../assets/ForSchoolsCompositeSkillLabImages/Machinery & Mechanics.png';
+import CurriculumSkillModules8 from '../assets/ForSchoolsCompositeSkillLabImages/Handicrafts & Arts.png';
+import CurriculumSkillModules9 from '../assets/ForSchoolsCompositeSkillLabImages/Aerospace & Drones.png';
+
+
 
 export default function CompositeSkillLab() {
   const [activeTab, setActiveTab] = useState('digital');
@@ -239,7 +258,7 @@ export default function CompositeSkillLab() {
                 <span>Min. Requirement</span>
               </div>
             </div>
-            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=600" alt="Composite Skill Lab Setup" className="main-hero-img" />
+            <img src={HeroImage} alt="Composite Skill Lab Setup" className="main-hero-img" />
           </div>
         </div>
       </section>
@@ -255,7 +274,7 @@ export default function CompositeSkillLab() {
 
             <div className="guide-card fade-up">
               <div className="guide-img">
-                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=600" alt="NEP 2020" />
+                <img src={PurposeStrategicBenefits1} alt="NEP 2020" />
                 <div className="guide-badge">Policy</div>
               </div>
               <div className="guide-content">
@@ -266,7 +285,7 @@ export default function CompositeSkillLab() {
 
             <div className="guide-card fade-up">
               <div className="guide-img">
-                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=600" alt="Employment" />
+                <img src={PurposeStrategicBenefits2} alt="Employment" />
                 <div className="guide-badge">Career</div>
               </div>
               <div className="guide-content">
@@ -277,7 +296,7 @@ export default function CompositeSkillLab() {
 
             <div className="guide-card fade-up">
               <div className="guide-img">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600" alt="Innovation" />
+                <img src={PurposeStrategicBenefits3} alt="Innovation" />
                 <div className="guide-badge">Skills</div>
               </div>
               <div className="guide-content">
@@ -288,7 +307,7 @@ export default function CompositeSkillLab() {
 
             <div className="guide-card fade-up">
               <div className="guide-img">
-                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=600" alt="Compliance" />
+                <img src={PurposeStrategicBenefits4} alt="Compliance" />
                 <div className="guide-badge">Mandatory</div>
               </div>
               <div className="guide-content">
@@ -390,7 +409,7 @@ export default function CompositeSkillLab() {
                 <div className="curr-grid">
                   <div className="curr-card">
                     <div className="curr-img-container">
-                      <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=600" alt="Coding" />
+                      <img src={CurriculumSkillModules1} alt="Coding" />
                     </div>
                     <div className="curr-body">
                       <h4>Coding & Artificial Intelligence</h4>
@@ -399,7 +418,7 @@ export default function CompositeSkillLab() {
                   </div>
                   <div className="curr-card">
                     <div className="curr-img-container">
-                      <img src="https://images.unsplash.com/photo-1626379953822-baec19c3accd?auto=format&fit=crop&q=80&w=600" alt="VR" />
+                      <img src={CurriculumSkillModules2} alt="VR" />
                     </div>
                     <div className="curr-body">
                       <h4>AR / VR Technology</h4>
@@ -408,7 +427,7 @@ export default function CompositeSkillLab() {
                   </div>
                   <div className="curr-card">
                     <div className="curr-img-container">
-                      <img src="https://images.unsplash.com/photo-1626785774573-4b799312c95d?auto=format&fit=crop&q=80&w=600" alt="Design" />
+                      <img src={CurriculumSkillModules3} alt="Design" />
                     </div>
                     <div className="curr-body">
                       <h4>Design & Mass Media</h4>
@@ -422,7 +441,7 @@ export default function CompositeSkillLab() {
                 <div className="curr-grid">
                   <div className="curr-card">
                     <div className="curr-img-container">
-                      <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=600" alt="Robotics" />
+                      <img src={CurriculumSkillModules4} alt="Robotics" />
                     </div>
                     <div className="curr-body">
                       <h4>STEM Robotics</h4>
@@ -431,7 +450,7 @@ export default function CompositeSkillLab() {
                   </div>
                   <div className="curr-card">
                     <div className="curr-img-container">
-                      <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&q=80&w=600" alt="3D Printing" />
+                      <img src={CurriculumSkillModules5} alt="3D Printing" />
                     </div>
                     <div className="curr-body">
                       <h4>3D Printing & CAD</h4>
@@ -440,7 +459,7 @@ export default function CompositeSkillLab() {
                   </div>
                   <div className="curr-card">
                     <div className="curr-img-container">
-                      <img src="https://images.unsplash.com/photo-1555664424-778a69022365?auto=format&fit=crop&q=80&w=600" alt="Electronics" />
+                      <img src={CurriculumSkillModules6} alt="Electronics" />
                     </div>
                     <div className="curr-body">
                       <h4>Electronics & IoT</h4>
@@ -455,7 +474,7 @@ export default function CompositeSkillLab() {
 
                   <div className="curr-card">
                     <div className="curr-img-container">
-                      <img src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&q=80&w=600" alt="Machinery" />
+                      <img src={CurriculumSkillModules7} alt="Machinery" />
                     </div>
                     <div className="curr-body">
                       <h4>Machinery & Mechanics</h4>
@@ -465,7 +484,7 @@ export default function CompositeSkillLab() {
 
                   <div className="curr-card">
                     <div className="curr-img-container">
-                      <img src="https://images.unsplash.com/photo-1459908676235-d5f02a50184b?auto=format&fit=crop&q=80&w=600" alt="Handicrafts" />
+                      <img src={CurriculumSkillModules8} alt="Handicrafts" />
                     </div>
                     <div className="curr-body">
                       <h4>Handicrafts & Arts</h4>
@@ -475,7 +494,7 @@ export default function CompositeSkillLab() {
 
                   <div className="curr-card">
                     <div className="curr-img-container">
-                      <img src="https://images.unsplash.com/photo-1559687799-a9a7a92230da?auto=format&fit=crop&q=80&w=600" alt="Aerospace" />
+                      <img src={CurriculumSkillModules9} alt="Aerospace" />
                     </div>
                     <div className="curr-body">
                       <h4>Aerospace & Drones</h4>

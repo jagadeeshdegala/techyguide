@@ -5,6 +5,36 @@ import "./AddOnKit.css";
 
 const AddOnKit = () => {
 	useEffect(() => {
+		document.title = "Add-on Students Robotics Kits | STEM & AI Expandable Kits";
+
+		let metaDescription = document.querySelector('meta[name="description"]');
+		if (metaDescription) {
+			metaDescription.setAttribute(
+				"content",
+				"Expandable advanced add-on robotics kits for students including robotic arm, humanoid robots, electronics kits, and Arduino learning kits designed for STEM education."
+			);
+		} else {
+			metaDescription = document.createElement("meta");
+			metaDescription.setAttribute("name", "description");
+			metaDescription.setAttribute(
+				"content",
+				"Expandable advanced add-on robotics kits for students including robotic arm, humanoid robots, electronics kits, and Arduino learning kits designed for STEM education."
+			);
+			document.head.appendChild(metaDescription);
+		}
+
+		let canonicalLink = document.querySelector('link[rel="canonical"]');
+		if (canonicalLink) {
+			canonicalLink.setAttribute("href", "https://techyguide.com/add-on-robotics-kits-for-students");
+		} else {
+			canonicalLink = document.createElement("link");
+			canonicalLink.setAttribute("rel", "canonical");
+			canonicalLink.setAttribute("href", "https://techyguide.com/add-on-robotics-kits-for-students");
+			document.head.appendChild(canonicalLink);
+		}
+	}, []);
+
+	useEffect(() => {
 		const root = document.querySelector('.addonkit-page-root');
 		if (!root) return;
 
@@ -206,7 +236,7 @@ const AddOnKit = () => {
 					</div>
 					<div className="info-section">
 						<h1>ADD on KIT </h1>
-						<h2>Empowering future innovators with the tools to build, code.</h2>
+						<h2>Advanced Robotics Add-On Kits to Build, Code & Innovate </h2>
 						<button className="btn-secondary">Explore Features</button>
 					</div>
 				</main>
@@ -216,7 +246,7 @@ const AddOnKit = () => {
 				<div className="product-section">
 					<div className="info-box" data-aos="fade-right">
 						<h2>Robotic Arm Kit</h2>
-						<p>Teaches functionality and mechanics of a robotic arm including practical pick-and-place activities supported by structured course content.</p>
+						<p>The Robotic Arm Kit introduces students to robotic mechanics and automation systems through practical pick-and-place activities. Learners explore motion control, programming, and mechanical design used in real industrial robotics.</p>
 						<ul className="feature-list">
 							<li><strong>Precise:</strong> Accurate and controlled movements.</li>
 							<li><strong>Motorised:</strong> Reliable motor-driven mechanisms.</li>
@@ -331,8 +361,8 @@ const AddOnKit = () => {
 			<footer className="footer">
 				<div className="container">
 					<div className="footer-content">
-						<h3>Ready to Start Your STEM Journey?</h3>
-						<p>Join thousands of students already building the future</p>
+						<h3>Start Your STEM Innovation Journey </h3>
+						<p>Join thousands of students already exploring robotics, electronics, and AI innovation through hands-on STEM learning.</p>
 						<button className="cta-button">Get Started Today</button>
 					</div>
 				</div>

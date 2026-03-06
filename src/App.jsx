@@ -51,9 +51,11 @@ function App() {
       <Route path="/impact-program" element={<ImpactProgram />} />
       <Route path="/ibot" element={<IBoTPage />} />
       <Route path="/i-bot" element={<Navigate to="/ibot" replace />} />
-      <Route path="/tebot" element={<TeBoTPage />} />
+      <Route path="/tebot-robotics-kit-for-schools" element={<TeBoTPage />} />
+      <Route path="/tebot" element={<Navigate to="/tebot-robotics-kit-for-schools" replace />} />
       <Route path="/e-blox" element={<EBloxPage />} />
-      <Route path="/add-on-kits" element={<EAddOnKitPage />} />
+      <Route path="/add-on-robotics-kits-for-students" element={<EAddOnKitPage />} />
+      <Route path="/add-on-kits" element={<Navigate to="/add-on-robotics-kits-for-students" replace />} />
       <Route path="/robothrone" element={<RobothronePageWrapper />} />
       <Route path="/cbse-ai-robotics-lab-setup-nep-2020" element={<AIRoboticsLabCBSEPage />} />
       <Route path="/ai-roboticslab-cbse" element={<Navigate to="/cbse-ai-robotics-lab-setup-nep-2020" replace />} />

@@ -63,6 +63,7 @@ function ContactUs() {
 						<div className="content-wrapper">
 							<div className="badge">Official Partners</div>
 							<h1 className="tg-contactus-title">Build Your <span>Dream Lab</span> Today.</h1>
+							<img className="tg-contactus-heading-image" src={school2} alt="Dream Lab setup visual" />
 							<p className="description">Complete turnkey solutions for CBSE Composite Skill Labs, STEM Tinkering, and ICSE Robotics. Fully compliant with government mandates.</p>
 
 							<ul className="features">
@@ -92,11 +93,11 @@ function ContactUs() {
 					<section className="right-panel">
 						{/* <div className="form-card"> */}
 							<iframe
-								src="https://in.bigin.online/org60029825901/forms/contact-us"
+								src="https://in.bigin.online/org60029825901/forms/contact-us-form"
 								width="100%"
-								height="660"
+								height="650"
 								frameBorder="0"
-								title="Bigin Contact Us Form"
+								title="Contact Us Form"
 								style={{ border: "none" }}
 							></iframe>
 						{/* </div> */}

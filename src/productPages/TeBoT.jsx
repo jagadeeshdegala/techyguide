@@ -16,6 +16,27 @@ function TeBoT() {
     const touchStartXRef = useRef(0);
     const touchEndXRef = useRef(0);
 
+    useEffect(() => {
+        document.title = 'TeBOT Robotics Kit for Classrooms | 50+ STEM Projects';
+
+        const metaDescriptionText = 'TeBOT is a robotics and IoT learning kit designed for school classrooms in India. Students can build 50+ hands-on STEM projects using safe, reusable components.';
+        let metaDescription = document.querySelector('meta[name="description"]');
+        if (!metaDescription) {
+            metaDescription = document.createElement('meta');
+            metaDescription.setAttribute('name', 'description');
+            document.head.appendChild(metaDescription);
+        }
+        metaDescription.setAttribute('content', metaDescriptionText);
+
+        let canonical = document.querySelector('link[rel="canonical"]');
+        if (!canonical) {
+            canonical = document.createElement('link');
+            canonical.setAttribute('rel', 'canonical');
+            document.head.appendChild(canonical);
+        }
+        canonical.setAttribute('href', 'https://techyguide.com/tebot-robotics-kit-for-schools/');
+    }, []);
+
     const projectsList = [
         { title: "Button Games", description: "Interactive gaming with button controls" },
         { title: "LED Patterns", description: "Creative light pattern programming" },
@@ -359,7 +380,7 @@ function TeBoT() {
                     </div>
                     <div className="info-section">
                         <h1>TeBOT Kit</h1>
-                        <h2>An ultimate robotics kit for young innovators with 50+ projects</h2>
+                        <h2>TeBOT Robotics Kit for Young Innovators – Build 50+ Projects </h2>
                         <button className="btn-secondary">Explore Features</button>
                     </div>
                 </main>
@@ -375,7 +396,7 @@ function TeBoT() {
                             <h2>Introduction to <span>TeBot Advance Kit</span></h2>
                         </div>
                         <p className="intro-description">
-                            The TeBot Advance Kit is the ultimate toolkit for ambitious young innovators. It integrates a vast array of high-tech sensors—including RFID, Bluetooth, and Soil Moisture modules—enabling students to execute over 50 professional-grade projects. From building an RFID Door Lock to a Voice Controlled Car, this kit is designed for those who want to master Robotics, IoT, and AI in a single, comprehensive package.
+                          The TeBot Advance Kit is a robotics and IoT learning toolkit designed for young innovators. It includes sensors such as RFID, Bluetooth, and soil moisture modules, allowing students to build 50+ practical STEM projects. From smart security systems to voice-controlled vehicles, TeBOT helps students explore coding, electronics, and automation through hands-on learning, making it ideal for modern STEM education in schools. 
                         </p>
                         <div className="tebot-video-container reveal-card">
                             <iframe
@@ -398,7 +419,7 @@ function TeBoT() {
                         </div>
                         <p className="explore-tagline">Your Gateway to the Future of Tech</p>
                         <p className="explore-subheading">
-                            TeBot is a versatile, all-in-one robotics companion designed to transform young learners into tech creators. From simple LED patterns to advanced AI-driven robots, TeBot makes complex technology accessible.
+                            TeBot is an all-in-one robotics kit for students that turns learners into tech creators. From LED projects to AI robots, TeBot helps students explore coding, electronics, and STEM through Practical learning. 
                         </p>
                         <ul className="explore-list">
                             <li className="explore-point reveal-card">

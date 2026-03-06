@@ -7,6 +7,8 @@ import LabImage4 from '../assets/ForSchoolsWorkShopImages/IMG_20221114_094422.jp
 import LabImage2 from '../assets/ForSchoolsWorkShopImages/IMG20241005152514.jpg';
 import LabImage6 from '../assets/ForSchoolsWorkShopImages/WhatsApp Image 2021-08-15 at 15.20.01.jpeg';
 import LabImage7 from '../assets/ForSchoolsWorkShopImages/WhatsApp Image 2023-06-05 at 13.02.06.jpg';
+// hero images
+import heroimage from '../assets/ForSchoolsWorkShopImages/Hero section - 4.jpg';
 
 function WorkshopPage() {
 	// ==========================================
@@ -177,7 +179,7 @@ function WorkshopPage() {
 				</div>
 
 				<div className="hero-split right">
-					<div className="blob-image"></div>
+					<div className="blob-image" style={{ backgroundImage: `url(${heroimage})` }}></div>
 				</div>
 			</section>
 

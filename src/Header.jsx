@@ -134,10 +134,10 @@ function Header() {
                   Products <i className="fas fa-chevron-down"></i>
                 </a>
                 <ul className={`dropdown-menu ${productsOpen ? 'active' : ''}`}>
-                  <li><a href="/tebot" onClick={(e) => { e.preventDefault(); handlePageNavigation('/tebot'); }}>TeBoT</a></li>
+                  <li><a href="/tebot-robotics-kit-for-schools" onClick={(e) => { e.preventDefault(); handlePageNavigation('/tebot-robotics-kit-for-schools'); }}>TeBoT</a></li>
                   <li><a href="/i-bot" onClick={(e) => { e.preventDefault(); handlePageNavigation('/i-bot'); }}>I-BoT</a></li>
                   <li><a href="/e-blox" onClick={(e) => { e.preventDefault(); handlePageNavigation('/e-blox'); }}>E- Blox</a></li>
-                  <li><a href="/add-on-kits" onClick={(e) => { e.preventDefault(); handlePageNavigation('/add-on-kits'); }}>Add On Kits</a></li>
+                  <li><a href="/add-on-robotics-kits-for-students" onClick={(e) => { e.preventDefault(); handlePageNavigation('/add-on-robotics-kits-for-students'); }}>Add On Kits</a></li>
                 </ul>
               </li>
 

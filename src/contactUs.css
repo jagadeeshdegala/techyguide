@@ -26,6 +26,17 @@
 .tg-contactus-page .badge { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 6px 15px; border-radius: 20px; font-size: 13px; width: fit-content; margin-bottom: 20px; }
 .tg-contactus-page .tg-contactus-title { font-size: 3rem; margin-bottom: 20px; line-height: 1.1; }
 .tg-contactus-page .tg-contactus-title span { color: var(--brand-orange); }
+.tg-contactus-page .tg-contactus-heading-image {
+	width: 100%;
+	max-width: 420px;
+	max-height: 280px;
+	height: auto;
+	display: block;
+	margin: 0 0 24px;
+	border-radius: 14px;
+	object-fit: cover;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
 .tg-contactus-page .description { opacity: 0.8; margin-bottom: 30px; font-size: 1.05rem; }
 .tg-contactus-page .features { list-style: none; margin-bottom: 30px; }
 .tg-contactus-page .features li { display: flex; gap: 15px; margin-bottom: 18px; align-items: flex-start; }
@@ -118,6 +129,13 @@
 	filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 	transition: transform 0.3s ease, filter 0.3s ease;
 	flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+	.tg-contactus-page .tg-contactus-heading-image {
+		max-width: 100%;
+		margin-bottom: 20px;
+	}
 }
 
 .tg-contactus-page .logo-item.color-1:hover img { filter: drop-shadow(0 0 10px rgba(0,128,0,0.4)); transform: scale(1.08); }

@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import './StemLab.css';
-import heroImage from '../assets/ForSchoolsStemLabImages/virtual-learning-MZKzsgnz.jpg';
 import GalleryImage1 from '../assets/ForSchoolsStemLabImages/IMG20240112172931.jpg';
 import GalleryImage2 from '../assets/ForSchoolsStemLabImages/IMG20240606114358.jpg';
 import GalleryImage3 from '../assets/ForSchoolsStemLabImages/RLS3jpg.jpg';
 import GalleryImage4 from '../assets/ForSchoolsStemLabImages/WhatsApp Image 2021-09-08 at 18.57.35.jpeg';
 import GalleryImage5 from '../assets/ForSchoolsStemLabImages/WhatsApp Image 2021-10-04 at 11.56.30 AM (2).jpeg';
 import GalleryImage6 from '../assets/ForSchoolsStemLabImages/WhatsApp Image 2025-06-04 at 11.12.23_14c0422d.jpg';
+// hero image
+import heroImage from '../assets/ForSchoolsStemLabImages/Hero Section - STEM Lab.jpg';
 
 function StemLab() {
     // ==========================================

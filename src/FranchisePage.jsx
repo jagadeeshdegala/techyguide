@@ -324,16 +324,6 @@ function FranchisePage() {
                             </div>
                         </div>
                     </div>
-                    
-                    <div className="revenue-highlight">
-                        <div className="highlight-text">
-                            <h3>Expected Monthly ROI</h3>
-                            <p>₹40,000 - ₹1,50,000+</p>
-                        </div>
-                        <div className="highlight-visual">
-                            <div className="pulse-circle"></div>
-                        </div>
-                    </div>
                 </div>
             </section>
 
