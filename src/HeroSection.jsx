@@ -1,5 +1,6 @@
 import "./HeroSection.css";
 import herobgImage from "/src/assets/herobackgroundimage.jpg";
+import herobgvideo from "/src/assets/Start_from_the_exact_closeup_position_of_the_robot_6ee8364d27 (1).mp4";
 import { Link } from 'react-router-dom';
 
 function HeroSection() {
@@ -17,27 +18,18 @@ function HeroSection() {
 
   return (
     <>
-       <section
-  className="hero"
-  style={{
-    backgroundImage: `
-      linear-gradient(
-        to bottom,
-        rgba(0, 130, 115, 0.86) 75%,
-        rgba(255, 255, 295, 1.4) 100%
-      ),
-      url(${herobgImage})
-    `,
-    backgroundPosition: "center 10%",
-    backgroundSize: "cover",
-  }}
->
-  <img
-    src={herobgImage}
-    alt="Students learning robotics in TechyGuide STEM lab in India"
-    className="hero-bg-alt"
-  />
-
+      <section className="hero">
+        <video
+          className="hero-bg-video"
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster={herobgImage}
+        >
+          <source src={herobgvideo} type="video/mp4" />
+        </video>
+        <div className="hero-overlay" aria-hidden="true" />
 
         <div className="container hero-content">
           <h1>

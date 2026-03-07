@@ -8,7 +8,8 @@ import kitImage from '../assets/ProductI-BoTImages/kit.jpg';
 import homeAutomation from '../assets/ProductI-BoTImages/home automation.jpg';
 import plantMonitor from '../assets/ProductI-BoTImages/plant monitor.jpg';
 import smokeDetection from '../assets/ProductI-BoTImages/smoke detection.jpg';
-
+//hero image
+import heroimg from '../assets/ProductI-BoTImages/my-image.png';
 function IBoT() {
     const projectsRef = useRef(null);
     const [activeKitSlide, setActiveKitSlide] = useState(0);
@@ -212,7 +213,7 @@ function IBoT() {
             <div className="background-container">
                 <main className="content-layout">
                     <div className="image-section">
-                        <img src={heroRobot} alt="I-BoT Robot" />
+                        <img src={heroimg} alt="I-BoT Robot" />
                     </div>
                     <div className="info-section">
                         <h1>I-BoT Kit</h1>
