@@ -78,7 +78,8 @@ function App() {
       {/* <Route path="/open-learning-library-stem-resources" element={<OpenResourcesWrapper />} /> */}
       {/* <Route path="/open-resources" element={<Navigate to="/open-learning-library-stem-resources" replace />} /> */}
       {/* OpenResources routes commented out -this page is Coming Soon */}
-      <Route path="/about-us" element={<AboutUsPageWrapper />} />
+      <Route path="/about-techyguide" element={<AboutUsPageWrapper />} />
+      <Route path="/about-us" element={<Navigate to="/about-techyguide" replace />} />
       <Route path="/privacy-policy" element={<PrivacyPolicyPageWrapper />} />
       <Route path="/partners" element={<PartnersPageWrapper />} />
       <Route path="/contact-us" element={<ContactUsPageWrapper />} />

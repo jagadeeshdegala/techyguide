@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './E-Blox.css';
 
 import robotKids from '../assets/ProductE-BloxImages/vecteezy_ai-generated-cute-robot-kids-with-isolated-transparant_38049144.png';
@@ -10,6 +10,8 @@ import bgImage1 from '../assets/ProductE-BloxImages/9743528.png';
 import bgImage2 from '../assets/ProductE-BloxImages/5073198.jpg';
 
 export default function EBlox() {
+    const [activeKitSlide, setActiveKitSlide] = useState(0);
+    
     const projectsList = [
         { title: "Button Games", description: "Interactive gaming with button controls" },
         { title: "LED Patterns", description: "Creative light pattern programming" },
@@ -25,6 +27,25 @@ export default function EBlox() {
         { title: "Motion Sensing System", description: "Advanced motion detection and tracking" }
     ];
 
+
+    useEffect(() => {
+        const kitTimer = setInterval(() => {
+            setActiveKitSlide((prevSlide) => (prevSlide + 1) % 2);
+        }, 3500);
+
+        return () => clearInterval(kitTimer);
+    }, []);
+
+    const goToKitSlide = (slideIndex) => {
+        setActiveKitSlide(slideIndex);
+    };
+
+    const moveKitSlide = (direction) => {
+        setActiveKitSlide((prevSlide) => {
+            const totalSlides = 2;
+            return (prevSlide + direction + totalSlides) % totalSlides;
+        });
+    };
 
     useEffect(() => {
         const heroImage = document.querySelector('.eblox-page-root .image-section img');
@@ -229,56 +250,151 @@ export default function EBlox() {
 
                 {/* e-Blox Kit Offerings */}
                 <section className="eblox-page-section eblox-kit-offerings">
-                    <h2 className="eblox-section-title">e-Blox <span style={{color: '#000000'}}>Kit Offerings</span></h2>
+                    <h2 className="eblox-section-title">E-Blox <span style={{color: '#000000'}}>Kit Offerings</span></h2>
                     <br/>
-                    <div className="eblox-kit-layout-v2">
-                        <div className="eblox-kit-image-v2">
-                            <img src={robot4} alt="The e-Blox Standard Kit" loading="lazy" />
-                        </div>
-                        <div className="eblox-kit-content-v2">
-                            <h3>The e-Blox Standard Kit</h3>
-                            <p>A multi-purpose electronics kit that serves as the perfect introduction to STEM for younger grades.</p>
+                    
+                    <div className="eblox-kits-main-slider">
+                        <button
+                            className="eblox-kits-arrow eblox-kits-arrow-left"
+                            onClick={() => moveKitSlide(-1)}
+                            aria-label="Previous kit"
+                        >
+                            ❮
+                        </button>
 
-                            <h4>Projects:</h4>
-                            <p>Includes materials to build 20+ practical products such as:</p>
-                            <ul className="eblox-list">
-                                <li>Study lamps</li>
-                                <li>Table lamps</li>
-                                <li>Mini windmills</li>
-                            </ul>
+                        <div className="eblox-kits-slider-window">
+                            <div
+                                className="eblox-kits-slider-track"
+                                style={{ transform: `translateX(-${activeKitSlide * 100}%)` }}
+                            >
+                                {/* Kit Slide 1 */}
+                                <article className="eblox-kit-main-slide">
+                                    <div className="eblox-kit-scroll-card">
+                                        <div className="eblox-kit-scroll-image">
+                                            <img src={robot4} alt="The e-Blox Standard Kit" loading="lazy" />
+                                        </div>
+                                        <div className="eblox-kit-scroll-content">
+                                            <h3>The E-Blox Standard Kit</h3>
+                                            <p>A multi-purpose electronics kit that serves as the perfect introduction to STEM for younger grades.</p>
 
-                            <h4>Key Components</h4>
+                                            <h4>Projects:</h4>
+                                            <p>Includes materials to build 20+ practical products such as:</p>
+                                            <ul className="eblox-list">
+                                                <li>Study lamps</li>
+                                                <li>Table lamps</li>
+                                                <li>Mini windmills</li>
+                                            </ul>
 
-                            <div className="eblox-components-grid">
-                                <div className="eblox-component-group-v2">
-                                    <h5>Power & Control</h5>
-                                    <ul className="eblox-list">
-                                        <li>Power Block</li>
-                                        <li>Motor Driver Blocks</li>
-                                        <li>Sound Blocks</li>
-                                    </ul>
-                                </div>
+                                            <h4>Key Components</h4>
 
-                                <div className="eblox-component-group-v2">
-                                    <h5>Smart Sensors</h5>
-                                    <ul className="eblox-list">
-                                        <li>Light Sensor Block</li>
-                                        <li>Sound Sensor Block</li>
-                                        <li>Distance Sensor Block</li>
-                                        <li>IR Sensor Block</li>
-                                    </ul>
-                                </div>
+                                            <div className="eblox-components-grid">
+                                                <div className="eblox-component-group-v2">
+                                                    <h5>Power & Control</h5>
+                                                    <ul className="eblox-list">
+                                                        <li>Power Block</li>
+                                                        <li>Motor Driver Blocks</li>
+                                                        <li>Sound Blocks</li>
+                                                    </ul>
+                                                </div>
 
-                                <div className="eblox-component-group-v2">
-                                    <h5>Mechanical Parts</h5>
-                                    <ul className="eblox-list">
-                                        <li>I-Shape BO Motors</li>
-                                        <li>Wires with JST connectors</li>
-                                        <li>Buzzer</li>
-                                    </ul>
-                                </div>
+                                                <div className="eblox-component-group-v2">
+                                                    <h5>Smart Sensors</h5>
+                                                    <ul className="eblox-list">
+                                                        <li>Light Sensor Block</li>
+                                                        <li>Sound Sensor Block</li>
+                                                        <li>Distance Sensor Block</li>
+                                                        <li>IR Sensor Block</li>
+                                                    </ul>
+                                                </div>
+
+                                                <div className="eblox-component-group-v2">
+                                                    <h5>Mechanical Parts</h5>
+                                                    <ul className="eblox-list">
+                                                        <li>I-Shape BO Motors</li>
+                                                        <li>Wires with JST connectors</li>
+                                                        <li>Buzzer</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                {/* Kit Slide 2 - Duplicate for now */}
+                                <article className="eblox-kit-main-slide">
+                                    <div className="eblox-kit-scroll-card featured">
+                                        <div className="eblox-kit-scroll-image">
+                                            <img src={robot4} alt="The e-Blox Standard Kit" loading="lazy" />
+                                        </div>
+                                        <div className="eblox-kit-scroll-content">
+                                            <h3>The E-Blox Standard Kit</h3>
+                                            <p>A multi-purpose electronics kit that serves as the perfect introduction to STEM for younger grades.</p>
+
+                                            <h4>Projects:</h4>
+                                            <p>Includes materials to build 20+ practical products such as:</p>
+                                            <ul className="eblox-list">
+                                                <li>Study lamps</li>
+                                                <li>Table lamps</li>
+                                                <li>Mini windmills</li>
+                                            </ul>
+
+                                            <h4>Key Components</h4>
+
+                                            <div className="eblox-components-grid">
+                                                <div className="eblox-component-group-v2">
+                                                    <h5>Power & Control</h5>
+                                                    <ul className="eblox-list">
+                                                        <li>Power Block</li>
+                                                        <li>Motor Driver Blocks</li>
+                                                        <li>Sound Blocks</li>
+                                                    </ul>
+                                                </div>
+
+                                                <div className="eblox-component-group-v2">
+                                                    <h5>Smart Sensors</h5>
+                                                    <ul className="eblox-list">
+                                                        <li>Light Sensor Block</li>
+                                                        <li>Sound Sensor Block</li>
+                                                        <li>Distance Sensor Block</li>
+                                                        <li>IR Sensor Block</li>
+                                                    </ul>
+                                                </div>
+
+                                                <div className="eblox-component-group-v2">
+                                                    <h5>Mechanical Parts</h5>
+                                                    <ul className="eblox-list">
+                                                        <li>I-Shape BO Motors</li>
+                                                        <li>Wires with JST connectors</li>
+                                                        <li>Buzzer</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
                             </div>
                         </div>
+
+                        <button
+                            className="eblox-kits-arrow eblox-kits-arrow-right"
+                            onClick={() => moveKitSlide(1)}
+                            aria-label="Next kit"
+                        >
+                            ❯
+                        </button>
+                    </div>
+
+                    <div className="eblox-kits-nav-dots">
+                        <button
+                            className={`eblox-kits-dot ${activeKitSlide === 0 ? 'active' : ''}`}
+                            onClick={() => goToKitSlide(0)}
+                            aria-label="Kit 1"
+                        ></button>
+                        <button
+                            className={`eblox-kits-dot ${activeKitSlide === 1 ? 'active' : ''}`}
+                            onClick={() => goToKitSlide(1)}
+                            aria-label="Kit 2"
+                        ></button>
                     </div>
                 </section>
 

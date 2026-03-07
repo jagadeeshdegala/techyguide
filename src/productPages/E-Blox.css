@@ -314,7 +314,166 @@
     padding: 0 16px 16px;
 }
 
-/* ========== E-BLOX KIT OFFERINGS - COMPONENTS SIDE BY SIDE ========== */
+/* ========== E-BLOX KIT OFFERINGS - SLIDER ========== */
+.eblox-page .eblox-kits-main-slider {
+    position: relative;
+    overflow: hidden;
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(0, 136, 127, 0.2);
+    border-radius: 18px;
+    box-shadow: 0 12px 32px rgba(0, 136, 127, 0.12);
+    padding: 16px;
+}
+
+.eblox-page .eblox-kits-slider-window {
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.eblox-page .eblox-kits-slider-track {
+    display: flex;
+    transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.eblox-page .eblox-kit-main-slide {
+    min-width: 100%;
+}
+
+.eblox-page .eblox-kit-scroll-card {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 500px;
+    background: #ffffff;
+    border: 2px solid rgba(0, 136, 127, 0.5);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 136, 127, 0.1);
+    transition: all 0.3s ease;
+}
+
+.eblox-page .eblox-kit-scroll-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 40px rgba(0, 136, 127, 0.15);
+    border-color: rgba(0, 136, 127, 0.8);
+}
+
+.eblox-page .eblox-kit-scroll-card.featured {
+    min-height: 500px;
+    background: #ffffff;
+    border-color: rgba(0, 136, 127, 0.7);
+    border-width: 2px;
+}
+
+.eblox-page .eblox-kit-scroll-image {
+    width: 40%;
+    min-width: 40%;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #d3f7f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eblox-page .eblox-kit-scroll-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.eblox-page .eblox-kit-scroll-content {
+    width: 60%;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.eblox-page .eblox-kit-scroll-content h3 {
+    color: var(--eblox-teal-900);
+    font-size: 1.45rem;
+    margin-bottom: 12px;
+}
+
+.eblox-page .eblox-kit-scroll-content p {
+    color: #315f5b;
+    line-height: 1.65;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.eblox-page .eblox-kit-scroll-content h4 {
+    color: var(--eblox-orange-500);
+    font-size: 1rem;
+    margin-top: 14px;
+    margin-bottom: 8px;
+}
+
+.eblox-page .eblox-kits-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(0, 136, 127, 0.8);
+    color: #ffffff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.eblox-page .eblox-kits-arrow:hover {
+    background: rgba(0, 136, 127, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.eblox-page .eblox-kits-arrow-left {
+    left: 12px;
+}
+
+.eblox-page .eblox-kits-arrow-right {
+    right: 12px;
+}
+
+.eblox-page .eblox-kits-nav-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.eblox-page .eblox-kits-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 136, 127, 0.5);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.eblox-page .eblox-kits-dot.active {
+    background: rgba(0, 136, 127, 1);
+    border-color: rgba(0, 136, 127, 1);
+    transform: scale(1.2);
+}
+
+.eblox-page .eblox-kits-dot:hover {
+    border-color: rgba(0, 136, 127, 0.8);
+}
+
+/* ========== E-BLOX KIT OFFERINGS - LEGACY LAYOUT (INACTIVE) ========== */
 .eblox-page .eblox-kit-layout-v2 {
     display: grid;
     grid-template-columns: 1fr 1.12fr;
@@ -550,6 +709,15 @@
         min-height: 300px;
     }
 
+    .eblox-page .eblox-kit-scroll-card {
+        min-height: 450px;
+    }
+
+    .eblox-page .eblox-kit-scroll-content {
+        width: 55%;
+        padding: 24px;
+    }
+
     .eblox-page .eblox-components-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -609,6 +777,29 @@
 
     .eblox-page .eblox-kit-layout-v2 {
         grid-template-columns: 1fr;
+    }
+
+    .eblox-page .eblox-kit-scroll-card {
+        min-height: 420px;
+        flex-direction: column;
+    }
+
+    .eblox-page .eblox-kit-scroll-image {
+        width: 100%;
+        height: 250px;
+        min-width: 100%;
+    }
+
+    .eblox-page .eblox-kit-scroll-content {
+        width: 100%;
+        padding: 20px;
+        max-height: 170px;
+    }
+
+    .eblox-page .eblox-kits-arrow {
+        width: 34px;
+        height: 34px;
+        font-size: 1rem;
     }
 
     .eblox-page .eblox-components-grid {
@@ -685,6 +876,40 @@
 
     .eblox-page .eblox-kit-content-v2 {
         padding: 16px;
+    }
+
+    .eblox-page .eblox-kit-scroll-card {
+        min-height: 380px;
+    }
+
+    .eblox-page .eblox-kit-scroll-image {
+        height: 200px;
+    }
+
+    .eblox-page .eblox-kit-scroll-content {
+        max-height: 180px;
+        font-size: 0.9rem;
+    }
+
+    .eblox-page .eblox-kit-scroll-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+
+    .eblox-page .eblox-kits-arrow {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+
+    .eblox-page .eblox-kits-nav-dots {
+        gap: 8px;
+        margin-top: 16px;
+    }
+
+    .eblox-page .eblox-kits-dot {
+        width: 8px;
+        height: 8px;
     }
 
     .eblox-page .eblox-list {

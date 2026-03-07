@@ -156,7 +156,7 @@ function FooterSection() {
                   </a>
                 </li>
                 <li>
-                  <Link to="/about-us" onClick={scrollToTop}>
+                  <Link to="/about-techyguide" onClick={scrollToTop}>
                     About Us
                   </Link>
                 </li>

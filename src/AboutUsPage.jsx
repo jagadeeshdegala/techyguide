@@ -1,15 +1,43 @@
+import { useEffect } from 'react'
 import './AboutUsPage.css'
 import teamImage from './assets/AboutUSImages/Adorable-bear-cubs.jpg'
 
 function AboutUsPage() {
+	// Set SEO metadata for About Us page
+	useEffect(() => {
+		// Set page title
+		document.title = 'About | TechyGuide STEM, Robotics & AI Education Company';
+
+		// Set or update meta description
+		let metaDescription = document.querySelector('meta[name="description"]');
+		if (metaDescription) {
+			metaDescription.setAttribute('content', 'Learn about TechyGuide, a STEM education and technology company providing robotics kits, AI courses, coding programs, IoT solutions, and hands-on innovation learning.');
+		} else {
+			metaDescription = document.createElement('meta');
+			metaDescription.setAttribute('name', 'description');
+			metaDescription.setAttribute('content', 'Learn about TechyGuide, a STEM education and technology company providing robotics kits, AI courses, coding programs, IoT solutions, and hands-on innovation learning.');
+			document.head.appendChild(metaDescription);
+		}
+
+		// Add or update canonical tag
+		let canonicalLink = document.querySelector('link[rel="canonical"]');
+		if (!canonicalLink) {
+			canonicalLink = document.createElement('link');
+			canonicalLink.setAttribute('rel', 'canonical');
+			canonicalLink.setAttribute('href', 'https://techyguide.com/about-techyguide');
+			document.head.appendChild(canonicalLink);
+		} else {
+			canonicalLink.setAttribute('href', 'https://techyguide.com/about-techyguide');
+		}
+	}, []);
+
 	return (
 		<div className="aboutus-page-root">
 			<section className="hero">
 				<div className="hero-content">
-					<h1>We Build Digital Experiences</h1>
+					<h1>Robotics, AI & STEM Innovators </h1>
 					<p>
-						A team of passionate engineers, designers, and problem-solvers creating
-						scalable, secure, and user-focused solutions.
+						TechyGuide builds robotics, AI, coding and IoT solutions, empowering students, educators and businesses through practical STEM learning and Educating .
 					</p>
 				</div>
 			</section>
@@ -19,14 +47,12 @@ function AboutUsPage() {
 					<div>
 						<h2>Who We Are</h2>
 						<p>
-							We are a technology-driven company focused on delivering high-quality
-							web and software solutions. Our mission is to help businesses grow
-							through innovation and reliable engineering.
+							TechyGuide is a technology-driven company focused on advancing STEM education through robotics, AI, coding and engineering learning. We empower students, educators and innovators with hands-on tools, practical training and modern technology programs that build creativity, technical skills and real-world thinking.
 						</p>
-						<p>
+						{/* <p>
 							From startups to enterprises, we partner with clients to turn ideas
 							into powerful digital products.
-						</p>
+						</p> */}
 					</div>
 					<img src={teamImage} alt="Office" />
 				</div>
