@@ -144,6 +144,11 @@
     background: #ffffff;
 }
 
+/* Keep all non-hero sections white */
+.tebot-page-root .ibot-page section {
+    background: #ffffff !important;
+}
+
 .tebot-page-root .ibot-page h1, 
 .tebot-page-root .ibot-page h2, 
 .tebot-page-root .ibot-page h3, 
@@ -325,10 +330,12 @@
 }
 
 .tebot-page-root .tech-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1320px;
     margin: 0 auto;
 }
 
@@ -342,6 +349,10 @@
     border-top: 4px solid #ff6b35;
     display: flex;
     flex-direction: column;
+    max-width: 460px;
+    width: 100%;
+    flex: 1 1 460px;
+    align-items: flex-start;
 }
 
 .tebot-page-root .tech-card:hover {
@@ -349,10 +360,42 @@
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
 }
 
+.tebot-page-root .technologies-section .tech-card {
+    padding: 0 !important;
+    overflow: hidden;
+}
+
 .tebot-page-root .tech-icon {
-    font-size: 3.5rem;
-    margin-bottom: 15px;
-    line-height: 1;
+    width: 100% !important;
+    height: 266px;
+    margin: 0 !important;
+    line-height: 0;
+    border-radius: 0 !important;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tebot-page-root .tech-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #f0f4f8;
+}
+
+.tebot-page-root .technologies-section .tech-card h3 {
+    margin: 16px 0 10px;
+    padding: 0 22px;
+}
+
+.tebot-page-root .technologies-section .tech-card p {
+    margin: 0;
+    padding: 0 22px 22px;
 }
 
 .tebot-page-root .tech-card h3 {
@@ -360,6 +403,8 @@
     color: #1f2937;
     margin-bottom: 15px;
     font-weight: 700;
+    text-align: left;
+    width: 100%;
 }
 
 .tebot-page-root .tech-card p {
@@ -367,6 +412,8 @@
     color: #555;
     line-height: 1.7;
     flex-grow: 1;
+    text-align: left;
+    width: 100%;
 }
 
 /* ===== HARDWARE SPECIFICATIONS SECTION ===== */
@@ -483,20 +530,23 @@
 }
 
 .tebot-page-root .benefit-icon {
-    width: 72px;
-    height: 72px;
+    width: 100%;
+    max-width: 100%;
+    height: 170px;
     margin: 0 auto 15px;
+    overflow: hidden;
+    border-radius: 12px;
 }
 
 .tebot-page-root .benefit-icon img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     display: block;
     border-radius: 12px;
     border: 1px solid #dbe8ff;
     background: #f8fbff;
-    padding: 10px;
+    padding: 0;
 }
 
 .tebot-page-root .benefit-icon {
@@ -1136,7 +1186,13 @@
     }
 
     .tebot-page-root .tech-grid {
-        grid-template-columns: 1fr;
+        flex-direction: row;
+        gap: 25px;
+    }
+    
+    .tebot-page-root .tech-card {
+        flex: 1 1 420px;
+        max-width: 460px;
     }
 
     .tebot-page-root .specs-grid {
@@ -1250,6 +1306,12 @@
     .tebot-page-root .benefit-item {
         padding: 20px;
     }
+    
+    .tebot-page-root .tech-icon {
+        width: 100%;
+        height: 168px;
+        margin-bottom: 15px;
+    }
 
     .tebot-page-root .kit-card {
         padding: 25px;
@@ -1319,6 +1381,15 @@
     .tebot-page-root .benefit-item,
     .tebot-page-root .kit-card {
         padding: 15px;
+    }
+    
+    .tebot-page-root .tech-icon {
+        width: 100% !important;
+        height: 158px !important;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .tebot-page-root .project-card {
@@ -1451,9 +1522,14 @@
     text-align: left;
     border-top: 5px solid var(--brand-2);
     background: linear-gradient(180deg, #ffffff 0%, #f8fcff 100%);
+    align-items: flex-start;
 }
 
-.tebot-page-root .tech-icon,
+.tebot-page-root .tech-icon {
+    line-height: 1;
+    align-self: flex-start;
+}
+
 .tebot-page-root .benefit-icon {
     line-height: 1;
 }
@@ -1536,6 +1612,32 @@
     .tebot-page-root .projects-grid {
         grid-template-columns: 1fr;
     }
+    
+    .tebot-page-root .tech-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .tebot-page-root .tech-card {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .tebot-page-root .tech-icon {
+        width: 100% !important;
+        height: 170px !important;
+        margin: 0 !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .tebot-page-root .tech-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
     .tebot-page-root .kit-card,
     .tebot-page-root .explore-point {
@@ -1605,6 +1707,58 @@
     .tebot-page-root .tech-card,
     .tebot-page-root .project-card {
         border: 2px solid #333;
+    }
+}
+
+/* Ensure Why TeBot images are full-bleed with no left/right/top gap */
+.tebot-page-root .why-tebot-section .benefit-item {
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+.tebot-page-root .why-tebot-section .benefit-icon {
+    width: 100% !important;
+    height: 180px;
+    margin: 0 !important;
+    line-height: 0;
+    border-radius: 0 !important;
+    overflow: hidden;
+}
+
+.tebot-page-root .why-tebot-section .benefit-icon img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border: 0 !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0;
+}
+
+.tebot-page-root .why-tebot-section .benefit-item h3 {
+    margin: 16px 0 10px;
+    padding: 0 22px;
+    text-align: left;
+}
+
+.tebot-page-root .why-tebot-section .benefit-item p {
+    margin: 0;
+    padding: 0 22px 22px;
+    text-align: left;
+}
+
+@media (max-width: 900px) {
+    .tebot-page-root .why-tebot-section .benefit-icon {
+        height: 160px;
+    }
+
+    .tebot-page-root .why-tebot-section .benefit-item h3 {
+        padding: 0 18px;
+    }
+
+    .tebot-page-root .why-tebot-section .benefit-item p {
+        padding: 0 18px 18px;
     }
 }
 

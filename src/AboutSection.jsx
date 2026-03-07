@@ -36,7 +36,7 @@ function AboutSection(){
                         <small>
                             Comprehensive learning solutions combining hands-on DIY kits with interactive virtual courses.
                             <Link
-                                to="/impact-program"
+                                to="/government-csr-stem-robotics-education-initiatives"
                                 style={{ display: 'inline', textDecoration: 'underline', fontWeight: 700, color: 'var(--accent-color)' }}
                             >
                                 Partner Your School

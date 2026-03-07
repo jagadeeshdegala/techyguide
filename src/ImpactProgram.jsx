@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./ImpactProgram.css";
 import FooterSection from "./FooterSection";
 
@@ -40,6 +40,35 @@ function ImpactProgram() {
   ];
   const [lightbox, setLightbox] = useState({ open: false, src: "", alt: "" });
   const [galleryFilter, setGalleryFilter] = useState("all");
+
+  // Set SEO metadata for Impact Program page
+  useEffect(() => {
+    // Set page title
+    document.title = 'Government & CSR STEM Education Programs | TechyGuide Impact';
+
+    // Set or update meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Explore TechyGuide\'s Government and CSR initiatives empowering students with STEM, robotics, AI, and coding through innovation labs, workshops, and teacher training across India.');
+    } else {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      metaDescription.setAttribute('content', 'Explore TechyGuide\'s Government and CSR initiatives empowering students with STEM, robotics, AI, and coding through innovation labs, workshops, and teacher training across India.');
+      document.head.appendChild(metaDescription);
+    }
+
+    // Add or update canonical tag
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      canonicalLink.setAttribute('href', 'https://techyguide.com/government-csr-stem-robotics-education-initiatives');
+      document.head.appendChild(canonicalLink);
+    } else {
+      canonicalLink.setAttribute('href', 'https://techyguide.com/government-csr-stem-robotics-education-initiatives');
+    }
+  }, []);
+
   return (
     <>
       <div className="impact-program">

@@ -117,8 +117,34 @@ function OpenResources() {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeFilter, setActiveFilter] = useState('all');
 
-  // Scroll to top when component mounts
+  // Set SEO metadata and scroll to top for the Open Resources page
   useEffect(() => {
+    // Set page title
+    document.title = 'Open STEM Learning Library | Robotics, AI & Coding Resources';
+
+    // Set or update meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Access free STEM learning resources including robotics tutorials, AI coding lessons, IoT projects, Arduino guides, and 3D printing tutorials for students.');
+    } else {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      metaDescription.setAttribute('content', 'Access free STEM learning resources including robotics tutorials, AI coding lessons, IoT projects, Arduino guides, and 3D printing tutorials for students.');
+      document.head.appendChild(metaDescription);
+    }
+
+    // Add or update canonical tag
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      canonicalLink.setAttribute('href', 'https://techyguide.com/open-learning-library-stem-resources');
+      document.head.appendChild(canonicalLink);
+    } else {
+      canonicalLink.setAttribute('href', 'https://techyguide.com/open-learning-library-stem-resources');
+    }
+
+    // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
 

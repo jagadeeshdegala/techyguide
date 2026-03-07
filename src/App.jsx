@@ -33,7 +33,7 @@ import PrivacyPolicyPage from './privacyPolicypage.jsx'
 import TeBoT from './productPages/TeBoT.jsx'
 import EBlox from './productPages/E-Blox.jsx'
 import EAddOnKit from './productPages/AddOnKit.jsx'
-import OpenResources from './OpenResources.jsx'
+// import OpenResources from './OpenResources.jsx' // Commented out - Coming Soon
 import AboutUsPage from './AboutUsPage.jsx'
 import PartnersPage from './partnersPage.jsx'
 import ContactUs from './contactUs.jsx'
@@ -48,7 +48,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Navigate to="/ai-robotics-stem-education-india" replace />} />
       <Route path="/ai-robotics-stem-education-india" element={<HomePage />} />
-      <Route path="/impact-program" element={<ImpactProgram />} />
+      <Route path="/government-csr-stem-robotics-education-initiatives" element={<ImpactProgram />} />
+      <Route path="/impact-program" element={<Navigate to="/government-csr-stem-robotics-education-initiatives" replace />} />
       <Route path="/ibot" element={<IBoTPage />} />
       <Route path="/i-bot" element={<Navigate to="/ibot" replace />} />
       <Route path="/tebot-robotics-kit-for-schools" element={<TeBoTPage />} />
@@ -74,7 +75,9 @@ function App() {
       <Route path="/courses" element={<CoursesPageWrapper />} />
       <Route path="/shop" element={<ShopPageWrapper />} />
       <Route path="/checkout" element={<CheckOutPage />} />
-      <Route path="/open-resources" element={<OpenResourcesWrapper />} />
+      {/* <Route path="/open-learning-library-stem-resources" element={<OpenResourcesWrapper />} /> */}
+      {/* <Route path="/open-resources" element={<Navigate to="/open-learning-library-stem-resources" replace />} /> */}
+      {/* OpenResources routes commented out -this page is Coming Soon */}
       <Route path="/about-us" element={<AboutUsPageWrapper />} />
       <Route path="/privacy-policy" element={<PrivacyPolicyPageWrapper />} />
       <Route path="/partners" element={<PartnersPageWrapper />} />
@@ -262,14 +265,15 @@ function RobothronePageWrapper() {
   );
 }
 
-function OpenResourcesWrapper() {
-  return (
-    <>
-      <OpenResources />
-      <FooterSection />
-    </>
-  );
-}
+// OpenResourcesWrapper commented out - Coming Soon
+// function OpenResourcesWrapper() {
+//   return (
+//     <>
+//       <OpenResources />
+//       <FooterSection />
+//     </>
+//   );
+// }
 
 function AboutUsPageWrapper() {
   return (

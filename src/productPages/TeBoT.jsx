@@ -1,6 +1,28 @@
 import { useEffect, useRef, useState } from 'react';
 import './TeBoT.css';
-import robotImage from '../assets/ProductTeBoTImages/7.png';
+//hero image
+import heroImage from '../assets/ProductTeBoTImages/HERO Section Boy with Kit.png';
+// Explore, Create, and Innovate with TeBot section images
+import ReusableLearning from '../assets/ProductTeBoTImages/Reusable Learning.png';
+import ComprehensiveProjects from '../assets/ProductTeBoTImages/Comprehensive Projects.png';
+import IndustryAligned from '../assets/ProductTeBoTImages/Industry Aligned.png';
+//Master the Technologies of Tomorrow images
+import RoboticsEngineering from '../assets/ProductTeBoTImages/Robotics & Engineering.png';
+import CodingProgramming from '../assets/ProductTeBoTImages/Coding & Programming.png';
+//The Advanced Tech Inside TeBot image
+import TheAdvancedTechInsideTeBot from '../assets/ProductTeBoTImages/The Advanced Tech Inside TeBot.png';
+//Why TeBot is the Ultimate Learning Choice images
+import ChildSafeDurable from '../assets/ProductTeBoTImages/Child Safe & Durable.png';
+import PlugPlaySimplicity from '../assets/ProductTeBoTImages/Plug & Play Simplicity.png';
+import ProvenImpact from '../assets/ProductTeBoTImages/Proven Impact.png';
+import GuaranteedQuality from '../assets/ProductTeBoTImages/Guaranteed Quality.png';
+
+
+
+
+
+
+
 import bgImage1 from '../assets/ProductTeBoTImages/9743539.png';
 import bgImage2 from '../assets/ProductTeBoTImages/5073198.jpg';
 import tebotWebsiteImage from '../assets/ProductTeBoTImages/Website Tebt.png';
@@ -10,6 +32,7 @@ import tebotChampImage from '../assets/ProductTeBoTImages/robot_4512237.png';
 import tebotChampProjectImage from '../assets/ProductTeBoTImages/robotics_12775607.png';
 import tebotAdvanceImage from '../assets/ProductTeBoTImages/pexels-photo-35542404.jpeg';
 // import ZohoBiginForm from '../components/ZohoBiginForm';
+//hero image
 
 function TeBoT() {
     const [activeKitSlide, setActiveKitSlide] = useState(0);
@@ -58,7 +81,7 @@ function TeBoT() {
             name: "TeBot Basic Kit",
             description: "The ideal entry-level robotics kit for beginners to build a solid STEM foundation.",
             projects: "10+ interactive projects",
-            image: robotImage,
+            image: ChildSafeDurable,
             imageAlt: 'TeBot Basic Kit visual'
         },
         {
@@ -66,7 +89,7 @@ function TeBoT() {
             name: "TeBot Champ Kit",
             description: "An advanced robotics kit designed for young innovators ready for more complexity and sensor experimentation.",
             projects: "40+ engaging projects",
-            image: tebotWebsiteImage,
+            image: PlugPlaySimplicity,
             imageAlt: 'TeBot Champ Kit visual'
         },
         {
@@ -74,7 +97,7 @@ function TeBoT() {
             name: "TeBot Advance Kit",
             description: "The flagship innovator's toolkit. It combines advanced Robotics, IoT, and AI capabilities into one package, featuring professional modules like RFID and Bluetooth.",
             projects: "50+ high-level projects",
-            image: tebotAdvanceImage,
+            image: ProvenImpact,
             imageAlt: 'TeBot Advance Kit visual'
         }
     ];
@@ -376,7 +399,7 @@ function TeBoT() {
             <div className="background-container">
                 <main className="content-layout">
                     <div className="image-section">
-                        <img src={robotImage} alt="TEBOT Robot" />
+                        <img src={heroImage} alt="TEBOT Robot" />
                     </div>
                     <div className="info-section">
                         <h1>TeBOT Kit</h1>
@@ -415,7 +438,7 @@ function TeBoT() {
                 <section className="explore-section section-block section-plain" id="explore">
                     <div className="explore-container section-container">
                         <div className="section-header">
-                            <h2>Explore, Create, and Innovate with TeBot</h2>
+                            <h2><span style={{color: '#008273'}}>Explore, Create, and Innovate</span> with TeBot</h2>
                         </div>
                         <p className="explore-tagline">Your Gateway to the Future of Tech</p>
                         <p className="explore-subheading">
@@ -425,7 +448,7 @@ function TeBoT() {
                             <li className="explore-point reveal-card">
                                 <img
                                     className="explore-image"
-                                    src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=640&q=80"
+                                    src={ReusableLearning}
                                     alt="Reusable Learning"
                                     loading="lazy"
                                 />
@@ -437,7 +460,7 @@ function TeBoT() {
                             <li className="explore-point reveal-card">
                                 <img
                                     className="explore-image"
-                                    src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&w=640&q=80"
+                                    src={ComprehensiveProjects}
                                     alt="Comprehensive Projects"
                                     loading="lazy"
                                 />
@@ -449,7 +472,7 @@ function TeBoT() {
                             <li className="explore-point reveal-card">
                                 <img
                                     className="explore-image"
-                                    src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=640&q=80"
+                                    src={IndustryAligned}
                                     alt="Industry Aligned"
                                     loading="lazy"
                                 />
@@ -466,16 +489,20 @@ function TeBoT() {
                 <section className="technologies-section section-block section-mist" id="technologies">
                     <div className="tech-container section-container">
                         <div className="section-header">
-                            <h2>Master the Technologies of Tomorrow</h2>
+                            <h2>Master the <span style={{color: '#008273'}}>Technologies of Tomorrow</span></h2>
                         </div>
                         <div className="tech-grid">
                             <div className="tech-card reveal-card">
-                                <div className="tech-icon">🤖</div>
+                                <div className="tech-icon">
+                                    <img src={RoboticsEngineering} alt="Robotics & Engineering" />
+                                </div>
                                 <h3>Robotics & Engineering</h3>
                                 <p>Build autonomous machines like Line Followers, Obstacle Avoiders, and Gesture Controlled Cars.</p>
                             </div>
                             <div className="tech-card reveal-card">
-                                <div className="tech-icon">💻</div>
+                                <div className="tech-icon">
+                                    <img src={CodingProgramming} alt="Coding & Programming" />
+                                </div>
                                 <h3>Coding & Programming</h3>
                                 <p>Master logic using Scratch (Graphical) for beginners and C++ (Arduino IDE) for advanced mastery.</p>
                             </div>
@@ -487,11 +514,11 @@ function TeBoT() {
                 <section className="specs-section section-block section-soft" id="specifications">
                     <div className="specs-container section-container">
                         <div className="section-header">
-                            <h2>The Advanced Tech Inside TeBot</h2>
+                            <h2>The Advanced Tech Inside <span style={{color: '#008273'}}>TeBot</span></h2>
                         </div>
                         <div className="specs-card reveal-card">
                             <div className="specs-image-wrap">
-                                <img src={tebotComponentsImage} alt="TeBot advanced components" loading="lazy" />
+                                <img src={TheAdvancedTechInsideTeBot} alt="TeBot advanced components" loading="lazy" />
                             </div>
                             <div className="specs-points-wrap">
                                 <ul className="specs-points-list">
@@ -511,33 +538,33 @@ function TeBoT() {
                 <section className="why-tebot-section section-block section-plain" id="why-tebot">
                     <div className="why-container section-container">
                         <div className="section-header">
-                            <h2>Why TeBot is the Ultimate Learning Choice</h2>
+                            <h2>Why <span style={{color: '#008273'}}>TeBot</span> is the <span style={{color: '#008273'}}>Ultimate Learning Choice</span></h2>
                         </div>
                         <div className="benefits-grid">
                             <div className="benefit-item reveal-card">
                                 <div className="benefit-icon">
-                                    <img src={tebotProjectsImage} alt="Child Safe and Durable icon" loading="lazy" />
+                                    <img src={ChildSafeDurable} alt="Child Safe and Durable icon" loading="lazy" />
                                 </div>
                                 <h3>Child Safe & Durable</h3>
                                 <p>Built with non-toxic, low-voltage materials, making it classroom-safe and ready for heavy reuse.</p>
                             </div>
                             <div className="benefit-item reveal-card">
                                 <div className="benefit-icon">
-                                    <img src={tebotChampImage} alt="Plug and Play Simplicity icon" loading="lazy" />
+                                    <img src={PlugPlaySimplicity} alt="Plug and Play Simplicity icon" loading="lazy" />
                                 </div>
                                 <h3>Plug & Play Simplicity</h3>
                                 <p>Ready-to-use components and inbuilt sensors ensure quick setup—start coding in minutes.</p>
                             </div>
                             <div className="benefit-item reveal-card">
                                 <div className="benefit-icon">
-                                    <img src={tebotChampProjectImage} alt="Proven Impact icon" loading="lazy" />
+                                    <img src={ProvenImpact} alt="Proven Impact icon" loading="lazy" />
                                 </div>
                                 <h3>Proven Impact</h3>
                                 <p>Developed by Techyguide, a pioneer with 350+ AI/Robotics labs and over 100,000 students trained across India.</p>
                             </div>
                             <div className="benefit-item reveal-card">
                                 <div className="benefit-icon">
-                                    <img src={tebotComponentsImage} alt="Guaranteed Quality icon" loading="lazy" />
+                                    <img src={GuaranteedQuality} alt="Guaranteed Quality icon" loading="lazy" />
                                 </div>
                                 <h3>Guaranteed Quality</h3>
                                 <p>Every TeBot includes a 1-year manufacturing warranty on the microcontroller.</p>
@@ -550,7 +577,7 @@ function TeBoT() {
                 <section className="kits-offerings-section section-block section-mist" id="kits">
                     <div className="kits-container section-container">
                         <div className="section-header">
-                            <h2>TeBot Kits for Students</h2>
+                            <h2><span style={{color: '#008273'}}>TeBot Kits</span> for Students</h2>
                         </div>
                         <div
                             className="kits-main-slider reveal-card"
@@ -620,7 +647,7 @@ function TeBoT() {
                 <section className="featured-projects-section section-block section-soft" id="projects">
                     <div className="projects-container section-container">
                         <div className="section-header">
-                            <h2>Featured TeBot Projects</h2>
+                            <h2>Featured <span style={{color: '#008273'}}>TeBot Projects</span></h2>
                         </div>
                         <p className="projects-intro">Explore some of our 50+ amazing projects students can build:</p>
                         <div className="projects-scroll-wrap">

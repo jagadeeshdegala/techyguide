@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import './E-Blox.css';
 
 import robotKids from '../assets/ProductE-BloxImages/vecteezy_ai-generated-cute-robot-kids-with-isolated-transparant_38049144.png';
@@ -6,13 +6,25 @@ import robot1 from '../assets/ProductE-BloxImages/robot_2582246.png';
 import robot2 from '../assets/ProductE-BloxImages/robotics_12775607.png';
 import robot3 from '../assets/ProductE-BloxImages/robot_3558910.png';
 import robot4 from '../assets/ProductE-BloxImages/robot_4512237.png';
-import robot5 from '../assets/ProductE-BloxImages/robotics_1434292.png';
-import hacker from '../assets/ProductE-BloxImages/hacker_10817459.png';
 import bgImage1 from '../assets/ProductE-BloxImages/9743528.png';
 import bgImage2 from '../assets/ProductE-BloxImages/5073198.jpg';
 
 export default function EBlox() {
-    const projectsContainer = useRef(null);
+    const projectsList = [
+        { title: "Button Games", description: "Interactive gaming with button controls" },
+        { title: "LED Patterns", description: "Creative light pattern programming" },
+        { title: "Smart Bridge", description: "Automated bridge infrastructure control" },
+        { title: "Line Follower", description: "Precision navigation using sensor paths" },
+        { title: "Flame Detector", description: "Automated fire safety and alert system" },
+        { title: "Smart Garden", description: "Soil and moisture monitoring for plants" },
+        { title: "Obstacle Avoider", description: "Autonomous navigation around obstacles" },
+        { title: "Gesture Controlled Car", description: "Hand gesture-based vehicle control" },
+        { title: "RFID Door Lock", description: "Secure access with RFID technology" },
+        { title: "Voice Controlled Car", description: "Voice command-driven robotics" },
+        { title: "Smart Home Automation", description: "Connected home devices control" },
+        { title: "Motion Sensing System", description: "Advanced motion detection and tracking" }
+    ];
+
 
     useEffect(() => {
         const heroImage = document.querySelector('.eblox-page-root .image-section img');
@@ -53,70 +65,6 @@ export default function EBlox() {
         };
     }, []);
 
-    useEffect(() => {
-        const container = projectsContainer.current;
-        if (!container) return;
-
-        const track = container.querySelector('.eblox-project-track');
-        if (!track) return;
-
-        if (track.children.length && !track.classList.contains('looped')) {
-            const cards = Array.from(track.children);
-            cards.forEach((card) => {
-                track.appendChild(card.cloneNode(true));
-            });
-            track.classList.add('looped');
-        }
-
-        let animationId = null;
-        let stopped = false;
-        let isPaused = false;
-
-        const handleMouseEnter = () => {
-            isPaused = true;
-        };
-
-        const handleMouseLeave = () => {
-            isPaused = false;
-        };
-
-        const handleTouchStart = () => {
-            isPaused = true;
-        };
-
-        const handleTouchEnd = () => {
-            isPaused = false;
-        };
-
-        container.addEventListener('mouseenter', handleMouseEnter);
-        container.addEventListener('mouseleave', handleMouseLeave);
-        container.addEventListener('touchstart', handleTouchStart);
-        container.addEventListener('touchend', handleTouchEnd);
-
-        const scroll = () => {
-            if (stopped) return;
-            if (!isPaused) {
-                container.scrollLeft += 2.8;
-                const singleSetWidth = track.scrollWidth / 2;
-                if (container.scrollLeft >= singleSetWidth) {
-                    container.scrollLeft -= singleSetWidth;
-                }
-            }
-            animationId = requestAnimationFrame(scroll);
-        };
-
-        animationId = requestAnimationFrame(scroll);
-
-        return () => {
-            stopped = true;
-            if (animationId) cancelAnimationFrame(animationId);
-            container.removeEventListener('mouseenter', handleMouseEnter);
-            container.removeEventListener('mouseleave', handleMouseLeave);
-            container.removeEventListener('touchstart', handleTouchStart);
-            container.removeEventListener('touchend', handleTouchEnd);
-        };
-    }, []);
-
     return (
         <div className="eblox-page-root" style={{
             backgroundImage: `linear-gradient(rgba(0, 255, 149, 0.267), rgba(0, 130, 115, 0.25)), url(${bgImage1}), linear-gradient(rgba(0, 130, 115, 0.6), rgba(0, 130, 115, 0.6)), url(${bgImage2})`,
@@ -139,168 +87,215 @@ export default function EBlox() {
                 </main>
             </div>
 
-            <div className="eblox-modern-page">
-                <section className="eblox-section eblox-tech-focus" id="eblox-tech-focus">
-                    <div className="eblox-section-head">
-                        <p className="eyebrow">Technologies at Focus</p>
-                        <h2>Hands-on Learning with Core Engineering Concepts</h2>
-                    </div>
-                    <div className="eblox-tech-grid">
-                        <article className="eblox-tech-card">
-                            <span className="eblox-icon">🔋</span>
+            <div className="eblox-page">
+                {/* Introduction Section */}
+                <section className="eblox-page-section eblox-intro-section">
+                    {/* <div className="eblox-intro-container"> */}
+                        <h2 className="eblox-intro-title">Introduction to <span className="eblox-highlight">e-Blox Kit</span></h2>
+                        <p className="eblox-intro-text">
+                            The e-Blox Kit is a revolutionary electronics learning platform designed specifically for young learners (ages 5-10). With its safe, low-voltage components and innovative snap-together design, e-Blox makes hands-on engineering education accessible and engaging. Students can build 20+ practical projects including study lamps, table lamps, and mini windmills while learning fundamental concepts in electronics, renewable energy, and logic systems. By combining playful design with solid STEM fundamentals, e-Blox creates the perfect foundation for future innovators.
+                        </p>
+                        <div className="eblox-video-container">
+                            <iframe
+                                className="eblox-intro-video"
+                                src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1"
+                                title="Introduction to e-Blox Kit"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            />
+                        </div>
+                 {/* </div> */}
+                </section>
+
+                {/* Technologies at Focus - 2 columns */}
+                <section className="eblox-page-section eblox-focus" id="eblox-tech-focus">
+                    <h2 className="eblox-section-title orange-title"><span style={{color: '#008273'}}>Technologies</span> at Focus</h2>
+                    <br/>
+                    <div className="eblox-focus-grid-2col">
+                        <article className="eblox-focus-card-v2">
+                            <div className="eblox-focus-image-v2">
+                                <img src={robot1} alt="Basic Electronics" loading="lazy" />
+                            </div>
                             <h3>Basic Electronics</h3>
                             <p>Learn how circuits work by connecting power blocks to lights, sounds, and motors.</p>
                         </article>
-                        <article className="eblox-tech-card">
-                            <span className="eblox-icon">🌬️</span>
+                        <article className="eblox-focus-card-v2">
+                            <div className="eblox-focus-image-v2">
+                                <img src={robot2} alt="Renewable Energy Concepts" loading="lazy" />
+                            </div>
                             <h3>Renewable Energy Concepts</h3>
                             <p>Hands-on exploration of how energy can power everyday items like mini windmills.</p>
                         </article>
-                        <article className="eblox-tech-card">
-                            <span className="eblox-icon">🛠️</span>
+                        <article className="eblox-focus-card-v2">
+                            <div className="eblox-focus-image-v2">
+                                <img src={robot3} alt="Practical Engineering" loading="lazy" />
+                            </div>
                             <h3>Practical Engineering</h3>
-                            <p>Build functional items such as study lamps and table lamps.</p>
+                            <p>Build functional items your child can actually use, such as study lamps and table lamps.</p>
                         </article>
-                        <article className="eblox-tech-card">
-                            <span className="eblox-icon">🧠</span>
+                        <article className="eblox-focus-card-v2">
+                            <div className="eblox-focus-image-v2">
+                                <img src={robot4} alt="Logic & Sequencing" loading="lazy" />
+                            </div>
                             <h3>Logic & Sequencing</h3>
-                            <p>Understand cause and effect by using light, sound, and distance sensors.</p>
+                            <p>Understand "cause and effect" by using light, sound, and distance sensors to trigger different blocks.</p>
                         </article>
                     </div>
+                    <br/>
                 </section>
 
-                <section className="eblox-section eblox-tech-split">
-                    <div className="eblox-split-media">
-                        <img src={robot2} alt="e-Blox safe engineering components" loading="lazy" />
+                {/* e-Blox Tech - 2 columns with image and data under */}
+                <section className="eblox-page-section eblox-tech-design">
+                    <h2 className="eblox-section-title">e-Blox Tech <span style={{color: '#000000'}}>(Safe & Simple Design)</span></h2>
+                                        <br/>
+                                        <br/>
+
+
+                    <div className="eblox-tech-grid-2col">
+                        <article className="eblox-tech-card-v2">
+                            <div className="eblox-tech-image-v2">
+                                <img src={robot2} alt="Child-safe engineering for e-Blox" loading="lazy" />
+                            </div>
+                            <h3>Child-Safe Engineering</h3>
+                            <p>Built with low-voltage, non-toxic materials that are 100% classroom and home-safe.</p>
+                        </article>
+
+                        <article className="eblox-tech-card-v2">
+                            <div className="eblox-tech-image-v2">
+                                <img src={robot3} alt="Plug and play assembly for e-Blox" loading="lazy" />
+                            </div>
+                            <h3>Plug & Play Assembly</h3>
+                            <p>No soldering or complex wiring required. Ready-to-use components enable instant setup and frustration-free learning.</p>
+                        </article>
+
+                        <article className="eblox-tech-card-v2">
+                            <div className="eblox-tech-image-v2">
+                                <img src={robot1} alt="Modular blocks in e-Blox" loading="lazy" />
+                            </div>
+                            <h3>Modular Blocks</h3>
+                            <p>The snap-together design encourages repeated assembly, allowing children to rebuild and innovate multiple times.</p>
+                        </article>
+
+                        <article className="eblox-tech-card-v2">
+                            <div className="eblox-tech-image-v2">
+                                <img src={robot4} alt="Interactive components in e-Blox" loading="lazy" />
+                            </div>
+                            <h3>Interactive Components</h3>
+                            <p>Features specialized blocks for sound, light, and motion that respond to the child's touch and environment.</p>
+                        </article>
                     </div>
-                    <div className="eblox-split-content">
-                        <p className="eyebrow">e-Blox Tech</p>
-                        <h2>Safe & Simple Design</h2>
-                        <ul className="eblox-point-list">
-                            <li>
-                                <span>🟠</span>
-                                <div>
-                                    <h3>Child-Safe Engineering</h3>
-                                    <p>Built with low-voltage, non-toxic materials safe for classrooms and homes.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <span>🟠</span>
-                                <div>
-                                    <h3>Plug & Play Assembly</h3>
-                                    <p>No soldering or complex wiring required.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <span>🟠</span>
-                                <div>
-                                    <h3>Modular Blocks</h3>
-                                    <p>Snap-together design that allows repeated building and experimentation.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <span>🟠</span>
-                                <div>
-                                    <h3>Interactive Components</h3>
-                                    <p>Blocks that respond to sound, light, and motion.</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                                        <br/>
+
                 </section>
 
-                <section className="eblox-section eblox-why">
-                    <div className="eblox-section-head">
-                        <p className="eyebrow">Why e-Blox</p>
-                        <h2>Built to Make Young Learners Successful Faster</h2>
-                    </div>
-                    <div className="eblox-why-grid">
-                        <article className="eblox-why-card">
+                {/* Why is e-Blox Best - with images and reduced width */}
+                <section className="eblox-page-section eblox-why-best">
+                    <h2 className="eblox-section-title orange-title">Why is <span style={{color: '#008273'}}>e-Blox</span> the Best for <span style={{color: '#008273'}}>Early Learners</span>?</h2>
+                                        <br/>
+                    <br/>
+
+                    <div className="eblox-why-grid-v2">
+                        <article className="eblox-why-card-v2">
+                            <div className="eblox-why-image-v2">
+                                <img src={robot1} alt="Constructive Learning" loading="lazy" />
+                            </div>
                             <h3>Constructive Learning</h3>
-                            <p>Encourages active building and problem solving.</p>
+                            <p>Unlike passive toys, e-Blox encourages active building and problem solving.</p>
                         </article>
-                        <article className="eblox-why-card">
+                        <article className="eblox-why-card-v2">
+                            <div className="eblox-why-image-v2">
+                                <img src={robot2} alt="Instant Success" loading="lazy" />
+                            </div>
                             <h3>Instant Success</h3>
-                            <p>Children can build 20+ working products.</p>
+                            <p>Children can build 20+ exciting products and see immediate results.</p>
                         </article>
-                        <article className="eblox-why-card">
+                        <article className="eblox-why-card-v2">
+                            <div className="eblox-why-image-v2">
+                                <img src={robot3} alt="Foundation for STEM" loading="lazy" />
+                            </div>
                             <h3>Foundation for STEM</h3>
-                            <p>Acts as a stepping stone before moving to advanced kits like TeBot and i-Bot.</p>
+                            <p>Perfect stepping stone before moving to advanced kits like TeBot or i-Bot.</p>
                         </article>
-                        <article className="eblox-why-card">
+                        <article className="eblox-why-card-v2">
+                            <div className="eblox-why-image-v2">
+                                <img src={robot4} alt="Durable & Reusable" loading="lazy" />
+                            </div>
                             <h3>Durable & Reusable</h3>
-                            <p>High-quality blocks built for repeated use.</p>
+                            <p>High-quality blocks built to withstand heavy play and repeated use.</p>
                         </article>
                     </div>
                 </section>
 
-                <section className="eblox-section eblox-kit-offering">
-                    <div className="eblox-kit-panel">
-                        <div className="eblox-kit-header">
-                            <p className="eyebrow">e-Blox Kit Offering</p>
-                            <h2>e-Blox Standard Kit</h2>
-                            <p>A multipurpose electronics kit designed as the perfect STEM introduction for younger students.</p>
-                            <p className="eblox-kit-projects"><strong>Projects:</strong> 20+ products including study lamps, table lamps, and mini windmills.</p>
+                {/* e-Blox Kit Offerings */}
+                <section className="eblox-page-section eblox-kit-offerings">
+                    <h2 className="eblox-section-title">e-Blox <span style={{color: '#000000'}}>Kit Offerings</span></h2>
+                    <br/>
+                    <div className="eblox-kit-layout-v2">
+                        <div className="eblox-kit-image-v2">
+                            <img src={robot4} alt="The e-Blox Standard Kit" loading="lazy" />
                         </div>
-                        <div className="eblox-kit-specs">
-                            <h3>Key Components</h3>
-                            <div className="eblox-spec-grid">
-                                <span>Power Block</span>
-                                <span>Motor Driver Blocks</span>
-                                <span>Sound Blocks</span>
-                                <span>Light Sensor</span>
-                                <span>Distance Sensor</span>
-                                <span>IR Sensor</span>
-                                <span>BO Motors</span>
-                                <span>Buzzer</span>
-                                <span>JST Connector Wires</span>
+                        <div className="eblox-kit-content-v2">
+                            <h3>The e-Blox Standard Kit</h3>
+                            <p>A multi-purpose electronics kit that serves as the perfect introduction to STEM for younger grades.</p>
+
+                            <h4>Projects:</h4>
+                            <p>Includes materials to build 20+ practical products such as:</p>
+                            <ul className="eblox-list">
+                                <li>Study lamps</li>
+                                <li>Table lamps</li>
+                                <li>Mini windmills</li>
+                            </ul>
+
+                            <h4>Key Components</h4>
+
+                            <div className="eblox-components-grid">
+                                <div className="eblox-component-group-v2">
+                                    <h5>Power & Control</h5>
+                                    <ul className="eblox-list">
+                                        <li>Power Block</li>
+                                        <li>Motor Driver Blocks</li>
+                                        <li>Sound Blocks</li>
+                                    </ul>
+                                </div>
+
+                                <div className="eblox-component-group-v2">
+                                    <h5>Smart Sensors</h5>
+                                    <ul className="eblox-list">
+                                        <li>Light Sensor Block</li>
+                                        <li>Sound Sensor Block</li>
+                                        <li>Distance Sensor Block</li>
+                                        <li>IR Sensor Block</li>
+                                    </ul>
+                                </div>
+
+                                <div className="eblox-component-group-v2">
+                                    <h5>Mechanical Parts</h5>
+                                    <ul className="eblox-list">
+                                        <li>I-Shape BO Motors</li>
+                                        <li>Wires with JST connectors</li>
+                                        <li>Buzzer</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section className="eblox-section eblox-featured-grid">
-                    <div className="eblox-section-head">
-                        <p className="eyebrow">Project Types</p>
-                        <h2>What Students Build with e-Blox</h2>
-                    </div>
-                    <div className="eblox-project-grid">
-                        <article><img src={robot1} alt="Study lamp project" loading="lazy" /><h3>Study Lamp Build</h3></article>
-                        <article><img src={robot3} alt="Table lamp project" loading="lazy" /><h3>Table Lamp System</h3></article>
-                        <article><img src={robot4} alt="Mini windmill project" loading="lazy" /><h3>Mini Windmill Model</h3></article>
-                    </div>
-                </section>
-
-                <section className="eblox-section eblox-scroll-showcase">
-                    <div className="eblox-section-head">
-                        <p className="eyebrow">System Projects</p>
-                        <h2>Continuous Build Inspiration</h2>
-                    </div>
-                    <div className="eblox-project-scroll" ref={projectsContainer}>
-                        <div className="eblox-project-track">
-                            {[
-                                { title: 'Smart Monitoring System', desc: 'Multi-sensor data logging', image: robot1 },
-                                { title: 'Home Automation Hub', desc: 'Centralized control system', image: robot2 },
-                                { title: 'Weather Station', desc: 'Environmental data collection', image: robot3 },
-                                { title: 'Access Control System', desc: 'Secure entry solution', image: robot4 },
-                                { title: 'IoT Gateway', desc: 'Cloud connectivity bridge', image: robot5 },
-                                { title: 'Data Visualization', desc: 'Real-time analytics display', image: hacker }
-                            ].map((project, index) => (
+                {/* Projects Showcase with Horizontal Scroll */}
+                <section className="eblox-page-section eblox-projects-section">
+                    <h2 className="eblox-section-title orange-title">Featured <span style={{color: '#008273'}}>E blox Projects</span></h2>
+                    <p className="eblox-projects-intro">Explore some of our 50+ amazing projects students can build:</p>
+                    <div className="eblox-projects-scroll-wrap">
+                        <div className="eblox-projects-track">
+                            {[...projectsList, ...projectsList].map((project, index) => (
                                 <article key={`${project.title}-${index}`} className="eblox-project-card">
-                                    <img src={project.image} alt={project.title} loading="lazy" />
-                                    <h3>{project.title}</h3>
-                                    <p>{project.desc}</p>
+                                    <div className="eblox-project-number">{(index % projectsList.length) + 1}</div>
+                                    <h4>{project.title}</h4>
+                                    <p>{project.description}</p>
                                 </article>
                             ))}
                         </div>
-                    </div>
-                </section>
-
-                <section className="eblox-section eblox-cta-final">
-                    <div className="eblox-cta-box">
-                        <h2>Equip Your STEM Classroom with e-Blox</h2>
-                        <p>Safe electronics, practical engineering, and reusable learning in one platform.</p>
-                        <a href="/contact-us" className="eblox-cta-btn">Request e-Blox Details</a>
                     </div>
                 </section>
             </div>

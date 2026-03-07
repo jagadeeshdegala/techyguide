@@ -250,7 +250,7 @@ function IBoT() {
                 <section className="ibot-section smart-world-section">
                     <div className="container">
                         <h2 className="smart-world-headline">
-                            Build Your Own Smart World with i-Bot – The Ultimate IoT Learning Ecosystem.
+                            Build Your Own <span style={{color: '#008273'}}>Smart World with i-Bot</span> <br/> The Ultimate IoT Learning Ecosystem.
                         </h2>
                         <p className="smart-world-subheadline">
                             Empowering young innovators (Ages 7–14) to master the Internet of Things. i-Bot (TechIoT) isn't just a robot; it's a gateway to building smart homes, wireless gadgets, and connected cities.
@@ -266,7 +266,7 @@ function IBoT() {
                 <section className="ibot-section tech-focus-section" id="ibot-tech-focus">
                     <div className="container">
                         <div className="section-header">
-                            <h2>Technologies at Focus</h2>
+                            <h2><span style={{color: '#008273'}}>Technologies</span> at Focus</h2>
                             <p>Master the core technologies shaping IoT and robotics innovation</p>
                         </div>
 
@@ -308,7 +308,7 @@ function IBoT() {
                 <section className="ibot-section hardware-section">
                     <div className="container">
                         <div className="section-header">
-                            <h2>i-Bot Technology: The Hardware</h2>
+                            <h2><span style={{color: '#008273'}}>i-Bot Technology</span>: The Hardware</h2>
                             <p>Industrial-grade engineering with classroom-friendly design</p>
                         </div>
 
@@ -333,7 +333,7 @@ function IBoT() {
                 <section className="ibot-section why-best-section">
                     <div className="container">
                         <div className="section-header">
-                            <h2>Why i-Bot is the Best</h2>
+                            <h2>Why <span style={{color: '#008273'}}>i-Bot</span> is the Best</h2>
                             <p>A complete IoT learning platform built for modern educators</p>
                         </div>
 
@@ -372,7 +372,7 @@ function IBoT() {
                 <section className="ibot-section kits-section" id="kits">
                     <div className="container">
                         <div className="section-header">
-                            <h2>i-Bot Kits for Students</h2>
+                            <h2><span style={{color: '#008273'}}>i-Bot Kits</span> for Students</h2>
                             <p>Choose the perfect kit for your learning journey</p>
                         </div>
 
@@ -504,7 +504,7 @@ function IBoT() {
                 <section className="ibot-section featured-projects-section" id="projects">
                     <div className="container">
                         <div className="section-header">
-                            <h2>Featured i-Bot Projects</h2>
+                            <h2>Featured <span style={{color: '#008273'}}>i-Bot Projects</span></h2>
                         </div>
                         <p className="projects-intro">Explore some of our 100+ amazing projects students can build:</p>
                         <div className="projects-scroll-wrap">

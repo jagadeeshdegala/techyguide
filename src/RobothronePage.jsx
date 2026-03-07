@@ -27,6 +27,34 @@ export default function RobothronePage() {
   const [showCardsSection, setShowCardsSection] = useState(false);
   const sliderRef = useRef(null);
 
+  // Set SEO metadata for Robothrone page
+  useEffect(() => {
+    // Set page title
+    document.title = 'Robothrone Robotics & IoT Innovation Challenge for Students';
+
+    // Set or update meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Robothrone by TechyGuide is an inter-school STEM innovation challenge where students design robotics and IoT projects, practice coding, and present creative technology solutions.');
+    } else {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      metaDescription.setAttribute('content', 'Robothrone by TechyGuide is an inter-school STEM innovation challenge where students design robotics and IoT projects, practice coding, and present creative technology solutions.');
+      document.head.appendChild(metaDescription);
+    }
+
+    // Add or update canonical tag
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      canonicalLink.setAttribute('href', 'https://techyguide.com/robothrone');
+      document.head.appendChild(canonicalLink);
+    } else {
+      canonicalLink.setAttribute('href', 'https://techyguide.com/robothrone');
+    }
+  }, []);
+
   // Countdown Timer
   useEffect(() => {
     const target = new Date("2026-05-31T23:59:59").getTime();

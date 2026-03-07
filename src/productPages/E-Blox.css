@@ -97,311 +97,470 @@
     box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6);
 }
 
-.eblox-modern-page {
+/* ========== NEW SCOPED STYLES FOR EBLOX PAGE ========== */
+
+.eblox-page {
+    --eblox-teal-900: #005a55;
+    --eblox-teal-800: #00756e;
+    --eblox-teal-700: #00887f;
+    --eblox-teal-100: #e6fbf7;
+    --eblox-orange-500: #ff8c00;
+    --eblox-orange-400: #ffac41;
+    --eblox-ink: #0f3f3b;
+    --eblox-card-shadow: 0 14px 28px rgba(0, 117, 110, 0.14);
+
     font-family: 'Inter', sans-serif;
-    color: #134440;
-    background: linear-gradient(180deg, #f4fcfb 0%, #ffffff 100%);
-}
-
-.eblox-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 88px 24px;
-}
-
-.eblox-section-head {
-    margin-bottom: 36px;
-}
-
-.eyebrow {
-    color: #ff8c00;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
-
-.eblox-section-head h2 {
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
-    color: #005a55;
-    line-height: 1.2;
-}
-
-.eblox-tech-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 20px;
-}
-
-.eblox-tech-card {
-    background: linear-gradient(135deg, #006f69 0%, #008a82 100%);
-    color: #eafff9;
-    border-radius: 16px;
-    padding: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 10px 28px rgba(0, 111, 105, 0.22);
-}
-
-.eblox-icon {
-    font-size: 1.7rem;
-    display: inline-block;
-    margin-bottom: 12px;
-}
-
-.eblox-tech-card h3 {
-    margin-bottom: 10px;
-    font-size: 1.15rem;
-}
-
-.eblox-tech-card p {
-    line-height: 1.65;
-    color: #d8fffa;
-}
-
-.eblox-tech-split {
-    display: grid;
-    grid-template-columns: 1.05fr 1fr;
-    gap: 28px;
-    align-items: stretch;
-}
-
-.eblox-split-media img {
-    width: 100%;
-    height: 100%;
-    min-height: 420px;
-    object-fit: cover;
-    border-radius: 18px;
-    box-shadow: 0 12px 26px rgba(0, 90, 85, 0.2);
-}
-
-.eblox-split-content {
+    color: var(--eblox-ink);
     background: #ffffff;
-    border: 1px solid #dbefec;
-    border-radius: 18px;
-    padding: 28px;
-    box-shadow: 0 12px 26px rgba(0, 90, 85, 0.08);
+    padding-bottom: 80px;
 }
 
-.eblox-split-content h2 {
-    color: #005a55;
-    margin-bottom: 16px;
+.eblox-page .eblox-page-section {
+    width: min(1200px, 100% - 48px);
+    margin: 0 auto;
+    padding-top: 72px;
 }
 
-.eblox-point-list {
-    list-style: none;
-    display: grid;
-    gap: 14px;
+.eblox-page .eblox-section-title {
+    color: var(--eblox-teal-900);
+    font-size: clamp(2.21rem, 4.42vw, 3.25rem);
+    line-height: 1.2;
+    margin-bottom: 28px;
 }
 
-.eblox-point-list li {
-    display: grid;
-    grid-template-columns: 24px 1fr;
-    gap: 10px;
-    align-items: start;
+.eblox-page .eblox-section-title.orange-title {
+    color: var(--eblox-orange-500);
 }
 
-.eblox-point-list h3 {
-    color: #005a55;
-    margin-bottom: 4px;
+.eblox-page .eblox-section-title.dark-title {
+    color: #1f1f1f;
 }
 
-.eblox-point-list p {
-    color: #4e6d6a;
-    line-height: 1.65;
-}
-
-.eblox-why-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
-}
-
-.eblox-why-card {
-    background: #fff;
-    border: 2px solid #ffad4a;
-    border-radius: 14px;
-    padding: 20px;
-}
-
-.eblox-why-card h3 {
-    color: #005a55;
-    margin-bottom: 10px;
-}
-
-.eblox-why-card p {
-    color: #4e6d6a;
-    line-height: 1.65;
-}
-
-.eblox-kit-offering {
+/* ========== INTRODUCTION SECTION ========== */
+.eblox-page .eblox-intro-section {
     padding-top: 40px;
 }
 
-.eblox-kit-panel {
-    background: linear-gradient(135deg, #005a55 0%, #007b74 100%);
+.eblox-page .eblox-intro-container {
+    background: #ffffff;
     border-radius: 20px;
-    padding: 30px;
-    color: #edfffc;
-    box-shadow: 0 14px 30px rgba(0, 90, 85, 0.28);
+    border: 2px solid rgba(0, 136, 127, 0.25);
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 117, 110, 0.12);
 }
 
-.eblox-kit-header h2 {
-    font-size: clamp(1.6rem, 3vw, 2.2rem);
+.eblox-page .eblox-intro-title {
+    color: var(--eblox-teal-900);
+    font-size: clamp(1.95rem, 3.9vw, 2.86rem);
+    margin-bottom: 16px;
+}
+
+.eblox-page .eblox-highlight {
+    color: var(--eblox-orange-500);
+}
+
+.eblox-page .eblox-intro-text {
+    color: #2d5c59;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* ========== TECHNOLOGIES AT FOCUS - SINGLE ROW ========== */
+.eblox-page .eblox-focus-grid-2col {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.eblox-page .eblox-focus-card-v2 {
+    background: #ffffff;
+    border-radius: 18px;
+    border: 2px solid rgba(0, 136, 127, 0.18);
+    overflow: hidden;
+    width: 100%;
+    min-height: 396px;
+    margin: 0 auto;
+    box-shadow: var(--eblox-card-shadow);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.eblox-page .eblox-focus-card-v2:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 36px rgba(0, 117, 110, 0.18);
+}
+
+.eblox-page .eblox-focus-image-v2 {
+    width: 100%;
+    height: 227px;
+    overflow: hidden;
+    background: #d3f7f1;
+}
+
+.eblox-page .eblox-focus-image-v2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.eblox-page .eblox-focus-card-v2 h3 {
+    color: var(--eblox-teal-900);
+    font-size: 1.15rem;
+    padding: 16px 18px 8px;
+}
+
+.eblox-page .eblox-focus-card-v2 p {
+    color: #4d6b68;
+    line-height: 1.6;
+    padding: 0 18px 18px;
+}
+
+/* ========== E-BLOX TECH - 2 COLUMNS WITH IMAGE AND DATA UNDER ========== */
+.eblox-page .eblox-tech-grid-2col {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.7cm;
+}
+
+.eblox-page .eblox-tech-card-v2 {
+    background: #ffffff;
+    border-radius: 18px;
+    border: 2px solid rgba(0, 136, 127, 0.18);
+    overflow: hidden;
+    width: 85%;
+    min-height: 363px;
+    margin: 0 auto;
+    box-shadow: var(--eblox-card-shadow);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.eblox-page .eblox-tech-card-v2:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 32px rgba(0, 117, 110, 0.16);
+}
+
+.eblox-page .eblox-tech-image-v2 {
+    width: 100%;
+    height: 264px;
+    background: #d3f7f1;
+    overflow: hidden;
+}
+
+.eblox-page .eblox-tech-image-v2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.eblox-page .eblox-tech-card-v2 h3 {
+    color: var(--eblox-teal-900);
+    font-size: 1.12rem;
+    padding: 16px 18px 8px;
+}
+
+.eblox-page .eblox-tech-card-v2 p {
+    color: #4d6b68;
+    line-height: 1.6;
+    padding: 0 18px 18px;
+}
+
+/* ========== WHY IS E-BLOX BEST - WITH IMAGES AND REDUCED WIDTH (80%) ========== */
+.eblox-page .eblox-why-grid-v2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+    column-gap: 50px;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.eblox-page .eblox-why-card-v2 {
+    border-radius: 18px;
+    border: 3px solid var(--eblox-orange-400);
+    background: #ffffff;
+    overflow: hidden;
+    min-height: 320px;
+    box-shadow: 0 12px 28px rgba(255, 140, 0, 0.1);
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.eblox-page .eblox-why-card-v2:hover {
+    background: #ecfffb;
+    transform: translateY(-6px);
+}
+
+.eblox-page .eblox-why-image-v2 {
+    width: 100%;
+    height: 220px;
+    background: #d6faf4;
+    overflow: hidden;
+}
+
+.eblox-page .eblox-why-image-v2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.eblox-page .eblox-why-card-v2 h3 {
+    color: var(--eblox-teal-900);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    padding: 14px 16px 0;
+}
+
+.eblox-page .eblox-why-card-v2 p {
+    line-height: 1.62;
+    color: #375c5a;
+    padding: 0 16px 16px;
+}
+
+/* ========== E-BLOX KIT OFFERINGS - COMPONENTS SIDE BY SIDE ========== */
+.eblox-page .eblox-kit-layout-v2 {
+    display: grid;
+    grid-template-columns: 1fr 1.12fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.eblox-page .eblox-kit-image-v2 {
+    border-radius: 18px;
+    overflow: hidden;
+    border: 4px solid rgba(0, 136, 127, 0.35);
+    background: #d6faf4;
+    box-shadow: var(--eblox-card-shadow);
+    position: sticky;
+    top: 126px;
+    min-height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+.eblox-page .eblox-kit-image-v2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.eblox-page .eblox-kit-content-v2 {
+    background: #ffffff;
+    border-radius: 18px;
+    border: 2px solid rgba(0, 136, 127, 0.24);
+    padding: 28px;
+    box-shadow: var(--eblox-card-shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.eblox-page .eblox-kit-content-v2 h3 {
+    color: var(--eblox-teal-900);
+    font-size: 1.45rem;
+    margin-bottom: 10px;
+}
+
+.eblox-page .eblox-kit-content-v2 p {
+    color: #315f5b;
+    line-height: 1.65;
     margin-bottom: 12px;
 }
 
-.eblox-kit-header p {
-    color: #d8fffa;
-    line-height: 1.7;
+.eblox-page .eblox-kit-content-v2 h4 {
+    color: var(--eblox-orange-500);
+    font-size: 1rem;
+    margin-top: 14px;
+    margin-bottom: 8px;
 }
 
-.eblox-kit-projects {
-    margin-top: 10px;
-}
-
-.eblox-kit-specs {
-    margin-top: 24px;
-}
-
-.eblox-kit-specs h3 {
-    margin-bottom: 12px;
-}
-
-.eblox-spec-grid {
+/* Components arranged side by side */
+.eblox-page .eblox-components-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px;
+    gap: 12px;
+    margin-top: 12px;
 }
 
-.eblox-spec-grid span {
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    padding: 10px 12px;
+.eblox-page .eblox-component-group-v2 {
+    background: #ffffff;
+    border: 1px solid rgba(0, 136, 127, 0.16);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.eblox-page .eblox-component-group-v2 h5 {
+    color: var(--eblox-teal-800);
+    margin-bottom: 8px;
     font-size: 0.95rem;
 }
 
-.eblox-project-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
+.eblox-page .eblox-list {
+    list-style: disc;
+    padding-left: 18px;
+    color: #315f5b;
+    line-height: 1.6;
+    font-size: 0.95rem;
 }
 
-.eblox-project-grid article {
-    background: #fff;
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid #dff2ef;
+.eblox-page .eblox-list li {
+    margin-bottom: 4px;
 }
 
-.eblox-project-grid img {
+.eblox-page .eblox-list li::marker {
+    color: var(--eblox-orange-500);
+}
+
+/* ========== INTRODUCTION VIDEO ========== */
+.eblox-page .eblox-video-container {
+    position: relative;
+    margin: clamp(26px, 4vw, 36px) auto 0;
     width: 100%;
-    height: 220px;
-    object-fit: cover;
+    max-width: 900px;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #0f172a;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.eblox-project-grid h3 {
-    color: #005a55;
-    padding: 16px;
+.eblox-page .eblox-intro-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
-.eblox-scroll-showcase {
-    padding-top: 24px;
+/* ========== PROJECTS SHOWCASE SECTION WITH HORIZONTAL SCROLL ========== */
+.eblox-page .eblox-projects-section {
+    padding: clamp(60px, 10vw, 100px) clamp(15px, 4vw, 20px);
+    background: #ffffff;
 }
 
-.eblox-project-scroll {
-    overflow-x: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    padding-bottom: 10px;
+.eblox-page .eblox-projects-section .eblox-section-title {
+    color: #1f2937;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
-.eblox-project-scroll::-webkit-scrollbar {
+.eblox-page .eblox-projects-intro {
+    text-align: center;
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    color: #555;
+    margin-bottom: 50px;
+}
+
+.eblox-page .eblox-projects-scroll-wrap {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.eblox-page .eblox-projects-scroll-wrap::-webkit-scrollbar {
     display: none;
 }
 
-.eblox-project-track {
+.eblox-page .eblox-projects-track {
     display: flex;
-    gap: 16px;
+    gap: 20px;
     width: max-content;
+    animation: ebloxProjectScroll 44s linear infinite;
 }
 
-.eblox-project-card {
-    flex: 0 0 270px;
+.eblox-page .eblox-projects-scroll-wrap:hover .eblox-projects-track {
+    animation-play-state: paused;
+}
+
+.eblox-page .eblox-project-card {
     background: #ffffff;
-    border: 1px solid #dcedea;
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 7px 20px rgba(0, 90, 85, 0.08);
-}
-
-.eblox-project-card img {
-    width: 100%;
-    height: 170px;
-    object-fit: cover;
-}
-
-.eblox-project-card h3 {
-    color: #005a55;
-    font-size: 1rem;
-    padding: 12px 14px 6px;
-}
-
-.eblox-project-card p {
-    color: #597876;
-    padding: 0 14px 16px;
-    font-size: 0.92rem;
-}
-
-.eblox-cta-final {
-    padding-top: 28px;
-    padding-bottom: 88px;
-}
-
-.eblox-cta-box {
-    border-radius: 18px;
-    background: linear-gradient(135deg, #ff8c00 0%, #ff6f3f 100%);
-    padding: 34px;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-left: 4px solid #1976d2;
     text-align: center;
-    color: #fff;
+    width: clamp(230px, 28vw, 300px);
+    flex: 0 0 auto;
 }
 
-.eblox-cta-box h2 {
-    font-size: clamp(1.7rem, 3vw, 2.4rem);
-    margin-bottom: 12px;
+.eblox-page .eblox-project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
 }
 
-.eblox-cta-box p {
-    margin-bottom: 22px;
-    color: #fff5ea;
-}
-
-.eblox-cta-btn {
-    display: inline-block;
-    background: #005a55;
+.eblox-page .eblox-project-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
     color: #ffffff;
-    text-decoration: none;
+    border-radius: 50%;
     font-weight: 700;
-    border-radius: 999px;
-    padding: 12px 22px;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
 }
 
-@media (max-width: 1024px) {
-    .eblox-tech-grid {
+.eblox-page .eblox-project-card h4 {
+    color: #1f2937;
+    font-size: 1.1rem;
+    margin: 15px 0;
+    font-weight: 700;
+}
+
+.eblox-page .eblox-project-card p {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@keyframes ebloxProjectScroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-50% - 10px));
+    }
+}
+
+/* ========== RESPONSIVE DESIGNS ========== */
+
+@media (max-width: 1100px) {
+    .eblox-page .eblox-focus-grid-2col {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .eblox-tech-split {
+    .eblox-page .eblox-tech-grid-2col {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .eblox-page .eblox-why-grid-v2 {
+        max-width: 100%;
+    }
+
+    .eblox-page .eblox-kit-layout-v2 {
         grid-template-columns: 1fr;
     }
 
-    .eblox-split-media img {
+    .eblox-page .eblox-kit-image-v2 {
+        position: static;
+    }
+
+    .eblox-page .eblox-kit-image-v2 img {
         min-height: 300px;
     }
 
-    .eblox-spec-grid,
-    .eblox-project-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .eblox-page .eblox-components-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .eblox-page .eblox-focus-card-v2,
+    .eblox-page .eblox-tech-card-v2 {
+        width: 85%;
+    }
+
+    .eblox-page .eblox-project-card {
+        flex: 0 0 260px;
     }
 }
 
@@ -421,14 +580,136 @@
         margin-right: auto;
     }
 
-    .eblox-section {
-        padding: 68px 16px;
+    .eblox-page .eblox-page-section {
+        width: min(1200px, 100% - 28px);
+        padding-top: 58px;
     }
 
-    .eblox-why-grid,
-    .eblox-spec-grid,
-    .eblox-project-grid,
-    .eblox-tech-grid {
+    .eblox-page .eblox-intro-container {
+        padding: 24px;
+    }
+
+    .eblox-page .eblox-video-container {
+        margin-top: 18px;
+    }
+
+    .eblox-page .eblox-focus-grid-2col {
         grid-template-columns: 1fr;
+    }
+
+    .eblox-page .eblox-tech-grid-2col,
+    .eblox-page .eblox-why-grid-v2 {
+        grid-template-columns: 1fr;
+    }
+
+    .eblox-page .eblox-focus-card-v2,
+    .eblox-page .eblox-tech-card-v2 {
+        width: 100%;
+    }
+
+    .eblox-page .eblox-kit-layout-v2 {
+        grid-template-columns: 1fr;
+    }
+
+    .eblox-page .eblox-components-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .eblox-page .eblox-component-group-v2 {
+        padding: 10px;
+    }
+
+    .eblox-page .eblox-kit-content-v2 {
+        padding: 20px;
+    }
+
+    .eblox-page .eblox-tech-card-v2,
+    .eblox-page .eblox-focus-card-v2,
+    .eblox-page .eblox-why-card-v2 {
+        border-radius: 14px;
+    }
+
+    .eblox-page .eblox-projects-section {
+        padding-top: 60px;
+    }
+
+    .eblox-page .eblox-project-card {
+        flex: 0 0 240px;
+    }
+}
+
+@media (max-width: 480px) {
+    .eblox-page-root {
+        padding-top: 90px;
+    }
+
+    .eblox-page .eblox-page-section {
+        width: min(100%, calc(100% - 16px));
+        padding-top: 40px;
+    }
+
+    .eblox-page .eblox-section-title {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+
+    .eblox-page .eblox-intro-container {
+        padding: 16px;
+    }
+
+    .eblox-page .eblox-intro-text {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .eblox-page .eblox-video-container {
+        border-radius: 12px;
+    }
+
+    .eblox-page .eblox-intro-video {
+        border-radius: 12px;
+    }
+
+    .eblox-page .eblox-focus-image-v2,
+    .eblox-page .eblox-tech-image-v2 {
+        height: 162px;
+    }
+
+    .eblox-page .eblox-why-image-v2 {
+        height: 140px;
+    }
+
+    .eblox-page .eblox-kit-image-v2 img {
+        min-height: 240px;
+    }
+
+    .eblox-page .eblox-kit-content-v2 {
+        padding: 16px;
+    }
+
+    .eblox-page .eblox-list {
+        font-size: 0.9rem;
+    }
+
+    .eblox-page .eblox-projects-section {
+        padding-top: 50px;
+    }
+
+    .eblox-page .eblox-projects-section .eblox-section-title {
+        margin-bottom: 20px;
+    }
+
+    .eblox-page .eblox-project-card {
+        flex: 0 0 200px;
+        padding: 16px;
+    }
+
+    .eblox-page .eblox-project-card h4 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .eblox-page .eblox-project-card p {
+        font-size: 0.9rem;
     }
 }

@@ -109,6 +109,11 @@
     background: linear-gradient(135deg, #fef3e2 0%, #fce4ec 50%, #e3f2fd 100%);
 }
 
+/* Keep all non-hero sections white */
+.ibot-modern-page .ibot-section {
+    background: #ffffff !important;
+}
+
 .ibot-section {
     padding: 80px 20px;
 }
@@ -148,9 +153,9 @@
     font-size: 1.1rem;
     color: #6b8886;
     line-height: 1.8;
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto 40px;
+    text-align: left;
+    max-width: 100%;
+    margin: 0 0 40px;
 }
 
 .ibot-modern-page .highlight-text {
@@ -241,15 +246,15 @@
 .cta-btn.cta-secondary {
     background: #ffffff;
     color: #000000;
-    border: 2px solid #ffffff;
+    border: 2px solid #008273;
 }
 
 .cta-btn.cta-secondary:hover {
     background: transparent;
-    color: #ffffff;
-    border-color: #ffffff;
+    color: #000000;
+    border-color: #008273;
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 130, 115, 0.3);
 }
 
 @media (max-width: 640px) {

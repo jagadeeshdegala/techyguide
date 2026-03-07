@@ -144,9 +144,16 @@ function FooterSection() {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/open-resources" onClick={scrollToTop}>
+                  <a 
+                    href="#" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      alert(' This page is Coming Soon');
+                    }}
+                    style={{cursor: 'pointer'}}
+                  >
                     Open Resources
-                  </Link>
+                  </a>
                 </li>
                 <li>
                   <Link to="/about-us" onClick={scrollToTop}>
