@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import './AboutUsPage.css'
 import teamImage from './assets/AboutUSImages/Adorable-bear-cubs.jpg'
-
+import teamimg1 from './assets/AboutUSImages/Team 1.png';
 function AboutUsPage() {
 	// Set SEO metadata for About Us page
 	useEffect(() => {
@@ -54,7 +54,7 @@ function AboutUsPage() {
 							into powerful digital products.
 						</p> */}
 					</div>
-					<img src={teamImage} alt="Office" />
+					<img src={teamimg1} alt="Office" />
 				</div>
 			</section>
 

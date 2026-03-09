@@ -21,6 +21,10 @@ import supportecosystem3 from '../assets/ForSchoolsStemTinkeringLabImages/Suppor
 import supportecosystem4 from '../assets/ForSchoolsStemTinkeringLabImages/Support Ecosystem - 4.jpg';
 import supportecosystem5 from '../assets/ForSchoolsStemTinkeringLabImages/Support Ecosystem - 5.jpg';
 import supportecosystem6 from '../assets/ForSchoolsStemTinkeringLabImages/Support Ecosystem - 6.jpg';
+//Proprietary DIY Robotics Kits section images
+import proprietaryKits1 from '../assets/ForSchoolsStemTinkeringLabImages/Proprietary DIY Kits - 1.jpg';
+import proprietaryKits2 from '../assets/ForSchoolsStemTinkeringLabImages/Proprietary DIY Kits - 2.jpg';
+import proprietaryKits3 from '../assets/ForSchoolsStemTinkeringLabImages/Proprietary DIY Kits - 3.jpg';
 
 
 function StemTinkeringLab() {
@@ -589,15 +593,15 @@ function StemTinkeringLab() {
             
             <div className="diy-image slider-wrapper">
               <div className="diy-slide fade">
-                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800" alt="I-BoT Kit" />
+                <img src={proprietaryKits1} alt="I-BoT Kit" />
                 <div className="slide-caption">I-BoT Starter Kit</div>
               </div>
               <div className="diy-slide fade">
-                <img src="https://images.unsplash.com/photo-1563968743333-044cef80426d?auto=format&fit=crop&q=80&w=800" alt="TeBoT Kit" />
+                <img src={proprietaryKits2} alt="TeBoT Kit" />
                 <div className="slide-caption">TeBoT Kit</div>
               </div>
               <div className="diy-slide fade">
-                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" alt="E-Blox Kit" />
+                <img src={proprietaryKits3} alt="E-Blox Kit" />
                 <div className="slide-caption">E-Blox Kit</div>
               </div>
               <div className="floating-kit-tag">Made in India</div>

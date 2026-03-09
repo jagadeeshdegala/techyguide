@@ -23,6 +23,11 @@ import supportEcosystem3 from "../assets/ForSchoolsAI-RoboticslabCBSE/Comprehens
 import supportEcosystem4 from "../assets/ForSchoolsAI-RoboticslabCBSE/Comprehensive Support Ecosystem - 4.jpg";
 import supportEcosystem5 from "../assets/ForSchoolsAI-RoboticslabCBSE/Comprehensive Support Ecosystem - 5.jpg";
 import supportEcosystem6 from "../assets/ForSchoolsAI-RoboticslabCBSE/Comprehensive Support Ecosystem - 6.jpg";
+//Premium DIY Robotics Kits images
+import premiumDIYKit1 from "../assets/ForSchoolsAI-RoboticslabCBSE/Premium DIY Kit - 1.jpg";
+import premiumDIYKit2 from "../assets/ForSchoolsAI-RoboticslabCBSE/Premium DIY Kit - 2.jpg";
+import premiumDIYKit3 from "../assets/ForSchoolsAI-RoboticslabCBSE/Premium DIY Kit - 3.jpg";
+
 
 function AIRoboticsLabCBSE() {
   const rootRef = useRef(null);
@@ -710,17 +715,17 @@ Watch how TechyGuide’s state-of-the-art AI & Robotics Labs are transforming cl
 
             <div className="diy-image slider-wrapper">
               <div className="diy-slide fade">
-                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800" alt="TeBot Kit" />
+                <img src={premiumDIYKit1} alt="TeBot Kit" />
                 <div className="slide-caption">TeBot Kit</div>
               </div>
 
               <div className="diy-slide fade">
-                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800" alt="I-Bot Kit" />
+                <img src={premiumDIYKit2} alt="I-Bot Kit" />
                 <div className="slide-caption">I-Bot Kit</div>
               </div>
 
               <div className="diy-slide fade">
-                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" alt="E-Blox Kit" />
+                <img src={premiumDIYKit3} alt="E-Blox Kit" />
                 <div className="slide-caption">E-Blox Kit</div>
               </div>
 

@@ -12,6 +12,15 @@ import heroVideo from './assets/RobothronePageImages/robothronebgvideo.mp4';
 import junior from './assets/RobothronePageImages/Junior 8-10.png';
 import intermediate from './assets/RobothronePageImages/intermediate 11-13.png';
 import senior from './assets/RobothronePageImages/Senior 14-16.png';
+//Competition Themes images
+import scratchProgrammingImage from './assets/RobothronePageImages/Scratch Programming Challenge.png';
+import smartHomeHelpers from './assets/RobothronePageImages/Smart Home Helpers.png';
+import EnvironmentalMonitoring from './assets/RobothronePageImages/Environmental Monitoring.png';
+import SmartTransportation from './assets/RobothronePageImages/Smart Transportation.png';
+import IndustrySolutions from './assets/RobothronePageImages/Industry 4.0 Solutions.png';
+import HealthcareInnovation from './assets/RobothronePageImages/Healthcare Innovation.png';
+
+
 
 // NOTE: Binary files (.pdf, .docx) are served via URL, not imported
 // Video files are imported for better Vite handling
@@ -448,8 +457,7 @@ export default function RobothronePage() {
         <div className="robothrone-themes-grid">
           <div className="robothrone-theme-card">
             <div className="robothrone-theme-top">
-              <div className="robothrone-theme-icon">🧩</div>
-              <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
+              <img src={scratchProgrammingImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
             </div>
             <div className="robothrone-theme-head">
               <h4>Scratch Programming Challenge</h4>
@@ -465,8 +473,7 @@ export default function RobothronePage() {
 
           <div className="robothrone-theme-card">
             <div className="robothrone-theme-top">
-              <div className="robothrone-theme-icon">🏠</div>
-              <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
+              <img src={smartHomeHelpers} loading="lazy" decoding="async" width="400" height="250" alt="" />
             </div>
             <div className="robothrone-theme-head">
               <h4>Smart Home Helpers</h4>
@@ -486,8 +493,7 @@ export default function RobothronePage() {
         <div className="robothrone-themes-grid">
           <div className="robothrone-theme-card">
             <div className="robothrone-theme-top">
-              <div className="robothrone-theme-icon">🌱</div>
-              <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
+              <img src={EnvironmentalMonitoring} loading="lazy" decoding="async" width="400" height="250" alt="" />
             </div>
             <div className="robothrone-theme-head">
               <h4>Environmental Monitoring</h4>
@@ -503,8 +509,7 @@ export default function RobothronePage() {
 
           <div className="robothrone-theme-card">
             <div className="robothrone-theme-top">
-              <div className="robothrone-theme-icon">🚗</div>
-              <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
+              <img src={SmartTransportation} loading="lazy" decoding="async" width="400" height="250" alt="" />
             </div>
             <div className="robothrone-theme-head">
               <h4>Smart Transportation</h4>
@@ -524,8 +529,7 @@ export default function RobothronePage() {
         <div className="robothrone-themes-grid">
           <div className="robothrone-theme-card">
             <div className="robothrone-theme-top">
-              <div className="robothrone-theme-icon">🏭</div>
-              <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
+              <img src={IndustrySolutions} loading="lazy" decoding="async" width="400" height="250" alt="" />
             </div>
             <div className="robothrone-theme-head">
               <h4>Industry 4.0 Solutions</h4>
@@ -541,8 +545,7 @@ export default function RobothronePage() {
 
           <div className="robothrone-theme-card">
             <div className="robothrone-theme-top">
-              <div className="robothrone-theme-icon">🩺</div>
-              <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
+              <img src={HealthcareInnovation} loading="lazy" decoding="async" width="400" height="250" alt="" />
             </div>
             <div className="robothrone-theme-head">
               <h4>Healthcare Innovation</h4>

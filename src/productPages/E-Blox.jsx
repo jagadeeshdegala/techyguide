@@ -11,6 +11,62 @@ import bgImage2 from '../assets/ProductE-BloxImages/5073198.jpg';
 
 export default function EBlox() {
     const [activeKitSlide, setActiveKitSlide] = useState(0);
+
+    useEffect(() => {
+        const previousTitle = document.title;
+        const existingMetaDescription = document.querySelector('meta[name="description"]');
+        const previousMetaDescriptionContent = existingMetaDescription?.getAttribute('content') ?? null;
+        const existingCanonical = document.querySelector('link[rel="canonical"]');
+        const previousCanonicalHref = existingCanonical?.getAttribute('href') ?? null;
+
+        document.title = 'E-Blox Modular Electronics Kit for Kids | STEM Learning';
+
+        let metaDescription = existingMetaDescription;
+        if (metaDescription) {
+            metaDescription.setAttribute(
+                'content',
+                'Discover the E-Blox modular electronics kit for kids aged 5-10. Build 20+ STEM projects while learning circuits, renewable energy, and engineering concepts.'
+            );
+        } else {
+            metaDescription = document.createElement('meta');
+            metaDescription.setAttribute('name', 'description');
+            metaDescription.setAttribute(
+                'content',
+                'Discover the E-Blox modular electronics kit for kids aged 5-10. Build 20+ STEM projects while learning circuits, renewable energy, and engineering concepts.'
+            );
+            document.head.appendChild(metaDescription);
+        }
+
+        let canonicalLink = existingCanonical;
+        if (canonicalLink) {
+            canonicalLink.setAttribute('href', 'https://techyguide.com/e-blox-modular-electronics-kit-for-kids/');
+        } else {
+            canonicalLink = document.createElement('link');
+            canonicalLink.setAttribute('rel', 'canonical');
+            canonicalLink.setAttribute('href', 'https://techyguide.com/e-blox-modular-electronics-kit-for-kids/');
+            document.head.appendChild(canonicalLink);
+        }
+
+        return () => {
+            document.title = previousTitle;
+
+            if (metaDescription) {
+                if (previousMetaDescriptionContent === null && !existingMetaDescription) {
+                    metaDescription.remove();
+                } else if (previousMetaDescriptionContent !== null) {
+                    metaDescription.setAttribute('content', previousMetaDescriptionContent);
+                }
+            }
+
+            if (canonicalLink) {
+                if (previousCanonicalHref === null && !existingCanonical) {
+                    canonicalLink.remove();
+                } else if (previousCanonicalHref !== null) {
+                    canonicalLink.setAttribute('href', previousCanonicalHref);
+                }
+            }
+        };
+    }, []);
     
     const projectsList = [
         { title: "Button Games", description: "Interactive gaming with button controls" },
@@ -102,7 +158,7 @@ export default function EBlox() {
                     </div>
                     <div className="info-section">
                         <h1>E-Blox Kit</h1>
-                        <h2>Modular electronics kit for engineering education with 20+ components</h2>
+                        <h2>E-Blox Modular electronics kit for engineering education with 20+ components</h2>
                         <button className="btn-secondary">Explore Features</button>
                     </div>
                 </main>
@@ -112,7 +168,7 @@ export default function EBlox() {
                 {/* Introduction Section */}
                 <section className="eblox-page-section eblox-intro-section">
                     {/* <div className="eblox-intro-container"> */}
-                        <h2 className="eblox-intro-title">Introduction to <span className="eblox-highlight">e-Blox Kit</span></h2>
+                        <h2 className="eblox-intro-title">Introduction to the <span className="eblox-highlight">E-Blox Kit</span></h2>
                         <p className="eblox-intro-text">
                             The e-Blox Kit is a revolutionary electronics learning platform designed specifically for young learners (ages 5-10). With its safe, low-voltage components and innovative snap-together design, e-Blox makes hands-on engineering education accessible and engaging. Students can build 20+ practical projects including study lamps, table lamps, and mini windmills while learning fundamental concepts in electronics, renewable energy, and logic systems. By combining playful design with solid STEM fundamentals, e-Blox creates the perfect foundation for future innovators.
                         </p>
@@ -168,7 +224,7 @@ export default function EBlox() {
 
                 {/* e-Blox Tech - 2 columns with image and data under */}
                 <section className="eblox-page-section eblox-tech-design">
-                    <h2 className="eblox-section-title">e-Blox Tech <span style={{color: '#000000'}}>(Safe & Simple Design)</span></h2>
+                    <h2 className="eblox-section-title">E-Blox Tech <span style={{color: '#000000'}}>- Safe & Simple Design</span></h2>
                                         <br/>
                                         <br/>
 
@@ -194,7 +250,7 @@ export default function EBlox() {
                             <div className="eblox-tech-image-v2">
                                 <img src={robot1} alt="Modular blocks in e-Blox" loading="lazy" />
                             </div>
-                            <h3>Modular Blocks</h3>
+                            <h3>Modular Building Blocks </h3>
                             <p>The snap-together design encourages repeated assembly, allowing children to rebuild and innovate multiple times.</p>
                         </article>
 

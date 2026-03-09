@@ -161,12 +161,12 @@ function FooterSection() {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/partners" onClick={scrollToTop}>
+                  <Link to="/techyguide-partners-stem-education-india" onClick={scrollToTop}>
                     Partners
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact-us" onClick={scrollToTop}>
+                  <Link to="/contact-techyguide/" onClick={scrollToTop}>
                     Contact us
                   </Link>
                 </li>

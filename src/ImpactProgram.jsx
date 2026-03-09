@@ -6,10 +6,8 @@ function ImpactProgram() {
   // Image paths
   const images = {
     bg2: new URL("./assets/impactImages/bg2.jpg", import.meta.url).href,
-    bg3: new URL("./assets/impactImages/bg3.jpg", import.meta.url).href,
     bg4: new URL("./assets/impactImages/bg4.jpg", import.meta.url).href,
-    bg11: new URL("./assets/impactImages/bg11.jpg", import.meta.url).href,
-    csrInitiatives: new URL("./assets/impactImages/CSR-Initiatives.jpg", import.meta.url).href,
+    csrInitiatives: new URL("./assets/impactImages/CSR Initiatives.jpg", import.meta.url).href,
     governmentPrograms: new URL("./assets/impactImages/Government Programs.jpg", import.meta.url).href,
     genderEquality: new URL("./assets/impactImages/GenderEquality.png", import.meta.url).href,
     industry: new URL("./assets/impactImages/industry.png", import.meta.url).href,
@@ -17,29 +15,37 @@ function ImpactProgram() {
     partnerships: new URL("./assets/impactImages/partnerships.png", import.meta.url).href,
     qualityEducation: new URL("./assets/impactImages/qualityEducation.png", import.meta.url).href,
     sustainable: new URL("./assets/impactImages/sustainable.png", import.meta.url).href,
-    lab1: new URL("./assets/impactImages/lab1.jpg", import.meta.url).href,
-    lab2: new URL("./assets/impactImages/lab2.jpg", import.meta.url).href,
-    lab3: new URL("./assets/impactImages/lab3.jpg", import.meta.url).href,
-    lab4: new URL("./assets/impactImages/lab4.jpg", import.meta.url).href,
-    lab5: new URL("./assets/impactImages/lab5.jpg", import.meta.url).href,
-    lab6: new URL("./assets/impactImages/lab6.jpg", import.meta.url).href,
-    stemLab: new URL("./assets/impactImages/STEM-Lab.jpg", import.meta.url).href,
-    diyKit1: new URL("./assets/impactImages/DIY-Learning-Kit-1.jpg", import.meta.url).href,
-    workshop: new URL("./assets/impactImages/Workshop.jpg", import.meta.url).href,
+    jharkhand: new URL("./assets/impactImages/jharkhand.jpg", import.meta.url).href,
+    odisha: new URL("./assets/impactImages/odisha.jpg", import.meta.url).href,
+    gujarat: new URL("./assets/impactImages/gujarat.jpg", import.meta.url).href,
+    Lucknow: new URL("./assets/impactImages/Lucknow.jpg", import.meta.url).href,
+    haryana: new URL("./assets/impactImages/haryana.jpeg", import.meta.url).href,
+    hyderabad: new URL("./assets/impactImages/hyderabad.jpg", import.meta.url).href,
+    oursolutions1: new URL("./assets/impactImages/Our solutions - 1.jpg", import.meta.url).href,
+    oursolutions2: new URL("./assets/impactImages/Our solutions - 2.jpg", import.meta.url).href,
+    oursolutions3: new URL("./assets/impactImages/Our solutions - 3.jpg", import.meta.url).href,
+    gallery1: new URL("./assets/impactImages/gallery1.jpeg", import.meta.url).href,
+    gallery2: new URL("./assets/impactImages/gallery2.jpeg", import.meta.url).href,
+    gallery3: new URL("./assets/impactImages/gallery3.jpg", import.meta.url).href,
+    gallery4: new URL("./assets/impactImages/gallery4.jpg", import.meta.url).href,
+    gallery5: new URL("./assets/impactImages/gallery5.jpg", import.meta.url).href,
+    gallery6: new URL("./assets/impactImages/gallery6.jpg", import.meta.url).href,
+    gallery7: new URL("./assets/impactImages/gallery7.jpg", import.meta.url).href,
+    gallery8: new URL("./assets/impactImages/gallery8.jpg", import.meta.url).href,
+    gallery9: new URL("./assets/impactImages/gallery9.jpg", import.meta.url).href,
   };
   const galleryImages = [
-    { src: images.stemLab, alt: "Children building robots during STEM learning session", category: "lab" },
-    { src: images.lab1, alt: "Children building robots during STEM learning session", category: "lab" },
-    { src: images.lab2, alt: "Children building robots during STEM learning session", category: "lab" },
-    { src: images.lab3, alt: "Children building robots during STEM learning session", category: "lab" },
-    { src: images.lab4, alt: "Children building robots during STEM learning session", category: "lab" },
-    { src: images.lab5, alt: "Children building robots during STEM learning session", category: "lab" },
-    { src: images.lab6, alt: "Children building robots during STEM learning session", category: "lab" },
-    { src: images.diyKit1, alt: "Children building robots during STEM learning session", category: "kit" },
-    { src: images.workshop, alt: "Children building robots during STEM learning session", category: "workshop" },
+    { src: images.gallery1, alt: "Impact program gallery image 1" },
+    { src: images.gallery2, alt: "Impact program gallery image 2" },
+    { src: images.gallery3, alt: "Impact program gallery image 3" },
+    { src: images.gallery4, alt: "Impact program gallery image 4" },
+    { src: images.gallery5, alt: "Impact program gallery image 5" },
+    { src: images.gallery6, alt: "Impact program gallery image 6" },
+    { src: images.gallery7, alt: "Impact program gallery image 7" },
+    { src: images.gallery8, alt: "Impact program gallery image 8" },
+    { src: images.gallery9, alt: "Impact program gallery image 9" },
   ];
   const [lightbox, setLightbox] = useState({ open: false, src: "", alt: "" });
-  const [galleryFilter, setGalleryFilter] = useState("all");
 
   // Set SEO metadata for Impact Program page
   useEffect(() => {
@@ -226,7 +232,7 @@ function ImpactProgram() {
             <div className="project-grid">
               <div className="card">
                 <div style={{ width: '100%', height: '200px', overflow: 'hidden' }}>
-                  <img src={images.lab1} alt="Students engaged in hands-on robotics learning in school STEM lab " style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  <img src={images.jharkhand} alt="Students engaged in hands-on robotics learning in school STEM lab " style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
                 <div className="card-body">
                   <h3>STEM & Robotics Lab - Jharkhand</h3>
@@ -249,7 +255,7 @@ function ImpactProgram() {
 
               <div className="card">
                 <div style={{ width: '100%', height: '200px', overflow: 'hidden' }}>
-                  <img src={images.lab2} alt="Students engaged in hands-on robotics learning in school STEM lab p" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  <img src={images.odisha} alt="Students engaged in hands-on robotics learning in school STEM lab p" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
                 <div className="card-body">
                   <h3>STEM Learning - Keonjhar, Odisha</h3>
@@ -272,7 +278,7 @@ function ImpactProgram() {
 
               <div className="card">
                 <div style={{ width: '100%', height: '200px', overflow: 'hidden' }}>
-                  <img src={images.lab3} alt="Students engaged in hands-on robotics learning in school STEM lab " style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  <img src={images.gujarat} alt="Students engaged in hands-on robotics learning in school STEM lab " style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
                 <div className="card-body">
                   <h3>Innovators in Ahmedabad, Gujarat</h3>
@@ -295,7 +301,7 @@ function ImpactProgram() {
 
               <div className="card">
                 <div style={{ width: '100%', height: '200px', overflow: 'hidden' }}>
-                  <img src={images.lab4} alt="Students engaged in hands-on robotics learning in school STEM lab " style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  <img src={images.Lucknow} alt="Students engaged in hands-on robotics learning in school STEM lab " style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
                 <div className="card-body">
                   <h3>Innovation Hub - Lucknow, UP</h3>
@@ -318,7 +324,7 @@ function ImpactProgram() {
 
               <div className="card">
                 <div style={{ width: '100%', height: '200px', overflow: 'hidden' }}>
-                  <img src={images.lab5} alt="Students engaged in hands-on robotics learning in school STEM lab " style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  <img src={images.haryana} alt="Students engaged in hands-on robotics learning in school STEM lab " style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
                 <div className="card-body">
                   <h3>Future Skills Workshop - Haryana</h3>
@@ -341,7 +347,7 @@ function ImpactProgram() {
 
               <div className="card">
                 <div style={{ width: '100%', height: '200px', overflow: 'hidden' }}>
-                  <img src={images.lab6} alt="Students engaged in hands-on robotics learning in school STEM lab " style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  <img src={images.hyderabad} alt="Students engaged in hands-on robotics learning in school STEM lab " style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
                 <div className="card-body">
                   <h3>STEM Workshop - Hyderabad</h3>
@@ -371,7 +377,7 @@ function ImpactProgram() {
             <div className="offering-grid">
               <div className="offer-box">
                 <div className="offer-image-wrap">
-                  <img src={images.stemLab} alt="Fully equipped STEM and robotics lab classroom " className="offer-image" />
+                  <img src={images.oursolutions1} alt="Fully equipped STEM and robotics lab classroom " className="offer-image" />
                 </div>
                 <i className="fa-solid fa-microchip"></i>
                 <h3>Future-Ready Labs</h3>
@@ -381,7 +387,7 @@ function ImpactProgram() {
               </div>
               <div className="offer-box">
                 <div className="offer-image-wrap">
-                  <img src={images.diyKit1} alt="Educational DIY robotics kits for students " className="offer-image" />
+                  <img src={images.oursolutions2} alt="Educational DIY robotics kits for students " className="offer-image" />
                 </div>
                 <i className="fa-solid fa-puzzle-piece"></i>
                 <h3>DIY Learning Kits</h3>
@@ -391,7 +397,7 @@ function ImpactProgram() {
               </div>
               <div className="offer-box">
                 <div className="offer-image-wrap">
-                  <img src={images.workshop} alt="Students attending hands-on STEM innovation workshop" className="offer-image" />
+                  <img src={images.oursolutions3} alt="Students attending hands-on STEM innovation workshop" className="offer-image" />
                 </div>
                 <i className="fa-solid fa-users-gear"></i>
                 <h3>Engaging Workshops</h3>

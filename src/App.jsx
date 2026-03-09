@@ -50,11 +50,13 @@ function App() {
       <Route path="/ai-robotics-stem-education-india" element={<HomePage />} />
       <Route path="/government-csr-stem-robotics-education-initiatives" element={<ImpactProgram />} />
       <Route path="/impact-program" element={<Navigate to="/government-csr-stem-robotics-education-initiatives" replace />} />
-      <Route path="/ibot" element={<IBoTPage />} />
-      <Route path="/i-bot" element={<Navigate to="/ibot" replace />} />
+      <Route path="/i-bot-iot-robotics-kit-for-students/" element={<IBoTPage />} />
+      <Route path="/ibot" element={<Navigate to="/i-bot-iot-robotics-kit-for-students/" replace />} />
+      <Route path="/i-bot" element={<Navigate to="/i-bot-iot-robotics-kit-for-students/" replace />} />
       <Route path="/tebot-robotics-kit-for-schools" element={<TeBoTPage />} />
       <Route path="/tebot" element={<Navigate to="/tebot-robotics-kit-for-schools" replace />} />
-      <Route path="/e-blox" element={<EBloxPage />} />
+      <Route path="/e-blox-modular-electronics-kit-for-kids/" element={<EBloxPage />} />
+      <Route path="/e-blox" element={<Navigate to="/e-blox-modular-electronics-kit-for-kids/" replace />} />
       <Route path="/add-on-robotics-kits-for-students" element={<EAddOnKitPage />} />
       <Route path="/add-on-kits" element={<Navigate to="/add-on-robotics-kits-for-students" replace />} />
       <Route path="/robothrone" element={<RobothronePageWrapper />} />
@@ -81,8 +83,10 @@ function App() {
       <Route path="/about-techyguide" element={<AboutUsPageWrapper />} />
       <Route path="/about-us" element={<Navigate to="/about-techyguide" replace />} />
       <Route path="/privacy-policy" element={<PrivacyPolicyPageWrapper />} />
-      <Route path="/partners" element={<PartnersPageWrapper />} />
-      <Route path="/contact-us" element={<ContactUsPageWrapper />} />
+      <Route path="/techyguide-partners-stem-education-india" element={<PartnersPageWrapper />} />
+      <Route path="/partners" element={<Navigate to="/techyguide-partners-stem-education-india" replace />} />
+      <Route path="/contact-techyguide/" element={<ContactUsPageWrapper />} />
+      <Route path="/contact-us" element={<Navigate to="/contact-techyguide/" replace />} />
     </Routes>
     <WhatsAppButton/>
   </>

@@ -45,6 +45,63 @@ import stXaviersPublicSchoolChatrapur300x300 from "./assets/partnersPageImages/S
 function PartnersPage() {
 	const rootRef = useRef(null);
 	const videoRef = useRef(null);
+
+	useEffect(() => {
+		const previousTitle = document.title;
+		const existingMetaDescription = document.querySelector('meta[name="description"]');
+		const previousMetaDescriptionContent = existingMetaDescription?.getAttribute("content") ?? null;
+		const existingCanonical = document.querySelector('link[rel="canonical"]');
+		const previousCanonicalHref = existingCanonical?.getAttribute("href") ?? null;
+
+		document.title = "STEM Education Partners in India | TechyGuide Network";
+
+		let metaDescription = existingMetaDescription;
+		if (metaDescription) {
+			metaDescription.setAttribute(
+				"content",
+				"Discover TechyGuide's partner network across India including STEM lab collaborators, robotics education partners, and technology learning institutions."
+			);
+		} else {
+			metaDescription = document.createElement("meta");
+			metaDescription.setAttribute("name", "description");
+			metaDescription.setAttribute(
+				"content",
+				"Discover TechyGuide's partner network across India including STEM lab collaborators, robotics education partners, and technology learning institutions."
+			);
+			document.head.appendChild(metaDescription);
+		}
+
+		let canonicalLink = existingCanonical;
+		if (canonicalLink) {
+			canonicalLink.setAttribute("href", "https://techyguide.com/techyguide-partners-stem-education-india");
+		} else {
+			canonicalLink = document.createElement("link");
+			canonicalLink.setAttribute("rel", "canonical");
+			canonicalLink.setAttribute("href", "https://techyguide.com/techyguide-partners-stem-education-india");
+			document.head.appendChild(canonicalLink);
+		}
+
+		return () => {
+			document.title = previousTitle;
+
+			if (metaDescription) {
+				if (previousMetaDescriptionContent === null && !existingMetaDescription) {
+					metaDescription.remove();
+				} else if (previousMetaDescriptionContent !== null) {
+					metaDescription.setAttribute("content", previousMetaDescriptionContent);
+				}
+			}
+
+			if (canonicalLink) {
+				if (previousCanonicalHref === null && !existingCanonical) {
+					canonicalLink.remove();
+				} else if (previousCanonicalHref !== null) {
+					canonicalLink.setAttribute("href", previousCanonicalHref);
+				}
+			}
+		};
+	}, []);
+
 	const institutionalSchools = [
 		{ name: "Shemrock School Balaghat", logo: shemrockSchoolBalaghat },
 		{ name: "St. Joans School", logo: stJoansSchools },
@@ -213,12 +270,11 @@ function PartnersPage() {
 				<div className="partners-hero-content">
 					<div className="partners-hero-label">COLLABORATIVE ECOSYSTEM</div>
 					<h1>
-						Empowering <br /> <span className="partners-gradient-text">India&apos;s Education</span>
+						TechyGuide Partners   <br /> 
 					</h1>
+					<h2 className="partners-gradient-text">Collaborative STEM Network </h2>
 					<p>
-						We collaborate with regional leaders and prestigious institutions to
-						democratize technology education. From Maharashtra to Assam, our
-						network is growing.
+						TechyGuide partners with schools and tech leaders across India to expand STEM learning through robotics labs, AI modules, coding programs and IoT training. 
 					</p>
 
 					<div className="partners-stat-glass-container">
@@ -241,8 +297,8 @@ function PartnersPage() {
 			<section id="partners" className="partners-section-spacer">
 				<div className="partners-container">
 					<div className="partners-section-title">
-						<h2><span className="partners-heading-accent">Regional</span> Representatives</h2>
-						<p>Authorized partners operating under the TechyGuide mandate.</p>
+						<h2><span className="partners-heading-accent">Regional</span> Tech Partners</h2>
+						<p>Our regional partners operating under the TechyGuide mandate. </p>
 					</div>
 
 					<div className="partners-cards-marquee">

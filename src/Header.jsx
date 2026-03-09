@@ -135,8 +135,8 @@ function Header() {
                 </a>
                 <ul className={`dropdown-menu ${productsOpen ? 'active' : ''}`}>
                   <li><a href="/tebot-robotics-kit-for-schools" onClick={(e) => { e.preventDefault(); handlePageNavigation('/tebot-robotics-kit-for-schools'); }}>TeBoT</a></li>
-                  <li><a href="/i-bot" onClick={(e) => { e.preventDefault(); handlePageNavigation('/i-bot'); }}>I-BoT</a></li>
-                  <li><a href="/e-blox" onClick={(e) => { e.preventDefault(); handlePageNavigation('/e-blox'); }}>E- Blox</a></li>
+                  <li><a href="/i-bot-iot-robotics-kit-for-students/" onClick={(e) => { e.preventDefault(); handlePageNavigation('/i-bot-iot-robotics-kit-for-students/'); }}>I-BoT</a></li>
+                  <li><a href="/e-blox-modular-electronics-kit-for-kids/" onClick={(e) => { e.preventDefault(); handlePageNavigation('/e-blox-modular-electronics-kit-for-kids/'); }}>E- Blox</a></li>
                   <li><a href="/add-on-robotics-kits-for-students" onClick={(e) => { e.preventDefault(); handlePageNavigation('/add-on-robotics-kits-for-students'); }}>Add On Kits</a></li>
                 </ul>
               </li>

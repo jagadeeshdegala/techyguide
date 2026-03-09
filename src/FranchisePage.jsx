@@ -1,11 +1,16 @@
 import React, { useEffect } from 'react';
 import './FranchisePage.css';
 import studentsImg from './assets/franchisepageimages/students.jpg';
-import testimonial1 from './assets/franchisepageimages/Website Testimonial_1.png';
-import testimonial11 from './assets/franchisepageimages/Website Testimonial_11.png';
-import testimonial13 from './assets/franchisepageimages/Website Testimonial_13.png';
-import testimonial14 from './assets/franchisepageimages/Website Testimonial_14.png';
-import testimonial15 from './assets/franchisepageimages/Website Testimonial_15.png';
+import testimonial1 from './assets/franchisepageimages/Partner Testimonial 1.png';
+import testimonial2 from './assets/franchisepageimages/Partner Testimonial 2.png';
+import testimonial3 from './assets/franchisepageimages/Partner Testimonial 3.png';
+import testimonial4 from './assets/franchisepageimages/Partner Testimonial 4.png';
+import testimonial5 from './assets/franchisepageimages/Partner Testimonial 5.png';
+import testimonial6 from './assets/franchisepageimages/Partner Testimonial 6.png';
+import testimonial7 from './assets/franchisepageimages/Partner Testimonial 7.png';
+import testimonial8 from './assets/franchisepageimages/Partner Testimonial 8.png';
+import testimonial9 from './assets/franchisepageimages/Partner Testimonial 9.png';
+import testimonial10 from './assets/franchisepageimages/Partner Testimonial 10.png';
 //images
 import roboticCourse from './assets/FranchisePageImages/ROBOTICS COURSES FOR KIDS.png';
 import stemWorkshop from './assets/FranchisePageImages/STEMWORKSHOPSINSCHOOLS.png';
@@ -448,8 +453,6 @@ function FranchisePage() {
                         <div className="block big"><img src="https://images.pexels.com/photos/2085832/pexels-photo-2085832.jpeg" alt="Snapshot 4" /></div>
                         <div className="block big"><img src="https://images.pexels.com/photos/2085832/pexels-photo-2085832.jpeg" alt="Snapshot 5" /></div>
                         <div className="block small"><img src="https://images.pexels.com/photos/2085832/pexels-photo-2085832.jpeg" alt="Snapshot 6" /></div>
-                        <div className="block small"><img src="https://images.pexels.com/photos/2085832/pexels-photo-2085832.jpeg" alt="Snapshot 7" /></div>
-                        <div className="block big"><img src="https://images.pexels.com/photos/2085832/pexels-photo-2085832.jpeg" alt="Snapshot 8" /></div>
                     </div>
                 </div>
             </section>
@@ -462,16 +465,26 @@ function FranchisePage() {
                     <div className="story-viewport">
                         <div className="story-track">
                             <div className="story-item"><img src={testimonial1} alt="Story" /></div>
-                            <div className="story-item"><img src={testimonial11} alt="Story" /></div>
-                            <div className="story-item"><img src={testimonial13} alt="Story" /></div>
-                            <div className="story-item"><img src={testimonial14} alt="Story" /></div>
-                            <div className="story-item"><img src={testimonial15} alt="Story" /></div>
-                            
-                            <div className="story-item"><img src={testimonial1} alt="Story" /></div>
-                            <div className="story-item"><img src={testimonial11} alt="Story" /></div>
-                            <div className="story-item"><img src={testimonial13} alt="Story" /></div>
-                            <div className="story-item"><img src={testimonial14} alt="Story" /></div>
-                            <div className="story-item"><img src={testimonial15} alt="Story" /></div>
+                            <div className="story-item"><img src={testimonial2} alt="Story" /></div>
+                            <div className="story-item"><img src={testimonial3} alt="Story" /></div>
+                            <div className="story-item"><img src={testimonial4} alt="Story" /></div>
+                            <div className="story-item"><img src={testimonial5} alt="Story" /></div>
+                            <div className="story-item"><img src={testimonial6} alt="Story" /></div>
+                            <div className="story-item"><img src={testimonial7} alt="Story" /></div>
+                            <div className="story-item"><img src={testimonial8} alt="Story" /></div>
+                            <div className="story-item"><img src={testimonial9} alt="Story" /></div>
+                            <div className="story-item"><img src={testimonial10} alt="Story" /></div>
+
+                             <div className="story-item"><img src={testimonial1} alt="Story" /></div>
+                            <div className="story-item"><img src={testimonial2} alt="Story" /></div>
+                            <div className="story-item"><img src={testimonial3} alt="Story" /></div>
+                            <div className="story-item"><img src={testimonial4} alt="Story" /></div>
+                            <div className="story-item"><img src={testimonial5} alt="Story" /></div>
+                            <div className="story-item"><img src={testimonial6} alt="Story" /></div>
+                            <div className="story-item"><img src={testimonial7} alt="Story" /></div>
+                            <div className="story-item"><img src={testimonial8} alt="Story" /></div>
+                            <div className="story-item"><img src={testimonial9} alt="Story" /></div>
+                            <div className="story-item"><img src={testimonial10} alt="Story" /></div>
                         </div>
                     </div>
                 </div>

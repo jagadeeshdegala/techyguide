@@ -789,14 +789,22 @@
 /* Top Image + Icon */
 .robothrone-page-root .robothrone-theme-top {
   position: relative;
-  margin-bottom: 14px;
+  margin: -22px -22px 14px -22px;
+  overflow: hidden;
+  border-radius: 14px 14px 0 0;
+  padding: 0;
+  background: #000;
 }
 
 .robothrone-page-root .robothrone-theme-top img {
   width: 100%;
-  height: 180px;
+  aspect-ratio: 550 / 250;
   object-fit: cover;
-  border-radius: 14px;
+  object-position: center;
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
 }
 
 .robothrone-page-root .robothrone-theme-icon {
@@ -866,8 +874,12 @@
     padding: 18px;
   }
 
+  .robothrone-page-root .robothrone-theme-top {
+    margin: -18px -18px 14px -18px;
+  }
+
   .robothrone-page-root .robothrone-theme-top img {
-    height: 150px;
+    aspect-ratio: 550 / 250;
   }
 }
 

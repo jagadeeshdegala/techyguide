@@ -22,6 +22,11 @@ import supportecosystem3 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Su
 import supportecosystem4 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Support Ecosystem - 4.jpg";
 import supportecosystem5 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Support Ecosystem - 5.jpg";
 import supportecosystem6 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Support Ecosystem - 6.jpg";
+// proprietry kits section images
+import proprietaryKit1 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Proprietary kit 1.jpg";
+import proprietaryKit2 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Proprietary kit 2.jpg";
+import proprietaryKit3 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Proprietary kit 3.jpg";
+
 
 const AIRoboticLabICSE = () => {
 	const rootRef = useRef(null);
@@ -652,15 +657,15 @@ const AIRoboticLabICSE = () => {
             
 						<div className="diy-image slider-wrapper">
 							<div className="diy-slide fade">
-								<img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800" alt="Modular I-BoT robotics kit compatible with Arduino and ESP32 for ICSE labs " />
+								<img src={proprietaryKit1} alt="Modular I-BoT robotics kit compatible with Arduino and ESP32 for ICSE labs " />
 								<div className="slide-caption">I-BoT Starter Kit</div>
 							</div>
 							<div className="diy-slide fade">
-								<img src="https://images.unsplash.com/photo-1563968743333-044cef80426d?auto=format&fit=crop&q=80&w=800" alt="TeBoT DIY robotics kit for ICSE AI and robotics lab projects " />
+								<img src={proprietaryKit2} alt="TeBoT DIY robotics kit for ICSE AI and robotics lab projects " />
 								<div className="slide-caption">TeBoT Kit</div>
 							</div>
 							<div className="diy-slide fade">
-								<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" alt="E-Blox Kit" />
+								<img src={proprietaryKit3} alt="E-Blox Kit" />
 								<div className="slide-caption">E-Blox Kit</div>
 							</div>
 							<div className="floating-kit-tag">Designed for ICSE</div>

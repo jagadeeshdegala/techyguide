@@ -19,6 +19,62 @@ function ContactUs() {
 	const [submitTimeoutId, setSubmitTimeoutId] = useState(null);
 
 	useEffect(() => {
+		const previousTitle = document.title;
+		const existingMetaDescription = document.querySelector('meta[name="description"]');
+		const previousMetaDescriptionContent = existingMetaDescription?.getAttribute("content") ?? null;
+		const existingCanonical = document.querySelector('link[rel="canonical"]');
+		const previousCanonicalHref = existingCanonical?.getAttribute("href") ?? null;
+
+		document.title = "Contact TechyGuide | STEM & Robotics Lab Setup India";
+
+		let metaDescription = existingMetaDescription;
+		if (metaDescription) {
+			metaDescription.setAttribute(
+				"content",
+				"Contact TechyGuide for CBSE STEM labs, robotics labs, and AI learning solutions for schools. Get expert support, lab setup consultation, and training."
+			);
+		} else {
+			metaDescription = document.createElement("meta");
+			metaDescription.setAttribute("name", "description");
+			metaDescription.setAttribute(
+				"content",
+				"Contact TechyGuide for CBSE STEM labs, robotics labs, and AI learning solutions for schools. Get expert support, lab setup consultation, and training."
+			);
+			document.head.appendChild(metaDescription);
+		}
+
+		let canonicalLink = existingCanonical;
+		if (canonicalLink) {
+			canonicalLink.setAttribute("href", "https://techyguide.com/contact-techyguide/");
+		} else {
+			canonicalLink = document.createElement("link");
+			canonicalLink.setAttribute("rel", "canonical");
+			canonicalLink.setAttribute("href", "https://techyguide.com/contact-techyguide/");
+			document.head.appendChild(canonicalLink);
+		}
+
+		return () => {
+			document.title = previousTitle;
+
+			if (metaDescription) {
+				if (previousMetaDescriptionContent === null && !existingMetaDescription) {
+					metaDescription.remove();
+				} else if (previousMetaDescriptionContent !== null) {
+					metaDescription.setAttribute("content", previousMetaDescriptionContent);
+				}
+			}
+
+			if (canonicalLink) {
+				if (previousCanonicalHref === null && !existingCanonical) {
+					canonicalLink.remove();
+				} else if (previousCanonicalHref !== null) {
+					canonicalLink.setAttribute("href", previousCanonicalHref);
+				}
+			}
+		};
+	}, []);
+
+	useEffect(() => {
 		let faLink = document.getElementById('tg-contactus-fa');
 
 		if (!faLink) {
@@ -64,7 +120,7 @@ function ContactUs() {
 							<div className="badge">Official Partners</div>
 							<h1 className="tg-contactus-title">Build Your <span>Dream Lab</span> Today.</h1>
 							<img className="tg-contactus-heading-image" src={school2} alt="Dream Lab setup visual" />
-							<p className="description">Complete turnkey solutions for CBSE Composite Skill Labs, STEM Tinkering, and ICSE Robotics. Fully compliant with government mandates.</p>
+							<p className="description">TechyGuide provides turnkey solutions for CBSE Composite Skill Labs, STEM Tinkering, and ICSE Robotics. Fully compliant with government mandates. </p>
 
 							<ul className="features">
 								<li>

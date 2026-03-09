@@ -10,6 +10,19 @@ import plantMonitor from '../assets/ProductI-BoTImages/plant monitor.jpg';
 import smokeDetection from '../assets/ProductI-BoTImages/smoke detection.jpg';
 //hero image
 import heroimg from '../assets/ProductI-BoTImages/my-image.png';
+//Technologies at Focus images
+import InternetofThings from '../assets/ProductI-BoTImages/Internet of Things (IoT).png';
+import WirelessCommunication from '../assets/ProductI-BoTImages/Wireless Communication.png';
+import AdvancedSensoryLogic from '../assets/ProductI-BoTImages/Advanced Sensory Logic.png';
+import AutomationEngineering from '../assets/ProductI-BoTImages/Automation Engineering.png';
+import DualProgramming from '../assets/ProductI-BoTImages/Dual Programming.png';
+//i-Bot Technology: The Hardware images
+import TheBrain from '../assets/ProductI-BoTImages/The Brain.png';
+import AllinOneController from '../assets/ProductI-BoTImages/All-in-One Controller.png';
+import SafetyFirst from '../assets/ProductI-BoTImages/Safety First.png';
+
+
+
 function IBoT() {
     const projectsRef = useRef(null);
     const [activeKitSlide, setActiveKitSlide] = useState(0);
@@ -217,7 +230,7 @@ function IBoT() {
                     </div>
                     <div className="info-section">
                         <h1>I-BoT Kit</h1>
-                        <h2>Smart IoT robotics kit for young innovators with 50+ projects</h2>
+                        <h2>Smart IoT robotics kit with 50+ projects</h2>
                         <button className="btn-secondary">Explore Features</button>
                     </div>
                 </main>
@@ -229,10 +242,10 @@ function IBoT() {
                 <section className="ibot-section intro-section" id="introduction">
                     <div className="container">
                         <div className="section-header">
-                            <h2>Introduction to <span className="highlight-text">i-Bot Kit</span></h2>
+                            <h2>Introduction to the<span className="highlight-text">I-Bot Kit</span></h2>
                         </div>
                         <p className="intro-description">
-                            The i-Bot Kit is a cutting-edge IoT and robotics learning platform designed for the next generation of innovators. Powered by the ultra-fast ESP32 chip with built-in Wi-Fi and Bluetooth, i-Bot enables students to create smart, connected projects ranging from basic sensor automation to advanced voice-controlled robots. With over 100+ projects and industry-grade sensors, this kit bridges classroom learning with real-world technology applications.
+The i-BoT robotics kit helps students explore IoT, robotics, wireless communication, and automation through hands-on learning. Built on the powerful ESP32 chip with integrated Wi-Fi and Bluetooth, the kit enables learners to design smart connected systems, from simple sensor-based projects to advanced voice-controlled robots. With over 100 guided projects and industry-grade sensors, i-BoT bridges classroom STEM education with practical technology skills used in modern innovation. 
                         </p>
                         <div className="ibot-video-container">
                             <iframe
@@ -273,31 +286,31 @@ function IBoT() {
 
                         <div className="tech-grid">
                             <div className="tech-card">
-                                <img src={homeAutomation} alt="Internet of Things" className="tech-image" />
+                                <img src={InternetofThings} alt="Internet of Things" className="tech-image" />
                                 <h3>Internet of Things (IoT)</h3>
                                 <p>The core of i-Bot. Learn to send data to the cloud and control devices from your smartphone using the Blynk IoT platform.</p>
                             </div>
                             
                             <div className="tech-card">
-                                <img src={mainBoard} alt="Wireless Communication" className="tech-image" />
+                                <img src={WirelessCommunication} alt="Wireless Communication" className="tech-image" />
                                 <h3>Wireless Communication</h3>
                                 <p>Master Wi-Fi and Bluetooth technologies for long-range remote control and automation.</p>
                             </div>
                             
                             <div className="tech-card">
-                                <img src={smokeDetection} alt="Advanced Sensory Logic" className="tech-image" />
+                                <img src={AdvancedSensoryLogic} alt="Advanced Sensory Logic" className="tech-image" />
                                 <h3>Advanced Sensory Logic</h3>
                                 <p>Use industry-grade sensors to detect Gas (MQ2), Flame, Rain, and Soil Moisture.</p>
                             </div>
                             
                             <div className="tech-card">
-                                <img src={kitImage} alt="Automation Engineering" className="tech-image" />
+                                <img src={AutomationEngineering} alt="Automation Engineering" className="tech-image" />
                                 <h3>Automation Engineering</h3>
                                 <p>Build complex systems like Smart Baby Cradles and Automated Sanitizer Dispensers.</p>
                             </div>
                             
                             <div className="tech-card">
-                                <img src={plantMonitor} alt="Dual Programming" className="tech-image" />
+                                <img src={DualProgramming} alt="Dual Programming" className="tech-image" />
                                 <h3>Dual Programming</h3>
                                 <p>Start with graphical block coding and graduate to professional C++ programming using Arduino IDE.</p>
                             </div>
@@ -309,15 +322,15 @@ function IBoT() {
                 <section className="ibot-section hardware-section">
                     <div className="container">
                         <div className="section-header">
-                            <h2><span style={{color: '#008273'}}>i-Bot Technology</span>: The Hardware</h2>
+                            <h2><span style={{color: '#008273'}}>I-Bot Technology</span>: The Hardware</h2>
                             <p>Industrial-grade engineering with classroom-friendly design</p>
                         </div>
 
                         <div className="hardware-grid">
                             {[
-                                { title: 'The Brain', desc: 'Powered by the ultra-fast ESP32 Chip (4 MB) with dual-mode Wi-Fi and Bluetooth.', image: mainBoard },
-                                { title: 'All-in-One Controller', desc: 'Integrated motor drivers, buzzer, LED, and multi-sensor pinouts with no messy wiring.', image: kitImage },
-                                { title: 'Safety First', desc: 'Double-layer PCB with 3-layer short circuit protection ensuring safe classroom usage.', image: smokeDetection },
+                                { title: 'The Brain', desc: 'Powered by the ultra-fast ESP32 Chip (4 MB) with dual-mode Wi-Fi and Bluetooth.', image: TheBrain },
+                                { title: 'All-in-One Controller', desc: 'Integrated motor drivers, buzzer, LED, and multi-sensor pinouts with no messy wiring.', image: AllinOneController },
+                                { title: 'Safety First', desc: 'Double-layer PCB with 3-layer short circuit protection ensuring safe classroom usage.', image: SafetyFirst },
                                 { title: 'Power Efficiency', desc: 'Flexible power support from 3.7V to 12V with JST connectors for rechargeable batteries.', image: homeAutomation }
                             ].map((item, idx) => (
                                 <div key={idx} className="hardware-card">
