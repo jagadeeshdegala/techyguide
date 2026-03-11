@@ -19,7 +19,17 @@ import saleOfRoboticKits from './assets/FranchisePageImages/SALE OF ROBOTICS KIT
 import SoftwareHardware from './assets/FranchisePageImages/HARDWARE & SOFTWARE.png';
 import Training from './assets/FranchisePageImages/TRAINING & SUPPORT.png';
 // What Will You Get? section images
-import WhatWillYouGet1 from './assets/FranchisePageImages/What Will You Get1.png';
+import WhatWillYouGet1 from './assets/FranchisePageImages/What Will You Get1.jpg';
+import WhatWillYouGet2 from './assets/FranchisePageImages/What Will You Get2.jpg';
+import WhatWillYouGet3 from './assets/FranchisePageImages/What Will You Get3.jpg';
+import WhatWillYouGet4 from './assets/FranchisePageImages/What Will You Get4.jpg';
+// some snapshots section
+import snapshot1 from './assets/FranchisePageImages/Some Snapshots - 1.jpg';
+import snapshot2 from './assets/FranchisePageImages/Some Snapshots - 2.jpg';
+import snapshot3 from './assets/FranchisePageImages/Some Snapshots - 3.jpg';
+import snapshot4 from './assets/FranchisePageImages/Some Snapshots - 4.jpg';
+import snapshot5 from './assets/FranchisePageImages/Some Snapshots - 5.jpg';
+import snapshot6 from './assets/FranchisePageImages/Some Snapshots - 6.jpg';
 
 
 function FranchisePage() {
@@ -416,7 +426,7 @@ function FranchisePage() {
 
                 <div className="box">
                     <div className="box-content">
-                        <img src={studentsImg} alt="Hardware" />
+                        <img src={WhatWillYouGet2} alt="Hardware" />
                         <div className="text-overlay">HARDWARE & SOFTWARE</div>
                     </div>
                     <div className="details">
@@ -426,7 +436,7 @@ function FranchisePage() {
 
                 <div className="box">
                     <div className="box-content">
-                        <img src={studentsImg} alt="Curriculum" />
+                        <img src={WhatWillYouGet3} alt="Curriculum" />
                         <div className="text-overlay">CONTENT & CURRICULUM</div>
                     </div>
                     <div className="details">
@@ -436,7 +446,7 @@ function FranchisePage() {
 
                 <div className="box">
                     <div className="box-content">
-                        <img src={studentsImg} alt="Training" />
+                        <img src={WhatWillYouGet4} alt="Training" />
                         <div className="text-overlay">TRAINING & SUPPORT</div>
                     </div>
                     <div className="details">
@@ -449,12 +459,12 @@ function FranchisePage() {
                 <div className="containersnapshot">
                     <h2 className="section-title">Some Snapshots</h2>
                     <div className="view">
-                        <div className="block big"><img src="https://images.pexels.com/photos/2085832/pexels-photo-2085832.jpeg" alt="Snapshot 1" /></div>
-                        <div className="block small"><img src="https://images.pexels.com/photos/2085832/pexels-photo-2085832.jpeg" alt="Snapshot 2" /></div>
-                        <div className="block small"><img src="https://images.pexels.com/photos/2085832/pexels-photo-2085832.jpeg" alt="Snapshot 3" /></div>
-                        <div className="block big"><img src="https://images.pexels.com/photos/2085832/pexels-photo-2085832.jpeg" alt="Snapshot 4" /></div>
-                        <div className="block big"><img src="https://images.pexels.com/photos/2085832/pexels-photo-2085832.jpeg" alt="Snapshot 5" /></div>
-                        <div className="block small"><img src="https://images.pexels.com/photos/2085832/pexels-photo-2085832.jpeg" alt="Snapshot 6" /></div>
+                        <div className="block big"><img src={snapshot4} alt="Snapshot 1" /></div>
+                        <div className="block small"><img src={snapshot1} alt="Snapshot 2" /></div>
+                        <div className="block small"><img src={snapshot2} alt="Snapshot 3" /></div>
+                        <div className="block big"><img src={snapshot5} alt="Snapshot 4" /></div>
+                        <div className="block big"><img src={snapshot6} alt="Snapshot 5" /></div>
+                        <div className="block small"><img src={snapshot3} alt="Snapshot 6" /></div>
                     </div>
                 </div>
             </section>

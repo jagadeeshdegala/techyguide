@@ -10,27 +10,19 @@ import IndustryAligned from '../assets/ProductTeBoTImages/Industry Aligned.png';
 import RoboticsEngineering from '../assets/ProductTeBoTImages/Robotics & Engineering.png';
 import CodingProgramming from '../assets/ProductTeBoTImages/Coding & Programming.png';
 //The Advanced Tech Inside TeBot image
-import TheAdvancedTechInsideTeBot from '../assets/ProductTeBoTImages/The Advanced Tech Inside TeBot.png';
+import TheAdvancedTechInsideTeBot from '../assets/ProductTeBoTImages/The Advanced Tech Inside TeBot.jpg';
 //Why TeBot is the Ultimate Learning Choice images
-import ChildSafeDurable from '../assets/ProductTeBoTImages/Child Safe & Durable.png';
-import PlugPlaySimplicity from '../assets/ProductTeBoTImages/Plug & Play Simplicity.png';
-import ProvenImpact from '../assets/ProductTeBoTImages/Proven Impact.png';
-import GuaranteedQuality from '../assets/ProductTeBoTImages/Guaranteed Quality.png';
-
-
-
-
-
-
-
+import ChildSafeDurable from '../assets/ProductTeBoTImages/Why TeBot is the Ultimate Learning Choice - 1.jpg';
+import PlugPlaySimplicity from '../assets/ProductTeBoTImages/Why TeBot is the Ultimate Learning Choice - 2.jpg';
+import ProvenImpact from '../assets/ProductTeBoTImages/Why TeBot is the Ultimate Learning Choice - 3.jpg';
+import GuaranteedQuality from '../assets/ProductTeBoTImages/Why TeBot is the Ultimate Learning Choice - 4.jpg';
+//TeBot Kits for Students
+import TeBotKitsforStudents1 from '../assets/ProductTeBoTImages/TeBot Kits for Students - 1.jpg';
+import TeBotKitsforStudents2 from '../assets/ProductTeBoTImages/TeBot Kits for Students - 2.jpg';
+import TeBotKitsforStudents3 from '../assets/ProductTeBoTImages/TeBot Kits for Students - 3.jpg';
 import bgImage1 from '../assets/ProductTeBoTImages/9743539.png';
 import bgImage2 from '../assets/ProductTeBoTImages/5073198.jpg';
-import tebotWebsiteImage from '../assets/ProductTeBoTImages/Website Tebt.png';
-import tebotComponentsImage from '../assets/ProductTeBoTImages/robotics_1434292.png';
 import tebotProjectsImage from '../assets/ProductTeBoTImages/robot_2582246.png';
-import tebotChampImage from '../assets/ProductTeBoTImages/robot_4512237.png';
-import tebotChampProjectImage from '../assets/ProductTeBoTImages/robotics_12775607.png';
-import tebotAdvanceImage from '../assets/ProductTeBoTImages/pexels-photo-35542404.jpeg';
 // import ZohoBiginForm from '../components/ZohoBiginForm';
 //hero image
 
@@ -81,7 +73,7 @@ function TeBoT() {
             name: "TeBot Basic Kit",
             description: "The ideal entry-level robotics kit for beginners to build a solid STEM foundation.",
             projects: "10+ interactive projects",
-            image: ChildSafeDurable,
+            image: TeBotKitsforStudents1,
             imageAlt: 'TeBot Basic Kit visual'
         },
         {
@@ -89,7 +81,7 @@ function TeBoT() {
             name: "TeBot Champ Kit",
             description: "An advanced robotics kit designed for young innovators ready for more complexity and sensor experimentation.",
             projects: "40+ engaging projects",
-            image: PlugPlaySimplicity,
+            image: TeBotKitsforStudents2,
             imageAlt: 'TeBot Champ Kit visual'
         },
         {
@@ -97,7 +89,7 @@ function TeBoT() {
             name: "TeBot Advance Kit",
             description: "The flagship innovator's toolkit. It combines advanced Robotics, IoT, and AI capabilities into one package, featuring professional modules like RFID and Bluetooth.",
             projects: "50+ high-level projects",
-            image: ProvenImpact,
+            image: TeBotKitsforStudents3,
             imageAlt: 'TeBot Advance Kit visual'
         }
     ];

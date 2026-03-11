@@ -111,7 +111,6 @@ h2 {
 .btn-primary:hover {
     background-color: transparent;
     color: var(--primary-color);
-    align-items: b;
 }
 
 .btn-secondary {
@@ -124,5 +123,4 @@ h2 {
 .btn-secondary:hover {
     background-color: var(--primary-color);
     color: var(--white);
-}
 }

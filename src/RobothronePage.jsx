@@ -7,7 +7,8 @@ import logoTG from './assets/RobothronePageImages/Logo_TG_Tagline logo.png';
 import logoTG2 from './assets/RobothronePageImages/Logo_TG_Tagline 4.png';
 
 // Video import
-import heroVideo from './assets/RobothronePageImages/robothronebgvideo.mp4';
+
+import heroVideo from './assets/RobothronePageImages/Website Backdrop Robothrone.mp4';
 //Eligibility & Age Divisions section images
 import junior from './assets/RobothronePageImages/Junior 8-10.png';
 import intermediate from './assets/RobothronePageImages/intermediate 11-13.png';

@@ -1,636 +1,988 @@
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
+import lottie from 'lottie-web';
+import { courseDetails } from './coursesModalData';
 import './coursesPage.css';
-import robotImg from './assets/CoursesPageImages/robot.png';
-import bgImg from './assets/CoursesPageImages/5073198.jpg';
-import pythonImg from './assets/CoursesPageImages/python.jpg';
-import videoFile from './assets/CoursesPageImages/video.mp4';
-import ageIcon from './assets/CoursesPageImages/Girl Read Book.png';
-import deliveryIcon from './assets/CoursesPageImages/laptop_computer_books_study_pc_icon_209299.png';
-import batchIcon from './assets/CoursesPageImages/people_person_children_icon_148392.png';
-import sessionIcon from './assets/CoursesPageImages/Time_Span-80_icon-icons.com_57260.png';
-import durationIcon from './assets/CoursesPageImages/1491254394-timedurationclocknotification_82936.png';
-import certIcon from './assets/CoursesPageImages/award_achievement_education_diploma_certification_certificate_icon_256751.png';
-import testimonial1 from './assets/CoursesPageImages/Website Testimonial_1.png';
-import testimonial11 from './assets/CoursesPageImages/Website Testimonial_11.png';
-import testimonial13 from './assets/CoursesPageImages/Website Testimonial_13.png';
-import testimonial14 from './assets/CoursesPageImages/Website Testimonial_14.png';
-import testimonial15 from './assets/CoursesPageImages/Website Testimonial_15.png';
+
+import appDevelopmentImage from './assets/CoursesPageImages/optimized/app-development.jpg';
+import artificialIntelligenceImage from './assets/CoursesPageImages/optimized/artificial-intelligence.jpg';
+import childImage from './assets/CoursesPageImages/optimized/child-image.png';
+import electronicsImage from './assets/CoursesPageImages/optimized/electronics.jpg';
+import gameDevelopmentImage from './assets/CoursesPageImages/optimized/game-development.jpg';
+import internetOfThingsImage from './assets/CoursesPageImages/optimized/internet-of-things-iot.jpg';
+import pythonProgrammingImage from './assets/CoursesPageImages/optimized/python-programming.jpg';
+import roboticsAutomationImage from './assets/CoursesPageImages/optimized/robotics-automation.jpg';
+import scratchProgrammingImage from './assets/CoursesPageImages/optimized/scratch-programming.jpg';
+import testimonial1Image from './assets/CoursesPageImages/optimized/testimonial-1.png';
+import testimonial2Image from './assets/CoursesPageImages/optimized/testimonial-2.png';
+import testimonial3Image from './assets/CoursesPageImages/optimized/testimonial-3.png';
+import testimonial4Image from './assets/CoursesPageImages/optimized/testimonial-4.png';
+import testimonial5Image from './assets/CoursesPageImages/optimized/testimonial-5.png';
+import testimonial6Image from './assets/CoursesPageImages/optimized/testimonial-6.png';
+import testimonial7Image from './assets/CoursesPageImages/optimized/testimonial-7.png';
+import testimonial8Image from './assets/CoursesPageImages/optimized/testimonial-8.png';
+import testimonial9Image from './assets/CoursesPageImages/optimized/testimonial-9.png';
+import testimonial10Image from './assets/CoursesPageImages/optimized/testimonial-10.png';
+import webDevelopmentImage from './assets/CoursesPageImages/optimized/web-development.jpg';
+
+import cmsComputerAnimationJson from './assets/CoursesPageImages/CMS computer animation.json?url';
+import codingJson from './assets/CoursesPageImages/Coding.json?url';
+import developmentOfAiJson from './assets/CoursesPageImages/Development Of Artificial Intelligence.json?url';
+import ideaWithBooksJson from './assets/CoursesPageImages/Idea with books.json?url';
+import readingJson from './assets/CoursesPageImages/Reading.json?url';
+import roboheadLoadingJson from './assets/CoursesPageImages/Robohead Loading.json?url';
+import studentWithLaptopJson from './assets/CoursesPageImages/student with laptop.json?url';
+import classroomVideo1 from './assets/CoursesPageImages/Course page - Video 1.mp4';
+import classroomVideo2 from './assets/CoursesPageImages/Course page - Video 2.mp4';
+import classroomVideo3 from './assets/CoursesPageImages/Course page - Video 3.mp4';
+import classroomVideo4 from './assets/CoursesPageImages/Course page - Video 4.mp4';
+import classroomVideo5 from './assets/CoursesPageImages/Course page - Video 5.mp4';
+import classroomVideo6 from './assets/CoursesPageImages/Course page - Video 6.mp4';
+import classroomVideo7 from './assets/CoursesPageImages/Course page - Video 7.mp4';
+import classroomVideo8 from './assets/CoursesPageImages/Course page - Video 8.mp4';
+
+const classroomVideos = [
+  classroomVideo1,
+  classroomVideo2,
+  classroomVideo3,
+  classroomVideo4,
+  classroomVideo5,
+  classroomVideo6,
+  classroomVideo7,
+  classroomVideo8,
+];
 
 function CoursesPage() {
+  const pageRootRef = useRef(null);
+  const MODAL_CLOSE_MS = 140;
+
   useEffect(() => {
-    // All JavaScript logic from script.js
-    function openCourse(courseKey) {
-      const modal = document.getElementById('courseModal');
-      const title = document.getElementById('modalTitle');
-      const curriculum = document.getElementById('modalCurriculum');
+    let modalCloseTimer = null;
 
-      // Set Title
-      title.innerText = courseKey;
-
-      // Detailed course information
-      const courseDetails = {
-        'Robotics': {
-          curriculum: ['Arduino Programming & Hardware Setup', 'Sensor Integration (Ultrasonic, Camera, GPS)', 'Motor Control & Servo Programming', 'Robot Assembly & Mechanical Design', 'AI Integration & Machine Learning', 'Advanced Robotics Projects'],
-          description: 'Build and program autonomous robots using Arduino, Raspberry Pi, and advanced sensors. Learn mechanical engineering principles, AI integration, and real-world robotics applications.',
-          duration: '8 weeks intensive program',
-          projects: ['Line Following Robot', 'Obstacle Avoiding Car', 'Voice Controlled Assistant', 'Smart Home Automation'],
-          skills: ['Hardware Programming', 'Sensor Integration', 'AI & ML', 'Mechanical Design']
-        },
-        'Coding': {
-          curriculum: ['Python Fundamentals & Syntax', 'Data Structures & Algorithms', 'Object-Oriented Programming', 'Database Management & SQL', 'Web Development Basics', 'Final Capstone Project'],
-          description: 'Master programming fundamentals with Python, JavaScript, and modern development practices. Build real applications and learn industry-standard coding techniques.',
-          duration: '10 weeks comprehensive course',
-          projects: ['Personal Finance Tracker', 'Weather Prediction App', 'E-commerce Website', 'Data Analysis Dashboard'],
-          skills: ['Python Programming', 'Web Development', 'Database Design', 'Problem Solving']
-        },
-        'AI': {
-          curriculum: ['Introduction to Artificial Intelligence', 'Machine Learning Algorithms', 'Neural Networks & Deep Learning', 'Computer Vision & Image Processing', 'Natural Language Processing', 'AI Ethics & Future Applications'],
-          description: 'Explore the fascinating world of AI and machine learning. Build intelligent systems that can learn, adapt, and make decisions like humans.',
-          duration: '12 weeks advanced program',
-          projects: ['Image Recognition System', 'Chatbot Development', 'Recommendation Engine', 'Predictive Analytics Tool'],
-          skills: ['Machine Learning', 'Deep Learning', 'Computer Vision', 'Data Science']
-        },
-        'AppDev': {
-          curriculum: ['Mobile App Design Principles', 'React Native Development', 'Database Integration & APIs', 'User Interface Design', 'App Store Optimization', 'Publishing & Monetization'],
-          description: 'Create stunning mobile applications for iOS and Android. Learn modern frameworks, UI/UX design, and app store deployment strategies.',
-          duration: '8 weeks practical course',
-          projects: ['Social Media App', 'E-commerce Mobile App', 'Fitness Tracking App', 'Food Delivery Platform'],
-          skills: ['React Native', 'UI/UX Design', 'API Integration', 'App Publishing']
-        },
-        'WebDev': {
-          curriculum: ['HTML5 & CSS3 Fundamentals', 'JavaScript ES6+ Programming', 'Frontend Frameworks (React)', 'Backend Development (Node.js)', 'Database Management', 'Full Stack Project Development'],
-          description: 'Build modern, responsive websites using cutting-edge technologies. Master both frontend and backend development for complete web solutions.',
-          duration: '10 weeks full-stack program',
-          projects: ['Personal Portfolio Website', 'E-commerce Platform', 'Blog Management System', 'Real-time Chat Application'],
-          skills: ['Frontend Development', 'Backend Programming', 'Database Design', 'Full Stack Architecture']
-        },
-        'Games': {
-          curriculum: ['Game Design Fundamentals', 'Unity Engine Mastery', 'C# Programming for Games', '2D & 3D Graphics Programming', 'Physics & Animation Systems', 'Game Publishing & Marketing'],
-          description: 'Design and develop engaging 2D and 3D games using Unity engine. Learn game mechanics, physics, animation, and monetization strategies.',
-          duration: '12 weeks creative program',
-          projects: ['2D Platformer Adventure', '3D Racing Simulator', 'Mobile Puzzle Game', 'Multiplayer Battle Arena'],
-          skills: ['Unity Development', 'C# Programming', 'Game Physics', '3D Modeling']
-        }
-      };
-
-      const course = courseDetails[courseKey];
-      if (course) {
-        curriculum.innerHTML = `
-          <div style="text-align: left; max-width: 800px; margin: 0 auto;">
-            <div style="margin-bottom: 15px;">
-              <h4 style="color: var(--primary-blue); margin: 0 0 5px 0;">Course Description</h4>
-              <p style="line-height: 1.4; color: #555; margin: 0;">${course.description}</p>
-            </div>
-            <div style="margin-bottom: 15px;">
-              <h4 style="color: var(--primary-blue); margin: 0 0 5px 0;">Duration</h4>
-              <p style="color: #666; font-weight: 500; margin: 0;">${course.duration}</p>
-            </div>
-            <div style="margin-bottom: 15px;">
-              <h4 style="color: var(--primary-blue); margin: 0 0 8px 0;">Curriculum</h4>
-              ${course.curriculum.map((item, index) => `
-                <div style="padding: 6px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
-                  <span style="color: var(--primary-orange); font-weight: bold; margin-right: 6px;">✓</span>
-                  <span style="color: #444;">Module ${index + 1}: ${item}</span>
-                </div>
-              `).join('')}
-            </div>
-            <div style="margin-bottom: 15px;">
-              <h4 style="color: var(--primary-blue); margin: 0 0 8px 0;">Projects You'll Build</h4>
-              ${course.projects.map(project => `
-                <div style="padding: 4px 0; color: #555;">
-                  <span style="color: var(--primary-orange); margin-right: 5px;">🚀</span>${project}
-                </div>
-              `).join('')}
-            </div>
-            <div>
-              <h4 style="color: var(--primary-blue); margin: 0 0 8px 0;">Skills You'll Master</h4>
-              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                ${course.skills.map(skill => `
-                  <span style="background: #f0f8ff; color: var(--primary-blue); padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: 500;">${skill}</span>
-                `).join('')}
-              </div>
-            </div>
-          </div>
-        `;
-      } else {
-        curriculum.innerHTML = '<div>Course details coming soon...</div>';
+    const syncModalClass = () => {
+      if (!pageRootRef.current) {
+        return;
       }
 
-      // Show modal with smooth animation
+      if (document.body.classList.contains('modal-open')) {
+        pageRootRef.current.classList.add('modal-open');
+      } else {
+        pageRootRef.current.classList.remove('modal-open');
+      }
+    };
+
+    const bodyClassObserver = new MutationObserver(syncModalClass);
+    bodyClassObserver.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+    syncModalClass();
+
+    const syncHeaderOffset = () => {
+      if (!pageRootRef.current) {
+        return;
+      }
+
+      const topBar = document.querySelector('.top-bar');
+      const fixedHeader = document.querySelector('header:not(.hero)');
+      const topBarHeight = topBar ? topBar.getBoundingClientRect().height : 0;
+      const headerHeight = fixedHeader ? fixedHeader.getBoundingClientRect().height : 0;
+      const computedOffset = Math.ceil(topBarHeight + headerHeight);
+      const fallbackOffset = 120;
+      const finalOffset = computedOffset > 0 ? computedOffset : fallbackOffset;
+
+      pageRootRef.current.style.setProperty('--courses-header-offset', `${finalOffset}px`);
+    };
+
+    const scrollToCurrentHash = () => {
+      if (!window.location.hash) {
+        return;
+      }
+      const hashId = window.location.hash.slice(1);
+      if (!hashId) {
+        return;
+      }
+      const target = document.getElementById(hashId);
+      if (!target) {
+        return;
+      }
+      target.scrollIntoView({ block: 'start' });
+    };
+
+    const runHashScroll = () => {
+      window.requestAnimationFrame(scrollToCurrentHash);
+    };
+
+    const populateList = (elementId, dataArray) => {
+      const container = document.getElementById(elementId);
+      if (!container) return;
+
+      container.innerHTML = '';
+      if (!dataArray || !dataArray.length) return;
+
+      const fragment = document.createDocumentFragment();
+      dataArray.forEach((item) => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        fragment.appendChild(li);
+      });
+      container.appendChild(fragment);
+    };
+
+    const openCourseModal = (courseKey) => {
+      const course = courseDetails[courseKey];
+      if (!course) return;
+
+      const modal = document.getElementById('courseModal');
+      if (!modal) return;
+
+      const modalTitle = document.getElementById('modalTitle');
+      const modalSessions = document.getElementById('modalSessions');
+      const modalProjectsCount = document.getElementById('modalProjectsCount');
+      const modalAssessment = document.getElementById('modalAssessment');
+      const modalDescription = document.getElementById('modalDescription');
+      const modalDuration = document.getElementById('modalDuration');
+
+      if (modalTitle) modalTitle.textContent = course.title;
+      if (modalSessions) modalSessions.textContent = course.sessions;
+      if (modalProjectsCount) modalProjectsCount.textContent = course.projectsCount;
+      if (modalAssessment) modalAssessment.textContent = course.assessment;
+      if (modalDescription) modalDescription.textContent = course.description;
+      if (modalDuration) modalDuration.textContent = course.duration;
+
+      populateList('modalLearn', course.whatWillYouLearn);
+      populateList('modalCurriculum', course.curriculum);
+      populateList('modalProjects', course.projects);
+      populateList('modalSkills', course.skills);
+
+      modal.classList.remove('closing');
       modal.style.display = 'flex';
-      setTimeout(() => modal.classList.add('show'), 10);
+      modal.setAttribute('aria-hidden', 'false');
+      window.requestAnimationFrame(() => {
+        modal.classList.add('show');
+      });
       document.body.classList.add('modal-open');
-    }
+    };
 
-    function closeModal() {
+    const closeModal = () => {
       const modal = document.getElementById('courseModal');
+      if (!modal) return;
+
+      if (!modal.classList.contains('show') || modal.classList.contains('closing')) return;
+
       modal.classList.remove('show');
-      setTimeout(() => {
-        modal.style.display = 'none';
-        document.body.classList.remove('modal-open');
-      }, 300);
-    }
+      modal.classList.add('closing');
 
-    // Close when clicking outside
-    window.onclick = function(event) {
-      const modal = document.getElementById('courseModal');
-      if (event.target === modal) {
+      if (modalCloseTimer) {
+        window.clearTimeout(modalCloseTimer);
+      }
+
+      modalCloseTimer = window.setTimeout(() => {
+        modal.style.display = 'none';
+        modal.classList.remove('closing');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+        modalCloseTimer = null;
+      }, MODAL_CLOSE_MS);
+    };
+
+    const handleDocumentClick = (e) => {
+      const button = e.target.closest('.know-more');
+      if (!button) return;
+
+      e.preventDefault();
+      const courseKey = button.getAttribute('data-course');
+      if (courseKey && courseDetails[courseKey]) {
+        openCourseModal(courseKey);
+      }
+    };
+
+    const modal = document.getElementById('courseModal');
+    const closeBtn = modal ? modal.querySelector('.close-modal') : null;
+
+    const handleOverlayClick = (e) => {
+      if (e.target === modal) {
         closeModal();
       }
     };
 
-    // Reels Navigation
-    function scrollReels(direction) {
-      const container = document.querySelector('.courses-page-root .reels-container');
-      const cardWidth = 300;
-      const scrollAmount = cardWidth * 2;
-      
-      container.scrollBy({
-        left: direction === 1 ? scrollAmount : -scrollAmount,
-        behavior: 'smooth'
-      });
-    }
-
-    // Video Play Control
-    function playVideo(reelCard) {
-      const video = reelCard.querySelector('.reel-bg');
-      const playButton = reelCard.querySelector('.play-btn-circle');
-      
-      // Stop all other videos and show their play buttons
-      document.querySelectorAll('.courses-page-root .reel-bg').forEach(v => {
-        if (v !== video) {
-          v.pause();
-          v.currentTime = 0;
-        }
-      });
-      
-      document.querySelectorAll('.courses-page-root .play-btn-circle').forEach(btn => {
-        btn.style.display = 'flex';
-      });
-      
-      // Play/pause current video and hide/show play button
-      if (video.paused) {
-        video.play();
-        playButton.style.display = 'none';
-      } else {
-        video.pause();
-        playButton.style.display = 'flex';
+    const handleEscape = (e) => {
+      if (e.key === 'Escape' && modal && modal.classList.contains('show')) {
+        closeModal();
       }
-      
-      // Show play button when video ends
-      video.addEventListener('ended', () => {
-        playButton.style.display = 'flex';
-      });
-    }
-
-    const counters = document.querySelectorAll('.courses-page-root .stat-number');
-    const speed = 300;
-
-    const startCounting = (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const counter = entry.target;
-          const target = +counter.getAttribute('data-target');
-          const count = +counter.innerText;
-
-          const inc = target / speed;
-
-          const updateCount = () => {
-            const currentCount = +counter.innerText;
-            if (currentCount < target) {
-              counter.innerText = Math.ceil(currentCount + inc);
-              setTimeout(updateCount, 10);
-            } else {
-              counter.innerText = target;
-            }
-          };
-
-          updateCount();
-          observer.unobserve(counter);
-        }
-      });
     };
 
-    const observer = new IntersectionObserver(startCounting, {
-      threshold: 0.5
-    });
-
-    counters.forEach(counter => observer.observe(counter));
-
-    // Attach event handlers to buttons
-    const knowMoreButtons = document.querySelectorAll('.courses-page-root .know-more');
-    knowMoreButtons.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const courseKey = e.target.getAttribute('data-course');
-        openCourse(courseKey);
-      });
-    });
-
-    const closeModalBtn = document.querySelector('.courses-page-root .close-modal');
-    if (closeModalBtn) {
-      closeModalBtn.addEventListener('click', closeModal);
+    document.addEventListener('click', handleDocumentClick);
+    document.addEventListener('keydown', handleEscape);
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeModal);
+    }
+    if (modal) {
+      modal.addEventListener('click', handleOverlayClick);
     }
 
-    const prevArrow = document.querySelector('.courses-page-root .prev-arrow');
-    const nextArrow = document.querySelector('.courses-page-root .next-arrow');
-    if (prevArrow) prevArrow.addEventListener('click', () => scrollReels(-1));
-    if (nextArrow) nextArrow.addEventListener('click', () => scrollReels(1));
+    const headerObserver = new MutationObserver(syncHeaderOffset);
+    const topBarNode = document.querySelector('.top-bar');
+    const headerNode = document.querySelector('header:not(.hero)');
+    if (topBarNode) {
+      headerObserver.observe(topBarNode, { attributes: true, childList: true, subtree: true });
+    }
+    if (headerNode) {
+      headerObserver.observe(headerNode, { attributes: true, childList: true, subtree: true });
+    }
 
-    const reelCards = document.querySelectorAll('.courses-page-root .reel-card');
-    reelCards.forEach(card => {
-      card.addEventListener('click', () => playVideo(card));
-    });
+    syncHeaderOffset();
+    runHashScroll();
+    window.addEventListener('resize', syncHeaderOffset);
+    window.addEventListener('hashchange', runHashScroll);
 
     return () => {
-      observer.disconnect();
+      bodyClassObserver.disconnect();
+      headerObserver.disconnect();
+      document.removeEventListener('click', handleDocumentClick);
+      document.removeEventListener('keydown', handleEscape);
+      if (closeBtn) {
+        closeBtn.removeEventListener('click', closeModal);
+      }
+      if (modal) {
+        modal.removeEventListener('click', handleOverlayClick);
+      }
+      if (modalCloseTimer) {
+        window.clearTimeout(modalCloseTimer);
+      }
+      window.removeEventListener('resize', syncHeaderOffset);
+      window.removeEventListener('hashchange', runHashScroll);
+      document.body.classList.remove('modal-open');
+      if (pageRootRef.current) {
+        pageRootRef.current.classList.remove('modal-open');
+        pageRootRef.current.style.removeProperty('--courses-header-offset');
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const createdAnimations = [];
+    const createdObservers = [];
+    const cleanupTimers = [];
+    const cleanupStoryInteractions = [];
+
+    const initializeHeroBackground = () => {
+      const container = document.getElementById('heroBackgroundAnimation');
+      if (!container || container.children.length > 0) return;
+
+      const createHeroSVG = () => {
+        container.innerHTML = `
+          <svg class="hero-scene" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="heroSky" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#002a52"></stop>
+                <stop offset="55%" stop-color="#0a4a85"></stop>
+                <stop offset="100%" stop-color="#1a6cb0"></stop>
+              </linearGradient>
+              <radialGradient id="heroSun" cx="0.5" cy="0.5" r="0.5">
+                <stop offset="0%" stop-color="#ffeaa6" stop-opacity="0.85"></stop>
+                <stop offset="100%" stop-color="#ffeaa6" stop-opacity="0"></stop>
+              </radialGradient>
+            </defs>
+            <rect width="1440" height="900" fill="url(#heroSky)"></rect>
+            <g class="hero-clouds">
+              <ellipse class="hero-cloud hero-cloud-a" cx="220" cy="220" rx="170" ry="62"></ellipse>
+              <ellipse class="hero-cloud hero-cloud-b" cx="1240" cy="250" rx="210" ry="70"></ellipse>
+              <ellipse class="hero-cloud hero-cloud-c" cx="820" cy="160" rx="140" ry="52"></ellipse>
+            </g>
+            <g class="hero-floating-icons">
+              <text class="hero-icon hero-icon-a" x="160" y="190">{ }</text>
+              <text class="hero-icon hero-icon-b" x="1060" y="300">&lt;/&gt;</text>
+              <text class="hero-icon hero-icon-c" x="560" y="120">AI</text>
+            </g>
+            <path class="hero-hill-back" d="M0 640 C220 570, 520 700, 760 620 C980 545, 1210 650, 1440 600 L1440 900 L0 900 Z"></path>
+            <path class="hero-hill-front" d="M0 700 C260 620, 520 760, 760 700 C980 650, 1200 760, 1440 710 L1440 900 L0 900 Z"></path>
+            <g class="hero-gear-system">
+              <g class="hero-gear hero-gear-a" transform="translate(260 665)">
+                <circle r="44"></circle>
+                <line x1="-44" y1="0" x2="44" y2="0"></line>
+                <line x1="0" y1="-44" x2="0" y2="44"></line>
+                <line x1="-31" y1="-31" x2="31" y2="31"></line>
+                <line x1="-31" y1="31" x2="31" y2="-31"></line>
+                <circle class="hero-gear-center" r="12"></circle>
+              </g>
+              <g class="hero-gear hero-gear-b" transform="translate(350 724)">
+                <circle r="30"></circle>
+                <line x1="-30" y1="0" x2="30" y2="0"></line>
+                <line x1="0" y1="-30" x2="0" y2="30"></line>
+                <line x1="-21" y1="-21" x2="21" y2="21"></line>
+                <line x1="-21" y1="21" x2="21" y2="-21"></line>
+                <circle class="hero-gear-center" r="8"></circle>
+              </g>
+            </g>
+            <g class="hero-play-scene">
+              <g class="hero-kid hero-kid-coder" transform="translate(446 652)">
+                <circle class="kid-head" cx="0" cy="-82" r="26"></circle>
+                <rect class="kid-body kid-body-coder" x="-20" y="-48" width="40" height="64" rx="19"></rect>
+                <line class="kid-leg" x1="-8" y1="16" x2="-14" y2="72"></line>
+                <line class="kid-leg" x1="8" y1="16" x2="16" y2="72"></line>
+                <line class="kid-arm" x1="-20" y1="-18" x2="-50" y2="-30"></line>
+                <line class="kid-arm" x1="20" y1="-18" x2="46" y2="-8"></line>
+              </g>
+              <g class="hero-kid hero-kid-left" transform="translate(520 645)">
+                <circle class="kid-head" cx="0" cy="-86" r="30"></circle>
+                <rect class="kid-body kid-body-left" x="-24" y="-52" width="48" height="70" rx="22"></rect>
+                <line class="kid-leg" x1="-11" y1="18" x2="-22" y2="78"></line>
+                <line class="kid-leg" x1="11" y1="18" x2="24" y2="78"></line>
+                <line class="kid-arm" x1="-24" y1="-18" x2="-56" y2="8"></line>
+                <g class="kid-arm-wave"><line class="kid-arm" x1="24" y1="-18" x2="60" y2="-58"></line></g>
+              </g>
+              <g class="hero-kid hero-kid-right" transform="translate(940 650)">
+                <circle class="kid-head" cx="0" cy="-84" r="28"></circle>
+                <rect class="kid-body kid-body-right" x="-22" y="-50" width="44" height="66" rx="20"></rect>
+                <line class="kid-leg" x1="-10" y1="16" x2="-24" y2="76"></line>
+                <line class="kid-leg" x1="10" y1="16" x2="20" y2="76"></line>
+              </g>
+              <g class="hero-robot" transform="translate(735 642)">
+                <rect class="robot-body" x="-56" y="-78" width="112" height="128" rx="24"></rect>
+                <rect class="robot-face" x="-40" y="-56" width="80" height="48" rx="12"></rect>
+                <circle class="robot-eye robot-eye-left" cx="-16" cy="-33" r="6"></circle>
+                <circle class="robot-eye robot-eye-right" cx="16" cy="-33" r="6"></circle>
+                <rect class="robot-mouth" x="-16" y="-18" width="32" height="6" rx="3"></rect>
+                <line class="robot-antenna" x1="0" y1="-78" x2="0" y2="-102"></line>
+                <circle class="robot-signal" cx="0" cy="-110" r="8"></circle>
+              </g>
+            </g>
+          </svg>
+        `;
+      };
+
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(createHeroSVG, { timeout: 2000 });
+      } else {
+        const timer = window.setTimeout(createHeroSVG, 100);
+        cleanupTimers.push(timer);
+      }
+    };
+
+    const loadLottieAnimations = () => {
+      const containers = document.querySelectorAll('[data-lottie]');
+      if (!containers.length) return;
+
+      const loadLottieOnVisible = (container) => {
+        if (container.dataset.loaded === 'true') return;
+        const jsonPath = container.dataset.lottie;
+        if (!jsonPath) return;
+
+        container.dataset.loaded = 'true';
+        try {
+          const animation = lottie.loadAnimation({
+            container,
+            renderer: 'svg',
+            loop: true,
+            autoplay: !prefersReducedMotion,
+            path: jsonPath,
+            rendererSettings: {
+              preserveAspectRatio: 'xMidYMid slice'
+            }
+          });
+          createdAnimations.push(animation);
+        } catch (error) {
+          container.dataset.loaded = 'false';
+        }
+      };
+
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              loadLottieOnVisible(entry.target);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { rootMargin: '100px', threshold: 0.1 });
+
+        containers.forEach((container) => observer.observe(container));
+        createdObservers.push(observer);
+      } else {
+        containers.forEach((container) => loadLottieOnVisible(container));
+      }
+    };
+
+    const initializeStoryTrack = () => {
+      const track = document.querySelector('.story-track');
+      if (!track || track.dataset.loopReady === 'true') return;
+      const viewport = document.querySelector('.story-viewport');
+
+      const items = Array.from(track.children);
+      if (items.length < 2) return;
+
+      const fragment = document.createDocumentFragment();
+      items.forEach((item) => {
+        const clone = item.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        fragment.appendChild(clone);
+      });
+      track.appendChild(fragment);
+      track.dataset.loopReady = 'true';
+      track.classList.add('is-looping');
+
+      if (!viewport) return;
+
+      const pauseScroll = () => {
+        if (track.classList.contains('is-looping')) {
+          track.style.animationPlayState = 'paused';
+        }
+      };
+
+      const resumeScroll = () => {
+        if (track.classList.contains('is-looping')) {
+          track.style.animationPlayState = 'running';
+        }
+      };
+
+      const attachStoryListener = (eventName, handler, options) => {
+        viewport.addEventListener(eventName, handler, options);
+        cleanupStoryInteractions.push(() => viewport.removeEventListener(eventName, handler, options));
+      };
+
+      attachStoryListener('pointerenter', pauseScroll);
+      attachStoryListener('pointerleave', resumeScroll);
+      attachStoryListener('touchstart', pauseScroll, { passive: true });
+      attachStoryListener('touchend', resumeScroll, { passive: true });
+      attachStoryListener('touchcancel', resumeScroll, { passive: true });
+    };
+
+    const initializeSectionRevealAnimations = () => {
+      const selectors = ['.courses-section .card', '.future-point'];
+      const revealTargets = [];
+
+      selectors.forEach((selector) => {
+        document.querySelectorAll(selector).forEach((element, index) => {
+          element.classList.add('section-animate');
+          element.style.setProperty('--reveal-order', String(index));
+          revealTargets.push(element);
+        });
+      });
+
+      if (!revealTargets.length) return;
+
+      if (!('IntersectionObserver' in window)) {
+        revealTargets.forEach((element) => element.classList.add('is-visible'));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -10% 0px'
+      });
+
+      revealTargets.forEach((element) => observer.observe(element));
+      createdObservers.push(observer);
+    };
+
+    initializeHeroBackground();
+    if (!prefersReducedMotion) {
+      loadLottieAnimations();
+      initializeSectionRevealAnimations();
+    }
+    initializeStoryTrack();
+
+    return () => {
+      createdObservers.forEach((observer) => observer.disconnect());
+      createdAnimations.forEach((animation) => {
+        if (animation && typeof animation.destroy === 'function') {
+          animation.destroy();
+        }
+      });
+      cleanupTimers.forEach((timer) => window.clearTimeout(timer));
+      cleanupStoryInteractions.forEach((cleanup) => cleanup());
+    };
+  }, []);
+
+  useEffect(() => {
+    const reelsContainer = document.querySelector('.reels-container');
+    if (!reelsContainer) return;
+
+    const cards = Array.from(reelsContainer.querySelectorAll('.reel-card'));
+    const videos = Array.from(reelsContainer.querySelectorAll('.reel-bg'));
+    const cleanups = [];
+    let isPointerDown = false;
+    let dragStartX = 0;
+    let initialScrollLeft = 0;
+
+    const syncPausedState = (video) => {
+      const card = video.closest('.reel-card');
+      if (!card) return;
+      card.classList.toggle('is-paused', video.paused);
+      const control = card.querySelector('.play-btn-circle');
+      if (control) {
+        control.setAttribute('aria-label', video.paused ? 'Play video' : 'Pause video');
+      }
+    };
+
+    const playVideo = (video, withSound = false) => {
+      videos.forEach((otherVideo) => {
+        if (otherVideo !== video) {
+          otherVideo.pause();
+          otherVideo.muted = true;
+          syncPausedState(otherVideo);
+        }
+      });
+
+      video.muted = !withSound;
+
+      const playAttempt = video.play();
+      if (playAttempt && typeof playAttempt.catch === 'function') {
+        playAttempt.catch(() => {
+          video.muted = true;
+          const mutedAttempt = video.play();
+          if (mutedAttempt && typeof mutedAttempt.catch === 'function') {
+            mutedAttempt.catch(() => syncPausedState(video));
+          }
+        });
+      }
+      syncPausedState(video);
+    };
+
+    videos.forEach((video) => {
+      video.loop = true;
+      video.playsInline = true;
+      video.preload = 'metadata';
+      video.controls = false;
+      video.muted = true;
+      syncPausedState(video);
+
+      const onPlay = () => syncPausedState(video);
+      const onPause = () => syncPausedState(video);
+      video.addEventListener('play', onPlay);
+      video.addEventListener('pause', onPause);
+      cleanups.push(() => video.removeEventListener('play', onPlay));
+      cleanups.push(() => video.removeEventListener('pause', onPause));
+    });
+
+    cards.forEach((card) => {
+      const video = card.querySelector('.reel-bg');
+      const button = card.querySelector('.play-btn-circle');
+      if (!video || !button) return;
+
+      const onButtonClick = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (video.paused) {
+          playVideo(video, true);
+        } else {
+          video.pause();
+          video.muted = true;
+          syncPausedState(video);
+        }
+      };
+
+      const onCardClick = (e) => {
+        if (e.target.closest('.play-btn-circle')) return;
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (video.paused) {
+          playVideo(video, false);
+        } else {
+          video.pause();
+          video.muted = true;
+          syncPausedState(video);
+        }
+      };
+
+      button.addEventListener('click', onButtonClick);
+      card.addEventListener('click', onCardClick);
+      cleanups.push(() => button.removeEventListener('click', onButtonClick));
+      cleanups.push(() => card.removeEventListener('click', onCardClick));
+    });
+
+    const onPointerDown = (event) => {
+      isPointerDown = true;
+      dragStartX = event.clientX;
+      initialScrollLeft = reelsContainer.scrollLeft;
+      reelsContainer.classList.add('dragging');
+    };
+
+    const onPointerMove = (event) => {
+      if (!isPointerDown) return;
+
+      const deltaX = event.clientX - dragStartX;
+      reelsContainer.scrollLeft = initialScrollLeft - deltaX;
+    };
+
+    const onPointerUp = () => {
+      isPointerDown = false;
+      reelsContainer.classList.remove('dragging');
+    };
+
+    reelsContainer.addEventListener('pointerdown', onPointerDown);
+    reelsContainer.addEventListener('pointermove', onPointerMove);
+    reelsContainer.addEventListener('pointerup', onPointerUp);
+    reelsContainer.addEventListener('pointerleave', onPointerUp);
+    reelsContainer.addEventListener('pointercancel', onPointerUp);
+    cleanups.push(() => reelsContainer.removeEventListener('pointerdown', onPointerDown));
+    cleanups.push(() => reelsContainer.removeEventListener('pointermove', onPointerMove));
+    cleanups.push(() => reelsContainer.removeEventListener('pointerup', onPointerUp));
+    cleanups.push(() => reelsContainer.removeEventListener('pointerleave', onPointerUp));
+    cleanups.push(() => reelsContainer.removeEventListener('pointercancel', onPointerUp));
+
+    return () => {
+      cleanups.forEach((cleanup) => cleanup());
     };
   }, []);
 
   return (
-    <div className="courses-page-root">
+    <div className="courses-page-container" ref={pageRootRef}>
       <header className="hero" id="home">
-        <div className="hero-bg" style={{ backgroundImage: `url(${bgImg})` }} aria-label="Students learning robotics and coding online with TechyGuide in India"></div>
-        <div className="hero-overlay"></div>
+        <div id="heroBackgroundAnimation" className="hero-bg" aria-hidden="true"></div>
+        <div className="hero-lottie" data-lottie={cmsComputerAnimationJson} aria-hidden="true"></div>
+        <div className="hero-lottie2" data-lottie={roboheadLoadingJson} aria-hidden="true"></div>
         <div className="hero-container">
-          <div className="hero-image">
-            <img src={robotImg} alt="Robotics Illustration" className="robot-img" />
-          </div>
           <div className="hero-content">
-            <p className="tagline">FOLLOW INNOVATION!</p>
-            <h1 className="kit-title">Start Courses in India's <br /><span className="accent">No.1</span><br /> Robotics & Coding Centre</h1>
-            <div className="hero-buttons">
-              <a href="#courses" className="btn btn-orange">Book Your Free Session</a>
-              <a href="#courses" className="btn btn-glass">Explore Courses</a>
-            </div>
+            <h1 className="kit-title">
+              Leading the Future of Tech Education with <span className="accent">Robotics & Coding</span>
+            </h1>
+          </div>
+          <div className="hero-image">
+            <img
+              src={childImage}
+              alt="Kids in India learning robotics and coding at TechyGuide Robotics Centre"
+              className="hero-img"
+              width="600"
+              height="400"
+              fetchPriority="high"
+              decoding="async"
+            />
           </div>
         </div>
       </header>
 
-      <section className="courses-section" id="courses">
-        <h2 className="courses-title"><span className="accent">Industry-Relevant Skills for Young Innovators </span></h2>
-        <div className="grid-wrapper">
-          <div className="card">
-            <img src={bgImg} className="card-img" alt="Student building a robot during TechyGuide robotics course" />
-            <h2 className="courses-name">Robotics & Hardware</h2>
-            <p>Master hardware and automation.</p>
-            <p>Build intelligent machines while learning electronics, sensors, and automation concepts. Students design robots that interact with the physical world. </p>
-            <button className="know-more" data-course="Robotics">Know more</button>
-              <Link to="/shop" className="btn-claim">Buy Now</Link>
+      <main>
+        <section className="courses-section" id="courses">
+          <h2 className="courses-title">
+            Our <span className="accent">Courses</span>
+          </h2>
+          <div className="grid-wrapper">
+            <article className="card">
+              <img
+                src={roboticsAutomationImage}
+                alt="Student assembling an intelligent robot kit using sensors and hardware"
+                className="card-img card-error-handle no-white-bg"
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
+                width="400"
+                height="280"
+              />
+              <h2 className="courses-name">Robotics & Automation</h2>
+              <p>Master hardware and automation.</p>
+              <p>Master hardware, sensors, and core engineering skills while building and programming intelligent robots.</p>
+              <button type="button" className="know-more" data-course="Robotics">Know more</button>
+              <a href="#" className="btn-claim" aria-label="Explore Robotics course">Explore Now</a>
+            </article>
+
+            <article className="card">
+              <img
+                src={pythonProgrammingImage}
+                alt="Laptop screen showing Python programming code for beginners"
+                className="card-img card-error-handle no-white-bg"
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
+                width="400"
+                height="280"
+              />
+              <h2 className="courses-name">Python Programming</h2>
+              <p>Learn logic and programming.</p>
+              <p>Begin your coding journey with Python’s powerful and beginner-friendly syntax, widely used in AI, Data Science and etc.</p>
+              <button type="button" className="know-more" data-course="Coding">Know more</button>
+              <a href="#" className="btn-claim" aria-label="Explore Python Coding course">Explore Now</a>
+            </article>
+
+            <article className="card">
+              <img
+                src={artificialIntelligenceImage}
+                alt="Illustration of neural networks and AI systems for student learning"
+                className="card-img card-error-handle no-white-bg"
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
+                width="400"
+                height="280"
+              />
+              <h2 className="courses-name">Artificial Intelligence</h2>
+              <p>Discover the future of technology.</p>
+              <p>Explore the future of tech. Create smart systems that learn and adapt automatically.</p>
+              <button type="button" className="know-more" data-course="AI">Know more</button>
+              <a href="#" className="btn-claim" aria-label="Explore AI course">Explore Now</a>
+            </article>
+
+            <article className="card">
+              <img
+                src={appDevelopmentImage}
+                alt="Mobile app interface design on a smartphone screen for kids project"
+                className="card-img card-error-handle"
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
+                width="400"
+                height="280"
+              />
+              <h2 className="courses-name">App Development</h2>
+              <p>Learn mobile app development. </p>
+              <p>Students create user-friendly apps for smartphones and tablets using real programming concepts.</p>
+              <button type="button" className="know-more" data-course="AppDev">Know more</button>
+              <a href="#" className="btn-claim" aria-label="Explore App Development course">Explore Now</a>
+            </article>
+
+            <article className="card">
+              <img
+                src={webDevelopmentImage}
+                alt="Building a website using HTML CSS and JavaScript code snippets"
+                className="card-img card-error-handle"
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
+                width="400"
+                height="280"
+              />
+              <h2 className="courses-name">Web Development</h2>
+              <p>Learn website development and coding. </p>
+              <p>Students use HTML, CSS and JavaScript to build interactive web pages and web Applications.</p>
+              <button type="button" className="know-more" data-course="WebDev">Know more</button>
+              <a href="#" className="btn-claim" aria-label="Explore Web Development course">Explore Now</a>
+            </article>
+
+            <article className="card">
+              <img
+                src={gameDevelopmentImage}
+                alt="2D game design interface with character sprites and gameplay logic"
+                className="card-img card-error-handle"
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
+                width="400"
+                height="280"
+              />
+              <h2 className="courses-name">Game Development</h2>
+              <p>Learn hardware based game development</p>
+              <p>Build interactive embedded arcade games using Python fundamentals and ESP32 microcontroller.</p>
+              <button type="button" className="know-more" data-course="Games">Know more</button>
+              <a href="#" className="btn-claim" aria-label="Explore Game Development course">Explore Now</a>
+            </article>
+
+            <article className="card">
+              <img
+                src={internetOfThingsImage}
+                alt="IoT smart device and connected sensor network"
+                className="card-img card-error-handle no-white-bg"
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
+                width="400"
+                height="280"
+              />
+              <h2 className="courses-name">Internet of Things (IoT)</h2>
+              <p>Learn Internet of Things (IoT) fundamentals and smart device development</p>
+              <p>Build smart automation projects using sensors, WiFi, and connected devices.</p>
+              <button type="button" className="know-more" data-course="IoT">Know more</button>
+              <a href="#" className="btn-claim" aria-label="Explore IoT course">Explore Now</a>
+            </article>
+
+            <article className="card">
+              <img
+                src={scratchProgrammingImage}
+                alt="Scratch visual programming interface for kids"
+                className="card-img card-error-handle no-white-bg"
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
+                width="400"
+                height="280"
+              />
+              <h2 className="courses-name">Scratch Programming</h2>
+              <p>Learn Scratch programming fundamentals through creative visual coding</p>
+              <p>Build interactive games and animations using events, variables and game logic.</p>
+              <button type="button" className="know-more" data-course="Scratch">Know more</button>
+              <a href="#" className="btn-claim" aria-label="Explore Scratch Programming course">Explore Now</a>
+            </article>
+
+            <article className="card">
+              <img
+                src={electronicsImage}
+                alt="Electronic components and circuit boards"
+                className="card-img card-error-handle no-white-bg"
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
+                width="400"
+                height="280"
+              />
+              <h2 className="courses-name">Electronics </h2>
+              <p>Learn electronics fundamentals through practical circuit building</p>
+              <p>Build interactive electronic projects using LEDs, motors, sensors, and control circuits.</p>
+              <button type="button" className="know-more" data-course="Electronics">Know more</button>
+              <a href="#" className="btn-claim" aria-label="Explore Electronics course">Explore Now</a>
+            </article>
           </div>
-          <div className="card">
-            <img src={robotImg} className="card-img" alt="Kids learning Python programming online with TechyGuide" />
-            <h2 className="courses-name">Python Coding</h2>
-            <p>Learn logic and programming.</p>
-            <p>Learn logical thinking and programming using Python’s beginner-friendly syntax. Ideal for automation, data handling, and AI foundations. </p>
-            <button className="know-more" data-course="Coding">Know more</button>
-              <Link to="/shop" className="btn-claim">Buy Now</Link>
-          </div>
-          <div className="card">
-            <img src={robotImg} className="card-img" alt="Student exploring artificial intelligence concepts in online class" />
-            <h2 className="courses-name">Artificial Intelligence</h2>
-            <p>Explore the future of tech.</p>
-            <p>Explore machine learning, neural networks, and smart decision-making systems. Students build AI models that learn and adapt. </p>
-            <button className="know-more" data-course="AI">Know more</button>
-              <Link to="/shop" className="btn-claim">Buy Now</Link>
-          </div>
-          <div className="card">
-            <img src={robotImg} className="card-img" alt="Student creating mobile app during TechyGuide app development course" />
-            <h2 className="courses-name">App Development</h2>
-            <p>Build mobile apps.</p>
-            <p>Design and develop mobile applications with intuitive interfaces and real functionality for Android platforms. </p>
-            <button className="know-more" data-course="AppDev">Know more</button>
-              <Link to="/shop" className="btn-claim">Buy Now</Link>
-          </div>
-          <div className="card">
-            <img src={robotImg} className="card-img" alt="Student designing website during TechyGuide web development course" />
-            <h2 className="courses-name">Web Development</h2>
-            <p>Create modern websites.</p>
-            <p>Learn HTML, CSS, and JavaScript to create responsive, modern websites from scratch. </p>
-            <button className="know-more" data-course="WebDev">Know more</button>
-              <Link to="/shop" className="btn-claim">Buy Now</Link>
-          </div>
-          <div className="card">
-            <img src={robotImg} className="card-img" alt="Student developing a game in TechyGuide online class" />
-            <h2 className="courses-name">Game Development </h2>
-            <p>Design 2D and 3D games.</p>
-            <p>Create engaging 2D and 3D games while understanding game mechanics, logic, and design principles. </p>
-            <button className="know-more" data-course="Games">Know more</button>
-              <Link to="/shop" className="btn-claim">Buy Now</Link>
+        </section>
+
+        <div id="courseModal" className="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+          <div className="modal-content">
+            <button type="button" className="close-modal" aria-label="Close modal">&times;</button>
+
+            <h1 id="modalTitle"></h1>
+
+            <div className="modal-stats">
+              <span id="modalSessions"></span>
+              <span id="modalProjectsCount"></span>
+              <span id="modalAssessment"></span>
+            </div>
+
+            <a href="#" className="btn-claim modal-btn">Explore Now</a>
+
+            <div className="modal-body-section">
+              <h3>What will you learn</h3>
+              <ul id="modalLearn" className="curriculum-list"></ul>
+            </div>
+
+            <div className="modal-body-section">
+              <h3>Course Description</h3>
+              <p id="modalDescription"></p>
+            </div>
+
+            <div className="modal-body-section">
+              <h3>Duration</h3>
+              <p id="modalDuration"></p>
+            </div>
+
+            <div className="modal-body-section">
+              <h3>Curriculum</h3>
+              <ul id="modalCurriculum" className="curriculum-list"></ul>
+            </div>
+
+            <div className="modal-body-section">
+              <h3>Projects You&apos;ll Build</h3>
+              <ul id="modalProjects" className="curriculum-list"></ul>
+            </div>
+
+            <div className="modal-body-section">
+              <h3>Skills You&apos;ll Master</h3>
+              <ul id="modalSkills" className="curriculum-list"></ul>
+            </div>
           </div>
         </div>
-      </section>
 
-      <div id="courseModal" className="modal">
-        <div className="modal-content">
-          <span className="close-modal">&times;</span>
-          <h1 id="modalTitle">Course Title</h1>
-          <div className="modal-stats">
-            <span>📖 6 Sessions</span><span>📝 10+ Projects</span><span>✅ 6 Quizzes</span>
-          </div>
-            <Link to="/shop" className="btn-claim modal-btn">Buy Now</Link>
-          <div className="modal-body-section">
-            <h3>What will you learn</h3>
-            <div id="modalCurriculum" className="curriculum-list"></div>
-          </div>
-        </div>
-      </div>
+        <section className="info-flow-section" id="why-choose">
+          <div className="why-choose-bg" id="whyChooseBg" aria-hidden="true"></div>
+          <div className="content-wrapper">
+            <h2 className="main-title orange">Why Students Should Learn Robotics, Coding and AI Skills Today?</h2>
 
-      <div className="stats-ribbon">
-        <div className="stat-item age">
-          <img src={ageIcon} alt="Age" /><p>Age group</p><span>7-17 years</span>
-        </div>
-        <div className="stat-item delivery">
-          <img src={deliveryIcon} alt="Delivery" /><p>Program delivery</p><span>Online</span>
-        </div>
-        <div className="stat-item batch">
-          <img src={batchIcon} alt="Batch" /><p>Batch size</p><span>1:1 Tutoring</span>
-        </div>
-        <div className="stat-item session">
-          <img src={sessionIcon} alt="Session" /><p>Session</p><span>6 x 45-min</span>
-        </div>
-        <div className="stat-item duration">
-          <img src={durationIcon} alt="Duration" /><p>Duration</p><span>6 days</span>
-        </div>
-        <div className="stat-item cert">
-          <img src={certIcon} alt="Cert" /><p>Certification</p><span>STEM.org</span>
-        </div>
-      </div>
-
-      <section className="info-flow-section">
-        <div className="content-wrapper">
-          <h2 className="main-title">Future-Ready Learning Paths </h2>
-
-          <div className="flow-row">
-            <div className="flow-image">
-              <img src={pythonImg} alt="Student building a robot during TechyGuide robotics course" />
-            </div>
-            <div className="flow-text">
-              <span className="number">01</span>
-              <h3>Robotics & Hardware</h3>
-              <p>Bridge the gap between digital logic and physical action. Robotics teaches you to build systems that interact with the real world, from autonomous drones to surgical assistants.Connect software logic with real-world action by building autonomous systems and smart machines. </p>
-              <div className="underline"></div>
-            </div>
-          </div>
-
-          <div className="flow-row reverse">
-            <div className="flow-image">
-              <img src={pythonImg} alt="Student exploring artificial intelligence concepts in online class" />
-            </div>
-            <div className="flow-text">
-              <span className="number">02</span>
-              <h3>Artificial Intelligence</h3>
-              <p>Artificial Intelligence is the foundational layer of modern industry. Master neural networks and machine learning to build systems that learn and solve complex global challenges.Understand the technology driving modern industries, from healthcare to space exploration.  </p>
-              <div className="underline"></div>
-            </div>
-          </div>
-
-          <div className="flow-row">
-            <div className="flow-image">
-              <img src={pythonImg} alt="Kids learning Python programming online with TechyGuide" />
-            </div>
-            <div className="flow-text">
-              <span className="number">03</span>
-              <h3>Python Programming</h3>
-              <p>The core of data science and automation. Python's simplicity allows for rapid prototyping, making it the most versatile tool for engineers at NASA and Google.A powerful, versatile language used by top global organizations for automation and data science. </p>
-              <div className="underline"></div>
-            </div>
-          </div>
-
-          <div className="flow-row reverse">
-            <div className="flow-image">
-              <img src={pythonImg} alt="Student creating mobile app during TechyGuide app development course" />
-            </div>
-            <div className="flow-text">
-              <span className="number">04</span>
-              <h3>App Development & Web Development</h3>
-              <p>Learn how digital products are built, deployed, and scaled in the modern tech ecosystem.We help children become young creators of technology, not just users. In this program, students learn how to design and build their own websites and mobile apps using simple, fun, and interactive methods. </p>
-              <div className="underline"></div>
-            </div>
-          </div>
-
-          <div className="flow-row">
-            <div className="flow-image">
-              <img src={pythonImg} alt="Student designing website during TechyGuide web development course" />
-            </div>
-            <div className="flow-text">
-              <span className="number">05</span>
-              <h3>Web Development</h3>
-              <p>Learn HTML, CSS, and JavaScript to create responsive, modern websites from scratch. </p>
-              <div className="underline"></div>
-            </div>
-          </div>
-
-          <div className="flow-row reverse">
-            <div className="flow-image">
-              <img src={pythonImg} alt="Student developing a game in TechyGuide online class" />
-            </div>
-            <div className="flow-text">
-              <span className="number">06</span>
-              <h3>Game Development </h3>
-              <p>Create engaging 2D and 3D games while understanding game mechanics, logic, and design principles. 
-
-  </p>
-              <div className="underline"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="stats-ribbon-section">
-        <h2 className="section-title2">Proven Results Across India</h2>
-        <div className="stats-ribbon-container">
-          <div className="stat-box">
-            <div className="stat-number" data-target="1500">0</div>
-            <div className="stat-label">Clients Served</div>
-          </div>
-          <div className="stat-box">
-            <div className="stat-number stat-number-percent" data-target="98">0</div>
-            <div className="stat-label">STUDENT Success Rate %</div>
-          </div>
-          <div className="stat-box">
-            <div className="stat-number" data-target="25">0</div>
-            <div className="stat-label">Years of Combined Experience</div>
-          </div>
-          <div className="stat-box">
-            <div className="stat-number" data-target="400">0</div>
-            <div className="stat-label">Global Academic & Industry Partners</div>
-          </div>
-        </div>
-      </section>
-
-      <section className="reels-section">
-        <div className="section-header">
-          <p className="tagline">STUDENT SHOWCASE</p>
-          <h2 className="section-title1">Classroom <span className="accent">Moments</span></h2>
-        </div>
-
-        <div className="reels-wrapper">
-          <button className="nav-arrow prev-arrow">‹</button>
-          
-          <div className="reels-container">
-            
-            <div className="reel-card">
-              <video src={videoFile} className="reel-bg" loop></video>
-              <div className="reel-overlay">
-                <div className="play-btn-circle">
-                  <div className="play-icon"></div>
+            <div className="future-points">
+              <div className="future-point">
+                <div className="point-content">
+                  <div className="point-number">01</div>
+                  <h3>Build Smart Machines, Not Just Use Them</h3>
+                  <p>Your child learns how robots, sensors and smart devices actually work.</p>
+                  <p>They develop hands-on problem-solving skills by building real robotics projects.</p>
+                  <div className="future-impact"><strong>Future Impact:</strong> Builds strong STEM foundations and prepares students for robotics, automation, electronics and AI careers.</div>
                 </div>
-                <div className="reel-info">
-                  <div className="user-tag">
-                    <img src="https://img.icons8.com/color/48/girl.png" alt="User" />
-                    <span>Ananya S.</span>
-                  </div>
+                <div className="point-image" data-lottie={developmentOfAiJson}></div>
+              </div>
+
+              <div className="future-point reverse">
+                <div className="point-content">
+                  <div className="point-number">02</div>
+                  <h3>Learn the Technology Shaping the Future</h3>
+                  <p>Your child learns how Artificial Intelligence and machine learning work in real life applications.</p>
+                  <p>They build logical thinking and analytical skills from an early age.</p>
+                  <div className="future-impact"><strong>Future Impact:</strong> Prepares students for high-demand careers in AI, data science and intelligent systems.</div>
                 </div>
+                <div className="point-image" data-lottie={readingJson}></div>
+              </div>
+
+              <div className="future-point">
+                <div className="point-content">
+                  <div className="point-number">03</div>
+                  <h3>Create the Digital World</h3>
+                  <p>Your child learns how websites and web applications are designed and built.</p>
+                  <p>hey develop creativity while gaining practical coding and problem-solving skills.</p>
+                  <div className="future-impact"><strong>Future Impact:</strong> Enables students to build websites, digital products and even launch their own online projects.</div>
+                </div>
+                <div className="point-image" data-lottie={studentWithLaptopJson}></div>
+              </div>
+
+              <div className="future-point reverse">
+                <div className="point-content">
+                  <div className="point-number">04</div>
+                  <h3>Strong Foundation in Coding</h3>
+                  <p>Python is beginner-friendly yet powerful, making it ideal for young learners.</p>
+                  <p>Students use it in AI, automation, game development and software projects.</p>
+                  <div className="future-impact"><strong>Future Impact:</strong> Builds core programming skills and prepares children for multiple technology careers.</div>
+                </div>
+                <div className="point-image" data-lottie={codingJson}></div>
+              </div>
+
+              <div className="future-point">
+                <div className="point-content">
+                  <div className="point-number">05</div>
+                  <h3>Turn Ideas into Real Applications</h3>
+                  <p>Students learn to design and develop mobile apps and web applications.</p>
+                  <p>They understand how digital platforms and online businesses actually work.</p>
+                  <div className="future-impact"><strong>Future Impact:</strong> Builds practical tech skills and confidence to create projects, startups and future career opportunities.</div>
+                </div>
+                <div className="point-image" data-lottie={ideaWithBooksJson}></div>
               </div>
             </div>
-
-            <div className="reel-card">
-              <video src={videoFile} className="reel-bg" loop></video>
-              <div className="reel-overlay">
-                <div className="play-btn-circle">
-                  <div className="play-icon"></div>
-                </div>
-                <div className="reel-info">
-                  <div className="user-tag">
-                    <img src="https://img.icons8.com/color/48/boy.png" alt="User" />
-                    <span>Rahul K.</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="reel-card">
-              <video src={videoFile} className="reel-bg" loop></video>
-              <div className="reel-overlay">
-                <div className="play-btn-circle">
-                  <div className="play-icon"></div>
-                </div>
-                <div className="reel-info">
-                  <div className="user-tag">
-                    <img src="https://img.icons8.com/color/48/teacher.png" alt="User" />
-                    <span>Mentor Raj</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="reel-card">
-              <video src={videoFile} className="reel-bg" loop></video>
-              <div className="reel-overlay">
-                <div className="play-btn-circle">
-                  <div className="play-icon"></div>
-                </div>
-                <div className="reel-info">
-                  <div className="user-tag">
-                    <img src="https://img.icons8.com/color/48/teacher.png" alt="User" />
-                    <span>Mentor Raj</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="reel-card">
-              <video src={videoFile} className="reel-bg" loop></video>
-              <div className="reel-overlay">
-                <div className="play-btn-circle">
-                  <div className="play-icon"></div>
-                </div>
-                <div className="reel-info">
-                  <div className="user-tag">
-                    <img src="https://img.icons8.com/color/48/teacher.png" alt="User" />
-                    <span>Mentor Raj</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="reel-card">
-              <video src={videoFile} className="reel-bg" loop></video>
-              <div className="reel-overlay">
-                <div className="play-btn-circle">
-                  <div className="play-icon"></div>
-                </div>
-                <div className="reel-info">
-                  <div className="user-tag">
-                    <img src="https://img.icons8.com/color/48/teacher.png" alt="User" />
-                    <span>Mentor Raj</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="reel-card">
-              <video src={videoFile} className="reel-bg" loop></video>
-              <div className="reel-overlay">
-                <div className="play-btn-circle">
-                  <div className="play-icon"></div>
-                </div>
-                <div className="reel-info">
-                  <div className="user-tag">
-                    <img src="https://img.icons8.com/color/48/teacher.png" alt="User" />
-                    <span>Mentor Raj</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="reel-card">
-              <video src={videoFile} className="reel-bg" loop></video>
-              <div className="reel-overlay">
-                <div className="play-btn-circle">
-                  <div className="play-icon"></div>
-                </div>
-                <div className="reel-info">
-                  <div className="user-tag">
-                    <img src="https://img.icons8.com/color/48/teacher.png" alt="User" />
-                    <span>Mentor Raj</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="reel-card">
-              <video src={videoFile} className="reel-bg" loop></video>
-              <div className="reel-overlay">
-                <div className="play-btn-circle">
-                  <div className="play-icon"></div>
-                </div>
-                <div className="reel-info">
-                  <div className="user-tag">
-                    <img src="https://img.icons8.com/color/48/teacher.png" alt="User" />
-                    <span>Mentor Raj</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
-          
-          <button className="nav-arrow next-arrow">›</button>
-        </div>
-      </section>
+        </section>
 
-      <section className="section" id="stories">
-        <div className="container">
-          <h2 className="section-title">What Parents, Students & Educators Say </h2>
-          
-          <div className="story-viewport">
-            <div className="story-track">
-              <div className="story-item"><img src={testimonial1} alt="Story" /></div>
-              <div className="story-item"><img src={testimonial11} alt="Story" /></div>
-              <div className="story-item"><img src={testimonial13} alt="Story" /></div>
-              <div className="story-item"><img src={testimonial14} alt="Story" /></div>
-              <div className="story-item"><img src={testimonial15} alt="Story" /></div>
-              <div className="story-item"><img src={testimonial1} alt="Story" /></div>
-              <div className="story-item"><img src={testimonial11} alt="Story" /></div>
-              <div className="story-item"><img src={testimonial13} alt="Story" /></div>
-              <div className="story-item"><img src={testimonial14} alt="Story" /></div>
-              <div className="story-item"><img src={testimonial15} alt="Story" /></div>
+        <section className="reels-section">
+          <div className="section-header">
+            <h2 className="section-title">Classroom <span className="accent">Moments</span></h2>
+          </div>
+
+          <div className="reels-wrapper">
+            <div className="reels-container" role="list" tabIndex="0" aria-label="Classroom moments reels">
+              {classroomVideos.map((videoSrc, index) => (
+                <div className="reel-card" role="listitem" key={videoSrc}>
+                  <video className="reel-bg" loop playsInline preload="none">
+                    <source src={videoSrc} type="video/mp4" />
+                  </video>
+                  <div className="reel-overlay">
+                    <button type="button" className="play-btn-circle" aria-label={`Play classroom video ${index + 1}`}>
+                      <span className="play-icon"></span>
+                    </button>
+                    <div className="reel-info"></div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <section className="section" id="stories">
+          <div className="container">
+            <h2 className="section-title">Success <span className="accent">Stories</span></h2>
+            <div className="story-viewport">
+              <div className="story-track" role="list">
+                <div className="story-item" role="listitem"><img src={testimonial1Image} alt="Student success story" loading="lazy" decoding="async" fetchPriority="low" width="400" height="300" className="img-error-handle no-white-bg" /></div>
+                <div className="story-item" role="listitem"><img src={testimonial2Image} alt="Student success story" loading="lazy" decoding="async" fetchPriority="low" width="400" height="300" className="img-error-handle no-white-bg" /></div>
+                <div className="story-item" role="listitem"><img src={testimonial3Image} alt="Student success story" loading="lazy" decoding="async" fetchPriority="low" width="400" height="300" className="img-error-handle no-white-bg" /></div>
+                <div className="story-item" role="listitem"><img src={testimonial4Image} alt="Student success story" loading="lazy" decoding="async" fetchPriority="low" width="400" height="300" className="img-error-handle no-white-bg" /></div>
+                <div className="story-item" role="listitem"><img src={testimonial5Image} alt="Student success story" loading="lazy" decoding="async" fetchPriority="low" width="400" height="300" className="img-error-handle no-white-bg" /></div>
+                <div className="story-item" role="listitem"><img src={testimonial6Image} alt="Student success story" loading="lazy" decoding="async" fetchPriority="low" width="400" height="300" className="img-error-handle no-white-bg" /></div>
+                <div className="story-item" role="listitem"><img src={testimonial7Image} alt="Student success story" loading="lazy" decoding="async" fetchPriority="low" width="400" height="300" className="img-error-handle no-white-bg" /></div>
+                <div className="story-item" role="listitem"><img src={testimonial8Image} alt="Student success story" loading="lazy" decoding="async" fetchPriority="low" width="400" height="300" className="img-error-handle no-white-bg" /></div>
+                <div className="story-item" role="listitem"><img src={testimonial9Image} alt="Student success story" loading="lazy" decoding="async" fetchPriority="low" width="400" height="300" className="img-error-handle no-white-bg" /></div>
+                <div className="story-item" role="listitem"><img src={testimonial10Image} alt="Student success story" loading="lazy" decoding="async" fetchPriority="low" width="400" height="300" className="img-error-handle no-white-bg" /></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./ImpactProgram.css";
 import FooterSection from "./FooterSection";
-
+import herobgvideo from "./assets/impactImages/Impact program - Hero section.mp4";
 function ImpactProgram() {
   // Image paths
   const images = {
@@ -80,17 +80,22 @@ function ImpactProgram() {
       <div className="impact-program">
         <section
           className="hero"
-          style={{
-            backgroundImage: `linear-gradient(
-              to bottom,
-              rgba(0, 130, 115, 0.86) 75%,
-              rgba(255, 255, 255, 0.86) 100%
-            ), url(${images.bg2})`,
-          }}
         >
-          <div className="overlay"></div>
+          <video
+            className="hero-video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-hidden="true"
+          >
+            <source src={herobgvideo} type="video/mp4" />     
+            </video>
+                 <div className="overlay" aria-hidden="true" />
 
-          <div className="container">
+            <div className="container">
+            
             <div className="hero-content centered-content">
               <span className="badge">Government & CSR Initiatives</span>
               <h1>
