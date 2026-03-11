@@ -10,9 +10,6 @@ import school7 from './assets/contactUsImages/school7.jpg';
 import school8 from './assets/contactUsImages/school8.png';
 import school9 from './assets/contactUsImages/school9.png';
 
-// Debug: Log image import values
-console.log('Contact Us - Image imports:', { school1, school2, school3, school4, school5, school6, school7, school8, school9 });
-
 function ContactUs() {
 	const [activeFaqIndex, setActiveFaqIndex] = useState(1);
 	const [isSubmitting, setIsSubmitting] = useState(false);
@@ -152,6 +149,7 @@ function ContactUs() {
 								src="https://in.bigin.online/org60029825901/forms/contact-us-form"
 								width="100%"
 								height="650"
+								scrolling="no"
 								frameBorder="0"
 								title="Contact Us Form"
 								style={{ border: "none" }}

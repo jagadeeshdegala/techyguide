@@ -18,11 +18,7 @@
     font-family: 'Inter', sans-serif; 
     padding-top: 113px;
     color: var(--shop-text-dark); 
-    background-color: #f0f2f5;
-    background-image: 
-        linear-gradient(rgba(26, 35, 126, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(26, 35, 126, 0.05) 1px, transparent 1px);
-    background-size: 30px 30px;
+    background-color: #ffffff;
     min-height: 100vh;
 }
 
@@ -552,6 +548,7 @@
         height: auto;
         max-height: 90vh;
         border-radius: 16px;
+        overflow-y: auto;
     }
 
     .shop-page-wrapper .course-modal-left {
@@ -565,7 +562,9 @@
 
     .shop-page-wrapper .course-modal-right {
         padding: 12px;
-        max-height: 280px;
+        max-height: 500px;
+        height: auto;
+        overflow-y: visible;
     }
 
     .shop-page-wrapper .course-modal-actions-desktop {

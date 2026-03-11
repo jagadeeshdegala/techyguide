@@ -551,7 +551,7 @@ The i-BoT robotics kit helps students explore IoT, robotics, wireless communicat
                                     { title: "Wireless Car", description: "Bluetooth and WiFi controlled vehicle" }
                                 ]).map((project, index) => (
                                     <div key={`${project.title}-${index}`} className="project-card">
-                                        <div className="project-number">{(index % 12) + 1}</div>
+                                        <img src={heroRobot} alt="project icon" className="project-number" />
                                         <h3>{project.title}</h3>
                                         <p>{project.description}</p>
                                     </div>

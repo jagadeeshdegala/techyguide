@@ -167,4 +167,11 @@
 /* Bigin CRM Form Styling */
 .tg-contactus-page .right-panel iframe { width: 100%; height: 100%; display: block; border: none; margin: 0; padding: 0; }
 
-@media (max-width: 1024px) { .tg-contactus-page .split-container { flex-direction: column; } .tg-contactus-page .left-panel, .tg-contactus-page .right-panel { width: 100%; } }
+@media (max-width: 1024px) { .tg-contactus-page .split-container { flex-direction: column; margin-top: 60px;} .tg-contactus-page .left-panel, .tg-contactus-page .right-panel { width: 100%; } }
+
+@media (max-width: 768px) {
+	.tg-contactus-page .right-panel iframe {
+		height: 980px;
+		overflow: hidden;
+	}
+}

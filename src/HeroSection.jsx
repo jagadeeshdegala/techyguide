@@ -1,5 +1,4 @@
 import "./HeroSection.css";
-import herobgImage from "/src/assets/herobackgroundimage.jpg";
 import herobgvideo from "/src/assets/Start_from_the_exact_closeup_position_of_the_robot_6ee8364d27 (1).mp4";
 import { Link } from 'react-router-dom';
 
@@ -25,7 +24,6 @@ function HeroSection() {
           loop
           muted
           playsInline
-          poster={herobgImage}
         >
           <source src={herobgvideo} type="video/mp4" />
         </video>

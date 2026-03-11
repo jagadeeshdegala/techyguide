@@ -398,6 +398,7 @@ function AIRoboticsLabCBSE() {
         </div>
       </section>
 
+      {/*
       <section className="video-section">
         <div className="container">
           <div className="video-content-wrapper">
@@ -421,6 +422,7 @@ Watch how TechyGuide’s state-of-the-art AI & Robotics Labs are transforming cl
           </div>
         </div>
       </section>
+      */}
 
       <section className="curriculum-section" id="curriculum">
         <div className="container">
@@ -716,17 +718,17 @@ Watch how TechyGuide’s state-of-the-art AI & Robotics Labs are transforming cl
             <div className="diy-image slider-wrapper">
               <div className="diy-slide fade">
                 <img src={premiumDIYKit1} alt="TeBot Kit" />
-                <div className="slide-caption">TeBot Kit</div>
+                {/* <div className="slide-caption">TeBot Kit</div> */}
               </div>
 
               <div className="diy-slide fade">
                 <img src={premiumDIYKit2} alt="I-Bot Kit" />
-                <div className="slide-caption">I-Bot Kit</div>
+                {/* <div className="slide-caption">I-Bot Kit</div> */}
               </div>
 
               <div className="diy-slide fade">
                 <img src={premiumDIYKit3} alt="E-Blox Kit" />
-                <div className="slide-caption">E-Blox Kit</div>
+                {/* <div className="slide-caption">E-Blox Kit</div> */}
               </div>
 
               <div className="floating-kit-tag">50+ Projects Included</div>

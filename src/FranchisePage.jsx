@@ -18,7 +18,9 @@ import roboticCompetion from './assets/FranchisePageImages/ROBOTICS COMPETITIONS
 import saleOfRoboticKits from './assets/FranchisePageImages/SALE OF ROBOTICS KITS & PRODUCTS.avif';
 import SoftwareHardware from './assets/FranchisePageImages/HARDWARE & SOFTWARE.png';
 import Training from './assets/FranchisePageImages/TRAINING & SUPPORT.png';
-// Eligibility & Age Divisions section images
+// What Will You Get? section images
+import WhatWillYouGet1 from './assets/FranchisePageImages/What Will You Get1.png';
+
 
 function FranchisePage() {
     // SEO Configuration
@@ -404,7 +406,7 @@ function FranchisePage() {
 
                 <div className="box">
                     <div className="box-content">
-                        <img src={studentsImg} alt="Lab Layout" />
+                        <img src={WhatWillYouGet1} alt="Lab Layout" />
                         <div className="text-overlay">LAB LAYOUT & SET UP DESIGN</div>
                     </div>
                     <div className="details">

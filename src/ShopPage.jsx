@@ -2,10 +2,6 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ShopPage.css';
 
-import techIot1 from './assets/ShopPageImages/TechIoT Advance Kit-1.webp';
-import techIot2 from './assets/ShopPageImages/TechIoT Advance Kit-2.webp';
-import roboticArmMain from './assets/ShopPageImages/Robotic-Arm-Kit-Box-550.webp';
-import roboticArmBox from './assets/ShopPageImages/Robotic-Arm-Box-1.webp';
 import ottoman1 from './assets/ShopPageImages/Ottoman Kit 1.webp';
 import ottoman2 from './assets/ShopPageImages/Ottoman Kit 2.webp';
 import ottoman3 from './assets/ShopPageImages/Ottoman Kit 3.webp';

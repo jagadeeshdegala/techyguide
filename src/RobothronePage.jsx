@@ -157,9 +157,9 @@ export default function RobothronePage() {
   return (
     <div className="robothrone-page-root">
       {/* Hero Section */} 
-      <div className="robothrone-top-badge">
+      {/* <div className="robothrone-top-badge">
           ⭐ Registration extended till 01 March 2026.
-        </div>
+        </div> */}
       <section className="robothrone-hero" style={{ marginTop: '80px' }}>
         {/* Top Badge */}
        

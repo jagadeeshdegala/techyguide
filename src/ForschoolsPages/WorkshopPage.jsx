@@ -194,7 +194,7 @@ function WorkshopPage() {
 
 					<div className="tech-grid">
 						<div className="tech-card glass">
-							<div className="card-icon"><i className="fas fa-cogs"></i></div>
+							<div className="card-icon"><img src={LabImage1} alt="Mechatronics" /></div>
 							<div className="card-body">
 								<h3>Mechatronics Training</h3>
 								<p>Combining mechanics and electronics for advanced automation.</p>
@@ -202,7 +202,7 @@ function WorkshopPage() {
 						</div>
 
 						<div className="tech-card glass">
-							<div className="card-icon"><i className="fas fa-robot"></i></div>
+							<div className="card-icon"><img src={LabImage2} alt="Robotics" /></div>
 							<div className="card-body">
 								<h3>Robotics</h3>
 								<p>Design, construction, and operation of autonomous bots.</p>
@@ -210,7 +210,7 @@ function WorkshopPage() {
 						</div>
 
 						<div className="tech-card glass">
-							<div className="card-icon"><i className="fas fa-bolt"></i></div>
+							<div className="card-icon"><img src={LabImage3} alt="Electronics" /></div>
 							<div className="card-body">
 								<h3>Electronics</h3>
 								<p>Circuit design, sensors, and series/parallel connections.</p>
@@ -218,7 +218,7 @@ function WorkshopPage() {
 						</div>
 
 						<div className="tech-card glass">
-							<div className="card-icon"><i className="fas fa-wifi"></i></div>
+							<div className="card-icon"><img src={LabImage4} alt="Internet of Things" /></div>
 							<div className="card-body">
 								<h3>Internet of Things</h3>
 								<p>Connecting physical objects to the digital world.</p>

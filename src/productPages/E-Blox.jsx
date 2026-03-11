@@ -69,18 +69,18 @@ export default function EBlox() {
     }, []);
     
     const projectsList = [
-        { title: "Button Games", description: "Interactive gaming with button controls" },
-        { title: "LED Patterns", description: "Creative light pattern programming" },
-        { title: "Smart Bridge", description: "Automated bridge infrastructure control" },
-        { title: "Line Follower", description: "Precision navigation using sensor paths" },
-        { title: "Flame Detector", description: "Automated fire safety and alert system" },
-        { title: "Smart Garden", description: "Soil and moisture monitoring for plants" },
-        { title: "Obstacle Avoider", description: "Autonomous navigation around obstacles" },
-        { title: "Gesture Controlled Car", description: "Hand gesture-based vehicle control" },
-        { title: "RFID Door Lock", description: "Secure access with RFID technology" },
-        { title: "Voice Controlled Car", description: "Voice command-driven robotics" },
-        { title: "Smart Home Automation", description: "Connected home devices control" },
-        { title: "Motion Sensing System", description: "Advanced motion detection and tracking" }
+        { title: "Proximity Glow Game", description: "This project lights up when an object or hand comes close to the proximity sensor. It demonstrates how distance sensing can be used to create interactive light-based games." },
+        { title: "Object Follow Robot", description: "This robot moves by following an object detected by the IR distance sensor. It shows how sensors and motors can work together to create simple tracking systems." },
+        { title: "Clap Controlled Car", description: "The car moves or stops when a clap sound is detected by the sound sensor. This project demonstrates sound-based control for electronic devices." },
+        { title: "Solar Tracking Rover", description: "The rover moves in the direction of light detected by the light sensor to simulate solar tracking. It demonstrates how solar panels can automatically align toward sunlight for maximum energy." },
+        { title: "Touchless Sound Game", description: "This interactive game activates sounds when a hand is placed near the sensor without touching it. It demonstrates touch-free technology used in modern devices." },
+        { title: "Buzzer eBlox", description: "This project uses a buzzer to produce sound when the circuit is activated. It helps demonstrate basic electronic alerts and alarm systems." },
+        { title: "Sound Sensor eBlox", description: "The sound sensor detects noise such as claps or loud sounds and converts it into an electrical signal. This shows how sound can be used as an input to control electronic circuits." },
+        { title: "Moving Car (eBlox)", description: "The motor driver powers the BO motors to move the car forward. It demonstrates the basic concept of motor control in robotics and automation." },
+        // { title: "Distance eBlox", description: "The distance sensor detects nearby objects and measures their proximity. It helps demonstrate how sensors are used for obstacle detection and automation systems." },
+        // { title: "Motor Driver eBlox", description: "The motor driver controls the direction and power supplied to the motors. It is used to safely operate motors in electronic and robotics projects." },
+        // { title: "Light Sensor  EBlox", description: " A   Light Sensor detects the intensity of light in the surrounding environment using an LDR module. It can automatically control devices like LEDs or lamps, turning them ON in darkness and OFF in bright light" },
+        // { title: "Motion Sensing System", description: "Advanced motion detection and tracking" }
     ];
 
 
@@ -462,7 +462,7 @@ export default function EBlox() {
                         <div className="eblox-projects-track">
                             {[...projectsList, ...projectsList].map((project, index) => (
                                 <article key={`${project.title}-${index}`} className="eblox-project-card">
-                                    <div className="eblox-project-number">{(index % projectsList.length) + 1}</div>
+                                    <img src={robotKids} alt="project icon" className="eblox-project-number" />
                                     <h4>{project.title}</h4>
                                     <p>{project.description}</p>
                                 </article>

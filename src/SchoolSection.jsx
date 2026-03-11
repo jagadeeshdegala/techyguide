@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import AILab from '/src/assets/AI&Roboticlab.jpg'
-import StemImage from '/src/assets/6. STEM Tinkering Lab.jpg'
-import LabViewImage from '/src/assets/7. ATL lab.jpg'
-import StemWorkshopImage from '/src/assets/8. STEM Workshop.jpg'
+import AILab from '/src/assets/What Do We Do for Educational Institutions - 1.jpg'
+import StemImage from '/src/assets/What Do We Do for Educational Institutions - 2.jpg'
+import LabViewImage from '/src/assets/What Do We Do for Educational Institutions - 3.jpg'
+import StemWorkshopImage from '/src/assets/What Do We Do for Educational Institutions - 4.jpg'
 import './SchoolSection.css';
 
 function SchoolSection() {

@@ -1116,6 +1116,27 @@
   .stem-tinkering-lab-root .hero-text h1 { font-size: 2.5rem; }
   .stem-tinkering-lab-root .hero-btns { justify-content: center; transform: none; margin-top: 0; margin-bottom: 20px; }
   .stem-tinkering-lab-root .floating-badge { display: none !important; }
+
+  .stem-tinkering-lab-root .slider-wrapper {
+    width: 100%;
+    height: 390px;
+    min-height: 390px;
+    background: #0f172a;
+  }
+
+  .stem-tinkering-lab-root .diy-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inset: 0;
+  }
+
+  .stem-tinkering-lab-root .diy-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
   
   .stem-tinkering-lab-root .guidelines-grid { grid-template-columns: 1fr; }
   .stem-tinkering-lab-root .guide-card { flex-direction: column; }

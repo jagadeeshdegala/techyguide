@@ -594,15 +594,15 @@ function StemTinkeringLab() {
             <div className="diy-image slider-wrapper">
               <div className="diy-slide fade">
                 <img src={proprietaryKits1} alt="I-BoT Kit" />
-                <div className="slide-caption">I-BoT Starter Kit</div>
+                {/* <div className="slide-caption">I-BoT Starter Kit</div> */}
               </div>
               <div className="diy-slide fade">
                 <img src={proprietaryKits2} alt="TeBoT Kit" />
-                <div className="slide-caption">TeBoT Kit</div>
+                {/* <div className="slide-caption">TeBoT Kit</div> */}
               </div>
               <div className="diy-slide fade">
                 <img src={proprietaryKits3} alt="E-Blox Kit" />
-                <div className="slide-caption">E-Blox Kit</div>
+                {/* <div className="slide-caption">E-Blox Kit</div> */}
               </div>
               <div className="floating-kit-tag">Made in India</div>
             </div>
@@ -680,6 +680,7 @@ function StemTinkeringLab() {
         </div>
       </section>
 
+      {/*
       <section className="video-section">
         <div className="container">
           <div className="video-content-wrapper">
@@ -693,6 +694,7 @@ function StemTinkeringLab() {
           </div>
         </div>
       </section>
+      */}
 
       <section className="timeline-section">
         <div className="container">

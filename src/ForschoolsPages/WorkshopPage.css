@@ -74,9 +74,11 @@
 .workshop-page-root .title-block p { color: #666; }
 
 .workshop-page-root .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-.workshop-page-root .tech-card { background: white; padding: 30px; border-radius: 15px; border: 1px solid #eee; text-align: center; transition: 0.3s; }
+.workshop-page-root .tech-card { background: white; padding: 0; border-radius: 15px; border: 1px solid #eee; text-align: center; transition: 0.3s; overflow: hidden; }
 .workshop-page-root .tech-card:hover { transform: translateY(-10px); border-color: var(--teal); box-shadow: 0 10px 30px rgba(0,130,115,0.1); }
-.workshop-page-root .card-icon { font-size: 2.5rem; color: var(--orange); margin-bottom: 20px; }
+.workshop-page-root .card-icon { font-size: 2.5rem; color: var(--orange); margin-bottom: 0; }
+.workshop-page-root .card-icon img { display: block; width: 100%; height: 160px; object-fit: cover; margin: 0; border-radius: 0; }
+.workshop-page-root .card-body { padding: 20px; }
 .workshop-page-root .card-body h3 { margin-bottom: 10px; font-size: 1.3rem; }
 .workshop-page-root .card-body p { font-size: 0.9rem; color: #666; }
 

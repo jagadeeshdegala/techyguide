@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import './AboutUsPage.css'
 import teamImage from './assets/AboutUSImages/Adorable-bear-cubs.jpg'
 import teamimg1 from './assets/AboutUSImages/Team 1.png';
+import founderImage from './assets/AboutUSImages/5.png';
 function AboutUsPage() {
 	// Set SEO metadata for About Us page
 	useEffect(() => {
@@ -79,6 +80,7 @@ function AboutUsPage() {
 				</div>
 			</section>
 
+				{/* Meet the Team section — commented out
 			<section className="team">
 				<div className="container">
 					<h2>Meet the Team</h2>
@@ -107,87 +109,25 @@ function AboutUsPage() {
 							<h3>Pooja Singh</h3>
 							<span>Project Manager</span>
 						</div>
-						<div className="team-card">
-							<img src={teamImage} alt="" />
-							<h3>Pooja Singh</h3>
-							<span>Project Manager</span>
-						</div>
-						<div className="team-card">
-							<img src={teamImage} alt="" />
-							<h3>Pooja Singh</h3>
-							<span>Project Manager</span>
-						</div>
-						<div className="team-card">
-							<img src={teamImage} alt="" />
-							<h3>Pooja Singh</h3>
-							<span>Project Manager</span>
-						</div>
-						<div className="team-card">
-							<img src={teamImage} alt="" />
-							<h3>Pooja Singh</h3>
-							<span>Project Manager</span>
-						</div>
-						<div className="team-card">
-							<img src={teamImage} alt="" />
-							<h3>Pooja Singh</h3>
-							<span>Project Manager</span>
-						</div>
-						<div className="team-card">
-							<img src={teamImage} alt="" />
-							<h3>Pooja Singh</h3>
-							<span>Project Manager</span>
-						</div>
-						<div className="team-card">
-							<img src={teamImage} alt="" />
-							<h3>Pooja Singh</h3>
-							<span>Project Manager</span>
-						</div>
-						<div className="team-card">
-							<img src={teamImage} alt="" />
-							<h3>Pooja Singh</h3>
-							<span>Project Manager</span>
-						</div>
-						<div className="team-card">
-							<img src={teamImage} alt="" />
-							<h3>Pooja Singh</h3>
-							<span>Project Manager</span>
-						</div>
-						<div className="team-card">
-							<img src={teamImage} alt="" />
-							<h3>Pooja Singh</h3>
-							<span>Project Manager</span>
-						</div>
-						<div className="team-card">
-							<img src={teamImage} alt="" />
-							<h3>Pooja Singh</h3>
-							<span>Project Manager</span>
-						</div>
-						<div className="team-card">
-							<img src={teamImage} alt="" />
-							<h3>Pooja Singh</h3>
-							<span>Project Manager</span>
-						</div>
-						<div className="team-card">
-							<img src={teamImage} alt="" />
-							<h3>Pooja Singh</h3>
-							<span>Project Manager</span>
-						</div>
-						<div className="team-card">
-							<img src={teamImage} alt="" />
-							<h3>Pooja Singh</h3>
-							<span>Project Manager</span>
-						</div>
-						<div className="team-card">
-							<img src={teamImage} alt="" />
-							<h3>Pooja Singh</h3>
-							<span>Project Manager</span>
-						</div>
-						<div className="team-card">
-							<img src={teamImage} alt="" />
-							<h3>Pooja Singh</h3>
-							<span>Project Manager</span>
-						</div>
 					</div>
+				</div>
+			</section>
+			*/}
+
+			{/* Meet our Founder */}
+			<section className="founder-section">
+				<div className="container about-grid">
+					<div>
+						<h2 style={{ color: 'orange', textAlign: 'center', fontSize: '2.64rem' }}>Meet Our Founder</h2>
+						<br/>
+						<p>
+							<b>Pradeep Kumar Jena</b> is the visionary founder of TechyGuide, a passionate educator and technology entrepreneur who has dedicated his career to transforming STEM education across India. With a background in engineering and a deep belief in hands-on learning, he built TechyGuide from the ground up to bridge the gap between classroom theory and real-world innovation.
+						</p>
+						<p>
+							Under his leadership, TechyGuide has empowered thousands of students and educators through robotics kits, AI programs, coding workshops, and IoT learning solutions — reaching 700+ schools across the country.
+						</p>
+					</div>
+					<img src={founderImage} alt="Founder - Pradeep Kumar Jena" />
 				</div>
 			</section>
 

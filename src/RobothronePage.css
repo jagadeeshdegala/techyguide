@@ -798,7 +798,8 @@
 
 .robothrone-page-root .robothrone-theme-top img {
   width: 100%;
-  aspect-ratio: 550 / 250;
+  height: 80%;
+  aspect-ratio: 550 / 350;
   object-fit: cover;
   object-position: center;
   display: block;
@@ -879,7 +880,7 @@
   }
 
   .robothrone-page-root .robothrone-theme-top img {
-    aspect-ratio: 550 / 250;
+    aspect-ratio: 550 / 350;
   }
 }
 

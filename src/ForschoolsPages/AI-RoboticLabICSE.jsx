@@ -658,15 +658,15 @@ const AIRoboticLabICSE = () => {
 						<div className="diy-image slider-wrapper">
 							<div className="diy-slide fade">
 								<img src={proprietaryKit1} alt="Modular I-BoT robotics kit compatible with Arduino and ESP32 for ICSE labs " />
-								<div className="slide-caption">I-BoT Starter Kit</div>
+								{/* <div className="slide-caption">I-BoT Starter Kit</div> */}
 							</div>
 							<div className="diy-slide fade">
 								<img src={proprietaryKit2} alt="TeBoT DIY robotics kit for ICSE AI and robotics lab projects " />
-								<div className="slide-caption">TeBoT Kit</div>
+								{/* <div className="slide-caption">TeBoT Kit</div> */}
 							</div>
 							<div className="diy-slide fade">
 								<img src={proprietaryKit3} alt="E-Blox Kit" />
-								<div className="slide-caption">E-Blox Kit</div>
+								{/* <div className="slide-caption">E-Blox Kit</div> */}
 							</div>
 							<div className="floating-kit-tag">Designed for ICSE</div>
 						</div>
@@ -732,6 +732,7 @@ const AIRoboticLabICSE = () => {
 				</div>
 			</section>
 
+			{/*
 			<section className="video-section">
 				<div className="container">
 					<div className="video-content-wrapper">
@@ -745,6 +746,7 @@ const AIRoboticLabICSE = () => {
 					</div>
 				</div>
 			</section>
+			*/}
 
 			<section className="timeline-section">
 				<div className="container">

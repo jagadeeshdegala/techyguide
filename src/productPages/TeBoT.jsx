@@ -143,8 +143,6 @@ function TeBoT() {
     };
 
     useEffect(() => {
-        console.log('TeBoT page loaded successfully');
-        
         const root = document.getElementById('tebot-root');
         const heroImage = document.querySelector('.tebot-page-root .image-section img');
         const heroTitle = document.querySelector('.tebot-page-root .info-section h1');
@@ -654,7 +652,7 @@ function TeBoT() {
                             <div className="projects-scroll-track">
                                 {[...projectsList, ...projectsList].map((project, index) => (
                                     <div key={`${project.title}-${index}`} className="project-card reveal-card">
-                                        <div className="project-number">{(index % projectsList.length) + 1}</div>
+                                        <img src={tebotProjectsImage} alt="project icon" className="project-number" />
                                         <h3>{project.title}</h3>
                                         <p>{project.description}</p>
                                     </div>
