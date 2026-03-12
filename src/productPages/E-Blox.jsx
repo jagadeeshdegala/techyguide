@@ -8,6 +8,29 @@ import robot3 from '../assets/ProductE-BloxImages/robot_3558910.png';
 import robot4 from '../assets/ProductE-BloxImages/robot_4512237.png';
 import bgImage1 from '../assets/ProductE-BloxImages/9743528.png';
 import bgImage2 from '../assets/ProductE-BloxImages/5073198.jpg';
+// hero section image
+import Heroimage from '../assets/ProductE-BloxImages/Hero image - 1.png';
+
+
+//technologies at focus section images
+import technologiesAtFocus1 from '../assets/ProductE-BloxImages/Technologies at Focus - 1.jpg';
+import technologiesAtFocus2 from '../assets/ProductE-BloxImages/Technologies at Focus - 2.jpg';
+import technologiesAtFocus3 from '../assets/ProductE-BloxImages/Technologies at Focus - 3.jpg';
+import technologiesAtFocus4 from '../assets/ProductE-BloxImages/Technologies at Focus - 4.jpg';
+// E-Blox Tech - Safe & Simple Design images
+import EBloxTech1 from '../assets/ProductE-BloxImages/E-Blox Tech - 1.jpg';
+import EBloxTech2 from '../assets/ProductE-BloxImages/E-Blox Tech - 2.jpg';
+import EBloxTech3 from '../assets/ProductE-BloxImages/E-Blox Tech - 3.jpg';
+import EBloxTech4 from '../assets/ProductE-BloxImages/E-Blox Tech - 4.jpg';
+//Why is e-Blox the Best for Early Learners? sections
+import whyEbloxBest1 from '../assets/ProductE-BloxImages/Why is e-Blox the Best for Early Learners_ - 1.jpg';
+import whyEbloxBest2 from '../assets/ProductE-BloxImages/Why is e-Blox the Best for Early Learners_ - 2.jpg';
+import whyEbloxBest3 from '../assets/ProductE-BloxImages/Why is e-Blox the Best for Early Learners_ - 3.jpg';
+import whyEbloxBest4 from '../assets/ProductE-BloxImages/Why is e-Blox the Best for Early Learners_ - 4.jpg';
+// eblox kit offerings section images
+import ebloxStarterKit from '../assets/ProductE-BloxImages/E-Blox Kit Offerings - 1.jpg';
+
+
 
 export default function EBlox() {
     const [activeKitSlide, setActiveKitSlide] = useState(0);
@@ -154,7 +177,7 @@ export default function EBlox() {
             <div className="background-container">
                 <main className="content-layout">
                     <div className="image-section">
-                        <img src={robotKids} alt="E-Blox Kit" />
+                        <img src={Heroimage} alt="E-Blox Kit" />
                     </div>
                     <div className="info-section">
                         <h1>E-Blox Kit</h1>
@@ -192,28 +215,28 @@ export default function EBlox() {
                     <div className="eblox-focus-grid-2col">
                         <article className="eblox-focus-card-v2">
                             <div className="eblox-focus-image-v2">
-                                <img src={robot1} alt="Basic Electronics" loading="lazy" />
+                                <img src={technologiesAtFocus1} alt="Basic Electronics" loading="lazy" />
                             </div>
                             <h3>Basic Electronics</h3>
                             <p>Learn how circuits work by connecting power blocks to lights, sounds, and motors.</p>
                         </article>
                         <article className="eblox-focus-card-v2">
                             <div className="eblox-focus-image-v2">
-                                <img src={robot2} alt="Renewable Energy Concepts" loading="lazy" />
+                                <img src={technologiesAtFocus2} alt="Renewable Energy Concepts" loading="lazy" />
                             </div>
                             <h3>Renewable Energy Concepts</h3>
                             <p>Hands-on exploration of how energy can power everyday items like mini windmills.</p>
                         </article>
                         <article className="eblox-focus-card-v2">
                             <div className="eblox-focus-image-v2">
-                                <img src={robot3} alt="Practical Engineering" loading="lazy" />
+                                <img src={technologiesAtFocus3} alt="Practical Engineering" loading="lazy" />
                             </div>
                             <h3>Practical Engineering</h3>
                             <p>Build functional items your child can actually use, such as study lamps and table lamps.</p>
                         </article>
                         <article className="eblox-focus-card-v2">
                             <div className="eblox-focus-image-v2">
-                                <img src={robot4} alt="Logic & Sequencing" loading="lazy" />
+                                <img src={technologiesAtFocus4} alt="Logic & Sequencing" loading="lazy" />
                             </div>
                             <h3>Logic & Sequencing</h3>
                             <p>Understand "cause and effect" by using light, sound, and distance sensors to trigger different blocks.</p>
@@ -232,7 +255,7 @@ export default function EBlox() {
                     <div className="eblox-tech-grid-2col">
                         <article className="eblox-tech-card-v2">
                             <div className="eblox-tech-image-v2">
-                                <img src={robot2} alt="Child-safe engineering for e-Blox" loading="lazy" />
+                                <img src={EBloxTech1} alt="Child-safe engineering for e-Blox" loading="lazy" />
                             </div>
                             <h3>Child-Safe Engineering</h3>
                             <p>Built with low-voltage, non-toxic materials that are 100% classroom and home-safe.</p>
@@ -240,7 +263,7 @@ export default function EBlox() {
 
                         <article className="eblox-tech-card-v2">
                             <div className="eblox-tech-image-v2">
-                                <img src={robot3} alt="Plug and play assembly for e-Blox" loading="lazy" />
+                                <img src={EBloxTech2} alt="Plug and play assembly for e-Blox" loading="lazy" />
                             </div>
                             <h3>Plug & Play Assembly</h3>
                             <p>No soldering or complex wiring required. Ready-to-use components enable instant setup and frustration-free learning.</p>
@@ -248,7 +271,7 @@ export default function EBlox() {
 
                         <article className="eblox-tech-card-v2">
                             <div className="eblox-tech-image-v2">
-                                <img src={robot1} alt="Modular blocks in e-Blox" loading="lazy" />
+                                <img src={EBloxTech3} alt="Modular blocks in e-Blox" loading="lazy" />
                             </div>
                             <h3>Modular Building Blocks </h3>
                             <p>The snap-together design encourages repeated assembly, allowing children to rebuild and innovate multiple times.</p>
@@ -256,7 +279,7 @@ export default function EBlox() {
 
                         <article className="eblox-tech-card-v2">
                             <div className="eblox-tech-image-v2">
-                                <img src={robot4} alt="Interactive components in e-Blox" loading="lazy" />
+                                <img src={EBloxTech4} alt="Interactive components in e-Blox" loading="lazy" />
                             </div>
                             <h3>Interactive Components</h3>
                             <p>Features specialized blocks for sound, light, and motion that respond to the child's touch and environment.</p>
@@ -275,28 +298,28 @@ export default function EBlox() {
                     <div className="eblox-why-grid-v2">
                         <article className="eblox-why-card-v2">
                             <div className="eblox-why-image-v2">
-                                <img src={robot1} alt="Constructive Learning" loading="lazy" />
+                                <img src={whyEbloxBest1} alt="Constructive Learning" loading="lazy" />
                             </div>
                             <h3>Constructive Learning</h3>
                             <p>Unlike passive toys, e-Blox encourages active building and problem solving.</p>
                         </article>
                         <article className="eblox-why-card-v2">
                             <div className="eblox-why-image-v2">
-                                <img src={robot2} alt="Instant Success" loading="lazy" />
+                                <img src={whyEbloxBest2} alt="Instant Success" loading="lazy" />
                             </div>
                             <h3>Instant Success</h3>
                             <p>Children can build 20+ exciting products and see immediate results.</p>
                         </article>
                         <article className="eblox-why-card-v2">
                             <div className="eblox-why-image-v2">
-                                <img src={robot3} alt="Foundation for STEM" loading="lazy" />
+                                <img src={whyEbloxBest3} alt="Foundation for STEM" loading="lazy" />
                             </div>
                             <h3>Foundation for STEM</h3>
                             <p>Perfect stepping stone before moving to advanced kits like TeBot or i-Bot.</p>
                         </article>
                         <article className="eblox-why-card-v2">
                             <div className="eblox-why-image-v2">
-                                <img src={robot4} alt="Durable & Reusable" loading="lazy" />
+                                <img src={whyEbloxBest4} alt="Durable & Reusable" loading="lazy" />
                             </div>
                             <h3>Durable & Reusable</h3>
                             <p>High-quality blocks built to withstand heavy play and repeated use.</p>
@@ -327,10 +350,10 @@ export default function EBlox() {
                                 <article className="eblox-kit-main-slide">
                                     <div className="eblox-kit-scroll-card">
                                         <div className="eblox-kit-scroll-image">
-                                            <img src={robot4} alt="The e-Blox Standard Kit" loading="lazy" />
+                                            <img src={ebloxStarterKit} alt="The e-Blox Standard Kit" loading="lazy" />
                                         </div>
                                         <div className="eblox-kit-scroll-content">
-                                            <h3>The E-Blox Standard Kit</h3>
+                                            <h3>The E-Blox Starter Kit</h3>
                                             <p>A multi-purpose electronics kit that serves as the perfect introduction to STEM for younger grades.</p>
 
                                             <h4>Projects:</h4>
@@ -383,7 +406,7 @@ export default function EBlox() {
                                             <img src={robot4} alt="The e-Blox Standard Kit" loading="lazy" />
                                         </div>
                                         <div className="eblox-kit-scroll-content">
-                                            <h3>The E-Blox Standard Kit</h3>
+                                            <h3>The E-Blox Maker Kit</h3>
                                             <p>A multi-purpose electronics kit that serves as the perfect introduction to STEM for younger grades.</p>
 
                                             <h4>Projects:</h4>

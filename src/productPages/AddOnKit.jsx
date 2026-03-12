@@ -2,6 +2,14 @@ import React, { useEffect } from "react";
 import img7 from "../assets/ProductsAddOnImages/7.png";
 import armKitImg from "../assets/ProductsAddOnImages/20220708_115335.jpg";
 import "./AddOnKit.css";
+//kit images
+import roboticArmKit from "../assets/ProductsAddOnImages/Robotic Arm Kit.jpg";
+import TechBoTElectronicsKit from "../assets/ProductsAddOnImages/TechBoT Electronics Kit.jpg";
+import HumanoidKitIBOT from "../assets/ProductsAddOnImages/Humanoid Kit (I-BOT).jpg";
+import OttoStarterKit from "../assets/ProductsAddOnImages/Otto Starter Kit.jpg";
+import OttoLeeKit from "../assets/ProductsAddOnImages/Otto Lee Kit.jpg";
+import OttoSpiderKit from "../assets/ProductsAddOnImages/Otto Spider Kit.jpg";
+
 
 const AddOnKit = () => {
 	useEffect(() => {
@@ -258,7 +266,7 @@ const AddOnKit = () => {
 					</div>
 					<div className="image-box" data-aos="fade-left">
 						<span className="category-tag">Robotics</span>
-						<img src={armKitImg} alt="Robotic Arm Kit" className="product-image" />
+						<img src={roboticArmKit} alt="Robotic Arm Kit" className="product-image" />
 					</div>
 				</div>
 
@@ -277,7 +285,7 @@ const AddOnKit = () => {
 					</div>
 					<div className="image-box" data-aos="fade-right">
 						<span className="category-tag">Electronics</span>
-						<img src={armKitImg} alt="TechBoT Electronics Kit" className="product-image" />
+						<img src={TechBoTElectronicsKit} alt="TechBoT Electronics Kit" className="product-image" />
 					</div>
 				</div>
 
@@ -296,7 +304,7 @@ const AddOnKit = () => {
 					</div>
 					<div className="image-box" data-aos="zoom-in">
 						<span className="category-tag">Advanced Robotics</span>
-						<img src={armKitImg} alt="Humanoid Kit" className="product-image" />
+						<img src={HumanoidKitIBOT} alt="Humanoid Kit" className="product-image" />
 					</div>
 				</div>
 
@@ -315,7 +323,7 @@ const AddOnKit = () => {
 					</div>
 					<div className="image-box" data-aos="fade-right">
 						<span className="category-tag">Robotics</span>
-						<img src={armKitImg} alt="Otto Starter Kit" className="product-image" />
+						<img src={OttoStarterKit} alt="Otto Starter Kit" className="product-image" />
 					</div>
 				</div>
 
@@ -334,7 +342,7 @@ const AddOnKit = () => {
 					</div>
 					<div className="image-box" data-aos="zoom-in">
 						<span className="category-tag">Advanced Robotics</span>
-						<img src={armKitImg} alt="Otto Lee Kit" className="product-image" />
+						<img src={OttoLeeKit} alt="Otto Lee Kit" className="product-image" />
 					</div>
 				</div>
 
@@ -353,7 +361,7 @@ const AddOnKit = () => {
 					</div>
 					<div className="image-box" data-aos="fade-right">
 						<span className="category-tag">Manufacturing</span>
-						<img src={armKitImg} alt="Otto Spider Kit" className="product-image" />
+						<img src={OttoSpiderKit} alt="Otto Spider Kit" className="product-image" />
 					</div>
 				</div>
 			</section>

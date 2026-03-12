@@ -20,7 +20,16 @@ import DualProgramming from '../assets/ProductI-BoTImages/Dual Programming.png';
 import TheBrain from '../assets/ProductI-BoTImages/The Brain.png';
 import AllinOneController from '../assets/ProductI-BoTImages/All-in-One Controller.png';
 import SafetyFirst from '../assets/ProductI-BoTImages/Safety First.png';
+import powerefficiency from '../assets/ProductI-BoTImages/Power Efficiency.png';
 
+//kit offerings section images
+import ibotStarterKit from '../assets/ProductI-BoTImages/i-Bot Starter Kit.png';
+import ibotAdvancedKit from '../assets/ProductI-BoTImages/i-Bot Advance Kit.png';
+//Why i-Bot is the Best section
+import hundredPlusProjects from '../assets/ProductI-BoTImages/100_Unmatched Project Variety.png';
+import realworldApplications from '../assets/ProductI-BoTImages/Real World Applications.png';
+import modularAndScalable from '../assets/ProductI-BoTImages/Modular & Scalable.png';
+import DurabilityWarranty from '../assets/ProductI-BoTImages/Durability & Warranty.png';
 
 
 function IBoT() {
@@ -331,10 +340,12 @@ The i-BoT robotics kit helps students explore IoT, robotics, wireless communicat
                                 { title: 'The Brain', desc: 'Powered by the ultra-fast ESP32 Chip (4 MB) with dual-mode Wi-Fi and Bluetooth.', image: TheBrain },
                                 { title: 'All-in-One Controller', desc: 'Integrated motor drivers, buzzer, LED, and multi-sensor pinouts with no messy wiring.', image: AllinOneController },
                                 { title: 'Safety First', desc: 'Double-layer PCB with 3-layer short circuit protection ensuring safe classroom usage.', image: SafetyFirst },
-                                { title: 'Power Efficiency', desc: 'Flexible power support from 3.7V to 12V with JST connectors for rechargeable batteries.', image: homeAutomation }
+                                { title: 'Power Efficiency', desc: 'Flexible power support from 3.7V to 12V with JST connectors for rechargeable batteries.', image: powerefficiency }
                             ].map((item, idx) => (
                                 <div key={idx} className="hardware-card">
-                                    <img src={item.image} alt={item.title} loading="lazy" className="hardware-card-image" />
+                                    <div className="hardware-card-media">
+                                        <img src={item.image} alt={item.title} loading="lazy" className="hardware-card-image" />
+                                    </div>
                                     <h3>{item.title}</h3>
                                     <p>{item.desc}</p>
                                 </div>
@@ -354,27 +365,34 @@ The i-BoT robotics kit helps students explore IoT, robotics, wireless communicat
                         <div className="why-grid">
                             {/* Large 100+ Projects Card */}
                             <div className="why-card large projects-card">
-                                <img src={homeAutomation} alt="100+ Projects" className="why-card-image" />
-                                <div className="stat-counter">100+</div>
-                                <h3>Unmatched Project Variety</h3>
+                                <div className="why-card-media large">
+                                    <img src={hundredPlusProjects} alt="100+ Projects" className="why-card-image" />
+                                </div>
+                                <h3><span className="stat-counter">100+</span> Unmatched Project Variety</h3>
                                 <p>From simple LED blink to advanced Human Following Robot, explore endless possibilities</p>
                             </div>
 
                             {/* Other Feature Cards */}
                             <div className="why-card">
-                                <img src={plantMonitor} alt="Real-World Applications" className="why-card-image" />
+                                <div className="why-card-media">
+                                    <img src={realworldApplications} alt="Real-World Applications" className="why-card-image why-card-image-realworld" />
+                                </div>
                                 <h3>Real-World Applications</h3>
                                 <p>Projects simulate real industry solutions such as Smart Agriculture and IoT Wheelchairs.</p>
                             </div>
 
                             <div className="why-card">
-                                <img src={mainBoard} alt="Modular & Scalable" className="why-card-image" />
+                                <div className="why-card-media">
+                                    <img src={modularAndScalable} alt="Modular & Scalable" className="why-card-image" />
+                                </div>
                                 <h3>Modular & Scalable</h3>
                                 <p>The i-Bot board works as a universal brain compatible with Humanoid robots, Robotic Arms, and 3D printed chassis.</p>
                             </div>
 
                             <div className="why-card">
-                                <img src={kitImage} alt="Durability & Warranty" className="why-card-image" />
+                                <div className="why-card-media">
+                                    <img src={DurabilityWarranty} alt="Durability & Warranty" className="why-card-image" />
+                                </div>
                                 <h3>Durability & Warranty</h3>
                                 <p>Industrial-grade components backed by a 1-year manufacturing warranty.</p>
                             </div>
@@ -405,7 +423,7 @@ The i-BoT robotics kit helps students explore IoT, robotics, wireless communicat
                                     <article className="kit-main-slide">
                                         <div className="kit-scroll-card">
                                             <div className="kit-scroll-image">
-                                                <img src={kitImage} alt="i-Bot Starter Kit" />
+                                                <img src={ibotStarterKit} alt="i-Bot Starter Kit" />
                                             </div>
 
                                             <div className="kit-scroll-content">
@@ -440,7 +458,7 @@ The i-BoT robotics kit helps students explore IoT, robotics, wireless communicat
                                     <article className="kit-main-slide">
                                         <div className="kit-scroll-card featured">
                                             <div className="kit-scroll-image">
-                                                <img src={mainBoard} alt="i-Bot Advance Kit" />
+                                                <img src={ibotAdvancedKit} alt="i-Bot Advance Kit" />
                                             </div>
 
                                             <div className="kit-scroll-content">

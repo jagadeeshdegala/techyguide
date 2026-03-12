@@ -9,6 +9,14 @@ import logoTG2 from './assets/RobothronePageImages/Logo_TG_Tagline 4.png';
 // Video import
 
 import heroVideo from './assets/RobothronePageImages/Website Backdrop Robothrone.mp4';
+
+// about robothrone section images
+import AboutRobothrone1 from './assets/RobothronePageImages/About Robothrone - 1.jpg';
+import AboutRobothrone2 from './assets/RobothronePageImages/About Robothrone - 2.jpg';
+import AboutRobothrone3 from './assets/RobothronePageImages/About Robothrone - 3.jpg';
+
+
+
 //Eligibility & Age Divisions section images
 import junior from './assets/RobothronePageImages/Junior 8-10.png';
 import intermediate from './assets/RobothronePageImages/intermediate 11-13.png';
@@ -20,6 +28,16 @@ import EnvironmentalMonitoring from './assets/RobothronePageImages/Environmental
 import SmartTransportation from './assets/RobothronePageImages/Smart Transportation.png';
 import IndustrySolutions from './assets/RobothronePageImages/Industry 4.0 Solutions.png';
 import HealthcareInnovation from './assets/RobothronePageImages/Healthcare Innovation.png';
+//competition snapshops section images
+import CompetitionSnapshots1 from './assets/RobothronePageImages/Competition Snapshots - 1.jpg';
+import CompetitionSnapshots2 from './assets/RobothronePageImages/Competition Snapshots - 2.jpg';
+import CompetitionSnapshots3 from './assets/RobothronePageImages/Competition Snapshots - 3.jpg';
+import CompetitionSnapshots4 from './assets/RobothronePageImages/Competition Snapshots - 4.jpg';
+import CompetitionSnapshots5 from './assets/RobothronePageImages/Competition Snapshots - 5.jpg';
+import CompetitionSnapshots6 from './assets/RobothronePageImages/Competition Snapshots - 6.jpg';
+import CompetitionSnapshots7 from './assets/RobothronePageImages/Competition Snapshots - 7.jpg';
+import CompetitionSnapshots8 from './assets/RobothronePageImages/Competition Snapshots - 8.jpg';
+import CompetitionSnapshots9 from './assets/RobothronePageImages/Competition Snapshots - 9.jpg';
 
 
 
@@ -294,18 +312,13 @@ export default function RobothronePage() {
           <div className="robothrone-about-right">
             <div className="robothrone-slider-track" ref={sliderRef}>
               {/* ORIGINAL IMAGES */}
-              <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
-              <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
-              <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
-              <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
-              <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
-
+              <img src={AboutRobothrone1} loading="lazy" decoding="async" width="400" height="250" alt="" />
+              <img src={AboutRobothrone2} loading="lazy" decoding="async" width="400" height="250" alt="" />
+              <img src={AboutRobothrone3} loading="lazy" decoding="async" width="400" height="250" alt="" />
               {/* DUPLICATE FOR LOOP */}
-              <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
-              <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
-              <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
-              <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
-              <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
+              <img src={AboutRobothrone1} loading="lazy" decoding="async" width="400" height="250" alt="" />
+              <img src={AboutRobothrone2} loading="lazy" decoding="async" width="400" height="250" alt="" />
+              <img src={AboutRobothrone3} loading="lazy" decoding="async" width="400" height="250" alt="" />
             </div>
           </div>
         </div>
@@ -419,31 +432,31 @@ export default function RobothronePage() {
 
         <div className="robothrone-snapshots-grid">
           <div className="robothrone-snapshot-card">
-            <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
+            <img src={CompetitionSnapshots1} loading="lazy" decoding="async" width="400" height="250" alt="" />
           </div>
           <div className="robothrone-snapshot-card">
-            <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
+            <img src={CompetitionSnapshots2} loading="lazy" decoding="async" width="400" height="250" alt="" />
           </div>
           <div className="robothrone-snapshot-card">
-            <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
+            <img src={CompetitionSnapshots3} loading="lazy" decoding="async" width="400" height="250" alt="" />
           </div>
           <div className="robothrone-snapshot-card">
-            <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
+            <img src={CompetitionSnapshots4} loading="lazy" decoding="async" width="400" height="250" alt="" />
           </div>
           <div className="robothrone-snapshot-card">
-            <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
+            <img src={CompetitionSnapshots5} loading="lazy" decoding="async" width="400" height="250" alt="" />
           </div>
           <div className="robothrone-snapshot-card">
-            <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
+            <img src={CompetitionSnapshots6} loading="lazy" decoding="async" width="400" height="250" alt="" />
           </div>
           <div className="robothrone-snapshot-card">
-            <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
+            <img src={CompetitionSnapshots7} loading="lazy" decoding="async" width="400" height="250" alt="" />
           </div>
           <div className="robothrone-snapshot-card">
-            <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
+            <img src={CompetitionSnapshots8} loading="lazy" decoding="async" width="400" height="250" alt="" />
           </div>
           <div className="robothrone-snapshot-card">
-            <img src={robotCarImage} loading="lazy" decoding="async" width="400" height="250" alt="" />
+            <img src={CompetitionSnapshots9} loading="lazy" decoding="async" width="400" height="250" alt="" />
           </div>
         </div>
       </section>
