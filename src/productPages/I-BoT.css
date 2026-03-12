@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap');
 
 .ibot-page-root * {
     margin: 0;
@@ -15,90 +16,365 @@
     padding-top: 113px;
 }
 
-.ibot-page-root .background-container {
-    min-height: 100vh;
-    padding: clamp(20px, 5vw, 40px);
-    display: flex;
-    flex-direction: column;
+/* ===== I-BOT HERO SECTION ===== */
+.ibot-page-root .ibot-hero-root {
+    --ibot-hero-bg-900: #06313f;
+    --ibot-hero-bg-800: #0c5668;
+    --ibot-hero-bg-700: #168078;
+    --ibot-hero-ink-light: #effffd;
+    --ibot-hero-ink-soft: #c9efec;
+    --ibot-hero-accent-yellow: #ffd463;
+    --ibot-hero-accent-lime: #acf27b;
+    --ibot-hero-btn-bg: #d8fff4;
+    --ibot-hero-btn-ink: #0b4d47;
+    min-height: 85vh;
+    padding: clamp(1rem, 2vw, 1.8rem) clamp(1rem, 5vw, 4rem) clamp(2.1rem, 4vw, 4.2rem);
     position: relative;
+    z-index: 0;
+    top: 0px;
+    overflow: hidden;
+    isolation: isolate;
+    font-family: 'Baloo 2', 'Trebuchet MS', sans-serif;
+    color: var(--ibot-hero-ink-light);
+    background:
+        radial-gradient(900px 420px at 88% -10%, rgba(145, 255, 230, 0.25), transparent 65%),
+        radial-gradient(680px 300px at 10% 8%, rgba(186, 255, 242, 0.16), transparent 70%),
+        linear-gradient(165deg, var(--ibot-hero-bg-700) 0%, var(--ibot-hero-bg-800) 56%, var(--ibot-hero-bg-900) 100%);
 }
 
-.ibot-page-root .content-layout {
+.ibot-page-root .ibot-hero-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+    pointer-events: none;
+    opacity: 0.52;
+}
+
+.ibot-page-root .ibot-hero-root::before,
+.ibot-page-root .ibot-hero-root::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+}
+
+.ibot-page-root .ibot-hero-root::before {
+    inset: -16%;
+    z-index: -4;
+    background:
+        radial-gradient(220px 92px at 14% 16%, rgba(203, 255, 243, 0.25), transparent 68%),
+        radial-gradient(250px 102px at 58% 6%, rgba(203, 255, 243, 0.2), transparent 70%),
+        radial-gradient(290px 108px at 90% 22%, rgba(203, 255, 243, 0.24), transparent 72%);
+    animation: ibot-hero-cloud-drift 20s ease-in-out infinite alternate;
+}
+
+.ibot-page-root .ibot-hero-root::after {
+    left: -14vw;
+    right: -14vw;
+    bottom: -44vh;
+    height: 60vh;
+    z-index: -2;
+    background:
+        radial-gradient(70% 75% at 50% 0%, rgba(122, 255, 225, 0.22), transparent 70%),
+        linear-gradient(180deg, #0f6b63 0%, #074e47 100%);
+    border-radius: 56% 56% 0 0 / 100% 100% 0 0;
+}
+
+.ibot-page-root .ibot-hero-nav,
+.ibot-page-root .ibot-hero-layout {
+    width: min(1240px, 100%);
+    margin-inline: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.ibot-page-root .ibot-hero-nav {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex: 1;
-    gap: clamp(30px, 8vw, 100px);
-    max-width: 1200px;
-    margin: 0 auto;
-    transform: translateY(-40px);
-    padding: 0 20px;
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    justify-content: space-between;
+    gap: 1rem;
 }
 
-@media (max-width: 640px) {
-    .ibot-page-root .content-layout {
-        flex-direction: column;
-    }
+.ibot-page-root .ibot-hero-logo-pill {
+    text-decoration: none;
+    color: #ecfff9;
+    background: linear-gradient(150deg, #0f615a, #129183);
+    border: 2px solid rgba(204, 255, 245, 0.34);
+    border-radius: 999px;
+    padding: 0.45rem 1.15rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    box-shadow: 0 8px 18px rgba(3, 44, 40, 0.34);
 }
 
-.ibot-page-root .image-section {
-    flex: 1;
-    display: flex;
-    justify-content: center;
+.ibot-page-root .ibot-hero-layout {
+    margin-top: clamp(1.15rem, 3vw, 2.2rem);
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) minmax(320px, 0.95fr);
+    align-items: center;
+    gap: clamp(0.85rem, 2.2vw, 2rem);
 }
 
-.ibot-page-root .image-section img {
-    width: 100%;
-    height: auto;
-    max-width: 1000px;
-    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+.ibot-page-root .ibot-hero-copy,
+.ibot-page-root .ibot-hero-visual {
+    will-change: transform;
+    transition: transform 0.24s ease-out;
 }
 
-.ibot-page-root .image-section img:hover {
-    filter: drop-shadow(0 15px 40px rgba(0,0,0,0.6));
+.ibot-page-root .ibot-hero-copy {
+    max-width: 540px;
 }
 
-.ibot-page-root .info-section {
-    flex: 1;
-    max-width: 500px;
+.ibot-page-root .ibot-hero-eyebrow {
+    margin: 0;
+    display: inline-block;
+    padding: 0.22rem 0.6rem;
+    border-radius: 999px;
+    font-size: clamp(0.72rem, 1.3vw, 0.84rem);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #ecf4ff;
+    background: rgba(220, 232, 255, 0.16);
+    border: 1px solid rgba(220, 232, 255, 0.26);
 }
 
-.ibot-page-root .info-section h1 {
-    font-size: clamp(2rem, 8vw, 50px);
-    font-weight: 1000;
-    color: rgb(255, 153, 0);
-    margin-bottom: 18px;
-    line-height: 1.2;
+.ibot-page-root .ibot-hero-copy h1 {
+    margin: clamp(0.8rem, 2vw, 1.2rem) 0 0;
+    font-size: clamp(1.9rem, 4.6vw, 3.8rem);
+    line-height: 0.9;
+    letter-spacing: -0.012em;
+    color: var(--ibot-hero-accent-yellow);
+    text-shadow: 0 4px 0 rgba(6, 45, 40, 0.24);
 }
 
-.ibot-page-root .info-section h2 {
-    font-size: clamp(1rem, 4vw, 1.5rem);
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 24px;
+.ibot-page-root .ibot-hero-copy h1 span {
+    display: block;
+    color: var(--ibot-hero-accent-lime);
+}
+
+.ibot-page-root .ibot-hero-subcopy {
+    margin: clamp(0.62rem, 1.4vw, 0.82rem) 0 0;
+    max-width: 38ch;
+    color: var(--ibot-hero-ink-soft);
+    font-size: clamp(0.88rem, 1.55vw, 1.03rem);
     line-height: 1.3;
 }
 
-.ibot-page-root .btn-secondary {
-    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 50%, #ffa726 100%);
-    border: none;
-    padding: clamp(12px, 3vw, 18px) clamp(24px, 6vw, 40px);
-    border-radius: 30px;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    margin-top: 20px;
-    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
-    width: 100%;
-    max-width: 250px;
+.ibot-page-root .ibot-hero-btn {
+    margin-top: clamp(0.78rem, 1.4vw, 0.95rem);
+    text-decoration: none;
+    display: inline-block;
+    font-size: clamp(0.84rem, 1.2vw, 0.92rem);
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 0.54rem 0.96rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.ibot-page-root .btn-secondary:hover {
+.ibot-page-root .ibot-hero-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6);
+}
+
+.ibot-page-root .ibot-hero-btn-primary {
+    color: var(--ibot-hero-btn-ink);
+    background: var(--ibot-hero-btn-bg);
+    box-shadow: 0 8px 18px rgba(4, 44, 39, 0.25);
+}
+
+.ibot-page-root .ibot-hero-visual {
+    position: relative;
+    top: 25px;
+    width: min(480px, 100%);
+    margin-inline: auto;
+}
+
+.ibot-page-root .ibot-hero-visual-ring {
+    position: absolute;
+    inset: 8% 10%;
+    border: 2px dashed rgba(204, 255, 245, 0.24);
+    border-radius: 28px;
+    z-index: 0;
+    animation: ibot-hero-ring-spin 24s linear infinite;
+}
+
+.ibot-page-root .ibot-hero-photo-card {
+    position: relative;
+    z-index: 1;
+    padding: 0.8rem;
+    border-radius: 30px;
+    background: linear-gradient(145deg, rgba(248, 255, 252, 0.18), rgba(187, 241, 229, 0.08));
+    border: 1px solid rgba(204, 255, 245, 0.28);
+    box-shadow: 0 24px 56px rgba(3, 44, 40, 0.3);
+    backdrop-filter: blur(8px);
+}
+
+.ibot-page-root .ibot-hero-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 18px;
+    animation: ibot-hero-photo-float 4.8s ease-in-out infinite;
+}
+
+.ibot-page-root .ibot-hero-floating-badge {
+    position: absolute;
+    padding: 0.35rem 0.64rem;
+    border-radius: 999px;
+    background: rgba(226, 255, 249, 0.9);
+    color: #0e5049;
+    border: 1px solid rgba(166, 235, 222, 0.8);
+    font-size: clamp(0.66rem, 0.95vw, 0.76rem);
+    font-weight: 700;
+    box-shadow: 0 8px 18px rgba(4, 44, 39, 0.22);
+    z-index: 2;
+}
+
+.ibot-page-root .ibot-hero-badge-one {
+    left: -5%;
+    bottom: 20%;
+    animation: ibot-hero-badge-float-1 4.1s ease-in-out infinite;
+}
+
+.ibot-page-root .ibot-hero-badge-two {
+    right: -4%;
+    top: 9%;
+    animation: ibot-hero-badge-float-2 4.4s ease-in-out infinite;
+}
+
+.ibot-page-root .ibot-hero-wave {
+    position: absolute;
+    left: -8%;
+    right: -8%;
+    bottom: 0;
+    height: 22%;
+    border-radius: 52% 52% 0 0 / 100% 100% 0 0;
+    background: rgba(12, 103, 95, 0.4);
+    z-index: -1;
+}
+
+@keyframes ibot-hero-cloud-drift {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(2.4%, -2%, 0);
+    }
+}
+
+@keyframes ibot-hero-photo-float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes ibot-hero-badge-float-1 {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+@keyframes ibot-hero-badge-float-2 {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes ibot-hero-ring-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 980px) {
+    .ibot-page-root .ibot-hero-root {
+        min-height: auto;
+        padding-bottom: 3.3rem;
+    }
+
+    .ibot-page-root .ibot-hero-layout {
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+    }
+
+    .ibot-page-root .ibot-hero-copy {
+        text-align: center;
+        margin-inline: auto;
+    }
+
+    .ibot-page-root .ibot-hero-subcopy {
+        margin-inline: auto;
+    }
+
+    .ibot-page-root .ibot-hero-visual {
+        width: min(430px, 100%);
+        top: 0;
+    }
+
+    .ibot-page-root .ibot-hero-badge-one {
+        left: 2%;
+    }
+
+    .ibot-page-root .ibot-hero-badge-two {
+        right: 2%;
+    }
+}
+
+@media (max-width: 680px) {
+    .ibot-page-root .ibot-hero-root {
+        min-height: 78vh;
+    }
+
+    .ibot-page-root .ibot-hero-photo {
+        border-radius: 20px;
+    }
+
+    .ibot-page-root .ibot-hero-floating-badge {
+        font-size: 0.74rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .ibot-page-root {
+        padding-top: 90px;
+    }
+
+    .ibot-page-root .ibot-hero-root {
+        top: 0;
+        margin-top: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ibot-page-root .ibot-hero-root::before,
+    .ibot-page-root .ibot-hero-visual-ring,
+    .ibot-page-root .ibot-hero-photo,
+    .ibot-page-root .ibot-hero-badge-one,
+    .ibot-page-root .ibot-hero-badge-two {
+        animation: none !important;
+    }
+
+    .ibot-page-root .ibot-hero-btn,
+    .ibot-page-root .ibot-hero-copy,
+    .ibot-page-root .ibot-hero-visual {
+        transition: none !important;
+    }
 }
 
 .ibot-modern-page {

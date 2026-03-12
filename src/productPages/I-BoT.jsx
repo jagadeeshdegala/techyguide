@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import './I-BoT.css';
-import heroBgLayer from '../assets/ProductI-BoTImages/5073198.jpg';
-import heroPattern from '../assets/ProductI-BoTImages/10893802.png';
 import heroRobot from '../assets/ProductI-BoTImages/vecteezy_ai-generated-cute-robot-kids-with-isolated-transparant_38049144.png';
 import mainBoard from '../assets/ProductI-BoTImages/main board.png';
 import kitImage from '../assets/ProductI-BoTImages/kit.jpg';
@@ -34,6 +32,8 @@ import DurabilityWarranty from '../assets/ProductI-BoTImages/Durability & Warran
 
 function IBoT() {
     const projectsRef = useRef(null);
+    const ibotHeroRef = useRef(null);
+    const ibotHeroCanvasRef = useRef(null);
     const [activeKitSlide, setActiveKitSlide] = useState(0);
     const touchStartXRef = useRef(0);
     const touchEndXRef = useRef(0);
@@ -60,40 +60,224 @@ function IBoT() {
     }, []);
 
     useEffect(() => {
-        const heroImage = document.querySelector('.ibot-page-root .image-section img');
-        const heroButton = document.querySelector('.ibot-page-root .btn-secondary');
+        const hero = ibotHeroRef.current;
+        const canvas = ibotHeroCanvasRef.current;
+        if (!hero || !canvas) return undefined;
 
-        const handleButtonClick = (event) => {
-            event.preventDefault();
-            const target = document.getElementById('ibot-tech-focus');
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return undefined;
+
+        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const parallaxTargets = Array.from(hero.querySelectorAll('[data-depth]'));
+        const pointer = { x: 0, y: 0, active: false };
+        const particles = [];
+        const palette = [
+            'rgba(218, 255, 245, 0.58)',
+            'rgba(142, 242, 221, 0.55)',
+            'rgba(255, 255, 255, 0.48)',
+            'rgba(179, 255, 227, 0.36)'
+        ];
+
+        let reducedMotion = mediaQuery.matches;
+        let width = 0;
+        let height = 0;
+        let dpr = 1;
+        let rafId = 0;
+
+        const random = (min, max) => Math.random() * (max - min) + min;
+
+        const particleCount = () => Math.max(22, Math.min(68, Math.floor((width * height) / 24000)));
+
+        const createParticle = () => ({
+            x: random(0, width),
+            y: random(0, height),
+            r: random(1.2, 3.2),
+            vx: random(-0.26, 0.26),
+            vy: random(-0.18, 0.18),
+            alpha: random(0.34, 0.72),
+            color: palette[Math.floor(Math.random() * palette.length)]
+        });
+
+        const buildParticles = () => {
+            particles.length = 0;
+            for (let index = 0; index < particleCount(); index += 1) {
+                particles.push(createParticle());
             }
         };
 
-        const handleImgEnter = () => {
-            if (heroImage) heroImage.style.filter = 'drop-shadow(0 15px 40px rgba(0,0,0,0.6))';
+        const resize = () => {
+            const rect = hero.getBoundingClientRect();
+            width = Math.max(1, Math.floor(rect.width));
+            height = Math.max(1, Math.floor(rect.height));
+            dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+            canvas.width = Math.floor(width * dpr);
+            canvas.height = Math.floor(height * dpr);
+            canvas.style.width = `${width}px`;
+            canvas.style.height = `${height}px`;
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+            pointer.x = width * 0.5;
+            pointer.y = height * 0.5;
+            buildParticles();
+            drawFrame(!reducedMotion);
         };
 
-        const handleImgLeave = () => {
-            if (heroImage) heroImage.style.filter = 'drop-shadow(0 10px 30px rgba(0,0,0,0.5))';
+        const applyParallax = (clientX, clientY) => {
+            if (reducedMotion || parallaxTargets.length === 0) return;
+
+            const rect = hero.getBoundingClientRect();
+            const nx = (clientX - rect.left) / rect.width - 0.5;
+            const ny = (clientY - rect.top) / rect.height - 0.5;
+
+            parallaxTargets.forEach((node) => {
+                const depth = Number(node.dataset.depth || 0.02);
+                const tx = nx * depth * 150;
+                const ty = ny * depth * 120;
+                node.style.transform = `translate3d(${tx.toFixed(2)}px, ${ty.toFixed(2)}px, 0)`;
+            });
         };
 
-        if (heroButton) heroButton.addEventListener('click', handleButtonClick);
-        if (heroImage) {
-            heroImage.addEventListener('mouseenter', handleImgEnter);
-            heroImage.addEventListener('mouseleave', handleImgLeave);
-            heroImage.addEventListener('touchstart', handleImgEnter);
-            heroImage.addEventListener('touchend', handleImgLeave);
+        const resetParallax = () => {
+            parallaxTargets.forEach((node) => {
+                node.style.transform = '';
+            });
+        };
+
+        const drawConnections = () => {
+            for (let i = 0; i < particles.length; i += 1) {
+                const a = particles[i];
+                for (let j = i + 1; j < particles.length; j += 1) {
+                    const b = particles[j];
+                    const dx = a.x - b.x;
+                    const dy = a.y - b.y;
+                    const dist = Math.hypot(dx, dy);
+                    if (dist > 120) continue;
+
+                    const opacity = (1 - dist / 120) * 0.18;
+                    ctx.strokeStyle = `rgba(194, 255, 238, ${opacity})`;
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(a.x, a.y);
+                    ctx.lineTo(b.x, b.y);
+                    ctx.stroke();
+                }
+            }
+        };
+
+        const updateParticle = (particle) => {
+            particle.x += particle.vx;
+            particle.y += particle.vy;
+
+            if (particle.x < -12) particle.x = width + 12;
+            if (particle.x > width + 12) particle.x = -12;
+            if (particle.y < -12) particle.y = height + 12;
+            if (particle.y > height + 12) particle.y = -12;
+
+            if (!pointer.active) return;
+            const dx = particle.x - pointer.x;
+            const dy = particle.y - pointer.y;
+            const dist = Math.hypot(dx, dy);
+            if (dist > 90 || dist === 0) return;
+
+            const repel = (90 - dist) / 90;
+            particle.x += (dx / dist) * repel * 0.65;
+            particle.y += (dy / dist) * repel * 0.65;
+        };
+
+        const drawFrame = (animate) => {
+            ctx.clearRect(0, 0, width, height);
+
+            particles.forEach((particle) => {
+                if (animate) updateParticle(particle);
+
+                ctx.fillStyle = particle.color;
+                ctx.globalAlpha = particle.alpha;
+                ctx.beginPath();
+                ctx.arc(particle.x, particle.y, particle.r, 0, Math.PI * 2);
+                ctx.fill();
+            });
+
+            ctx.globalAlpha = 1;
+            drawConnections();
+        };
+
+        const tick = () => {
+            drawFrame(true);
+            rafId = window.requestAnimationFrame(tick);
+        };
+
+        const stop = () => {
+            window.cancelAnimationFrame(rafId);
+            rafId = 0;
+        };
+
+        const start = () => {
+            stop();
+            if (reducedMotion) {
+                drawFrame(false);
+                return;
+            }
+            tick();
+        };
+
+        const handlePointerMove = (event) => {
+            const rect = hero.getBoundingClientRect();
+            pointer.active = true;
+            pointer.x = event.clientX - rect.left;
+            pointer.y = event.clientY - rect.top;
+            applyParallax(event.clientX, event.clientY);
+        };
+
+        const handlePointerLeave = () => {
+            pointer.active = false;
+            resetParallax();
+        };
+
+        const handleVisibilityChange = () => {
+            if (document.hidden) {
+                stop();
+                return;
+            }
+            start();
+        };
+
+        const onMotionChange = (event) => {
+            reducedMotion = event.matches;
+            hero.dataset.reducedMotion = reducedMotion ? 'true' : 'false';
+            if (reducedMotion) {
+                resetParallax();
+                pointer.active = false;
+            }
+            start();
+        };
+
+        hero.addEventListener('pointermove', handlePointerMove);
+        hero.addEventListener('pointerleave', handlePointerLeave);
+        window.addEventListener('resize', resize);
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+
+        if (typeof mediaQuery.addEventListener === 'function') {
+            mediaQuery.addEventListener('change', onMotionChange);
+        } else if (typeof mediaQuery.addListener === 'function') {
+            mediaQuery.addListener(onMotionChange);
         }
 
+        hero.dataset.reducedMotion = reducedMotion ? 'true' : 'false';
+        resize();
+        start();
+
         return () => {
-            if (heroButton) heroButton.removeEventListener('click', handleButtonClick);
-            if (heroImage) {
-                heroImage.removeEventListener('mouseenter', handleImgEnter);
-                heroImage.removeEventListener('mouseleave', handleImgLeave);
-                heroImage.removeEventListener('touchstart', handleImgEnter);
-                heroImage.removeEventListener('touchend', handleImgLeave);
+            stop();
+            hero.removeEventListener('pointermove', handlePointerMove);
+            hero.removeEventListener('pointerleave', handlePointerLeave);
+            window.removeEventListener('resize', resize);
+            document.removeEventListener('visibilitychange', handleVisibilityChange);
+
+            if (typeof mediaQuery.removeEventListener === 'function') {
+                mediaQuery.removeEventListener('change', onMotionChange);
+            } else if (typeof mediaQuery.removeListener === 'function') {
+                mediaQuery.removeListener(onMotionChange);
             }
         };
     }, []);
@@ -222,28 +406,50 @@ function IBoT() {
         };
     }, []);
 
-    const heroBackgroundStyle = {
-        backgroundImage: `linear-gradient(120deg, rgba(0, 130, 115, 0.25), rgba(0, 130, 115, 0.25)), url(${heroPattern}), linear-gradient(90deg, rgba(0, 130, 115, 0.6), rgba(0, 130, 115, 0.6)), url(${heroBgLayer})`,
-        backgroundRepeat: 'no-repeat, no-repeat, no-repeat, no-repeat',
-        backgroundPosition: 'left center, left center, left center, center center',
-        backgroundAttachment: 'fixed, fixed, fixed, fixed',
-        backgroundSize: 'cover, cover, cover, cover'
-    };
-
     return (
-        <div className="ibot-page-root" style={heroBackgroundStyle}>
-            <div className="background-container">
-                <main className="content-layout">
-                    <div className="image-section">
-                        <img src={heroimg} alt="I-BoT Robot" />
+        <div className="ibot-page-root">
+            <header className="ibot-hero-root" id="home" ref={ibotHeroRef}>
+                <canvas className="ibot-hero-canvas" aria-hidden="true" ref={ibotHeroCanvasRef}></canvas>
+
+                <nav className="ibot-hero-nav" aria-label="Primary">
+                    <a className="ibot-hero-logo-pill" href="#home" aria-label="I-BoT home">I-BoT</a>
+                </nav>
+
+                <div className="ibot-hero-layout">
+                    <div className="ibot-hero-copy" data-depth="0.02">
+                        <p className="ibot-hero-eyebrow">STEM Learning For Kids</p>
+                        <h1>
+                            Build, Code &amp; Launch
+                            <span>Real I-BoT Projects</span>
+                        </h1>
+                        <p className="ibot-hero-subcopy">
+                            Kids build future skills with hands-on IBoT robotics, coding, and creative challenges.
+                        </p>
+                        <a className="ibot-hero-btn ibot-hero-btn-primary" href="#introduction" aria-label="Start free trial">
+                            Start Free Trial
+                        </a>
                     </div>
-                    <div className="info-section">
-                        <h1>I-BoT Kit</h1>
-                        <h2>Smart IoT robotics kit with 50+ projects</h2>
-                        <button className="btn-secondary">Explore Features</button>
+
+                    <div className="ibot-hero-visual" data-depth="0.035">
+                        <div className="ibot-hero-visual-ring" aria-hidden="true"></div>
+                        <div className="ibot-hero-photo-card">
+                            <img
+                                src={heroimg}
+                                alt="Student learning coding and robotics with I-BoT kit"
+                                className="ibot-hero-photo"
+                                width="700"
+                                height="480"
+                                fetchPriority="high"
+                                decoding="async"
+                            />
+                        </div>
+                        <div className="ibot-hero-floating-badge ibot-hero-badge-one" aria-hidden="true">Scratch + AI</div>
+                        <div className="ibot-hero-floating-badge ibot-hero-badge-two" aria-hidden="true">Hands-On Kits</div>
                     </div>
-                </main>
-            </div>
+                </div>
+
+                <div className="ibot-hero-wave" aria-hidden="true"></div>
+            </header>
 
             <div className="ibot-modern-page">
                 

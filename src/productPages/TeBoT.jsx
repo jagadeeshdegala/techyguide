@@ -20,8 +20,6 @@ import GuaranteedQuality from '../assets/ProductTeBoTImages/Why TeBot is the Ult
 import TeBotKitsforStudents1 from '../assets/ProductTeBoTImages/TeBot Kits for Students - 1.jpg';
 import TeBotKitsforStudents2 from '../assets/ProductTeBoTImages/TeBot Kits for Students - 2.jpg';
 import TeBotKitsforStudents3 from '../assets/ProductTeBoTImages/TeBot Kits for Students - 3.jpg';
-import bgImage1 from '../assets/ProductTeBoTImages/9743539.png';
-import bgImage2 from '../assets/ProductTeBoTImages/5073198.jpg';
 import tebotProjectsImage from '../assets/ProductTeBoTImages/robot_2582246.png';
 // import ZohoBiginForm from '../components/ZohoBiginForm';
 //hero image
@@ -30,6 +28,8 @@ function TeBoT() {
     const [activeKitSlide, setActiveKitSlide] = useState(0);
     const touchStartXRef = useRef(0);
     const touchEndXRef = useRef(0);
+    const heroSectionRef = useRef(null);
+    const heroCanvasRef = useRef(null);
 
     useEffect(() => {
         document.title = 'TeBOT Robotics Kit for Classrooms | 50+ STEM Projects';
@@ -135,10 +135,268 @@ function TeBoT() {
     };
 
     useEffect(() => {
+        const hero = heroSectionRef.current;
+        const canvas = heroCanvasRef.current;
+        if (!hero || !canvas) return undefined;
+
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return undefined;
+
+        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const parallaxTargets = Array.from(hero.querySelectorAll('[data-depth]'));
+        const pointer = { x: 0, y: 0, active: false };
+        const bubbles = [];
+        const sparkles = [];
+
+        let reducedMotion = mediaQuery.matches;
+        let width = 0;
+        let height = 0;
+        let dpr = 1;
+        let rafId = 0;
+        let time = 0;
+
+        const random = (min, max) => Math.random() * (max - min) + min;
+
+        const bubbleCount = () => Math.max(12, Math.min(30, Math.floor((width * height) / 42000)));
+        const sparkleCount = () => Math.max(16, Math.min(52, Math.floor((width * height) / 30000)));
+
+        const createBubble = () => ({
+            x: random(-30, width + 30),
+            y: random(0, height),
+            r: random(10, 42),
+            speed: random(0.15, 0.45),
+            drift: random(-0.2, 0.2),
+            phase: random(0, Math.PI * 2),
+            alpha: random(0.08, 0.2)
+        });
+
+        const createSparkle = () => ({
+            x: random(0, width),
+            y: random(0, height * 0.72),
+            r: random(0.9, 2.1),
+            phase: random(0, Math.PI * 2),
+            twinkle: random(0.8, 1.6)
+        });
+
+        const seedScene = () => {
+            bubbles.length = 0;
+            sparkles.length = 0;
+
+            for (let index = 0; index < bubbleCount(); index += 1) {
+                bubbles.push(createBubble());
+            }
+
+            for (let index = 0; index < sparkleCount(); index += 1) {
+                sparkles.push(createSparkle());
+            }
+        };
+
+        const drawWave = (baseY, amplitude, wavelength, speed, color) => {
+            ctx.beginPath();
+            ctx.moveTo(0, height);
+
+            const frequency = (Math.PI * 2) / wavelength;
+            for (let x = 0; x <= width + 16; x += 16) {
+                const y = baseY + Math.sin(x * frequency + time * speed) * amplitude;
+                ctx.lineTo(x, y);
+            }
+
+            ctx.lineTo(width, height);
+            ctx.closePath();
+            ctx.fillStyle = color;
+            ctx.fill();
+        };
+
+        const updateBubble = (bubble) => {
+            bubble.y -= bubble.speed;
+            bubble.x += Math.sin(time * 0.015 + bubble.phase) * 0.25 + bubble.drift;
+
+            if (bubble.y + bubble.r < -10) {
+                bubble.y = height + bubble.r + random(0, 60);
+                bubble.x = random(-30, width + 30);
+            }
+
+            if (bubble.x < -50) bubble.x = width + 50;
+            if (bubble.x > width + 50) bubble.x = -50;
+
+            if (!pointer.active) return;
+            const dx = bubble.x - pointer.x;
+            const dy = bubble.y - pointer.y;
+            const dist = Math.hypot(dx, dy);
+
+            if (dist > 110 || dist === 0) return;
+
+            const repel = (110 - dist) / 110;
+            bubble.x += (dx / dist) * repel * 0.9;
+            bubble.y += (dy / dist) * repel * 0.9;
+        };
+
+        const drawBubble = (bubble) => {
+            const gradient = ctx.createRadialGradient(
+                bubble.x - bubble.r * 0.35,
+                bubble.y - bubble.r * 0.35,
+                1,
+                bubble.x,
+                bubble.y,
+                bubble.r
+            );
+            gradient.addColorStop(0, `rgba(225, 240, 255, ${bubble.alpha + 0.14})`);
+            gradient.addColorStop(1, `rgba(150, 190, 255, ${bubble.alpha * 0.3})`);
+
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.arc(bubble.x, bubble.y, bubble.r, 0, Math.PI * 2);
+            ctx.fill();
+        };
+
+        const drawSparkles = () => {
+            sparkles.forEach((sparkle) => {
+                const twinkle = 0.35 + 0.45 * Math.sin(time * 0.02 * sparkle.twinkle + sparkle.phase);
+                ctx.fillStyle = `rgba(230, 242, 255, ${twinkle})`;
+                ctx.beginPath();
+                ctx.arc(sparkle.x, sparkle.y, sparkle.r, 0, Math.PI * 2);
+                ctx.fill();
+            });
+        };
+
+        const drawFrame = (animate) => {
+            if (animate) time += 1;
+            ctx.clearRect(0, 0, width, height);
+
+            drawSparkles();
+            drawWave(height * 0.72, 16, 300, 0.012, 'rgba(116, 176, 255, 0.15)');
+            drawWave(height * 0.78, 22, 380, 0.009, 'rgba(84, 144, 238, 0.2)');
+            drawWave(height * 0.84, 28, 460, 0.007, 'rgba(53, 110, 214, 0.24)');
+
+            bubbles.forEach((bubble) => {
+                if (animate) updateBubble(bubble);
+                drawBubble(bubble);
+            });
+        };
+
+        const resize = () => {
+            const rect = hero.getBoundingClientRect();
+            width = Math.max(1, Math.floor(rect.width));
+            height = Math.max(1, Math.floor(rect.height));
+            dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+            canvas.width = Math.floor(width * dpr);
+            canvas.height = Math.floor(height * dpr);
+            canvas.style.width = `${width}px`;
+            canvas.style.height = `${height}px`;
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+            pointer.x = width * 0.5;
+            pointer.y = height * 0.5;
+            seedScene();
+            drawFrame(false);
+        };
+
+        const applyParallax = (clientX, clientY) => {
+            if (reducedMotion || parallaxTargets.length === 0) return;
+
+            const rect = hero.getBoundingClientRect();
+            const nx = (clientX - rect.left) / rect.width - 0.5;
+            const ny = (clientY - rect.top) / rect.height - 0.5;
+
+            parallaxTargets.forEach((node) => {
+                const depth = Number(node.dataset.depth || 0.02);
+                const tx = nx * depth * 140;
+                const ty = ny * depth * 110;
+                node.style.transform = `translate3d(${tx.toFixed(2)}px, ${ty.toFixed(2)}px, 0)`;
+            });
+        };
+
+        const resetParallax = () => {
+            parallaxTargets.forEach((node) => {
+                node.style.transform = '';
+            });
+        };
+
+        const tick = () => {
+            drawFrame(true);
+            rafId = window.requestAnimationFrame(tick);
+        };
+
+        const stop = () => {
+            window.cancelAnimationFrame(rafId);
+            rafId = 0;
+        };
+
+        const start = () => {
+            stop();
+            if (reducedMotion) {
+                drawFrame(false);
+                return;
+            }
+            tick();
+        };
+
+        const handlePointerMove = (event) => {
+            pointer.active = true;
+            pointer.x = event.clientX - hero.getBoundingClientRect().left;
+            pointer.y = event.clientY - hero.getBoundingClientRect().top;
+            applyParallax(event.clientX, event.clientY);
+        };
+
+        const handlePointerLeave = () => {
+            pointer.active = false;
+            resetParallax();
+        };
+
+        const handleVisibilityChange = () => {
+            if (document.hidden) {
+                stop();
+                return;
+            }
+            start();
+        };
+
+        const handleMotionChange = (event) => {
+            reducedMotion = event.matches;
+            hero.dataset.reducedMotion = reducedMotion ? 'true' : 'false';
+
+            if (reducedMotion) {
+                resetParallax();
+                pointer.active = false;
+            }
+
+            start();
+        };
+
+        hero.addEventListener('pointermove', handlePointerMove);
+        hero.addEventListener('pointerleave', handlePointerLeave);
+        window.addEventListener('resize', resize);
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+
+        if (typeof mediaQuery.addEventListener === 'function') {
+            mediaQuery.addEventListener('change', handleMotionChange);
+        } else if (typeof mediaQuery.addListener === 'function') {
+            mediaQuery.addListener(handleMotionChange);
+        }
+
+        hero.dataset.reducedMotion = reducedMotion ? 'true' : 'false';
+        resize();
+        start();
+
+        return () => {
+            stop();
+            hero.removeEventListener('pointermove', handlePointerMove);
+            hero.removeEventListener('pointerleave', handlePointerLeave);
+            window.removeEventListener('resize', resize);
+            document.removeEventListener('visibilitychange', handleVisibilityChange);
+
+            if (typeof mediaQuery.removeEventListener === 'function') {
+                mediaQuery.removeEventListener('change', handleMotionChange);
+            } else if (typeof mediaQuery.removeListener === 'function') {
+                mediaQuery.removeListener(handleMotionChange);
+            }
+        };
+    }, []);
+
+    useEffect(() => {
         const root = document.getElementById('tebot-root');
-        const heroImage = document.querySelector('.tebot-page-root .image-section img');
-        const heroTitle = document.querySelector('.tebot-page-root .info-section h1');
-        const heroButton = document.querySelector('.tebot-page-root .btn-secondary');
+        const heroButton = heroSectionRef.current?.querySelector('.tebot-hero-btn-primary');
 
         function smoothScrollTo(element, duration = 1000) {
             const targetPosition = element.offsetTop - 20;
@@ -164,48 +422,15 @@ function TeBoT() {
             requestAnimationFrame(animation);
         }
 
-        // Hero section interactions with no zoom effects
-        if (heroImage) {
-            heroImage.addEventListener('mouseenter', function() {
-                this.style.filter = 'drop-shadow(0 15px 40px rgba(0,0,0,0.6))';
-            });
-            
-            heroImage.addEventListener('mouseleave', function() {
-                this.style.filter = 'drop-shadow(0 10px 30px rgba(0,0,0,0.5))';
-            });
-            
-            heroImage.addEventListener('click', function() {
-                this.style.filter = 'drop-shadow(0 20px 50px rgba(0,0,0,0.7))';
-                setTimeout(() => {
-                    this.style.filter = 'drop-shadow(0 10px 30px rgba(0,0,0,0.5))';
-                }, 300);
-            });
-        }
-        
-        if (heroTitle) {
-            heroTitle.addEventListener('mouseenter', function() {
-                this.style.color = '#00d4ff';
-                this.style.textShadow = '0 0 20px rgba(0, 212, 255, 0.5)';
-            });
-            
-            heroTitle.addEventListener('mouseleave', function() {
-                this.style.color = 'rgb(255, 153, 0)';
-                this.style.textShadow = 'none';
-            });
-        }
-        
+        const handleButtonClick = (event) => {
+            event.preventDefault();
+            const introSection = document.getElementById('introduction');
+            if (introSection) {
+                smoothScrollTo(introSection, 1200);
+            }
+        };
+
         if (heroButton) {
-            const handleButtonClick = function(e) {
-                e.preventDefault();
-                this.style.transform = 'translateY(-1px)';
-                setTimeout(() => {
-                    this.style.transform = 'translateY(-2px)';
-                    const introSection = document.getElementById('introduction');
-                    if (introSection) {
-                        smoothScrollTo(introSection, 1200);
-                    }
-                }, 150);
-            };
             heroButton.addEventListener('click', handleButtonClick);
         }
 
@@ -321,50 +546,20 @@ function TeBoT() {
             });
         }
 
-        const contentLayout = document.querySelector('.tebot-page-root .content-layout');
-        if (contentLayout) {
-            contentLayout.style.opacity = '0';
-            contentLayout.style.transform = 'translateY(50px)';
-            
-            setTimeout(() => {
-                contentLayout.style.transition = 'all 1.2s cubic-bezier(0.4, 0, 0.2, 1)';
-                contentLayout.style.opacity = '1';
-                contentLayout.style.transform = 'translateY(-40px)';
-            }, 300);
-        }
-
         const handleKeyDown = function(e) {
             if (e.key === 'Enter' && e.target === heroButton) {
                 heroButton.click();
-            }
-            
-            if (e.key.toLowerCase() === 'r' && heroImage) {
-                heroImage.style.transition = 'transform 1s cubic-bezier(0.4, 0, 0.2, 1)';
-                heroImage.style.transform = 'rotate(360deg)';
-                setTimeout(() => {
-                    heroImage.style.transform = 'rotate(0deg)';
-                    setTimeout(() => {
-                        heroImage.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
-                    }, 1000);
-                }, 1000);
             }
         };
         
         document.addEventListener('keydown', handleKeyDown);
 
-        if (heroImage && 'ontouchstart' in window) {
-            heroImage.addEventListener('touchstart', function() {
-                this.style.filter = 'drop-shadow(0 15px 40px rgba(0,0,0,0.6))';
-            });
-            
-            heroImage.addEventListener('touchend', function() {
-                this.style.filter = 'drop-shadow(0 10px 30px rgba(0,0,0,0.5))';
-            });
-        }
-
         return () => {
             if (root) {
                 root.removeEventListener('click', handleAnchorClick);
+            }
+            if (heroButton) {
+                heroButton.removeEventListener('click', handleButtonClick);
             }
             document.removeEventListener('keydown', handleKeyDown);
             observer.disconnect();
@@ -372,32 +567,49 @@ function TeBoT() {
     }, []);
 
     return (
-        <div className="tebot-page-root" style={{
-            background: `
-                linear-gradient(rgba(0, 255, 149, 0.267), rgba(0, 130, 115, 0.25)),
-                url(${bgImage1}),
-                linear-gradient(rgba(0, 130, 115, 0.6), rgba(0, 130, 115, 0.6)),
-                url(${bgImage2}),
-                #008273
-            `,
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: '60% 30%',
-            backgroundAttachment: 'fixed',
-            backgroundSize: 'cover'
-        }}>
-            {/* ===== HERO SECTION - EXACTLY PRESERVED ===== */}
-            <div className="background-container">
-                <main className="content-layout">
-                    <div className="image-section">
-                        <img src={heroImage} alt="TEBOT Robot" />
+        <div className="tebot-page-root">
+            <header className="tebot-hero-section" id="home" ref={heroSectionRef}>
+                <canvas className="tebot-hero-canvas" aria-hidden="true" ref={heroCanvasRef}></canvas>
+
+                <nav className="tebot-hero-nav" aria-label="Primary">
+                    <a className="tebot-hero-logo-pill" href="#home" aria-label="TeBot home">TeBot</a>
+                </nav>
+
+                <div className="tebot-hero-layout">
+                    <div className="tebot-hero-copy" data-depth="0.02">
+                        <p className="tebot-hero-eyebrow">STEM Learning For Kids</p>
+                        <h1>
+                            Build, Code &amp; Invent
+                            <span>Awesome TeBot Projects</span>
+                        </h1>
+                        <p className="tebot-hero-subcopy">
+                            A playful robotics journey where kids create real builds, write code, and solve smart challenges.
+                        </p>
+                        <a className="tebot-hero-btn tebot-hero-btn-primary" href="#introduction" aria-label="Explore TeBot features">
+                            Start Free Trial
+                        </a>
                     </div>
-                    <div className="info-section">
-                        <h1>TeBOT Kit</h1>
-                        <h2>TeBOT Robotics Kit for Young Innovators – Build 50+ Projects </h2>
-                        <button className="btn-secondary">Explore Features</button>
+
+                    <div className="tebot-hero-visual" data-depth="0.035">
+                        <div className="tebot-hero-visual-ring" aria-hidden="true"></div>
+                        <div className="tebot-hero-photo-card">
+                            <img
+                                src={heroImage}
+                                alt="Student learning coding and robotics with TeBot kit"
+                                className="tebot-hero-photo"
+                                width="700"
+                                height="480"
+                                fetchPriority="high"
+                                decoding="async"
+                            />
+                        </div>
+                        <div className="tebot-hero-floating-badge tebot-hero-badge-one" aria-hidden="true">Scratch + Sensors</div>
+                        <div className="tebot-hero-floating-badge tebot-hero-badge-two" aria-hidden="true">Build + Code</div>
                     </div>
-                </main>
-            </div>
+                </div>
+
+                <div className="tebot-hero-wave" aria-hidden="true"></div>
+            </header>
 
             {/* ===== CONTENT SECTIONS ===== */}
             <div className="ibot-page" id="tebot-root">

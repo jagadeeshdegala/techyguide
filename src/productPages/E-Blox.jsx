@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './E-Blox.css';
 
 import robotKids from '../assets/ProductE-BloxImages/vecteezy_ai-generated-cute-robot-kids-with-isolated-transparant_38049144.png';
@@ -6,8 +6,6 @@ import robot1 from '../assets/ProductE-BloxImages/robot_2582246.png';
 import robot2 from '../assets/ProductE-BloxImages/robotics_12775607.png';
 import robot3 from '../assets/ProductE-BloxImages/robot_3558910.png';
 import robot4 from '../assets/ProductE-BloxImages/robot_4512237.png';
-import bgImage1 from '../assets/ProductE-BloxImages/9743528.png';
-import bgImage2 from '../assets/ProductE-BloxImages/5073198.jpg';
 // hero section image
 import Heroimage from '../assets/ProductE-BloxImages/Hero image - 1.png';
 
@@ -34,6 +32,8 @@ import ebloxStarterKit from '../assets/ProductE-BloxImages/E-Blox Kit Offerings 
 
 export default function EBlox() {
     const [activeKitSlide, setActiveKitSlide] = useState(0);
+    const ebloxHeroRef = useRef(null);
+    const ebloxHeroCanvasRef = useRef(null);
 
     useEffect(() => {
         const previousTitle = document.title;
@@ -127,65 +127,460 @@ export default function EBlox() {
     };
 
     useEffect(() => {
-        const heroImage = document.querySelector('.eblox-page-root .image-section img');
-        const heroButton = document.querySelector('.eblox-page-root .btn-secondary');
+        const hero = ebloxHeroRef.current;
+        const canvas = ebloxHeroCanvasRef.current;
+        if (!hero || !canvas) return undefined;
 
-        const handleButtonClick = (event) => {
-            event.preventDefault();
-            const target = document.getElementById('eblox-tech-focus');
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return undefined;
+
+        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const parallaxTargets = Array.from(hero.querySelectorAll('[data-depth]'));
+        const pointer = { x: 0, y: 0, active: false };
+
+        const bubbles = [];
+        const stickers = [];
+        const sparkles = [];
+
+        const waveLayers = [
+            { base: 0.34, amp: 16, speed: 0.018, width: 2.5, color: 'rgba(255, 219, 141, 0.30)' },
+            { base: 0.48, amp: 22, speed: 0.014, width: 3, color: 'rgba(166, 255, 202, 0.26)' },
+            { base: 0.63, amp: 18, speed: 0.011, width: 2.4, color: 'rgba(206, 211, 255, 0.25)' },
+        ];
+
+        const bubblePalette = ['255,216,140', '178,255,205', '211,220,255', '255,182,152'];
+        const stickerPalette = [
+            'rgba(255, 214, 124, 0.45)',
+            'rgba(157, 255, 196, 0.40)',
+            'rgba(199, 211, 255, 0.46)',
+            'rgba(255, 170, 138, 0.38)',
+        ];
+
+        let reducedMotion = mediaQuery.matches;
+        let width = 0;
+        let height = 0;
+        let dpr = 1;
+        let rafId = 0;
+        let frame = 0;
+
+        const random = (min, max) => Math.random() * (max - min) + min;
+        const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
+        const bubbleCount = () => Math.max(14, Math.min(34, Math.floor((width * height) / 33000)));
+        const stickerCount = () => Math.max(10, Math.min(24, Math.floor((width * height) / 51000)));
+        const sparkleCount = () => Math.max(26, Math.min(70, Math.floor((width * height) / 19000)));
+
+        const createBubble = () => ({
+            x: random(0, width),
+            y: random(0, height),
+            r: random(16, 46),
+            vy: random(0.16, 0.44),
+            sway: random(0.7, 1.6),
+            phase: random(0, Math.PI * 2),
+            alpha: random(0.12, 0.3),
+            tint: pick(bubblePalette),
+        });
+
+        const createSticker = () => {
+            const shapes = ['square', 'triangle', 'plus', 'diamond'];
+            return {
+                x: random(-30, width + 30),
+                y: random(-30, height + 30),
+                size: random(10, 24),
+                vx: random(-0.16, 0.16),
+                vy: random(-0.12, 0.14),
+                phase: random(0, Math.PI * 2),
+                rotation: random(0, Math.PI * 2),
+                spin: random(-0.012, 0.012),
+                alpha: random(0.3, 0.62),
+                shape: pick(shapes),
+                color: pick(stickerPalette),
+            };
+        };
+
+        const createSparkle = () => ({
+            x: random(0, width),
+            y: random(0, height),
+            r: random(0.7, 1.9),
+            phase: random(0, Math.PI * 2),
+            twinkle: random(0.8, 1.9),
+        });
+
+        const seedScene = () => {
+            bubbles.length = 0;
+            stickers.length = 0;
+            sparkles.length = 0;
+
+            for (let i = 0; i < bubbleCount(); i += 1) bubbles.push(createBubble());
+            for (let i = 0; i < stickerCount(); i += 1) stickers.push(createSticker());
+            for (let i = 0; i < sparkleCount(); i += 1) sparkles.push(createSparkle());
+        };
+
+        const applyParallax = (clientX, clientY) => {
+            if (reducedMotion || parallaxTargets.length === 0) return;
+
+            const rect = hero.getBoundingClientRect();
+            const nx = (clientX - rect.left) / rect.width - 0.5;
+            const ny = (clientY - rect.top) / rect.height - 0.5;
+
+            for (const node of parallaxTargets) {
+                const depth = Number(node.dataset.depth || 0.02);
+                const tx = nx * depth * 160;
+                const ty = ny * depth * 130;
+                node.style.transform = `translate3d(${tx.toFixed(2)}px, ${ty.toFixed(2)}px, 0)`;
             }
         };
 
-        const handleImgEnter = () => {
-            if (heroImage) heroImage.style.filter = 'drop-shadow(0 15px 40px rgba(0,0,0,0.6))';
+        const resetParallax = () => {
+            for (const node of parallaxTargets) node.style.transform = '';
         };
 
-        const handleImgLeave = () => {
-            if (heroImage) heroImage.style.filter = 'drop-shadow(0 10px 30px rgba(0,0,0,0.5))';
+        const drawRoundedRect = (x, y, w, h, r) => {
+            const radius = Math.min(r, w * 0.5, h * 0.5);
+            ctx.beginPath();
+            ctx.moveTo(x + radius, y);
+            ctx.lineTo(x + w - radius, y);
+            ctx.quadraticCurveTo(x + w, y, x + w, y + radius);
+            ctx.lineTo(x + w, y + h - radius);
+            ctx.quadraticCurveTo(x + w, y + h, x + w - radius, y + h);
+            ctx.lineTo(x + radius, y + h);
+            ctx.quadraticCurveTo(x, y + h, x, y + h - radius);
+            ctx.lineTo(x, y + radius);
+            ctx.quadraticCurveTo(x, y, x + radius, y);
+            ctx.closePath();
         };
 
-        if (heroButton) heroButton.addEventListener('click', handleButtonClick);
-        if (heroImage) {
-            heroImage.addEventListener('mouseenter', handleImgEnter);
-            heroImage.addEventListener('mouseleave', handleImgLeave);
-            heroImage.addEventListener('touchstart', handleImgEnter);
-            heroImage.addEventListener('touchend', handleImgLeave);
+        const drawWaves = () => {
+            const localPower = pointer.active ? (pointer.y / height - 0.5) * 26 : 0;
+
+            for (let i = 0; i < waveLayers.length; i += 1) {
+                const wave = waveLayers[i];
+                ctx.beginPath();
+
+                for (let x = -20; x <= width + 20; x += 16) {
+                    const ripple =
+                        Math.sin(x * 0.011 + frame * wave.speed + i * 1.3) * wave.amp +
+                        Math.cos(x * 0.004 - frame * wave.speed * 1.4 + i * 0.8) * (wave.amp * 0.35);
+
+                    let pointerLift = 0;
+                    if (pointer.active) {
+                        const distance = Math.abs(x - pointer.x);
+                        pointerLift = Math.max(0, 1 - distance / 180) * localPower;
+                    }
+
+                    const y = height * wave.base + ripple + pointerLift;
+                    if (x === -20) {
+                        ctx.moveTo(x, y);
+                    } else {
+                        ctx.lineTo(x, y);
+                    }
+                }
+
+                ctx.strokeStyle = wave.color;
+                ctx.lineWidth = wave.width;
+                ctx.shadowColor = 'rgba(255, 228, 185, 0.2)';
+                ctx.shadowBlur = 10;
+                ctx.stroke();
+                ctx.shadowBlur = 0;
+            }
+        };
+
+        const updateBubble = (bubble) => {
+            bubble.y -= bubble.vy;
+            bubble.x += Math.sin(frame * 0.01 * bubble.sway + bubble.phase) * 0.33;
+
+            if (bubble.y < -bubble.r - 8) {
+                bubble.y = height + bubble.r + random(0, 70);
+                bubble.x = random(0, width);
+                bubble.r = random(16, 46);
+                bubble.vy = random(0.16, 0.44);
+                bubble.tint = pick(bubblePalette);
+            }
+        };
+
+        const drawBubble = (bubble) => {
+            const g = ctx.createRadialGradient(
+                bubble.x - bubble.r * 0.2,
+                bubble.y - bubble.r * 0.2,
+                bubble.r * 0.15,
+                bubble.x,
+                bubble.y,
+                bubble.r
+            );
+
+            g.addColorStop(0, `rgba(${bubble.tint}, ${Math.min(0.45, bubble.alpha + 0.16)})`);
+            g.addColorStop(1, `rgba(${bubble.tint}, 0)`);
+
+            ctx.fillStyle = g;
+            ctx.beginPath();
+            ctx.arc(bubble.x, bubble.y, bubble.r, 0, Math.PI * 2);
+            ctx.fill();
+        };
+
+        const updateSticker = (sticker) => {
+            sticker.x += sticker.vx;
+            sticker.y += sticker.vy + Math.sin(frame * 0.02 + sticker.phase) * 0.04;
+            sticker.rotation += sticker.spin;
+
+            const margin = 36;
+            if (sticker.x < -margin) sticker.x = width + margin;
+            if (sticker.x > width + margin) sticker.x = -margin;
+            if (sticker.y < -margin) sticker.y = height + margin;
+            if (sticker.y > height + margin) sticker.y = -margin;
+        };
+
+        const drawSticker = (sticker) => {
+            ctx.save();
+            ctx.translate(sticker.x, sticker.y);
+            ctx.rotate(sticker.rotation);
+            ctx.globalAlpha = sticker.alpha;
+            ctx.fillStyle = sticker.color;
+            ctx.strokeStyle = 'rgba(248, 239, 255, 0.7)';
+            ctx.lineWidth = 1;
+
+            switch (sticker.shape) {
+                case 'triangle': {
+                    ctx.beginPath();
+                    ctx.moveTo(0, -sticker.size * 0.7);
+                    ctx.lineTo(sticker.size * 0.62, sticker.size * 0.55);
+                    ctx.lineTo(-sticker.size * 0.62, sticker.size * 0.55);
+                    ctx.closePath();
+                    ctx.fill();
+                    ctx.stroke();
+                    break;
+                }
+                case 'plus': {
+                    const s = sticker.size;
+                    drawRoundedRect(-s * 0.5, -s * 0.16, s, s * 0.32, s * 0.1);
+                    ctx.fill();
+                    ctx.stroke();
+                    drawRoundedRect(-s * 0.16, -s * 0.5, s * 0.32, s, s * 0.1);
+                    ctx.fill();
+                    ctx.stroke();
+                    break;
+                }
+                case 'diamond': {
+                    ctx.rotate(Math.PI / 4);
+                    drawRoundedRect(
+                        -sticker.size * 0.5,
+                        -sticker.size * 0.5,
+                        sticker.size,
+                        sticker.size,
+                        sticker.size * 0.18
+                    );
+                    ctx.fill();
+                    ctx.stroke();
+                    break;
+                }
+                default: {
+                    drawRoundedRect(
+                        -sticker.size * 0.5,
+                        -sticker.size * 0.5,
+                        sticker.size,
+                        sticker.size,
+                        sticker.size * 0.22
+                    );
+                    ctx.fill();
+                    ctx.stroke();
+                }
+            }
+
+            ctx.restore();
+        };
+
+        const drawSparkles = () => {
+            for (const sparkle of sparkles) {
+                const pulse = 0.2 + 0.55 * Math.sin(frame * 0.03 * sparkle.twinkle + sparkle.phase);
+                ctx.fillStyle = `rgba(247, 239, 255, ${pulse})`;
+                ctx.beginPath();
+                ctx.arc(sparkle.x, sparkle.y, sparkle.r, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        };
+
+        const drawPointerGlow = () => {
+            if (!pointer.active) return;
+            const glow = ctx.createRadialGradient(pointer.x, pointer.y, 0, pointer.x, pointer.y, 130);
+            glow.addColorStop(0, 'rgba(255, 229, 176, 0.26)');
+            glow.addColorStop(1, 'rgba(255, 229, 176, 0)');
+            ctx.fillStyle = glow;
+            ctx.beginPath();
+            ctx.arc(pointer.x, pointer.y, 130, 0, Math.PI * 2);
+            ctx.fill();
+        };
+
+        const drawFrame = (animate) => {
+            if (animate) frame += 1;
+
+            ctx.clearRect(0, 0, width, height);
+            drawWaves();
+
+            for (const bubble of bubbles) {
+                if (animate) updateBubble(bubble);
+                drawBubble(bubble);
+            }
+
+            for (const sticker of stickers) {
+                if (animate) updateSticker(sticker);
+                drawSticker(sticker);
+            }
+
+            drawSparkles();
+            drawPointerGlow();
+        };
+
+        const tick = () => {
+            drawFrame(true);
+            rafId = window.requestAnimationFrame(tick);
+        };
+
+        const stop = () => {
+            window.cancelAnimationFrame(rafId);
+            rafId = 0;
+        };
+
+        const start = () => {
+            stop();
+            if (reducedMotion) {
+                drawFrame(false);
+                return;
+            }
+            tick();
+        };
+
+        const resize = () => {
+            const rect = hero.getBoundingClientRect();
+            width = Math.max(1, Math.floor(rect.width));
+            height = Math.max(1, Math.floor(rect.height));
+            dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+            canvas.width = Math.floor(width * dpr);
+            canvas.height = Math.floor(height * dpr);
+            canvas.style.width = `${width}px`;
+            canvas.style.height = `${height}px`;
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+            pointer.x = width * 0.5;
+            pointer.y = height * 0.5;
+            seedScene();
+            drawFrame(false);
+        };
+
+        const handlePointerMove = (event) => {
+            pointer.active = true;
+            pointer.x = event.clientX - hero.getBoundingClientRect().left;
+            pointer.y = event.clientY - hero.getBoundingClientRect().top;
+            applyParallax(event.clientX, event.clientY);
+        };
+
+        const handlePointerLeave = () => {
+            pointer.active = false;
+            resetParallax();
+        };
+
+        const handleVisibilityChange = () => {
+            if (document.hidden) {
+                stop();
+                return;
+            }
+            start();
+        };
+
+        const onMotionChange = (event) => {
+            reducedMotion = event.matches;
+            hero.dataset.reducedMotion = reducedMotion ? 'true' : 'false';
+            if (reducedMotion) {
+                pointer.active = false;
+                resetParallax();
+            }
+            start();
+        };
+
+        hero.addEventListener('pointermove', handlePointerMove);
+        hero.addEventListener('pointerleave', handlePointerLeave);
+        window.addEventListener('resize', resize);
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+
+        if (typeof mediaQuery.addEventListener === 'function') {
+            mediaQuery.addEventListener('change', onMotionChange);
+        } else if (typeof mediaQuery.addListener === 'function') {
+            mediaQuery.addListener(onMotionChange);
         }
 
+        hero.dataset.reducedMotion = reducedMotion ? 'true' : 'false';
+        resize();
+        start();
+
         return () => {
-            if (heroButton) heroButton.removeEventListener('click', handleButtonClick);
-            if (heroImage) {
-                heroImage.removeEventListener('mouseenter', handleImgEnter);
-                heroImage.removeEventListener('mouseleave', handleImgLeave);
-                heroImage.removeEventListener('touchstart', handleImgEnter);
-                heroImage.removeEventListener('touchend', handleImgLeave);
+            stop();
+            hero.removeEventListener('pointermove', handlePointerMove);
+            hero.removeEventListener('pointerleave', handlePointerLeave);
+            window.removeEventListener('resize', resize);
+            document.removeEventListener('visibilitychange', handleVisibilityChange);
+
+            if (typeof mediaQuery.removeEventListener === 'function') {
+                mediaQuery.removeEventListener('change', onMotionChange);
+            } else if (typeof mediaQuery.removeListener === 'function') {
+                mediaQuery.removeListener(onMotionChange);
             }
         };
     }, []);
 
+    const handleHeroButtonClick = (event) => {
+        event.preventDefault();
+        const target = document.getElementById('eblox-tech-focus');
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
     return (
-        <div className="eblox-page-root" style={{
-            backgroundImage: `linear-gradient(rgba(0, 255, 149, 0.267), rgba(0, 130, 115, 0.25)), url(${bgImage1}), linear-gradient(rgba(0, 130, 115, 0.6), rgba(0, 130, 115, 0.6)), url(${bgImage2})`,
-            backgroundColor: '#008273',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: '80% 50%',
-            backgroundAttachment: 'fixed',
-            backgroundSize: 'cover'
-        }}>
-            <div className="background-container">
-                <main className="content-layout">
-                    <div className="image-section">
-                        <img src={Heroimage} alt="E-Blox Kit" />
+        <div className="eblox-page-root">
+            <header className="eblox-hero-root" id="home" ref={ebloxHeroRef}>
+                <canvas className="eblox-hero-canvas" aria-hidden="true" ref={ebloxHeroCanvasRef}></canvas>
+
+                <nav className="eblox-hero-nav" aria-label="Primary">
+                    <a className="eblox-hero-logo-pill" href="#" aria-label="E-BLOX home">E-BLOX</a>
+                </nav>
+
+                <div className="eblox-hero-layout">
+                    <div className="eblox-hero-copy" data-depth="0.02">
+                        <p className="eblox-hero-eyebrow">Block-Based STEM For Kids</p>
+                        <h1>
+                            Snap, Stack &amp; Code
+                            <span>Creative E-BLOX Missions</span>
+                        </h1>
+                        <p className="eblox-hero-subcopy">
+                            Kids build logic and creativity with playful eBlox kits, coding games, and hands-on mini missions.
+                        </p>
+                        <a
+                            className="eblox-hero-btn eblox-hero-btn-primary"
+                            href="#eblox-tech-focus"
+                            aria-label="Start eBlox class"
+                            onClick={handleHeroButtonClick}
+                        >
+                            Start eBlox Class
+                        </a>
                     </div>
-                    <div className="info-section">
-                        <h1>E-Blox Kit</h1>
-                        <h2>E-Blox Modular electronics kit for engineering education with 20+ components</h2>
-                        <button className="btn-secondary">Explore Features</button>
+
+                    <div className="eblox-hero-visual" data-depth="0.035">
+                        <div className="eblox-hero-photo-card">
+                            <img
+                                src={Heroimage}
+                                alt="Student learning with eBlox robotics and coding kit"
+                                className="eblox-hero-photo"
+                                width="700"
+                                height="480"
+                                fetchPriority="high"
+                                decoding="async"
+                            />
+                        </div>
+                        <div className="eblox-hero-floating-badge eblox-hero-badge-one" aria-hidden="true">Block Logic + Code</div>
+                        <div className="eblox-hero-floating-badge eblox-hero-badge-two" aria-hidden="true">Build + Play</div>
                     </div>
-                </main>
-            </div>
+                </div>
+
+                <div className="eblox-hero-wave" aria-hidden="true"></div>
+            </header>
 
             <div className="eblox-page">
                 {/* Introduction Section */}

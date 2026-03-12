@@ -1,9 +1,477 @@
 /* Fully sandboxed: every selector is prefixed with .addonkit-page-root */
 
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap");
+
+.addonkit-page-root .addon-hero-root {
+	--addon-header-offset: 113px;
+	--addon-bg-0: #083640;
+	--addon-bg-1: #0b4f62;
+	--addon-bg-2: #0f7288;
+	--addon-text-strong: #ecfcff;
+	--addon-text-soft: #c8edf4;
+	--addon-border: rgba(170, 248, 238, 0.45);
+	--addon-shadow: 0 8px 18px rgba(5, 44, 54, 0.34);
+	position: relative;
+	margin-top: var(--addon-header-offset);
+	scroll-margin-top: var(--addon-header-offset);
+	overflow: hidden;
+	height: auto;
+	min-height: calc(80vh - var(--addon-header-offset));
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	top: 0px;
+	padding: clamp(1rem, 2vw, 1.8rem) clamp(1rem, 5vw, 4rem) clamp(2.1rem, 4vw, 4.2rem);
+	background:
+		radial-gradient(920px 440px at 84% -14%, rgba(255, 185, 122, 0.22), transparent 65%),
+		radial-gradient(680px 330px at 8% 10%, rgba(143, 255, 233, 0.17), transparent 70%),
+		linear-gradient(165deg, var(--addon-bg-2) 0%, var(--addon-bg-1) 56%, var(--addon-bg-0) 100%);
+	color: var(--addon-text-strong);
+	isolation: isolate;
+	z-index: 1;
+}
+
+.addonkit-page-root .addon-hero-root::before,
+.addonkit-page-root .addon-hero-root::after {
+	content: "";
+	position: absolute;
+	pointer-events: none;
+	filter: blur(0.2px);
+	z-index: 0;
+}
+
+.addonkit-page-root .addon-hero-root::before {
+	inset: -16%;
+	width: auto;
+	aspect-ratio: auto;
+	border-radius: 0;
+	background:
+		radial-gradient(220px 92px at 14% 16%, rgba(224, 252, 255, 0.2), transparent 68%),
+		radial-gradient(250px 102px at 58% 6%, rgba(224, 252, 255, 0.2), transparent 70%),
+		radial-gradient(290px 108px at 90% 22%, rgba(224, 252, 255, 0.24), transparent 72%);
+	animation: addonHeroDriftA 14s ease-in-out infinite alternate;
+}
+
+.addonkit-page-root .addon-hero-root::after {
+	left: -14vw;
+	right: -14vw;
+	bottom: -44vh;
+	height: 60vh;
+	width: auto;
+	aspect-ratio: auto;
+	border-radius: 56% 56% 0 0 / 100% 100% 0 0;
+	background:
+		radial-gradient(70% 75% at 50% 0%, rgba(255, 192, 126, 0.19), transparent 70%),
+		linear-gradient(180deg, #095064 0%, #062d36 100%);
+	animation: addonHeroDriftB 16s ease-in-out infinite alternate;
+}
+
+.addonkit-page-root .addon-hero-canvas {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+	z-index: -3;
+	pointer-events: none;
+	opacity: 0.62;
+	mix-blend-mode: screen;
+}
+
+.addonkit-page-root .addon-hero-nav {
+	position: relative;
+	z-index: 2;
+	display: flex;
+	justify-content: flex-start;
+	margin-bottom: clamp(28px, 6vh, 60px);
+}
+
+.addonkit-page-root .addon-hero-logo-pill {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.45rem 1.15rem;
+	border-radius: 999px;
+	border: 2px solid var(--addon-border);
+	background: linear-gradient(150deg, #0b6a78, #10a59e);
+	backdrop-filter: none;
+	font-family: "Baloo 2", cursive;
+	font-weight: 800;
+	font-size: clamp(0.78rem, 1.2vw, 0.94rem);
+	letter-spacing: 0.07em;
+	color: #e9fdff;
+	text-decoration: none;
+	transition: transform 0.24s ease, box-shadow 0.24s ease, background 0.24s ease;
+}
+
+.addonkit-page-root .addon-hero-logo-pill:hover {
+	transform: translateY(-2px);
+	background: linear-gradient(150deg, #0b6a78, #10a59e);
+	box-shadow: 0 8px 18px rgba(5, 44, 54, 0.34);
+}
+
+.addonkit-page-root .addon-hero-layout {
+	position: relative;
+	z-index: 2;
+	max-width: 1240px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+	gap: clamp(24px, 5vw, 70px);
+	align-items: center;
+	will-change: transform;
+	top: -60px;
+}
+
+.addonkit-page-root .addon-hero-copy,
+.addonkit-page-root .addon-hero-visual {
+	transition: transform 0.22s ease-out;
+	will-change: transform;
+}
+
+.addonkit-page-root .addon-hero-copy {
+	max-width: 580px;
+	animation: addonHeroRevealUp 0.9s ease both;
+}
+
+.addonkit-page-root .addon-hero-eyebrow {
+	display: inline-flex;
+	align-items: center;
+	margin: 0;
+	padding: 0.22rem 0.6rem;
+	border-radius: 999px;
+	font-family: "Baloo 2", "Trebuchet MS", sans-serif;
+	font-weight: 700;
+	font-size: clamp(0.72rem, 1.3vw, 0.84rem);
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: #e9fcff;
+	background: rgba(208, 247, 255, 0.14);
+	border: 1px solid rgba(208, 247, 255, 0.28);
+}
+
+.addonkit-page-root .addon-hero-copy h1 {
+	margin: clamp(0.8rem, 2vw, 1.2rem) 0 0;
+	font-family: "Baloo 2", cursive;
+	font-size: clamp(1.95rem, 4.8vw, 4rem);
+	line-height: 0.9;
+	font-weight: 800;
+	letter-spacing: -0.012em;
+	color: #ffd179;
+	text-shadow: 0 4px 0 rgba(7, 39, 47, 0.34);
+}
+
+.addonkit-page-root .addon-hero-copy h1 span {
+	display: block;
+	font-size: inherit;
+	line-height: inherit;
+	font-family: inherit;
+	font-weight: 700;
+	color: #7bf3d2;
+}
+
+.addonkit-page-root .addon-hero-subcopy {
+	margin: clamp(0.65rem, 1.4vw, 0.85rem) 0 0;
+	max-width: 40ch;
+	font-family: "Baloo 2", "Trebuchet MS", sans-serif;
+	font-weight: 400;
+	font-size: clamp(0.9rem, 1.6vw, 1.08rem);
+	line-height: 1.32;
+	letter-spacing: 0;
+	color: var(--addon-text-soft);
+}
+
+.addonkit-page-root .addon-hero-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.56rem 1rem;
+	border-radius: 999px;
+	font-family: "Baloo 2", "Trebuchet MS", sans-serif;
+	font-size: clamp(0.84rem, 1.2vw, 0.94rem);
+	font-weight: 700;
+	letter-spacing: 0;
+	text-decoration: none;
+	cursor: pointer;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	white-space: nowrap;
+}
+
+.addonkit-page-root .addon-hero-btn-primary {
+	border: 0;
+	background: #96f2e6;
+	color: #0b4754;
+	box-shadow: 0 8px 18px rgba(7, 39, 47, 0.28);
+}
+
+.addonkit-page-root .addon-hero-btn-primary:hover {
+	transform: translateY(-2px);
+	filter: none;
+	box-shadow: 0 8px 18px rgba(7, 39, 47, 0.28);
+}
+
+.addonkit-page-root .addon-hero-visual {
+	position: relative;
+	display: grid;
+	place-items: center;
+	animation: addonHeroRevealScale 1s cubic-bezier(0.2, 0.9, 0.24, 1) both;
+}
+
+.addonkit-page-root .addon-hero-photo-card {
+	position: relative;
+	width: min(500px, 100%);
+	border-radius: 0;
+	padding: 0;
+	background: transparent;
+	border: 0;
+	box-shadow: none;
+	backdrop-filter: none;
+	overflow: hidden;
+}
+
+.addonkit-page-root .addon-hero-photo {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: auto;
+	object-fit: cover;
+	border-radius: 14px;
+	filter: none;
+	animation: addonHeroPhotoFloat 5s ease-in-out infinite;
+}
+
+.addonkit-page-root .addon-hero-floating-badge {
+	position: absolute;
+	padding: 0.36rem 0.66rem;
+	border-radius: 999px;
+	font-family: "Baloo 2", "Trebuchet MS", sans-serif;
+	font-weight: 700;
+	font-size: clamp(0.66rem, 0.95vw, 0.78rem);
+	letter-spacing: 0;
+	color: #0e4f4b;
+	background: rgba(224, 253, 248, 0.94);
+	border: 1px solid rgba(162, 244, 233, 0.75);
+	backdrop-filter: none;
+	box-shadow: 0 8px 18px rgba(4, 56, 58, 0.2);
+	z-index: 2;
+	animation: addonHeroBadgeFloat 4.2s ease-in-out infinite;
+	pointer-events: none;
+}
+
+.addonkit-page-root .addon-hero-badge-one {
+	left: -4%;
+	bottom: 19%;
+	animation-delay: 0.18s;
+}
+
+.addonkit-page-root .addon-hero-badge-two {
+	right: -3%;
+	top: 10%;
+	animation-delay: 1s;
+}
+
+.addonkit-page-root .addon-hero-wave {
+	position: absolute;
+	left: -8%;
+	right: -8%;
+	bottom: 0;
+	height: 22%;
+	z-index: -1;
+	border-radius: 52% 52% 0 0 / 100% 100% 0 0;
+	background: rgba(6, 57, 73, 0.46);
+	filter: none;
+	pointer-events: none;
+}
+
+.addonkit-page-root .addon-hero-root[data-reduced-motion="true"] .addon-hero-copy,
+.addonkit-page-root .addon-hero-root[data-reduced-motion="true"] .addon-hero-visual,
+.addonkit-page-root .addon-hero-root[data-reduced-motion="true"] .addon-hero-photo,
+.addonkit-page-root .addon-hero-root[data-reduced-motion="true"] .addon-hero-floating-badge,
+.addonkit-page-root .addon-hero-root[data-reduced-motion="true"]::before,
+.addonkit-page-root .addon-hero-root[data-reduced-motion="true"]::after {
+	animation: none !important;
+	transform: none !important;
+}
+
+@keyframes addonHeroRevealUp {
+	from {
+		opacity: 0;
+		transform: translateY(26px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes addonHeroRevealScale {
+	from {
+		opacity: 0;
+		transform: translateY(24px) scale(0.96);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+@keyframes addonHeroPhotoFloat {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-8px);
+	}
+}
+
+@keyframes addonHeroBadgeFloat {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-6px);
+	}
+}
+
+@keyframes addonHeroDriftA {
+	0% {
+		transform: translate3d(0, 0, 0) scale(1);
+	}
+	100% {
+		transform: translate3d(22px, 16px, 0) scale(1.08);
+	}
+}
+
+@keyframes addonHeroDriftB {
+	0% {
+		transform: translate3d(0, 0, 0) scale(1);
+	}
+	100% {
+		transform: translate3d(-18px, -14px, 0) scale(1.07);
+	}
+}
+
+@media (max-width: 1024px) {
+	.addonkit-page-root .addon-hero-root {
+		--addon-header-offset: 113px;
+		padding-top: clamp(56px, 8vh, 84px);
+		min-height: calc(80vh - var(--addon-header-offset));
+	}
+
+	.addonkit-page-root .addon-hero-layout {
+		gap: clamp(18px, 4vw, 38px);
+	}
+
+	.addonkit-page-root .addon-hero-badge-one {
+		left: 0;
+	}
+
+	.addonkit-page-root .addon-hero-badge-two {
+		right: 0;
+	}
+}
+
+@media (max-width: 900px) {
+	.addonkit-page-root .addon-hero-root {
+		--addon-header-offset: 103px;
+		padding-inline: clamp(16px, 5vw, 28px);
+		padding-bottom: clamp(24px, 6vh, 48px);
+		min-height: calc(80vh - var(--addon-header-offset));
+	}
+
+	.addonkit-page-root .addon-hero-layout {
+		grid-template-columns: 1fr;
+		align-items: start;
+	}
+
+	.addonkit-page-root .addon-hero-copy {
+		max-width: 100%;
+	}
+
+	.addonkit-page-root .addon-hero-visual {
+		margin-top: 0;
+	}
+
+	.addonkit-page-root .addon-hero-photo-card {
+		max-width: 690px;
+		margin-inline: auto;
+	}
+}
+
+@media (max-width: 640px) {
+	.addonkit-page-root .addon-hero-root {
+		--addon-header-offset: 93px;
+		padding-top: clamp(52px, 12vw, 72px);
+		padding-bottom: 20px;
+		min-height: calc(80vh - var(--addon-header-offset));
+	}
+
+	.addonkit-page-root .addon-hero-nav {
+		margin-bottom: 24px;
+	}
+
+	.addonkit-page-root .addon-hero-logo-pill {
+		padding: 9px 15px;
+		font-size: 0.76rem;
+	}
+
+	.addonkit-page-root .addon-hero-copy h1 {
+		font-size: clamp(1.76rem, 9vw, 2.55rem);
+	}
+
+	.addonkit-page-root .addon-hero-copy h1 span {
+		font-size: clamp(1.02rem, 5vw, 1.36rem);
+	}
+
+	.addonkit-page-root .addon-hero-subcopy {
+		font-size: 0.94rem;
+		line-height: 1.56;
+		margin-bottom: 14px;
+	}
+
+	.addonkit-page-root .addon-hero-btn {
+		padding: 12px 18px;
+		font-size: 0.9rem;
+	}
+
+	.addonkit-page-root .addon-hero-floating-badge {
+		position: static;
+		display: inline-flex;
+		margin-top: 10px;
+		margin-right: 8px;
+	}
+
+	.addonkit-page-root .addon-hero-visual {
+		display: block;
+	}
+
+	.addonkit-page-root .addon-hero-wave {
+		bottom: -120px;
+		height: 210px;
+	}
+}
+
+@media (max-width: 420px) {
+	.addonkit-page-root .addon-hero-root {
+		padding-inline: 14px;
+	}
+
+	.addonkit-page-root .addon-hero-eyebrow {
+		font-size: 0.68rem;
+		padding: 6px 12px;
+	}
+
+	.addonkit-page-root .addon-hero-photo-card {
+		padding: 6px;
+	}
+}
+
 .addonkit-page-root {
 	width: 100%;
 	max-width: 100%;
-	overflow-x: hidden;
+	overflow: clip;
 }
 
 .addonkit-page-root * {
@@ -21,16 +489,13 @@
 
 .addonkit-page-root html, .addonkit-page-root body {
 	font-family: 'Inter', -apple-system, sans-serif;
-	overflow-x: hidden;
 }
 
 .addonkit-page-root .addonkit {
 	font-family: 'Inter', -apple-system, sans-serif;
 	line-height: 1.6;
 	color: #333;
-	background: linear-gradient(135deg, #e8f5e8 0%, #f0f8ff 100%);
-	min-height: 100vh;
-	overflow-x: hidden;
+	background: #dbf6fb;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -39,243 +504,6 @@
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0 20px;
-}
-
-.addonkit-page-root .addonkit {
-	font-family: 'Inter', -apple-system, sans-serif;
-	background:
-		linear-gradient(rgba(0, 255, 149, 0.267), rgba(0, 130, 115, 0.25)),
-		url('../assets/ProductsAddOnImages/9058106.png'),
-		linear-gradient(rgba(0, 130, 115, 0.6), rgba(0, 130, 115, 0.6)),
-		url('../assets/ProductsAddOnImages/5073198.jpg'),
-		#008273;
-	background-repeat: no-repeat;
-	background-position: 60% 30%;
-	background-attachment: fixed;
-	background-size: cover;
-	color: white;
-	overflow-x: hidden;
-	min-height: 100vh;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-/* Hero Section */
-.addonkit-page-root .content-layout {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 50px 40px;
-	gap: 40px;
-	margin: 25px auto;
-	max-width: 1200px;
-}
-.addonkit-page-root .products-wrapper{
-  display: flex;
-  flex-direction: column;
-gap: 0px;
-margin-top: 70px;
-}
-.addonkit-page-root .image-section {
-	flex: 1;
-	padding: 10px;
-	position: relative;
-	min-width: 250px;
-}
-
-.addonkit-page-root .image-section img {
-	width: 100%;
-	height: auto;
-	max-width: 100%;
-	border-radius: 20px;
-	box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-	transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-	display: block;
-}
-
-.addonkit-page-root .image-section img:hover {
-	transform: scale(1.05) rotate(1deg);
-	box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-}
-
-.addonkit-page-root .info-section {
-	flex: 1;
-	padding: 20px;
-	min-width: 250px;
-}
-
-.addonkit-page-root .hero::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(76, 175, 80, 0.15);
-	pointer-events: none;
-	z-index: 1;
-}
-
-.addonkit-page-root .hero-content {
-	position: relative;
-	z-index: 3;
-	max-width: 800px;
-	padding: 3rem;
-	background: rgba(76, 175, 80, 0.35);
-	border-radius: 25px;
-	border: 2px solid rgba(76, 175, 80, 0.5);
-	box-shadow: 
-		0 25px 80px rgba(0, 0, 0, 0.3),
-		inset 0 1px 0 rgba(76, 175, 80, 0.4);
-	transition: all 0.3s ease;
-	word-wrap: break-word;
-	word-break: break-word;
-}
-
-.addonkit-page-root .hero-content:hover {
-	transform: translateY(-5px);
-	box-shadow: 
-		0 35px 100px rgba(0, 0, 0, 0.4),
-		inset 0 1px 0 rgba(76, 175, 80, 0.5);
-}
-
-.addonkit-page-root .hero h1 {
-	font-size: clamp(2.5rem, 5vw, 4.5rem);
-	margin-bottom: 20px;
-	text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-	color: #ff8c00;
-	background-clip: text;
-	font-weight: 700;
-	letter-spacing: -0.02em;
-}
-
-.addonkit-page-root .hero p {
-	font-size: clamp(1.1rem, 2vw, 1.4rem);
-	max-width: 600px;
-	margin: 0 auto 2rem;
-	text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
-	opacity: 0.95;
-	line-height: 1.6;
-	font-weight: 300;
-}
-
-.addonkit-page-root .hero-particles {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: 
-		radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 20%),
-		radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.04) 0%, transparent 25%),
-		radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.03) 0%, transparent 30%);
-	pointer-events: none;
-	z-index: 1;
-}
-
-.addonkit-page-root .content-layout:first-of-type {
-	background: transparent;
-	padding: 30px 0 30px 0;
-	margin: 0 auto 20px auto;
-}
-
-.addonkit-page-root .content-layout:first-of-type .image-section img {
-	border-radius: 0;
-	box-shadow: none;
-}
-
-.addonkit-page-root .content-layout:first-of-type .image-section {
-	padding: 0;
-}
-
-.addonkit-page-root .content-layout:first-of-type .info-section {
-	padding: 0 20px;
-}
-
-.addonkit-page-root .content-layout:first-of-type .image-section img {
-	width: 80%;
-	max-width: 500px;
-	margin: 90px auto;
-	display: block;
-}
-
-@media (max-width: 600px) {
-	.addonkit-page-root .content-layout:first-of-type {
-		flex-direction: column;
-		padding: 30px 12px;
-		gap: 16px;
-	}
-
-	.addonkit-page-root .content-layout:first-of-type .image-section {
-		padding: 0;
-		order: 0;
-	}
-
-	.addonkit-page-root .content-layout:first-of-type .image-section img {
-		width: 100%;
-		max-width: 100%;
-		border-radius: 8px;
-	}
-
-	.addonkit-page-root .content-layout:first-of-type .info-section {
-		padding: 8px 12px;
-		text-align: center;
-	}
-}
-
-.addonkit-page-root .hero-stats {
-	display: flex;
-	gap: 3rem;
-	margin-top: 3rem;
-	justify-content: center;
-	flex-wrap: wrap;
-}
-
-.addonkit-page-root .stat {
-	text-align: center;
-	padding: 1.5rem;
-	background: rgba(255, 255, 255, 0.1);
-	border-radius: 20px;
-	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(10px);
-	border: 1px solid rgba(255, 255, 255, 0.2);
-	min-width: 120px;
-}
-
-.addonkit-page-root .stat-number {
-	display: block;
-	font-size: 2.8rem;
-	font-weight: 800;
-	background: linear-gradient(135deg, #ffffff 0%, #4fc3f7 50%, #29b6f6 100%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
-	text-shadow: none;
-	margin-bottom: 0.5rem;
-}
-
-.addonkit-page-root .stat-label {
-	font-size: 1rem;
-	opacity: 0.9;
-	font-weight: 500;
-	text-transform: uppercase;
-	letter-spacing: 0.5px;
-}
-
-.addonkit-page-root .scroll-indicator {
-	position: absolute;
-	bottom: 40px;
-	left: 50%;
-	transform: translateX(-50%);
-	color: rgba(255, 255, 255, 0.8);
-	font-size: 1.8rem;
-	cursor: pointer;
-	padding: 15px;
-	border-radius: 50%;
-	background: rgba(255, 255, 255, 0.1);
-	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(10px);
-	border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Product Sections Wrapper */
@@ -551,21 +779,6 @@ margin-top: 70px;
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-	.addonkit-page-root .addonkit {
-		background-attachment: scroll;
-		background-position: center;
-	}
-
-	.addonkit-page-root .content-layout {
-		width: 100%;
-		max-width: 100%;
-		margin-left: 0;
-		margin-right: 0;
-		padding-left: 14px;
-		padding-right: 14px;
-		overflow: hidden;
-	}
-
 	.addonkit-page-root .product-section, .addonkit-page-root .product-section.reverse {
 		flex-direction: column;
 		text-align: center;
@@ -580,22 +793,6 @@ margin-top: 70px;
 	.addonkit-page-root .image-box {
 		padding: 0;
 		width: 100%;
-	}
-    
-	.addonkit-page-root .hero-content {
-		padding: 1.5rem 1.2rem;
-		margin: 0 12px;
-		max-width: calc(100% - 24px);
-	}
-    
-	.addonkit-page-root .hero-stats {
-		gap: 1.5rem;
-		margin-top: 2rem;
-	}
-    
-	.addonkit-page-root .stat {
-		padding: 1rem;
-		min-width: 100px;
 	}
     
 	.addonkit-page-root .grid-features {
@@ -625,48 +822,7 @@ margin-top: 70px;
 		border-radius: 12px;
 	}
     
-	.addonkit-page-root .hero {
-		min-height: 80vh;
-	}
-    
-	.addonkit-page-root .hero-content {
-		padding: 1.25rem 1rem;
-		margin: 0 10px;
-		max-width: calc(100% - 20px);
-		border-radius: 14px;
-	}
-    
-	.addonkit-page-root .hero h1 {
-		font-size: clamp(1.8rem, 7vw, 2.8rem);
-		margin-bottom: 12px;
-	}
-    
-	.addonkit-page-root .hero p {
-		font-size: clamp(0.95rem, 3.5vw, 1.1rem);
-		margin-bottom: 1.5rem;
-	}
-    
-	.addonkit-page-root .hero-stats {
-		flex-direction: row;
-		gap: 0.8rem;
-		margin-top: 1.5rem;
-		justify-content: space-around;
-	}
-    
-	.addonkit-page-root .stat {
-		padding: 0.7rem 0.5rem;
-		min-width: 70px;
-		flex: 1;
-		border-radius: 12px;
-	}
-    
-	.addonkit-page-root .stat-number {
-		font-size: 1.6rem;
-	}
-    
-	.addonkit-page-root .stat-label {
-		font-size: 0.7rem;
-	}
+
     
 	.addonkit-page-root .info-box h2 {
 		font-size: 1.4rem;
@@ -720,52 +876,7 @@ margin-top: 70px;
 		border-radius: 12px;
 	}
     
-	.addonkit-page-root .hero {
-		min-height: 75vh;
-	}
-    
-	.addonkit-page-root .hero-content {
-		padding: 1rem 0.75rem;
-		margin: 0 8px;
-		max-width: calc(100% - 16px);
-		border-radius: 12px;
-	}
-    
-	.addonkit-page-root .hero h1 {
-		font-size: clamp(1.6rem, 6vw, 2.4rem);
-		margin-bottom: 10px;
-	}
-    
-	.addonkit-page-root .hero p {
-		font-size: clamp(0.9rem, 3vw, 1rem);
-		margin-bottom: 1.2rem;
-		line-height: 1.4;
-	}
-    
-	.addonkit-page-root .hero-stats {
-		gap: 0.6rem;
-		margin-top: 1rem;
-	}
-    
-	.addonkit-page-root .stat {
-		padding: 0.6rem 0.4rem;
-		min-width: 60px;
-	}
-    
-	.addonkit-page-root .stat-number {
-		font-size: 1.4rem;
-		margin-bottom: 0.3rem;
-	}
-    
-	.addonkit-page-root .stat-label {
-		font-size: 0.65rem;
-	}
-    
-	.addonkit-page-root .scroll-indicator {
-		bottom: 20px;
-		font-size: 1.5rem;
-		padding: 10px;
-	}
+
     
 	.addonkit-page-root .info-box h2 {
 		font-size: 1.3rem;
@@ -1094,64 +1205,10 @@ margin-top: 70px;
 	}
 }
 
-.addonkit-page-root .info-section {
-	flex: 1;
-	max-width: 500px;
-}
-
-.addonkit-page-root .info-section h1 {
-	font-size: clamp(2rem, 8vw, 50px);
-	font-weight: 1000;
-	color: rgb(255, 153, 0);
-	margin-bottom: 18px;
-	line-height: 1.2;
-	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-	cursor: pointer;
-	will-change: color;
-}
-
-.addonkit-page-root .info-section h2 {
-	font-size: clamp(1rem, 4vw, 1.5rem);
-	font-weight: 600;
-	color: rgba(255, 255, 255, 0.9);
-	margin-bottom: 24px;
-	line-height: 1.3;
-	transition: all 0.3s ease;
-  text-align: left;
-}
-
-.addonkit-page-root .btn-secondary {
-	background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 50%, #ffa726 100%);
-	border: none;
-	padding: clamp(12px, 3vw, 18px) clamp(24px, 6vw, 40px);
-	border-radius: 30px;
-	color: white;
-	cursor: pointer;
-	font-weight: bold;
-	font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-	margin-top: 20px;
-	box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
-	width: 100%;
-	max-width: 250px;
-	will-change: transform, box-shadow;
-}
-
-.addonkit-page-root .btn-secondary:hover {
-	transform: translateY(-2px);
-	background: linear-gradient(135deg, #ff8a31 0%, #ff7043 50%, #ff9800 100%);
-	box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6);
-}
-
 /* Extra small screens (phones < 480px) */
 @media (max-width: 320px) {
 	.addonkit-page-root .container {
 		padding: 0 10px;
-	}
-
-	.addonkit-page-root .content-layout {
-		padding: 20px 10px;
-		gap: 10px;
 	}
 
 	.addonkit-page-root .product-section {
