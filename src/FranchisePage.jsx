@@ -1,5 +1,13 @@
 import React, { useEffect } from 'react';
 import './FranchisePage.css';
+//why choose techyguide section images
+import whychooseTechyguide1 from './assets/franchisepageimages/Why Choose TechyGuide_ - 1.jpg';
+import whychooseTechyguide2 from './assets/franchisepageimages/Why Choose TechyGuide_ - 2.jpg';
+import whychooseTechyguide3 from './assets/franchisepageimages/Why Choose TechyGuide_ - 3.jpg';
+import whychooseTechyguide4 from './assets/franchisepageimages/Why Choose TechyGuide_ - 4.jpg';
+
+
+
 import studentsImg from './assets/franchisepageimages/students.jpg';
 import testimonial1 from './assets/franchisepageimages/Partner Testimonial 1.png';
 import testimonial2 from './assets/franchisepageimages/Partner Testimonial 2.png';
@@ -12,10 +20,10 @@ import testimonial8 from './assets/franchisepageimages/Partner Testimonial 8.png
 import testimonial9 from './assets/franchisepageimages/Partner Testimonial 9.png';
 import testimonial10 from './assets/franchisepageimages/Partner Testimonial 10.png';
 // What Will You Get? section images
-import WhatWillYouGet1 from './assets/FranchisePageImages/What Will You Get1.jpg';
-import WhatWillYouGet2 from './assets/FranchisePageImages/What Will You Get2.jpg';
-import WhatWillYouGet3 from './assets/FranchisePageImages/What Will You Get3.jpg';
-import WhatWillYouGet4 from './assets/FranchisePageImages/What Will You Get4.jpg';
+import WhatWillYouGet1 from './assets/FranchisePageImages/What Will You Get_ - 1.jpg';
+import WhatWillYouGet2 from './assets/FranchisePageImages/What Will You Get_ - 2.jpg';
+import WhatWillYouGet3 from './assets/FranchisePageImages/What Will You Get_ - 3.jpg';
+import WhatWillYouGet4 from './assets/FranchisePageImages/What Will You Get_ - 4.jpg';
 // some snapshots section
 import snapshot1 from './assets/FranchisePageImages/Some Snapshots - 1.jpg';
 import snapshot2 from './assets/FranchisePageImages/Some Snapshots - 2.jpg';
@@ -23,6 +31,17 @@ import snapshot3 from './assets/FranchisePageImages/Some Snapshots - 3.jpg';
 import snapshot4 from './assets/FranchisePageImages/Some Snapshots - 4.jpg';
 import snapshot5 from './assets/FranchisePageImages/Some Snapshots - 5.jpg';
 import snapshot6 from './assets/FranchisePageImages/Some Snapshots - 6.jpg';
+//reventue streams section images
+import revenue1 from './assets/FranchisePageImages/Revenue Streams - 1.jpg';
+import revenue2 from './assets/FranchisePageImages/Revenue Streams - 2.jpg';
+import revenue3 from './assets/FranchisePageImages/Revenue Streams - 3.jpg';
+import revenue4 from './assets/FranchisePageImages/Revenue Streams - 4.jpg';
+// franchise support section images
+import franchiseSupport1 from './assets/FranchisePageImages/Franchise Support - 1.jpg';
+import franchiseSupport2 from './assets/FranchisePageImages/Franchise Support - 2.jpg';
+import franchiseSupport3 from './assets/FranchisePageImages/Franchise Support - 3.jpg';
+import franchiseSupport4 from './assets/FranchisePageImages/Franchise Support - 4.jpg';
+import franchiseSupport5 from './assets/FranchisePageImages/Franchise Support - 5.jpg';
 
 
 function FranchisePage() {
@@ -197,22 +216,22 @@ function FranchisePage() {
     const whyChooseCards = [
         {
             title: 'Proven Business Model',
-            image: 'https://placehold.co/640x420/e8f0ff/123a5d?text=Proven+Business+Model',
+            image: whychooseTechyguide1,
             description: 'Launch with a field-tested franchise framework that includes curriculum, operations support, and proven enrollment strategies.'
         },
         {
             title: 'ROI within 12–18 months',
-            image: 'https://placehold.co/640x420/e7fff3/0c5e4d?text=ROI+12-18+Months',
+            image: whychooseTechyguide2,
             description: 'Structured pricing, recurring course income, and optimized center operations are designed to help partners achieve faster payback.'
         },
         {
             title: 'Expanding demand in EdTech sector',
-            image: 'https://placehold.co/640x420/fff5e8/6b3b00?text=Growing+EdTech+Demand',
+            image: whychooseTechyguide3,
             description: 'Leverage rising parent and school demand for robotics, coding, and AI programs aligned with future-ready education goals.'
         },
         {
             title: 'Multiple revenue streams',
-            image: 'https://placehold.co/640x420/f1ecff/3f2a7a?text=Multiple+Revenue+Streams',
+            image: whychooseTechyguide4,
             description: 'Generate income from student programs, school workshops, kit sales, and innovation events under one scalable model.'
         }
     ];
@@ -220,27 +239,27 @@ function FranchisePage() {
     const franchiseSupportCards = [
         {
             title: 'MARKETING & BRANDING ASSISTANCE',
-            image: 'https://placehold.co/1200x700/e8f4ff/0b3d66?text=Marketing+%26+Branding',
+            image: franchiseSupport1,
             description: 'TechyGuide provides complete marketing and branding support to franchise partners including promotional materials, digital marketing guidance, branding assets, and strategies to attract schools and students.'
         },
         {
             title: 'OPERATIONAL GUIDANCE',
-            image: 'https://placehold.co/1200x700/ebfff5/065f46?text=Operational+Guidance',
+            image: franchiseSupport2,
             description: 'Franchise partners receive operational guidance to manage their center efficiently including setup assistance, classroom management strategies, and operational best practices.'
         },
         {
             title: 'COMPREHENSIVE TRAINING & CURRICULUM',
-            image: 'https://placehold.co/1200x700/fff7eb/7c2d12?text=Training+%26+Curriculum',
+            image: franchiseSupport3,
             description: 'TechyGuide provides structured training programs and a well-designed curriculum covering robotics, STEM, coding, and innovation programs for different student levels.'
         },
         {
             title: 'EVENTS & COMPETITION OPPORTUNITIES',
-            image: 'https://placehold.co/1200x700/f0f9ff/075985?text=Events+%26+Competitions',
+            image: franchiseSupport4,
             description: 'Students and franchise centers get opportunities to participate in robotics events, STEM competitions, and innovation challenges organized at school, regional, and national levels.'
         },
         {
             title: 'TECHNOLOGY & LMS INTEGRATION',
-            image: 'https://placehold.co/1200x700/f5f3ff/5b21b6?text=Technology+%26+LMS',
+            image: franchiseSupport5,
             description: 'Franchise partners get access to TechyGuide’s technology platform and LMS which helps manage courses, track student progress, and deliver digital learning resources effectively.'
         }
     ];
@@ -297,7 +316,7 @@ function FranchisePage() {
                         <div className="revenue-card">
                             <img
                                 className="rev-banner"
-                                src="https://placehold.co/1200x650/e6f1ff/0f3d6d?text=Course+Fees"
+                                src={revenue1}
                                 alt="Course Fees"
                                 loading="lazy"
                             />
@@ -311,7 +330,7 @@ function FranchisePage() {
                         <div className="revenue-card">
                             <img
                                 className="rev-banner"
-                                src="https://placehold.co/1200x650/e8fff5/0b5e4d?text=School+Workshops"
+                                src={revenue2}
                                 alt="School Workshops"
                                 loading="lazy"
                             />
@@ -325,7 +344,7 @@ function FranchisePage() {
                         <div className="revenue-card">
                             <img
                                 className="rev-banner"
-                                src="https://placehold.co/1200x650/fff7e6/7a3e00?text=Kit+Sales"
+                                src={revenue3}
                                 alt="Kit Sales"
                                 loading="lazy"
                             />
@@ -339,7 +358,7 @@ function FranchisePage() {
                         <div className="revenue-card">
                             <img
                                 className="rev-banner"
-                                src="https://placehold.co/1200x650/f2ebff/50218d?text=Competitions"
+                                src={revenue4}
                                 alt="Competitions"
                                 loading="lazy"
                             />
@@ -420,47 +439,49 @@ function FranchisePage() {
 
 
             {/* ============ WHAT WILL YOU GET SECTION ============ */}
-            <section className="containerbox">
+            <section className="containerbox what-you-get-section">
                 <h2 className="section-title">What Will You Get?</h2>
 
-                <div className="box">
-                    <div className="box-content">
-                        <img src={WhatWillYouGet1} alt="Lab Layout" />
-                        <div className="text-overlay">LAB LAYOUT & SET UP DESIGN</div>
-                    </div>
-                    <div className="details">
-                        <p>Professional workspace planning and ergonomic design for modern labs.</p>
-                    </div>
-                </div>
+                <div className="what-you-get-grid">
+                    <article className="what-you-get-card">
+                        <div className="what-you-get-image-wrap">
+                            <img src={WhatWillYouGet1} alt="Lab Layout" className="what-you-get-image" />
+                        </div>
+                        <div className="what-you-get-content">
+                            <h3>LAB LAYOUT &amp; SET UP DESIGN</h3>
+                            <p>Professional workspace planning and ergonomic design for modern labs.</p>
+                        </div>
+                    </article>
 
-                <div className="box">
-                    <div className="box-content">
-                        <img src={WhatWillYouGet2} alt="Hardware" />
-                        <div className="text-overlay">HARDWARE & SOFTWARE</div>
-                    </div>
-                    <div className="details">
-                        <p>Access to cutting-edge robotics, 3D printers, and interactive modules.</p>
-                    </div>
-                </div>
+                    <article className="what-you-get-card">
+                        <div className="what-you-get-image-wrap">
+                            <img src={WhatWillYouGet2} alt="Hardware" className="what-you-get-image" />
+                        </div>
+                        <div className="what-you-get-content">
+                            <h3>HARDWARE &amp; SOFTWARE</h3>
+                            <p>Access to cutting-edge robotics, 3D printers, and interactive modules.</p>
+                        </div>
+                    </article>
 
-                <div className="box">
-                    <div className="box-content">
-                        <img src={WhatWillYouGet3} alt="Curriculum" />
-                        <div className="text-overlay">CONTENT & CURRICULUM</div>
-                    </div>
-                    <div className="details">
-                        <p>Comprehensive lesson plans and digital resources for all grade levels.</p>
-                    </div>
-                </div>
+                    <article className="what-you-get-card">
+                        <div className="what-you-get-image-wrap">
+                            <img src={WhatWillYouGet3} alt="Curriculum" className="what-you-get-image" />
+                        </div>
+                        <div className="what-you-get-content">
+                            <h3>CONTENT &amp; CURRICULUM</h3>
+                            <p>Comprehensive lesson plans and digital resources for all grade levels.</p>
+                        </div>
+                    </article>
 
-                <div className="box">
-                    <div className="box-content">
-                        <img src={WhatWillYouGet4} alt="Training" />
-                        <div className="text-overlay">TRAINING & SUPPORT</div>
-                    </div>
-                    <div className="details">
-                        <p>Hands-on teacher training and dedicated technical support for schools.</p>
-                    </div>
+                    <article className="what-you-get-card">
+                        <div className="what-you-get-image-wrap">
+                            <img src={WhatWillYouGet4} alt="Training" className="what-you-get-image" />
+                        </div>
+                        <div className="what-you-get-content">
+                            <h3>TRAINING &amp; SUPPORT</h3>
+                            <p>Hands-on teacher training and dedicated technical support for schools.</p>
+                        </div>
+                    </article>
                 </div>
             </section>
 

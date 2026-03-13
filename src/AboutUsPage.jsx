@@ -2,14 +2,17 @@ import { useEffect } from 'react'
 import './AboutUsPage.css'
 import teamimg1 from './assets/AboutUSImages/Team 1.png';
 import founderImage from './assets/AboutUSImages/5.png';
+import workspace1 from './assets/AboutUSImages/Our Team & Workspace - 1.jpg';
+import workspace2 from './assets/AboutUSImages/Our Team & Workspace - 2.jpg';
+import workspace3 from './assets/AboutUSImages/Our Team & Workspace - 3.jpg';
+import workspace4 from './assets/AboutUSImages/Our Team & Workspace - 4.jpg';
+
 function AboutUsPage() {
 	const workspaceImages = [
-		{ src: 'https://placehold.co/1400x900/e9f4ff/0f3d66?text=College+Campus+Block', alt: 'College campus block' },
-		{ src: 'https://placehold.co/700x900/f0fff4/0a5b45?text=College+Library+Tower', alt: 'College library tower' },
-		{ src: 'https://placehold.co/820x900/fff7eb/7a4200?text=Innovation+Studio', alt: 'College innovation studio' },
-		{ src: 'https://placehold.co/1400x900/f3efff/4b2b87?text=Student+Activity+Zone', alt: 'Student activity zone' },
-		{ src: 'https://placehold.co/1400x900/e8fffb/045b4f?text=Engineering+Corridor', alt: 'Engineering corridor' },
-		{ src: 'https://placehold.co/700x900/eff6ff/1e3a8a?text=Open+Learning+Plaza', alt: 'Open learning plaza' }
+		{ src: {workspace1}, alt: 'College campus block' },
+		{ src: {workspace2}, alt: 'College library tower' },
+		{ src: {workspace3}, alt: 'College innovation studio' },
+		{ src: {workspace4}, alt: 'Student activity zone' }
 	];
 
 	// Set SEO metadata for About Us page
@@ -146,18 +149,13 @@ function AboutUsPage() {
 
 					<div className="workspace-gallery">
 						<div className="workspace-row">
-							<img src={workspaceImages[0].src} alt={workspaceImages[0].alt} loading="lazy" className="large-img" />
-							<img src={workspaceImages[1].src} alt={workspaceImages[1].alt} loading="lazy" className="small-img" />
+							<img src={workspace4} alt={workspaceImages[0].alt} loading="lazy" className="large-img" />
+							<img src={workspace2} alt={workspaceImages[1].alt} loading="lazy" className="small-img" />
 						</div>
 
 						<div className="workspace-row reverse">
-							<img src={workspaceImages[2].src} alt={workspaceImages[2].alt} loading="lazy" className="large-img" />
-							<img src={workspaceImages[3].src} alt={workspaceImages[3].alt} loading="lazy" className="small-img" />
-						</div>
-
-						<div className="workspace-row">
-							<img src={workspaceImages[4].src} alt={workspaceImages[4].alt} loading="lazy" className="large-img" />
-							<img src={workspaceImages[5].src} alt={workspaceImages[5].alt} loading="lazy" className="small-img" />
+							<img src={workspace3} alt={workspaceImages[2].alt} loading="lazy" className="large-img" />
+							<img src={workspace1} alt={workspaceImages[3].alt} loading="lazy" className="small-img" />
 						</div>
 					</div>
 				</div>

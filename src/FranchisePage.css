@@ -142,58 +142,61 @@
     text-align: center;
 }
 
-.franchise-page .main-header {
-    margin-bottom: 60px;
-    background-color: transparent;
+.franchise-page .what-you-get-grid {
+    width: min(1120px, 100%);
+    margin: 40px auto 0;
+    padding: 0 25px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
 }
 
-.franchise-page .main-header h1 {
-    font-size: 2.5rem;
-    color: var(--primary-blue);
-    margin-bottom: 15px;
-    position: relative;
+.franchise-page .what-you-get-card {
+    background: #ffffff;
+    border-radius: 22px;
+    box-shadow: 0 12px 26px rgba(14, 26, 48, 0.12);
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.franchise-page .main-header h1::after {
-    content: '';
+.franchise-page .what-you-get-image-wrap {
+    width: 100%;
+    min-height: 220px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.franchise-page .what-you-get-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: top center;
     display: block;
-    width: 60px;
-    height: 4px;
-    background: var(--primary-orange);
-    margin: 15px auto 0;
-    border-radius: 10px;
 }
 
-.franchise-page .box {
-    height: 380px; width: 550px; 
-    margin: 0 auto 30px;
-    display: flex; overflow: hidden;
-    background: white; border-radius: 24px;
-    transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+.franchise-page .what-you-get-content {
+    padding: 18px 20px 22px;
 }
 
-.franchise-page .box:hover { width: 950px; }
-.franchise-page .box:nth-child(even) { flex-direction: row-reverse; }
-
-.franchise-page .box-content { flex: 0 0 550px; height: 100%; position: relative; }
-.franchise-page .box-content img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-.franchise-page .box:hover img { filter: brightness(70%) scale(1.05); }
-
-.franchise-page .text-overlay {
-    position: absolute; bottom: 30px; left: -10px;
-    background: var(--primary-orange); color: white;
-    padding: 15px 30px; font-weight: 700; border-radius: 0 50px 50px 0;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.2); z-index: 5;
+.franchise-page .what-you-get-content h3 {
+    font-size: 1.1rem;
+    color: var(--primary-blue);
+    font-weight: 800;
+    margin-bottom: 10px;
+    line-height: 1.35;
 }
 
-.franchise-page .box:nth-child(even) .text-overlay { left: auto; right: -10px; border-radius: 50px 0 0 50px; }
-
-.franchise-page .details {
-    flex: 1; padding: 40px; display: flex; align-items: center; justify-content: center;
-    opacity: 0; transition: opacity 0.5s 0.2s; text-align: center; font-size: 1.2rem;
+.franchise-page .what-you-get-content p {
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1rem;
 }
-.franchise-page .box:hover .details { opacity: 1; }
 
 /* ============ 7. SNAPSHOTS GRID ============ */
 .franchise-page .snapshot-images {
@@ -222,20 +225,21 @@
 /* ============ 9. MOBILE RESPONSIVE (Perfect Scaling) ============ */
 @media (max-width: 1200px) {
     .franchise-page .pillars-grid { grid-template-columns: repeat(2, 1fr); }
-    .franchise-page .box:hover { width: 550px; }
 }
 
 @media (max-width: 768px) {
     .franchise-page .section { padding: 60px 0; }
     .franchise-page .pillars-grid, .franchise-page .snapshot-images { grid-template-columns: 1fr; }
-    
-    .franchise-page .box { 
-        width: 100% !important; height: auto !important; 
-        flex-direction: column !important; 
+
+    .franchise-page .what-you-get-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 16px;
     }
-    .franchise-page .box-content { flex: none; width: 100%; height: 280px; }
-    .franchise-page .details { opacity: 1; padding: 30px 20px; }
-    .franchise-page .text-overlay { width: 90%; left: 5% !important; bottom: 15px; }
+
+    .franchise-page .what-you-get-content {
+        padding: 16px 16px 20px;
+    }
 
     .franchise-page .stats-bar { flex-direction: column; gap: 40px; }
     .franchise-page .hero-buttons { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
@@ -752,38 +756,9 @@
     .franchise-page .pillar-img {
         height: 180px;
     }
-    
-    .franchise-page .box {
-        width: 100% !important;
-        height: auto !important;
-        flex-direction: column !important;
-        margin-bottom: 20px;
-    }
-    
-    .franchise-page .box:nth-child(even) {
-        flex-direction: column !important;
-    }
-    
-    .franchise-page .box-content {
-        flex: none;
-        width: 100%;
-        height: 200px;
-    }
-    
-    .franchise-page .details {
-        opacity: 1 !important;
-        padding: 20px 15px;
-        font-size: 1rem;
-    }
-    
-    .franchise-page .text-overlay {
-        width: 90%;
-        left: 5% !important;
-        right: auto !important;
-        bottom: 10px;
-        padding: 10px 20px;
-        font-size: 0.9rem;
-        border-radius: 25px !important;
+
+    .franchise-page .what-you-get-grid {
+        grid-template-columns: 1fr;
     }
     
     .franchise-page .story-viewport {

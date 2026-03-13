@@ -29,6 +29,12 @@ import realworldApplications from '../assets/ProductI-BoTImages/Real World Appli
 import modularAndScalable from '../assets/ProductI-BoTImages/Modular & Scalable.png';
 import DurabilityWarranty from '../assets/ProductI-BoTImages/Durability & Warranty.png';
 import ibotIntroVideo from '../assets/ProductI-BoTImages/Website_Product_Page_I-Bot_V1.mp4';
+// featured ibot projects section images
+import SmartAttendanceSystem from '../assets/ProductI-BoTImages/Featured i-Bot Projects - 1.jpg';
+import IotHouse from '../assets/ProductI-BoTImages/Featured i-Bot Projects - 2.jpg';
+import Humaniod from '../assets/ProductI-BoTImages/Featured i-Bot Projects - 3.jpg';
+import BluetoothControlledCar from '../assets/ProductI-BoTImages/Featured i-Bot Projects - 4.jpg';
+import RoboticArm from '../assets/ProductI-BoTImages/Featured i-Bot Projects - 5.jpg';
 
 
 function IBoT() {
@@ -36,6 +42,7 @@ function IBoT() {
     const ibotHeroRef = useRef(null);
     const ibotHeroCanvasRef = useRef(null);
     const [activeKitSlide, setActiveKitSlide] = useState(0);
+    const [isKitSliderPaused, setIsKitSliderPaused] = useState(false);
     const touchStartXRef = useRef(0);
     const touchEndXRef = useRef(0);
 
@@ -304,12 +311,14 @@ function IBoT() {
     }, []);
 
     useEffect(() => {
+        if (isKitSliderPaused) return undefined;
+
         const timer = setInterval(() => {
             setActiveKitSlide((prevSlide) => (prevSlide + 1) % 2);
         }, 3500);
 
         return () => clearInterval(timer);
-    }, []);
+    }, [isKitSliderPaused]);
 
     const goToKitSlide = (slideIndex) => {
         setActiveKitSlide(slideIndex);
@@ -618,6 +627,8 @@ The i-BoT robotics kit helps students explore IoT, robotics, wireless communicat
                             onTouchStart={handleKitTouchStart}
                             onTouchMove={handleKitTouchMove}
                             onTouchEnd={handleKitTouchEnd}
+                            onMouseEnter={() => setIsKitSliderPaused(true)}
+                            onMouseLeave={() => setIsKitSliderPaused(false)}
                         >
                             <div className="kits-slider-window">
                                 <div
@@ -634,23 +645,38 @@ The i-BoT robotics kit helps students explore IoT, robotics, wireless communicat
                                             <div className="kit-scroll-content">
                                                 <div className="kit-header">
                                                     <h3>i-Bot Starter Kit</h3>
-                                                    <span className="kit-badge">Beginner</span>
+                                                    <span className="kit-badge">20+ foundational projects</span>
                                                 </div>
 
                                                 <div className="kit-details">
                                                     <div className="kit-section">
                                                         <h4>Description</h4>
-                                                        <p>The perfect entry point into smart electronics and wireless control.</p>
+                                                        <p>Entry-level kit for learning smart electronics and wireless device control.</p>
                                                     </div>
 
                                                     <div className="kit-section">
-                                                        <h4>Projects</h4>
-                                                        <p>20+ foundational projects focusing on sensor logic and motor control.</p>
+                                                        <h4>Key Highlights</h4>
+                                                        <ul className="hardware-list">
+                                                            <li>Sensor-based automation projects</li>
+                                                            <li>Basic motor control robotics</li>
+                                                            <li>Wireless logic learning</li>
+                                                            <li>Beginner friendly electronics</li>
+                                                        </ul>
                                                     </div>
 
                                                     <div className="kit-section">
-                                                        <h4>Ideal For</h4>
-                                                        <p>Beginners who want to understand how the Internet of Things works.</p>
+                                                        <h4>Example Projects</h4>
+                                                        <ul className="hardware-list">
+                                                            <li>LED Automation</li>
+                                                            <li>Motion Sensor Alert</li>
+                                                            <li>Smart Light Control</li>
+                                                            <li>Motor Control Robot</li>
+                                                        </ul>
+                                                    </div>
+
+                                                    <div className="kit-section">
+                                                        <h4>Outcome</h4>
+                                                        <p>Students learn IoT basics, sensor logic, and automation concepts.</p>
                                                     </div>
                                                 </div>
 
@@ -669,29 +695,49 @@ The i-BoT robotics kit helps students explore IoT, robotics, wireless communicat
                                             <div className="kit-scroll-content">
                                                 <div className="kit-header featured-header">
                                                     <h3>i-Bot Advance Kit</h3>
-                                                    <span className="kit-badge advanced">Advanced</span>
+                                                    <span className="kit-badge advanced">100+ smart projects</span>
                                                 </div>
 
                                                 <div className="kit-details">
                                                     <div className="kit-section">
                                                         <h4>Description</h4>
-                                                        <p>Our most comprehensive IoT kit packed with over 45+ components.</p>
+                                                        <p>Advanced IoT robotics kit for connected smart systems and complex automation projects.</p>
                                                     </div>
 
                                                     <div className="kit-section">
-                                                        <h4>Projects</h4>
-                                                        <p>100+ projects including IoT Home Automation, Radar Systems, Maze Solvers, and Voice-Controlled Robots.</p>
+                                                        <h4>Key Highlights</h4>
+                                                        <ul className="hardware-list">
+                                                            <li>Powered by ESP32 with Wi-Fi and Bluetooth</li>
+                                                            <li>Multi-sensor integration support</li>
+                                                            <li>Advanced robotics and IoT systems</li>
+                                                            <li>Industrial grade safety design</li>
+                                                        </ul>
                                                     </div>
 
                                                     <div className="kit-section">
-                                                        <h4>Featured Hardware</h4>
+                                                        <h4>Example Projects</h4>
+                                                        <ul className="hardware-list">
+                                                            <li>IoT Home Automation</li>
+                                                            <li>Radar Detection System</li>
+                                                            <li>Maze Solving Robot</li>
+                                                            <li>Voice Controlled Robot</li>
+                                                        </ul>
+                                                    </div>
+
+                                                    <div className="kit-section">
+                                                        <h4>Included Hardware</h4>
                                                         <ul className="hardware-list">
                                                             <li>I2C LCD Display</li>
                                                             <li>Servo Motors</li>
-                                                            <li>Water Pump</li>
+                                                            <li>Water Pump Module</li>
                                                             <li>Pulse Rate Sensor</li>
                                                             <li>Environmental Sensors (Gas, Rain, Soil)</li>
                                                         </ul>
+                                                    </div>
+
+                                                    <div className="kit-section">
+                                                        <h4>Outcome</h4>
+                                                        <p>Students master IoT systems, wireless communication, automation, and advanced robotics concepts.</p>
                                                     </div>
                                                 </div>
 
@@ -747,34 +793,61 @@ The i-BoT robotics kit helps students explore IoT, robotics, wireless communicat
                         <div className="projects-scroll-wrap">
                             <div className="projects-scroll-track">
                                 {[
-                                    { title: "Smart Home Controller", description: "Control home devices via WiFi and Bluetooth" },
-                                    { title: "Weather Station", description: "Real-time environmental monitoring system" },
-                                    { title: "Voice Controlled Robot", description: "Voice command-driven IoT robotics" },
-                                    { title: "Plant Care System", description: "Soil moisture and temperature monitoring" },
-                                    { title: "Smart Security System", description: "Motion detection with alerts via WiFi" },
-                                    { title: "IoT Door Lock", description: "Secure access with wireless control" },
-                                    { title: "Air Quality Monitor", description: "Track and display pollution levels" },
-                                    { title: "Smart Parking", description: "Automated parking detection system" },
-                                    { title: "Fire Alert System", description: "WiFi-enabled smoke and flame detection" },
-                                    { title: "Smart Garden", description: "Automated watering with sensor feedback" },
-                                    { title: "Traffic Light System", description: "Simulated traffic control with sensors" },
-                                    { title: "Wireless Car", description: "Bluetooth and WiFi controlled vehicle" }
+                                   {
+    title: "Smart Attendance System",
+    description: "An automated system that records attendance using sensors, RFID, or smart identification methods.",
+    image: SmartAttendanceSystem
+},
+{
+    title: "IoT House",
+    description: "A smart home model where devices like lights and appliances are controlled using IoT technology.",
+    image: IotHouse
+},
+{
+    title: "Humanoid",
+    description: "A human-like robot designed to perform actions such as walking, moving arms, or interacting with users.",
+    image: Humaniod
+},
+{
+    title: "Bluetooth Controlled Car",
+    description: "A robotic car that can be controlled wirelessly using Bluetooth from a smartphone or controller.",
+    image: BluetoothControlledCar
+},
+{
+    title: "Robotic Arm",
+    description: "A programmable robotic arm capable of picking, placing, and manipulating objects using motors and sensors.",
+    image: RoboticArm
+}
+                                    
                                 ].concat([
-                                    { title: "Smart Home Controller", description: "Control home devices via WiFi and Bluetooth" },
-                                    { title: "Weather Station", description: "Real-time environmental monitoring system" },
-                                    { title: "Voice Controlled Robot", description: "Voice command-driven IoT robotics" },
-                                    { title: "Plant Care System", description: "Soil moisture and temperature monitoring" },
-                                    { title: "Smart Security System", description: "Motion detection with alerts via WiFi" },
-                                    { title: "IoT Door Lock", description: "Secure access with wireless control" },
-                                    { title: "Air Quality Monitor", description: "Track and display pollution levels" },
-                                    { title: "Smart Parking", description: "Automated parking detection system" },
-                                    { title: "Fire Alert System", description: "WiFi-enabled smoke and flame detection" },
-                                    { title: "Smart Garden", description: "Automated watering with sensor feedback" },
-                                    { title: "Traffic Light System", description: "Simulated traffic control with sensors" },
-                                    { title: "Wireless Car", description: "Bluetooth and WiFi controlled vehicle" }
+                                    {
+    title: "Smart Attendance System",
+    description: "An automated system that records attendance using sensors, RFID, or smart identification methods.",
+    image: SmartAttendanceSystem
+},
+{
+    title: "IoT House",
+    description: "A smart home model where devices like lights and appliances are controlled using IoT technology.",
+    image: IotHouse
+},
+{
+    title: "Humanoid",
+    description: "A human-like robot designed to perform actions such as walking, moving arms, or interacting with users.",
+    image: Humaniod
+},
+{
+    title: "Bluetooth Controlled Car",
+    description: "A robotic car that can be controlled wirelessly using Bluetooth from a smartphone or controller.",
+    image: BluetoothControlledCar
+},
+{
+    title: "Robotic Arm",
+    description: "A programmable robotic arm capable of picking, placing, and manipulating objects using motors and sensors.",
+    image: RoboticArm
+}
                                 ]).map((project, index) => (
                                     <div key={`${project.title}-${index}`} className="project-card">
-                                        <img src={heroRobot} alt="project icon" className="project-number" />
+                                        <img src={project.image} alt="project icon" className="project-number" />
                                         <h3>{project.title}</h3>
                                         <p>{project.description}</p>
                                     </div>

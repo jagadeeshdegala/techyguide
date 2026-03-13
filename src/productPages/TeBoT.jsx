@@ -23,7 +23,13 @@ import TeBotKitsforStudents3 from '../assets/ProductTeBoTImages/TeBot Kits for S
 import tebotProjectsImage from '../assets/ProductTeBoTImages/robot_2582246.png';
 import tebotIntroVideo from '../assets/ProductTeBoTImages/Website_Product_Page_TeBot_V1.mp4';
 // import ZohoBiginForm from '../components/ZohoBiginForm';
-//hero image
+//featured tebot projects images
+import soccerRobot from '../assets/ProductTeBoTImages/Featured TeBot Projects - 1.jpg';
+import LineFollower from '../assets/ProductTeBoTImages/Featured TeBot Projects - 2.jpg';
+import obstacleAvoidanceRobot from '../assets/ProductTeBoTImages/Featured TeBot Projects - 3.jpg';
+import BluetoothControlCar from '../assets/ProductTeBoTImages/Featured TeBot Projects - 4.jpg';
+import VoiceControlCar from '../assets/ProductTeBoTImages/Featured TeBot Projects - 5.jpg';
+
 
 function TeBoT() {
     const [activeKitSlide, setActiveKitSlide] = useState(0);
@@ -54,42 +60,77 @@ function TeBoT() {
     }, []);
 
     const projectsList = [
-        { title: "Button Games", description: "Interactive gaming with button controls" },
-        { title: "LED Patterns", description: "Creative light pattern programming" },
-        { title: "Smart Bridge", description: "Automated bridge infrastructure control" },
-        { title: "Line Follower", description: "Precision navigation using sensor paths" },
-        { title: "Flame Detector", description: "Automated fire safety and alert system" },
-        { title: "Smart Garden", description: "Soil and moisture monitoring for plants" },
-        { title: "Obstacle Avoider", description: "Autonomous navigation around obstacles" },
-        { title: "Gesture Controlled Car", description: "Hand gesture-based vehicle control" },
-        { title: "RFID Door Lock", description: "Secure access with RFID technology" },
-        { title: "Voice Controlled Car", description: "Voice command-driven robotics" },
-        { title: "Smart Home Automation", description: "Connected home devices control" },
-        { title: "Motion Sensing System", description: "Advanced motion detection and tracking" }
-    ];
+    { title: "Soccer Robot", description: "A robot designed to play mini soccer games using motor control and directional movement.", image: soccerRobot },
+    { title: "Line Follower", description: "A robot that follows a predefined path by detecting and tracking a line using sensors.", image: LineFollower },
+    { title: "Obstacle Avoidance Robot", description: "A smart robot that detects obstacles using sensors and automatically changes direction.", image: obstacleAvoidanceRobot },
+    { title: "Bluetooth Control Car", description: "A robotic car controlled wirelessly through a smartphone using Bluetooth connectivity.", image: BluetoothControlCar },
+    { title: "Voice Control Car", description: "A robotic car that moves based on voice commands given through a mobile device.", image: VoiceControlCar },
+];
 
     const kitOfferings = [
         {
             number: "1️⃣",
             name: "TeBot Basic Kit",
-            description: "The ideal entry-level robotics kit for beginners to build a solid STEM foundation.",
+            description: "Ideal entry-level robotics kit designed for beginners to learn robotics fundamentals and basic automation.",
             projects: "10+ interactive projects",
+            features: [
+                "Built-in sensors for easy experimentation",
+                "Beginner-friendly electronic components",
+                "Safe circuit protection for classroom learning",
+                "Durable reusable STEM components",
+            ],
+            projectsList: [
+                "Button Game",
+                "LED Pattern Controller",
+                "Automatic Street Light",
+                "Basic Obstacle Avoider",
+                "Simple Sound Sensor Alarm",
+            ],
+            outcome: "Students understand basic robotics concepts, simple circuits, beginner electronics, and creative prototyping.",
             image: TeBotKitsforStudents1,
             imageAlt: 'TeBot Basic Kit visual'
         },
         {
             number: "2️⃣",
             name: "TeBot Champ Kit",
-            description: "An advanced robotics kit designed for young innovators ready for more complexity and sensor experimentation.",
+            description: "Advanced robotics kit for young innovators to explore multi-sensor robotics projects and structured STEM learning.",
             projects: "40+ engaging projects",
+            features: [
+                "Supports integration of multiple sensors",
+                "Built-in modules for quick experimentation",
+                "Durable robotics components for repeated use",
+                "Safe short-circuit protection system",
+            ],
+            projectsList: [
+                "Line Follower Robot",
+                "Smart Irrigation System",
+                "Danger Detection System",
+                "Temperature & Humidity Monitor",
+                "Virtual Assistant Home Automation",
+            ],
+            outcome: "Students gain practical exposure to robotics, sensors, automation, and real-world technology applications.",
             image: TeBotKitsforStudents2,
             imageAlt: 'TeBot Champ Kit visual'
         },
         {
             number: "3️⃣",
             name: "TeBot Advance Kit",
-            description: "The flagship innovator's toolkit. It combines advanced Robotics, IoT, and AI capabilities into one package, featuring professional modules like RFID and Bluetooth.",
+            description: "The ultimate robotics learning kit enabling complex robotics, IoT, and automation projects.",
             projects: "50+ high-level projects",
+            features: [
+                "Integration of multiple sensors and modules",
+                "Built-in learning modules for advanced experimentation",
+                "Safe electronics with circuit protection",
+                "Professional-level robotics development platform",
+            ],
+            projectsList: [
+                "Smart Home Automation",
+                "Gesture Controlled Robot",
+                "WiFi Controlled Devices",
+                "Water Level Monitoring System",
+                "Maze Solving Robot",
+            ],
+            outcome: "Students develop strong fundamentals in robotics, electronics, automation, and IoT-based smart systems.",
             image: TeBotKitsforStudents3,
             imageAlt: 'TeBot Advance Kit visual'
         }
@@ -806,6 +847,26 @@ function TeBoT() {
                                                 <div className="projects-badge">
                                                     📚 <strong>{kit.projects}</strong>
                                                 </div>
+                                                <div className="kit-info-block">
+                                                    <span className="kit-info-label">Key Features</span>
+                                                    <ul className="kit-features-list">
+                                                        {kit.features.map((f, i) => (
+                                                            <li key={i}>{f}</li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                                <div className="kit-info-block">
+                                                    <span className="kit-info-label">Projects Included</span>
+                                                    <ul className="kit-features-list">
+                                                        {kit.projectsList.map((p, i) => (
+                                                            <li key={i}>{p}</li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                                <div className="kit-info-block">
+                                                    <span className="kit-info-label">Learning Outcome</span>
+                                                    <p className="kit-outcome">{kit.outcome}</p>
+                                                </div>
                                             </div>
                                         </article>
                                     ))}
@@ -855,7 +916,7 @@ function TeBoT() {
                             <div className="projects-scroll-track">
                                 {[...projectsList, ...projectsList].map((project, index) => (
                                     <div key={`${project.title}-${index}`} className="project-card reveal-card">
-                                        <img src={tebotProjectsImage} alt="project icon" className="project-number" />
+                                        <img src={project.image} alt="project icon" className="project-number" />
                                         <h3>{project.title}</h3>
                                         <p>{project.description}</p>
                                     </div>

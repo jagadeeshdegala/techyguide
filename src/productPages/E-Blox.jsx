@@ -8,6 +8,8 @@ import robot3 from '../assets/ProductE-BloxImages/robot_3558910.png';
 import robot4 from '../assets/ProductE-BloxImages/robot_4512237.png';
 // hero section image
 import Heroimage from '../assets/ProductE-BloxImages/Hero image - 1.png';
+//introduction to eblox kit video section
+import ebloxIntroVideo from '../assets/ProductE-BloxImages/Website_Product_Page_E-Blox_V1.mp4';
 
 
 //technologies at focus section images
@@ -27,7 +29,14 @@ import whyEbloxBest3 from '../assets/ProductE-BloxImages/Why is e-Blox the Best 
 import whyEbloxBest4 from '../assets/ProductE-BloxImages/Why is e-Blox the Best for Early Learners_ - 4.jpg';
 // eblox kit offerings section images
 import ebloxStarterKit from '../assets/ProductE-BloxImages/E-Blox Kit Offerings - 1.jpg';
-import ebloxIntroVideo from '../assets/ProductE-BloxImages/Website_Product_Page_E-Blox_V1.mp4';
+//featured eblox projects section
+import windmill from '../assets/ProductE-BloxImages/Featured E blox Projects - 1.jpg';
+import Lamp from '../assets/ProductE-BloxImages/Featured E blox Projects - 2.jpg';
+import HomeAutomation from '../assets/ProductE-BloxImages/Featured E blox Projects - 3.jpg';
+import AutomaticCloseLight from '../assets/ProductE-BloxImages/Featured E blox Projects - 4.jpg';
+import SanitizerDispenser from '../assets/ProductE-BloxImages/Featured E blox Projects - 5.jpg';
+import car from '../assets/ProductE-BloxImages/Featured E blox Projects - 6.jpg';
+import MechanicalDoor from '../assets/ProductE-BloxImages/Featured E blox Projects - 7.jpg';
 
 
 
@@ -93,14 +102,41 @@ export default function EBlox() {
     }, []);
     
     const projectsList = [
-        { title: "Proximity Glow Game", description: "This project lights up when an object or hand comes close to the proximity sensor. It demonstrates how distance sensing can be used to create interactive light-based games." },
-        { title: "Object Follow Robot", description: "This robot moves by following an object detected by the IR distance sensor. It shows how sensors and motors can work together to create simple tracking systems." },
-        { title: "Clap Controlled Car", description: "The car moves or stops when a clap sound is detected by the sound sensor. This project demonstrates sound-based control for electronic devices." },
-        { title: "Solar Tracking Rover", description: "The rover moves in the direction of light detected by the light sensor to simulate solar tracking. It demonstrates how solar panels can automatically align toward sunlight for maximum energy." },
-        { title: "Touchless Sound Game", description: "This interactive game activates sounds when a hand is placed near the sensor without touching it. It demonstrates touch-free technology used in modern devices." },
-        { title: "Buzzer eBlox", description: "This project uses a buzzer to produce sound when the circuit is activated. It helps demonstrate basic electronic alerts and alarm systems." },
-        { title: "Sound Sensor eBlox", description: "The sound sensor detects noise such as claps or loud sounds and converts it into an electrical signal. This shows how sound can be used as an input to control electronic circuits." },
-        { title: "Moving Car (eBlox)", description: "The motor driver powers the BO motors to move the car forward. It demonstrates the basic concept of motor control in robotics and automation." },
+       {
+    title: "Wind Mill",
+    description: "A small windmill model that generates motion or energy when wind moves the blades, demonstrating basic renewable energy concepts.",
+    image: windmill
+},
+{
+    title: "Lamp",
+    description: "A simple electronic lamp project that demonstrates how a circuit can be used to power and control a light source.",
+    image: Lamp
+},
+{
+    title: "Home Automation",
+    description: "A smart system that allows lights or appliances to be controlled automatically or remotely using sensors or wireless technology.",
+    image: HomeAutomation
+},
+{
+    title: "Automatic Close Light",
+    description: "A lighting system that automatically turns off when no one is nearby using sensors for energy-efficient operation.",
+    image: AutomaticCloseLight
+},
+{
+    title: "Sanitizer Dispenser",
+    description: "A touch-free sanitizer dispenser that releases sanitizer automatically when a hand is detected by a sensor.",
+    image: SanitizerDispenser
+},
+{
+    title: "Car",
+    description: "A simple robotic car project demonstrating basic motor control and movement using electronic components.",
+    image: car
+},
+{
+    title: "Mechanical Door",
+    description: "A door mechanism that opens or closes automatically using motors and simple mechanical and electronic control.",
+    image: MechanicalDoor
+}
         // { title: "Distance eBlox", description: "The distance sensor detects nearby objects and measures their proximity. It helps demonstrate how sensors are used for obstacle detection and automation systems." },
         // { title: "Motor Driver eBlox", description: "The motor driver controls the direction and power supplied to the motors. It is used to safely operate motors in electronic and robotics projects." },
         // { title: "Light Sensor  EBlox", description: " A   Light Sensor detects the intensity of light in the surrounding environment using an LDR module. It can automatically control devices like LEDs or lamps, turning them ON in darkness and OFF in bright light" },
@@ -863,7 +899,7 @@ export default function EBlox() {
                         <div className="eblox-projects-track">
                             {[...projectsList, ...projectsList].map((project, index) => (
                                 <article key={`${project.title}-${index}`} className="eblox-project-card">
-                                    <img src={robotKids} alt="project icon" className="eblox-project-number" />
+                                    <img src={project.image} alt="project icon" className="eblox-project-number" />
                                     <h4>{project.title}</h4>
                                     <p>{project.description}</p>
                                 </article>

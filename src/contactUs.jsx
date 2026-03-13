@@ -9,6 +9,8 @@ import school6 from './assets/contactUsImages/school6.png';
 import school7 from './assets/contactUsImages/school7.jpg';
 import school8 from './assets/contactUsImages/school8.png';
 import school9 from './assets/contactUsImages/school9.png';
+// contactus image
+import contactusimg from './assets/contactUsImages/Contact us - 2.png';
 
 function ContactUs() {
 	const [activeFaqIndex, setActiveFaqIndex] = useState(1);
@@ -116,7 +118,7 @@ function ContactUs() {
 						<div className="content-wrapper">
 							<div className="badge">Official Partners</div>
 							<h1 className="tg-contactus-title">Build Your <span>Dream Lab</span> Today.</h1>
-							<img className="tg-contactus-heading-image" src={school2} alt="Dream Lab setup visual" />
+							<img className="tg-contactus-heading-image" src={contactusimg} alt="Dream Lab setup visual" />
 							<p className="description">TechyGuide provides turnkey solutions for CBSE Composite Skill Labs, STEM Tinkering, and ICSE Robotics. Fully compliant with government mandates. </p>
 
 							<ul className="features">
