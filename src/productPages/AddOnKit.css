@@ -9,18 +9,16 @@
 	--addon-bg-2: #0f7288;
 	--addon-text-strong: #ecfcff;
 	--addon-text-soft: #c8edf4;
-	--addon-border: rgba(170, 248, 238, 0.45);
-	--addon-shadow: 0 8px 18px rgba(5, 44, 54, 0.34);
+	--addon-accent-yellow: #ffd179;
+	--addon-accent-mint: #7bf3d2;
+	--addon-btn-bg: #96f2e6;
+	--addon-btn-ink: #0b4754;
 	position: relative;
 	margin-top: var(--addon-header-offset);
 	scroll-margin-top: var(--addon-header-offset);
 	overflow: hidden;
-	height: auto;
-	min-height: calc(80vh - var(--addon-header-offset));
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	top: 0px;
+	height: 85vh;
+	top: 0;
 	padding: clamp(1rem, 2vw, 1.8rem) clamp(1rem, 5vw, 4rem) clamp(2.1rem, 4vw, 4.2rem);
 	background:
 		radial-gradient(920px 440px at 84% -14%, rgba(255, 185, 122, 0.22), transparent 65%),
@@ -36,20 +34,16 @@
 	content: "";
 	position: absolute;
 	pointer-events: none;
-	filter: blur(0.2px);
-	z-index: 0;
 }
 
 .addonkit-page-root .addon-hero-root::before {
 	inset: -16%;
-	width: auto;
-	aspect-ratio: auto;
-	border-radius: 0;
+	z-index: -4;
 	background:
 		radial-gradient(220px 92px at 14% 16%, rgba(224, 252, 255, 0.2), transparent 68%),
 		radial-gradient(250px 102px at 58% 6%, rgba(224, 252, 255, 0.2), transparent 70%),
 		radial-gradient(290px 108px at 90% 22%, rgba(224, 252, 255, 0.24), transparent 72%);
-	animation: addonHeroDriftA 14s ease-in-out infinite alternate;
+	animation: addonHeroCloudDrift 22s ease-in-out infinite alternate;
 }
 
 .addonkit-page-root .addon-hero-root::after {
@@ -57,13 +51,11 @@
 	right: -14vw;
 	bottom: -44vh;
 	height: 60vh;
-	width: auto;
-	aspect-ratio: auto;
+	z-index: -2;
 	border-radius: 56% 56% 0 0 / 100% 100% 0 0;
 	background:
 		radial-gradient(70% 75% at 50% 0%, rgba(255, 192, 126, 0.19), transparent 70%),
 		linear-gradient(180deg, #095064 0%, #062d36 100%);
-	animation: addonHeroDriftB 16s ease-in-out infinite alternate;
 }
 
 .addonkit-page-root .addon-hero-canvas {
@@ -80,9 +72,13 @@
 
 .addonkit-page-root .addon-hero-nav {
 	position: relative;
-	z-index: 2;
+	z-index: 1;
+	width: min(1240px, 100%);
+	margin-inline: auto;
 	display: flex;
-	justify-content: flex-start;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
 	margin-bottom: clamp(28px, 6vh, 60px);
 }
 
@@ -105,22 +101,23 @@
 }
 
 .addonkit-page-root .addon-hero-logo-pill:hover {
-	transform: translateY(-2px);
+	transform: none;
 	background: linear-gradient(150deg, #0b6a78, #10a59e);
-	box-shadow: 0 8px 18px rgba(5, 44, 54, 0.34);
+	box-shadow: none;
 }
 
 .addonkit-page-root .addon-hero-layout {
 	position: relative;
 	z-index: 2;
-	max-width: 1240px;
-	margin: 0 auto;
+	width: min(1240px, 100%);
+	margin: clamp(1.2rem, 3vw, 2.2rem) auto 0;
 	display: grid;
-	grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
-	gap: clamp(24px, 5vw, 70px);
+	grid-template-columns: minmax(300px, 1fr) minmax(320px, 0.95fr);
+	gap: clamp(0.9rem, 2.4vw, 2.2rem);
 	align-items: center;
 	will-change: transform;
-	top: -60px;
+	    transform: translateY(-1.8cm);
+
 }
 
 .addonkit-page-root .addon-hero-copy,
@@ -130,8 +127,7 @@
 }
 
 .addonkit-page-root .addon-hero-copy {
-	max-width: 580px;
-	animation: addonHeroRevealUp 0.9s ease both;
+	max-width: 560px;
 }
 
 .addonkit-page-root .addon-hero-eyebrow {
@@ -157,7 +153,7 @@
 	line-height: 0.9;
 	font-weight: 800;
 	letter-spacing: -0.012em;
-	color: #ffd179;
+	color: var(--addon-accent-yellow);
 	text-shadow: 0 4px 0 rgba(7, 39, 47, 0.34);
 }
 
@@ -167,7 +163,7 @@
 	line-height: inherit;
 	font-family: inherit;
 	font-weight: 700;
-	color: #7bf3d2;
+	color: var(--addon-accent-mint);
 }
 
 .addonkit-page-root .addon-hero-subcopy {
@@ -199,8 +195,8 @@
 
 .addonkit-page-root .addon-hero-btn-primary {
 	border: 0;
-	background: #96f2e6;
-	color: #0b4754;
+	background: var(--addon-btn-bg);
+	color: var(--addon-btn-ink);
 	box-shadow: 0 8px 18px rgba(7, 39, 47, 0.28);
 }
 
@@ -212,9 +208,12 @@
 
 .addonkit-page-root .addon-hero-visual {
 	position: relative;
+	width: min(500px, 100%);
+	margin-inline: auto;
+	will-change: transform;
+	transition: transform 0.24s ease-out;
 	display: grid;
 	place-items: center;
-	animation: addonHeroRevealScale 1s cubic-bezier(0.2, 0.9, 0.24, 1) both;
 }
 
 .addonkit-page-root .addon-hero-photo-card {
@@ -226,7 +225,7 @@
 	border: 0;
 	box-shadow: none;
 	backdrop-filter: none;
-	overflow: hidden;
+	overflow: visible;
 }
 
 .addonkit-page-root .addon-hero-photo {
@@ -237,7 +236,7 @@
 	object-fit: cover;
 	border-radius: 14px;
 	filter: none;
-	animation: addonHeroPhotoFloat 5s ease-in-out infinite;
+	animation: none;
 }
 
 .addonkit-page-root .addon-hero-floating-badge {
@@ -254,20 +253,19 @@
 	backdrop-filter: none;
 	box-shadow: 0 8px 18px rgba(4, 56, 58, 0.2);
 	z-index: 2;
-	animation: addonHeroBadgeFloat 4.2s ease-in-out infinite;
 	pointer-events: none;
 }
 
 .addonkit-page-root .addon-hero-badge-one {
-	left: -4%;
+	left: 2%;
 	bottom: 19%;
-	animation-delay: 0.18s;
+	animation: addonHeroBadgeFloatOne 4.2s ease-in-out infinite;
 }
 
 .addonkit-page-root .addon-hero-badge-two {
-	right: -3%;
+	right: 2%;
 	top: 10%;
-	animation-delay: 1s;
+	animation: addonHeroBadgeFloatTwo 4.6s ease-in-out infinite;
 }
 
 .addonkit-page-root .addon-hero-wave {
@@ -335,136 +333,123 @@
 	}
 }
 
-@keyframes addonHeroDriftA {
+
+@keyframes addonHeroCloudDrift {
 	0% {
-		transform: translate3d(0, 0, 0) scale(1);
+		transform: translate3d(0, 0, 0);
 	}
 	100% {
-		transform: translate3d(22px, 16px, 0) scale(1.08);
+		transform: translate3d(2.4%, -2%, 0);
 	}
 }
 
-@keyframes addonHeroDriftB {
+@keyframes addonHeroBadgeFloatOne {
 	0% {
-		transform: translate3d(0, 0, 0) scale(1);
+		transform: translateY(0);
 	}
 	100% {
-		transform: translate3d(-18px, -14px, 0) scale(1.07);
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-9px);
+	}
+}
+
+@keyframes addonHeroBadgeFloatTwo {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-8px);
 	}
 }
 
 @media (max-width: 1024px) {
 	.addonkit-page-root .addon-hero-root {
-		--addon-header-offset: 113px;
-		padding-top: clamp(56px, 8vh, 84px);
-		min-height: calc(80vh - var(--addon-header-offset));
-	}
-
-	.addonkit-page-root .addon-hero-layout {
-		gap: clamp(18px, 4vw, 38px);
-	}
-
-	.addonkit-page-root .addon-hero-badge-one {
-		left: 0;
-	}
-
-	.addonkit-page-root .addon-hero-badge-two {
-		right: 0;
-	}
-}
-
-@media (max-width: 900px) {
-	.addonkit-page-root .addon-hero-root {
-		--addon-header-offset: 103px;
-		padding-inline: clamp(16px, 5vw, 28px);
-		padding-bottom: clamp(24px, 6vh, 48px);
-		min-height: calc(80vh - var(--addon-header-offset));
+		height: auto;
+		min-height: auto;
+		padding-bottom: 3.2rem;
 	}
 
 	.addonkit-page-root .addon-hero-layout {
 		grid-template-columns: 1fr;
-		align-items: start;
+		gap: 1.4rem;
 	}
 
 	.addonkit-page-root .addon-hero-copy {
-		max-width: 100%;
+		text-align: center;
+		margin-inline: auto;
+	}
+
+	.addonkit-page-root .addon-hero-eyebrow,
+	.addonkit-page-root .addon-hero-subcopy {
+		margin-inline: auto;
 	}
 
 	.addonkit-page-root .addon-hero-visual {
-		margin-top: 0;
+		width: min(430px, 100%);
+		top: 10px;
 	}
 
-	.addonkit-page-root .addon-hero-photo-card {
-		max-width: 690px;
-		margin-inline: auto;
+	.addonkit-page-root .addon-hero-badge-one {
+		left: 2%;
+	}
+
+	.addonkit-page-root .addon-hero-badge-two {
+		right: 2%;
 	}
 }
 
 @media (max-width: 640px) {
 	.addonkit-page-root .addon-hero-root {
-		--addon-header-offset: 93px;
-		padding-top: clamp(52px, 12vw, 72px);
-		padding-bottom: 20px;
-		min-height: calc(80vh - var(--addon-header-offset));
+		--addon-header-offset: 90px;
+		height: auto;
+		min-height: 620px;
+		
 	}
 
-	.addonkit-page-root .addon-hero-nav {
-		margin-bottom: 24px;
-	}
-
-	.addonkit-page-root .addon-hero-logo-pill {
-		padding: 9px 15px;
-		font-size: 0.76rem;
-	}
-
-	.addonkit-page-root .addon-hero-copy h1 {
-		font-size: clamp(1.76rem, 9vw, 2.55rem);
-	}
-
-	.addonkit-page-root .addon-hero-copy h1 span {
-		font-size: clamp(1.02rem, 5vw, 1.36rem);
-	}
-
-	.addonkit-page-root .addon-hero-subcopy {
-		font-size: 0.94rem;
-		line-height: 1.56;
-		margin-bottom: 14px;
-	}
-
-	.addonkit-page-root .addon-hero-btn {
-		padding: 12px 18px;
-		font-size: 0.9rem;
-	}
-
-	.addonkit-page-root .addon-hero-floating-badge {
-		position: static;
-		display: inline-flex;
-		margin-top: 10px;
-		margin-right: 8px;
+	.addonkit-page-root .addon-hero-layout {
+		transform: translateY(2.5cm);
 	}
 
 	.addonkit-page-root .addon-hero-visual {
-		display: block;
+		top: 85px;
 	}
 
-	.addonkit-page-root .addon-hero-wave {
-		bottom: -120px;
-		height: 210px;
+	.addonkit-page-root .addon-hero-photo {
+		border-radius: 18px;
+		transform: translateY(-2.3cm);
+	}
+
+	.addonkit-page-root .addon-hero-floating-badge {
+		font-size: 0.74rem;
+	}
+
+	.addonkit-page-root .addon-hero-badge-one {
+		bottom: calc(19% + 3cm);
+	}
+
+	.addonkit-page-root .addon-hero-badge-two {
+		top: calc(10% - 1cm);
 	}
 }
 
-@media (max-width: 420px) {
-	.addonkit-page-root .addon-hero-root {
-		padding-inline: 14px;
+
+@media (prefers-reduced-motion: reduce) {
+	.addonkit-page-root .addon-hero-root::before,
+	.addonkit-page-root .addon-hero-photo,
+	.addonkit-page-root .addon-hero-badge-one,
+	.addonkit-page-root .addon-hero-badge-two {
+		animation: none !important;
 	}
 
-	.addonkit-page-root .addon-hero-eyebrow {
-		font-size: 0.68rem;
-		padding: 6px 12px;
-	}
-
-	.addonkit-page-root .addon-hero-photo-card {
-		padding: 6px;
+	.addonkit-page-root .addon-hero-btn,
+	.addonkit-page-root .addon-hero-copy,
+	.addonkit-page-root .addon-hero-visual {
+		transition: none !important;
 	}
 }
 

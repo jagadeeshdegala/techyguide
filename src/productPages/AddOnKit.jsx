@@ -367,19 +367,6 @@ const AddOnKit = () => {
 			tick();
 		};
 
-		const onPointerMove = (event) => {
-			const rect = hero.getBoundingClientRect();
-			pointer.active = true;
-			pointer.x = event.clientX - rect.left;
-			pointer.y = event.clientY - rect.top;
-			applyParallax(event.clientX, event.clientY);
-		};
-
-		const onPointerLeave = () => {
-			pointer.active = false;
-			resetParallax();
-		};
-
 		const onVisibilityChange = () => {
 			if (document.hidden) {
 				stop();
@@ -398,8 +385,6 @@ const AddOnKit = () => {
 			start();
 		};
 
-		hero.addEventListener("pointermove", onPointerMove);
-		hero.addEventListener("pointerleave", onPointerLeave);
 		window.addEventListener("resize", resize);
 		document.addEventListener("visibilitychange", onVisibilityChange);
 
@@ -415,8 +400,6 @@ const AddOnKit = () => {
 
 		return () => {
 			stop();
-			hero.removeEventListener("pointermove", onPointerMove);
-			hero.removeEventListener("pointerleave", onPointerLeave);
 			window.removeEventListener("resize", resize);
 			document.removeEventListener("visibilitychange", onVisibilityChange);
 
@@ -641,6 +624,7 @@ const AddOnKit = () => {
 							<p className="addon-hero-subcopy">
 								Kids power up robot projects with sensors, lights, motion parts, and coding mini missions.
 							</p>
+							<br/>
 							<a className="addon-hero-btn addon-hero-btn-primary" href="#" aria-label="Explore Add-on kit">
 								Explore Add-on Kit
 							</a>

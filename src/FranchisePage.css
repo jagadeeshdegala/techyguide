@@ -93,19 +93,43 @@
 .franchise-page .hero-buttons { margin-top: 2rem; margin-bottom: 80px; }
 
 /* ============ 5. PILLAR CARDS (Perfect Fit) ============ */
-.franchise-page .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.franchise-page .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
 
 .franchise-page .pillar-card {
-    background: white; padding: 20px; border-radius: 20px;
+    background: white;
+    padding: 18px;
+    border-radius: 20px;
     box-shadow: var(--shadow); transition: var(--transition);
     border-bottom: 4px solid var(--primary-orange);
+    display: flex;
+    flex-direction: column;
 }
 
 .franchise-page .pillar-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); }
 
 .franchise-page .pillar-img {
-    height: 220px; border-radius: 15px; margin-bottom: 20px;
-    background-size: cover; background-position: center;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 16px;
+}
+
+.franchise-page .pillar-card h3 {
+    color: var(--primary-blue);
+    font-size: 1.15rem;
+    line-height: 1.35;
+    margin-bottom: 10px;
+}
+
+.franchise-page .pillar-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 .franchise-page .feature-list li { font-size: 0.9rem; margin-bottom: 8px; padding-left: 20px; position: relative; color: var(--text-muted); }
@@ -196,7 +220,7 @@
 .franchise-page .stat-item p { text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; opacity: 0.8; }
 
 /* ============ 9. MOBILE RESPONSIVE (Perfect Scaling) ============ */
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
     .franchise-page .pillars-grid { grid-template-columns: repeat(2, 1fr); }
     .franchise-page .box:hover { width: 550px; }
 }
@@ -501,12 +525,15 @@
 .franchise-page .revenue-card {
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
-    padding: 40px 30px;
+    padding: 0;
     border-radius: 30px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 20px 40px rgba(0, 51, 102, 0.05);
     transition: all 0.4s ease;
     position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
     animation: revenueReveal linear both;
     animation-timeline: view();
     animation-range: entry 10% cover 35%;
@@ -518,9 +545,16 @@
     box-shadow: 0 30px 60px rgba(0, 51, 102, 0.12);
 }
 
-.franchise-page .rev-icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
+.franchise-page .rev-banner {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    aspect-ratio: 16 / 9;
+}
+
+.franchise-page .rev-content {
+    padding: 24px 24px 28px;
 }
 
 .franchise-page .revenue-card h3 {
@@ -561,6 +595,73 @@
     animation-range: entry 5% cover 30%;
 }
 
+/* ============ FRANCHISE SUPPORT SECTION ============ */
+.franchise-page .franchise-support-section {
+    background: linear-gradient(180deg, #f7fbff 0%, #eef5fb 100%);
+}
+
+.franchise-page .franchise-support-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.franchise-page .franchise-support-row-1 {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.franchise-page .franchise-support-row-1 .franchise-support-card {
+    width: 100%;
+    max-width: 420px;
+}
+
+.franchise-page .franchise-support-row-2 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.franchise-page .franchise-support-card {
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.franchise-page .franchise-support-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.franchise-page .franchise-support-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.franchise-page .franchise-support-content {
+    padding: 18px 18px 20px;
+}
+
+.franchise-page .franchise-support-content h3 {
+    font-size: 1.05rem;
+    line-height: 1.35;
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+.franchise-page .franchise-support-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
 .franchise-page .highlight-text h3 { color: var(--primary-orange); font-size: 1.8rem; }
 .franchise-page .highlight-text p { font-size: 2.2rem; font-weight: 800; }
 
@@ -584,6 +685,22 @@
         flex-direction: column;
         text-align: center;
         gap: 30px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .franchise-page .franchise-support-row-1 {
+        justify-content: stretch;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .franchise-page .franchise-support-row-1 .franchise-support-card {
+        max-width: none;
+    }
+
+    .franchise-page .franchise-support-row-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
@@ -713,6 +830,21 @@
     .franchise-page .info-grid {
         grid-template-columns: 1fr !important;
         gap: 20px;
+    }
+
+    .franchise-page .franchise-support-grid {
+        gap: 20px;
+    }
+
+    .franchise-page .franchise-support-row-1,
+    .franchise-page .franchise-support-row-2 {
+        grid-template-columns: 1fr !important;
+        display: grid;
+        gap: 20px;
+    }
+
+    .franchise-page .franchise-support-image {
+        height: 190px;
     }
     
     .franchise-page .info-box {

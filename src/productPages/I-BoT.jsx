@@ -28,6 +28,7 @@ import hundredPlusProjects from '../assets/ProductI-BoTImages/100_Unmatched Proj
 import realworldApplications from '../assets/ProductI-BoTImages/Real World Applications.png';
 import modularAndScalable from '../assets/ProductI-BoTImages/Modular & Scalable.png';
 import DurabilityWarranty from '../assets/ProductI-BoTImages/Durability & Warranty.png';
+import ibotIntroVideo from '../assets/ProductI-BoTImages/Website_Product_Page_I-Bot_V1.mp4';
 
 
 function IBoT() {
@@ -462,15 +463,13 @@ function IBoT() {
                         <p className="intro-description">
 The i-BoT robotics kit helps students explore IoT, robotics, wireless communication, and automation through hands-on learning. Built on the powerful ESP32 chip with integrated Wi-Fi and Bluetooth, the kit enables learners to design smart connected systems, from simple sensor-based projects to advanced voice-controlled robots. With over 100 guided projects and industry-grade sensors, i-BoT bridges classroom STEM education with practical technology skills used in modern innovation. 
                         </p>
-                        <div className="ibot-video-container">
-                            <iframe
-                                className="ibot-intro-video"
-                                src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1"
-                                title="Introduction to i-Bot Kit"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            />
+                        <div className="ibot-video-wrap">
+                            <div className="ibot-video-container">
+                                <video className="ibot-intro-video" controls preload="metadata" playsInline>
+                                    <source src={ibotIntroVideo} type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
                         </div>
                     </div>
                 </section>

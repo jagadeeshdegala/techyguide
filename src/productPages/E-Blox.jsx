@@ -27,6 +27,7 @@ import whyEbloxBest3 from '../assets/ProductE-BloxImages/Why is e-Blox the Best 
 import whyEbloxBest4 from '../assets/ProductE-BloxImages/Why is e-Blox the Best for Early Learners_ - 4.jpg';
 // eblox kit offerings section images
 import ebloxStarterKit from '../assets/ProductE-BloxImages/E-Blox Kit Offerings - 1.jpg';
+import ebloxIntroVideo from '../assets/ProductE-BloxImages/Website_Product_Page_E-Blox_V1.mp4';
 
 
 
@@ -465,18 +466,6 @@ export default function EBlox() {
             drawFrame(false);
         };
 
-        const handlePointerMove = (event) => {
-            pointer.active = true;
-            pointer.x = event.clientX - hero.getBoundingClientRect().left;
-            pointer.y = event.clientY - hero.getBoundingClientRect().top;
-            applyParallax(event.clientX, event.clientY);
-        };
-
-        const handlePointerLeave = () => {
-            pointer.active = false;
-            resetParallax();
-        };
-
         const handleVisibilityChange = () => {
             if (document.hidden) {
                 stop();
@@ -495,8 +484,6 @@ export default function EBlox() {
             start();
         };
 
-        hero.addEventListener('pointermove', handlePointerMove);
-        hero.addEventListener('pointerleave', handlePointerLeave);
         window.addEventListener('resize', resize);
         document.addEventListener('visibilitychange', handleVisibilityChange);
 
@@ -512,8 +499,6 @@ export default function EBlox() {
 
         return () => {
             stop();
-            hero.removeEventListener('pointermove', handlePointerMove);
-            hero.removeEventListener('pointerleave', handlePointerLeave);
             window.removeEventListener('resize', resize);
             document.removeEventListener('visibilitychange', handleVisibilityChange);
 
@@ -590,15 +575,13 @@ export default function EBlox() {
                         <p className="eblox-intro-text">
                             The e-Blox Kit is a revolutionary electronics learning platform designed specifically for young learners (ages 5-10). With its safe, low-voltage components and innovative snap-together design, e-Blox makes hands-on engineering education accessible and engaging. Students can build 20+ practical projects including study lamps, table lamps, and mini windmills while learning fundamental concepts in electronics, renewable energy, and logic systems. By combining playful design with solid STEM fundamentals, e-Blox creates the perfect foundation for future innovators.
                         </p>
-                        <div className="eblox-video-container">
-                            <iframe
-                                className="eblox-intro-video"
-                                src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1"
-                                title="Introduction to e-Blox Kit"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            />
+                        <div className="eblox-video-wrap">
+                            <div className="eblox-video-container">
+                                <video className="eblox-intro-video" controls preload="metadata" playsInline>
+                                    <source src={ebloxIntroVideo} type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
                         </div>
                  {/* </div> */}
                 </section>

@@ -11,13 +11,6 @@ import testimonial7 from './assets/franchisepageimages/Partner Testimonial 7.png
 import testimonial8 from './assets/franchisepageimages/Partner Testimonial 8.png';
 import testimonial9 from './assets/franchisepageimages/Partner Testimonial 9.png';
 import testimonial10 from './assets/franchisepageimages/Partner Testimonial 10.png';
-//images
-import roboticCourse from './assets/FranchisePageImages/ROBOTICS COURSES FOR KIDS.png';
-import stemWorkshop from './assets/FranchisePageImages/STEMWORKSHOPSINSCHOOLS.png';
-import roboticCompetion from './assets/FranchisePageImages/ROBOTICS COMPETITIONS.png';
-import saleOfRoboticKits from './assets/FranchisePageImages/SALE OF ROBOTICS KITS & PRODUCTS.avif';
-import SoftwareHardware from './assets/FranchisePageImages/HARDWARE & SOFTWARE.png';
-import Training from './assets/FranchisePageImages/TRAINING & SUPPORT.png';
 // What Will You Get? section images
 import WhatWillYouGet1 from './assets/FranchisePageImages/What Will You Get1.jpg';
 import WhatWillYouGet2 from './assets/FranchisePageImages/What Will You Get2.jpg';
@@ -201,6 +194,57 @@ function FranchisePage() {
         };
     }, []);
 
+    const whyChooseCards = [
+        {
+            title: 'Proven Business Model',
+            image: 'https://placehold.co/640x420/e8f0ff/123a5d?text=Proven+Business+Model',
+            description: 'Launch with a field-tested franchise framework that includes curriculum, operations support, and proven enrollment strategies.'
+        },
+        {
+            title: 'ROI within 12–18 months',
+            image: 'https://placehold.co/640x420/e7fff3/0c5e4d?text=ROI+12-18+Months',
+            description: 'Structured pricing, recurring course income, and optimized center operations are designed to help partners achieve faster payback.'
+        },
+        {
+            title: 'Expanding demand in EdTech sector',
+            image: 'https://placehold.co/640x420/fff5e8/6b3b00?text=Growing+EdTech+Demand',
+            description: 'Leverage rising parent and school demand for robotics, coding, and AI programs aligned with future-ready education goals.'
+        },
+        {
+            title: 'Multiple revenue streams',
+            image: 'https://placehold.co/640x420/f1ecff/3f2a7a?text=Multiple+Revenue+Streams',
+            description: 'Generate income from student programs, school workshops, kit sales, and innovation events under one scalable model.'
+        }
+    ];
+
+    const franchiseSupportCards = [
+        {
+            title: 'MARKETING & BRANDING ASSISTANCE',
+            image: 'https://placehold.co/1200x700/e8f4ff/0b3d66?text=Marketing+%26+Branding',
+            description: 'TechyGuide provides complete marketing and branding support to franchise partners including promotional materials, digital marketing guidance, branding assets, and strategies to attract schools and students.'
+        },
+        {
+            title: 'OPERATIONAL GUIDANCE',
+            image: 'https://placehold.co/1200x700/ebfff5/065f46?text=Operational+Guidance',
+            description: 'Franchise partners receive operational guidance to manage their center efficiently including setup assistance, classroom management strategies, and operational best practices.'
+        },
+        {
+            title: 'COMPREHENSIVE TRAINING & CURRICULUM',
+            image: 'https://placehold.co/1200x700/fff7eb/7c2d12?text=Training+%26+Curriculum',
+            description: 'TechyGuide provides structured training programs and a well-designed curriculum covering robotics, STEM, coding, and innovation programs for different student levels.'
+        },
+        {
+            title: 'EVENTS & COMPETITION OPPORTUNITIES',
+            image: 'https://placehold.co/1200x700/f0f9ff/075985?text=Events+%26+Competitions',
+            description: 'Students and franchise centers get opportunities to participate in robotics events, STEM competitions, and innovation challenges organized at school, regional, and national levels.'
+        },
+        {
+            title: 'TECHNOLOGY & LMS INTEGRATION',
+            image: 'https://placehold.co/1200x700/f5f3ff/5b21b6?text=Technology+%26+LMS',
+            description: 'Franchise partners get access to TechyGuide’s technology platform and LMS which helps manage courses, track student progress, and deliver digital learning resources effectively.'
+        }
+    ];
+
     return (
         <div className="franchise-page">
             {/* ============ HEADER / HERO SECTION ============ */}
@@ -222,77 +266,22 @@ function FranchisePage() {
             {/* ============ WHY CHOOSE US SECTION ============ */}
             <section className="section gray-bg" id="why">
                 <div className="container">
-                    <h2 className="section-title">Why Choose Techyguide?</h2>
+                    <h2 className="section-title">Why Choose TechyGuide?</h2>
                     <p className="lead">Join India's No.1 Robotics & Coding Learning Centre — a proven, scalable franchise model built on trust, curriculum excellence, and financial viability.</p>
 
                     <div className="pillars-grid">
-                        <div className="pillar-card card">
-                            <div className="pillar-img" style={{backgroundImage: `url(${roboticCourse})`}}></div>
-                            <div className="pillar-icon">🌍</div>
-                            <h3>ROBOTICS COURSES FOR KIDS</h3>
-                            <p>Recognized as India's No. 1 Robotics & Coding Learning Centre, ensuring brand trust and localized advantages.</p><br />
-                            <ul className="feature-list">
-                                <li><strong>26+ States:</strong> Presence across the entire country.</li>
-                                <li><strong>350+ Labs:</strong> State-of-the-art maker labs delivered.</li>
-                            </ul>
-                        </div>
-
-                        <div className="pillar-card card blue-accent">
-                            <div className="pillar-img" style={{backgroundImage: `url(${stemWorkshop})`}}></div>
-                            <div className="pillar-icon">📚</div>
-                            <h3>STEM WORKSHOPS IN SCHOOLS</h3>
-                            <p>The franchise model handles technical complexities so you can focus on business growth.</p><br />
-                            <ul className="feature-list">
-                                <li><strong>Future-Ready Tech:</strong> AI, 3D Printing, and IoT.</li>
-                                <li><strong>End-to-End:</strong> Training for 1,500+ educators provided.</li>
-                            </ul>
-                        </div>
-
-                        <div className="pillar-card card teal-accent">
-                            <div className="pillar-img" style={{backgroundImage: `url(${roboticCompetion})` }}></div>
-                            <div className="pillar-icon">⚡</div>
-                            <h3>ROBOTICS COMPETITIONS/EVENTS</h3>
-                            <p>Streamline your operations with our proprietary tech-stack built for modern education.</p><br />
-                            <ul className="feature-list">
-                                <li><strong>Smart LMS:</strong> Automated attendance and digital certification.</li>
-                                <li><strong>Parent Portal:</strong> Real-time progress tracking for every child.</li>
-                                <li><strong>CRM Support:</strong> Integrated lead management for higher conversions.</li>
-                            </ul>
-                        </div>
-
-                        <div className="pillar-card card purple-accent">
-                            <div className="pillar-img" style={{backgroundImage: `url(${saleOfRoboticKits})`}}></div>
-                            <div className="pillar-icon">🏆</div>
-                            <h3>SALE OF ROBOTICS KITS & PRODUCTS</h3>
-                            <p>We provide exclusive access and mentorship for national and international robotics olympiads.</p><br />
-                            <ul className="feature-list">
-                                <li><strong>World Stage:</strong> Mentorship for WRO and FLL competitions.</li>
-                                <li><strong>Annual Olympiad:</strong> In-house nationwide robotics challenges.</li>
-                                <li><strong>Project Incubation:</strong> Turning student ideas into real prototypes.</li>
-                            </ul>
-                        </div>
-
-                        <div className="pillar-card card">
-                            <div className="pillar-img" style={{backgroundImage: `url(${SoftwareHardware})` }}></div>
-                            <div className="pillar-icon">💻</div>
-                            <h3>HARDWARE & SOFTWARE </h3>
-                            <p>Equipped with the latest tools and resources, our centers provide an immersive experience that prepares students for future careers in robotics.</p><br />
-                            <ul className="feature-list">
-                                <li><strong>Rapid ROI:</strong> Full return on investment within 12–18 months.</li>
-                                <li><strong>Low Entry:</strong> Affordable investment for entrepreneurs.</li>
-                            </ul>
-                        </div>
-
-                        <div className="pillar-card card">
-                            <div className="pillar-img" style={{backgroundImage: `url(${Training})`}}></div>
-                            <div className="pillar-icon">🎓</div>
-                            <h3>TRAINING & SUPPORT</h3>
-                            <p>Become part of the largest tech community spread across nations.</p><br />
-                            <ul className="feature-list">
-                                <li><strong>Idea Sharing:</strong> Access to a thriving ecosystem of innovators.</li>
-                                <li><strong>Prestige:</strong> Immediate credibility for school collaborations.</li>
-                            </ul>
-                        </div>
+                        {whyChooseCards.map((card) => (
+                            <article className="pillar-card card" key={card.title}>
+                                <img
+                                    className="pillar-img"
+                                    src={card.image}
+                                    alt={card.title}
+                                    loading="lazy"
+                                />
+                                <h3>{card.title}</h3>
+                                <p>{card.description}</p>
+                            </article>
+                        ))}
                     </div>
                 </div>
 
@@ -306,7 +295,12 @@ function FranchisePage() {
 
                     <div className="revenue-grid">
                         <div className="revenue-card">
-                            <div className="rev-icon">🎓</div>
+                            <img
+                                className="rev-banner"
+                                src="https://placehold.co/1200x650/e6f1ff/0f3d6d?text=Course+Fees"
+                                alt="Course Fees"
+                                loading="lazy"
+                            />
                             <div className="rev-content">
                                 <h3>Course Fees</h3>
                                 <p>Recurring monthly income from Robotics, Coding, and AI batches (Ages 6-18).</p>
@@ -315,7 +309,12 @@ function FranchisePage() {
                         </div>
 
                         <div className="revenue-card">
-                            <div className="rev-icon">🏢</div>
+                            <img
+                                className="rev-banner"
+                                src="https://placehold.co/1200x650/e8fff5/0b5e4d?text=School+Workshops"
+                                alt="School Workshops"
+                                loading="lazy"
+                            />
                             <div className="rev-content">
                                 <h3>School Workshops</h3>
                                 <p>Bulk revenue through STEM workshops and Lab setup consultancy in local schools.</p>
@@ -324,7 +323,12 @@ function FranchisePage() {
                         </div>
 
                         <div className="revenue-card">
-                            <div className="rev-icon">🤖</div>
+                            <img
+                                className="rev-banner"
+                                src="https://placehold.co/1200x650/fff7e6/7a3e00?text=Kit+Sales"
+                                alt="Kit Sales"
+                                loading="lazy"
+                            />
                             <div className="rev-content">
                                 <h3>Kit Sales</h3>
                                 <p>Direct profit from selling exclusive Techyguide Robotics & DIY Science kits.</p>
@@ -333,7 +337,12 @@ function FranchisePage() {
                         </div>
 
                         <div className="revenue-card">
-                            <div className="rev-icon">🏆</div>
+                            <img
+                                className="rev-banner"
+                                src="https://placehold.co/1200x650/f2ebff/50218d?text=Competitions"
+                                alt="Competitions"
+                                loading="lazy"
+                            />
                             <div className="rev-content">
                                 <h3>Competitions</h3>
                                 <p>Revenue from organizing regional Robotics Olympiads and hackathons.</p>
@@ -454,6 +463,38 @@ function FranchisePage() {
                     </div>
                 </div>
             </section>
+
+            <section className="section franchise-support-section" id="franchise-support">
+                <div className="container">
+                    <h2 className="section-title">Franchise Support</h2>
+                    <div className="franchise-support-grid">
+                        <div className="franchise-support-row-1">
+                            {franchiseSupportCards.slice(0, 2).map((card) => (
+                                <article className="franchise-support-card" key={card.title}>
+                                    <img src={card.image} alt={card.title} loading="lazy" className="franchise-support-image" />
+                                    <div className="franchise-support-content">
+                                        <h3>{card.title}</h3>
+                                        <p>{card.description}</p>
+                                    </div>
+                                </article>
+                            ))}
+                        </div>
+
+                        <div className="franchise-support-row-2">
+                            {franchiseSupportCards.slice(2).map((card) => (
+                                <article className="franchise-support-card" key={card.title}>
+                                    <img src={card.image} alt={card.title} loading="lazy" className="franchise-support-image" />
+                                    <div className="franchise-support-content">
+                                        <h3>{card.title}</h3>
+                                        <p>{card.description}</p>
+                                    </div>
+                                </article>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* ============ some snapshots ============ */}
             <section className="snapshot-section" id="snapshots">
                 <div className="containersnapshot">

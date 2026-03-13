@@ -21,6 +21,7 @@ import TeBotKitsforStudents1 from '../assets/ProductTeBoTImages/TeBot Kits for S
 import TeBotKitsforStudents2 from '../assets/ProductTeBoTImages/TeBot Kits for Students - 2.jpg';
 import TeBotKitsforStudents3 from '../assets/ProductTeBoTImages/TeBot Kits for Students - 3.jpg';
 import tebotProjectsImage from '../assets/ProductTeBoTImages/robot_2582246.png';
+import tebotIntroVideo from '../assets/ProductTeBoTImages/Website_Product_Page_TeBot_V1.mp4';
 // import ZohoBiginForm from '../components/ZohoBiginForm';
 //hero image
 
@@ -623,15 +624,13 @@ function TeBoT() {
                         <p className="intro-description">
                           The TeBot Advance Kit is a robotics and IoT learning toolkit designed for young innovators. It includes sensors such as RFID, Bluetooth, and soil moisture modules, allowing students to build 50+ practical STEM projects. From smart security systems to voice-controlled vehicles, TeBOT helps students explore coding, electronics, and automation through hands-on learning, making it ideal for modern STEM education in schools. 
                         </p>
-                        <div className="tebot-video-container reveal-card">
-                            <iframe
-                                className="tebot-intro-video"
-                                src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1"
-                                title="Introduction to TeBot Advance Kit"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            />
+                        <div className="tebot-video-wrap">
+                            <div className="tebot-video-container reveal-card">
+                                <video className="tebot-intro-video" controls preload="metadata" playsInline>
+                                    <source src={tebotIntroVideo} type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -713,7 +712,7 @@ function TeBoT() {
                 </section>
 
                 {/* Hardware Specifications Section */}
-                <section className="specs-section section-block section-soft" id="specifications">
+                <section className="specs-section section-soft tebot-compact-section" id="specifications">
                     <div className="specs-container section-container">
                         <div className="section-header">
                             <h2>The Advanced Tech Inside <span style={{color: '#008273'}}>TeBot</span></h2>
@@ -776,7 +775,7 @@ function TeBoT() {
                 </section>
 
                 {/* Kit Offerings Section */}
-                <section className="kits-offerings-section section-block section-mist" id="kits">
+                <section className="kits-offerings-section section-mist tebot-compact-section" id="kits">
                     <div className="kits-container section-container">
                         <div className="section-header">
                             <h2><span style={{color: '#008273'}}>TeBot Kits</span> for Students</h2>

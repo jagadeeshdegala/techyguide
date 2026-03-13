@@ -26,26 +26,28 @@
 /* ===== HERO SECTION ===== */
 .tebot-page-root .tebot-hero-section {
     --tebot-header-offset: 103px;
-    --tebot-hero-bg-900: #172a6f;
-    --tebot-hero-bg-800: #2246a0;
-    --tebot-hero-bg-700: #2c68cb;
-    --tebot-hero-ink-light: #f1f5ff;
-    --tebot-hero-ink-soft: #d8e7ff;
-    --tebot-hero-accent-yellow: #ffd766;
-    --tebot-hero-accent-lime: #a0f069;
-    --tebot-hero-btn-bg: #dbe6ff;
-    --tebot-hero-btn-ink: #1b2f67;
+    --tebot-hero-bg-900: #083640;
+    --tebot-hero-bg-800: #0b4f62;
+    --tebot-hero-bg-700: #0f7288;
+    --tebot-hero-ink-light: #ecfcff;
+    --tebot-hero-ink-soft: #c8edf4;
+    --tebot-hero-accent-yellow: #ffd179;
+    --tebot-hero-accent-lime: #7bf3d2;
+    --tebot-hero-chip-bg: rgba(208, 247, 255, 0.14);
+    --tebot-hero-chip-line: rgba(208, 247, 255, 0.28);
+    --tebot-hero-btn-bg: #96f2e6;
+    --tebot-hero-btn-ink: #0b4754;
     min-height: calc(100vh - var(--tebot-header-offset));
     margin-top: var(--tebot-header-offset);
     padding: clamp(1rem, 2vw, 1.8rem) clamp(1rem, 5vw, 4rem) clamp(2.1rem, 4vw, 4.2rem);
     position: relative;
-    top: 0px;
+    top: 0;
     z-index: 0;
     overflow: hidden;
     isolation: isolate;
     background:
-        radial-gradient(900px 420px at 88% -10%, rgba(167, 211, 255, 0.25), transparent 65%),
-        radial-gradient(680px 300px at 10% 8%, rgba(212, 226, 255, 0.16), transparent 70%),
+        radial-gradient(900px 420px at 88% -10%, rgba(255, 185, 122, 0.22), transparent 65%),
+        radial-gradient(680px 300px at 10% 8%, rgba(143, 255, 233, 0.17), transparent 70%),
         linear-gradient(165deg, var(--tebot-hero-bg-700) 0%, var(--tebot-hero-bg-800) 56%, var(--tebot-hero-bg-900) 100%);
     font-family: 'Baloo 2', 'Trebuchet MS', sans-serif;
     color: var(--tebot-hero-ink-light);
@@ -73,9 +75,9 @@
     inset: -16%;
     z-index: -4;
     background:
-        radial-gradient(220px 92px at 14% 16%, rgba(220, 232, 255, 0.25), transparent 68%),
-        radial-gradient(250px 102px at 58% 6%, rgba(220, 232, 255, 0.2), transparent 70%),
-        radial-gradient(290px 108px at 90% 22%, rgba(220, 232, 255, 0.24), transparent 72%);
+        radial-gradient(220px 92px at 14% 16%, rgba(224, 252, 255, 0.2), transparent 68%),
+        radial-gradient(250px 102px at 58% 6%, rgba(224, 252, 255, 0.2), transparent 70%),
+        radial-gradient(290px 108px at 90% 22%, rgba(224, 252, 255, 0.24), transparent 72%);
     animation: tebot-hero-cloud-drift 20s ease-in-out infinite alternate;
 }
 
@@ -86,8 +88,8 @@
     height: 60vh;
     z-index: -2;
     background:
-        radial-gradient(70% 75% at 50% 0%, rgba(174, 204, 255, 0.22), transparent 70%),
-        linear-gradient(180deg, #2a57b4 0%, #1a3b86 100%);
+        radial-gradient(70% 75% at 50% 0%, rgba(255, 192, 126, 0.19), transparent 70%),
+        linear-gradient(180deg, #095064 0%, #062d36 100%);
     border-radius: 56% 56% 0 0 / 100% 100% 0 0;
 }
 
@@ -108,18 +110,18 @@
 
 .tebot-page-root .tebot-hero-logo-pill {
     text-decoration: none;
-    color: #f6fbff;
-    background: linear-gradient(150deg, #1c3f9e, #3565ca);
-    border: 2px solid rgba(214, 232, 255, 0.34);
+    color: #e9fdff;
+    background: linear-gradient(150deg, #0b6a78, #10a59e);
+    border: 2px solid rgba(170, 248, 238, 0.45);
     border-radius: 999px;
     padding: 0.45rem 1.15rem;
     font-weight: 800;
     letter-spacing: 0.07em;
-    box-shadow: 0 8px 18px rgba(12, 25, 67, 0.34);
+    box-shadow: 0 8px 18px rgba(5, 44, 54, 0.34);
 }
 
 .tebot-page-root .tebot-hero-layout {
-    margin-top: clamp(1.15rem, 3vw, 2.2rem);
+    margin: clamp(1.15rem, 3vw, 2.2rem) auto 0;
     display: grid;
     grid-template-columns: minmax(300px, 1fr) minmax(320px, 0.95fr);
     align-items: center;
@@ -145,9 +147,9 @@
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #ecf4ff;
-    background: rgba(220, 232, 255, 0.16);
-    border: 1px solid rgba(220, 232, 255, 0.26);
+    color: #e9fcff;
+    background: var(--tebot-hero-chip-bg);
+    border: 1px solid var(--tebot-hero-chip-line);
 }
 
 .tebot-page-root .tebot-hero-copy h1 {
@@ -156,7 +158,7 @@
     line-height: 0.9;
     letter-spacing: -0.012em;
     color: var(--tebot-hero-accent-yellow);
-    text-shadow: 0 4px 0 rgba(13, 27, 69, 0.24);
+    text-shadow: 0 4px 0 rgba(7, 39, 47, 0.34);
 }
 
 .tebot-page-root .tebot-hero-copy h1 span {
@@ -190,7 +192,7 @@
 .tebot-page-root .tebot-hero-btn-primary {
     color: var(--tebot-hero-btn-ink);
     background: var(--tebot-hero-btn-bg);
-    box-shadow: 0 8px 18px rgba(12, 25, 67, 0.22);
+    box-shadow: 0 8px 18px rgba(7, 39, 47, 0.28);
 }
 
 .tebot-page-root .tebot-hero-visual {
@@ -200,23 +202,16 @@
 }
 
 .tebot-page-root .tebot-hero-visual-ring {
-    position: absolute;
-    inset: 8% 10%;
-    border: 2px dashed rgba(220, 232, 255, 0.22);
-    border-radius: 28px;
-    z-index: 0;
-    animation: tebot-hero-ring-spin 24s linear infinite;
+    display: none;
 }
 
 .tebot-page-root .tebot-hero-photo-card {
-    position: relative;
-    z-index: 1;
-    padding: 0.85rem;
-    border-radius: 32px;
-    background: linear-gradient(145deg, rgba(248, 251, 255, 0.18), rgba(196, 219, 255, 0.08));
-    border: 1px solid rgba(220, 232, 255, 0.24);
-    box-shadow: 0 24px 60px rgba(10, 22, 60, 0.28);
-    backdrop-filter: blur(8px);
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    backdrop-filter: none;
 }
 
 .tebot-page-root .tebot-hero-photo {
@@ -224,19 +219,19 @@
     height: auto;
     display: block;
     border-radius: 18px;
-    animation: tebot-hero-photo-float 4.8s ease-in-out infinite;
+    animation: none;
 }
 
 .tebot-page-root .tebot-hero-floating-badge {
     position: absolute;
     padding: 0.36rem 0.66rem;
     border-radius: 999px;
-    background: rgba(236, 242, 255, 0.92);
-    color: #213a7d;
-    border: 1px solid rgba(182, 207, 255, 0.75);
+    background: rgba(224, 253, 248, 0.94);
+    color: #0e4f4b;
+    border: 1px solid rgba(162, 244, 233, 0.75);
     font-size: clamp(0.66rem, 0.95vw, 0.78rem);
     font-weight: 700;
-    box-shadow: 0 8px 18px rgba(12, 25, 67, 0.2);
+    box-shadow: 0 8px 18px rgba(4, 56, 58, 0.2);
     z-index: 2;
 }
 
@@ -259,7 +254,7 @@
     bottom: 0;
     height: 22%;
     border-radius: 52% 52% 0 0 / 100% 100% 0 0;
-    background: rgba(30, 71, 150, 0.34);
+    background: rgba(6, 57, 73, 0.46);
     z-index: -1;
 }
 
@@ -313,6 +308,7 @@
 
 @media (max-width: 980px) {
     .tebot-page-root .tebot-hero-section {
+        height: auto;
         min-height: auto;
         padding-bottom: 3.2rem;
     }
@@ -420,7 +416,7 @@
 
     .tebot-page-root .tebot-hero-visual {
         width: min(320px, 90vw);
-        top: 0;
+        top: 85px;
         margin-top: 1rem;
     }
 
@@ -429,11 +425,11 @@
     }
 
     .tebot-page-root .tebot-hero-photo {
-        border-radius: 16px;
+        border-radius: 20px;
     }
 
     .tebot-page-root .tebot-hero-floating-badge {
-        font-size: 0.68rem;
+        font-size: 0.74rem;
         padding: 0.28rem 0.52rem;
     }
 
@@ -688,13 +684,17 @@
     margin-top: 20px;
 }
 
+.tebot-page-root .tebot-video-wrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: clamp(26px, 4vw, 36px);
+}
+
 .tebot-page-root .tebot-video-container {
     position: relative;
-    margin: clamp(26px, 4vw, 36px) auto 0;
-    width: 100%;
-    max-width: 900px;
-    padding-bottom: 56.25%;
-    height: 0;
+    width: min(65%, 900px);
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     border-radius: 15px;
     background: #0f172a;
@@ -702,11 +702,23 @@
 }
 
 .tebot-page-root .tebot-intro-video {
-    position: absolute;
-    inset: 0;
+    display: block;
     width: 100%;
     height: 100%;
     border: 0;
+    object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+    .tebot-page-root .tebot-video-container {
+        width: min(78%, 900px);
+    }
+}
+
+@media (max-width: 768px) {
+    .tebot-page-root .tebot-video-container {
+        width: 100%;
+    }
 }
 
 /* ===== EXPLORE, CREATE & INNOVATE SECTION ===== */
@@ -914,7 +926,7 @@
 
 /* ===== HARDWARE SPECIFICATIONS SECTION ===== */
 .tebot-page-root .specs-section {
-    padding: clamp(60px, 10vw, 100px) clamp(15px, 4vw, 20px);
+    padding: clamp(38px, 6.4vw, 64px) clamp(15px, 4vw, 20px) !important;
     background: linear-gradient(135deg, #fef3c7 0%, #f0fdf4 100%);
 }
 
@@ -928,7 +940,7 @@
     font-size: clamp(1.8rem, 6vw, 3rem);
     color: #1f2937;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 38px !important;
     font-weight: 700;
 }
 
@@ -1066,7 +1078,7 @@
 
 /* ===== KIT OFFERINGS SECTION ===== */
 .tebot-page-root .kits-offerings-section {
-    padding: clamp(60px, 10vw, 100px) clamp(15px, 4vw, 20px);
+    padding: clamp(38px, 6.4vw, 64px) clamp(15px, 4vw, 20px) !important;
     background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
 }
 
@@ -1080,7 +1092,7 @@
     font-size: clamp(1.8rem, 6vw, 3rem);
     color: #1f2937;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 38px !important;
     font-weight: 700;
 }
 
@@ -1092,21 +1104,26 @@
     border-radius: 20px;
     box-shadow: 0 16px 42px rgba(15, 31, 58, 0.16);
     padding: 16px;
+    min-height: 65vh;
+    height: 85vh;
 }
 
 .tebot-page-root .kits-slider-window {
     overflow: hidden;
     border-radius: 14px;
+    height: 100%;
 }
 
 .tebot-page-root .kits-slider-track {
     display: flex;
+    height: 100%;
     transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
 }
 
 .tebot-page-root .kit-main-slide {
     min-width: 100%;
+    height: 100%;
     display: grid;
     grid-template-columns: minmax(280px, 1fr) minmax(320px, 1fr);
     gap: 24px;
@@ -1125,14 +1142,15 @@
     border-radius: 16px;
     overflow: hidden;
     background: #eaf2ff;
-    min-height: 320px;
+    height: 100%;
+    min-height: unset;
     border: 1px solid #d7e4fb;
 }
 
 .tebot-page-root .kit-main-image-card img {
     width: 100%;
     height: 100%;
-    min-height: 320px;
+    min-height: unset;
     object-fit: cover;
     display: block;
     transition: transform 0.35s ease;
@@ -1146,12 +1164,14 @@
     background: linear-gradient(170deg, #ffffff 0%, #f7fbff 100%);
     border: 1px solid #dbe8ff;
     border-radius: 16px;
-    padding: clamp(22px, 3vw, 36px);
+    padding: clamp(14px, 2vw, 24px);
     box-shadow: 0 12px 28px rgba(15, 31, 58, 0.1);
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: left;
+    min-height: 0;
+    overflow-y: auto;
 }
 
 .tebot-page-root .kit-main-slide.is-advance .kit-main-content-card {
@@ -1216,33 +1236,33 @@
 }
 
 .tebot-page-root .kit-number {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
+    font-size: 1.6rem;
+    margin-bottom: 6px;
     line-height: 1;
 }
 
 .tebot-page-root .kit-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #1f2937;
-    margin: 15px 0;
+    margin: 6px 0;
     font-weight: 700;
 }
 
 .tebot-page-root .kit-description {
-    font-size: 0.95rem;
+    font-size: 0.88rem;
     color: #555;
-    line-height: 1.7;
-    margin-bottom: 25px;
-    min-height: 60px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    min-height: unset;
 }
 
 .tebot-page-root .projects-badge {
     display: inline-block;
     background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
     color: white;
-    padding: 12px 24px;
+    padding: 8px 18px;
     border-radius: 999px;
-    font-size: 0.95rem;
+    font-size: 0.88rem;
     font-weight: 600;
     width: fit-content;
 }
@@ -1260,7 +1280,8 @@
 
     .tebot-page-root .kit-main-image-card,
     .tebot-page-root .kit-main-image-card img {
-        min-height: 280px;
+        height: auto;
+        min-height: unset;
     }
 }
 
@@ -1279,7 +1300,8 @@
 
     .tebot-page-root .kit-main-image-card,
     .tebot-page-root .kit-main-image-card img {
-        min-height: 220px;
+        height: auto;
+        min-height: unset;
     }
 
     .tebot-page-root .kits-main-arrow.prev {
@@ -1722,7 +1744,7 @@
     }
 
     .tebot-page-root .specs-section {
-        padding: 40px 20px;
+        padding: 26px 20px !important;
     }
 
     .tebot-page-root .why-tebot-section {
@@ -1730,7 +1752,7 @@
     }
 
     .tebot-page-root .kits-offerings-section {
-        padding: 40px 20px;
+        padding: 26px 20px !important;
     }
 
     .tebot-page-root .featured-projects-section {
@@ -2294,6 +2316,186 @@
 @container (max-width: 480px) {
     .tebot-page-root .feature-item {
         padding: 15px 10px;
+    }
+}
+
+/* ===== FINAL SIZE OVERRIDES FOR TEBOT SPECS + KITS ===== */
+.tebot-page-root .specs-section.section-block {
+    padding: clamp(30px, 5.2vw, 52px) clamp(15px, 4vw, 20px) !important;
+}
+
+.tebot-page-root .kits-offerings-section.section-block {
+    padding: clamp(30px, 5.2vw, 52px) clamp(15px, 4vw, 20px) !important;
+}
+
+.tebot-page-root .specs-section .section-header,
+.tebot-page-root .kits-offerings-section .section-header {
+    margin-bottom: clamp(14px, 2vw, 22px) !important;
+}
+
+.tebot-page-root .specs-section h2,
+.tebot-page-root .kits-offerings-section h2 {
+    margin-bottom: 24px !important;
+}
+
+.tebot-page-root .specs-card {
+    padding: clamp(12px, 2.2vw, 20px) !important;
+}
+
+.tebot-page-root .specs-image-wrap {
+    min-height: 200px !important;
+}
+
+.tebot-page-root .kits-main-slider {
+    padding: 10px !important;
+}
+
+.tebot-page-root .kit-main-image-card,
+.tebot-page-root .kit-main-image-card img {
+    min-height: 200px !important;
+}
+
+.tebot-page-root .kit-main-content-card {
+    padding: clamp(14px, 2vw, 24px) !important;
+}
+
+.tebot-page-root .kit-description {
+    margin-bottom: 16px !important;
+    min-height: 0 !important;
+}
+
+@media (max-width: 980px) {
+    .tebot-page-root .specs-section.section-block,
+    .tebot-page-root .kits-offerings-section.section-block {
+        padding: 24px 16px !important;
+    }
+
+    .tebot-page-root .specs-image-wrap {
+        min-height: 180px !important;
+    }
+
+    .tebot-page-root .kit-main-image-card,
+    .tebot-page-root .kit-main-image-card img {
+        min-height: 180px !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .tebot-page-root .specs-section.section-block,
+    .tebot-page-root .kits-offerings-section.section-block {
+        padding: 20px 14px !important;
+    }
+
+    .tebot-page-root .specs-section h2,
+    .tebot-page-root .kits-offerings-section h2 {
+        margin-bottom: 18px !important;
+    }
+
+    .tebot-page-root .kits-main-slider {
+        padding: 8px !important;
+    }
+
+    .tebot-page-root .kit-main-image-card,
+    .tebot-page-root .kit-main-image-card img {
+        min-height: 160px !important;
+    }
+}
+
+/* ===== FORCE COMPACT LAYOUT FOR TEBOT ADVANCED TECH + KITS ===== */
+.tebot-page-root .tebot-compact-section.specs-section,
+.tebot-page-root .tebot-compact-section.kits-offerings-section {
+    padding: 22px 14px !important;
+}
+
+.tebot-page-root .tebot-compact-section .section-container {
+    max-width: 1080px;
+}
+
+.tebot-page-root .tebot-compact-section .section-header {
+    margin-bottom: 12px !important;
+}
+
+.tebot-page-root .tebot-compact-section h2 {
+    font-size: clamp(1.45rem, 2.7vw, 2.1rem) !important;
+    margin-bottom: 16px !important;
+}
+
+.tebot-page-root .tebot-compact-section.specs-section .specs-card {
+    padding: 10px !important;
+    gap: 14px;
+    align-items: stretch !important;
+}
+
+.tebot-page-root .tebot-compact-section.specs-section .specs-image-wrap {
+    height: 100%;
+    min-height: 150px !important;
+}
+
+.tebot-page-root .tebot-compact-section.specs-section .specs-points-wrap {
+    height: 100%;
+    display: flex;
+}
+
+.tebot-page-root .tebot-compact-section.specs-section .specs-points-list {
+    width: 100%;
+    height: 100%;
+    gap: 8px;
+}
+
+.tebot-page-root .tebot-compact-section.specs-section .specs-points-list li {
+    font-size: 0.88rem;
+    line-height: 1.45;
+    padding: 8px 10px;
+}
+
+.tebot-page-root .tebot-compact-section.kits-offerings-section .kits-main-slider {
+    padding: 6px !important;
+}
+
+.tebot-page-root .tebot-compact-section.kits-offerings-section h2 {
+    font-size: clamp(1.75rem, 3.2vw, 2.55rem) !important;
+}
+
+.tebot-page-root .tebot-compact-section.kits-offerings-section .kit-main-slide {
+    gap: 12px;
+}
+
+.tebot-page-root .tebot-compact-section.kits-offerings-section .kit-main-image-card,
+.tebot-page-root .tebot-compact-section.kits-offerings-section .kit-main-image-card img {
+    height: 100% !important;
+    min-height: unset !important;
+}
+
+.tebot-page-root .tebot-compact-section.kits-offerings-section .kit-main-content-card {
+    padding: 10px !important;
+}
+
+.tebot-page-root .tebot-compact-section.kits-offerings-section .kit-number {
+    font-size: 1.45rem;
+    margin-bottom: 6px;
+}
+
+.tebot-page-root .tebot-compact-section.kits-offerings-section .kit-description {
+    font-size: 0.84rem;
+    line-height: 1.35;
+    margin-bottom: 8px !important;
+}
+
+.tebot-page-root .tebot-compact-section.kits-offerings-section .projects-badge {
+    padding: 6px 11px;
+    font-size: 0.75rem;
+}
+
+@media (max-width: 900px) {
+    .tebot-page-root .tebot-compact-section.specs-section,
+    .tebot-page-root .tebot-compact-section.kits-offerings-section {
+        padding: 18px 12px !important;
+    }
+
+    .tebot-page-root .tebot-compact-section.specs-section .specs-image-wrap,
+    .tebot-page-root .tebot-compact-section.kits-offerings-section .kit-main-image-card,
+    .tebot-page-root .tebot-compact-section.kits-offerings-section .kit-main-image-card img {
+        min-height: 104px !important;
     }
 }
 
