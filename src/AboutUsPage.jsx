@@ -144,7 +144,7 @@ function AboutUsPage() {
 
 			<section className="gallery">
 				<div className="container">
-					<h2>Our Workspace</h2>
+					<h2>Our Team & Workspace</h2>
                     <br></br>
 
 					<div className="workspace-gallery">

@@ -247,7 +247,7 @@ export default function CompositeSkillLab() {
             <p><strong>Bridge the Skill Gap:</strong>Under Central Board of Secondary Education Circular Skill-75/2024, all affiliated schools must establish a Composite Skill Lab. Aligned with NEP 2020 and NCF-SE, it follows a 70% practical, 30% theory model. New schools must comply for affiliation; existing schools by Aug 2027. </p>
             <div className="hero-btns">
               <a href="#configurations" className="btn btn-orange">View Layout Options</a>
-              <a href="#mandates" className="btn btn-glass">Implementation Rules</a>
+              <a href="#mandates" className="btn btn-glass">View Benefits</a>
             </div>
           </div>
           <div className="hero-visual hidden-right">

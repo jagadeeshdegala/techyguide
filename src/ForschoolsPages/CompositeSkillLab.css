@@ -26,7 +26,7 @@
    ========================================= */
 .composite-skill-lab-root .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 .composite-skill-lab-root .small-container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
-.composite-skill-lab-root .section-heading { font-size: 2.5rem; margin-bottom: 15px; font-weight: 700; }
+.composite-skill-lab-root .section-heading { font-size: 2.5rem; margin-bottom: 15px; font-weight: 700; margin-top: -1cm;}
 .composite-skill-lab-root .section-subtext { max-width: 600px; margin: 0 auto 50px; color: #64748b; font-size: 1.1rem; }
 .composite-skill-lab-root .text-center { text-align: center; }
 .composite-skill-lab-root .text-white { color: var(--white) !important; }
@@ -117,7 +117,7 @@
 /* =========================================
    6. CONFIGURATIONS (LAYOUTS)
    ========================================= */
-.composite-skill-lab-root .configurations-section { padding: 100px 0; background: var(--light); }
+.composite-skill-lab-root .configurations-section { padding: 100px 0; background: var(--light); margin-bottom:-1cm ; }
 .composite-skill-lab-root .config-wrapper { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 40px; }
 
 .composite-skill-lab-root .config-card { background: var(--white); border: 1px solid #e2e8f0; border-radius: 20px; width: 450px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; display: flex; flex-direction: column; }
@@ -217,7 +217,7 @@
 /* =========================================
    8. INFRASTRUCTURE & GALLERY
    ========================================= */
-.composite-skill-lab-root .infra-section { padding: 100px 0; background: var(--dark); color: var(--white); }
+.composite-skill-lab-root .infra-section { padding: 100px 0; background: var(--dark); color: var(--white);margin-top: -2cm; }
 .composite-skill-lab-root .infra-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 .composite-skill-lab-root .infra-box { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px; text-align: center; transition: 0.3s; }
 .composite-skill-lab-root .infra-box:hover { background: rgba(255,255,255,0.1); transform: translateY(-5px); }

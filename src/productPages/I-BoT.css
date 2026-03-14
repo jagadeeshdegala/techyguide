@@ -393,7 +393,7 @@
 
 .ibot-modern-page .section-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 6px;
 }
 
 .ibot-modern-page .section-header h2 {
@@ -476,6 +476,7 @@
     color: #333333;
     text-align: center;
     padding: 100px 20px;
+    margin-top: -2cm;
 }
 
 .smart-world-headline {
@@ -559,6 +560,7 @@
 /* ===== SECTION 1: TECHNOLOGIES AT FOCUS ===== */
 .ibot-section.tech-focus-section {
     background: transparent;
+    margin-top: -3cm;
 }
 
 .tech-grid {
@@ -719,6 +721,7 @@
 /* ===== SECTION 2: HARDWARE SECTION - VERTICAL CARDS ===== */
 .ibot-section.hardware-section {
     background: transparent;
+    margin-top: -2cm;
 }
 
 .hardware-grid {
@@ -801,6 +804,7 @@
 /* ===== SECTION 3: WHY i-BOT IS THE BEST ===== */
 .ibot-section.why-best-section {
     background: transparent;
+    margin-top: -2cm;
 }
 
 .highlights-grid {
@@ -926,6 +930,7 @@
 .ibot-section.kits-section {
     background: transparent;
     padding: 72px 20px;
+    margin-top: -2cm;
 }
 
 .kits-main-slider {
@@ -1268,6 +1273,7 @@
 .ibot-section.featured-projects-section {
     padding: 80px 20px;
     background: transparent;
+    margin-top: -1cm;
 }
 
 .featured-projects-section .section-header h2 {

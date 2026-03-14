@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './I-BoT.css';
 import heroRobot from '../assets/ProductI-BoTImages/vecteezy_ai-generated-cute-robot-kids-with-isolated-transparant_38049144.png';
 import mainBoard from '../assets/ProductI-BoTImages/main board.png';
@@ -422,7 +423,7 @@ function IBoT() {
                 <canvas className="ibot-hero-canvas" aria-hidden="true" ref={ibotHeroCanvasRef}></canvas>
 
                 <nav className="ibot-hero-nav" aria-label="Primary">
-                    <a className="ibot-hero-logo-pill" href="#home" aria-label="I-BoT home">I-BoT</a>
+                    <span className="ibot-hero-logo-pill" aria-label="I-BoT home">I-BoT</span>
                 </nav>
 
                 <div className="ibot-hero-layout">
@@ -435,9 +436,9 @@ function IBoT() {
                         <p className="ibot-hero-subcopy">
                             Kids build future skills with hands-on IBoT robotics, coding, and creative challenges.
                         </p>
-                        <a className="ibot-hero-btn ibot-hero-btn-primary" href="#introduction" aria-label="Start free trial">
+                        <Link className="ibot-hero-btn ibot-hero-btn-primary" to="/contact-techyguide/" aria-label="Start free trial">
                             Start Free Trial
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="ibot-hero-visual" data-depth="0.035">
@@ -492,10 +493,7 @@ The i-BoT robotics kit helps students explore IoT, robotics, wireless communicat
                         <p className="smart-world-subheadline">
                             Empowering young innovators (Ages 7–14) to master the Internet of Things. i-Bot (TechIoT) isn't just a robot; it's a gateway to building smart homes, wireless gadgets, and connected cities.
                         </p>
-                        <div className="smart-world-cta-buttons">
-                            <a href="#kits" className="cta-btn cta-primary">Explore the Kits</a>
-                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" className="cta-btn cta-secondary">Watch i-Bot in Action</a>
-                        </div>
+                       
                     </div>
                 </section>
                 
@@ -680,7 +678,6 @@ The i-BoT robotics kit helps students explore IoT, robotics, wireless communicat
                                                     </div>
                                                 </div>
 
-                                                <a href="#contact" className="kit-btn">Get Started</a>
                                             </div>
                                         </div>
                                     </article>
@@ -741,7 +738,6 @@ The i-BoT robotics kit helps students explore IoT, robotics, wireless communicat
                                                     </div>
                                                 </div>
 
-                                                <a href="#contact" className="kit-btn advanced-btn">Explore Now</a>
                                             </div>
                                         </div>
                                     </article>

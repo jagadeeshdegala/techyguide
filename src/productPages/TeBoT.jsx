@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './TeBoT.css';
 //hero image
 import heroImage from '../assets/ProductTeBoTImages/HERO Section Boy with Kit.png';
@@ -614,7 +615,7 @@ function TeBoT() {
                 <canvas className="tebot-hero-canvas" aria-hidden="true" ref={heroCanvasRef}></canvas>
 
                 <nav className="tebot-hero-nav" aria-label="Primary">
-                    <a className="tebot-hero-logo-pill" href="#home" aria-label="TeBot home">TeBot</a>
+                    <span className="tebot-hero-logo-pill" aria-label="TeBot home">TeBot</span>
                 </nav>
 
                 <div className="tebot-hero-layout">
@@ -627,9 +628,9 @@ function TeBoT() {
                         <p className="tebot-hero-subcopy">
                             A playful robotics journey where kids create real builds, write code, and solve smart challenges.
                         </p>
-                        <a className="tebot-hero-btn tebot-hero-btn-primary" href="#introduction" aria-label="Explore TeBot features">
+                        <Link className="tebot-hero-btn tebot-hero-btn-primary" to="/contact-techyguide/" aria-label="Explore TeBot features">
                             Start Free Trial
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="tebot-hero-visual" data-depth="0.035">

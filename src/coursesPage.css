@@ -423,7 +423,7 @@
     padding: 60px 20px 20px 20px;
     position: relative;
     text-align: center;
-    padding-bottom: 100px;
+    /* padding-bottom: 100px; */
 }
 
 .courses-page-container .courses-title {
@@ -689,6 +689,7 @@
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
+    margin-bottom: -2cm;
 }
 
 .courses-page-container .why-choose-bg {
@@ -859,7 +860,7 @@
     font-size: 3.5rem;
     font-weight: 800;
     color: teal;
-    margin-bottom: 30px;
+    margin-bottom: -1cm;
     font-family: 'Poppins', sans-serif;
     position: relative;
     z-index: 10;

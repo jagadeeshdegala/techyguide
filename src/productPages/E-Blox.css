@@ -843,12 +843,14 @@
 .eblox-page .eblox-projects-section {
     padding: clamp(60px, 10vw, 100px) clamp(15px, 4vw, 20px);
     background: #ffffff;
+    margin-bottom: -3cm;
 }
 
 .eblox-page .eblox-projects-section .eblox-section-title {
     color: #1f2937;
     margin-bottom: 15px;
     text-align: center;
+    
 }
 
 .eblox-page .eblox-projects-intro {

@@ -37,15 +37,33 @@
 /* ============ 2. SECTION & TYPOGRAPHY ============ */
 .franchise-page .container { max-width: 1300px; margin: 0 auto; padding: 0 25px; }
 .franchise-page .section { padding: 80px 0; }
+.franchise-page #requirements,
+.franchise-page #what-you-get { scroll-margin-top: 130px; }
 
 .franchise-page .section-title {
     font-size: 2.5rem;
     text-align: center;
     color: var(--primary-blue);
     margin-bottom: 3.5rem;
+    margin-top: 0cm;
     position: relative;
 }
-
+.franchise-page .section-title2 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--primary-blue);
+    margin-bottom: 3.5rem;
+    margin-top: -1.5cm;
+    position: relative;
+}
+.franchise-page .section-title3 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--primary-blue);
+    margin-bottom: 3.5rem;
+    margin-top: -2cm;
+    position: relative;
+}
 .franchise-page .section-title::after {
     content: ''; display: block; width: 60px; height: 4px;
     background: var(--primary-orange); margin: 15px auto 0; border-radius: 10px;

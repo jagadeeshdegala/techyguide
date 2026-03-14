@@ -65,11 +65,12 @@
 
 /* --- Technology Focus (Glass Cards) --- */
 .workshop-page-root .section-padding { padding: 80px 0; }
+.workshop-page-root #workshops { scroll-margin-top: 130px; }
 .workshop-page-root .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 .workshop-page-root .bg-pattern { background-color: #fcfcfc; background-image: radial-gradient(#ddd 1px, transparent 1px); background-size: 20px 20px; }
 
 .workshop-page-root .title-block { text-align: center; margin-bottom: 60px; }
-.workshop-page-root .title-block h2 { font-size: 2.5rem; color: var(--teal); margin-bottom: 5px; }
+.workshop-page-root .title-block h2 { font-size: 2.5rem; color: var(--teal); margin-bottom: 5px;margin-top: -1cm; }
 .workshop-page-root .underline { width: 80px; height: 4px; background: var(--orange); margin: 0 auto 10px auto; }
 .workshop-page-root .title-block p { color: #666; }
 
@@ -108,7 +109,7 @@
 .workshop-page-root .full-width { display: block; text-align: center; width: 100%; padding: 12px 20px; font-weight: 700; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s; margin-top: auto; }
 
 /* --- Requirements Section --- */
-.workshop-page-root .req-section { padding: 60px 0; }
+.workshop-page-root .req-section { padding: 60px 0;margin-bottom: -1cm; }
 .workshop-page-root .bg-dark { background: var(--dark); color: white; }
 .workshop-page-root .bg-dark .title-block h2 { color: white; }
 .workshop-page-root .bg-dark .title-block p { color: #aaa; }

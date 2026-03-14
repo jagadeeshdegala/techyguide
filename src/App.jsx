@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 //import reactLogo from './assets/react.svg'
 import viteLogo from '/TG-Square-Logo 3.png'
 //import './App.css'
@@ -38,11 +38,22 @@ import AboutUsPage from './AboutUsPage.jsx'
 import PartnersPage from './partnersPage.jsx'
 import ContactUs from './contactUs.jsx'
 
+function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  }, [pathname])
+
+  return null
+}
+
 function App() {
   const [count, setCount] = useState(0)
 
  return (
   <>
+    <ScrollToTop />
     {/* <SocialMediaIcons /> */}
     <Header/>
     <Routes>

@@ -725,6 +725,7 @@
 .tebot-page-root .explore-section {
     padding: clamp(60px, 10vw, 100px) clamp(15px, 4vw, 20px);
     background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
+    top: -80px;
 }
 
 .tebot-page-root .explore-container {
@@ -746,7 +747,8 @@
     font-size: clamp(1rem, 3vw, 1.4rem);
     color: #ff6b35;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-top: -30px;
+    /* margin-bottom: 20px; */
 }
 
 .tebot-page-root .explore-subheading {
@@ -821,6 +823,7 @@
 .tebot-page-root .technologies-section {
     padding: clamp(60px, 10vw, 100px) clamp(15px, 4vw, 20px);
     background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+    top: -160px;
 }
 
 .tebot-page-root .tech-container {
@@ -835,6 +838,7 @@
     text-align: center;
     margin-bottom: 60px;
     font-weight: 700;
+    margin-top: -20px;
 }
 
 .tebot-page-root .tech-grid {
@@ -928,6 +932,8 @@
 .tebot-page-root .specs-section {
     padding: clamp(38px, 6.4vw, 64px) clamp(15px, 4vw, 20px) !important;
     background: linear-gradient(135deg, #fef3c7 0%, #f0fdf4 100%);
+    margin-top: -5cm;
+    margin-bottom: 0cm;
 }
 
 .tebot-page-root .specs-container {
@@ -2012,6 +2018,7 @@
 .tebot-page-root .section-header {
     text-align: center;
     margin-bottom: clamp(22px, 3vw, 34px);
+    
 }
 
 .tebot-page-root .section-header h2 {

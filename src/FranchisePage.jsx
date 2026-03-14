@@ -45,6 +45,14 @@ import franchiseSupport5 from './assets/FranchisePageImages/Franchise Support - 
 
 
 function FranchisePage() {
+    const scrollToSection = (sectionId) => (event) => {
+        event.preventDefault();
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
     // SEO Configuration
     useEffect(() => {
         // Set page title
@@ -275,8 +283,8 @@ function FranchisePage() {
                     <p className="hero-desc">Empowering Students with AI, Robotics and 21st-Century Skills </p>
                     
                     <div className="hero-buttons">
-                        <a className="btn btn-orange" href="#requirements">Start Franchise</a>
-                        <a className="btn btn-glass" href="#why">Learn More</a>
+                        <a className="btn btn-orange" href="#requirements" onClick={scrollToSection('requirements')}>Start Franchise</a>
+                        <a className="btn btn-glass" href="#what-you-get" onClick={scrollToSection('what-you-get')}>Learn More</a>
                     </div>
                 </div>
             </header>
@@ -309,7 +317,7 @@ function FranchisePage() {
             </section>
             <section className="revenue-section" id="revenue">
                 <div className="container">
-                    <h2 className="section-title">Revenue Streams</h2>
+                    <h2 className="section-title2">Revenue Streams</h2>
                     <p className="lead">Multiple ways to grow your business and maximize your ROI.</p>
 
                     <div className="revenue-grid">
@@ -439,7 +447,7 @@ function FranchisePage() {
 
 
             {/* ============ WHAT WILL YOU GET SECTION ============ */}
-            <section className="containerbox what-you-get-section">
+            <section className="containerbox what-you-get-section" id="what-you-get">
                 <h2 className="section-title">What Will You Get?</h2>
 
                 <div className="what-you-get-grid">
@@ -519,7 +527,7 @@ function FranchisePage() {
             {/* ============ some snapshots ============ */}
             <section className="snapshot-section" id="snapshots">
                 <div className="containersnapshot">
-                    <h2 className="section-title">Some Snapshots</h2>
+                    <h2 className="section-title3">Some Snapshots</h2>
                     <div className="view">
                         <div className="block big"><img src={snapshot4} alt="Snapshot 1" /></div>
                         <div className="block small"><img src={snapshot1} alt="Snapshot 2" /></div>

@@ -328,7 +328,7 @@ const AIRoboticLabICSE = () => {
 				<div className="container">
 					<div className="guideline-header text-center fade-up">
 						<h2 className="section-heading">AI & Robotics Lab for ICSE Schools: Why Setup Now?</h2>
-						<p className="section-subtext">The AI & Robotics Lab for ICSE Schools strengthens academic excellence while meeting modern technology education standards defined by the Council for the Indian School Certificate Examinations (CISCE). With NEP 2020 alignment, ICSE schools now have the perfect framework to establish world-class labs that prepare students for the future.</p>
+						<p className="section-subtext icse-intro-subtext">The AI & Robotics Lab for ICSE Schools strengthens academic excellence while meeting modern technology education standards defined by the Council for the Indian School Certificate Examinations (CISCE). With NEP 2020 alignment, ICSE schools now have the perfect framework to establish world-class labs that prepare students for the future.</p>
 					</div>
 
 					<div className="guidelines-grid">
@@ -770,7 +770,7 @@ const AIRoboticLabICSE = () => {
 			<section className="gallery-section">
 				<div className="container">
 					<h2 className="section-heading text-center fade-up">Our Labs in Action</h2>
-					<p className="section-subtext text-center fade-up">Deployed in 350+ Schools including Gitanjali Vidyalaya, Millenium Public School, and more.</p>
+					<p className="section-subtext icse-gallery-subtext text-center fade-up">Deployed in 350+ Schools including Gitanjali Vidyalaya, Millenium Public School, and more.</p>
 					<div className="gallery-grid">
 						<div className="gallery-item large fade-up"><img src={GalleryImg1} alt="Hands-on Learning" /><div className="gallery-overlay"><h5>Hands-on Learning</h5></div></div>
 						<div className="gallery-item fade-up"><img src={GalleryImg2} alt="Student Coding" /><div className="gallery-overlay"><h5>Student Coding</h5></div></div>

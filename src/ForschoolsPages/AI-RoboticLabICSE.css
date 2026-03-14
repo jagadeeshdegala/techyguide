@@ -61,6 +61,7 @@
 	font-size: 2.5rem;
 	margin-bottom: 15px;
 	font-weight: 700;
+	margin-top: -1cm;
 }
 
 .ai-roboticlab-icse-root .section-subtext {
@@ -68,6 +69,17 @@
 	margin: 0 auto 50px;
 	color: #64748b;
 	font-size: 1.1rem;
+}
+
+.ai-roboticlab-icse-root .icse-intro-subtext {
+	max-width: 1080px;
+	text-wrap: balance;
+}
+
+.ai-roboticlab-icse-root .icse-gallery-subtext {
+	white-space: nowrap;
+	max-width: none;
+	overflow: visible;
 }
 
 .ai-roboticlab-icse-root .text-center { text-align: center; }
@@ -549,6 +561,7 @@
 	padding: 100px 0;
 	background: var(--dark);
 	color: #fff;
+	margin-bottom: -1cm;
 }
 
 .ai-roboticlab-icse-root .infra-section h2 {
@@ -589,6 +602,7 @@
 .ai-roboticlab-icse-root .packages-section {
 	padding: 100px 0;
 	background: #fff;
+	margin-bottom: -2cm;
 }
 
 .ai-roboticlab-icse-root .pricing-wrapper {

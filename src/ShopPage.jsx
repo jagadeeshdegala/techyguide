@@ -1,61 +1,81 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './ShopPage.css';
 
-import ottoman1 from './assets/ShopPageImages/Ottoman Kit 1.webp';
-import ottoman2 from './assets/ShopPageImages/Ottoman Kit 2.webp';
-import ottoman3 from './assets/ShopPageImages/Ottoman Kit 3.webp';
-// original images
-//robotic Arm kit
-import RoboticArmKit from './assets/ShopPageImages/RoboticsArmKit.jpg';
-import RoboticArmKitComponents from './assets/ShopPageImages/RoboticsArmKitComponents.jpg';
-import roboticArmAlt from './assets/ShopPageImages/Robotic-Arm-Kit-Project-2.webp';
-//3d pen
-import pen1 from './assets/ShopPageImages/3d pen 1.webp';
-import pen2 from './assets/ShopPageImages/3d pen 2.webp';
-import pen3 from './assets/ShopPageImages/3d pen 3.webp';
-//techbot electronics kit
-import TechBotElectronicsKit1 from './assets/ShopPageImages/TechBotElectronicsKit-1.jpg';
-import TechBotElectronicsKit2 from './assets/ShopPageImages/TechBotElectronicsKit-2.jpg';
-import TechBotElectronicsKit3 from './assets/ShopPageImages/TechBotElectronicsKit-3.jpg';
-//TechbotArdiunoKit
-import TechBotArdiunoKit1 from './assets/ShopPageImages/TechBot Arduino 1.jpg';
-import TechBotArdiunoKit2 from './assets/ShopPageImages/TechBot Arduino 2.jpg';
-import TechBotArdiunoKit3 from './assets/ShopPageImages/TechBot Arduino 3.jpg';
-//TebotChampKit
-import TeBotChampKit1 from './assets/ShopPageImages/TeBot Champ Kit 1.jpg';
-import TeBotChampKit2 from './assets/ShopPageImages/TeBot Champ Kit 2.jpg';
-import TeBotChampKit3 from './assets/ShopPageImages/TeBot Champ Kit 3.jpg';
-//Tebot Basic Kit
-import TeBotBasicKit1 from './assets/ShopPageImages/TeBot Basic Kit 1.jpg';
-import TeBotBasicKit2 from './assets/ShopPageImages/TeBot Basic Kit 2.jpg';
-import TeBotBasicKit3 from './assets/ShopPageImages/TeBot Basic Kit 3.jpg';
-//Tebot Advance kit
-import TeBotAdvanceKit1 from './assets/ShopPageImages/TeBot Advanced Kit 1.jpg';
-import TeBotAdvanceKit2 from './assets/ShopPageImages/TeBot Advanced Kit 2.jpg';
-import TeBotAdvanceKit3 from './assets/ShopPageImages/TeBot Advanced Kit 3.jpg';
-// i-bot advance kit
-import IBotAdvanceKit1 from './assets/ShopPageImages/I Bot Advance Kit 1.jpg';
-import IBotAdvanceKit2 from './assets/ShopPageImages/I Bot Advance Kit 2.jpg';
-import IBotAdvanceKit3 from './assets/ShopPageImages/I Bot Advance Kit 3.jpg';
-//I-bot  starter kit
-import IBotStarterKit1 from './assets/ShopPageImages/IBot Starter Kit 1.jpg';
-import IBotStarterKit2 from './assets/ShopPageImages/IBot Starter Kit 2.jpg';
-import IBotStarterKit3 from './assets/ShopPageImages/IBot Starter Kit 3.jpg';
-//otto starter kit
-import ottoStarterKit1 from './assets/ShopPageImages/Otto Kit 1.jpg';
-import ottoStarterKit2 from './assets/ShopPageImages/Otto Kit 2.jpg';
-import ottoStarterKit3 from './assets/ShopPageImages/Otto Kit 3.jpg';
-// otto lee kit
-import ottoLeeKit1 from './assets/ShopPageImages/Otto Lee Kit 1.jpg';
-import ottoLeeKit2 from './assets/ShopPageImages/Otto Lee Kit 2.jpg';
-import ottoLeeKit3 from './assets/ShopPageImages/Otto Lee Kit 4.jpg';
-import ottoLeeKit4 from './assets/ShopPageImages/Otto Lee 5.jpg';
-// otto spider kit
-import ottoSpiderKit1 from './assets/ShopPageImages/Otto Spider Kit1.jpg';
-import ottoSpiderKit2 from './assets/ShopPageImages/Otto Spider Kit2.jpg';
-import ottoSpiderKit3 from './assets/ShopPageImages/Otto Spider Kit3.jpg';
-import ottoSpiderKit4 from './assets/ShopPageImages/Otto Spider Kit4.jpg';
+import ottoman1 from './assets/ShopPageImages/E-Blox Starter - 1.jpg';
+import ottoman2 from './assets/ShopPageImages/E-Blox Starter - 2.jpg';
+import ottoman3 from './assets/ShopPageImages/E-Blox Starter - 3.jpg';
+import ottoman4 from './assets/ShopPageImages/E-Blox Starter - 4.jpg';
+
+import ebloxMaker1 from './assets/ShopPageImages/E-Blox maker - 1.jpg';
+import ebloxMaker2 from './assets/ShopPageImages/E-Blox maker - 2.jpg';
+import ebloxMaker3 from './assets/ShopPageImages/E-Blox maker - 3.jpg';
+import ebloxMaker4 from './assets/ShopPageImages/E-Blox maker - 4.jpg';
+
+import RoboticArmKit from './assets/ShopPageImages/Robotic arm kit - 1.jpg';
+import RoboticArmKit2 from './assets/ShopPageImages/Robotic arm kit - 2.jpg';
+import RoboticArmKit3 from './assets/ShopPageImages/Robotic arm kit - 3.jpg';
+import RoboticArmKit4 from './assets/ShopPageImages/Robotic arm kit - 4.jpg';
+
+import pen1 from './assets/ShopPageImages/3D Pen - 1.jpg';
+import pen2 from './assets/ShopPageImages/3D Pen - 2.jpg';
+import pen3 from './assets/ShopPageImages/3D Pen - 3.jpg';
+import pen4 from './assets/ShopPageImages/3D Pen - 4.jpg';
+
+import TechBotElectronicsKit1 from './assets/ShopPageImages/TechBot Electronics - 1.jpg';
+import TechBotElectronicsKit2 from './assets/ShopPageImages/TechBot Electronics - 2.jpg';
+import TechBotElectronicsKit3 from './assets/ShopPageImages/TechBot Electronics - 3.jpg';
+import TechBotElectronicsKit4 from './assets/ShopPageImages/TechBot Electronics - 4.jpg';
+
+import TechBotArdiunoKit1 from './assets/ShopPageImages/TechBot Arduino - 1.jpg';
+import TechBotArdiunoKit2 from './assets/ShopPageImages/TechBot Arduino - 2.jpg';
+import TechBotArdiunoKit3 from './assets/ShopPageImages/TechBot Arduino - 3.jpg';
+import TechBotArdiunoKit4 from './assets/ShopPageImages/TechBot Arduino - 4.jpg';
+
+import TeBotChampKit1 from './assets/ShopPageImages/TeBoT Champ - 1.jpg';
+import TeBotChampKit2 from './assets/ShopPageImages/TeBoT Champ - 2.jpg';
+import TeBotChampKit3 from './assets/ShopPageImages/TeBoT Champ - 3.jpg';
+import TeBotChampKit4 from './assets/ShopPageImages/TeBoT Champ - 4.jpg';
+
+import TeBotBasicKit1 from './assets/ShopPageImages/TeBot Basic - 1.jpg';
+import TeBotBasicKit2 from './assets/ShopPageImages/TeBot Basic - 2.jpg';
+import TeBotBasicKit3 from './assets/ShopPageImages/TeBot Basic - 3.jpg';
+import TeBotBasicKit4 from './assets/ShopPageImages/TeBot Basic - 4.jpg';
+
+import TeBotAdvanceKit1 from './assets/ShopPageImages/TeBot Advance - 1.jpg';
+import TeBotAdvanceKit2 from './assets/ShopPageImages/TeBot Advance - 2.jpg';
+import TeBotAdvanceKit3 from './assets/ShopPageImages/TeBot Advance - 3.jpg';
+import TeBotAdvanceKit4 from './assets/ShopPageImages/TeBot Advance - 4.jpg';
+
+import IBotAdvanceKit1 from './assets/ShopPageImages/I-Bot advance - 1.jpg';
+import IBotAdvanceKit2 from './assets/ShopPageImages/I-Bot advance - 2.jpg';
+import IBotAdvanceKit3 from './assets/ShopPageImages/I-Bot advance - 3.jpg';
+import IBotAdvanceKit4 from './assets/ShopPageImages/I-Bot advance - 4.jpg';
+
+import IBotStarterKit1 from './assets/ShopPageImages/I-Bot Starter - 1.jpg';
+import IBotStarterKit2 from './assets/ShopPageImages/I-Bot Starter - 2.jpg';
+import IBotStarterKit3 from './assets/ShopPageImages/I-Bot Starter - 3.jpg';
+import IBotStarterKit4 from './assets/ShopPageImages/I-Bot Starter - 4.jpg';
+
+import humanoidKit1 from './assets/ShopPageImages/Humanoid Kit - 1.jpg';
+import humanoidKit2 from './assets/ShopPageImages/Humanoid Kit - 2.jpg';
+import humanoidKit3 from './assets/ShopPageImages/Humanoid Kit - 3.jpg';
+import humanoidKit4 from './assets/ShopPageImages/Humanoid Kit - 4.jpg';
+
+import ottoStarterKit1 from './assets/ShopPageImages/Otto starter - 1.jpg';
+import ottoStarterKit2 from './assets/ShopPageImages/Otto starter - 2.jpg';
+import ottoStarterKit3 from './assets/ShopPageImages/Otto starter - 3.jpg';
+import ottoStarterKit4 from './assets/ShopPageImages/Otto starter - 4.jpg';
+
+import ottoLeeKit1 from './assets/ShopPageImages/otto Lee - 1.jpg';
+import ottoLeeKit2 from './assets/ShopPageImages/otto Lee - 2.jpg';
+import ottoLeeKit3 from './assets/ShopPageImages/otto Lee - 3.jpg';
+import ottoLeeKit4 from './assets/ShopPageImages/otto Lee - 4.jpg';
+
+import ottoSpiderKit1 from './assets/ShopPageImages/Otto spider - 1.jpg';
+import ottoSpiderKit2 from './assets/ShopPageImages/Otto spider - 2.jpg';
+import ottoSpiderKit3 from './assets/ShopPageImages/Otto spider - 3.jpg';
+import ottoSpiderKit4 from './assets/ShopPageImages/Otto spider - 4.jpg';
 
 
 
@@ -71,21 +91,22 @@ import ottoSpiderKit4 from './assets/ShopPageImages/Otto Spider Kit4.jpg';
 
 
 function ShopPage() {
+    const location = useLocation();
     const products = [
-        { id: 1, title: "Robotic Arm Kit", price: 3499, originalPrice: 4299, rating: 4.8, image: RoboticArmKit, description: "An  microcontroller receives control commands from the TechyGuide mobile application via Bluetooth. Each command controls one of the six servo motors, representing different joints of the robotic arm. Servo angles are adjusted incrementally to provide smooth and precise movements. Angle limits are applied to prevent over-rotation and mechanical damage. The system is suitable for pick-and-place tasks, robotics learning, and automation demonstrations.", features: ["This is a four degree of freedom robotic arm capable of picking and placing small objects."," ", "The robotic arm can fit on your table with middle-sized links."," ", "It helps to reach throughout the table and get hold of things without you to move."," ", "It provides with insights into a palletizing robotic manipulator through hands-on experience."," ", "Robotic arm teaches advanced robotics concepts like Motion Planning, Inverse Kinematics, etc."], images: [RoboticArmKitComponents, roboticArmAlt, "https://www.youtube.com/watch?v=HXHphpDJ9T0&list=RDHXHphpDJ9T0&start_radio=1"] },
-        { id: 2, title: "3D Pen", price: 899, originalPrice: 1299, rating: 4.9, category: "3D-Pen", image: pen1, description: "3D Pen is a 3D model printed using 3D printer used for educational purpose by students to design and create three-dimensional objects.", features: ["3D Pen is a 3D model printed using 3D printer used for educational purpose by students to design and create three-dimensional objects."], images: [pen2, pen3, "https://www.youtube.com/watch?v=S2kymv60ndQ"] },
-        { id: 3, title: "TechBoT Electronics Kit", price: 1199, originalPrice: 1499, rating: 4.8, image: TechBotElectronicsKit1, description: "An  microcontroller receives control commands from the TechyGuide mobile application via Bluetooth. Each command controls one of the six servo motors, representing different joints of the robotic arm. Servo angles are adjusted incrementally to provide smooth and precise movements. Angle limits are applied to prevent over-rotation and mechanical damage. The system is suitable for pick-and-place tasks, robotics learning, and automation demonstrations.", features: ["This is a four degree of freedom robotic arm capable of picking and placing small objects."," ", "The robotic arm can fit on your table with middle-sized links."," ", "It helps to reach throughout the table and get hold of things without you to move."," ", "It provides with insights into a palletizing robotic manipulator through hands-on experience."," ", "Robotic arm teaches advanced robotics concepts like Motion Planning, Inverse Kinematics, etc."], images: [TechBotElectronicsKit1, TechBotElectronicsKit2, TechBotElectronicsKit3] },
-        { id: 4, title: "TechBoT Arduino Kit", price: 2999, originalPrice: 3999, rating: 4.8, image: TechBotArdiunoKit1, description: "An  microcontroller receives control commands from the TechyGuide mobile application via Bluetooth. Each command controls one of the six servo motors, representing different joints of the robotic arm. Servo angles are adjusted incrementally to provide smooth and precise movements. Angle limits are applied to prevent over-rotation and mechanical damage. The system is suitable for pick-and-place tasks, robotics learning, and automation demonstrations.", features: ["This is a four degree of freedom robotic arm capable of picking and placing small objects."," ", "The robotic arm can fit on your table with middle-sized links."," ", "It helps to reach throughout the table and get hold of things without you to move."," ", "It provides with insights into a palletizing robotic manipulator through hands-on experience."," ", "Robotic arm teaches advanced robotics concepts like Motion Planning, Inverse Kinematics, etc."], images: [TechBotArdiunoKit1, TechBotArdiunoKit2, TechBotArdiunoKit3] },
-        { id: 5, title: "TeBoT Champ Kit", price: 6499, originalPrice: 7999, rating: 4.8, image: TeBotChampKit1, description: "An  microcontroller receives control commands from the TechyGuide mobile application via Bluetooth. Each command controls one of the six servo motors, representing different joints of the robotic arm. Servo angles are adjusted incrementally to provide smooth and precise movements. Angle limits are applied to prevent over-rotation and mechanical damage. The system is suitable for pick-and-place tasks, robotics learning, and automation demonstrations.", features: ["This is a four degree of freedom robotic arm capable of picking and placing small objects."," ", "The robotic arm can fit on your table with middle-sized links."," ", "It helps to reach throughout the table and get hold of things without you to move."," ", "It provides with insights into a palletizing robotic manipulator through hands-on experience."," ", "Robotic arm teaches advanced robotics concepts like Motion Planning, Inverse Kinematics, etc."], images: [TeBotChampKit1, TeBotChampKit2, TeBotChampKit3] },
-        { id: 6, title: "TeBoT Basic Kit", price: 4399, originalPrice: 5499, rating: 4.8, image: TeBotBasicKit1, description: "An  microcontroller receives control commands from the TechyGuide mobile application via Bluetooth. Each command controls one of the six servo motors, representing different joints of the robotic arm. Servo angles are adjusted incrementally to provide smooth and precise movements. Angle limits are applied to prevent over-rotation and mechanical damage. The system is suitable for pick-and-place tasks, robotics learning, and automation demonstrations.", features: ["This is a four degree of freedom robotic arm capable of picking and placing small objects."," ", "The robotic arm can fit on your table with middle-sized links."," ", "It helps to reach throughout the table and get hold of things without you to move."," ", "It provides with insights into a palletizing robotic manipulator through hands-on experience."," ", "Robotic arm teaches advanced robotics concepts like Motion Planning, Inverse Kinematics, etc."], images: [TeBotBasicKit1, TeBotBasicKit2, TeBotBasicKit3] },
-        { id: 7, title: "TeBot Advance Kit", price: 23999, originalPrice: 29999, rating: 4.9, image: TeBotAdvanceKit1, description: "TeBot Advance Kit is an ultimate robotics learning solution designed for young innovators. It supports 50+ hands-on projects with structured course materials and integrates multiple sensors for real-world experimentation. The kit includes short-circuit protection and a 1-year manufacturing warranty on the microcontroller for safe and long-term classroom use.", features: ["☑ 50+ Robotics Projects", "☑ Multi-Sensor Integration", "☑ Inbuilt Sensors for Easy Handling", "☑ Short Circuit Protection", "☑ 1-Year Microcontroller Warranty", "☑ Reusable & Modular Components"], images: [TeBotAdvanceKit1, TeBotAdvanceKit2, TeBotAdvanceKit3] },
-        { id: 8, title: "I-BoT Advance Kit", price: 6999, originalPrice: 8499, rating: 4.6, image: IBotAdvanceKit1, description: "I-BoT Advance Kit is a premium robotics platform supporting 100+ diverse projects. It integrates seamlessly with multiple sensors and is suitable for Robotics, IoT, and AI-based applications. Designed with advanced circuitry protection for reliable performance.", features: ["☑ 100+ Advanced Projects", "☑ AI & IoT Compatibility", "☑ Multi-Sensor Integration", "☑ Advanced Circuit Protection", "☑ Inbuilt Sensors", "☑ 1-Year Warranty"], images: [IBotAdvanceKit1, IBotAdvanceKit2, "https://www.youtube.com/watch?v=9pEqyr_uT-k"] },
-        { id: 9, title: "I-BoT Starter Kit", price: 3499, originalPrice: 4299, rating: 4.8, image: IBotStarterKit3, description: "I-BoT Starter Kit introduces students to robotics fundamentals through 20+ guided projects. It supports Robotics, IoT, and AI learning while offering modular configuration and easy sensor integration.", features: ["☑ 20+ Guided Projects", "☑ Modular Design", "☑ Sensor Integration", "☑ Short Circuit Protection", "☑ Beginner Friendly", "☑ Robotics, IoT & AI Support"], images: [IBotStarterKit2, IBotStarterKit1, "https://www.youtube.com/watch?v=HXHphpDJ9T0&list=RDHXHphpDJ9T0&start_radio=1"] },
-        { id: 10, title: "E-Blox Starter Kit", price: 2499, originalPrice: 3499, rating: 4.5, image: ottoman1, description: "E-Blox Kit is a modular electronics learning kit that enables students to build practical projects like lamps and mini windmills. Designed with plug-and-play components and child-safe low voltage design.", features: ["☑ 20+ Electronics Projects", "☑ Plug & Play Components", "☑ Child-Safe Low Voltage", "☑ Modular Block Assembly", "☑ Renewable Energy Exploration"], images: [ottoman2, ottoman3, "https://www.youtube.com/watch?v=8-5w56VxRVg"] },
-        { id: 11, title: "E-Blox Maker Kit", price: 2499, originalPrice: 3499, rating: 4.5, image: ottoman1, description: "E-Blox Kit is a modular electronics learning kit that enables students to build practical projects like lamps and mini windmills. Designed with plug-and-play components and child-safe low voltage design.", features: ["☑ 20+ Electronics Projects", "☑ Plug & Play Components", "☑ Child-Safe Low Voltage", "☑ Modular Block Assembly", "☑ Renewable Energy Exploration"], images: [ottoman2, ottoman3, "https://www.youtube.com/watch?v=8-5w56VxRVg"] },
-        { id: 12, title: "Humanoid Kit", price: 899, originalPrice: 1299, rating: 4.9, category: "3D-Pen", image: pen1, description: "Humanoid Kit allows students to build a fully functional humanoid robot with Bluetooth and voice control capabilities. It supports AI integration and Google Assistant compatibility for advanced experimentation.", features: ["☑ Bluetooth Enabled", "☑ Voice Command Functionality", "☑ Google Assistant Compatible", "☑ Multi-Control Operation", "☑ AI-Based Robotics Platform"], images: [pen2, pen3, "https://www.youtube.com/watch?v=S2kymv60ndQ"] },
-        { id: 13, title: "Otto Starter Kit", price: 1199, originalPrice: 1499, rating: 4.8, image: ottoStarterKit1, description: "Otto Starter Kit enables learners to assemble a mini humanoid robot capable of walking, dancing, and playing tunes. It includes guided learning materials and is ideal for beginners.", features: ["☑ Walking & Dancing Robot", "☑ Plays Music", "☑ Easy Assembly", "☑ Beginner Robotics Kit", "☑ Guided Learning Materials"], images: [ottoStarterKit1, ottoStarterKit2, ottoStarterKit3] },
-        { id: 14, title: "Otto Lee Kit", price: 2999, originalPrice: 3999, rating: 4.8, image: ottoLeeKit4, description: "Otto Lee Kit is a Bluetooth-controlled humanoid robot supporting multiple configurations and dynamic movements. Designed for interactive and wireless robotics learning.", features: ["☑ Bluetooth Control", "☑ Multiple Configurations", "☑ Dynamic Robotic Movements", "☑ Wireless Operation", "☑ Educational Robotics Kit"], images: [ottoLeeKit3, ottoLeeKit2, ottoLeeKit1] },
+        { id: 1, title: "Robotic Arm Kit", price: 3499, originalPrice: 4299, rating: 4.8, image: RoboticArmKit, description: "An  microcontroller receives control commands from the TechyGuide mobile application via Bluetooth. Each command controls one of the six servo motors, representing different joints of the robotic arm. Servo angles are adjusted incrementally to provide smooth and precise movements. Angle limits are applied to prevent over-rotation and mechanical damage. The system is suitable for pick-and-place tasks, robotics learning, and automation demonstrations.", features: ["This is a four degree of freedom robotic arm capable of picking and placing small objects."," ", "The robotic arm can fit on your table with middle-sized links."," ", "It helps to reach throughout the table and get hold of things without you to move."," ", "It provides with insights into a palletizing robotic manipulator through hands-on experience."," ", "Robotic arm teaches advanced robotics concepts like Motion Planning, Inverse Kinematics, etc."], images: [RoboticArmKit2, RoboticArmKit3, RoboticArmKit4] },
+        { id: 2, title: "3D Pen", price: 899, originalPrice: 1299, rating: 4.9, category: "3D-Pen", image: pen1, description: "3D Pen is a 3D model printed using 3D printer used for educational purpose by students to design and create three-dimensional objects.", features: ["3D Pen is a 3D model printed using 3D printer used for educational purpose by students to design and create three-dimensional objects."], images: [pen2, pen3, pen4] },
+        { id: 3, title: "TechBoT Electronics Kit", price: 1199, originalPrice: 1499, rating: 4.8, image: TechBotElectronicsKit1, description: "An  microcontroller receives control commands from the TechyGuide mobile application via Bluetooth. Each command controls one of the six servo motors, representing different joints of the robotic arm. Servo angles are adjusted incrementally to provide smooth and precise movements. Angle limits are applied to prevent over-rotation and mechanical damage. The system is suitable for pick-and-place tasks, robotics learning, and automation demonstrations.", features: ["This is a four degree of freedom robotic arm capable of picking and placing small objects."," ", "The robotic arm can fit on your table with middle-sized links."," ", "It helps to reach throughout the table and get hold of things without you to move."," ", "It provides with insights into a palletizing robotic manipulator through hands-on experience."," ", "Robotic arm teaches advanced robotics concepts like Motion Planning, Inverse Kinematics, etc."], images: [TechBotElectronicsKit2, TechBotElectronicsKit3, TechBotElectronicsKit4] },
+        { id: 4, title: "TechBoT Arduino Kit", price: 2999, originalPrice: 3999, rating: 4.8, image: TechBotArdiunoKit1, description: "An  microcontroller receives control commands from the TechyGuide mobile application via Bluetooth. Each command controls one of the six servo motors, representing different joints of the robotic arm. Servo angles are adjusted incrementally to provide smooth and precise movements. Angle limits are applied to prevent over-rotation and mechanical damage. The system is suitable for pick-and-place tasks, robotics learning, and automation demonstrations.", features: ["This is a four degree of freedom robotic arm capable of picking and placing small objects."," ", "The robotic arm can fit on your table with middle-sized links."," ", "It helps to reach throughout the table and get hold of things without you to move."," ", "It provides with insights into a palletizing robotic manipulator through hands-on experience."," ", "Robotic arm teaches advanced robotics concepts like Motion Planning, Inverse Kinematics, etc."], images: [TechBotArdiunoKit2, TechBotArdiunoKit3, TechBotArdiunoKit4] },
+        { id: 5, title: "TeBoT Champ Kit", price: 6499, originalPrice: 7999, rating: 4.8, image: TeBotChampKit1, description: "An  microcontroller receives control commands from the TechyGuide mobile application via Bluetooth. Each command controls one of the six servo motors, representing different joints of the robotic arm. Servo angles are adjusted incrementally to provide smooth and precise movements. Angle limits are applied to prevent over-rotation and mechanical damage. The system is suitable for pick-and-place tasks, robotics learning, and automation demonstrations.", features: ["This is a four degree of freedom robotic arm capable of picking and placing small objects."," ", "The robotic arm can fit on your table with middle-sized links."," ", "It helps to reach throughout the table and get hold of things without you to move."," ", "It provides with insights into a palletizing robotic manipulator through hands-on experience."," ", "Robotic arm teaches advanced robotics concepts like Motion Planning, Inverse Kinematics, etc."], images: [TeBotChampKit2, TeBotChampKit3, TeBotChampKit4] },
+        { id: 6, title: "TeBoT Basic Kit", price: 4399, originalPrice: 5499, rating: 4.8, image: TeBotBasicKit1, description: "An  microcontroller receives control commands from the TechyGuide mobile application via Bluetooth. Each command controls one of the six servo motors, representing different joints of the robotic arm. Servo angles are adjusted incrementally to provide smooth and precise movements. Angle limits are applied to prevent over-rotation and mechanical damage. The system is suitable for pick-and-place tasks, robotics learning, and automation demonstrations.", features: ["This is a four degree of freedom robotic arm capable of picking and placing small objects."," ", "The robotic arm can fit on your table with middle-sized links."," ", "It helps to reach throughout the table and get hold of things without you to move."," ", "It provides with insights into a palletizing robotic manipulator through hands-on experience."," ", "Robotic arm teaches advanced robotics concepts like Motion Planning, Inverse Kinematics, etc."], images: [TeBotBasicKit2, TeBotBasicKit3, TeBotBasicKit4] },
+        { id: 7, title: "TeBot Advance Kit", price: 23999, originalPrice: 29999, rating: 4.9, image: TeBotAdvanceKit1, description: "TeBot Advance Kit is an ultimate robotics learning solution designed for young innovators. It supports 50+ hands-on projects with structured course materials and integrates multiple sensors for real-world experimentation. The kit includes short-circuit protection and a 1-year manufacturing warranty on the microcontroller for safe and long-term classroom use.", features: ["☑ 50+ Robotics Projects", "☑ Multi-Sensor Integration", "☑ Inbuilt Sensors for Easy Handling", "☑ Short Circuit Protection", "☑ 1-Year Microcontroller Warranty", "☑ Reusable & Modular Components"], images: [TeBotAdvanceKit2, TeBotAdvanceKit3, TeBotAdvanceKit4] },
+        { id: 8, title: "I-BoT Advance Kit", price: 6999, originalPrice: 8499, rating: 4.6, image: IBotAdvanceKit1, description: "I-BoT Advance Kit is a premium robotics platform supporting 100+ diverse projects. It integrates seamlessly with multiple sensors and is suitable for Robotics, IoT, and AI-based applications. Designed with advanced circuitry protection for reliable performance.", features: ["☑ 100+ Advanced Projects", "☑ AI & IoT Compatibility", "☑ Multi-Sensor Integration", "☑ Advanced Circuit Protection", "☑ Inbuilt Sensors", "☑ 1-Year Warranty"], images: [IBotAdvanceKit2, IBotAdvanceKit3, IBotAdvanceKit4] },
+        { id: 9, title: "I-BoT Starter Kit", price: 3499, originalPrice: 4299, rating: 4.8, image: IBotStarterKit1, description: "I-BoT Starter Kit introduces students to robotics fundamentals through 20+ guided projects. It supports Robotics, IoT, and AI learning while offering modular configuration and easy sensor integration.", features: ["☑ 20+ Guided Projects", "☑ Modular Design", "☑ Sensor Integration", "☑ Short Circuit Protection", "☑ Beginner Friendly", "☑ Robotics, IoT & AI Support"], images: [IBotStarterKit2, IBotStarterKit3, IBotStarterKit4] },
+        { id: 10, title: "E-Blox Starter Kit", price: 2499, originalPrice: 3499, rating: 4.5, image: ottoman1, description: "E-Blox Kit is a modular electronics learning kit that enables students to build practical projects like lamps and mini windmills. Designed with plug-and-play components and child-safe low voltage design.", features: ["☑ 20+ Electronics Projects", "☑ Plug & Play Components", "☑ Child-Safe Low Voltage", "☑ Modular Block Assembly", "☑ Renewable Energy Exploration"], images: [ottoman2, ottoman3, ottoman4] },
+        { id: 11, title: "E-Blox Maker Kit", price: 2499, originalPrice: 3499, rating: 4.5, image: ebloxMaker1, description: "E-Blox Kit is a modular electronics learning kit that enables students to build practical projects like lamps and mini windmills. Designed with plug-and-play components and child-safe low voltage design.", features: ["☑ 20+ Electronics Projects", "☑ Plug & Play Components", "☑ Child-Safe Low Voltage", "☑ Modular Block Assembly", "☑ Renewable Energy Exploration"], images: [ebloxMaker2, ebloxMaker3, ebloxMaker4] },
+        { id: 12, title: "Humanoid Kit", price: 899, originalPrice: 1299, rating: 4.9, category: "3D-Pen", image: humanoidKit1, description: "Humanoid Kit allows students to build a fully functional humanoid robot with Bluetooth and voice control capabilities. It supports AI integration and Google Assistant compatibility for advanced experimentation.", features: ["☑ Bluetooth Enabled", "☑ Voice Command Functionality", "☑ Google Assistant Compatible", "☑ Multi-Control Operation", "☑ AI-Based Robotics Platform"], images: [humanoidKit2, humanoidKit3, humanoidKit4] },
+        { id: 13, title: "Otto Starter Kit", price: 1199, originalPrice: 1499, rating: 4.8, image: ottoStarterKit1, description: "Otto Starter Kit enables learners to assemble a mini humanoid robot capable of walking, dancing, and playing tunes. It includes guided learning materials and is ideal for beginners.", features: ["☑ Walking & Dancing Robot", "☑ Plays Music", "☑ Easy Assembly", "☑ Beginner Robotics Kit", "☑ Guided Learning Materials"], images: [ottoStarterKit2, ottoStarterKit3, ottoStarterKit4] },
+        { id: 14, title: "Otto Lee Kit", price: 2999, originalPrice: 3999, rating: 4.8, image: ottoLeeKit1, description: "Otto Lee Kit is a Bluetooth-controlled humanoid robot supporting multiple configurations and dynamic movements. Designed for interactive and wireless robotics learning.", features: ["☑ Bluetooth Control", "☑ Multiple Configurations", "☑ Dynamic Robotic Movements", "☑ Wireless Operation", "☑ Educational Robotics Kit"], images: [ottoLeeKit2, ottoLeeKit3, ottoLeeKit4] },
         { id: 15, title: "Otto Spider Kit", price: 6499, originalPrice: 7999, rating: 4.8, image: ottoSpiderKit1, description: "Otto Spider Kit is a spider-inspired robot featuring 8 degrees of motion. It can perform push-ups, dance routines, and agile movements with Bluetooth control.", features: ["☑ 8 Degrees of Motion", "☑ Agile Robotic Design", "☑ Bluetooth Control", "☑ Compact Structure", "☑ Complete Learning Resources"], images: [ottoSpiderKit2, ottoSpiderKit3, ottoSpiderKit4] },
     ];
 
@@ -154,6 +175,14 @@ function ShopPage() {
     useEffect(() => {
         filterProducts();
     }, [searchTerm, currentCategory]);
+
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+        const category = params.get('category');
+        if (category === 'Courses') {
+            setCurrentCategory('Courses');
+        }
+    }, [location.search]);
 
     useEffect(() => {
         const fallbackHeaderOffset = 113;
@@ -286,6 +315,12 @@ function ShopPage() {
         setTimeout(() => {
             navigate('/checkout');
         }, 100);
+    };
+
+    const handleGoToCart = () => {
+        closeModal();
+        setCurrentCourse(null);
+        setIsCartOpen(true);
     };
 
     const handleProceedToCheckout = () => {
@@ -630,7 +665,12 @@ function ShopPage() {
                                             <button className="action-btn btn-cart" onClick={() => handleAddClick(currentCourse.id)}>ADD TO CART</button>
                                         )}
                                     </div>
-                                    <button className="btn-buy action-btn" onClick={() => handleBuyNow(currentCourse.id)}>Buy Now</button>
+                                    <button
+                                        className="btn-buy action-btn"
+                                        onClick={() => (cartItemInCourseModal ? handleGoToCart() : handleBuyNow(currentCourse.id))}
+                                    >
+                                        {cartItemInCourseModal ? 'Go to Cart' : 'Buy Now'}
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -647,7 +687,12 @@ function ShopPage() {
                                     <button className="action-btn btn-cart" onClick={() => handleAddClick(currentCourse.id)}>ADD TO CART</button>
                                 )}
                             </div>
-                            <button className="btn-buy action-btn" onClick={() => handleBuyNow(currentCourse.id)}>Buy Now</button>
+                            <button
+                                className="btn-buy action-btn"
+                                onClick={() => (cartItemInCourseModal ? handleGoToCart() : handleBuyNow(currentCourse.id))}
+                            >
+                                {cartItemInCourseModal ? 'Go to Cart' : 'Buy Now'}
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -728,7 +773,12 @@ function ShopPage() {
                                             <button className="action-btn btn-cart" onClick={() => handleAddClick(currentProduct.id)}>ADD TO CART</button>
                                         )}
                                     </div>
-                                    <button className="btn-buy action-btn" onClick={() => handleBuyNow(currentProduct.id)}>Buy Now</button>
+                                    <button
+                                        className="btn-buy action-btn"
+                                        onClick={() => (cartItemInModal ? handleGoToCart() : handleBuyNow(currentProduct.id))}
+                                    >
+                                        {cartItemInModal ? 'Go to Cart' : 'Buy Now'}
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -745,7 +795,12 @@ function ShopPage() {
                                     <button className="action-btn btn-cart" onClick={() => handleAddClick(currentProduct.id)}>ADD TO CART</button>
                                 )}
                             </div>
-                            <button className="btn-buy action-btn" onClick={() => handleBuyNow(currentProduct.id)}>Buy Now</button>
+                            <button
+                                className="btn-buy action-btn"
+                                onClick={() => (cartItemInModal ? handleGoToCart() : handleBuyNow(currentProduct.id))}
+                            >
+                                {cartItemInModal ? 'Go to Cart' : 'Buy Now'}
+                            </button>
                         </div>
                     </div>
                 </div>

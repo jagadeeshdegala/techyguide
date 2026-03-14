@@ -527,6 +527,7 @@
   text-align: center;
   font-size: 34px;
   margin-bottom: 40px;
+  margin-top: -1cm;
   color: #000000;
   font-weight: 800;
   letter-spacing: 0.4px;
@@ -742,6 +743,7 @@
   text-align: center;
   font-size: 34px;
   margin-bottom: 10px;
+  margin-top: -2cm;
   color: #000000;
   font-weight: 800;
   letter-spacing: 0.4px;
@@ -921,6 +923,7 @@
   font-size: 36px;
   font-weight: 800;
   color: #000;
+  margin-top: -2cm;
 }
 
 .robothrone-page-root .robothrone-judging-header p {

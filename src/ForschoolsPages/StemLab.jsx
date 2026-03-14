@@ -8,6 +8,7 @@ import GalleryImage5 from '../assets/ForSchoolsStemLabImages/WhatsApp Image 2021
 import GalleryImage6 from '../assets/ForSchoolsStemLabImages/WhatsApp Image 2025-06-04 at 11.12.23_14c0422d.jpg';
 // hero image
 import heroImage from '../assets/ForSchoolsStemLabImages/Hero Section - STEM Lab.jpg';
+import projectShowcaseVideo from '../assets/ForSchoolsStemLabImages/Website_Schools page_STEM Lab -  Project showcase.mp4';
 
 function StemLab() {
     // ==========================================
@@ -179,19 +180,7 @@ function StemLab() {
         document.body.addEventListener('click', handleClick);
 
         // ==========================================
-        // 5. LOAD SHOWCASE VIDEO FROM data-video-id
-        // ==========================================
-        const videoWrapper = document.querySelector('.stemlab-page-root .video-wrapper');
-        if (videoWrapper) {
-            const vid = videoWrapper.dataset.videoId;
-            const iframe = videoWrapper.querySelector('iframe');
-            if (vid && iframe && vid.trim() !== '') {
-                iframe.src = `https://www.youtube.com/embed/${vid}`;
-            }
-        }
-
-        // ==========================================
-        // 6. INITIALIZE MULTIPLE MODEL PLAYERS
+        // 5. INITIALIZE MULTIPLE MODEL PLAYERS
         // ==========================================
         const modelCards = document.querySelectorAll('.stemlab-page-root .model-card');
         if (modelCards.length > 0) {
@@ -205,7 +194,7 @@ function StemLab() {
         }
 
         // ==========================================
-        // 7. FORM HANDLING FOR ENQUIRY
+        // 6. FORM HANDLING FOR ENQUIRY
         // ==========================================
         const form = document.querySelector('.stemlab-page-root #enquiryForm');
         const formHandler = (e) => {
@@ -279,7 +268,7 @@ function StemLab() {
                                 Welcome to StemLabs, where we nurture young innovators through experiential STEM education. Our unique DICE methodology—Design Thinking, Innovation, Creativity, and Entrepreneurship—sparks curiosity and builds future-ready skills through hands-on, practical learning. 
                             </p>
                             <div className="intro-buttons">
-                                <button className="btn-primary">Our Programs</button>
+                                <button className="btn-primary">Our Projects</button>
                                 <button className="btn-outline">Download Brochure</button>
                             </div>
                         </div>
@@ -372,8 +361,11 @@ function StemLab() {
                             <p>Watch one of our featured student projects below.</p>
                         </div>
 
-                        <div className="video-wrapper" data-video-id="M7lc1UVf-VE">
-                            <iframe title="Project Showcase" src={undefined} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                        <div className="video-wrapper">
+                            <video className="showcase-video" controls preload="metadata" playsInline>
+                                <source src={projectShowcaseVideo} type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                     </div>
                 </section>

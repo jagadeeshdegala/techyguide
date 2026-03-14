@@ -510,10 +510,29 @@ const AddOnKit = () => {
 					<div style="background: white; padding: 3rem; border-radius: 20px; text-align: center; max-width: 500px; margin: 20px; transform: scale(0.8); transition: transform 0.3s ease;">
 						<h2 style="color: #2c3e50; margin-bottom: 1rem;">🚀 Welcome to Add On Kit!</h2>
 						<p style="margin-bottom: 2rem; color: #666;">Ready to start your STEM journey? Contact us to get started with our premium robotics kits.</p>
-						<button onclick="this.parentElement.parentElement.remove()" style="background: #4fc3f7; color: white; border: none; padding: 12px 30px; border-radius: 25px; cursor: pointer; font-size: 1rem; transition: all 0.3s ease;">Close</button>
+						<div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+							<button class="addon-modal-close-btn" style="background: #4fc3f7; color: white; border: none; padding: 12px 30px; border-radius: 25px; cursor: pointer; font-size: 1rem; transition: all 0.3s ease;">Close</button>
+							<button class="addon-modal-contact-btn" style="background: #008273; color: white; border: none; padding: 12px 30px; border-radius: 25px; cursor: pointer; font-size: 1rem; transition: all 0.3s ease;">Contact</button>
+						</div>
 					</div>
 				</div>`;
 			document.body.appendChild(modal);
+			const closeModalButton = modal.querySelector('.addon-modal-close-btn');
+			const contactModalButton = modal.querySelector('.addon-modal-contact-btn');
+
+			if (closeModalButton) {
+				closeModalButton.addEventListener('click', () => {
+					modal.remove();
+				});
+			}
+
+			if (contactModalButton) {
+				contactModalButton.addEventListener('click', () => {
+					modal.remove();
+					window.location.hash = '/contact-techyguide/';
+				});
+			}
+
 			setTimeout(() => {
 				modal.firstElementChild.style.opacity = '1';
 				modal.firstElementChild.firstElementChild.style.transform = 'scale(1)';
@@ -625,7 +644,7 @@ const AddOnKit = () => {
 								Kids power up robot projects with sensors, lights, motion parts, and coding mini missions.
 							</p>
 							<br/>
-							<a className="addon-hero-btn addon-hero-btn-primary" href="#" aria-label="Explore Add-on kit">
+							<a className="addon-hero-btn addon-hero-btn-primary" href="#products" aria-label="Explore Add-on kit">
 								Explore Add-on Kit
 							</a>
 						</div>
@@ -651,7 +670,7 @@ const AddOnKit = () => {
 				</header>
 			</div>
 
-			<section className="products-wrapper">
+			<section className="products-wrapper" id="products">
 				<div className="product-section">
 					<div className="info-box" data-aos="fade-right">
 						<h2>Robotic Arm Kit</h2>

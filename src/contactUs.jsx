@@ -10,7 +10,7 @@ import school7 from './assets/contactUsImages/school7.jpg';
 import school8 from './assets/contactUsImages/school8.png';
 import school9 from './assets/contactUsImages/school9.png';
 // contactus image
-import contactusimg from './assets/contactUsImages/Contact us - 2.png';
+import contactusimg from './assets/contactUsImages/Contact us - 1.png';
 
 function ContactUs() {
 	const [activeFaqIndex, setActiveFaqIndex] = useState(1);

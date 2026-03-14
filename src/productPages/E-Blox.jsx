@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './E-Blox.css';
 
 import robotKids from '../assets/ProductE-BloxImages/vecteezy_ai-generated-cute-robot-kids-with-isolated-transparant_38049144.png';
@@ -29,6 +30,8 @@ import whyEbloxBest3 from '../assets/ProductE-BloxImages/Why is e-Blox the Best 
 import whyEbloxBest4 from '../assets/ProductE-BloxImages/Why is e-Blox the Best for Early Learners_ - 4.jpg';
 // eblox kit offerings section images
 import ebloxStarterKit from '../assets/ProductE-BloxImages/E-Blox Kit Offerings - 1.jpg';
+import ebloxMakerKit from '../assets/ProductE-BloxImages/E-Blox Kit Offerings - 2.jpg';
+
 //featured eblox projects section
 import windmill from '../assets/ProductE-BloxImages/Featured E blox Projects - 1.jpg';
 import Lamp from '../assets/ProductE-BloxImages/Featured E blox Projects - 2.jpg';
@@ -560,7 +563,7 @@ export default function EBlox() {
                 <canvas className="eblox-hero-canvas" aria-hidden="true" ref={ebloxHeroCanvasRef}></canvas>
 
                 <nav className="eblox-hero-nav" aria-label="Primary">
-                    <a className="eblox-hero-logo-pill" href="#" aria-label="E-BLOX home">E-BLOX</a>
+                    <span className="eblox-hero-logo-pill" aria-label="E-BLOX home">E-BLOX</span>
                 </nav>
 
                 <div className="eblox-hero-layout">
@@ -573,14 +576,13 @@ export default function EBlox() {
                         <p className="eblox-hero-subcopy">
                             Kids build logic and creativity with playful eBlox kits, coding games, and hands-on mini missions.
                         </p>
-                        <a
+                        <Link
                             className="eblox-hero-btn eblox-hero-btn-primary"
-                            href="#eblox-tech-focus"
+                            to="/contact-techyguide/"
                             aria-label="Start eBlox class"
-                            onClick={handleHeroButtonClick}
                         >
                             Start eBlox Class
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="eblox-hero-visual" data-depth="0.035">
@@ -817,18 +819,20 @@ export default function EBlox() {
                                 <article className="eblox-kit-main-slide">
                                     <div className="eblox-kit-scroll-card featured">
                                         <div className="eblox-kit-scroll-image">
-                                            <img src={robot4} alt="The e-Blox Standard Kit" loading="lazy" />
+                                            <img src={ebloxMakerKit} alt="The e-Blox Standard Kit" loading="lazy" />
                                         </div>
                                         <div className="eblox-kit-scroll-content">
                                             <h3>The E-Blox Maker Kit</h3>
                                             <p>A multi-purpose electronics kit that serves as the perfect introduction to STEM for younger grades.</p>
 
                                             <h4>Projects:</h4>
-                                            <p>Includes materials to build 20+ practical products such as:</p>
+                                            <p>Includes materials to build 30+ practical products such as:</p>
                                             <ul className="eblox-list">
-                                                <li>Study lamps</li>
-                                                <li>Table lamps</li>
-                                                <li>Mini windmills</li>
+                                                <li>Automatic Close Light</li>
+                                                <li>Home Automation</li>
+                                                <li>Sanitizer Dispenser</li>
+                                                 <li>Mechanical Door</li>
+
                                             </ul>
 
                                             <h4>Key Components</h4>
@@ -859,6 +863,7 @@ export default function EBlox() {
                                                         <li>I-Shape BO Motors</li>
                                                         <li>Wires with JST connectors</li>
                                                         <li>Buzzer</li>
+                                                        <li>MDF Parts</li>
                                                     </ul>
                                                 </div>
                                             </div>

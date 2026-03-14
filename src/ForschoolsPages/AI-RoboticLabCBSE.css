@@ -60,6 +60,7 @@
 	font-size: 2.5rem;
 	margin-bottom: 15px;
 	font-weight: 700;
+	margin-top: -1cm;
 }
 
 .ai-roboticslab-cbse-root .section-subtext {
@@ -543,6 +544,7 @@
 	padding: 100px 0;
 	background: var(--dark);
 	color: #fff;
+	margin-bottom: -1cm;
 }
 
 .ai-roboticslab-cbse-root .infra-section h2 {
@@ -583,6 +585,7 @@
 .ai-roboticslab-cbse-root .packages-section {
 	padding: 100px 0;
 	background: #fff;
+	margin-top: -2cm;
 }
 
 .ai-roboticslab-cbse-root .pricing-wrapper {
