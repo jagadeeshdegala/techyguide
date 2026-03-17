@@ -37,6 +37,7 @@ import EAddOnKit from './productPages/AddOnKit.jsx'
 import AboutUsPage from './AboutUsPage.jsx'
 import PartnersPage from './partnersPage.jsx'
 import ContactUs from './contactUs.jsx'
+import CareersPage from './CareersPage.jsx'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -98,6 +99,8 @@ function App() {
       <Route path="/partners" element={<Navigate to="/techyguide-partners-stem-education-india" replace />} />
       <Route path="/contact-techyguide/" element={<ContactUsPageWrapper />} />
       <Route path="/contact-us" element={<Navigate to="/contact-techyguide/" replace />} />
+      <Route path="/careers-techyguide-stem-education-jobs" element={<CareersPageWrapper />} />
+      <Route path="/careers" element={<Navigate to="/careers-techyguide-stem-education-jobs" replace />} />
     </Routes>
     <WhatsAppButton/>
   </>
@@ -313,6 +316,15 @@ function ContactUsPageWrapper() {
   return (
     <>
       <ContactUs />
+      <FooterSection />
+    </>
+  );
+}
+
+function CareersPageWrapper() {
+  return (
+    <>
+      <CareersPage />
       <FooterSection />
     </>
   );

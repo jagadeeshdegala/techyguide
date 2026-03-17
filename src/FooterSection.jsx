@@ -205,6 +205,9 @@ function FooterSection() {
                   <Link to="/courses" onClick={scrollToTop}>Coding Courses</Link>
                 </li>
                 <li>
+                  <Link to="/careers-techyguide-stem-education-jobs" onClick={scrollToTop}>Careers</Link>
+                </li>
+                <li>
                   <a href="#">3D Printing</a>
                 </li>
               </ul>
