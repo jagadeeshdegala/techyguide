@@ -941,63 +941,51 @@
    VIDEO SECTION
    ========================================= */
 .stem-tinkering-lab-root .video-section {
-  padding: 100px 0;
-  background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(30, 64, 175, 0.8)), 
-              url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1600');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #fff;
+  padding: 80px 0;
+  background-color: var(--light);
+}
+
+.stem-tinkering-lab-root .video-section .section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.stem-tinkering-lab-root .video-section .section-header h2 {
+  font-size: 2.95em;
+  margin-top: -1cm;
+}
+
+.stem-tinkering-lab-root .video-section .section-header .project-teal {
+  color: #008273;
+}
+
+.stem-tinkering-lab-root .video-section .section-header .showcase-orange {
+  color: var(--accent);
+}
+
+.stem-tinkering-lab-root .video-wrapper {
   position: relative;
+  width: min(65%, 900px);
+  margin: 0 auto;
   overflow: hidden;
+  border-radius: 15px;
+  aspect-ratio: 16 / 9;
+  background: #0f172a;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.stem-tinkering-lab-root .video-section::before {
-  content: '';
-  position: absolute;
-  top: -100px;
-  right: -50px;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-  border-radius: 50%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.stem-tinkering-lab-root .video-content-wrapper {
-  position: relative;
-  z-index: 1;
-}
-
-.stem-tinkering-lab-root .video-container {
-  position: relative;
-  width: 100%;
-  max-width: 900px;
-  margin: 50px auto 0;
-  padding-bottom: 56.25%;
-  height: 0;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: #000;
-}
-
-.stem-tinkering-lab-root .video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
+.stem-tinkering-lab-root .showcase-video {
+  display: block;
   width: 100%;
   height: 100%;
-  border: none;
+  border: 0;
+  object-fit: cover;
 }
 
-.stem-tinkering-lab-root .video-container:hover {
-  border-color: var(--accent);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8);
-  transform: translateY(-5px);
-  transition: all 0.4s ease;
+@media (max-width: 1024px) {
+  .stem-tinkering-lab-root .video-wrapper {
+    width: min(78%, 900px);
+  }
 }
 
 /* =========================================

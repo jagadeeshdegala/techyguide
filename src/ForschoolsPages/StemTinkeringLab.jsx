@@ -25,6 +25,7 @@ import supportecosystem6 from '../assets/ForSchoolsStemTinkeringLabImages/Suppor
 import proprietaryKits1 from '../assets/ForSchoolsStemTinkeringLabImages/Proprietary DIY Kits - 1.jpg';
 import proprietaryKits2 from '../assets/ForSchoolsStemTinkeringLabImages/Proprietary DIY Kits - 2.jpg';
 import proprietaryKits3 from '../assets/ForSchoolsStemTinkeringLabImages/Proprietary DIY Kits - 3.jpg';
+import projectShowcaseVideo from '../assets/ForSchoolsStemLabImages/Website_Schools page_STEM Lab -  Project showcase.mp4';
 
 
 function StemTinkeringLab() {
@@ -606,6 +607,23 @@ function StemTinkeringLab() {
               </div>
               <div className="floating-kit-tag">Made in India</div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Project Showcase section copied from Stem Lab page */}
+      <section className="video-section" id="showcase-video">
+        <div className="container">
+          <div className="section-header">
+            <h2><span className="project-teal">Project</span> <span className="showcase-orange">Showcase</span></h2>
+            <p>Watch one of our featured student projects below.</p>
+          </div>
+
+          <div className="video-wrapper">
+            <video className="showcase-video" controls preload="metadata" playsInline>
+              <source src={projectShowcaseVideo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </section>

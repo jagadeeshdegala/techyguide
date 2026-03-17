@@ -6,6 +6,7 @@ import workspace1 from './assets/AboutUSImages/Our Team & Workspace - 1.jpg';
 import workspace2 from './assets/AboutUSImages/Our Team & Workspace - 2.jpg';
 import workspace3 from './assets/AboutUSImages/Our Team & Workspace - 3.jpg';
 import workspace4 from './assets/AboutUSImages/Our Team & Workspace - 4.jpg';
+import ourjourney from './assets/AboutUSImages/Asset_Website_About us page - Milestone 1.png';
 
 function AboutUsPage() {
 	const workspaceImages = [
@@ -87,6 +88,19 @@ function AboutUsPage() {
 							<h3>Transparency</h3>
 							<p>Clear communication and honest collaboration.</p>
 						</div>
+					</div>
+				</div>
+			</section>
+
+			<section className="journey-section">
+				<div className="container">
+					<h2 className="journey-heading">Our Journey</h2>
+					<div className="journey-image-container">
+						<img
+							src={ourjourney}
+							alt="TechyGuide Journey Timeline"
+							className="journey-image"
+						/>
 					</div>
 				</div>
 			</section>

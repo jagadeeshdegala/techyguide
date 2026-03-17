@@ -34,6 +34,7 @@ import VoiceControlCar from '../assets/ProductTeBoTImages/Featured TeBot Project
 
 function TeBoT() {
     const [activeKitSlide, setActiveKitSlide] = useState(0);
+    const [isKitSliderPaused, setIsKitSliderPaused] = useState(false);
     const touchStartXRef = useRef(0);
     const touchEndXRef = useRef(0);
     const heroSectionRef = useRef(null);
@@ -138,12 +139,16 @@ function TeBoT() {
     ];
 
     useEffect(() => {
+        if (isKitSliderPaused) {
+            return undefined;
+        }
+
         const timer = setInterval(() => {
             setActiveKitSlide((prevSlide) => (prevSlide + 1) % kitOfferings.length);
         }, 3500);
 
         return () => clearInterval(timer);
-    }, []);
+    }, [isKitSliderPaused, kitOfferings.length]);
 
     const goToKitSlide = (slideIndex) => {
         setActiveKitSlide(slideIndex);
@@ -824,6 +829,8 @@ function TeBoT() {
                         </div>
                         <div
                             className="kits-main-slider reveal-card"
+                            onMouseEnter={() => setIsKitSliderPaused(true)}
+                            onMouseLeave={() => setIsKitSliderPaused(false)}
                             onTouchStart={handleKitTouchStart}
                             onTouchMove={handleKitTouchMove}
                             onTouchEnd={handleKitTouchEnd}

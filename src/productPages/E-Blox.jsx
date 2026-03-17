@@ -45,6 +45,7 @@ import MechanicalDoor from '../assets/ProductE-BloxImages/Featured E blox Projec
 
 export default function EBlox() {
     const [activeKitSlide, setActiveKitSlide] = useState(0);
+    const [isKitSliderPaused, setIsKitSliderPaused] = useState(false);
     const ebloxHeroRef = useRef(null);
     const ebloxHeroCanvasRef = useRef(null);
 
@@ -148,12 +149,16 @@ export default function EBlox() {
 
 
     useEffect(() => {
+        if (isKitSliderPaused) {
+            return undefined;
+        }
+
         const kitTimer = setInterval(() => {
             setActiveKitSlide((prevSlide) => (prevSlide + 1) % 2);
         }, 3500);
 
         return () => clearInterval(kitTimer);
-    }, []);
+    }, [isKitSliderPaused]);
 
     const goToKitSlide = (slideIndex) => {
         setActiveKitSlide(slideIndex);
@@ -748,7 +753,11 @@ export default function EBlox() {
                     <h2 className="eblox-section-title">E-Blox <span style={{color: '#000000'}}>Kit Offerings</span></h2>
                     <br/>
                     
-                    <div className="eblox-kits-main-slider">
+                    <div
+                        className="eblox-kits-main-slider"
+                        onMouseEnter={() => setIsKitSliderPaused(true)}
+                        onMouseLeave={() => setIsKitSliderPaused(false)}
+                    >
                         <button
                             className="eblox-kits-arrow eblox-kits-arrow-left"
                             onClick={() => moveKitSlide(-1)}

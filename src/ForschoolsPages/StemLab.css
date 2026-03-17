@@ -233,6 +233,27 @@
     margin-top: 30px;
 }
 
+.stemlab-page-root .floating-cta {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #f59e0b;
+    color: #1b262c;
+    padding: 14px 22px;
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(245, 158, 11, 0.4);
+    z-index: 1000;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.stemlab-page-root .floating-cta:hover {
+    transform: scale(1.05);
+}
+
 /* METHODOLOGY (DICE) SECTION */
 .stemlab-page-root .methodology-section {
     padding: 80px 0;
@@ -589,6 +610,13 @@
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+    .stemlab-page-root .floating-cta {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 18px;
+        font-size: 0.9rem;
+    }
+
     .stemlab-page-root .video-wrapper {
         width: 100%;
     }

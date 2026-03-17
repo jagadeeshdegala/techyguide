@@ -50,6 +50,27 @@
 .workshop-page-root .btn-secondary { border: 2px solid var(--teal); color: var(--teal); padding: 13px 30px; font-weight: 700; border-radius: 5px; }
 .workshop-page-root .btn-primary:hover { background: transparent; color: var(--orange); }
 
+.workshop-page-root .floating-cta {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	background: #f59e0b;
+	color: #1b262c;
+	padding: 14px 22px;
+	border-radius: 50px;
+	box-shadow: 0 5px 20px rgba(245, 158, 11, 0.4);
+	z-index: 1000;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.workshop-page-root .floating-cta:hover {
+	transform: scale(1.05);
+	color: #1b262c;
+}
+
 .workshop-page-root .right { display: flex; justify-content: center; align-items: center; }
 .workshop-page-root .blob-image {
 	width: 90%; height: 500px;
@@ -232,6 +253,13 @@
 
 /* --- Mobile Responsive --- */
 @media (max-width: 768px) {
+	.workshop-page-root .floating-cta {
+		bottom: 20px;
+		right: 20px;
+		padding: 12px 18px;
+		font-size: 0.9rem;
+	}
+
 	.workshop-page-root .nav-links { display: none; }
 	.workshop-page-root .hero { flex-direction: column; text-align: center; padding-top: 30px; }
 	.workshop-page-root .hero-split { width: 100%; }

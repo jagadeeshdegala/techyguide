@@ -150,6 +150,10 @@ function WorkshopPage() {
 
 	return (
 		<div className="workshop-page-root">
+			<a href="#contact-section" className="floating-cta">
+				<i className="fas fa-file-invoice-dollar"></i> Get Proposal
+			</a>
+
 			{/* Hero Section */}
 			<section className="hero">
 				<div className="hero-bg-shape"></div>

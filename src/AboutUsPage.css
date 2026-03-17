@@ -14,6 +14,7 @@
 	width: 90%;
 	max-width: 1200px;
 	margin: auto;
+	margin-top: -1cm;
 }
 
 /* HERO */
@@ -95,6 +96,48 @@
 	background: #123c66;
 	padding: 30px;
 	border-radius: 10px;
+}
+
+/* JOURNEY */
+.aboutus-page-root .journey-section {
+	text-align: center;
+	padding: 80px 0;
+	background: #ffffff;
+}
+
+.aboutus-page-root .journey-heading {
+	font-size: 2.2rem;
+	font-weight: 700;
+	margin-bottom: 1cm;
+}
+
+.aboutus-page-root .journey-image-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.aboutus-page-root .journey-image {
+	width: 100%;
+	height: 10cm;
+	object-fit: contain;
+	display: block;
+	/* margin-top: -2cm; */
+}
+
+@media (max-width: 768px) {
+	.aboutus-page-root .journey-section {
+		padding: 60px 0;
+	}
+
+	.aboutus-page-root .journey-heading {
+		font-size: 1.8rem;
+		margin-bottom: 1cm;
+	}
+
+	.aboutus-page-root .journey-image {
+		width: 90%;
+	}
 }
 
 /* TEAM */

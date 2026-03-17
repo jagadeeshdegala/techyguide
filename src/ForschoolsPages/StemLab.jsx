@@ -11,6 +11,21 @@ import heroImage from '../assets/ForSchoolsStemLabImages/Hero Section - STEM Lab
 import projectShowcaseVideo from '../assets/ForSchoolsStemLabImages/Website_Schools page_STEM Lab -  Project showcase.mp4';
 
 function StemLab() {
+    const handleGetProposalClick = (e) => {
+        e.preventDefault();
+        const contactSection = document.getElementById('contact-section');
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
+    const handleHeroProjectsClick = () => {
+        const modelsSection = document.getElementById('featured-stem-models');
+        if (modelsSection) {
+            modelsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
     // ==========================================
     // SEO META TAGS
     // ==========================================
@@ -258,6 +273,9 @@ function StemLab() {
 
     return (
         <div className="stemlab-page-root">
+            <a href="#contact-section" className="floating-cta" onClick={handleGetProposalClick}>
+                <i className="fas fa-file-invoice-dollar"></i> Get Proposal
+            </a>
             <main className="main-content">
                 <section className="intro-section">
                     <div className="container hero-grid">
@@ -268,8 +286,7 @@ function StemLab() {
                                 Welcome to StemLabs, where we nurture young innovators through experiential STEM education. Our unique DICE methodology—Design Thinking, Innovation, Creativity, and Entrepreneurship—sparks curiosity and builds future-ready skills through hands-on, practical learning. 
                             </p>
                             <div className="intro-buttons">
-                                <button className="btn-primary">Our Projects</button>
-                                <button className="btn-outline">Download Brochure</button>
+                                <button className="btn-primary" onClick={handleHeroProjectsClick}>Our Projects</button>
                             </div>
                         </div>
 
@@ -354,6 +371,7 @@ function StemLab() {
                     </div>
                 </section>
 
+                {/* Project Showcase section
                 <section className="video-section" id="showcase-video">
                     <div className="container">
                         <div className="section-header">
@@ -369,8 +387,9 @@ function StemLab() {
                         </div>
                     </div>
                 </section>
+                */}
 
-                <section className="models-section">
+                <section className="models-section" id="featured-stem-models">
                     <div className="container">
                         <div className="section-header">
                             <h2> Featured <span className="highlight-teal">Stem Models</span></h2>

@@ -58,6 +58,17 @@ function FooterSection() {
                     <path d="M6.5 9.5H4V20h2.5V9.5zM5.25 4A1.75 1.75 0 1 0 5.25 7.5 1.75 1.75 0 0 0 5.25 4zM10 9.5h2.4v1.5h.1c.5-.9 1.7-1.9 3.5-1.9 3 0 3.6 2 3.6 4.6V20H17v-5c0-1.2 0-2.8-1.7-2.8-1.7 0-2 1.3-2 2.7V20H10V9.5z" />
                   </svg>
                 </a>
+                <a
+                  href="https://youtube.com/@techyg24?si=TAAlkWE42fq3vzqJ"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="footer-social-link"
+                  aria-label="TechyGuide on YouTube"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M23.5 7.2c-.3-1.3-1.3-2.3-2.6-2.6C18.6 4 12 4 12 4s-6.6 0-8.9.6C1.8 4.9.8 5.9.5 7.2 0 9.5 0 12 0 12s0 2.5.5 4.8c.3 1.3 1.3 2.3 2.6 2.6C5.4 20 12 20 12 20s6.6 0 8.9-.6c1.3-.3 2.3-1.3 2.6-2.6.5-2.3.5-4.8.5-4.8s0-2.5-.5-4.8zM9.5 15.1V8.9l5.8 3.1-5.8 3.1z" />
+                  </svg>
+                </a>
               </div>
            
               <p>
@@ -182,16 +193,16 @@ function FooterSection() {
               <h3>Our Offerings</h3>
               <ul className="offerings-list">
                 <li>
-                  <a href="#">Robotics Products</a>
+                  <Link to="/tebot" onClick={scrollToTop}>Robotics Products</Link>
                 </li>
                 <li className="hide-mobile">
-                  <a href="#">IoT Solutions</a>
+                  <Link to="/ibot" onClick={scrollToTop}>IoT Solutions</Link>
                 </li>
                 <li>
-                  <a href="#">AI Courses</a>
+                  <Link to="/courses" onClick={scrollToTop}>AI Courses</Link>
                 </li>
                 <li>
-                  <a href="#">Coding Courses</a>
+                  <Link to="/courses" onClick={scrollToTop}>Coding Courses</Link>
                 </li>
                 <li>
                   <a href="#">3D Printing</a>

@@ -1,46 +1,50 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import './WhatsAppButton.css';
 
 function WhatsAppButton() {
   const [isShifted, setIsShifted] = useState(false);
+  const { pathname } = useLocation();
 
-  const schoolKeywords = ['ai-roboticslab', 'ai-robotics-lab-icse-schools-india', 'stem-tinkering', 'composite-skill', 'composite-skill-lab', 'workshop'];
+  const schoolKeywords = [
+    'cbse-ai-robotics-lab-setup-nep-2020',
+    'ai-roboticslab-cbse',
+    'ai-robotics-lab-icse-schools-india',
+    'ai-roboticslab-icse',
+    'stem-labs-for-schools',
+    'schools/stem-lab',
+    'stem-tinkering-lab-for-schools-india',
+    'schools/stem-tinkering-lab',
+    'cbse-composite-skill-lab-setup-for-schools-india',
+    'schools/composite-skill-lab',
+    'stem-robotics-workshops-for-schools-india',
+    'schools/workshop'
+  ];
 
-  const getPath = () => {
-    const hash = window.location.hash || '';
-    if (hash.startsWith('#')) return hash.slice(1);
-    return window.location.pathname || '';
-  };
-
-  const [currentPath, setCurrentPath] = useState(getPath());
-
-  const isSchoolRoute = (path = currentPath) => {
+  const isSchoolRoute = (path = pathname) => {
     if (!path) return false;
     const lower = path.toLowerCase();
     return schoolKeywords.some(k => lower.includes(k));
   };
 
-  if (isSchoolRoute()) return null;
-
-  const togglePosition = () => {
-    if (window.pageYOffset > 300) {
-      setIsShifted(true);
-    } else {
-      setIsShifted(false);
-    }
-  };
+  const hideOnThisRoute = isSchoolRoute();
 
   useEffect(() => {
-    const onLocationChange = () => setCurrentPath(getPath());
-    window.addEventListener('hashchange', onLocationChange);
-    window.addEventListener('popstate', onLocationChange);
+    const togglePosition = () => {
+      if (window.pageYOffset > 300) {
+        setIsShifted(true);
+      } else {
+        setIsShifted(false);
+      }
+    };
+
     window.addEventListener('scroll', togglePosition);
     return () => {
-      window.removeEventListener('hashchange', onLocationChange);
-      window.removeEventListener('popstate', onLocationChange);
       window.removeEventListener('scroll', togglePosition);
     };
   }, []);
+
+  if (hideOnThisRoute) return null;
 
   return (
     <a
