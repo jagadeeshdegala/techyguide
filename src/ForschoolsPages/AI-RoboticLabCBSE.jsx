@@ -380,20 +380,24 @@ function AIRoboticsLabCBSE() {
       <section className="stats-section">
         <div className="container stats-grid">
           <div className="stat-item fade-up">
-            <h2><span className="counter" data-target="500">0</span>+</h2>
-            <p>Robotics Labs</p>
+            <h2><span className="counter" data-target="2500">0</span>+</h2>
+            <p>Teachers Trained</p>
           </div>
-          <div className="stat-item fade-up">
+          {/* <div className="stat-item fade-up">
             <h2><span className="counter" data-target="50">0</span>+</h2>
             <p>ATL Labs Setup</p>
+          </div> */}
+          <div className="stat-item fade-up">
+            <h2><span className="counter" data-target="700">0</span>+</h2>
+            <p> Schools Served</p>
           </div>
           <div className="stat-item fade-up">
-            <h2><span className="counter" data-target="300">0</span>+</h2>
-            <p>Govt Schools (Tender Projects)</p>
-          </div>
-          <div className="stat-item fade-up">
-            <h2><span className="counter" data-target="150000">0</span>+</h2>
+            <h2><span className="counter" data-target="200000">0</span>+</h2>
             <p>Students Impacted</p>
+          </div>
+          <div className="stat-item fade-up">
+            <h2><span className="counter" data-target="26">0</span>+</h2>
+            <p> States Covered</p>
           </div>
         </div>
       </section>

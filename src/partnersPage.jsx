@@ -20,7 +20,6 @@ import immortalInternationalSchool from "./assets/partnersPageImages/Immortal In
 import jajooInternationalSchool from "./assets/partnersPageImages/Jajoo International School.png";
 import jivatKashi from "./assets/partnersPageImages/Jivat-Kashi.jpg";
 import kvs from "./assets/partnersPageImages/KVS.jpg";
-import logoTgTagline2 from "./assets/partnersPageImages/Logo_TG_Tagline 2.png";
 import magadhamInternationalSchool from "./assets/partnersPageImages/Magadham International School.png";
 import montfortCentreOfEducationTuraMeghalaya from "./assets/partnersPageImages/Montfort Centre of Education, Tura, Meghalaya.png";
 import motherSuhagEducationCentreFatehpur from "./assets/partnersPageImages/Mother Suhag Education Centre Fatehpur.png";
@@ -30,7 +29,6 @@ import nobleSchoolAlipur from "./assets/partnersPageImages/Noble School Alipur.p
 import northDelhiPublicSchool from "./assets/partnersPageImages/North Delhi Public School.png";
 import oakLeafHighSchool from "./assets/partnersPageImages/Oak Leaf High School.jpg";
 import phulbaniPublicSchool from "./assets/partnersPageImages/Phulbani Public School.jpg";
-import roboticLap from "./assets/partnersPageImages/Robotic Lap.jpg";
 import sanskritiTheGurukulGuwahatiAssam from "./assets/partnersPageImages/Sanskriti The Gurukul, Guwahati, Assam.png";
 import santSinghSukhaSinghGroupOfSchoolsAndCollege from "./assets/partnersPageImages/Sant Singh sukha Singh Group of schools and college.jpg";
 import shemfordSrSecSchoolHaldwani300x300 from "./assets/partnersPageImages/Shemford-Sr.-Sec.-School-Haldwani-300x300.jpg";
@@ -147,6 +145,51 @@ function PartnersPage() {
 		{ name: "KVS", logo: kvs },
 		{ name: "GV Lovo", logo: gvLovo },
 		{ name: "Dhanraj", logo: dhanraj },
+	];
+
+	const regionalPartners = [
+		{
+			name: "Maa Education",
+			badge: "UTTAR PRADESH",
+			address: "Meerut, UP",
+			website: "https://www.example.com/maa-education",
+			logo: shemrockSchoolBalaghat,
+		},
+		{
+			name: "RMC Electrical & Instrumentation",
+			badge: "ASSAM",
+			address: "Assam",
+			website: "https://www.example.com/rmc-electrical",
+			logo: northDelhiPublicSchool,
+		},
+		{
+			name: "Sarvam Kuteeram",
+			badge: "KARNATAKA",
+			address: "Bangalore",
+			website: "https://www.example.com/sarvam-kuteeram",
+			logo: delhiCambridgeSchool,
+		},
+		{
+			name: "Vidyodam",
+			badge: "ANDHRA PRADESH",
+			address: "Andhra Pradesh",
+			website: "https://www.example.com/vidyodam",
+			logo: stMaryPublicInterCollege,
+		},
+		{
+			name: "Austin Educator",
+			badge: "KARNATAKA",
+			address: "Mangalore, Karnataka",
+			website: "https://www.example.com/austin-educator",
+			logo: harimayaInternationalSchool,
+		},
+		{
+			name: "The Cyber Pathshala",
+			badge: "MADHYA PRADESH",
+			address: "Vidisha, MP",
+			website: "https://www.example.com/cyber-pathshala",
+			logo: academicHeightsLogo,
+		},
 	];
 
 	useEffect(() => {
@@ -304,163 +347,39 @@ function PartnersPage() {
 					<div className="partners-cards-marquee">
 						<div className="partners-cards-track">
 							<div className="partners-cards-group">
-								<div className="partners-glass-card" data-tilt>
-									<div className="partners-card-badge">MAHARASHTRA</div>
-									<div className="partners-card-icon">
-										<i className="fas fa-city"></i>
+								{regionalPartners.map((partner) => (
+									<div className="partners-glass-card" data-tilt key={partner.name}>
+										<div className="partners-card-badge">{partner.badge}</div>
+										<div className="partners-card-icon">
+											<img src={partner.logo} alt={`${partner.name} logo`} loading="lazy" />
+										</div>
+										<h3>{partner.name}</h3>
+										<p className="partners-address">{partner.address}</p>
+										<div className="partners-card-contact">
+											<a href={partner.website} target="_blank" rel="noreferrer">
+												<i className="fas fa-globe"></i> Website
+											</a>
+										</div>
 									</div>
-									<h3>EPIC Digital Labs</h3>
-									<p className="partners-address">
-										Tower B 444, Lodha iThink, Palava City, Dombivli East, Mumbai -
-										421204.
-									</p>
-									<div className="partners-card-contact">
-										<a href="tel:+917304425579">
-											<i className="fas fa-phone"></i> +91 73044 25579
-										</a>
-										<a href="mailto:support@epicdigital.in">
-											<i className="fas fa-envelope"></i> support@epicdigital.in
-										</a>
-									</div>
-								</div>
-
-								<div className="partners-glass-card" data-tilt>
-									<div className="partners-card-badge">UTTARAKHAND</div>
-									<div className="partners-card-icon">
-										<i className="fas fa-mountain"></i>
-									</div>
-									<h3>TechyGuide RO</h3>
-									<p className="partners-address">
-										394/2, GN Pant Marg, Tikonia, Haldwani, Dist-Nainital - 263139.
-									</p>
-									<div className="partners-card-contact">
-										<a href="tel:+917217392166">
-											<i className="fas fa-phone"></i> +91 72173 92166
-										</a>
-										<a href="mailto:kunalr@techyguide.in">
-											<i className="fas fa-envelope"></i> kunalr@techyguide.in
-										</a>
-									</div>
-								</div>
-
-								<div className="partners-glass-card" data-tilt>
-									<div className="partners-card-badge">PUNJAB &amp; HARYANA</div>
-									<div className="partners-card-icon">
-										<i className="fas fa-microchip"></i>
-									</div>
-									<h3>NGS Integrated Technologies</h3>
-									<p className="partners-address">
-										S.C.O 56, Backside Sector 47-C, Chandigarh.
-									</p>
-									<div className="partners-card-contact">
-										<a href="tel:+919888251433">
-											<i className="fas fa-phone"></i> +91 98882 51433
-										</a>
-										<a href="http://ngse.in" target="_blank">
-											<i className="fas fa-globe"></i> ngse.in
-										</a>
-									</div>
-								</div>
-
-								<div className="partners-glass-card" data-tilt>
-									<div className="partners-card-badge">KARNATAKA</div>
-									<div className="partners-card-icon">
-										<i className="fas fa-network-wired"></i>
-									</div>
-									<h3>The Cyber Pathshala</h3>
-									<p className="partners-address">
-										Near RK Diagnostic Centre, Bus Stand, Dandapura, Vidisha -
-										464001 (M.P.)
-									</p>
-									<div className="partners-card-contact">
-										<a href="tel:+919685369136">
-											<i className="fas fa-phone"></i> +91 96853 69136
-										</a>
-										<a href="tel:+919806287786">
-											<i className="fas fa-phone"></i> +91 98062 87786
-										</a>
-									</div>
-								</div>
+								))}
 							</div>
 
 							<div className="partners-cards-group" aria-hidden="true">
-								<div className="partners-glass-card" data-tilt>
-									<div className="partners-card-badge">MAHARASHTRA</div>
-									<div className="partners-card-icon">
-										<i className="fas fa-city"></i>
+								{regionalPartners.map((partner) => (
+									<div className="partners-glass-card" data-tilt key={`${partner.name}-duplicate`}>
+										<div className="partners-card-badge">{partner.badge}</div>
+										<div className="partners-card-icon">
+											<img src={partner.logo} alt="" loading="lazy" aria-hidden="true" />
+										</div>
+										<h3>{partner.name}</h3>
+										<p className="partners-address">{partner.address}</p>
+										<div className="partners-card-contact">
+											<a href={partner.website} target="_blank" rel="noreferrer">
+												<i className="fas fa-globe"></i> Website
+											</a>
+										</div>
 									</div>
-									<h3>EPIC Digital Labs</h3>
-									<p className="partners-address">
-										Tower B 444, Lodha iThink, Palava City, Dombivli East, Mumbai -
-										421204.
-									</p>
-									<div className="partners-card-contact">
-										<a href="tel:+917304425579">
-											<i className="fas fa-phone"></i> +91 73044 25579
-										</a>
-										<a href="mailto:support@epicdigital.in">
-											<i className="fas fa-envelope"></i> support@epicdigital.in
-										</a>
-									</div>
-								</div>
-
-								<div className="partners-glass-card" data-tilt>
-									<div className="partners-card-badge">UTTARAKHAND</div>
-									<div className="partners-card-icon">
-										<i className="fas fa-mountain"></i>
-									</div>
-									<h3>TechyGuide RO</h3>
-									<p className="partners-address">
-										394/2, GN Pant Marg, Tikonia, Haldwani, Dist-Nainital - 263139.
-									</p>
-									<div className="partners-card-contact">
-										<a href="tel:+917217392166">
-											<i className="fas fa-phone"></i> +91 72173 92166
-										</a>
-										<a href="mailto:kunalr@techyguide.in">
-											<i className="fas fa-envelope"></i> kunalr@techyguide.in
-										</a>
-									</div>
-								</div>
-
-								<div className="partners-glass-card" data-tilt>
-									<div className="partners-card-badge">PUNJAB &amp; HARYANA</div>
-									<div className="partners-card-icon">
-										<i className="fas fa-microchip"></i>
-									</div>
-									<h3>NGS Integrated Technologies</h3>
-									<p className="partners-address">
-										S.C.O 56, Backside Sector 47-C, Chandigarh.
-									</p>
-									<div className="partners-card-contact">
-										<a href="tel:+919888251433">
-											<i className="fas fa-phone"></i> +91 98882 51433
-										</a>
-										<a href="http://ngse.in" target="_blank">
-											<i className="fas fa-globe"></i> ngse.in
-										</a>
-									</div>
-								</div>
-
-								<div className="partners-glass-card" data-tilt>
-									<div className="partners-card-badge">KARNATAKA</div>
-									<div className="partners-card-icon">
-										<i className="fas fa-network-wired"></i>
-									</div>
-									<h3>The Cyber Pathshala</h3>
-									<p className="partners-address">
-										Near RK Diagnostic Centre, Bus Stand, Dandapura, Vidisha -
-										464001 (M.P.)
-									</p>
-									<div className="partners-card-contact">
-										<a href="tel:+919685369136">
-											<i className="fas fa-phone"></i> +91 96853 69136
-										</a>
-										<a href="tel:+919806287786">
-											<i className="fas fa-phone"></i> +91 98062 87786
-										</a>
-									</div>
-								</div>
+								))}
 							</div>
 						</div>
 					</div>

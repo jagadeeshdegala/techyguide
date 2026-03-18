@@ -76,6 +76,7 @@
     height: 220px;
     overflow: hidden;
     border-radius: 12px;
+    background: #ffffff;
 }
 
 .shop-page-wrapper .course-card-image img,
@@ -83,7 +84,8 @@
 .shop-page-wrapper .course-slider-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
     border-radius: inherit;
 }
 

@@ -600,7 +600,6 @@ function ShopPage() {
                                                 src={url}
                                                 alt={`${currentCourse.title} - Image ${index + 1}`}
                                                 className={currentSliderIndex === index ? '' : 'hidden'}
-                                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                                             />
                                         ))}
                                     </div>

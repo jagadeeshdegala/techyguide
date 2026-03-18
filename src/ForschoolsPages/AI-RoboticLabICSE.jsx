@@ -382,20 +382,20 @@ const AIRoboticLabICSE = () => {
 			<section className="stats-section">
 				<div className="container stats-grid">
 					<div className="stat-item fade-up">
-						<h2><span className="counter" data-target="500">0</span>+</h2>
-						<p>Robotics Labs Setup</p>
+						<h2><span className="counter" data-target="2500">0</span>+</h2>
+						<p>Teachers Trained</p>
 					</div>
 					<div className="stat-item fade-up">
-						<h2><span className="counter" data-target="50">0</span>+</h2>
-						<p>ATL Labs Across India</p>
+						<h2><span className="counter" data-target="700">0</span>+</h2>
+						<p>Schools Served</p>
 					</div>
 					<div className="stat-item fade-up">
-						<h2><span className="counter" data-target="150000">0</span>+</h2>
-						<p>Students Trained</p>
+						<h2><span className="counter" data-target="200000">0</span>+</h2>
+						<p>Students Impacted</p>
 					</div>
 					<div className="stat-item fade-up">
-						<h2><span className="counter" data-target="300">0</span>+</h2>
-						<p>Govt Schools (Tender Projects)</p>
+						<h2><span className="counter" data-target="26">0</span>+</h2>
+						<p>States Covered</p>
 					</div>
 				</div>
 			</section>

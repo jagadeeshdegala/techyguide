@@ -6,30 +6,30 @@ const openings = [
   {
     title: 'Robotics Trainer',
     location: 'Bengaluru / Hybrid',
-    experience: '1-3 Years',
+    experience: '0-2 Years',
     description:
       'Deliver hands-on robotics sessions for schools and mentor learners in prototyping and STEM projects.'
   },
-  {
-    title: 'STEM Educator',
-    location: 'Pan India / Travel',
-    experience: '0-2 Years',
-    description:
-      'Design engaging STEM lesson flows and support schools in implementing innovation-focused curriculum.'
-  },
-  {
-    title: 'IoT Engineer',
-    location: 'Bengaluru / On-site',
-    experience: '2-4 Years',
-    description:
-      'Build and test IoT-enabled learning kits and create real-world classroom applications for connected systems.'
-  },
+  // {
+  //   title: 'STEM Educator',
+  //   location: 'Pan India / Travel',
+  //   experience: '0-2 Years',
+  //   description:
+  //     'Design engaging STEM lesson flows and support schools in implementing innovation-focused curriculum.'
+  // },
+  // {
+  //   title: 'IoT Engineer',
+  //   location: 'Bengaluru / On-site',
+  //   experience: '2-4 Years',
+  //   description:
+  //     'Build and test IoT-enabled learning kits and create real-world classroom applications for connected systems.'
+  // },
   
  
   {
     title: 'Sales Executive (EdTech)',
     location: 'Pan India',
-    experience: '1-4 Years',
+    experience: '0-2 Years',
     description:
       'Partner with schools and institutions to enable adoption of robotics, AI, and STEM learning solutions.'
   }

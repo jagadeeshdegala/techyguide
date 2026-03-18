@@ -409,36 +409,35 @@ function FranchisePage() {
                             <div className="icon">📍</div>
                             <h3>Space</h3>
                             <ul>
-                                <li>300 – 1,000 sq. ft. in a prominent Space.</li>
-                                <li>Location - Benguluru,Hyderabad,..</li>
+                                <li>500 – 700 sq. ft. in a prominent Space.</li>
                             </ul>
                         </div>
                         <div className="card requirement-card">
                             <div className="icon">💰</div>
                             <h3>Investment</h3>
                             <ul>
-                                <li>Franchise Fee: ₹50,000 (one time)</li>
-                                <li>Setup Cost: ₹2,00,000(Hardware,software& training)</li>
+                                <li>3 – 6 Lakh Approximate Budget</li>
+                                {/* <li>Setup Cost: ₹2,00,000(Hardware,software& training)</li>
                                 <li>Infrastructure Set Up Cost: Rs.3,00,000</li>
-                                <li>Average Course Fee: ₹1,500 – ₹2,500</li>
+                                <li>Average Course Fee: ₹1,500 – ₹2,500</li> */}
                             </ul>
                         </div>
                         <div className="card requirement-card">
                             <div className="icon">🔌</div>
                             <h3>Infrastructure</h3>
                             <ul>
-                                <li>High-speed internet & workbenches.</li>
-                                <li>A LAN is a private, high-speed network that connects computers.</li>
+                                <li>6–8 workstations with storage, power, display, internet, and 2:1 computers.</li>
+                                {/* <li>A LAN is a private, high-speed network that connects computers.</li> */}
                             </ul>
                         </div>
                         <div className="card requirement-card">
                             <div className="icon">👥</div>
                             <h3>Staffing</h3>
                             <ul>
-                                <li>1-2 Instructors (Training provided).</li>
-                                <li>Monthly Revenue: ₹40,000- 50,000</li>
+                                <li>1–2 trainers to conduct classes.</li>
+                                {/* <li>Monthly Revenue: ₹40,000- 50,000</li>
                                 <li>Considering 20 students initially.</li>
-                                <li>ROI expected within 12–18 months.</li>
+                                <li>ROI expected within 12–18 months.</li> */}
                             </ul>
                         </div>
                     </div>
