@@ -1,6 +1,18 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import './CareersPage.css';
-import careersImage from './assets/CareersPageImages/careers.png';
+//About Working at TechyGuide images
+import aboutWorking1 from './assets/CareersPageImages/About Working at TechyGuide - 1.jpg';
+import aboutWorking2 from './assets/CareersPageImages/About Working at TechyGuide - 2.jpg';
+import aboutWorking3 from './assets/CareersPageImages/About Working at TechyGuide - 3.jpg';
+import aboutWorking4 from './assets/CareersPageImages/About Working at TechyGuide - 4.jpg';
+//Why Join Us images
+import whyJionUs1 from './assets/CareersPageImages/Why Join Us - 1.jpg';
+import whyJionUs2 from './assets/CareersPageImages/Why Join Us - 2.jpg';
+import whyJionUs3 from './assets/CareersPageImages/Why Join Us - 3.jpg';
+import whyJionUs4 from './assets/CareersPageImages/Why Join Us - 4.jpg';
+
+
+
 
 const openings = [
   {
@@ -36,21 +48,46 @@ const openings = [
 ];
 
 const aboutHighlights = [
-  'Innovation-driven culture',
-  'Hands-on learning environment',
-  'Work on real-world robotics projects',
-  'Opportunity to impact education'
+  {
+    title: 'Innovation-driven culture',
+    image: aboutWorking1
+  },
+  {
+    title: 'Hands-on learning environment',
+    image: aboutWorking2
+  },
+  {
+    title: 'Work on real-world robotics projects',
+    image: aboutWorking3
+  },
+  {
+    title: 'Opportunity to impact education',
+    image: aboutWorking4
+  }
 ];
 
 const benefits = [
-  'Career Growth Opportunities',
-  'Work with Latest Technologies (AI, IoT, Robotics)',
-  'Training & Skill Development',
-  'Opportunity to work with schools nationwide'
+  {
+    title: 'Career Growth Opportunities',
+    image: whyJionUs1
+  },
+  {
+    title: 'Work with Latest Technologies (AI, IoT, Robotics)',
+    image: whyJionUs2
+  },
+  {
+    title: 'Training & Skill Development',
+    image: whyJionUs3
+  },
+  {
+    title: 'Opportunity to work with schools nationwide',
+    image: whyJionUs4
+  }
 ];
 
 const positionOptions = ['Robotics Trainer', 'STEM Educator', 'IoT Engineer', 'Frontend Developer', 'Backend Developer', 'Sales Executive (EdTech)', 'Other'];
 const experienceOptions = ['Fresher', '0-1 Years', '1-3 Years', '3-5 Years', '5+ Years'];
+const HR_EMAIL_ENDPOINT = 'https://formsubmit.co/hr@techyguide.in';
 
 function CareersPage() {
   const [applicationData, setApplicationData] = useState({
@@ -67,10 +104,18 @@ function CareersPage() {
   });
   const [applicationSubmitted, setApplicationSubmitted] = useState(false);
   const [quickApplySubmitted, setQuickApplySubmitted] = useState(false);
+  const [applicationSubmitting, setApplicationSubmitting] = useState(false);
+  const [quickApplySubmitting, setQuickApplySubmitting] = useState(false);
+  const [applicationError, setApplicationError] = useState('');
+  const [quickApplyError, setQuickApplyError] = useState('');
   const [applicationResumeName, setApplicationResumeName] = useState('');
   const [quickResumeName, setQuickResumeName] = useState('');
+  const [applicationResumeFile, setApplicationResumeFile] = useState(null);
+  const [quickResumeFile, setQuickResumeFile] = useState(null);
   const applicationResumeRef = useRef(null);
   const quickApplyResumeRef = useRef(null);
+  const applicationSubmitInProgressRef = useRef(false);
+  const quickSubmitInProgressRef = useRef(false);
 
   const openingIds = useMemo(
     () =>
@@ -140,16 +185,55 @@ function CareersPage() {
 
   const handleMainResumeUpload = (event) => {
     const file = event.target.files?.[0];
+    setApplicationResumeFile(file || null);
     setApplicationResumeName(file ? file.name : '');
   };
 
   const handleQuickResumeUpload = (event) => {
     const file = event.target.files?.[0];
+    setQuickResumeFile(file || null);
     setQuickResumeName(file ? file.name : '');
   };
 
   const handleApplicationSubmit = (event) => {
     event.preventDefault();
+
+    if (!applicationResumeFile) {
+      setApplicationError('Please upload your resume before submitting.');
+      setApplicationSubmitted(false);
+      return;
+    }
+
+    setApplicationSubmitting(true);
+    setApplicationError('');
+    setApplicationSubmitted(false);
+    applicationSubmitInProgressRef.current = true;
+    event.currentTarget.submit();
+  };
+
+  const handleQuickApplySubmit = (event) => {
+    event.preventDefault();
+
+    if (!quickResumeFile) {
+      setQuickApplyError('Please upload your resume before submitting.');
+      setQuickApplySubmitted(false);
+      return;
+    }
+
+    setQuickApplySubmitting(true);
+    setQuickApplyError('');
+    setQuickApplySubmitted(false);
+    quickSubmitInProgressRef.current = true;
+    event.currentTarget.submit();
+  };
+
+  const handleApplicationIframeLoad = () => {
+    if (!applicationSubmitInProgressRef.current) {
+      return;
+    }
+
+    applicationSubmitInProgressRef.current = false;
+    setApplicationSubmitting(false);
     setApplicationSubmitted(true);
     setApplicationData({
       fullName: '',
@@ -160,16 +244,23 @@ function CareersPage() {
       message: ''
     });
     setApplicationResumeName('');
+    setApplicationResumeFile(null);
     if (applicationResumeRef.current) {
       applicationResumeRef.current.value = '';
     }
   };
 
-  const handleQuickApplySubmit = (event) => {
-    event.preventDefault();
+  const handleQuickIframeLoad = () => {
+    if (!quickSubmitInProgressRef.current) {
+      return;
+    }
+
+    quickSubmitInProgressRef.current = false;
+    setQuickApplySubmitting(false);
     setQuickApplySubmitted(true);
     setQuickApplyData({ name: '', email: '' });
     setQuickResumeName('');
+    setQuickResumeFile(null);
     if (quickApplyResumeRef.current) {
       quickApplyResumeRef.current.value = '';
     }
@@ -203,7 +294,7 @@ function CareersPage() {
 
       <section className="tg-careers-section tg-careers-about">
         <div className="container">
-          <div className="tg-careers-section-head">
+          <div className="tg-careers-section-head"><br/><br/>
             <h2>About Working at TechyGuide</h2>
             <p>
               We are a STEM education company focused on Robotics, AI, IoT, and Innovation Labs. Our team includes Robotics
@@ -213,10 +304,10 @@ function CareersPage() {
           </div>
           <div className="tg-careers-about-grid">
             {aboutHighlights.map((item) => (
-              <article className="tg-careers-about-card" key={item}>
-                <img className="tg-careers-card-image" src={careersImage} alt="" aria-hidden="true" />
+              <article className="tg-careers-about-card" key={item.title}>
+                <img className="tg-careers-card-image" src={item.image} alt={item.title} />
                 <div className="tg-careers-card-content">
-                  <h3>{item}</h3>
+                  <h3>{item.title}</h3>
                 </div>
               </article>
             ))}
@@ -232,10 +323,10 @@ function CareersPage() {
           </div>
           <div className="tg-careers-benefits-grid">
             {benefits.map((benefit) => (
-              <article className="tg-careers-benefit-card" key={benefit}>
-                <img className="tg-careers-card-image" src={careersImage} alt="" aria-hidden="true" />
+              <article className="tg-careers-benefit-card" key={benefit.title}>
+                <img className="tg-careers-card-image" src={benefit.image} alt={benefit.title} />
                 <div className="tg-careers-card-content">
-                  <h3>{benefit}</h3>
+                  <h3>{benefit.title}</h3>
                 </div>
               </article>
             ))}
@@ -269,11 +360,29 @@ function CareersPage() {
 
       <section id="tg-careers-application" className="tg-careers-section tg-careers-form-section">
         <div className="container">
+          <iframe
+            title="General application submission"
+            name="tg-careers-general-submit"
+            className="tg-careers-hidden-submit-frame"
+            onLoad={handleApplicationIframeLoad}
+          ></iframe>
           <div className="tg-careers-section-head">
             <h2>General Application</h2>
             <p>Share your details and resume. We will review your profile and connect for relevant opportunities.</p>
           </div>
-          <form className="tg-careers-form" onSubmit={handleApplicationSubmit}>
+          <form
+            className="tg-careers-form"
+            onSubmit={handleApplicationSubmit}
+            action={HR_EMAIL_ENDPOINT}
+            method="POST"
+            encType="multipart/form-data"
+            target="tg-careers-general-submit"
+          >
+            <input type="hidden" name="_subject" value={`Career Application - ${applicationData.position || 'General Role'}`} />
+            <input type="hidden" name="Form Type" value="General Application" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_replyto" value={applicationData.email} />
             <div className="tg-careers-form-grid">
               <label className="tg-careers-field">
                 Full Name
@@ -314,6 +423,7 @@ function CareersPage() {
                 <input
                   ref={applicationResumeRef}
                   type="file"
+                  name="attachment"
                   accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                   onChange={handleMainResumeUpload}
                   required
@@ -332,12 +442,17 @@ function CareersPage() {
                 ></textarea>
               </label>
             </div>
-            <button type="submit" className="tg-careers-btn tg-careers-btn-primary">
-              Submit Application
+            <button type="submit" className="tg-careers-btn tg-careers-btn-primary" disabled={applicationSubmitting}>
+              {applicationSubmitting ? 'Submitting...' : 'Submit Application'}
             </button>
             {applicationSubmitted ? (
               <p className="tg-careers-success" role="status">
                 Thank you. Your application has been submitted successfully.
+              </p>
+            ) : null}
+            {applicationError ? (
+              <p className="tg-careers-error" role="alert">
+                {applicationError}
               </p>
             ) : null}
           </form>
@@ -346,13 +461,31 @@ function CareersPage() {
 
       <section className="tg-careers-section tg-careers-quick-apply">
         <div className="container tg-careers-quick-wrap">
+          <iframe
+            title="Quick apply submission"
+            name="tg-careers-quick-submit"
+            className="tg-careers-hidden-submit-frame"
+            onLoad={handleQuickIframeLoad}
+          ></iframe>
           <div>
             <h2>Didn't find a suitable role?</h2>
             <p>
               Submit your profile and we will get back to you when a suitable opportunity opens.
             </p>
           </div>
-          <form className="tg-careers-quick-form" onSubmit={handleQuickApplySubmit}>
+          <form
+            className="tg-careers-quick-form"
+            onSubmit={handleQuickApplySubmit}
+            action={HR_EMAIL_ENDPOINT}
+            method="POST"
+            encType="multipart/form-data"
+            target="tg-careers-quick-submit"
+          >
+            <input type="hidden" name="_subject" value={`Career Quick Profile - ${quickApplyData.name || 'Candidate'}`} />
+            <input type="hidden" name="Form Type" value="Quick Apply" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_replyto" value={quickApplyData.email} />
             <label className="tg-careers-field">
               Name
               <input name="name" value={quickApplyData.name} onChange={handleQuickApplyChange} required />
@@ -366,18 +499,24 @@ function CareersPage() {
               <input
                 ref={quickApplyResumeRef}
                 type="file"
+                name="attachment"
                 accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                 onChange={handleQuickResumeUpload}
                 required
               />
               <span className="tg-careers-file-name">{quickResumeName || 'No file selected'}</span>
             </label>
-            <button type="submit" className="tg-careers-btn tg-careers-btn-primary">
-              Submit Profile
+            <button type="submit" className="tg-careers-btn tg-careers-btn-primary" disabled={quickApplySubmitting}>
+              {quickApplySubmitting ? 'Submitting...' : 'Submit Profile'}
             </button>
             {quickApplySubmitted ? (
               <p className="tg-careers-success" role="status">
                 Profile received. We will reach out when a matching role opens.
+              </p>
+            ) : null}
+            {quickApplyError ? (
+              <p className="tg-careers-error" role="alert">
+                {quickApplyError}
               </p>
             ) : null}
           </form>

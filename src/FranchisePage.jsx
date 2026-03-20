@@ -387,15 +387,15 @@ function FranchisePage() {
                     <p>States Covered</p>
                 </div>
                 <div className="stat-item">
-                    <h2 className="counter" data-target="350">0</h2>
-                    <p>STEM & Robotics Labs Delivered</p>
+                    <h2 className="counter" data-target="700">0</h2>
+                    <p>Schools Served</p>
                 </div>
                 <div className="stat-item">
-                    <h2 className="counter" data-target="1500">0</h2>
+                    <h2 className="counter" data-target="2500">0</h2>
                     <p>Educators Trained</p>
                 </div>
                 <div className="stat-item">
-                    <h2 className="counter" data-target="100000">0</h2>
+                    <h2 className="counter" data-target="200000">0</h2>
                     <p>Students Impacted</p>
                 </div>
             </section>

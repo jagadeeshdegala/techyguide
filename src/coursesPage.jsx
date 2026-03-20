@@ -677,7 +677,7 @@ function CoursesPage() {
                 width="400"
                 height="280"
               />
-              <h2 className="courses-name">Robotics & Automation</h2>
+              <h2 className="courses-name">Robo champ course</h2>
               <p>Master hardware and automation.</p>
               <p>Master hardware, sensors, and core engineering skills while building and programming intelligent robots.</p>
               <button type="button" className="know-more" data-course="Robotics">Know more</button>
@@ -768,7 +768,7 @@ function CoursesPage() {
                 height="280"
               />
               <h2 className="courses-name">Game Development</h2>
-              <p>Learn hardware based game development</p>
+              <p>Learn hardware based game development.</p>
               <p>Build interactive embedded arcade games using Python fundamentals and ESP32 microcontroller.</p>
               <button type="button" className="know-more" data-course="Games">Know more</button>
               <Link to="/shop?category=Courses" className="btn-claim" aria-label="Buy Game Development course">Buy Now</Link>
@@ -786,7 +786,7 @@ function CoursesPage() {
                 height="280"
               />
               <h2 className="courses-name">Internet of Things (IoT)</h2>
-              <p>Learn Internet of Things (IoT) fundamentals and smart device development</p>
+              <p>Learn Internet of Things (IoT) fundamentals and smart device development.</p>
               <p>Build smart automation projects using sensors, WiFi, and connected devices.</p>
               <button type="button" className="know-more" data-course="IoT">Know more</button>
               <Link to="/shop?category=Courses" className="btn-claim" aria-label="Buy IoT course">Buy Now</Link>
@@ -804,7 +804,7 @@ function CoursesPage() {
                 height="280"
               />
               <h2 className="courses-name">Scratch Programming</h2>
-              <p>Learn Scratch programming fundamentals through creative visual coding</p>
+              <p>Learn Scratch programming <br/>fundamentals through creative visual coding.</p>
               <p>Build interactive games and animations using events, variables and game logic.</p>
               <button type="button" className="know-more" data-course="Scratch">Know more</button>
               <Link to="/shop?category=Courses" className="btn-claim" aria-label="Buy Scratch Programming course">Buy Now</Link>
@@ -822,8 +822,8 @@ function CoursesPage() {
                 height="280"
               />
               <h2 className="courses-name">Electronics </h2>
-              <p>Learn electronics fundamentals through practical circuit building</p>
-              <p>Build interactive electronic projects using LEDs, motors, sensors, and control circuits.</p>
+              <p>Learn electronics fundamentals<br/> through practical circuit building.</p>
+              <p>Build interactive electronic projects<br /> using LEDs, motors, sensors, and control circuits.</p>
               <button type="button" className="know-more" data-course="Electronics">Know more</button>
               <Link to="/shop?category=Courses" className="btn-claim" aria-label="Buy Electronics course">Buy Now</Link>
             </article>

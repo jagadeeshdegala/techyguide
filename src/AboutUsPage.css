@@ -19,9 +19,12 @@
 
 /* HERO */
 .aboutus-page-root .hero {
-	height: 70vh;
+	height: 84vh;
 	display: flex;
-    background-color: #008273;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
 	align-items: center;
 	text-align: center;
 	color: #fff;

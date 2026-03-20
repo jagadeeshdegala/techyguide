@@ -7,6 +7,7 @@ import workspace2 from './assets/AboutUSImages/Our Team & Workspace - 2.jpg';
 import workspace3 from './assets/AboutUSImages/Our Team & Workspace - 3.jpg';
 import workspace4 from './assets/AboutUSImages/Our Team & Workspace - 4.jpg';
 import ourjourney from './assets/AboutUSImages/Asset_Website_About us page - Milestone 1.png';
+import heroImage from './assets/AboutUSImages/Hero.jpg';
 
 function AboutUsPage() {
 	const workspaceImages = [
@@ -46,7 +47,13 @@ function AboutUsPage() {
 
 	return (
 		<div className="aboutus-page-root">
-			<section className="hero">
+			<section
+				className="hero"
+				style={{
+					backgroundImage:
+						`linear-gradient(to bottom, rgba(0, 0, 0, 0.46) 100%, rgba(94, 221, 101, 0.86) 100%), url(${heroImage})`,
+				}}
+			>
 				<div className="hero-content">
 					<h1>Robotics, AI & STEM Innovators </h1>
 					<p>

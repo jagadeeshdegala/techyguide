@@ -7,11 +7,13 @@ import armyGoodwillSchoolUri from "./assets/partnersPageImages/Army Goodwill Sch
 import bhatkalEducationSociety from "./assets/partnersPageImages/Bhatkal Education Society.jpeg";
 import cbLogo from "./assets/partnersPageImages/CB Logo.jpg";
 import codeKidsTechnology from "./assets/partnersPageImages/Code Kids Technology.jpg";
+import deepRootsPreSchoolBikaner from "./assets/partnersPageImages/Deep Roots Pre School Bikaner.png";
 import delhiCambridgeSchool from "./assets/partnersPageImages/Delhi Cambridge School.png";
 import dhanraj from "./assets/partnersPageImages/Dhanraj.png";
 import evergreenSchool from "./assets/partnersPageImages/Evergreen School.jpeg";
 import govtGirlsHighSchoolRairangpurOdisha from "./assets/partnersPageImages/Govt. Girls High School, Rairangpur, Odisha.png";
 import greenValleySchoolTebo from "./assets/partnersPageImages/Green Valley School Tebo.png";
+import gyanVikashSchool from "./assets/partnersPageImages/Gyan Vikash School.jpg";
 import gurukulPublicSchoolOdisha from "./assets/partnersPageImages/Gurukul Public School, Odisha.png";
 import gvLovo from "./assets/partnersPageImages/GV Lovo.png";
 import harimayaInternationalSchool from "./assets/partnersPageImages/Harimaya International School.png";
@@ -29,16 +31,26 @@ import nobleSchoolAlipur from "./assets/partnersPageImages/Noble School Alipur.p
 import northDelhiPublicSchool from "./assets/partnersPageImages/North Delhi Public School.png";
 import oakLeafHighSchool from "./assets/partnersPageImages/Oak Leaf High School.jpg";
 import phulbaniPublicSchool from "./assets/partnersPageImages/Phulbani Public School.jpg";
+import rakeshAcademyPilani from "./assets/partnersPageImages/Rakesh Academy Pilani.png";
 import sanskritiTheGurukulGuwahatiAssam from "./assets/partnersPageImages/Sanskriti The Gurukul, Guwahati, Assam.png";
 import santSinghSukhaSinghGroupOfSchoolsAndCollege from "./assets/partnersPageImages/Sant Singh sukha Singh Group of schools and college.jpg";
 import shemfordSrSecSchoolHaldwani300x300 from "./assets/partnersPageImages/Shemford-Sr.-Sec.-School-Haldwani-300x300.jpg";
 import shemrockSchoolBalaghat from "./assets/partnersPageImages/Shemrock School Balaghat.jpeg";
 import shikshaBhavanMontessoriSchool from "./assets/partnersPageImages/Shiksha bhavan Montessori School_.jpg";
 import shreeKunjilalGulkandiDeviPublicSchoolKagarol from "./assets/partnersPageImages/Shree Kunjilal Gulkandi Devi Public School - Kagarol.png";
+import spv from "./assets/partnersPageImages/SPV.png";
 import sriGuruTegBahadurPublicSchool from "./assets/partnersPageImages/Sri Guru Teg Bahadur Public School.png";
 import stJoansSchools from "./assets/partnersPageImages/St Joans Schools.png";
 import stMaryPublicInterCollege from "./assets/partnersPageImages/St Mary Public Inter College.png";
 import stXaviersPublicSchoolChatrapur300x300 from "./assets/partnersPageImages/St.-Xaviers-Public-School-Chatrapur-300x300.jpg";
+//partners scroll images
+import maaEducation from "./assets/partnersPageImages/MAA Education logo 400x400.png";
+import Austineducator from "./assets/partnersPageImages/Austin Educator.jpg";
+import sarvamKuteeram from "./assets/partnersPageImages/Sarvam Kutteram.jpg";
+import cyberpathashala from "./assets/partnersPageImages/cyber pathashala.png";
+import rmcElecricals from "./assets/partnersPageImages/rmcelecricals.png";
+import epicdigitallabs from "./assets/partnersPageImages/epicdigitallabs.png";
+import vidyodam from "./assets/partnersPageImages/vidyodam Logo.jpg";
 
 function PartnersPage() {
 	const rootRef = useRef(null);
@@ -145,6 +157,10 @@ function PartnersPage() {
 		{ name: "KVS", logo: kvs },
 		{ name: "GV Lovo", logo: gvLovo },
 		{ name: "Dhanraj", logo: dhanraj },
+		{ name: "Deep Roots Pre School Bikaner", logo: deepRootsPreSchoolBikaner },
+		{ name: "Gyan Vikash School", logo: gyanVikashSchool },
+		{ name: "Rakesh Academy Pilani", logo: rakeshAcademyPilani },
+		{ name: "SPV", logo: spv },
 	];
 
 	const regionalPartners = [
@@ -153,42 +169,49 @@ function PartnersPage() {
 			badge: "UTTAR PRADESH",
 			address: "Meerut, UP",
 			website: "https://www.example.com/maa-education",
-			logo: shemrockSchoolBalaghat,
+			logo: maaEducation,
 		},
 		{
 			name: "RMC Electrical & Instrumentation",
 			badge: "ASSAM",
 			address: "Assam",
 			website: "https://www.example.com/rmc-electrical",
-			logo: northDelhiPublicSchool,
+			logo: rmcElecricals,
 		},
 		{
 			name: "Sarvam Kuteeram",
 			badge: "KARNATAKA",
 			address: "Bangalore",
 			website: "https://www.example.com/sarvam-kuteeram",
-			logo: delhiCambridgeSchool,
+			logo: sarvamKuteeram,
 		},
 		{
 			name: "Vidyodam",
 			badge: "ANDHRA PRADESH",
 			address: "Andhra Pradesh",
 			website: "https://www.example.com/vidyodam",
-			logo: stMaryPublicInterCollege,
+			logo: vidyodam,
 		},
 		{
 			name: "Austin Educator",
 			badge: "KARNATAKA",
 			address: "Mangalore, Karnataka",
 			website: "https://www.example.com/austin-educator",
-			logo: harimayaInternationalSchool,
+			logo: Austineducator,
 		},
 		{
 			name: "The Cyber Pathshala",
 			badge: "MADHYA PRADESH",
 			address: "Vidisha, MP",
-			website: "https://www.example.com/cyber-pathshala",
-			logo: academicHeightsLogo,
+			website: "https://www.cyberpathshala.in/",
+			logo: cyberpathashala,
+		},
+		{
+			name: "Epic Digital Labs",
+			badge: "MAHARASHTRA",
+			address: "MAHARASHTRA",
+			website: "https://epicdigital.in/",
+			logo: epicdigitallabs,
 		},
 	];
 
@@ -356,9 +379,9 @@ function PartnersPage() {
 										<h3>{partner.name}</h3>
 										<p className="partners-address">{partner.address}</p>
 										<div className="partners-card-contact">
-											<a href={partner.website} target="_blank" rel="noreferrer">
+											{/* <a href={partner.website} target="_blank" rel="noreferrer">
 												<i className="fas fa-globe"></i> Website
-											</a>
+											</a> */}
 										</div>
 									</div>
 								))}
@@ -374,9 +397,9 @@ function PartnersPage() {
 										<h3>{partner.name}</h3>
 										<p className="partners-address">{partner.address}</p>
 										<div className="partners-card-contact">
-											<a href={partner.website} target="_blank" rel="noreferrer">
+											{/* <a href={partner.website} target="_blank" rel="noreferrer">
 												<i className="fas fa-globe"></i> Website
-											</a>
+											</a> */}
 										</div>
 									</div>
 								))}
