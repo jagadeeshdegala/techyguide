@@ -9,6 +9,7 @@ import LabImage5 from '../assets/ForSchoolsCompositeSkillLabImages/WhatsApp Imag
 import LabImage6 from '../assets/ForSchoolsCompositeSkillLabImages/WhatsApp Image 2021-09-01 at 23.11.56.jpeg';
 // hero image
 import HeroImage from '../assets/ForSchoolsCompositeSkillLabImages/Hero section - Composite skill lab V1.jpg';
+import HeroImage2 from '../assets/ForSchoolsCompositeSkillLabImages/IMG20240604113822.jpg';
 //Purpose & Strategic Benefits image
 import PurposeStrategicBenefits1 from '../assets/ForSchoolsCompositeSkillLabImages/Purpose & Strategic Benefits - 1.jpg';
 import PurposeStrategicBenefits2 from '../assets/ForSchoolsCompositeSkillLabImages/Purpose & Strategic Benefits - 2.jpg';
@@ -236,7 +237,11 @@ export default function CompositeSkillLab() {
       </a>
 
       <section className="hero-section">
-        <div className="hero-bg-animation"></div>
+        <div className="hero-bg-animation">
+          <div className="csl-bg-shape csl-bg-shape--1"></div>
+          <div className="csl-bg-shape csl-bg-shape--2"></div>
+          <div className="csl-bg-shape csl-bg-shape--3"></div>
+        </div>
         <div className="container hero-container">
           <div className="hero-text hidden-left">
             <div className="brand-tag">
@@ -251,14 +256,25 @@ export default function CompositeSkillLab() {
             </div>
           </div>
           <div className="hero-visual hidden-right">
-            <div className="floating-badge">
-              <i className="fas fa-ruler-combined"></i>
-              <div>
-                <strong>600 Sq. Ft.</strong>
-                <span>Min. Requirement</span>
+            <div className="csl-hero-collage">
+              <div className="csl-img-card csl-img-card--top">
+                <img src={HeroImage} alt="Composite Skill Lab Setup" />
+                <div className="csl-img-shine"></div>
               </div>
+              <div className="csl-img-card csl-img-card--bottom">
+                <img src={HeroImage2} alt="Students in Composite Skill Lab" />
+                <div className="csl-img-shine"></div>
+              </div>
+              <div className="csl-collage-badge">
+                <i className="fas fa-ruler-combined"></i>
+                <div>
+                  <strong>600 Sq. Ft.</strong>
+                  <span>Min. Requirement</span>
+                </div>
+              </div>
+              <div className="csl-orb csl-orb--1"></div>
+              <div className="csl-orb csl-orb--2"></div>
             </div>
-            <img src={HeroImage} alt="Composite Skill Lab Setup" className="main-hero-img" />
           </div>
         </div>
       </section>

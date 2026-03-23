@@ -207,7 +207,7 @@
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 150px;
+	height: 120px;
 	background: linear-gradient(to top, #ffffff 0%, transparent 100%);
 	z-index: 2;
 	pointer-events: none;
@@ -225,12 +225,17 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	gap: 50px;
 	position: relative;
 	z-index: 2;
-	padding: 60px 20px;
+	padding: 60px 40px 110px;
+	max-width: 1200px;
+	margin: 0 auto;
+	width: 100%;
+	margin-top: -1.8cm;
 }
 
-.ai-roboticslab-cbse-root .hero-text { flex: 1; max-width: 600px; }
+.ai-roboticslab-cbse-root .hero-text { flex: 1; max-width: 560px; }
 
 .ai-roboticslab-cbse-root .brand-tag {
 	background: rgb(255, 255, 255);
@@ -244,7 +249,6 @@
 	border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Ensure brand tag text stays readable on white */
 .ai-roboticslab-cbse-root .brand-tag span {
 	color: #000;
 }
@@ -267,39 +271,152 @@
 	font-weight: 300;
 }
 
+/* --- Collage Visual (CBSE redesign) --- */
 .ai-roboticslab-cbse-root .hero-visual {
 	flex: 1;
 	position: relative;
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	padding: 20px 10px 20px 20px;
 }
 
-.ai-roboticslab-cbse-root .main-hero-img {
+.ai-roboticslab-cbse-root .cbse-collage {
+	position: relative;
 	width: 100%;
-	max-width: 550px;
-	border-radius: 20px;
-	box-shadow: -20px 20px 0 rgba(255,255,255,0.05);
-	z-index: 1;
+	max-width: 440px;
+	height: 460px;
 }
 
-.ai-roboticslab-cbse-root .floating-badge {
+/* Background: glowing tilted slab */
+.ai-roboticslab-cbse-root .cbse-bg-blob {
 	position: absolute;
-	top: 30px;
-	left: 0;
+	width: 320px;
+	height: 320px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(-8deg);
+	background: linear-gradient(135deg, rgba(0,180,160,0.28) 0%, rgba(0,80,72,0.18) 100%);
+	border-radius: 40px;
+	z-index: 0;
+	filter: blur(6px);
+	animation: cbseSlabPulse 6s ease-in-out infinite;
+}
+.ai-roboticslab-cbse-root .cbse-bg-blob::after {
+	content: '';
+	position: absolute;
+	inset: -12px;
+	border-radius: 52px;
+	border: 2px solid rgba(0,200,170,0.25);
+	animation: cbseRingPulse 3s ease-in-out infinite;
+}
+
+/* Card A — larger, rotated rectangle with clipped corner */
+.ai-roboticslab-cbse-root .cbse-img-card--a {
+	position: absolute;
+	top: 10px;
+	left: 0px;
+	width: 220px;
+	height: 230px;
+	border-radius: 16px 60px 16px 60px;
+	overflow: hidden;
+	box-shadow: 0 16px 45px rgba(0,0,0,0.5), 0 0 0 4px rgba(0,200,170,0.45);
+	z-index: 4;
+	animation: cbseFloatA 4.5s ease-in-out infinite;
+}
+
+/* Card B — large dominant card, bottom-right */
+.ai-roboticslab-cbse-root .cbse-img-card--b {
+	position: absolute;
+	bottom: 10px;
+	right: 0px;
+	width: 260px;
+	height: 320px;
+	border-radius: 20px 80px 20px 80px;
+	overflow: hidden;
+	box-shadow: 0 24px 65px rgba(0,0,0,0.55), 0 0 0 3px rgba(245,158,11,0.35);
+	z-index: 3;
+	animation: cbseFloatB 6s ease-in-out infinite;
+}
+
+.ai-roboticslab-cbse-root .cbse-img-card--a img,
+.ai-roboticslab-cbse-root .cbse-img-card--b img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.5s ease;
+}
+
+.ai-roboticslab-cbse-root .cbse-img-card--a:hover img,
+.ai-roboticslab-cbse-root .cbse-img-card--b:hover img { transform: scale(1.07); }
+
+.ai-roboticslab-cbse-root .cbse-img-shine {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 45%, rgba(0,0,0,0.18) 100%);
+	pointer-events: none;
+}
+
+/* Badge */
+.ai-roboticslab-cbse-root .cbse-badge {
+	position: absolute;
+	bottom: 30px;
+	right: 10px;
+	transform: none;
 	background: #fff;
 	color: var(--dark);
-	padding: 15px 20px;
-	border-radius: 12px;
-	box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+	padding: 10px 16px;
+	border-radius: 14px;
+	box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 	display: flex;
 	align-items: center;
-	gap: 15px;
-	z-index: 2;
-	animation: float 4s infinite ease-in-out;
+	gap: 10px;
+	z-index: 5;
+	animation: cbseBadgeFloat 4s ease-in-out infinite;
+	white-space: nowrap;
 }
 
-.ai-roboticslab-cbse-root .floating-badge i { font-size: 2rem; color: var(--accent); }
+.ai-roboticslab-cbse-root .cbse-badge i { font-size: 1.5rem; color: var(--accent); }
+.ai-roboticslab-cbse-root .cbse-badge strong { display: block; font-size: 0.95rem; color: var(--dark); }
+.ai-roboticslab-cbse-root .cbse-badge span { font-size: 0.72rem; color: #64748b; }
 
+.ai-roboticslab-cbse-root .cbse-badge--top-image {
+	top: 10px;
+	right: 10px;
+	bottom: auto;
+	padding: 8px 12px;
+	border-radius: 12px;
+	box-shadow: 0 8px 24px rgba(0,0,0,0.28);
+	white-space: normal;
+	max-width: 170px;
+}
+
+.ai-roboticslab-cbse-root .cbse-badge--top-image i { font-size: 1.2rem; }
+.ai-roboticslab-cbse-root .cbse-badge--top-image strong { font-size: 0.8rem; }
+.ai-roboticslab-cbse-root .cbse-badge--top-image span { font-size: 0.66rem; }
+
+/* Keyframes */
+@keyframes cbseFloatA {
+	0%, 100% { transform: translateY(0) rotate(-4deg); }
+	50% { transform: translateY(-16px) rotate(-1.5deg); }
+}
+@keyframes cbseFloatB {
+	0%, 100% { transform: translateY(0) rotate(4deg); }
+	50% { transform: translateY(14px) rotate(1.5deg); }
+}
+@keyframes cbseBadgeFloat {
+	0%, 100% { transform: translateY(0); }
+	50% { transform: translateY(-8px); }
+}
+@keyframes cbseSlabPulse {
+	0%, 100% { transform: translate(-50%, -50%) rotate(-8deg) scale(1); opacity: 0.9; }
+	50% { transform: translate(-50%, -50%) rotate(-5deg) scale(1.06); opacity: 1; }
+}
+@keyframes cbseRingPulse {
+	0%, 100% { opacity: 0.4; transform: scale(1); }
+	50% { opacity: 1; transform: scale(1.04); }
+}
 @keyframes float {
 	0%, 100% { transform: translateY(0); }
 	50% { transform: translateY(-10px); }
@@ -1131,8 +1248,11 @@
    20. RESPONSIVE
    ========================================= */
 @media (max-width: 900px) {
-	.ai-roboticslab-cbse-root .hero-container { flex-direction: column; gap: 40px; text-align: center; }
+	.ai-roboticslab-cbse-root .hero-container { flex-direction: column; gap: 40px; text-align: center; padding: 50px 30px 100px; }
 	.ai-roboticslab-cbse-root .hero-text, .ai-roboticslab-cbse-root .hero-visual { width: 100%; }
+	.ai-roboticslab-cbse-root .hero-visual { padding: 0; justify-content: center; }
+	.ai-roboticslab-cbse-root .hero-collage,
+	.ai-roboticslab-cbse-root .cbse-collage { max-width: 380px; height: 420px; margin: 0 auto; }
 	.ai-roboticslab-cbse-root .brand-tag { margin-left: auto; margin-right: auto; }
 	.ai-roboticslab-cbse-root .hero-text h1 { font-size: 2.8rem; }
 	.ai-roboticslab-cbse-root .hero-text p { font-size: 1.05rem; }

@@ -239,14 +239,19 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	gap: 50px;
 	position: relative;
 	z-index: 2;
-	padding: 60px 20px;
+	padding: 60px 40px 110px;
+	max-width: 1200px;
+	margin: 0 auto;
+	width: 100%;
+	margin-top: -1.7cm;
 }
 
 .ai-roboticlab-icse-root .hero-text {
 	flex: 1;
-	max-width: 600px;
+	max-width: 560px;
 }
 
 .ai-roboticlab-icse-root .brand-tag {
@@ -261,7 +266,6 @@
 	border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Ensure brand tag label is readable on white */
 .ai-roboticlab-icse-root .brand-tag span {
 	color: #000;
 }
@@ -269,7 +273,7 @@
 .ai-roboticlab-icse-root .hero-logo { height: 24px; }
 
 .ai-roboticlab-icse-root .hero-text h1 {
-	font-size: 3.5rem;
+	font-size: 3rem;
 	margin-bottom: 25px;
 	color: #fff;
 	line-height: 1.1;
@@ -284,42 +288,193 @@
 	font-weight: 300;
 }
 
+/* --- ICSE Split-Frame Collage --- */
 .ai-roboticlab-icse-root .hero-visual {
 	flex: 1;
 	position: relative;
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	padding: 20px 10px;
 }
 
-.ai-roboticlab-icse-root .main-hero-img {
+.ai-roboticlab-icse-root .icse-hero-collage {
+	position: relative;
 	width: 100%;
-	max-width: 550px;
+	max-width: 440px;
+	height: 460px;
+}
+
+/* Top-right image */
+.ai-roboticlab-icse-root .icse-img-frame {
+	position: absolute;
+	border-radius: 16px;
+	overflow: hidden;
+	box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+	transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.ai-roboticlab-icse-root .icse-img-frame:hover {
+	transform: scale(1.03) rotate(0deg) !important;
+	box-shadow: 0 28px 60px rgba(0,0,0,0.55);
+}
+
+.ai-roboticlab-icse-root .icse-img-frame img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.ai-roboticlab-icse-root .icse-img-frame--left {
+	top: 0;
+	left: 0;
+	width: 72%;
+	height: 260px;
+	transform: rotate(-3deg);
+	z-index: 2;
+	border: 3px solid rgba(255,255,255,0.25);
+	animation: icseFloatA 5s ease-in-out infinite;
+}
+
+.ai-roboticlab-icse-root .icse-img-frame--right {
+	bottom: 0;
+	right: 0;
+	width: 72%;
+	height: 240px;
+	transform: rotate(3deg);
+	z-index: 3;
+	border: 3px solid rgba(255,255,255,0.2);
+	animation: icseFloatB 5s ease-in-out infinite;
+}
+
+/* Label on each image */
+.ai-roboticlab-icse-root .icse-frame-label {
+	position: absolute;
+	bottom: 12px;
+	left: 12px;
+	background: rgba(0,0,0,0.55);
+	backdrop-filter: blur(6px);
+	color: #fff;
+	font-size: 0.75rem;
+	font-weight: 700;
+	padding: 4px 12px;
 	border-radius: 20px;
-	box-shadow: -20px 20px 0 rgba(255,255,255,0.05);
+	border-left: 3px solid var(--accent);
+	letter-spacing: 0.5px;
+}
+
+/* Floating badge */
+.ai-roboticlab-icse-root .icse-collage-badge {
+	position: absolute;
+	bottom: 55px;
+	right: 5px;
+	background: #fff;
+	color: var(--dark);
+	padding: 12px 16px;
+	border-radius: 14px;
+	box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	z-index: 5;
+	white-space: nowrap;
+	animation: icseFloat 4s ease-in-out infinite;
+}
+
+.ai-roboticlab-icse-root .icse-collage-badge i { font-size: 1.5rem; color: var(--accent); }
+.ai-roboticlab-icse-root .icse-collage-badge strong { display: block; font-size: 0.95rem; color: var(--dark); }
+.ai-roboticlab-icse-root .icse-collage-badge span { font-size: 0.72rem; color: #64748b; }
+
+/* Pulsing ring behind collage */
+.ai-roboticlab-icse-root .icse-pulse-ring {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 320px;
+	height: 320px;
+	border-radius: 50%;
+	border: 2px solid rgba(255,255,255,0.15);
+	z-index: 1;
+	animation: icsePulse 3s ease-out infinite;
+}
+
+/* Floating particles */
+.ai-roboticlab-icse-root .icse-particle {
+	position: absolute;
+	border-radius: 50%;
 	z-index: 1;
 }
 
-.ai-roboticlab-icse-root .floating-badge {
-	position: absolute;
-	top: 30px;
-	left: 0;
-	background: #fff;
-	color: var(--dark);
-	padding: 15px 20px;
-	border-radius: 12px;
-	box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-	display: flex;
-	align-items: center;
-	gap: 15px;
-	z-index: 2;
-	animation: float 4s infinite ease-in-out;
+.ai-roboticlab-icse-root .icse-particle--1 {
+	width: 12px;
+	height: 12px;
+	background: var(--accent);
+	top: 20px;
+	right: 30px;
+	animation: icseOrbit 4s ease-in-out infinite;
+	opacity: 0.9;
 }
 
-.ai-roboticlab-icse-root .floating-badge i { font-size: 2rem; color: var(--accent); }
+.ai-roboticlab-icse-root .icse-particle--2 {
+	width: 8px;
+	height: 8px;
+	background: rgba(255,255,255,0.7);
+	bottom: 80px;
+	left: 10px;
+	animation: icseOrbit 6s ease-in-out infinite reverse;
+	opacity: 0.8;
+}
 
-@keyframes float {
+.ai-roboticlab-icse-root .icse-particle--3 {
+	width: 10px;
+	height: 10px;
+	background: rgba(0,200,170,0.8);
+	top: 50%;
+	right: -5px;
+	animation: icseOrbit 5s ease-in-out infinite 1s;
+	opacity: 0.85;
+}
+
+/* Dot grid decoration */
+.ai-roboticlab-icse-root .icse-hero-collage::before {
+	content: "";
+	position: absolute;
+	bottom: -15px;
+	left: -15px;
+	width: 90px;
+	height: 90px;
+	background-image: radial-gradient(circle, rgba(255,255,255,0.45) 1.5px, transparent 1.5px);
+	background-size: 12px 12px;
+	z-index: 1;
+	opacity: 0.7;
+}
+
+@keyframes icseFloatA {
+	0%, 100% { transform: rotate(-3deg) translateY(0); }
+	50% { transform: rotate(-3deg) translateY(-8px); }
+}
+
+@keyframes icseFloatB {
+	0%, 100% { transform: rotate(3deg) translateY(0); }
+	50% { transform: rotate(3deg) translateY(8px); }
+}
+
+@keyframes icseFloat {
 	0%, 100% { transform: translateY(0); }
 	50% { transform: translateY(-10px); }
+}
+
+@keyframes icsePulse {
+	0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.6; }
+	70% { transform: translate(-50%, -50%) scale(1.3); opacity: 0; }
+	100% { transform: translate(-50%, -50%) scale(1.3); opacity: 0; }
+}
+
+@keyframes icseOrbit {
+	0%, 100% { transform: translateY(0) scale(1); }
+	50% { transform: translateY(-14px) scale(1.2); }
 }
 
 /* =========================================
@@ -1219,10 +1374,18 @@
 
 @media (max-width: 768px) {
 	.ai-roboticlab-icse-root .hero-section { margin-top: -20px; }
-	.ai-roboticlab-icse-root .hero-container { flex-direction: column; text-align: center; }
-	.ai-roboticlab-icse-root .hero-text h1 { font-size: 2.5rem; }
+	.ai-roboticlab-icse-root .hero-container { flex-direction: column; text-align: center; padding: 50px 30px 100px; }
+	.ai-roboticlab-icse-root .hero-text h1 { font-size: 2rem; }
+		.ai-roboticlab-icse-root .hero-text  { margin-top: 1cm; }
+
 	.ai-roboticlab-icse-root .hero-btns { justify-content: center; margin-bottom: 20px; }
-	.ai-roboticlab-icse-root .floating-badge { display: none !important; }
+	.ai-roboticlab-icse-root .hero-visual { width: 100%; min-height: 380px; padding: 0; }
+	.ai-roboticlab-icse-root .icse-hero-collage { max-width: 340px; height: 380px; margin: 0 auto; }
+	.ai-roboticlab-icse-root .icse-img-frame { display: block; opacity: 1; }
+	.ai-roboticlab-icse-root .icse-img-frame img { width: 100%; height: 100%; display: block; }
+	.ai-roboticlab-icse-root .icse-img-frame--left { height: 210px; }
+	.ai-roboticlab-icse-root .icse-img-frame--right { height: 195px; }
+	.ai-roboticlab-icse-root .icse-collage-badge { display: none; }
     
 	.ai-roboticlab-icse-root .guidelines-grid { grid-template-columns: 1fr; }
 	.ai-roboticlab-icse-root .guide-card { flex-direction: column; }

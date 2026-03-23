@@ -10,6 +10,7 @@ import GalleryImg6 from "../assets/ForSchools_AI-RoboticsLabICSE_images/20210727
 import GalleryImg7 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Robotic Lap.jpg";
 // hero section image
 import heroImage from "../assets/ForSchools_AI-RoboticsLabICSE_images/Hero section - AI & Robotics lab ICSE.jpg";
+import heroImage2 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Robotic Lap.jpg";
 // why setup an Ai-lab images
 import whyAiLab1 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Why Setup an AI Lab_ - 1.jpg";
 import whyAiLab2 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Why Setup an AI Lab_ - 2.jpg";
@@ -106,22 +107,26 @@ const AIRoboticLabICSE = () => {
 
 		const root = rootRef.current;
 		if (!root) return;
+		const animatedElements = root.querySelectorAll(".hidden-left, .hidden-right, .fade-up");
 
 		// 1. Scroll Animation Observer
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add("show");
-					}
-				});
-			},
-			{ threshold: 0.1 }
-		);
+		let observer;
+		if ("IntersectionObserver" in window) {
+			observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add("show");
+						}
+					});
+				},
+				{ threshold: 0.1 }
+			);
 
-		root
-			.querySelectorAll(".hidden-left, .hidden-right, .fade-up")
-			.forEach((el) => observer.observe(el));
+			animatedElements.forEach((el) => observer.observe(el));
+		} else {
+			animatedElements.forEach((el) => el.classList.add("show"));
+		}
 
 		// 2. Animated Counters
 		const statsSection = root.querySelector(".stats-section");
@@ -131,31 +136,34 @@ const AIRoboticLabICSE = () => {
 			return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		};
 
-		const statsObserver = new IntersectionObserver(
-			(entries) => {
-				if (entries[0].isIntersecting && !counted) {
-					root.querySelectorAll(".counter").forEach((counter) => {
-						const target = +counter.getAttribute("data-target");
-						let count = 0;
-						const inc = target / 100;
-						const update = () => {
-							count += inc;
-							if (count < target) {
-								counter.innerText = formatNumber(Math.ceil(count));
-								requestAnimationFrame(update);
-							} else {
-								counter.innerText = formatNumber(target);
-							}
-						};
-						update();
-					});
-					counted = true;
-				}
-			},
-			{ threshold: 0.5 }
-		);
+		let statsObserver;
+		if ("IntersectionObserver" in window) {
+			statsObserver = new IntersectionObserver(
+				(entries) => {
+					if (entries[0].isIntersecting && !counted) {
+						root.querySelectorAll(".counter").forEach((counter) => {
+							const target = +counter.getAttribute("data-target");
+							let count = 0;
+							const inc = target / 100;
+							const update = () => {
+								count += inc;
+								if (count < target) {
+									counter.innerText = formatNumber(Math.ceil(count));
+									requestAnimationFrame(update);
+								} else {
+									counter.innerText = formatNumber(target);
+								}
+							};
+							update();
+						});
+						counted = true;
+					}
+				},
+				{ threshold: 0.5 }
+			);
 
-		if (statsSection) statsObserver.observe(statsSection);
+			if (statsSection) statsObserver.observe(statsSection);
+		}
 
 		// 3. Curriculum Tabs
 		const tabBtns = root.querySelectorAll(".tab-btn");
@@ -271,8 +279,8 @@ const AIRoboticLabICSE = () => {
 		}
 
 		return () => {
-			observer.disconnect();
-			statsObserver.disconnect();
+			if (observer) observer.disconnect();
+			if (statsObserver) statsObserver.disconnect();
 			tabHandlers.forEach(({ btn, handler }) => btn.removeEventListener("click", handler));
 			accordionHandlers.forEach(({ header, handler }) => header.removeEventListener("click", handler));
 			anchorHandlerMap.forEach(({ anchor, handler }) => anchor.removeEventListener("click", handler));
@@ -312,14 +320,27 @@ const AIRoboticLabICSE = () => {
 						</div>
 					</div>
 					<div className="hero-visual hidden-right">
-						<div className="floating-badge">
-							<i className="fas fa-robot" />
-							<div>
-								<strong>Subject Code 066</strong>
-								<span>ICSE Compliant</span>
+						<div className="icse-hero-collage">
+							<div className="icse-img-frame icse-img-frame--left">
+								<img src={heroImage} alt="AI Robotics Lab ICSE" />
+								<div className="icse-frame-label">ICSE Aligned</div>
 							</div>
+							<div className="icse-img-frame icse-img-frame--right">
+								<img src={heroImage2} alt="Robotics Lab in Action" />
+								<div className="icse-frame-label">Subject Code 066</div>
+							</div>
+							{/* <div className="icse-collage-badge">
+								<i className="fas fa-robot" />
+								<div>
+									<strong>Subject Code 066</strong>
+									<span>ICSE Compliant</span>
+								</div>
+							</div> */}
+							<div className="icse-pulse-ring" />
+							<div className="icse-particle icse-particle--1" />
+							<div className="icse-particle icse-particle--2" />
+							<div className="icse-particle icse-particle--3" />
 						</div>
-						<img src={heroImage} alt="500 plus AI and Robotics Labs installed across ICSE schools in India" className="main-hero-img" />
 					</div>
 				</div>
 			</section>

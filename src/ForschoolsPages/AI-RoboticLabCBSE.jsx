@@ -9,6 +9,7 @@ import GalleryImg5 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG_8545.JPG";
 import GalleryImg6 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG_9372.JPG";
 //hero image
 import herosectionImage from "../assets/ForSchoolsAI-RoboticslabCBSE/Hero section.jpg";
+import heroImage2 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG20240606112350.jpg";
 // why cbse lab for your school section
 import establishAiLab1 from "../assets/ForSchoolsAI-RoboticslabCBSE/Why Establish an AI & Robotics Lab_ - 1 V2.jpg";
 import establishAiLab2 from "../assets/ForSchoolsAI-RoboticslabCBSE/Why Establish an AI & Robotics Lab_ - 2 V2.jpg";
@@ -263,18 +264,24 @@ function AIRoboticsLabCBSE() {
             </div>
           </div>
           <div className="hero-visual hidden-right">
-            <div className="floating-badge">
-              <i className="fas fa-school"></i>
-              <div>
-                <strong>150,000+</strong>
-                <span>Students Trained</span>
+            <div className="cbse-collage">
+              <div className="cbse-bg-blob"></div>
+              <div className="cbse-img-card cbse-img-card--a">
+                <img src={herosectionImage} alt="AI Robotics Lab" />
+                <div className="cbse-img-shine"></div>
+                <div className="cbse-badge cbse-badge--top-image">
+                  <i className="fas fa-school"></i>
+                  <div>
+                    <strong>200,000+</strong>
+                    <span>Students Trained</span>
+                  </div>
+                </div>
+              </div>
+              <div className="cbse-img-card cbse-img-card--b">
+                <img src={heroImage2} alt="Students Learning Robotics" />
+                <div className="cbse-img-shine"></div>
               </div>
             </div>
-            <img
-              src={herosectionImage}
-              alt="Student with Robot"
-              className="main-hero-img"
-            />
           </div>
         </div>
       </section>
