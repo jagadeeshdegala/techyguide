@@ -7,14 +7,14 @@ import GalleryImg3 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG_20221125_104
 import GalleryImg4 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG_20240128_131052.jpg";
 import GalleryImg5 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG_8545.JPG";
 import GalleryImg6 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG_9372.JPG";
-//hero image
-import herosectionImage from "../assets/ForSchoolsAI-RoboticslabCBSE/Hero section.jpg";
-import heroImage2 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG20240606112350.jpg";
 // why cbse lab for your school section
 import establishAiLab1 from "../assets/ForSchoolsAI-RoboticslabCBSE/Why Establish an AI & Robotics Lab_ - 1 V2.jpg";
 import establishAiLab2 from "../assets/ForSchoolsAI-RoboticslabCBSE/Why Establish an AI & Robotics Lab_ - 2 V2.jpg";
 import establishAiLab3 from "../assets/ForSchoolsAI-RoboticslabCBSE/Why Establish an AI & Robotics Lab_ - 3.jpg";
 import establishAiLab4 from "../assets/ForSchoolsAI-RoboticslabCBSE/Why Establish an AI & Robotics Lab_ - 4 V2.jpg";
+//hero section image
+import heroImage1 from "../assets/ForSchoolsAI-RoboticslabCBSE/Hero section.jpg";
+import heroImage2 from "../assets/ForSchoolsAI-RoboticslabCBSE/IMG20240606112350.jpg";
 
 
 // support Ecosystem images
@@ -264,22 +264,14 @@ function AIRoboticsLabCBSE() {
             </div>
           </div>
           <div className="hero-visual hidden-right">
-            <div className="cbse-collage">
-              <div className="cbse-bg-blob"></div>
-              <div className="cbse-img-card cbse-img-card--a">
-                <img src={herosectionImage} alt="AI Robotics Lab" />
-                <div className="cbse-img-shine"></div>
-                <div className="cbse-badge cbse-badge--top-image">
-                  <i className="fas fa-school"></i>
-                  <div>
-                    <strong>200,000+</strong>
-                    <span>Students Trained</span>
-                  </div>
-                </div>
-              </div>
-              <div className="cbse-img-card cbse-img-card--b">
+            <div className="cbse-hero-grid" aria-label="CBSE lab highlights">
+              <div className="cbse-dots cbse-dots--left" aria-hidden="true"></div>
+              <div className="cbse-dots cbse-dots--right" aria-hidden="true"></div>
+              <div className="cbse-hero-card cbse-hero-card--2">
                 <img src={heroImage2} alt="Students Learning Robotics" />
-                <div className="cbse-img-shine"></div>
+              </div>
+              <div className="cbse-hero-card cbse-hero-card--4">
+                <img src={heroImage1} alt="CBSE AI Classroom" />
               </div>
             </div>
           </div>

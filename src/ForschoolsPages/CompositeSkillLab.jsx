@@ -197,7 +197,30 @@ export default function CompositeSkillLab() {
       form.addEventListener('submit', handleSubmit);
     }
 
-    // 6. Smooth Scroll for Anchor Links
+    // 6. Hero Background Image Cycling
+    const heroSection = document.querySelector('.composite-skill-lab-root .hero-section');
+    const imagePaths = [
+      HeroImage,
+      HeroImage2,
+      LabImage2,
+      LabImage4
+    ];
+    let heroImageIndex = 0;
+    let heroImageInterval;
+
+    const rotateHeroBackground = () => {
+      if (heroSection && imagePaths.length > 0) {
+        heroSection.style.backgroundImage = `url('${imagePaths[heroImageIndex]}')`;
+        heroImageIndex = (heroImageIndex + 1) % imagePaths.length;
+      }
+    };
+
+    if (heroSection) {
+      rotateHeroBackground();
+      heroImageInterval = setInterval(rotateHeroBackground, 4000); // Change image every 4 seconds
+    }
+
+    // 7. Smooth Scroll for Anchor Links
     const anchors = document.querySelectorAll('.composite-skill-lab-root a[href^="#"]');
     const anchorCleanups = [];
 
@@ -227,6 +250,9 @@ export default function CompositeSkillLab() {
       if (form && handleSubmit) {
         form.removeEventListener('submit', handleSubmit);
       }
+      if (heroImageInterval) {
+        clearInterval(heroImageInterval);
+      }
     };
   }, []);
 
@@ -236,7 +262,7 @@ export default function CompositeSkillLab() {
         <i className="fas fa-file-signature"></i> Get Compliance Quote
       </a>
 
-      <section className="hero-section">
+      <section className="hero-section" data-hero-images={JSON.stringify([HeroImage, HeroImage2, LabImage2, LabImage4])}>
         <div className="hero-bg-animation">
           <div className="csl-bg-shape csl-bg-shape--1"></div>
           <div className="csl-bg-shape csl-bg-shape--2"></div>
@@ -248,32 +274,11 @@ export default function CompositeSkillLab() {
               <img src={LogoImg} alt="CBSE Logo" className="hero-logo" />
               <span>Circular No. Skill-75/2024</span>
             </div>
-            <h1>CBSE <br /><span className="highlight-text">Composite Skill Lab Setup</span></h1>
+            <h1>CBSE <span className="highlight-text">Composite Skill Lab Setup</span></h1>
             <p><strong>Bridge the Skill Gap:</strong>Under Central Board of Secondary Education Circular Skill-75/2024, all affiliated schools must establish a Composite Skill Lab. Aligned with NEP 2020 and NCF-SE, it follows a 70% practical, 30% theory model. New schools must comply for affiliation; existing schools by Aug 2027. </p>
             <div className="hero-btns">
               <a href="#configurations" className="btn btn-orange">View Layout Options</a>
               <a href="#mandates" className="btn btn-glass">View Benefits</a>
-            </div>
-          </div>
-          <div className="hero-visual hidden-right">
-            <div className="csl-hero-collage">
-              <div className="csl-img-card csl-img-card--top">
-                <img src={HeroImage} alt="Composite Skill Lab Setup" />
-                <div className="csl-img-shine"></div>
-              </div>
-              <div className="csl-img-card csl-img-card--bottom">
-                <img src={HeroImage2} alt="Students in Composite Skill Lab" />
-                <div className="csl-img-shine"></div>
-              </div>
-              <div className="csl-collage-badge">
-                <i className="fas fa-ruler-combined"></i>
-                <div>
-                  <strong>600 Sq. Ft.</strong>
-                  <span>Min. Requirement</span>
-                </div>
-              </div>
-              <div className="csl-orb csl-orb--1"></div>
-              <div className="csl-orb csl-orb--2"></div>
             </div>
           </div>
         </div>

@@ -695,7 +695,9 @@
     .stemlab-page-root .section-header h2 {
         font-size: 2rem;
     }
-
+ .stemlab-page-root .section-header  {
+    margin-top: 0.1cm;
+    }
     /* ===== GRIDS ===== */
     .stemlab-page-root .vp-grid {
         grid-template-columns: repeat(2, 1fr);

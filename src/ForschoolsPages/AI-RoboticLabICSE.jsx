@@ -10,7 +10,6 @@ import GalleryImg6 from "../assets/ForSchools_AI-RoboticsLabICSE_images/20210727
 import GalleryImg7 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Robotic Lap.jpg";
 // hero section image
 import heroImage from "../assets/ForSchools_AI-RoboticsLabICSE_images/Hero section - AI & Robotics lab ICSE.jpg";
-import heroImage2 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Robotic Lap.jpg";
 // why setup an Ai-lab images
 import whyAiLab1 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Why Setup an AI Lab_ - 1.jpg";
 import whyAiLab2 from "../assets/ForSchools_AI-RoboticsLabICSE_images/Why Setup an AI Lab_ - 2.jpg";
@@ -320,26 +319,16 @@ const AIRoboticLabICSE = () => {
 						</div>
 					</div>
 					<div className="hero-visual hidden-right">
-						<div className="icse-hero-collage">
-							<div className="icse-img-frame icse-img-frame--left">
+						<div className="icse-hero-grid" aria-label="ICSE lab highlights">
+							<div className="icse-hero-card icse-hero-card--1">
 								<img src={heroImage} alt="AI Robotics Lab ICSE" />
-								<div className="icse-frame-label">ICSE Aligned</div>
 							</div>
-							<div className="icse-img-frame icse-img-frame--right">
-								<img src={heroImage2} alt="Robotics Lab in Action" />
-								<div className="icse-frame-label">Subject Code 066</div>
+							<div className="icse-hero-card icse-hero-card--3">
+								<img src={GalleryImg2} alt="ICSE coding session" />
 							</div>
-							{/* <div className="icse-collage-badge">
-								<i className="fas fa-robot" />
-								<div>
-									<strong>Subject Code 066</strong>
-									<span>ICSE Compliant</span>
-								</div>
-							</div> */}
-							<div className="icse-pulse-ring" />
-							<div className="icse-particle icse-particle--1" />
-							<div className="icse-particle icse-particle--2" />
-							<div className="icse-particle icse-particle--3" />
+							<div className="icse-hero-card icse-hero-card--4">
+								<img src={GalleryImg4} alt="ICSE robotics workshop" />
+							</div>
 						</div>
 					</div>
 				</div>

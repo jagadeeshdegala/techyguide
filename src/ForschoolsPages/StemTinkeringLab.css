@@ -204,16 +204,25 @@
    ========================================= */
 .stem-tinkering-lab-root .hero-section {
   position: relative;
-  min-height: 100vh;
-  background: linear-gradient(to bottom, rgba(0, 130, 115, 0.86) 85%, rgba(255, 255, 255, 0.86) 100%);
+  min-height: 85vh;
+  background: url('../assets/ForSchoolsStemTinkeringLabImages/IMG-20240805-WA0001.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
   color: #fff;
   display: flex;
   align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
 
+.stem-tinkering-lab-root .hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(9, 9, 9, 0.521) 100%, rgba(9, 9, 9, 0.521) 100%);
+}
+
 /* White Fade Effect at Bottom */
-.stem-tinkering-lab-root .hero-section::after {
+/* .stem-tinkering-lab-root .hero-section::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -223,26 +232,31 @@
   background: linear-gradient(to top, #ffffff 0%, transparent 100%);
   z-index: 2;
   pointer-events: none;
-}
+} */
 
 .stem-tinkering-lab-root .hero-bg-animation {
   position: absolute;
   width: 100%;
   height: 100%;
   background: radial-gradient(circle at 70% 20%, rgba(37, 99, 235, 0.15), transparent 50%);
-  z-index: 0;
+  z-index: 2;
 }
 
 .stem-tinkering-lab-root .hero-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   position: relative;
   z-index: 3;
   padding: 60px 20px;
+  min-height: calc(100vh - 113px);
 }
 
-.stem-tinkering-lab-root .hero-text { flex: 1; max-width: 600px; }
+.stem-tinkering-lab-root .hero-text {
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+}
 
 .stem-tinkering-lab-root .brand-tag {
   background: rgb(255, 255, 255);
@@ -275,13 +289,15 @@
 .stem-tinkering-lab-root .hero-text p {
   font-size: 1.2rem;
   margin-bottom: 40px;
-  color: #cbd5e1;
+  color: #e2e8f0;
   font-weight: 300;
+  max-width: 100%;
 }
 
 .stem-tinkering-lab-root .hero-btns {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
   margin-top: 10px;
@@ -1110,7 +1126,8 @@
 
 @media (max-width: 768px) {
   .stem-tinkering-lab-root .hero-section { margin-top: -20px; }
-  .stem-tinkering-lab-root .hero-container { flex-direction: column; text-align: center; }
+  .stem-tinkering-lab-root .hero-section { background-attachment: scroll; }
+  .stem-tinkering-lab-root .hero-container { flex-direction: column; text-align: center; min-height: calc(100vh - 93px); }
   .stem-tinkering-lab-root .hero-text h1 { font-size: 2.5rem; }
   .stem-tinkering-lab-root .hero-btns { justify-content: center; transform: none; margin-top: 0; margin-bottom: 20px; }
   .stem-tinkering-lab-root .floating-badge { display: none !important; }
@@ -1141,7 +1158,41 @@
   .stem-tinkering-lab-root .guide-img { width: 100%; height: 200px; }
   .stem-tinkering-lab-root .guide-content { width: 100%; padding: 25px; }
 
-  .stem-tinkering-lab-root .stats-grid { padding: 30px; }
+  .stem-tinkering-lab-root .stats-grid {
+    padding: 20px 16px;
+    gap: 12px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .stem-tinkering-lab-root .stat-item {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    flex: 0 1 auto;
+    position: relative;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .stem-tinkering-lab-root .stat-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .stem-tinkering-lab-root .stat-item h2 {
+    line-height: 1.1;
+    display: block;
+    margin-bottom: 0;
+  }
+  .stem-tinkering-lab-root .stat-item h2 .counter,
+  .stem-tinkering-lab-root .stat-item h2 span {
+    display: inline;
+    margin-bottom: 0;
+  }
+  .stem-tinkering-lab-root .stat-item p {
+    margin-bottom: 0.75cm;
+  }
+  .stem-tinkering-lab-root .stat-item:last-child p {
+    margin-bottom: 0;
+  }
   
   .stem-tinkering-lab-root .gallery-grid { 
     grid-template-columns: 1fr !important; 

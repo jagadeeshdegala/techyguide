@@ -73,7 +73,6 @@
 .ai-roboticslab-cbse-root .text-center { text-align: center; }
 .ai-roboticslab-cbse-root .text-white { color: #fff !important; }
 
-/* --- Buttons --- */
 .ai-roboticslab-cbse-root .btn {
 	padding: 12px 28px;
 	border-radius: 8px;
@@ -96,15 +95,17 @@
 }
 
 .ai-roboticslab-cbse-root .btn-glass {
-	background: rgba(255,255,255,0.15);
-	backdrop-filter: blur(10px);
-	border: 1px solid rgba(255,255,255,0.3);
+	background: #0f766e;
+	backdrop-filter: none;
+	border: 1px solid #0f766e;
 	color: #fff;
 	margin-left: 15px;
+	box-shadow: 0 8px 20px rgba(15, 118, 110, 0.3);
 }
 
 .ai-roboticslab-cbse-root .btn-glass:hover {
-	background: rgba(255,255,255,0.25);
+	background: rgba(15, 23, 42, 0.14);
+	color: #0f172a;
 }
 
 .ai-roboticslab-cbse-root .btn-outline-dark {
@@ -193,12 +194,16 @@
    ========================================= */
 .ai-roboticslab-cbse-root .hero-section {
 	position: relative;
-	min-height: 90vh;
-	background: linear-gradient(to bottom, rgba(0, 130, 115, 0.86) 75%, rgba(255, 255, 255, 0.86) 100%);
-	color: #fff;
+	min-height: auto;
+	background: linear-gradient(118deg, #eaf2ff 0%, #eef8f1 48%, #fff4e8 100%);
+	background-attachment: fixed;
+	color: #1f0f10;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	overflow: hidden;
+	margin-top: -1.8cm;
+	padding: 30px 0 0.3cm;
 }
 
 .ai-roboticslab-cbse-root .hero-section::after {
@@ -208,7 +213,7 @@
 	left: 0;
 	width: 100%;
 	height: 120px;
-	background: linear-gradient(to top, #ffffff 0%, transparent 100%);
+	background: linear-gradient(to top, rgba(255, 255, 255, 0.5) 0%, transparent 100%);
 	z-index: 2;
 	pointer-events: none;
 }
@@ -217,8 +222,8 @@
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: radial-gradient(circle at 70% 20%, rgba(37, 99, 235, 0.15), transparent 50%);
-	z-index: 0;
+	background: radial-gradient(circle at 76% 20%, rgba(14, 116, 144, 0.16), transparent 55%);
+	z-index: 2;
 }
 
 .ai-roboticslab-cbse-root .hero-container {
@@ -227,18 +232,18 @@
 	justify-content: space-between;
 	gap: 50px;
 	position: relative;
-	z-index: 2;
-	padding: 60px 40px 110px;
+	z-index: 3;
+	padding: 40px 40px 20px;
 	max-width: 1200px;
 	margin: 0 auto;
 	width: 100%;
-	margin-top: -1.8cm;
+	margin-top: 0;
 }
 
 .ai-roboticslab-cbse-root .hero-text { flex: 1; max-width: 560px; }
 
 .ai-roboticslab-cbse-root .brand-tag {
-	background: rgb(255, 255, 255);
+	background: rgba(255, 255, 255, 0.78);
 	padding: 8px 16px;
 	border-radius: 30px;
 	display: inline-flex;
@@ -246,7 +251,7 @@
 	gap: 12px;
 	margin-bottom: 30px;
 	font-size: 0.9rem;
-	border: 1px solid rgba(255,255,255,0.1);
+	border: 1px solid rgba(148, 163, 184, 0.35);
 }
 
 .ai-roboticslab-cbse-root .brand-tag span {
@@ -258,7 +263,7 @@
 .ai-roboticslab-cbse-root .hero-text h1 {
 	font-size: 3.5rem;
 	margin-bottom: 25px;
-	color: #fff;
+	color: #0f172a;
 	line-height: 1.1;
 }
 
@@ -267,159 +272,111 @@
 .ai-roboticslab-cbse-root .hero-text p {
 	font-size: 1.2rem;
 	margin-bottom: 40px;
-	color: #cbd5e1;
-	font-weight: 300;
+	color: #334155;
+	font-weight: 400;
 }
 
-/* --- Collage Visual (CBSE redesign) --- */
+/* --- Static Hero Gallery (CBSE) --- */
 .ai-roboticslab-cbse-root .hero-visual {
 	flex: 1;
 	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 20px 10px 20px 20px;
+	padding: 0;
+	min-height: auto;
+	height: 450px;
 }
 
-.ai-roboticslab-cbse-root .cbse-collage {
+.ai-roboticslab-cbse-root .cbse-hero-grid {
 	position: relative;
-	width: 100%;
-	max-width: 440px;
-	height: 460px;
+	width: min(100%, 520px);
+	height: 550px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding: 8px 2px;
+	margin-top: 2.6cm;
 }
 
-/* Background: glowing tilted slab */
-.ai-roboticslab-cbse-root .cbse-bg-blob {
+.ai-roboticslab-cbse-root .cbse-dots {
 	position: absolute;
-	width: 320px;
-	height: 320px;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%) rotate(-8deg);
-	background: linear-gradient(135deg, rgba(0,180,160,0.28) 0%, rgba(0,80,72,0.18) 100%);
-	border-radius: 40px;
-	z-index: 0;
-	filter: blur(6px);
-	animation: cbseSlabPulse 6s ease-in-out infinite;
-}
-.ai-roboticslab-cbse-root .cbse-bg-blob::after {
-	content: '';
-	position: absolute;
-	inset: -12px;
-	border-radius: 52px;
-	border: 2px solid rgba(0,200,170,0.25);
-	animation: cbseRingPulse 3s ease-in-out infinite;
+	width: 124px;
+	height: 124px;
+	background: transparent;
+	border: 2px solid rgba(15, 118, 110, 0.5);
+	border-radius: 50%;
+	box-shadow:
+		0 0 0 16px rgba(15, 118, 110, 0.12),
+		0 0 0 34px rgba(249, 115, 22, 0.12);
+	z-index: 1;
+	opacity: 0.75;
+	pointer-events: none;
 }
 
-/* Card A — larger, rotated rectangle with clipped corner */
-.ai-roboticslab-cbse-root .cbse-img-card--a {
-	position: absolute;
-	top: 10px;
-	left: 0px;
-	width: 220px;
-	height: 230px;
-	border-radius: 16px 60px 16px 60px;
+.ai-roboticslab-cbse-root .cbse-dots--left {
+	top: 48px;
+	left: 66px;
+}
+
+.ai-roboticslab-cbse-root .cbse-dots--right {
+	top: 206px;
+	right: 8px;
+}
+
+.ai-roboticslab-cbse-root .cbse-hero-card {
+	position: relative;
 	overflow: hidden;
-	box-shadow: 0 16px 45px rgba(0,0,0,0.5), 0 0 0 4px rgba(0,200,170,0.45);
-	z-index: 4;
-	animation: cbseFloatA 4.5s ease-in-out infinite;
+	box-shadow: 0 18px 38px rgba(0, 0, 0, 0.25);
+	border: 0;
+	background: rgba(255, 255, 255, 0.08);
+	backdrop-filter: none;
+	will-change: transform;
+	transition: box-shadow 0.35s ease;
 }
 
-/* Card B — large dominant card, bottom-right */
-.ai-roboticslab-cbse-root .cbse-img-card--b {
+.ai-roboticslab-cbse-root .cbse-hero-card::before {
+	content: "";
 	position: absolute;
-	bottom: 10px;
-	right: 0px;
-	width: 260px;
-	height: 320px;
-	border-radius: 20px 80px 20px 80px;
-	overflow: hidden;
-	box-shadow: 0 24px 65px rgba(0,0,0,0.55), 0 0 0 3px rgba(245,158,11,0.35);
-	z-index: 3;
-	animation: cbseFloatB 6s ease-in-out infinite;
+	inset: -14px;
+	background: #e8ddce;
+	border-radius: inherit;
+	z-index: -1;
 }
 
-.ai-roboticslab-cbse-root .cbse-img-card--a img,
-.ai-roboticslab-cbse-root .cbse-img-card--b img {
+.ai-roboticslab-cbse-root .cbse-hero-card:hover {
+	transform: none;
+	box-shadow: 0 24px 42px rgba(0, 0, 0, 0.32);
+}
+
+.ai-roboticslab-cbse-root .cbse-hero-card img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	display: block;
-	transition: transform 0.5s ease;
 }
 
-.ai-roboticslab-cbse-root .cbse-img-card--a:hover img,
-.ai-roboticslab-cbse-root .cbse-img-card--b:hover img { transform: scale(1.07); }
-
-.ai-roboticslab-cbse-root .cbse-img-shine {
-	position: absolute;
-	inset: 0;
-	background: linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 45%, rgba(0,0,0,0.18) 100%);
-	pointer-events: none;
+.ai-roboticslab-cbse-root .cbse-hero-card--2 {
+	width: clamp(150px, 32vw, 190px);
+	height: clamp(150px, 32vw, 190px);
+	margin-right: clamp(70px, 12vw, 120px);
+	--cbse-card2-x: 4cm;
+	animation: cbseHeroFloatCard2 4s ease-in-out infinite;
+	z-index: 2;
+	border-radius: 44% 56% 63% 37% / 42% 46% 54% 58%;
+	clip-path: none;
 }
 
-/* Badge */
-.ai-roboticslab-cbse-root .cbse-badge {
-	position: absolute;
-	bottom: 30px;
-	right: 10px;
-	transform: none;
-	background: #fff;
-	color: var(--dark);
-	padding: 10px 16px;
-	border-radius: 14px;
-	box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	z-index: 5;
-	animation: cbseBadgeFloat 4s ease-in-out infinite;
-	white-space: nowrap;
-}
-
-.ai-roboticslab-cbse-root .cbse-badge i { font-size: 1.5rem; color: var(--accent); }
-.ai-roboticslab-cbse-root .cbse-badge strong { display: block; font-size: 0.95rem; color: var(--dark); }
-.ai-roboticslab-cbse-root .cbse-badge span { font-size: 0.72rem; color: #64748b; }
-
-.ai-roboticslab-cbse-root .cbse-badge--top-image {
-	top: 10px;
-	right: 10px;
-	bottom: auto;
-	padding: 8px 12px;
-	border-radius: 12px;
-	box-shadow: 0 8px 24px rgba(0,0,0,0.28);
-	white-space: normal;
-	max-width: 170px;
-}
-
-.ai-roboticslab-cbse-root .cbse-badge--top-image i { font-size: 1.2rem; }
-.ai-roboticslab-cbse-root .cbse-badge--top-image strong { font-size: 0.8rem; }
-.ai-roboticslab-cbse-root .cbse-badge--top-image span { font-size: 0.66rem; }
-
-/* Keyframes */
-@keyframes cbseFloatA {
-	0%, 100% { transform: translateY(0) rotate(-4deg); }
-	50% { transform: translateY(-16px) rotate(-1.5deg); }
-}
-@keyframes cbseFloatB {
-	0%, 100% { transform: translateY(0) rotate(4deg); }
-	50% { transform: translateY(14px) rotate(1.5deg); }
-}
-@keyframes cbseBadgeFloat {
-	0%, 100% { transform: translateY(0); }
-	50% { transform: translateY(-8px); }
-}
-@keyframes cbseSlabPulse {
-	0%, 100% { transform: translate(-50%, -50%) rotate(-8deg) scale(1); opacity: 0.9; }
-	50% { transform: translate(-50%, -50%) rotate(-5deg) scale(1.06); opacity: 1; }
-}
-@keyframes cbseRingPulse {
-	0%, 100% { opacity: 0.4; transform: scale(1); }
-	50% { opacity: 1; transform: scale(1.04); }
-}
-@keyframes float {
-	0%, 100% { transform: translateY(0); }
-	50% { transform: translateY(-10px); }
+.ai-roboticslab-cbse-root .cbse-hero-card--4 {
+	width: clamp(250px, 60vw, 390px);
+	height: clamp(220px, 50vw, 340px);
+	--cbse-card4-x: -4cm;
+	animation: cbseHeroFloatCard4 4s ease-in-out infinite;
+	z-index: 2;
+	border-radius: 26% 74% 46% 54% / 30% 36% 64% 70%;
+	clip-path: none;
+	top: -40px;
 }
 
 /* =========================================
@@ -697,7 +654,7 @@
 .ai-roboticslab-cbse-root .infra-box i {
 	font-size: 2.5rem;
 	color: var(--accent);
-	margin-bottom: 20px;
+	color: #220f10;
 }
 
 .ai-roboticslab-cbse-root .infra-box h3 { margin-bottom: 15px; color: #fff; }
@@ -938,8 +895,9 @@
 	justify-content: center;
 	font-size: 1.5rem;
 	box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-	margin: -55px auto 15px;
+	color: #3e4a59;
 	position: relative;
+	font-weight: 400;
 	z-index: 2;
 	border: 3px solid #fff;
 }
@@ -1103,6 +1061,7 @@
 }
 
 .ai-roboticslab-cbse-root .video-content-wrapper { position: relative; z-index: 2; }
+.ai-roboticslab-cbse-root .hero-btns { margin-top: -0.4cm;}
 
 .ai-roboticslab-cbse-root .video-container {
 	position: relative;
@@ -1244,15 +1203,30 @@
 
 @keyframes fade { from { opacity: 0.4; } to { opacity: 1; } }
 
+@keyframes cbseHeroFloatCard2 {
+	0%, 100% { transform: translate(var(--cbse-card2-x), 0); }
+	50% { transform: translate(var(--cbse-card2-x), -20px); }
+}
+
+@keyframes cbseHeroFloatCard4 {
+	0%, 100% { transform: translate(var(--cbse-card4-x), 0); }
+	50% { transform: translate(var(--cbse-card4-x), -20px); }
+}
+
 /* =========================================
    20. RESPONSIVE
    ========================================= */
 @media (max-width: 900px) {
 	.ai-roboticslab-cbse-root .hero-container { flex-direction: column; gap: 40px; text-align: center; padding: 50px 30px 100px; }
+	.ai-roboticslab-cbse-root .hero-section { background: linear-gradient(125deg, #eaf2ff 0%, #eef8f1 54%, #fff4e8 100%); }
 	.ai-roboticslab-cbse-root .hero-text, .ai-roboticslab-cbse-root .hero-visual { width: 100%; }
-	.ai-roboticslab-cbse-root .hero-visual { padding: 0; justify-content: center; }
-	.ai-roboticslab-cbse-root .hero-collage,
-	.ai-roboticslab-cbse-root .cbse-collage { max-width: 380px; height: 420px; margin: 0 auto; }
+	.ai-roboticslab-cbse-root .hero-visual { padding: 0; justify-content: center; min-height: 460px; }
+	.ai-roboticslab-cbse-root .cbse-hero-grid { width: 92%; max-width: 460px; height: 450px; margin: 0 auto; }
+	.ai-roboticslab-cbse-root .cbse-hero-card--2 { width: 170px; height: 170px; margin-right: 90px; }
+	.ai-roboticslab-cbse-root .cbse-hero-card--2 { --cbse-card2-x: 3cm; }
+	.ai-roboticslab-cbse-root .cbse-hero-card--4 { width: 340px; height: 290px; --cbse-card4-x: -3cm; }
+	.ai-roboticslab-cbse-root .cbse-dots--left { left: 50px; top: 28px; }
+	.ai-roboticslab-cbse-root .cbse-dots--right { right: 0; top: 170px; }
 	.ai-roboticslab-cbse-root .brand-tag { margin-left: auto; margin-right: auto; }
 	.ai-roboticslab-cbse-root .hero-text h1 { font-size: 2.8rem; }
 	.ai-roboticslab-cbse-root .hero-text p { font-size: 1.05rem; }
@@ -1266,8 +1240,33 @@
 }
 
 @media (max-width: 768px) {
-	.ai-roboticslab-cbse-root .hero-section { margin-top: -20px; }
+	.ai-roboticslab-cbse-root .hero-section { margin-top: -50px; }
 	.ai-roboticslab-cbse-root .hero-text h1 { font-size: 2.4rem; }
+	.ai-roboticslab-cbse-root .hero-visual { min-height: 330px; }
+	.ai-roboticslab-cbse-root .cbse-hero-grid {
+		width: 96%;
+		max-width: 330px;
+		height: auto;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 10px;
+		margin: 0 auto;
+		padding: 4px 0;
+	}
+	.ai-roboticslab-cbse-root .cbse-hero-card--2 {
+		width: 116px;
+		height: 116px;
+		margin-right: 0;
+		--cbse-card2-x: 0.9cm;
+	}
+	.ai-roboticslab-cbse-root .cbse-hero-card--4 {
+		width: 244px;
+		height: 206px;
+		--cbse-card4-x: -0.9cm;
+	}
+	.ai-roboticslab-cbse-root .cbse-dots { width: 96px; height: 96px; box-shadow: 0 0 0 12px rgba(15, 118, 110, 0.12), 0 0 0 24px rgba(249, 115, 22, 0.12); }
+	.ai-roboticslab-cbse-root .cbse-dots--left { left: 28px; top: 20px; }
+	.ai-roboticslab-cbse-root .cbse-dots--right { right: -2px; top: 132px; }
 	.ai-roboticslab-cbse-root .section-heading { font-size: 2rem; }
 	.ai-roboticslab-cbse-root .floating-badge { display: none !important; }
 	.ai-roboticslab-cbse-root .floating-cta { right: 15px; bottom: 15px; padding: 12px 18px; }
@@ -1319,7 +1318,41 @@
 		display: none !important;
 	}
 	.ai-roboticslab-cbse-root .contact-grid { grid-template-columns: 1fr; gap: 30px; }
-	.ai-roboticslab-cbse-root .stats-grid { padding: 30px; }
+	.ai-roboticslab-cbse-root .stats-grid {
+		padding: 20px 16px;
+		gap: 12px;
+		flex-direction: column;
+		align-items: center;
+	}
+	.ai-roboticslab-cbse-root .stat-item {
+		width: 100%;
+		max-width: 100%;
+		text-align: center;
+		flex: 0 1 auto;
+		position: relative;
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
+	.ai-roboticslab-cbse-root .stat-item:last-child {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+	.ai-roboticslab-cbse-root .stat-item h2 {
+		line-height: 1.1;
+		display: block;
+		margin-bottom: 0;
+	}
+	.ai-roboticslab-cbse-root .stat-item h2 .counter,
+	.ai-roboticslab-cbse-root .stat-item h2 span {
+		display: inline;
+		margin-bottom: 0;
+	}
+	.ai-roboticslab-cbse-root .stat-item p {
+		margin-bottom: 0.75cm;
+	}
+	.ai-roboticslab-cbse-root .stat-item:last-child p {
+		margin-bottom: 0;
+	}
 	.ai-roboticslab-cbse-root .diy-container { flex-direction: column; }
 	.ai-roboticslab-cbse-root .slider-wrapper,
 	.ai-roboticslab-cbse-root .diy-image { height: 250px; min-height: auto; }

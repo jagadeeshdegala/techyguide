@@ -108,15 +108,17 @@
 }
 
 .ai-roboticlab-icse-root .btn-glass {
-	background: rgba(255,255,255,0.15);
-	backdrop-filter: blur(10px);
-	border: 1px solid rgba(255,255,255,0.3);
+	background: #0f766e;
+	backdrop-filter: none;
+	border: 1px solid #0f766e;
 	color: #fff;
 	margin-left: 15px;
+	box-shadow: 0 8px 20px rgba(15, 118, 110, 0.3);
 }
 
 .ai-roboticlab-icse-root .btn-glass:hover {
-	background: rgba(255,255,255,0.25);
+	background: rgba(15, 23, 42, 0.14);
+	color: #0f172a;
 }
 
 .ai-roboticlab-icse-root .btn-outline-dark {
@@ -207,12 +209,16 @@
    ========================================= */
 .ai-roboticlab-icse-root .hero-section {
 	position: relative;
-	min-height: 90vh;
-	background: linear-gradient(to bottom, rgba(0, 130, 115, 0.86) 75%, rgba(255, 255, 255, 0.86) 100%);
-	color: #fff;
+	min-height: 85vh;
+	background: linear-gradient(118deg, #eaf2ff 0%, #eef8f1 48%, #fff4e8 100%);
+	background-attachment: fixed;
+	color: #1f0f10;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	overflow: hidden;
+	padding: 30px 0 0.3cm;
+	margin-top: -1.5cm;
 }
 
 .ai-roboticlab-icse-root .hero-section::after {
@@ -221,8 +227,8 @@
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 150px;
-	background: linear-gradient(to top, #ffffff 0%, transparent 100%);
+	height: 0;
+	background: none;
 	z-index: 2;
 	pointer-events: none;
 }
@@ -231,8 +237,8 @@
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: radial-gradient(circle at 70% 20%, rgba(37, 99, 235, 0.15), transparent 50%);
-	z-index: 0;
+	background: radial-gradient(circle at 76% 20%, rgba(14, 116, 144, 0.16), transparent 55%);
+	z-index: 2;
 }
 
 .ai-roboticlab-icse-root .hero-container {
@@ -241,12 +247,12 @@
 	justify-content: space-between;
 	gap: 50px;
 	position: relative;
-	z-index: 2;
-	padding: 60px 40px 110px;
+	z-index: 3;
+	padding: 40px 40px 0.1cm;
 	max-width: 1200px;
 	margin: 0 auto;
 	width: 100%;
-	margin-top: -1.7cm;
+	margin-top: 0;
 }
 
 .ai-roboticlab-icse-root .hero-text {
@@ -275,7 +281,7 @@
 .ai-roboticlab-icse-root .hero-text h1 {
 	font-size: 3rem;
 	margin-bottom: 25px;
-	color: #fff;
+	color: #0f172a;
 	line-height: 1.1;
 }
 
@@ -284,197 +290,116 @@
 .ai-roboticlab-icse-root .hero-text p {
 	font-size: 1.2rem;
 	margin-bottom: 40px;
-	color: #cbd5e1;
-	font-weight: 300;
+	color: #334155;
+	font-weight: 400;
 }
 
-/* --- ICSE Split-Frame Collage --- */
+.ai-roboticlab-icse-root .hero-btns {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 12px;
+	position: relative;
+	z-index: 4;
+	margin-top: 0;
+}
+
+/* --- Static Hero Gallery (ICSE) --- */
 .ai-roboticlab-icse-root .hero-visual {
 	flex: 1;
 	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 20px 10px;
+	padding: 0;
+	min-height: auto;
+	height: 450px;
 }
 
-.ai-roboticlab-icse-root .icse-hero-collage {
+.ai-roboticlab-icse-root .icse-hero-grid {
 	position: relative;
-	width: 100%;
-	max-width: 440px;
-	height: 460px;
+	width: min(100%, 520px);
+	height: 550px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding: 8px 2px;
+	margin-top: 2.6cm;
 }
 
-/* Top-right image */
-.ai-roboticlab-icse-root .icse-img-frame {
+.ai-roboticlab-icse-root .icse-hero-card {
 	position: absolute;
-	border-radius: 16px;
 	overflow: hidden;
-	box-shadow: 0 20px 50px rgba(0,0,0,0.45);
-	transition: transform 0.4s ease, box-shadow 0.4s ease;
+	box-shadow: 0 18px 38px rgba(0, 0, 0, 0.25);
+	border: 0;
+	background: rgba(255, 255, 255, 0.08);
+	backdrop-filter: none;
+	will-change: transform;
+	transition: box-shadow 0.35s ease;
 }
 
-.ai-roboticlab-icse-root .icse-img-frame:hover {
-	transform: scale(1.03) rotate(0deg) !important;
-	box-shadow: 0 28px 60px rgba(0,0,0,0.55);
+.ai-roboticlab-icse-root .icse-hero-card:hover {
+	transform: none;
+	box-shadow: 0 24px 42px rgba(0, 0, 0, 0.32);
 }
 
-.ai-roboticlab-icse-root .icse-img-frame img {
+.ai-roboticlab-icse-root .icse-hero-card img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	display: block;
 }
 
-.ai-roboticlab-icse-root .icse-img-frame--left {
-	top: 0;
-	left: 0;
-	width: 72%;
-	height: 260px;
-	transform: rotate(-3deg);
+.ai-roboticlab-icse-root .icse-hero-card--1 {
+	top: 0.5cm;
+	left: 1cm;
+	width: clamp(195px, 38.8vw, 221px);
+	height: clamp(175px, 28.8vw, 191px);
+	animation: icseHeroFloatCard1 4s ease-in-out infinite;
 	z-index: 2;
-	border: 3px solid rgba(255,255,255,0.25);
-	animation: icseFloatA 5s ease-in-out infinite;
+	border-radius: 44% 56% 63% 37% / 42% 46% 54% 58%;
+	clip-path: none;
 }
 
-.ai-roboticlab-icse-root .icse-img-frame--right {
-	bottom: 0;
-	right: 0;
-	width: 72%;
-	height: 240px;
-	transform: rotate(3deg);
-	z-index: 3;
-	border: 3px solid rgba(255,255,255,0.2);
-	animation: icseFloatB 5s ease-in-out infinite;
+.ai-roboticlab-icse-root .icse-hero-card--3 {
+	top: 1cm;
+	right: 0cm;
+	width: clamp(162px, 40.5vw, 252px);
+	height: clamp(144px, 36vw, 216px);
+	animation: icseHeroFloatCard3 4s ease-in-out infinite;
+	animation-delay: 0.3s;
+	z-index: 2;
+	border-radius: 35% 65% 40% 60% / 40% 58% 42% 60%;
+	clip-path: none;
 }
 
-/* Label on each image */
-.ai-roboticlab-icse-root .icse-frame-label {
-	position: absolute;
-	bottom: 12px;
-	left: 12px;
-	background: rgba(0,0,0,0.55);
-	backdrop-filter: blur(6px);
-	color: #fff;
-	font-size: 0.75rem;
-	font-weight: 700;
-	padding: 4px 12px;
-	border-radius: 20px;
-	border-left: 3px solid var(--accent);
-	letter-spacing: 0.5px;
-}
-
-/* Floating badge */
-.ai-roboticlab-icse-root .icse-collage-badge {
-	position: absolute;
-	bottom: 55px;
-	right: 5px;
-	background: #fff;
-	color: var(--dark);
-	padding: 12px 16px;
-	border-radius: 14px;
-	box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-	display: flex;
-	align-items: center;
-	gap: 12px;
-	z-index: 5;
-	white-space: nowrap;
-	animation: icseFloat 4s ease-in-out infinite;
-}
-
-.ai-roboticlab-icse-root .icse-collage-badge i { font-size: 1.5rem; color: var(--accent); }
-.ai-roboticlab-icse-root .icse-collage-badge strong { display: block; font-size: 0.95rem; color: var(--dark); }
-.ai-roboticlab-icse-root .icse-collage-badge span { font-size: 0.72rem; color: #64748b; }
-
-/* Pulsing ring behind collage */
-.ai-roboticlab-icse-root .icse-pulse-ring {
-	position: absolute;
-	top: 50%;
+.ai-roboticlab-icse-root .icse-hero-card--4 {
+	bottom: 2cm;
 	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 320px;
-	height: 320px;
-	border-radius: 50%;
-	border: 2px solid rgba(255,255,255,0.15);
-	z-index: 1;
-	animation: icsePulse 3s ease-out infinite;
+	width: clamp(180px, 43.2vw, 281px);
+	height: clamp(158px, 36vw, 245px);
+	animation: icseHeroFloatCard4 4s ease-in-out infinite;
+	animation-delay: 0.6s;
+	z-index: 2;
+	border-radius: 26% 74% 46% 54% / 30% 36% 64% 70%;
+	clip-path: none;
+	transform: translateX(-50%);
 }
 
-/* Floating particles */
-.ai-roboticlab-icse-root .icse-particle {
-	position: absolute;
-	border-radius: 50%;
-	z-index: 1;
-}
-
-.ai-roboticlab-icse-root .icse-particle--1 {
-	width: 12px;
-	height: 12px;
-	background: var(--accent);
-	top: 20px;
-	right: 30px;
-	animation: icseOrbit 4s ease-in-out infinite;
-	opacity: 0.9;
-}
-
-.ai-roboticlab-icse-root .icse-particle--2 {
-	width: 8px;
-	height: 8px;
-	background: rgba(255,255,255,0.7);
-	bottom: 80px;
-	left: 10px;
-	animation: icseOrbit 6s ease-in-out infinite reverse;
-	opacity: 0.8;
-}
-
-.ai-roboticlab-icse-root .icse-particle--3 {
-	width: 10px;
-	height: 10px;
-	background: rgba(0,200,170,0.8);
-	top: 50%;
-	right: -5px;
-	animation: icseOrbit 5s ease-in-out infinite 1s;
-	opacity: 0.85;
-}
-
-/* Dot grid decoration */
-.ai-roboticlab-icse-root .icse-hero-collage::before {
-	content: "";
-	position: absolute;
-	bottom: -15px;
-	left: -15px;
-	width: 90px;
-	height: 90px;
-	background-image: radial-gradient(circle, rgba(255,255,255,0.45) 1.5px, transparent 1.5px);
-	background-size: 12px 12px;
-	z-index: 1;
-	opacity: 0.7;
-}
-
-@keyframes icseFloatA {
-	0%, 100% { transform: rotate(-3deg) translateY(0); }
-	50% { transform: rotate(-3deg) translateY(-8px); }
-}
-
-@keyframes icseFloatB {
-	0%, 100% { transform: rotate(3deg) translateY(0); }
-	50% { transform: rotate(3deg) translateY(8px); }
-}
-
-@keyframes icseFloat {
+@keyframes icseHeroFloatCard1 {
 	0%, 100% { transform: translateY(0); }
-	50% { transform: translateY(-10px); }
+	50% { transform: translateY(-20px); }
 }
 
-@keyframes icsePulse {
-	0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.6; }
-	70% { transform: translate(-50%, -50%) scale(1.3); opacity: 0; }
-	100% { transform: translate(-50%, -50%) scale(1.3); opacity: 0; }
+@keyframes icseHeroFloatCard3 {
+	0%, 100% { transform: translateY(0); }
+	50% { transform: translateY(-20px); }
 }
 
-@keyframes icseOrbit {
-	0%, 100% { transform: translateY(0) scale(1); }
-	50% { transform: translateY(-14px) scale(1.2); }
+@keyframes icseHeroFloatCard4 {
+	0%, 100% { transform: translateX(-50%) translateY(0); }
+	50% { transform: translateX(-50%) translateY(-20px); }
 }
 
 /* =========================================
@@ -1347,6 +1272,7 @@
 .ai-roboticlab-icse-root .form-group { margin-bottom: 20px; }
 .ai-roboticlab-icse-root .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
 .ai-roboticlab-icse-root .form-group input,
+
 .ai-roboticlab-icse-root .form-group select { 
 	width: 100%; 
 	padding: 12px; 
@@ -1355,7 +1281,6 @@
 	font-family: inherit; 
 	font-size: 1rem;
 }
-
 
 /* =========================================
    16. ANIMATIONS & RESPONSIVE
@@ -1366,6 +1291,18 @@
 .ai-roboticlab-icse-root .show { opacity: 1; transform: translate(0); }
 
 @media (max-width: 900px) {
+	.ai-roboticlab-icse-root .hero-container { flex-direction: column; gap: 40px; text-align: center; padding: 50px 30px 100px; }
+	.ai-roboticlab-icse-root .hero-section { background: linear-gradient(118deg, #eaf2ff 0%, #eef8f1 48%, #fff4e8 100%); }
+	.ai-roboticlab-icse-root .hero-text, .ai-roboticlab-icse-root .hero-visual { width: 100%; }
+	.ai-roboticlab-icse-root .hero-visual { padding: 0; justify-content: center; min-height: 460px; }
+	.ai-roboticlab-icse-root .icse-hero-grid { width: 92%; max-width: 460px; height: 450px; margin: 0 auto; position: relative; }
+	.ai-roboticlab-icse-root .icse-hero-card--1 { width: 153px; height: 153px; top: 0; left: calc(20px + 1cm); }
+	.ai-roboticlab-icse-root .icse-hero-card--3 { width: 198px; height: 162px; top: 0; right: calc(20px + 1cm); }
+	.ai-roboticlab-icse-root .icse-hero-card--4 { width: 245px; height: 209px; bottom: 3cm; left: 50%; transform: translateX(-50%); }
+	.ai-roboticlab-icse-root .brand-tag { margin-left: auto; margin-right: auto; }
+	.ai-roboticlab-icse-root .hero-text h1 { font-size: 2.8rem; color: #0f172a; }
+	.ai-roboticlab-icse-root .hero-text p { font-size: 1.05rem; color: #334155; }
+	.ai-roboticlab-icse-root .hero-btns { display: flex; flex-direction: row; justify-content: center; gap: 12px; }
 	.ai-roboticlab-icse-root .support-wrapper { flex-direction: column; }
 	.ai-roboticlab-icse-root .c2,
 	.ai-roboticlab-icse-root .c3 { margin-top: 0; }
@@ -1373,26 +1310,89 @@
 }
 
 @media (max-width: 768px) {
-	.ai-roboticlab-icse-root .hero-section { margin-top: -20px; }
-	.ai-roboticlab-icse-root .hero-container { flex-direction: column; text-align: center; padding: 50px 30px 100px; }
-	.ai-roboticlab-icse-root .hero-text h1 { font-size: 2rem; }
-		.ai-roboticlab-icse-root .hero-text  { margin-top: 1cm; }
-
+	.ai-roboticlab-icse-root .hero-section { margin-top: -20px; background: linear-gradient(118deg, #eaf2ff 0%, #eef8f1 48%, #fff4e8 100%); }
+	.ai-roboticlab-icse-root .hero-text h1 { font-size: 2.4rem; color: #0f172a; }
+	.ai-roboticlab-icse-root .hero-text p { color: #334155; }
+	.ai-roboticlab-icse-root .hero-visual { min-height: 350px; }
+	.ai-roboticlab-icse-root .icse-hero-grid {
+		width: 95%;
+		max-width: 320px;
+		height: 350px;
+		position: relative;
+		display: block;
+		margin: 0 auto;
+		padding: 0;
+	}
+	.ai-roboticlab-icse-root .icse-hero-card--1 {
+		position: absolute;
+		width: 137px;
+		height: 134px;
+		top: 0;
+		left: 22px;
+		animation: icseHeroFloatCard1 4s ease-in-out infinite;
+	}
+	.ai-roboticlab-icse-root .icse-hero-card--3 {
+		position: absolute;
+		width: 162px;
+		height: 146px;
+		top: 0;
+		right: 0px;
+		animation: icseHeroFloatCard3 4s ease-in-out infinite;
+		animation-delay: 0.3s;
+	}
+	.ai-roboticlab-icse-root .icse-hero-card--4 {
+		position: absolute;
+		width: 218px;
+		height: 176px;
+		bottom: 1.2cm;
+		left: 50%;
+		transform: translateX(-50%);
+		animation: icseHeroFloatCard4 4s ease-in-out infinite;
+		animation-delay: 0.6s;
+	}
+	.ai-roboticlab-icse-root .hero-container { flex-direction: column; text-align: center; padding: 30px 15px 60px; }
 	.ai-roboticlab-icse-root .hero-btns { justify-content: center; margin-bottom: 20px; }
-	.ai-roboticlab-icse-root .hero-visual { width: 100%; min-height: 380px; padding: 0; }
-	.ai-roboticlab-icse-root .icse-hero-collage { max-width: 340px; height: 380px; margin: 0 auto; }
-	.ai-roboticlab-icse-root .icse-img-frame { display: block; opacity: 1; }
-	.ai-roboticlab-icse-root .icse-img-frame img { width: 100%; height: 100%; display: block; }
-	.ai-roboticlab-icse-root .icse-img-frame--left { height: 210px; }
-	.ai-roboticlab-icse-root .icse-img-frame--right { height: 195px; }
-	.ai-roboticlab-icse-root .icse-collage-badge { display: none; }
     
 	.ai-roboticlab-icse-root .guidelines-grid { grid-template-columns: 1fr; }
 	.ai-roboticlab-icse-root .guide-card { flex-direction: column; }
 	.ai-roboticlab-icse-root .guide-img { width: 100%; height: 200px; }
 	.ai-roboticlab-icse-root .guide-content { width: 100%; padding: 25px; }
 
-	.ai-roboticlab-icse-root .stats-grid { padding: 30px; }
+	.ai-roboticlab-icse-root .stats-grid {
+		padding: 20px 16px;
+		gap: 12px;
+		flex-direction: column;
+		align-items: center;
+	}
+	.ai-roboticlab-icse-root .stat-item {
+		width: 100%;
+		max-width: 100%;
+		text-align: center;
+		flex: 0 1 auto;
+		position: relative;
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
+	.ai-roboticlab-icse-root .stat-item:last-child {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+	.ai-roboticlab-icse-root .stat-item h2 {
+		line-height: 1.1;
+		display: block;
+		margin-bottom: 0;
+	}
+	.ai-roboticlab-icse-root .stat-item h2 .counter,
+	.ai-roboticlab-icse-root .stat-item h2 span {
+		display: inline;
+		margin-bottom: 0;
+	}
+	.ai-roboticlab-icse-root .stat-item p {
+		margin-bottom: 0.75cm;
+	}
+	.ai-roboticlab-icse-root .stat-item:last-child p {
+		margin-bottom: 0;
+	}
     
 	.ai-roboticlab-icse-root .gallery-grid { 
 		grid-template-columns: 1fr !important; 

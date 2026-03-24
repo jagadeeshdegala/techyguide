@@ -8,7 +8,7 @@ import GalleryImg4 from '../assets/ForSchoolsStemTinkeringLabImages/IMG202412261
 import GalleryImg5 from '../assets/ForSchoolsStemTinkeringLabImages/IMG20251016105208.jpg';
 import GalleryImg6 from '../assets/ForSchoolsStemTinkeringLabImages/IMG20251017160909.jpg';
 //hero section images
-import herosectionimg from '../assets/ForSchoolsStemTinkeringLabImages/Hero section - STEM Tinkering lab.jpg';
+// import herosectionimg from '../assets/ForSchoolsStemTinkeringLabImages/Hero section - STEM Tinkering lab.jpg';
 //WHY STEM TINKERING LABS? images
 import whystemTinkeringLab1 from '../assets/ForSchoolsStemTinkeringLabImages/WHY STEM TINKERING LABS_ - 1.jpg';
 import whystemTinkeringLab2 from '../assets/ForSchoolsStemTinkeringLabImages/WHY STEM TINKERING LABS_ - 2.jpg';
@@ -162,7 +162,28 @@ function StemTinkeringLab() {
       accordionCleanups.push(() => header.removeEventListener("click", handleAccordionClick));
     });
 
-    // 4b. Smooth scroll for all links to contact section
+    // 4b. Smooth scroll for hero section CTA links
+    const heroNavLinks = document.querySelectorAll('.stem-tinkering-lab-root .hero-btns a[href^="#"]');
+
+    heroNavLinks.forEach((link) => {
+      const handleHeroNavClick = (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href')?.replace('#', '');
+        if (!targetId) return;
+
+        const target = document.getElementById(targetId);
+        if (!target) return;
+
+        const headerOffset = 113;
+        const targetY = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: targetY, behavior: 'smooth' });
+      };
+
+      link.addEventListener('click', handleHeroNavClick);
+      anchorCleanups.push(() => link.removeEventListener('click', handleHeroNavClick));
+    });
+
+    // 4c. Smooth scroll for all links to contact section
     const contactLinks = document.querySelectorAll('.stem-tinkering-lab-root a[href="#contact-section"]');
 
     contactLinks.forEach((link) => {
@@ -263,22 +284,12 @@ function StemTinkeringLab() {
               <img src={logoImg} alt="TechyGuide Logo" className="hero-logo" />
               <span>NEP 2020 Aligned STEM Tinkering Labs for Schools </span>
             </div>
-            <h1>Igniting Young Minds with <br /><span className="highlight-text">STEM Tinkering Labs</span></h1>
+            <h1>Igniting Young Minds with <span className="highlight-text">STEM Tinkering Labs</span></h1>
             <p>A space for "Making, Breaking, and Creating." Empowering students with hands-on skills in <strong>Robotics, IoT, 3D Printing, and AI</strong> to solve real-world problems.</p>
             <div className="hero-btns">
               <a href="#packages" className="btn btn-orange">Setup Lab</a>
               <a href="#curriculum" className="btn btn-glass">Curriculum</a>
             </div>
-          </div>
-          <div className="hero-visual hidden-right">
-            <div className="floating-badge">
-              <i className="fas fa-tools"></i>
-              <div>
-                <strong>Hands-on Learning</strong>
-                <span>Innovation Hub</span>
-              </div>
-            </div>
-            <img src={herosectionimg} alt="Students learning robotics and electronics in TechyGuide STEM Tinkering Lab in India " className="main-hero-img" />
           </div>
         </div>
       </section>
