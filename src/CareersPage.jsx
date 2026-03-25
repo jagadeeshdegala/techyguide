@@ -277,10 +277,13 @@ function CareersPage() {
         </div>
         <div className="container tg-careers-hero-content">
           <p className="tg-careers-kicker">Careers at TechyGuide</p>
+          <br className="tg-careers-mobile-br" />
           <h1>Build the Future of STEM Education with TechyGuide</h1>
+          <br className="tg-careers-mobile-br" />
           <p className="tg-careers-subheading">
             Join a passionate team of innovators, robotics engineers, and educators shaping the next generation of learners.
           </p>
+          <br className="tg-careers-mobile-br" />
           <div className="tg-careers-hero-actions">
             <button type="button" className="tg-careers-btn tg-careers-btn-primary" onClick={scrollToOpenings}>
               View Open Positions

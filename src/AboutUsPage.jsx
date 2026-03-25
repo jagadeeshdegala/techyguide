@@ -50,8 +50,8 @@ function AboutUsPage() {
 			<section
 				className="hero"
 				style={{
-					backgroundImage:
-						`linear-gradient(to bottom, rgba(0, 0, 0, 0.46) 100%, rgba(94, 221, 101, 0.86) 100%), url(${heroImage})`,
+					'--about-hero-image': `url(${heroImage})`,
+					'--about-hero-mobile-image': `url(${workspace2})`,
 				}}
 			>
 				<div className="hero-content">

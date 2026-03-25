@@ -57,7 +57,7 @@
 .shop-page-wrapper .product-card:hover .card-img-box img { transform: scale(1.05); }
 .shop-page-wrapper .card-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease; z-index: 2; }
 .shop-page-wrapper .product-card:hover .card-overlay { opacity: 1; }
-.shop-page-wrapper .view-btn { background: var(--shop-primary-color); color: white; padding: 12px 24px; border-radius: 30px; font-weight: 600; font-size: 14px; transform: translateY(20px); transition: transform 0.3s; box-shadow: 0 10px 15px rgba(26, 35, 126, 0.3); border: none; }
+.shop-page-wrapper .view-btn { background: #ffffff; color: var(--shop-primary-color); padding: 12px 24px; border-radius: 30px; font-weight: 600; font-size: 14px; transform: translateY(20px); transition: transform 0.3s; box-shadow: 0 10px 15px rgba(26, 35, 126, 0.3); border: none; }
 .shop-page-wrapper .product-card:hover .view-btn { transform: translateY(0); }
 .shop-page-wrapper .card-details { padding: 20px; z-index: 3; position: relative; background: white; }
 .shop-page-wrapper .card-title { font-size: 16px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
@@ -69,6 +69,16 @@
 .shop-page-wrapper .course-card-badge-level { background: #f3e5f5; color: #6a1b9a; }
 .shop-page-wrapper .course-card-badge-mode { background: #e8f5e9; color: #1b5e20; }
 .shop-page-wrapper .course-short-description { font-size: 13px; color: #666; margin-bottom: 10px; line-height: 1.4; }
+.shop-page-wrapper .course-price-rating-row,
+.shop-page-wrapper .product-price-rating-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.shop-page-wrapper .course-card-rating { display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 600; color: #1f2937; white-space: nowrap; }
+.shop-page-wrapper .course-card-rating-star { color: #f59e0b; line-height: 1; }
+.shop-page-wrapper .course-card-rating-value { color: var(--shop-primary-color); }
+.shop-page-wrapper .course-card-rating-text { color: #6b7280; font-weight: 500; }
+.shop-page-wrapper .product-card-rating { display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 600; color: #1f2937; white-space: nowrap; }
+.shop-page-wrapper .product-card-rating-star { color: #f59e0b; line-height: 1; }
+.shop-page-wrapper .product-card-rating-value { color: var(--shop-primary-color); }
+.shop-page-wrapper .product-card-rating-text { color: #6b7280; font-weight: 500; }
 
 .shop-page-wrapper .course-card-image,
 .shop-page-wrapper .course-slider-image {
@@ -87,6 +97,10 @@
     object-fit: contain;
     object-position: center;
     border-radius: inherit;
+}
+
+.shop-page-wrapper .course-card-image img.game-development-course-cover {
+    object-fit: cover;
 }
 
 /* Modal Styles */

@@ -21,7 +21,7 @@
     box-sizing: border-box;
 }
 
-.impact-program *,
+.impact-program *:not(img):not(video):not(canvas):not(i):not(svg):not(path),
 .impact-program *::before,
 .impact-program *::after {
     all: unset;
@@ -45,6 +45,13 @@
     height: auto;
 }
 
+/* Keep replaced elements out of overflow:visible to avoid console warnings. */
+.impact-program img,
+.impact-program video,
+.impact-program canvas {
+    overflow: clip;
+}
+
 .impact-program section {
     display: block;
 }
@@ -60,6 +67,7 @@
 .impact-program h1,
 .impact-program h2,
 .impact-program h3,
+.impact-program h4,
 .impact-program p {
     display: block;
 }
@@ -72,6 +80,14 @@
     -webkit-font-smoothing: antialiased;
 }
 
+.impact-program i.fa-solid,
+.impact-program i.fa-regular,
+.impact-program i.fa-brands,
+.impact-program i[class*="fa-"] {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+}
+
 .impact-program .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -80,7 +96,8 @@
 
 .impact-program h1,
 .impact-program h2,
-.impact-program h3 {
+.impact-program h3,
+.impact-program h4 {
     font-weight: 700;
 }
 
@@ -91,62 +108,73 @@
 }
 
 /* HERO SECTION */
-.impact-program .hero {
+.impact-program .impact-hero {
     position: relative;
-    height: 90vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     text-align: center;
     z-index: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: #0b2d46;
     color: #ffffff;
 }
 
-.impact-program .hero-video {
+.impact-program .impact-hero-bg-video {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    display: block;
     object-fit: cover;
-    object-position: center center;
+    object-position: center;
     pointer-events: none;
     z-index: 0;
 }
 
-.impact-program .hero .container {
+.impact-program .impact-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.28) 0%,
+      rgba(0, 0, 0, 0.52) 60%,
+      rgba(0, 0, 0, 0.56) 100%
+    );
+    z-index: 1;
+}
+
+.impact-program .impact-hero-content {
     position: relative;
     z-index: 2;
 }
 
-.impact-program .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 1;
-}
-
-.impact-program .hero-content {
+.impact-program .impact-hero .hero-content,
+.impact-program .impact-hero-content {
     max-width: 800px;
     margin: 0 auto;
-    z-index: 2;
 }
 
-.impact-program .hero h1 {
+.impact-program .impact-hero h1 {
     font-size: 3.5rem;
     margin: 20px 0;
     text-shadow: 0 2px 10px rgba(0,0,0,0.5);
     color: #008273;
 }
 
-.impact-program .hero p {
+/* Keep the requested main section headings strongly bold. */
+.impact-program .impact-hero h1,
+.impact-program .mission h2,
+.impact-program .shaping-future h2,
+.impact-program .projects .section-title,
+.impact-program .offerings .section-title,
+.impact-program .gallery .section-title,
+.impact-program .testimonials h2,
+.impact-program .contact h2 {
+    font-weight: 800;
+}
+
+.impact-program .impact-hero p {
     font-size: 1.2rem;
     margin-bottom: 30px;
     color: #ffffff;
@@ -901,24 +929,25 @@
 }
 
 @media (max-width: 768px) {
-    .impact-program .hero {
+    .impact-program .impact-hero {
         height: auto;
         min-height: 100vh;
         padding: 40px 0;
         margin-top: -20px;
     }
     
-    .impact-program .hero .container {
+    .impact-program .impact-hero-content {
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
     }
     
-    .impact-program .hero-content {
+    .impact-program .impact-hero-content {
         padding: 40px 20px;
     }
     
-    .impact-program .hero h1 {
+    .impact-program .impact-hero h1 {
         font-size: 2.2rem;
     }
     

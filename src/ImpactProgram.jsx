@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./ImpactProgram.css";
 import FooterSection from "./FooterSection";
 import herobgvideo from "./assets/impactImages/Impact program - Hero section.mp4";
@@ -46,6 +46,7 @@ function ImpactProgram() {
     { src: images.gallery9, alt: "Impact program gallery image 9" },
   ];
   const [lightbox, setLightbox] = useState({ open: false, src: "", alt: "" });
+  const heroVideoRef = useRef(null);
 
   // Set SEO metadata for Impact Program page
   useEffect(() => {
@@ -75,28 +76,53 @@ function ImpactProgram() {
     }
   }, []);
 
+  useEffect(() => {
+    const heroVideo = heroVideoRef.current;
+    if (!heroVideo) {
+      return;
+    }
+
+    const playVideo = () => {
+      heroVideo.muted = true;
+      heroVideo.defaultMuted = true;
+      heroVideo.play().catch(() => {});
+    };
+
+    heroVideo.addEventListener("loadeddata", playVideo);
+    heroVideo.addEventListener("canplay", playVideo);
+    heroVideo.load();
+    playVideo();
+
+    return () => {
+      heroVideo.removeEventListener("loadeddata", playVideo);
+      heroVideo.removeEventListener("canplay", playVideo);
+    };
+  }, []);
+
   return (
     <>
       <div className="impact-program">
         <section
-          className="hero"
+          className="impact-hero"
         >
           <video
-            className="hero-video"
+            ref={heroVideoRef}
+            id="impact-hero-video"
+            className="impact-hero-bg-video"
+            src={herobgvideo}
             autoPlay
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="auto"
             aria-hidden="true"
           >
-            <source src={herobgvideo} type="video/mp4" />     
-            </video>
-                 <div className="overlay" aria-hidden="true" />
+            <source src={herobgvideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div className="impact-hero-overlay" aria-hidden="true" />
 
-            <div className="container">
-            
-            <div className="hero-content centered-content">
+          <div className="container impact-hero-content">
               <span className="badge">Government & CSR Initiatives</span>
               <h1>
                 Impact That Shapes <span className="">Tomorrow</span>
@@ -119,7 +145,6 @@ function ImpactProgram() {
                   <span>Students</span>
                 </div>
               </div>
-            </div>
           </div>
         </section>
 

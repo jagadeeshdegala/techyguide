@@ -9,16 +9,14 @@ import whychooseTechyguide4 from './assets/franchisepageimages/Why Choose TechyG
 
 
 import studentsImg from './assets/franchisepageimages/students.jpg';
-import testimonial1 from './assets/franchisepageimages/Partner Testimonial 1.png';
-import testimonial2 from './assets/franchisepageimages/Partner Testimonial 2.png';
-import testimonial3 from './assets/franchisepageimages/Partner Testimonial 3.png';
-import testimonial4 from './assets/franchisepageimages/Partner Testimonial 4.png';
-import testimonial5 from './assets/franchisepageimages/Partner Testimonial 5.png';
-import testimonial6 from './assets/franchisepageimages/Partner Testimonial 6.png';
-import testimonial7 from './assets/franchisepageimages/Partner Testimonial 7.png';
-import testimonial8 from './assets/franchisepageimages/Partner Testimonial 8.png';
-import testimonial9 from './assets/franchisepageimages/Partner Testimonial 9.png';
-import testimonial10 from './assets/franchisepageimages/Partner Testimonial 10.png';
+import testimonial1 from './assets/franchisepageimages/Partner Testimonial_1.png';
+import testimonial2 from './assets/franchisepageimages/Partner Testimonial_2.png';
+import testimonial3 from './assets/franchisepageimages/Partner Testimonial_3.png';
+import testimonial4 from './assets/franchisepageimages/Partner Testimonial_4.png';
+import testimonial5 from './assets/franchisepageimages/Partner Testimonial_5.png';
+import testimonial6 from './assets/franchisepageimages/Partner Testimonial_6.png';
+import testimonial7 from './assets/franchisepageimages/Partner Testimonial_7.png';
+
 // What Will You Get? section images
 import WhatWillYouGet1 from './assets/FranchisePageImages/What Will You Get_ - 1.jpg';
 import WhatWillYouGet2 from './assets/FranchisePageImages/What Will You Get_ - 2.jpg';
@@ -552,9 +550,7 @@ function FranchisePage() {
                             <div className="story-item"><img src={testimonial5} alt="Story" /></div>
                             <div className="story-item"><img src={testimonial6} alt="Story" /></div>
                             <div className="story-item"><img src={testimonial7} alt="Story" /></div>
-                            <div className="story-item"><img src={testimonial8} alt="Story" /></div>
-                            <div className="story-item"><img src={testimonial9} alt="Story" /></div>
-                            <div className="story-item"><img src={testimonial10} alt="Story" /></div>
+                           
 
                              <div className="story-item"><img src={testimonial1} alt="Story" /></div>
                             <div className="story-item"><img src={testimonial2} alt="Story" /></div>
@@ -563,9 +559,7 @@ function FranchisePage() {
                             <div className="story-item"><img src={testimonial5} alt="Story" /></div>
                             <div className="story-item"><img src={testimonial6} alt="Story" /></div>
                             <div className="story-item"><img src={testimonial7} alt="Story" /></div>
-                            <div className="story-item"><img src={testimonial8} alt="Story" /></div>
-                            <div className="story-item"><img src={testimonial9} alt="Story" /></div>
-                            <div className="story-item"><img src={testimonial10} alt="Story" /></div>
+                           
                         </div>
                     </div>
                 </div>

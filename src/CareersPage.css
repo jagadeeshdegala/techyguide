@@ -81,6 +81,10 @@
   max-width: 830px;
 }
 
+.tg-careers-mobile-br {
+  display: none;
+}
+
 .tg-careers-hero h1 {
   color: #fff;
   font-size: clamp(2rem, 5.2vw, 3.6rem);
@@ -442,6 +446,13 @@
 
   .tg-careers-hero {
     padding: 95px 0 78px;
+    height: 56vh;
+  }
+
+  .tg-careers-mobile-br {
+    display: block;
+    line-height: 1;
+    margin-top: 0.35rem;
   }
 
   .tg-careers-section {

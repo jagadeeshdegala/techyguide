@@ -1,18 +1,21 @@
 // --- New Courses Images (Manual Import) ---
-import gameDevelopmentCourse1 from './assets/ShopPageImages/coursesCategoryImages/App Development Course-01.png';
-import gameDevelopmentCourse2 from './assets/ShopPageImages/coursesCategoryImages/App Development Course-01.png';
-import gameDevelopmentCourse3 from './assets/ShopPageImages/coursesCategoryImages/App Development Course-01.png';
-import gameDevelopmentCourse4 from './assets/ShopPageImages/coursesCategoryImages/App Development Course-01.png';
+import gameDevelopmentCourse1 from './assets/ShopPageImages/coursesCategoryImages/gameDevelopmentCourse-1.png';
+import gameDevelopmentCourse2 from './assets/ShopPageImages/coursesCategoryImages/gameDevelopmentCourse-2.png';
+import gameDevelopmentCourse3 from './assets/ShopPageImages/coursesCategoryImages/gameDevelopmentCourse-3.png';
+import gameDevelopmentCourse4 from './assets/ShopPageImages/coursesCategoryImages/gameDevelopmentCourse-4.png';
 
-import electronicsCourse1 from './assets/ShopPageImages/coursesCategoryImages/App Development Course-01.png';
-import electronicsCourse2 from './assets/ShopPageImages/coursesCategoryImages/App Development Course-01.png';
-import electronicsCourse3 from './assets/ShopPageImages/coursesCategoryImages/App Development Course-01.png';
-import electronicsCourse4 from './assets/ShopPageImages/coursesCategoryImages/App Development Course-01.png';
+import electronicsCourse1 from './assets/ShopPageImages/coursesCategoryImages/ElectronicsCourse-1.png';
+import electronicsCourse2 from './assets/ShopPageImages/coursesCategoryImages/ElectronicsCourse-2.png';
+import electronicsCourse3 from './assets/ShopPageImages/coursesCategoryImages/ElectronicsCourse-3.png';
+import electronicsCourse4 from './assets/ShopPageImages/coursesCategoryImages/ElectronicsCourse-4.png';
 
-import juniorRoboticsCourse1 from './assets/ShopPageImages/coursesCategoryImages/App Development Course-01.png';
-import juniorRoboticsCourse2 from './assets/ShopPageImages/coursesCategoryImages/App Development Course-01.png';
-import juniorRoboticsCourse3 from './assets/ShopPageImages/coursesCategoryImages/App Development Course-01.png';
-import juniorRoboticsCourse4 from './assets/ShopPageImages/coursesCategoryImages/App Development Course-01.png';
+import juniorRoboticsCourse1 from './assets/ShopPageImages/coursesCategoryImages/JuniorRoboticsCourse-1.png';
+import juniorRoboticsCourse2 from './assets/ShopPageImages/coursesCategoryImages/JuniorRoboticsCourse-2.png';
+import juniorRoboticsCourse3 from './assets/ShopPageImages/coursesCategoryImages/JuniorRoboticsCourse-3.png';
+import juniorRoboticsCourse4 from './assets/ShopPageImages/coursesCategoryImages/JuniorRoboticsCourse-4.png';
+
+
+
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './ShopPage.css';
@@ -647,7 +650,11 @@ function ShopPage() {
                             filteredCourses.map(course => (
                                 <div key={course.id} className="product-card" onClick={() => { setCurrentSliderIndex(0); setCurrentCourse(course); }}>
                                     <div className="card-img-box course-card-image">
-                                        <img src={course.image} alt={course.title} />
+                                        <img
+                                            src={course.image}
+                                            alt={course.title}
+                                            className={course.id === 109 ? 'game-development-course-cover' : ''}
+                                        />
                                         <div className="card-overlay">
                                             <button className="view-btn">View Details</button>
                                         </div>
@@ -660,7 +667,14 @@ function ShopPage() {
                                             <span className="course-card-badge course-card-badge-mode">{course.mode}</span>
                                         </div>
                                         <p className="course-short-description">{course.shortDescription}</p>
-                                        <div className="card-price">{formatPrice(course.price)} <span className="original">{formatPrice(course.originalPrice)}</span></div>
+                                        <div className="course-price-rating-row">
+                                            <div className="card-price">{formatPrice(course.price)} <span className="original">{formatPrice(course.originalPrice)}</span></div>
+                                            <div className="course-card-rating" aria-label={`Course rating ${course.rating} out of 5`}>
+                                                <span className="course-card-rating-star">★</span>
+                                                <span className="course-card-rating-value">{course.rating}</span>
+                                                <span className="course-card-rating-text">/ 5</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             ))
@@ -675,7 +689,14 @@ function ShopPage() {
                                     </div>
                                     <div className="card-details">
                                         <h3 className="card-title">{product.title}</h3>
-                                        <div className="card-price">{formatPrice(product.price)} <span className="original">{formatPrice(product.originalPrice)}</span></div>
+                                        <div className="product-price-rating-row">
+                                            <div className="card-price">{formatPrice(product.price)} <span className="original">{formatPrice(product.originalPrice)}</span></div>
+                                            <div className="product-card-rating" aria-label={`Product rating ${product.rating} out of 5`}>
+                                                <span className="product-card-rating-star">★</span>
+                                                <span className="product-card-rating-value">{product.rating}</span>
+                                                <span className="product-card-rating-text">/ 5</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             ))
