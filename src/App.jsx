@@ -29,6 +29,7 @@ import WorkshopPage from './ForschoolsPages/WorkshopPage.jsx'
 import CoursesPage from './coursesPage.jsx'
 import ShopPage from './ShopPage.jsx'
 import CheckOutPage from './CheckOutPage.jsx'
+import PaymentSuccess from './PaymentSuccess.jsx'
 import PrivacyPolicyPage from './privacyPolicypage.jsx'
 import TeBoT from './productPages/TeBoT.jsx'
 import EBlox from './productPages/E-Blox.jsx'
@@ -90,6 +91,7 @@ function App() {
       <Route path="/courses" element={<CoursesPageWrapper />} />
       <Route path="/shop" element={<ShopPageWrapper />} />
       <Route path="/checkout" element={<CheckOutPage />} />
+      <Route path="/payment-success" element={<PaymentSuccess />} />
       {/* <Route path="/open-learning-library-stem-resources" element={<OpenResourcesWrapper />} /> */}
       {/* <Route path="/open-resources" element={<Navigate to="/open-learning-library-stem-resources" replace />} /> */}
       {/* OpenResources routes commented out -this page is Coming Soon */}

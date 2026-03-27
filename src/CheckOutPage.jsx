@@ -1,9 +1,26 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './CheckOutPage.css';
 
 const CheckOutPage = () => {
 	const navigate = useNavigate();
+	const [email, setEmail] = useState('');
+	const [phone, setPhone] = useState('');
+	const [schoolOrCompany, setSchoolOrCompany] = useState('');
+	const [firstName, setFirstName] = useState('');
+	const [lastName, setLastName] = useState('');
+	const [address, setAddress] = useState('');
+	const [city, setCity] = useState('');
+	const [state, setState] = useState('');
+	const [zip, setZip] = useState('');
+	const [country, setCountry] = useState('India');
+	const [cartItems, setCartItems] = useState([]);
+	const [totalPrice, setTotalPrice] = useState(0);
+	const [loading, setLoading] = useState(false);
+
+	const WOOCOMMERCE_API_BASE = 'https://www.techyguide.in/wp-json/wc/v3';
+	const WOOCOMMERCE_AUTH_HEADER =
+		'Basic ' + btoa('ck_51de42e71566552661f0185fe487ec4fab8a49b8:cs_1f51a8305adee60f107e9253a91aa2b1dbf5838f');
 
   useEffect(() => {
 	const link = document.createElement('link');
@@ -15,6 +32,40 @@ const CheckOutPage = () => {
 	  document.head.removeChild(link);
 	};
   }, []);
+
+  useEffect(() => {
+	const savedData = JSON.parse(localStorage.getItem('checkoutData'));
+
+	if (savedData) {
+	  setEmail(savedData.email || '');
+	  setPhone(savedData.phone || '');
+	  setSchoolOrCompany(savedData.schoolOrCompany || '');
+	  setFirstName(savedData.firstName || '');
+	  setLastName(savedData.lastName || '');
+	  setAddress(savedData.address || '');
+	  setCity(savedData.city || '');
+	  setState(savedData.state || '');
+	  setZip(savedData.zip || '');
+	  setCountry(savedData.country || 'India');
+	}
+  }, []);
+
+  useEffect(() => {
+	const data = {
+	  email,
+	  phone,
+	  schoolOrCompany,
+	  firstName,
+	  lastName,
+	  address,
+	  city,
+	  state,
+	  zip,
+	  country
+	};
+
+	localStorage.setItem('checkoutData', JSON.stringify(data));
+  }, [email, phone, schoolOrCompany, firstName, lastName, address, city, state, zip, country]);
 
   useEffect(() => {
 	let cart = JSON.parse(localStorage.getItem('techyCart')) || [];
@@ -39,6 +90,7 @@ const CheckOutPage = () => {
 
 		let total = 0;
 		orderItemsList.innerHTML = '';
+		setCartItems(cart);
 
 		cart.forEach(item => {
 			total += item.price * item.quantity;
@@ -61,45 +113,127 @@ const CheckOutPage = () => {
 
 		summarySubtotal.innerText = formatPrice(total);
 		summaryTotal.innerText = formatPrice(total);
+		setTotalPrice(total);
 	}
-
-	const paymentCards = Array.from(document.querySelectorAll('.payment-card'));
-	const paymentCardListeners = paymentCards.map(card => {
-	  const handler = () => {
-		paymentCards.forEach(c => c.classList.remove('selected'));
-		card.classList.add('selected');
-	  };
-	  card.addEventListener('click', handler);
-	  return { card, handler };
-	});
-
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		const btn = document.querySelector('.btn-pay');
-		const originalText = btn.innerText;
-		btn.innerText = "Processing...";
-		btn.style.opacity = "0.7";
-		setTimeout(() => {
-			alert("Order Placed Successfully! Thank you for shopping with TechyGuide.");
-			localStorage.removeItem('techyCart');
-			navigate('/shop');
-		}, 2000);
-	};
-
-	checkoutForm.addEventListener('submit', handleSubmit);
 
 	initCheckout();
 
-	return () => {
-	  paymentCardListeners.forEach(({ card, handler }) => {
-		card.removeEventListener('click', handler);
-	  });
-	  checkoutForm.removeEventListener('submit', handleSubmit);
-	};
+	return () => {};
   }, []);
 
+  useEffect(() => {
+	console.log('Checkout Cart Items:', cartItems);
+  }, [cartItems]);
+
+  const validateForm = () => {
+	if (!email || !phone || !firstName || !lastName || !address || !city || !state || !zip || !country) {
+	  alert('Please fill all required fields');
+	  return false;
+	}
+
+	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	if (!emailRegex.test(email)) {
+	  alert('Enter a valid email address');
+	  return false;
+	}
+
+	const phoneDigits = phone.replace(/\D/g, '');
+	if (phoneDigits.length !== 10) {
+	  alert('Enter a valid 10-digit phone number');
+	  return false;
+	}
+
+	return true;
+  };
+
+  const handlePayment = async () => {
+	if (loading) {
+	  return;
+	}
+
+	if (!email || !phone || !firstName || !lastName || !address || !city || !state || !zip) {
+	  alert('Please fill all required fields');
+	  return;
+	}
+
+	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	if (!emailRegex.test(email)) {
+	  alert('Enter a valid email address');
+	  return;
+	}
+
+	const phoneDigits = phone.replace(/\D/g, '');
+	if (phoneDigits.length !== 10) {
+	  alert('Enter a valid 10-digit phone number');
+	  return;
+	}
+
+	if (!cartItems.length || totalPrice <= 0) {
+	  alert('Cart is empty');
+	  return;
+	}
+
+	if (!cartItems.every((item) => item.product_id)) {
+	  alert('Missing product_id in cart');
+	  return;
+	}
+
+	const orderData = {
+	  payment_method: 'razorpay',
+	  payment_method_title: 'Razorpay',
+	  set_paid: false,
+	  billing: {
+		first_name: firstName,
+		last_name: lastName,
+		email: email,
+		phone: phone,
+		address_1: address,
+		city: city,
+		state: state,
+		postcode: zip,
+		country: 'IN'
+	  },
+	  line_items: cartItems.map((item) => ({
+		product_id: item.product_id,
+		quantity: item.quantity || 1
+	  }))
+	};
+
+	try {
+	  setLoading(true);
+
+	  const response = await fetch(`${WOOCOMMERCE_API_BASE}/orders`, {
+		method: 'POST',
+		headers: {
+		  'Content-Type': 'application/json',
+		  Authorization: WOOCOMMERCE_AUTH_HEADER
+		},
+		body: JSON.stringify(orderData)
+	  });
+
+	  const data = await response.json();
+	  console.log('ORDER RESPONSE:', data);
+
+	  if (!response.ok) {
+		setLoading(false);
+		alert(`ERROR: ${data.message || 'Order failed'}`);
+		return;
+	  }
+
+	  if (!data.id) {
+		throw new Error('Order created but order id is missing.');
+	  }
+
+	  window.location.href = `https://www.techyguide.in/checkout/order-pay/${data.id}/?pay_for_order=true&key=${data.order_key}`;
+	} catch (error) {
+	  console.error('Payment Error:', error);
+	  setLoading(false);
+	  alert('Something went wrong');
+	}
+  };
+
   return (
-	<div className="checkout-page-root">
+	<div className="checkout-page-root checkout-page">
 	  <div className="checkout-container">
           
 		  <div className="checkout-left">
@@ -108,83 +242,65 @@ const CheckOutPage = () => {
 				  <h2>Checkout</h2>
 			  </div>
 
-			  <form id="checkoutForm">
+				  <h2 className="checkout-heading">Billing &amp; Shipping Details</h2>
+
+				  <form id="checkoutForm">
 				  <section className="form-section">
 					  <h3>Contact Information</h3>
 					  <div className="form-group">
 						  <label>Email Address</label>
-						  <input type="email" placeholder="you@example.com" required />
+							  <input type="email" placeholder="you@example.com" required value={email} onChange={(e) => setEmail(e.target.value)} />
 					  </div>
-				  </section>
-
-				  <section className="form-section">
-					  <h3>Shipping Address</h3>
+					  <div className="form-group">
+						  <label>Phone Number</label>
+							  <input type="tel" placeholder="+91 98765 43210" required value={phone} onChange={(e) => setPhone(e.target.value)} />
+					  </div>
+				  <div className="form-group">
+					  <label>School or Company <span style={{color: '#999', fontSize: '12px'}}>(Optional)</span></label>
+						  <input type="text" placeholder="e.g., ABC School / TechCorp Inc" value={schoolOrCompany} onChange={(e) => setSchoolOrCompany(e.target.value)} />
+				  </div>
 					  <div className="form-row">
 						  <div className="form-group half">
 							  <label>First Name</label>
-							  <input type="text" placeholder="" required />
+								  <input type="text" placeholder="" required value={firstName} onChange={(e) => setFirstName(e.target.value)} />
 						  </div>
 						  <div className="form-group half">
 							  <label>Last Name</label>
-							  <input type="text" placeholder="" required />
+								  <input type="text" placeholder="" required value={lastName} onChange={(e) => setLastName(e.target.value)} />
 						  </div>
 					  </div>
 					  <div className="form-group">
 						  <label>Address</label>
-						  <input type="text" placeholder="123 Tech Street, Robotics Lab" required />
+							  <input type="text" placeholder="123 Tech Street, Robotics Lab" required value={address} onChange={(e) => setAddress(e.target.value)} />
+					  </div>
+					  <div className="form-group">
+						  <label>Country</label>
+							  <input type="text" required value={country} readOnly />
 					  </div>
 					  <div className="form-row">
 						  <div className="form-group third">
 							  <label>City</label>
-							  <input type="text" placeholder="Bengaluru" required />
+								  <input type="text" placeholder="Bengaluru" required value={city} onChange={(e) => setCity(e.target.value)} />
 						  </div>
 						  <div className="form-group third">
 							  <label>State</label>
-							  <input type="text" placeholder="Karnataka" required />
+								  <input type="text" placeholder="Karnataka" required value={state} onChange={(e) => setState(e.target.value)} />
 						  </div>
 						  <div className="form-group third">
 							  <label>ZIP Code</label>
-							  <input type="text" placeholder="560001" required />
+								  <input type="text" placeholder="560001" required value={zip} onChange={(e) => setZip(e.target.value)} />
 						  </div>
 					  </div>
 				  </section>
 
-				  <section className="form-section">
-					  <h3>Payment Method</h3>
-					  <div className="payment-options">
-						  <div className="payment-card selected">
-							  <div className="radio-circle"></div>
-							  <span>Credit / Debit Card</span>
-						  </div>
-						  <div className="payment-card">
-							  <div className="radio-circle"></div>
-							  <span>UPI / Netbanking</span>
-						  </div>
-						  <div className="payment-card">
-							  <div className="radio-circle"></div>
-							  <span>Cash on Delivery</span>
-						  </div>
-					  </div>
-                      
-					  <div className="card-details-box">
-						  <div className="form-group">
-							  <label>Card Number</label>
-							  <input type="text" placeholder="0000 0000 0000 0000" />
-						  </div>
-						  <div className="form-row">
-							  <div className="form-group half">
-								  <label>Expiry</label>
-								  <input type="text" placeholder="MM / YY" />
-							  </div>
-							  <div className="form-group half">
-								  <label>CVC</label>
-								  <input type="text" placeholder="123" />
-							  </div>
-						  </div>
-					  </div>
-				  </section>
-
-				  <button type="submit" className="btn-pay">Pay &amp; Place Order</button>
+				  <div className="payment-trust-section">
+					  <p>Secure Payment powered by Razorpay</p>
+					  <span>UPI • Cards • Netbanking • Wallets</span>
+				  </div>
+				  <button type="button" className="btn-pay" onClick={handlePayment} disabled={loading}>
+					{loading ? 'Processing...' : 'Proceed to Payment'}
+				  </button>
+				  <p className="payment-note">A secure Razorpay popup will open to complete payment</p>
 			  </form>
 		  </div>
 

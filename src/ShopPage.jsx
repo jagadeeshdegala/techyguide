@@ -140,36 +140,37 @@ import stemBundleCourse4 from './assets/ShopPageImages/coursesCategoryImages/STE
 function ShopPage() {
     const location = useLocation();
     const products = [
-        { id: 1, title: "Robotic Arm Kit", price: 3499, originalPrice: 4299, rating: 4.8, image: RoboticArmKit, description: "An  microcontroller receives control commands from the TechyGuide mobile application via Bluetooth. Each command controls one of the six servo motors, representing different joints of the robotic arm. Servo angles are adjusted incrementally to provide smooth and precise movements. Angle limits are applied to prevent over-rotation and mechanical damage. The system is suitable for pick-and-place tasks, robotics learning, and automation demonstrations.", features: ["This is a four degree of freedom robotic arm capable of picking and placing small objects."," ", "The robotic arm can fit on your table with middle-sized links."," ", "It helps to reach throughout the table and get hold of things without you to move."," ", "It provides with insights into a palletizing robotic manipulator through hands-on experience."," ", "Robotic arm teaches advanced robotics concepts like Motion Planning, Inverse Kinematics, etc."], images: [RoboticArmKit2, RoboticArmKit3, RoboticArmKit4] },
-        { id: 2, title: "3D Pen", price: 799, originalPrice: 1199, rating: 4.9, category: "3D-Pen", image: pen1, description: "3D Pen is a 3D model printed using 3D printer used for educational purpose by students to design and create three-dimensional objects.", features: ["3D Pen is a 3D model printed using 3D printer used for educational purpose by students to design and create three-dimensional objects."], images: [pen2, pen3, pen4] },
-        { id: 3, title: "TechBoT Electronics Kit", price: 899, originalPrice: 1199, rating: 4.8, image: TechBotElectronicsKit1, description: "An  microcontroller receives control commands from the TechyGuide mobile application via Bluetooth. Each command controls one of the six servo motors, representing different joints of the robotic arm. Servo angles are adjusted incrementally to provide smooth and precise movements. Angle limits are applied to prevent over-rotation and mechanical damage. The system is suitable for pick-and-place tasks, robotics learning, and automation demonstrations.", features: ["This is a four degree of freedom robotic arm capable of picking and placing small objects."," ", "The robotic arm can fit on your table with middle-sized links."," ", "It helps to reach throughout the table and get hold of things without you to move."," ", "It provides with insights into a palletizing robotic manipulator through hands-on experience."," ", "Robotic arm teaches advanced robotics concepts like Motion Planning, Inverse Kinematics, etc."], images: [TechBotElectronicsKit2, TechBotElectronicsKit3, TechBotElectronicsKit4] },
-        { id: 4, title: "TechBoT Arduino Kit", price: 2499, originalPrice: 3499, rating: 4.8, image: TechBotArdiunoKit1, description: "An  microcontroller receives control commands from the TechyGuide mobile application via Bluetooth. Each command controls one of the six servo motors, representing different joints of the robotic arm. Servo angles are adjusted incrementally to provide smooth and precise movements. Angle limits are applied to prevent over-rotation and mechanical damage. The system is suitable for pick-and-place tasks, robotics learning, and automation demonstrations.", features: ["This is a four degree of freedom robotic arm capable of picking and placing small objects."," ", "The robotic arm can fit on your table with middle-sized links."," ", "It helps to reach throughout the table and get hold of things without you to move."," ", "It provides with insights into a palletizing robotic manipulator through hands-on experience."," ", "Robotic arm teaches advanced robotics concepts like Motion Planning, Inverse Kinematics, etc."], images: [TechBotArdiunoKit2, TechBotArdiunoKit3, TechBotArdiunoKit4] },
-        { id: 5, title: "TeBoT Champ Kit", price: 6399, originalPrice: 7999, rating: 4.8, image: TeBotChampKit1, description: "An  microcontroller receives control commands from the TechyGuide mobile application via Bluetooth. Each command controls one of the six servo motors, representing different joints of the robotic arm. Servo angles are adjusted incrementally to provide smooth and precise movements. Angle limits are applied to prevent over-rotation and mechanical damage. The system is suitable for pick-and-place tasks, robotics learning, and automation demonstrations.", features: ["This is a four degree of freedom robotic arm capable of picking and placing small objects."," ", "The robotic arm can fit on your table with middle-sized links."," ", "It helps to reach throughout the table and get hold of things without you to move."," ", "It provides with insights into a palletizing robotic manipulator through hands-on experience."," ", "Robotic arm teaches advanced robotics concepts like Motion Planning, Inverse Kinematics, etc."], images: [TeBotChampKit2, TeBotChampKit3, TeBotChampKit4] },
-        { id: 6, title: "TeBoT Basic Kit", price: 5599, originalPrice: 6999, rating: 4.8, image: TeBotBasicKit1, description: "An  microcontroller receives control commands from the TechyGuide mobile application via Bluetooth. Each command controls one of the six servo motors, representing different joints of the robotic arm. Servo angles are adjusted incrementally to provide smooth and precise movements. Angle limits are applied to prevent over-rotation and mechanical damage. The system is suitable for pick-and-place tasks, robotics learning, and automation demonstrations.", features: ["This is a four degree of freedom robotic arm capable of picking and placing small objects."," ", "The robotic arm can fit on your table with middle-sized links."," ", "It helps to reach throughout the table and get hold of things without you to move."," ", "It provides with insights into a palletizing robotic manipulator through hands-on experience."," ", "Robotic arm teaches advanced robotics concepts like Motion Planning, Inverse Kinematics, etc."], images: [TeBotBasicKit2, TeBotBasicKit3, TeBotBasicKit4] },
-        { id: 7, title: "TeBot Advance Kit", price: 6999, originalPrice: 9999, rating: 4.9, image: TeBotAdvanceKit1, description: "TeBot Advance Kit is an ultimate robotics learning solution designed for young innovators. It supports 50+ hands-on projects with structured course materials and integrates multiple sensors for real-world experimentation. The kit includes short-circuit protection and a 1-year manufacturing warranty on the microcontroller for safe and long-term classroom use.", features: ["☑ 50+ Robotics Projects", "☑ Multi-Sensor Integration", "☑ Inbuilt Sensors for Easy Handling", "☑ Short Circuit Protection", "☑ 1-Year Microcontroller Warranty", "☑ Reusable & Modular Components"], images: [TeBotAdvanceKit2, TeBotAdvanceKit3, TeBotAdvanceKit4] },
-        { id: 8, title: "I-BoT Advance Kit", price: 7599, originalPrice: 9999, rating: 4.6, image: IBotAdvanceKit1, description: "I-BoT Advance Kit is a premium robotics platform supporting 100+ diverse projects. It integrates seamlessly with multiple sensors and is suitable for Robotics, IoT, and AI-based applications. Designed with advanced circuitry protection for reliable performance.", features: ["☑ 100+ Advanced Projects", "☑ AI & IoT Compatibility", "☑ Multi-Sensor Integration", "☑ Advanced Circuit Protection", "☑ Inbuilt Sensors", "☑ 1-Year Warranty"], images: [IBotAdvanceKit2, IBotAdvanceKit3, IBotAdvanceKit4] },
-        { id: 9, title: "I-BoT Starter Kit", price: 6399, originalPrice: 7999, rating: 4.8, image: IBotStarterKit1, description: "I-BoT Starter Kit introduces students to robotics fundamentals through 20+ guided projects. It supports Robotics, IoT, and AI learning while offering modular configuration and easy sensor integration.", features: ["☑ 20+ Guided Projects", "☑ Modular Design", "☑ Sensor Integration", "☑ Short Circuit Protection", "☑ Beginner Friendly", "☑ Robotics, IoT & AI Support"], images: [IBotStarterKit2, IBotStarterKit3, IBotStarterKit4] },
-        { id: 10, title: "E-Blox Starter Kit", price: 2399, originalPrice: 3499, rating: 4.5, image: ottoman1, description: "E-Blox Kit is a modular electronics learning kit that enables students to build practical projects like lamps and mini windmills. Designed with plug-and-play components and child-safe low voltage design.", features: ["☑ 20+ Electronics Projects", "☑ Plug & Play Components", "☑ Child-Safe Low Voltage", "☑ Modular Block Assembly", "☑ Renewable Energy Exploration"], images: [ottoman2, ottoman3, ottoman4] },
-        { id: 11, title: "E-Blox Maker Kit", price: 5699, originalPrice: 3499, rating: 4.5, image: ebloxMaker1, description: "E-Blox Kit is a modular electronics learning kit that enables students to build practical projects like lamps and mini windmills. Designed with plug-and-play components and child-safe low voltage design.", features: ["☑ 20+ Electronics Projects", "☑ Plug & Play Components", "☑ Child-Safe Low Voltage", "☑ Modular Block Assembly", "☑ Renewable Energy Exploration"], images: [ebloxMaker2, ebloxMaker3, ebloxMaker4] },
-        { id: 12, title: "Humanoid Kit", price: 6999, originalPrice: 8999, rating: 4.9, category: "3D-Pen", image: humanoidKit1, description: "Humanoid Kit allows students to build a fully functional humanoid robot with Bluetooth and voice control capabilities. It supports AI integration and Google Assistant compatibility for advanced experimentation.", features: ["☑ Bluetooth Enabled", "☑ Voice Command Functionality", "☑ Google Assistant Compatible", "☑ Multi-Control Operation", "☑ AI-Based Robotics Platform"], images: [humanoidKit2, humanoidKit3, humanoidKit4] },
-        { id: 13, title: "Otto Starter Kit", price: 1999, originalPrice: 2599, rating: 4.8, image: ottoStarterKit1, description: "Otto Starter Kit enables learners to assemble a mini humanoid robot capable of walking, dancing, and playing tunes. It includes guided learning materials and is ideal for beginners.", features: ["☑ Walking & Dancing Robot", "☑ Plays Music", "☑ Easy Assembly", "☑ Beginner Robotics Kit", "☑ Guided Learning Materials"], images: [ottoStarterKit2, ottoStarterKit3, ottoStarterKit4] },
-        { id: 14, title: "Otto Lee Kit", price: 3499, originalPrice: 4999, rating: 4.8, image: ottoLeeKit1, description: "Otto Lee Kit is a Bluetooth-controlled humanoid robot supporting multiple configurations and dynamic movements. Designed for interactive and wireless robotics learning.", features: ["☑ Bluetooth Control", "☑ Multiple Configurations", "☑ Dynamic Robotic Movements", "☑ Wireless Operation", "☑ Educational Robotics Kit"], images: [ottoLeeKit2, ottoLeeKit3, ottoLeeKit4] },
-        { id: 15, title: "Otto Spider Kit", price: 3499, originalPrice: 5499, rating: 4.8, image: ottoSpiderKit1, description: "Otto Spider Kit is a spider-inspired robot featuring 8 degrees of motion. It can perform push-ups, dance routines, and agile movements with Bluetooth control.", features: ["☑ 8 Degrees of Motion", "☑ Agile Robotic Design", "☑ Bluetooth Control", "☑ Compact Structure", "☑ Complete Learning Resources"], images: [ottoSpiderKit2, ottoSpiderKit3, ottoSpiderKit4] },
+        { id: 1, product_id: 9341,title: "Robotic Arm Kit", price: 3499, originalPrice: 4299, rating: 4.8, image: RoboticArmKit, description: "An  microcontroller receives control commands from the TechyGuide mobile application via Bluetooth. Each command controls one of the six servo motors, representing different joints of the robotic arm. Servo angles are adjusted incrementally to provide smooth and precise movements. Angle limits are applied to prevent over-rotation and mechanical damage. The system is suitable for pick-and-place tasks, robotics learning, and automation demonstrations.", features: ["This is a four degree of freedom robotic arm capable of picking and placing small objects."," ", "The robotic arm can fit on your table with middle-sized links."," ", "It helps to reach throughout the table and get hold of things without you to move."," ", "It provides with insights into a palletizing robotic manipulator through hands-on experience."," ", "Robotic arm teaches advanced robotics concepts like Motion Planning, Inverse Kinematics, etc."], images: [RoboticArmKit2, RoboticArmKit3, RoboticArmKit4] },
+        { id: 2, product_id: 9300, title: "3D Pen", price: 799, originalPrice: 1199, rating: 4.9, category: "3D-Pen", image: pen1, description: "3D Pen is a 3D model printed using 3D printer used for educational purpose by students to design and create three-dimensional objects.", features: ["3D Pen is a 3D model printed using 3D printer used for educational purpose by students to design and create three-dimensional objects."], images: [pen2, pen3, pen4] },
+        { id: 3, product_id: 9377, title: "TechBoT Electronics Kit", price: 899, originalPrice: 1199, rating: 4.8, image: TechBotElectronicsKit1, description: "An  microcontroller receives control commands from the TechyGuide mobile application via Bluetooth. Each command controls one of the six servo motors, representing different joints of the robotic arm. Servo angles are adjusted incrementally to provide smooth and precise movements. Angle limits are applied to prevent over-rotation and mechanical damage. The system is suitable for pick-and-place tasks, robotics learning, and automation demonstrations.", features: ["This is a four degree of freedom robotic arm capable of picking and placing small objects."," ", "The robotic arm can fit on your table with middle-sized links."," ", "It helps to reach throughout the table and get hold of things without you to move."," ", "It provides with insights into a palletizing robotic manipulator through hands-on experience."," ", "Robotic arm teaches advanced robotics concepts like Motion Planning, Inverse Kinematics, etc."], images: [TechBotElectronicsKit2, TechBotElectronicsKit3, TechBotElectronicsKit4] },
+        { id: 4, product_id: 9384, title: "TechBoT Arduino Kit", price: 2499, originalPrice: 3499, rating: 4.8, image: TechBotArdiunoKit1, description: "An  microcontroller receives control commands from the TechyGuide mobile application via Bluetooth. Each command controls one of the six servo motors, representing different joints of the robotic arm. Servo angles are adjusted incrementally to provide smooth and precise movements. Angle limits are applied to prevent over-rotation and mechanical damage. The system is suitable for pick-and-place tasks, robotics learning, and automation demonstrations.", features: ["This is a four degree of freedom robotic arm capable of picking and placing small objects."," ", "The robotic arm can fit on your table with middle-sized links."," ", "It helps to reach throughout the table and get hold of things without you to move."," ", "It provides with insights into a palletizing robotic manipulator through hands-on experience."," ", "Robotic arm teaches advanced robotics concepts like Motion Planning, Inverse Kinematics, etc."], images: [TechBotArdiunoKit2, TechBotArdiunoKit3, TechBotArdiunoKit4] },
+        { id: 5, product_id: 9389, title: "TeBoT Champ Kit", price: 6399, originalPrice: 7999, rating: 4.8, image: TeBotChampKit1, description: "An  microcontroller receives control commands from the TechyGuide mobile application via Bluetooth. Each command controls one of the six servo motors, representing different joints of the robotic arm. Servo angles are adjusted incrementally to provide smooth and precise movements. Angle limits are applied to prevent over-rotation and mechanical damage. The system is suitable for pick-and-place tasks, robotics learning, and automation demonstrations.", features: ["This is a four degree of freedom robotic arm capable of picking and placing small objects."," ", "The robotic arm can fit on your table with middle-sized links."," ", "It helps to reach throughout the table and get hold of things without you to move."," ", "It provides with insights into a palletizing robotic manipulator through hands-on experience."," ", "Robotic arm teaches advanced robotics concepts like Motion Planning, Inverse Kinematics, etc."], images: [TeBotChampKit2, TeBotChampKit3, TeBotChampKit4] },
+        { id: 6, product_id: 9396, title: "TeBoT Basic Kit", price: 5599, originalPrice: 6999, rating: 4.8, image: TeBotBasicKit1, description: "An  microcontroller receives control commands from the TechyGuide mobile application via Bluetooth. Each command controls one of the six servo motors, representing different joints of the robotic arm. Servo angles are adjusted incrementally to provide smooth and precise movements. Angle limits are applied to prevent over-rotation and mechanical damage. The system is suitable for pick-and-place tasks, robotics learning, and automation demonstrations.", features: ["This is a four degree of freedom robotic arm capable of picking and placing small objects."," ", "The robotic arm can fit on your table with middle-sized links."," ", "It helps to reach throughout the table and get hold of things without you to move."," ", "It provides with insights into a palletizing robotic manipulator through hands-on experience."," ", "Robotic arm teaches advanced robotics concepts like Motion Planning, Inverse Kinematics, etc."], images: [TeBotBasicKit2, TeBotBasicKit3, TeBotBasicKit4] },
+        { id: 7, product_id: 9403, title: "TeBot Advance Kit", price: 6999, originalPrice: 9999, rating: 4.9, image: TeBotAdvanceKit1, description: "TeBot Advance Kit is an ultimate robotics learning solution designed for young innovators. It supports 50+ hands-on projects with structured course materials and integrates multiple sensors for real-world experimentation. The kit includes short-circuit protection and a 1-year manufacturing warranty on the microcontroller for safe and long-term classroom use.", features: ["☑ 50+ Robotics Projects", "☑ Multi-Sensor Integration", "☑ Inbuilt Sensors for Easy Handling", "☑ Short Circuit Protection", "☑ 1-Year Microcontroller Warranty", "☑ Reusable & Modular Components"], images: [TeBotAdvanceKit2, TeBotAdvanceKit3, TeBotAdvanceKit4] },
+        { id: 8, product_id: 9411, title: "I-BoT Advance Kit", price: 7599, originalPrice: 9999, rating: 4.6, image: IBotAdvanceKit1, description: "I-BoT Advance Kit is a premium robotics platform supporting 100+ diverse projects. It integrates seamlessly with multiple sensors and is suitable for Robotics, IoT, and AI-based applications. Designed with advanced circuitry protection for reliable performance.", features: ["☑ 100+ Advanced Projects", "☑ AI & IoT Compatibility", "☑ Multi-Sensor Integration", "☑ Advanced Circuit Protection", "☑ Inbuilt Sensors", "☑ 1-Year Warranty"], images: [IBotAdvanceKit2, IBotAdvanceKit3, IBotAdvanceKit4] },
+        { id: 9, product_id: 9418, title: "I-BoT Starter Kit", price: 6399, originalPrice: 7999, rating: 4.8, image: IBotStarterKit1, description: "I-BoT Starter Kit introduces students to robotics fundamentals through 20+ guided projects. It supports Robotics, IoT, and AI learning while offering modular configuration and easy sensor integration.", features: ["☑ 20+ Guided Projects", "☑ Modular Design", "☑ Sensor Integration", "☑ Short Circuit Protection", "☑ Beginner Friendly", "☑ Robotics, IoT & AI Support"], images: [IBotStarterKit2, IBotStarterKit3, IBotStarterKit4] },
+        { id: 10, product_id: 9425, title: "E-Blox Starter Kit", price: 2399, originalPrice: 3499, rating: 4.5, image: ottoman1, description: "E-Blox Kit is a modular electronics learning kit that enables students to build practical projects like lamps and mini windmills. Designed with plug-and-play components and child-safe low voltage design.", features: ["☑ 20+ Electronics Projects", "☑ Plug & Play Components", "☑ Child-Safe Low Voltage", "☑ Modular Block Assembly", "☑ Renewable Energy Exploration"], images: [ottoman2, ottoman3, ottoman4] },
+        { id: 11, product_id: 9432, title: "E-Blox Maker Kit", price: 5699, originalPrice: 7499, rating: 4.5, image: ebloxMaker1, description: "E-Blox Kit is a modular electronics learning kit that enables students to build practical projects like lamps and mini windmills. Designed with plug-and-play components and child-safe low voltage design.", features: ["☑ 20+ Electronics Projects", "☑ Plug & Play Components", "☑ Child-Safe Low Voltage", "☑ Modular Block Assembly", "☑ Renewable Energy Exploration"], images: [ebloxMaker2, ebloxMaker3, ebloxMaker4] },
+        { id: 12, product_id: 9439, title: "Humanoid Kit", price: 6999, originalPrice: 8999, rating: 4.9, category: "3D-Pen", image: humanoidKit1, description: "Humanoid Kit allows students to build a fully functional humanoid robot with Bluetooth and voice control capabilities. It supports AI integration and Google Assistant compatibility for advanced experimentation.", features: ["☑ Bluetooth Enabled", "☑ Voice Command Functionality", "☑ Google Assistant Compatible", "☑ Multi-Control Operation", "☑ AI-Based Robotics Platform"], images: [humanoidKit2, humanoidKit3, humanoidKit4] },
+        { id: 13, product_id: 9446, title: "Otto Starter Kit", price: 1999, originalPrice: 2599, rating: 4.8, image: ottoStarterKit1, description: "Otto Starter Kit enables learners to assemble a mini humanoid robot capable of walking, dancing, and playing tunes. It includes guided learning materials and is ideal for beginners.", features: ["☑ Walking & Dancing Robot", "☑ Plays Music", "☑ Easy Assembly", "☑ Beginner Robotics Kit", "☑ Guided Learning Materials"], images: [ottoStarterKit2, ottoStarterKit3, ottoStarterKit4] },
+        { id: 14, product_id: 9453, title: "Otto Lee Kit", price: 3499, originalPrice: 4999, rating: 4.8, image: ottoLeeKit1, description: "Otto Lee Kit is a Bluetooth-controlled humanoid robot supporting multiple configurations and dynamic movements. Designed for interactive and wireless robotics learning.", features: ["☑ Bluetooth Control", "☑ Multiple Configurations", "☑ Dynamic Robotic Movements", "☑ Wireless Operation", "☑ Educational Robotics Kit"], images: [ottoLeeKit2, ottoLeeKit3, ottoLeeKit4] },
+        { id: 15, product_id: 9460, title: "Otto Spider Kit", price: 3499, originalPrice: 5499, rating: 4.8, image: ottoSpiderKit1, description: "Otto Spider Kit is a spider-inspired robot featuring 8 degrees of motion. It can perform push-ups, dance routines, and agile movements with Bluetooth control.", features: ["☑ 8 Degrees of Motion", "☑ Agile Robotic Design", "☑ Bluetooth Control", "☑ Compact Structure", "☑ Complete Learning Resources"], images: [ottoSpiderKit2, ottoSpiderKit3, ottoSpiderKit4] },
     ];
 
     const courses = [
-        { id: 101, title: "Robo Champ Course", price: 9999, originalPrice: 13999, rating: 4.8, duration: "3 Months", level: "Beginner", mode: "Live + Recorded", image: roboChampCourse1, shortDescription: "Build strong robotics fundamentals and complete real-world robot challenges.", description: "Robo Champ Course introduces learners to robotics fundamentals through practical sessions, guided builds, and challenge-based learning. Students explore sensors, motion logic, and controller programming while creating functional robotic prototypes.", features: ["Robot assembly fundamentals", "Sensor and actuator integration", "Basic control programming", "Weekly practical challenges", "Mentor-led live sessions", "Mini project assessments"], outcomes: ["Build and test working robots", "Understand robotics workflow", "Apply logic in real scenarios", "Present a final robotics project"], certification: "Robo Champ Completion Certificate", images: [roboChampCourse2, roboChampCourse3, roboChampCourse4] },
-        { id: 102, title: "Python Coding Course", price: 4999, originalPrice: 6999, rating: 4.7, duration: "2.5 Months", level: "Intermediate", mode: "Live + LMS Access", image: pythonCodingCourse1, shortDescription: "Learn Python from basics to real application projects with mentor support.", description: "Python Coding Course helps learners progress from syntax basics to structured programming and practical problem-solving. Students work on functions, loops, data structures, and simple automation use-cases with hands-on coding tasks.", features: ["Python syntax and fundamentals", "Lists, dictionaries, and functions", "File handling basics", "Problem-solving exercises", "Project-based coding practice", "LMS resources and quizzes"], outcomes: ["Write clean Python programs", "Solve logic-based tasks", "Build simple automation scripts", "Create beginner Python projects"], certification: "Python Coding Certificate", images: [pythonCodingCourse2, pythonCodingCourse3, pythonCodingCourse4] },
-        { id: 103, title: "Scratch Coding Course", price: 4999, originalPrice: 6999, rating: 4.6, duration: "2 Months", level: "Beginner to Intermediate", mode: "Hybrid", image: graphicalCodingCourse1, shortDescription: "Learn coding logic visually using drag-and-drop programming blocks.", description: "Graphical Coding Course teaches computational thinking using visual coding platforms. Learners create animations, games, and logic workflows with block-based coding before transitioning to text-based programming concepts.", features: ["Block-based coding interface", "Logic and sequence building", "Conditionals and loops", "Animation and game mini projects", "Debugging through visual flow", "Guided coding missions"], outcomes: ["Understand programming logic", "Build interactive visual projects", "Improve algorithmic thinking", "Transition confidently to text coding"], certification: "Graphical Coding Certificate", images: [graphicalCodingCourse2, graphicalCodingCourse3, graphicalCodingCourse4] },
-        { id: 104, title: "Web Development Course", price: 5999, originalPrice: 8999, rating: 4.9, duration: "4 Months", level: "Advanced", mode: "Live Interactive", image: webDevelopmentCourse1, shortDescription: "Create responsive websites using modern frontend development tools.", description: "Web Development Course covers frontend development from structure to deployment. Learners build responsive websites with HTML, CSS, and JavaScript, then create multi-page projects and deploy them with best-practice workflows.", features: ["HTML and semantic structure", "Modern CSS and responsive layout", "JavaScript DOM and events", "Component-based UI approach", "Website optimization basics", "Capstone web project"], outcomes: ["Build production-ready webpages", "Create responsive UI layouts", "Implement interactive features", "Deploy a complete web project"], certification: "Web Development Certificate", images: [webDevelopmentCourse2, webDevelopmentCourse3, webDevelopmentCourse4] },
-        { id: 105, title: "App Development Course", price: 4999, originalPrice: 6499, rating: 4.5, duration: "2 Months", level: "Beginner", mode: "Online + Assignments", image: appDevelopmentCourse1, shortDescription: "Design and build beginner mobile apps with practical UI and logic modules.", description: "App Development Course introduces mobile application concepts including screen flow, user interface design, and app logic implementation. Learners build simple functional apps and test them through guided assignments.", features: ["Mobile app basics", "UI flow and navigation", "Input handling and validation", "Simple data management", "Assignment-driven development", "Mini app publishing guidance"], outcomes: ["Build basic mobile apps", "Design user-friendly interfaces", "Implement core app logic", "Showcase a final app prototype"], certification: "App Development Certificate", images: [appDevelopmentCourse2, appDevelopmentCourse3, appDevelopmentCourse4] },
-        { id: 106, title: "Internet of Things Course", price: 9999, originalPrice: 14999, rating: 4.8, duration: "3 Months", level: "All Levels", mode: "Live + Project Based", image: internetOfThingsCourse1, shortDescription: "Build smart connected systems using sensors, controllers, and cloud connectivity.", description: "Internet of Things Course helps learners create connected devices using sensors, microcontrollers, and cloud dashboards. Students build real-time monitoring and automation projects while understanding IoT architecture and data flow.", features: ["IoT architecture fundamentals", "Sensor and microcontroller setup", "Wireless communication basics", "Cloud dashboard integration", "Smart automation projects", "Real-time data monitoring"], outcomes: ["Build connected IoT prototypes", "Collect and visualize sensor data", "Understand device-cloud communication", "Implement smart system automation"], certification: "IoT Practitioner Certificate", images: [internetOfThingsCourse2, internetOfThingsCourse3, internetOfThingsCourse4] },
-        { id: 107, title: "Artificial Intelligence Course", price: 4999, originalPrice: 7499, rating: 4.9, duration: "3.5 Months", level: "Intermediate", mode: "Live + Recorded", image: artificialIntelligenceCourse1, shortDescription: "Learn AI concepts and build intelligent models with practical projects.", description: "Artificial Intelligence Course introduces key AI concepts including machine learning workflows, model training, and basic computer vision. Learners complete guided projects to understand how intelligent systems are built and evaluated.", features: ["AI and ML foundations", "Dataset preparation basics", "Model training workflow", "Prediction and evaluation", "Intro to computer vision", "Mentor-guided AI projects"], outcomes: ["Build beginner AI models", "Understand end-to-end AI pipeline", "Interpret model results", "Create an AI project portfolio"], certification: "Artificial Intelligence Certificate", images: [artificialIntelligenceCourse2, artificialIntelligenceCourse3, artificialIntelligenceCourse4] },
-        { id: 108, title: "STEM Bundle Course", price: 49999, originalPrice: 65999, rating: 4.8, duration: "4 Months", level: "All Levels", mode: "Live + Project Based", image: stemBundleCourse1, shortDescription: "An integrated STEM journey across robotics, coding, AI, and IoT domains.", description: "STEM Bundle Course combines multiple technology tracks into one structured path. Learners explore robotics, coding, AI, and IoT through project-based modules, interdisciplinary challenges, and a final capstone presentation.", features: ["Robotics + coding modules", "AI and IoT fundamentals", "Hands-on STEM experiments", "Design thinking activities", "Cross-domain capstone project", "Periodic skill assessments"], outcomes: ["Build multidisciplinary STEM projects", "Strengthen analytical and creative thinking", "Apply concepts across domains", "Present a complete capstone solution"], certification: "STEM Bundle Completion Certificate", images: [stemBundleCourse2, stemBundleCourse3, stemBundleCourse4] },
+        { id: 101, product_id: 9467, title: "Robo Champ Course", price: 9999, originalPrice: 13999, rating: 4.8, duration: "3 Months", level: "Beginner", mode: "Live + Recorded", image: roboChampCourse1, shortDescription: "Build strong robotics fundamentals and complete real-world robot challenges.", description: "Robo Champ Course introduces learners to robotics fundamentals through practical sessions, guided builds, and challenge-based learning. Students explore sensors, motion logic, and controller programming while creating functional robotic prototypes.", features: ["Robot assembly fundamentals", "Sensor and actuator integration", "Basic control programming", "Weekly practical challenges", "Mentor-led live sessions", "Mini project assessments"], outcomes: ["Build and test working robots", "Understand robotics workflow", "Apply logic in real scenarios", "Present a final robotics project"], certification: "Robo Champ Completion Certificate", images: [roboChampCourse2, roboChampCourse3, roboChampCourse4] },
+        { id: 102, product_id: 9473, title: "Python Coding Course", price: 4999, originalPrice: 6999, rating: 4.7, duration: "2.5 Months", level: "Intermediate", mode: "Live + LMS Access", image: pythonCodingCourse1, shortDescription: "Learn Python from basics to real application projects with mentor support.", description: "Python Coding Course helps learners progress from syntax basics to structured programming and practical problem-solving. Students work on functions, loops, data structures, and simple automation use-cases with hands-on coding tasks.", features: ["Python syntax and fundamentals", "Lists, dictionaries, and functions", "File handling basics", "Problem-solving exercises", "Project-based coding practice", "LMS resources and quizzes"], outcomes: ["Write clean Python programs", "Solve logic-based tasks", "Build simple automation scripts", "Create beginner Python projects"], certification: "Python Coding Certificate", images: [pythonCodingCourse2, pythonCodingCourse3, pythonCodingCourse4] },
+        { id: 103, product_id: 9479, title: "Scratch Coding Course", price: 4999, originalPrice: 6999, rating: 4.6, duration: "2 Months", level: "Beginner to Intermediate", mode: "Hybrid", image: graphicalCodingCourse1, shortDescription: "Learn coding logic visually using drag-and-drop programming blocks.", description: "Graphical Coding Course teaches computational thinking using visual coding platforms. Learners create animations, games, and logic workflows with block-based coding before transitioning to text-based programming concepts.", features: ["Block-based coding interface", "Logic and sequence building", "Conditionals and loops", "Animation and game mini projects", "Debugging through visual flow", "Guided coding missions"], outcomes: ["Understand programming logic", "Build interactive visual projects", "Improve algorithmic thinking", "Transition confidently to text coding"], certification: "Graphical Coding Certificate", images: [graphicalCodingCourse2, graphicalCodingCourse3, graphicalCodingCourse4] },
+        { id: 104, product_id: 9485, title: "Web Development Course", price: 5999, originalPrice: 8999, rating: 4.9, duration: "4 Months", level: "Advanced", mode: "Live Interactive", image: webDevelopmentCourse1, shortDescription: "Create responsive websites using modern frontend development tools.", description: "Web Development Course covers frontend development from structure to deployment. Learners build responsive websites with HTML, CSS, and JavaScript, then create multi-page projects and deploy them with best-practice workflows.", features: ["HTML and semantic structure", "Modern CSS and responsive layout", "JavaScript DOM and events", "Component-based UI approach", "Website optimization basics", "Capstone web project"], outcomes: ["Build production-ready webpages", "Create responsive UI layouts", "Implement interactive features", "Deploy a complete web project"], certification: "Web Development Certificate", images: [webDevelopmentCourse2, webDevelopmentCourse3, webDevelopmentCourse4] },
+        { id: 105, product_id: 9491, title: "App Development Course", price: 4999, originalPrice: 6499, rating: 4.5, duration: "2 Months", level: "Beginner", mode: "Online + Assignments", image: appDevelopmentCourse1, shortDescription: "Design and build beginner mobile apps with practical UI and logic modules.", description: "App Development Course introduces mobile application concepts including screen flow, user interface design, and app logic implementation. Learners build simple functional apps and test them through guided assignments.", features: ["Mobile app basics", "UI flow and navigation", "Input handling and validation", "Simple data management", "Assignment-driven development", "Mini app publishing guidance"], outcomes: ["Build basic mobile apps", "Design user-friendly interfaces", "Implement core app logic", "Showcase a final app prototype"], certification: "App Development Certificate", images: [appDevelopmentCourse2, appDevelopmentCourse3, appDevelopmentCourse4] },
+        { id: 106, product_id: 9497, title: "Internet of Things Course", price: 9999, originalPrice: 14999, rating: 4.8, duration: "3 Months", level: "All Levels", mode: "Live + Project Based", image: internetOfThingsCourse1, shortDescription: "Build smart connected systems using sensors, controllers, and cloud connectivity.", description: "Internet of Things Course helps learners create connected devices using sensors, microcontrollers, and cloud dashboards. Students build real-time monitoring and automation projects while understanding IoT architecture and data flow.", features: ["IoT architecture fundamentals", "Sensor and microcontroller setup", "Wireless communication basics", "Cloud dashboard integration", "Smart automation projects", "Real-time data monitoring"], outcomes: ["Build connected IoT prototypes", "Collect and visualize sensor data", "Understand device-cloud communication", "Implement smart system automation"], certification: "IoT Practitioner Certificate", images: [internetOfThingsCourse2, internetOfThingsCourse3, internetOfThingsCourse4] },
+        { id: 107, product_id: 9503, title: "Artificial Intelligence Course", price: 4999, originalPrice: 7499, rating: 4.9, duration: "3.5 Months", level: "Intermediate", mode: "Live + Recorded", image: artificialIntelligenceCourse1, shortDescription: "Learn AI concepts and build intelligent models with practical projects.", description: "Artificial Intelligence Course introduces key AI concepts including machine learning workflows, model training, and basic computer vision. Learners complete guided projects to understand how intelligent systems are built and evaluated.", features: ["AI and ML foundations", "Dataset preparation basics", "Model training workflow", "Prediction and evaluation", "Intro to computer vision", "Mentor-guided AI projects"], outcomes: ["Build beginner AI models", "Understand end-to-end AI pipeline", "Interpret model results", "Create an AI project portfolio"], certification: "Artificial Intelligence Certificate", images: [artificialIntelligenceCourse2, artificialIntelligenceCourse3, artificialIntelligenceCourse4] },
+        { id: 108, product_id: 9509, title: "STEM Bundle Course", price: 49999, originalPrice: 65999, rating: 4.8, duration: "4 Months", level: "All Levels", mode: "Live + Project Based", image: stemBundleCourse1, shortDescription: "An integrated STEM journey across robotics, coding, AI, and IoT domains.", description: "STEM Bundle Course combines multiple technology tracks into one structured path. Learners explore robotics, coding, AI, and IoT through project-based modules, interdisciplinary challenges, and a final capstone presentation.", features: ["Robotics + coding modules", "AI and IoT fundamentals", "Hands-on STEM experiments", "Design thinking activities", "Cross-domain capstone project", "Periodic skill assessments"], outcomes: ["Build multidisciplinary STEM projects", "Strengthen analytical and creative thinking", "Apply concepts across domains", "Present a complete capstone solution"], certification: "STEM Bundle Completion Certificate", images: [stemBundleCourse2, stemBundleCourse3, stemBundleCourse4] },
 
         // --- New Courses ---
         {
             id: 109,
+            product_id: 9515,
             title: "Game Development Course",
             price: 3999,
             originalPrice: 4999,
@@ -199,6 +200,7 @@ function ShopPage() {
         },
         {
             id: 110,
+            product_id: 9521,
             title: "Electronics Course",
             price: 7999,
             originalPrice: 9999,
@@ -228,6 +230,7 @@ function ShopPage() {
         },
         {
             id: 111,
+            product_id: 9527,
             title: "Junior Robotics Course",
             price: 3999,
             originalPrice: 6499,
@@ -257,7 +260,22 @@ function ShopPage() {
         },
     ];
 
-    const [cart, setCart] = useState([]);
+    const normalizeCartItems = (items) => items.map((item) => {
+        if (item.product_id) {
+            return item;
+        }
+
+        const matchedProduct = products.find((product) => product.id === item.id);
+        const matchedCourse = courses.find((course) => course.id === item.id);
+        const matchedItem = matchedProduct || matchedCourse;
+        // product_id can be missing for legacy cart entries saved before WooCommerce mapping was added.
+        return matchedItem ? { ...item, product_id: matchedItem.product_id } : item;
+    });
+
+    const [cart, setCart] = useState(() => {
+        const savedCart = localStorage.getItem('techyCart');
+        return savedCart ? normalizeCartItems(JSON.parse(savedCart)) : [];
+    });
     const [currentProduct, setCurrentProduct] = useState(null);
     const [currentCategory, setCurrentCategory] = useState('All');
     const [currentCourse, setCurrentCourse] = useState(null);
@@ -282,9 +300,6 @@ function ShopPage() {
     };
 
     useEffect(() => {
-        const saved = localStorage.getItem('techyCart');
-        if (saved) setCart(JSON.parse(saved));
-
         const openCart = localStorage.getItem('openCartOnLoad');
         if (openCart === 'true') {
             setIsCartOpen(true);
@@ -293,14 +308,30 @@ function ShopPage() {
     }, []);
 
     useEffect(() => {
+        console.log('Cart State:', cart);
+
+        // If this warning appears, this is a location where cart items are missing product_id.
+        const missingProductIdItems = cart.filter((item) => !item.product_id);
+        if (missingProductIdItems.length > 0) {
+            console.warn('Cart items missing product_id:', missingProductIdItems);
+        }
+
         localStorage.setItem('techyCart', JSON.stringify(cart));
     }, [cart]);
+
+    useEffect(() => {
+        console.log('UPDATED CART:', cart);
+    }, [cart]);
+
+    useEffect(() => {
+        localStorage.removeItem('cart');
+    }, []);
 
     useEffect(() => {
         const handlePageFocus = () => {
             const saved = localStorage.getItem('techyCart');
             if (saved) {
-                setCart(JSON.parse(saved));
+                setCart(normalizeCartItems(JSON.parse(saved)));
             }
         };
 
@@ -417,43 +448,54 @@ function ShopPage() {
 
     const updateItemQty = (id, change) => {
         setCart(prev => {
-            const updated = prev.map(item => {
+            const newCartItems = prev.map(item => {
                 if (item.id === id) {
                     const newQty = item.quantity + change;
                     return { ...item, quantity: newQty };
                 }
                 return item;
             }).filter(item => item.quantity > 0);
-            return updated;
+            console.log('Updated Cart:', newCartItems);
+            return newCartItems;
         });
     };
 
-    const handleAddClick = (id) => {
-        const product = products.find(p => p.id === id);
-        const course = courses.find(c => c.id === id);
-        const item = product || course;
-        const existing = cart.find(c => c.id === id);
-        if (existing) {
-            updateItemQty(id, 1);
-        } else {
-            setCart(prev => [...prev, { ...item, quantity: 1 }]);
+    const addToCart = (item) => {
+        console.log('ADDING ITEM:', item);
+
+        if (!item.product_id) {
+            console.error('Missing product_id:', item);
+            alert('Product not configured properly');
+            return;
         }
+
+        setCart((prev) => {
+            const exists = prev.find((p) => p.product_id === item.product_id);
+
+            if (exists) {
+                return prev.map((p) =>
+                    p.product_id === item.product_id
+                        ? { ...p, quantity: (p.quantity || 1) + 1 }
+                        : p
+                );
+            }
+
+            return [...prev, { ...item, quantity: 1 }];
+        });
     };
 
     const handleQtyChange = (id, change) => {
         updateItemQty(id, change);
     };
 
-    const handleBuyNow = (id) => {
-        const product = products.find(p => p.id === id);
-        const course = courses.find(c => c.id === id);
-        const item = product || course;
-        const existing = cart.find(c => c.id === id);
-        
+    const handleBuyNow = (item) => {
+        if (!item) {
+            return;
+        }
+
+        const existing = cart.find((c) => c.product_id === item.product_id);
         if (!existing) {
-            const updatedCart = [...cart, { ...item, quantity: 1 }];
-            setCart(updatedCart);
-            localStorage.setItem('techyCart', JSON.stringify(updatedCart));
+            addToCart(item);
         }
         
         closeModal();
@@ -825,12 +867,12 @@ function ShopPage() {
                                                 <button className="qty-btn" onClick={() => handleQtyChange(currentCourse.id, 1)}>+</button>
                                             </div>
                                         ) : (
-                                            <button className="action-btn btn-cart" onClick={() => handleAddClick(currentCourse.id)}>ADD TO CART</button>
+                                            <button className="action-btn btn-cart" onClick={() => addToCart(currentCourse)}>ADD TO CART</button>
                                         )}
                                     </div>
                                     <button
                                         className="btn-buy action-btn"
-                                        onClick={() => (cartItemInCourseModal ? handleGoToCart() : handleBuyNow(currentCourse.id))}
+                                        onClick={() => (cartItemInCourseModal ? handleGoToCart() : handleBuyNow(currentCourse))}
                                     >
                                         {cartItemInCourseModal ? 'Go to Cart' : 'Buy Now'}
                                     </button>
@@ -847,12 +889,12 @@ function ShopPage() {
                                         <button className="qty-btn" onClick={() => handleQtyChange(currentCourse.id, 1)}>+</button>
                                     </div>
                                 ) : (
-                                    <button className="action-btn btn-cart" onClick={() => handleAddClick(currentCourse.id)}>ADD TO CART</button>
+                                    <button className="action-btn btn-cart" onClick={() => addToCart(currentCourse)}>ADD TO CART</button>
                                 )}
                             </div>
                             <button
                                 className="btn-buy action-btn"
-                                onClick={() => (cartItemInCourseModal ? handleGoToCart() : handleBuyNow(currentCourse.id))}
+                                onClick={() => (cartItemInCourseModal ? handleGoToCart() : handleBuyNow(currentCourse))}
                             >
                                 {cartItemInCourseModal ? 'Go to Cart' : 'Buy Now'}
                             </button>
@@ -933,12 +975,12 @@ function ShopPage() {
                                                 <button className="qty-btn" onClick={() => handleQtyChange(currentProduct.id, 1)}>+</button>
                                             </div>
                                         ) : (
-                                            <button className="action-btn btn-cart" onClick={() => handleAddClick(currentProduct.id)}>ADD TO CART</button>
+                                            <button className="action-btn btn-cart" onClick={() => addToCart(currentProduct)}>ADD TO CART</button>
                                         )}
                                     </div>
                                     <button
                                         className="btn-buy action-btn"
-                                        onClick={() => (cartItemInModal ? handleGoToCart() : handleBuyNow(currentProduct.id))}
+                                        onClick={() => (cartItemInModal ? handleGoToCart() : handleBuyNow(currentProduct))}
                                     >
                                         {cartItemInModal ? 'Go to Cart' : 'Buy Now'}
                                     </button>
@@ -955,12 +997,12 @@ function ShopPage() {
                                         <button className="qty-btn" onClick={() => handleQtyChange(currentProduct.id, 1)}>+</button>
                                     </div>
                                 ) : (
-                                    <button className="action-btn btn-cart" onClick={() => handleAddClick(currentProduct.id)}>ADD TO CART</button>
+                                    <button className="action-btn btn-cart" onClick={() => addToCart(currentProduct)}>ADD TO CART</button>
                                 )}
                             </div>
                             <button
                                 className="btn-buy action-btn"
-                                onClick={() => (cartItemInModal ? handleGoToCart() : handleBuyNow(currentProduct.id))}
+                                onClick={() => (cartItemInModal ? handleGoToCart() : handleBuyNow(currentProduct))}
                             >
                                 {cartItemInModal ? 'Go to Cart' : 'Buy Now'}
                             </button>
