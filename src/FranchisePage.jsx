@@ -6,9 +6,6 @@ import whychooseTechyguide2 from './assets/franchisepageimages/Why Choose TechyG
 import whychooseTechyguide3 from './assets/franchisepageimages/Why Choose TechyGuide_ - 3.jpg';
 import whychooseTechyguide4 from './assets/franchisepageimages/Why Choose TechyGuide_ - 4.jpg';
 
-
-
-import studentsImg from './assets/franchisepageimages/students.jpg';
 import testimonial1 from './assets/franchisepageimages/Partner Testimonial_1.png';
 import testimonial2 from './assets/franchisepageimages/Partner Testimonial_2.png';
 import testimonial3 from './assets/franchisepageimages/Partner Testimonial_3.png';
@@ -192,7 +189,7 @@ function FranchisePage() {
             });
 
             // enqueue a short animation when clicked; keeps order if multiple clicks occur
-            btn.addEventListener('click', (e) => {
+            btn.addEventListener('click', () => {
                 enqueue(btn);
             });
         });

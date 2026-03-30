@@ -21,7 +21,6 @@ import GuaranteedQuality from '../assets/ProductTeBoTImages/Why TeBot is the Ult
 import TeBotKitsforStudents1 from '../assets/ProductTeBoTImages/TeBot Kits for Students - 1.jpg';
 import TeBotKitsforStudents2 from '../assets/ProductTeBoTImages/TeBot Kits for Students - 2.jpg';
 import TeBotKitsforStudents3 from '../assets/ProductTeBoTImages/TeBot Kits for Students - 3.jpg';
-import tebotProjectsImage from '../assets/ProductTeBoTImages/robot_2582246.png';
 import tebotIntroVideo from '../assets/ProductTeBoTImages/Website_Product_Page_TeBot_V1.mp4';
 // import ZohoBiginForm from '../components/ZohoBiginForm';
 //featured tebot projects images

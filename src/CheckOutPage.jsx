@@ -17,10 +17,12 @@ const CheckOutPage = () => {
 	const [cartItems, setCartItems] = useState([]);
 	const [totalPrice, setTotalPrice] = useState(0);
 	const [loading, setLoading] = useState(false);
+	const [isCartEmpty, setIsCartEmpty] = useState(false);
 
-	const WOOCOMMERCE_API_BASE = 'https://www.techyguide.in/wp-json/wc/v3';
-	const WOOCOMMERCE_AUTH_HEADER =
-		'Basic ' + btoa('ck_51de42e71566552661f0185fe487ec4fab8a49b8:cs_1f51a8305adee60f107e9253a91aa2b1dbf5838f');
+	const CHECKOUT_PROXY_ENDPOINT =
+		import.meta.env.VITE_WP_ORDER_PROXY_ENDPOINT || 'https://www.techyguide.in/wp-json/techyguide/v1/create-order';
+	const ORDER_PAY_BASE_URL = import.meta.env.VITE_WP_ORDER_PAY_BASE_URL || 'https://www.techyguide.in';
+	const formatPrice = (price) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(price);
 
   useEffect(() => {
 	const link = document.createElement('link');
@@ -70,49 +72,22 @@ const CheckOutPage = () => {
   useEffect(() => {
 	let cart = JSON.parse(localStorage.getItem('techyCart')) || [];
 
-	const orderItemsList = document.getElementById('orderItemsList');
-	const summarySubtotal = document.getElementById('summarySubtotal');
-	const summaryTotal = document.getElementById('summaryTotal');
-	const checkoutForm = document.getElementById('checkoutForm');
-
-	if (!orderItemsList || !summarySubtotal || !summaryTotal || !checkoutForm) {
-	  return undefined;
-	}
-
-	const formatPrice = (price) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(price);
-
 	function initCheckout() {
 		if (cart.length === 0) {
-			orderItemsList.innerHTML = '<p style="color:#666;">Your cart is empty. Redirecting...</p>';
-			setTimeout(() => { window.location.href = 'index.html'; }, 2000);
+			setIsCartEmpty(true);
+			setCartItems([]);
+			setTotalPrice(0);
+			setTimeout(() => { window.location.href = '/#/'; }, 2000);
 			return;
 		}
 
 		let total = 0;
-		orderItemsList.innerHTML = '';
+		setIsCartEmpty(false);
 		setCartItems(cart);
-
-		cart.forEach(item => {
+		cart.forEach((item) => {
 			total += item.price * item.quantity;
-
-			const itemEl = document.createElement('div');
-			itemEl.className = 'summary-item';
-			itemEl.innerHTML = `
-				<div class="item-img-box">
-					<img src="${item.image}" alt="${item.title}">
-					<span class="item-qty-badge">${item.quantity}</span>
-				</div>
-				<div class="item-info">
-					<div class="item-name">${item.title}</div>
-					<div class="item-meta">Qty: ${item.quantity}</div>
-				</div>
-				<div class="item-price">${formatPrice(item.price * item.quantity)}</div>
-			`;
-			orderItemsList.appendChild(itemEl);
 		});
 
-		summarySubtotal.innerText = formatPrice(total);
-		summaryTotal.innerText = formatPrice(total);
 		setTotalPrice(total);
 	}
 
@@ -120,31 +95,6 @@ const CheckOutPage = () => {
 
 	return () => {};
   }, []);
-
-  useEffect(() => {
-	console.log('Checkout Cart Items:', cartItems);
-  }, [cartItems]);
-
-  const validateForm = () => {
-	if (!email || !phone || !firstName || !lastName || !address || !city || !state || !zip || !country) {
-	  alert('Please fill all required fields');
-	  return false;
-	}
-
-	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-	if (!emailRegex.test(email)) {
-	  alert('Enter a valid email address');
-	  return false;
-	}
-
-	const phoneDigits = phone.replace(/\D/g, '');
-	if (phoneDigits.length !== 10) {
-	  alert('Enter a valid 10-digit phone number');
-	  return false;
-	}
-
-	return true;
-  };
 
   const handlePayment = async () => {
 	if (loading) {
@@ -202,17 +152,15 @@ const CheckOutPage = () => {
 	try {
 	  setLoading(true);
 
-	  const response = await fetch(`${WOOCOMMERCE_API_BASE}/orders`, {
+	  const response = await fetch(CHECKOUT_PROXY_ENDPOINT, {
 		method: 'POST',
 		headers: {
-		  'Content-Type': 'application/json',
-		  Authorization: WOOCOMMERCE_AUTH_HEADER
+		  'Content-Type': 'application/json'
 		},
 		body: JSON.stringify(orderData)
 	  });
 
 	  const data = await response.json();
-	  console.log('ORDER RESPONSE:', data);
 
 	  if (!response.ok) {
 		setLoading(false);
@@ -220,11 +168,11 @@ const CheckOutPage = () => {
 		return;
 	  }
 
-	  if (!data.id) {
-		throw new Error('Order created but order id is missing.');
+	  if (!data.id || !data.order_key) {
+		throw new Error('Order created but required payment fields are missing.');
 	  }
 
-	  window.location.href = `https://www.techyguide.in/checkout/order-pay/${data.id}/?pay_for_order=true&key=${data.order_key}`;
+	  window.location.href = `${ORDER_PAY_BASE_URL}/checkout/order-pay/${data.id}/?pay_for_order=true&key=${data.order_key}`;
 	} catch (error) {
 	  console.error('Payment Error:', error);
 	  setLoading(false);
@@ -309,12 +257,29 @@ const CheckOutPage = () => {
 				  <h3>Order Summary</h3>
                   
 				  <div className="order-items" id="orderItemsList">
-					  </div>
+					  {isCartEmpty ? (
+						  <p style={{ color: '#666' }}>Your cart is empty. Redirecting...</p>
+					  ) : (
+						  cartItems.map((item) => (
+							  <div className="summary-item" key={`${item.product_id || item.id}-${item.title}`}>
+								  <div className="item-img-box">
+									  <img src={item.image} alt={item.title} />
+									  <span className="item-qty-badge">{item.quantity}</span>
+								  </div>
+								  <div className="item-info">
+									  <div className="item-name">{item.title}</div>
+									  <div className="item-meta">Qty: {item.quantity}</div>
+								  </div>
+								  <div className="item-price">{formatPrice(item.price * item.quantity)}</div>
+							  </div>
+						  ))
+					  )}
+				  </div>
 
 				  <div className="price-breakdown">
 					  <div className="price-row">
 						  <span>Subtotal</span>
-						  <span id="summarySubtotal">₹0</span>
+						  <span id="summarySubtotal">{formatPrice(totalPrice)}</span>
 					  </div>
 					  <div className="price-row">
 						  <span>Shipping</span>
@@ -322,7 +287,7 @@ const CheckOutPage = () => {
 					  </div>
 					  <div className="price-row total">
 						  <span>Total</span>
-						  <span id="summaryTotal">₹0</span>
+						  <span id="summaryTotal">{formatPrice(totalPrice)}</span>
 					  </div>
 				  </div>
 			  </div>

@@ -1,12 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './I-BoT.css';
-import heroRobot from '../assets/ProductI-BoTImages/vecteezy_ai-generated-cute-robot-kids-with-isolated-transparant_38049144.png';
-import mainBoard from '../assets/ProductI-BoTImages/main board.png';
-import kitImage from '../assets/ProductI-BoTImages/kit.jpg';
-import homeAutomation from '../assets/ProductI-BoTImages/home automation.jpg';
-import plantMonitor from '../assets/ProductI-BoTImages/plant monitor.jpg';
-import smokeDetection from '../assets/ProductI-BoTImages/smoke detection.jpg';
 //hero image
 import heroimg from '../assets/ProductI-BoTImages/my-image.png';
 //Technologies at Focus images

@@ -22,7 +22,6 @@ export default function PrivacyPolicyPage() {
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
                 
                 if (window.scrollY >= (sectionTop - offset)) {
                     current = section.getAttribute('id');

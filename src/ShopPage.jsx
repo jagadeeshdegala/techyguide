@@ -16,7 +16,7 @@ import juniorRoboticsCourse4 from './assets/ShopPageImages/coursesCategoryImages
 
 
 
-import { useState, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './ShopPage.css';
 
@@ -139,6 +139,8 @@ import stemBundleCourse4 from './assets/ShopPageImages/coursesCategoryImages/STE
 
 function ShopPage() {
     const location = useLocation();
+    const isPaymentSuccessHash = () => typeof window !== 'undefined' && window.location.hash.includes('payment-success');
+
     const products = [
         { id: 1, product_id: 9341,title: "Robotic Arm Kit", price: 3499, originalPrice: 4299, rating: 4.8, image: RoboticArmKit, description: "An  microcontroller receives control commands from the TechyGuide mobile application via Bluetooth. Each command controls one of the six servo motors, representing different joints of the robotic arm. Servo angles are adjusted incrementally to provide smooth and precise movements. Angle limits are applied to prevent over-rotation and mechanical damage. The system is suitable for pick-and-place tasks, robotics learning, and automation demonstrations.", features: ["This is a four degree of freedom robotic arm capable of picking and placing small objects."," ", "The robotic arm can fit on your table with middle-sized links."," ", "It helps to reach throughout the table and get hold of things without you to move."," ", "It provides with insights into a palletizing robotic manipulator through hands-on experience."," ", "Robotic arm teaches advanced robotics concepts like Motion Planning, Inverse Kinematics, etc."], images: [RoboticArmKit2, RoboticArmKit3, RoboticArmKit4] },
         { id: 2, product_id: 9300, title: "3D Pen", price: 799, originalPrice: 1199, rating: 4.9, category: "3D-Pen", image: pen1, description: "3D Pen is a 3D model printed using 3D printer used for educational purpose by students to design and create three-dimensional objects.", features: ["3D Pen is a 3D model printed using 3D printer used for educational purpose by students to design and create three-dimensional objects."], images: [pen2, pen3, pen4] },
@@ -260,67 +262,89 @@ function ShopPage() {
         },
     ];
 
-    const normalizeCartItems = (items) => items.map((item) => {
-        if (item.product_id) {
-            return item;
-        }
-
-        const matchedProduct = products.find((product) => product.id === item.id);
-        const matchedCourse = courses.find((course) => course.id === item.id);
-        const matchedItem = matchedProduct || matchedCourse;
-        // product_id can be missing for legacy cart entries saved before WooCommerce mapping was added.
-        return matchedItem ? { ...item, product_id: matchedItem.product_id } : item;
-    });
-
     const [cart, setCart] = useState(() => {
         const savedCart = localStorage.getItem('techyCart');
-        return savedCart ? normalizeCartItems(JSON.parse(savedCart)) : [];
+        if (!savedCart) {
+            return [];
+        }
+
+        return JSON.parse(savedCart).map((item) => {
+            if (item.product_id) {
+                return item;
+            }
+
+            const matchedProduct = products.find((product) => product.id === item.id);
+            const matchedCourse = courses.find((course) => course.id === item.id);
+            const matchedItem = matchedProduct || matchedCourse;
+            // product_id can be missing for legacy cart entries saved before WooCommerce mapping was added.
+            return matchedItem ? { ...item, product_id: matchedItem.product_id } : item;
+        });
     });
     const [currentProduct, setCurrentProduct] = useState(null);
-    const [currentCategory, setCurrentCategory] = useState('All');
+    const [currentCategory, setCurrentCategory] = useState(() => {
+        const params = new URLSearchParams(location.search);
+        return params.get('category') === 'Courses' ? 'Courses' : 'All';
+    });
     const [currentCourse, setCurrentCourse] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
-    const [filteredProducts, setFilteredProducts] = useState(products);
-    const [filteredCourses, setFilteredCourses] = useState(courses);
-    const [isCartOpen, setIsCartOpen] = useState(false);
+    const [isCartOpen, setIsCartOpen] = useState(() => localStorage.getItem('openCartOnLoad') === 'true');
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [currentSliderIndex, setCurrentSliderIndex] = useState(0);
     const [currentMediaList, setCurrentMediaList] = useState([]);
     const [activeTab, setActiveTab] = useState('features');
     const [headerOffset, setHeaderOffset] = useState(113);
+    const productsRef = useRef(products);
+    const coursesRef = useRef(courses);
     const navigate = useNavigate();
 
     const formatPrice = (price) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(price);
 
     const getYoutubeId = (url) => {
-        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
         const match = url.match(regExp);
         return (match && match[2].length === 11) ? match[2] : null;
     };
 
+    const filteredProducts = (() => {
+        if (currentCategory === 'Courses') {
+            return products;
+        }
+
+        if (!searchTerm) {
+            return products;
+        }
+
+        const normalizedTerm = searchTerm.toLowerCase();
+        return products.filter((product) => product.title.toLowerCase().includes(normalizedTerm));
+    })();
+
+    const filteredCourses = (() => {
+        if (currentCategory !== 'Courses') {
+            return courses;
+        }
+
+        if (!searchTerm) {
+            return courses;
+        }
+
+        const normalizedTerm = searchTerm.toLowerCase();
+        return courses.filter((course) => course.title.toLowerCase().includes(normalizedTerm));
+    })();
+
     useEffect(() => {
-        const openCart = localStorage.getItem('openCartOnLoad');
-        if (openCart === 'true') {
-            setIsCartOpen(true);
+        if (localStorage.getItem('openCartOnLoad') === 'true') {
             localStorage.removeItem('openCartOnLoad');
         }
     }, []);
 
     useEffect(() => {
-        console.log('Cart State:', cart);
-
-        // If this warning appears, this is a location where cart items are missing product_id.
-        const missingProductIdItems = cart.filter((item) => !item.product_id);
-        if (missingProductIdItems.length > 0) {
-            console.warn('Cart items missing product_id:', missingProductIdItems);
+        if (isPaymentSuccessHash()) {
+            localStorage.removeItem('techyCart');
+            return;
         }
 
         localStorage.setItem('techyCart', JSON.stringify(cart));
-    }, [cart]);
-
-    useEffect(() => {
-        console.log('UPDATED CART:', cart);
     }, [cart]);
 
     useEffect(() => {
@@ -329,27 +353,32 @@ function ShopPage() {
 
     useEffect(() => {
         const handlePageFocus = () => {
+            if (isPaymentSuccessHash()) {
+                localStorage.removeItem('techyCart');
+                setCart([]);
+                return;
+            }
+
             const saved = localStorage.getItem('techyCart');
             if (saved) {
-                setCart(normalizeCartItems(JSON.parse(saved)));
+                setCart(JSON.parse(saved).map((item) => {
+                    if (item.product_id) {
+                        return item;
+                    }
+
+                    const matchedProduct = productsRef.current.find((product) => product.id === item.id);
+                    const matchedCourse = coursesRef.current.find((course) => course.id === item.id);
+                    const matchedItem = matchedProduct || matchedCourse;
+                    return matchedItem ? { ...item, product_id: matchedItem.product_id } : item;
+                }));
+            } else {
+                setCart([]);
             }
         };
 
         window.addEventListener('focus', handlePageFocus);
         return () => window.removeEventListener('focus', handlePageFocus);
     }, []);
-
-    useEffect(() => {
-        filterProducts();
-    }, [searchTerm, currentCategory]);
-
-    useEffect(() => {
-        const params = new URLSearchParams(location.search);
-        const category = params.get('category');
-        if (category === 'Courses') {
-            setCurrentCategory('Courses');
-        }
-    }, [location.search]);
 
     useEffect(() => {
         const fallbackHeaderOffset = 113;
@@ -410,11 +439,17 @@ function ShopPage() {
         }
         
         const interval = setInterval(() => {
-            changeSlide(1);
+            setCurrentSliderIndex((prev) => {
+                let nextIndex = prev + 1;
+                if (nextIndex >= currentMediaList.length) {
+                    nextIndex = 0;
+                }
+                return nextIndex;
+            });
         }, 3000);
 
         return () => clearInterval(interval);
-    }, [isModalOpen, currentSliderIndex, currentMediaList.length]);
+    }, [isModalOpen, currentSliderIndex, currentMediaList]);
 
     useEffect(() => {
         if (!currentCourse || !currentCourse.images || currentCourse.images.length <= 1) return;
@@ -424,23 +459,7 @@ function ShopPage() {
         }, 3000);
 
         return () => clearInterval(interval);
-    }, [currentCourse, currentSliderIndex]);
-
-    const filterProducts = () => {
-        if (currentCategory === 'Courses') {
-            let filtered = courses;
-            if (searchTerm) {
-                filtered = filtered.filter(c => c.title.toLowerCase().includes(searchTerm.toLowerCase()));
-            }
-            setFilteredCourses(filtered);
-        } else {
-            let filtered = products;
-            if (searchTerm) {
-                filtered = filtered.filter(p => p.title.toLowerCase().includes(searchTerm.toLowerCase()));
-            }
-            setFilteredProducts(filtered);
-        }
-    };
+    }, [currentCourse]);
 
     const toggleCart = () => {
         setIsCartOpen(!isCartOpen);
@@ -455,14 +474,11 @@ function ShopPage() {
                 }
                 return item;
             }).filter(item => item.quantity > 0);
-            console.log('Updated Cart:', newCartItems);
             return newCartItems;
         });
     };
 
     const addToCart = (item) => {
-        console.log('ADDING ITEM:', item);
-
         if (!item.product_id) {
             console.error('Missing product_id:', item);
             alert('Product not configured properly');

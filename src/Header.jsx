@@ -70,39 +70,6 @@ function Header() {
     }, 50);
   };
 
-  const handleAnchorClick = (e, selector) => {
-    e.preventDefault();
-    closeMenu();
-    setProductsOpen(false);
-    setSchoolsOpen(false);
-    
-    // Check if target exists on current page
-    const target = document.querySelector(selector);
-    if (target) {
-      // Target exists on current page, scroll to it
-      const headerEl = document.querySelector('header');
-      const topBarEl = document.querySelector('.top-bar');
-      const extra = 12;
-      const offset = (headerEl ? headerEl.offsetHeight : 0) + (topBarEl ? topBarEl.offsetHeight : 0) + extra;
-      const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-      window.scrollTo({ top, behavior: 'smooth' });
-    } else {
-      // Target doesn't exist on current page, navigate to home and then scroll
-      navigate('/');
-      setTimeout(() => {
-        const targetEl = document.querySelector(selector);
-        if (targetEl) {
-          const headerEl = document.querySelector('header');
-          const topBarEl = document.querySelector('.top-bar');
-          const extra = 12;
-          const offset = (headerEl ? headerEl.offsetHeight : 0) + (topBarEl ? topBarEl.offsetHeight : 0) + extra;
-          const top = targetEl.getBoundingClientRect().top + window.pageYOffset - offset;
-          window.scrollTo({ top, behavior: 'smooth' });
-        }
-      }, 100);
-    }
-  };
-
   return (
     <>
       <div className="top-bar" id="home">

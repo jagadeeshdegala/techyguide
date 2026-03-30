@@ -2,11 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './E-Blox.css';
 
-import robotKids from '../assets/ProductE-BloxImages/vecteezy_ai-generated-cute-robot-kids-with-isolated-transparant_38049144.png';
-import robot1 from '../assets/ProductE-BloxImages/robot_2582246.png';
-import robot2 from '../assets/ProductE-BloxImages/robotics_12775607.png';
-import robot3 from '../assets/ProductE-BloxImages/robot_3558910.png';
-import robot4 from '../assets/ProductE-BloxImages/robot_4512237.png';
 // hero section image
 import Heroimage from '../assets/ProductE-BloxImages/Hero image - 1.png';
 //introduction to eblox kit video section
@@ -258,21 +253,6 @@ export default function EBlox() {
             for (let i = 0; i < bubbleCount(); i += 1) bubbles.push(createBubble());
             for (let i = 0; i < stickerCount(); i += 1) stickers.push(createSticker());
             for (let i = 0; i < sparkleCount(); i += 1) sparkles.push(createSparkle());
-        };
-
-        const applyParallax = (clientX, clientY) => {
-            if (reducedMotion || parallaxTargets.length === 0) return;
-
-            const rect = hero.getBoundingClientRect();
-            const nx = (clientX - rect.left) / rect.width - 0.5;
-            const ny = (clientY - rect.top) / rect.height - 0.5;
-
-            for (const node of parallaxTargets) {
-                const depth = Number(node.dataset.depth || 0.02);
-                const tx = nx * depth * 160;
-                const ty = ny * depth * 130;
-                node.style.transform = `translate3d(${tx.toFixed(2)}px, ${ty.toFixed(2)}px, 0)`;
-            }
         };
 
         const resetParallax = () => {
@@ -553,14 +533,6 @@ export default function EBlox() {
             }
         };
     }, []);
-
-    const handleHeroButtonClick = (event) => {
-        event.preventDefault();
-        const target = document.getElementById('eblox-tech-focus');
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    };
 
     return (
         <div className="eblox-page-root">

@@ -1,6 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import img7 from "../assets/ProductsAddOnImages/7.png";
-import armKitImg from "../assets/ProductsAddOnImages/20220708_115335.jpg";
 import "./AddOnKit.css";
 // hero section image
 import HeroImage from "../assets/ProductsAddOnImages/Hero image - 2.png";
@@ -168,21 +166,6 @@ const AddOnKit = () => {
 			pointer.y = height * 0.5;
 			seedScene();
 			drawFrame(false);
-		};
-
-		const applyParallax = (clientX, clientY) => {
-			if (reducedMotion || parallaxTargets.length === 0) return;
-
-			const rect = hero.getBoundingClientRect();
-			const nx = (clientX - rect.left) / rect.width - 0.5;
-			const ny = (clientY - rect.top) / rect.height - 0.5;
-
-			for (const node of parallaxTargets) {
-				const depth = Number(node.dataset.depth || 0.02);
-				const tx = nx * depth * 140;
-				const ty = ny * depth * 110;
-				node.style.transform = `translate3d(${tx.toFixed(2)}px, ${ty.toFixed(2)}px, 0)`;
-			}
 		};
 
 		const resetParallax = () => {

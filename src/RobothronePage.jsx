@@ -2,8 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import './RobothronePage.css';
 
 // Image imports
-import robotCarImage from './assets/RobothronePageImages/robot-style-car-with-joystick.jpg';
-import logoTG from './assets/RobothronePageImages/Logo_TG_Tagline logo.png';
 import logoTG2 from './assets/RobothronePageImages/Logo_TG_Tagline 4.png';
 
 // Video import

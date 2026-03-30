@@ -1,6 +1,5 @@
 import './AboutSection.css';
 import { Link } from 'react-router-dom';
-import CompanyJourneyWave from './CompanyJourneyWave';
 
 function AboutSection(){
     return(

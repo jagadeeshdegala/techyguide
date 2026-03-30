@@ -14,8 +14,6 @@ import contactusimg from './assets/contactUsImages/Contact us - 1.png';
 
 function ContactUs() {
 	const [activeFaqIndex, setActiveFaqIndex] = useState(1);
-	const [isSubmitting, setIsSubmitting] = useState(false);
-	const [submitTimeoutId, setSubmitTimeoutId] = useState(null);
 
 	useEffect(() => {
 		const previousTitle = document.title;
@@ -85,29 +83,8 @@ function ContactUs() {
 		}
 	}, []);
 
-	useEffect(() => {
-		return () => {
-			if (submitTimeoutId) {
-				clearTimeout(submitTimeoutId);
-			}
-		};
-	}, [submitTimeoutId]);
-
 	const handleFaqClick = (index) => {
 		setActiveFaqIndex((current) => (current === index ? -1 : index));
-	};
-
-	const handleSubmit = (event) => {
-		event.preventDefault();
-		setIsSubmitting(true);
-
-		const timeoutId = setTimeout(() => {
-			alert('Form submitted! We usually reply in 2 hours.');
-			setIsSubmitting(false);
-			event.target.reset();
-		}, 1500);
-
-		setSubmitTimeoutId(timeoutId);
 	};
 
 	return (

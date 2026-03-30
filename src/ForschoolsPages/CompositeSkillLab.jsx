@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './CompositeSkillLab.css';
 import LogoImg from '../assets/ForSchoolsCompositeSkillLabImages/Logo_TG_Tagline 2.png';
 import LabImage1 from '../assets/ForSchoolsCompositeSkillLabImages/IMG20240604113822.jpg';
@@ -29,8 +29,6 @@ import CurriculumSkillModules9 from '../assets/ForSchoolsCompositeSkillLabImages
 
 
 export default function CompositeSkillLab() {
-  const [activeTab, setActiveTab] = useState('digital');
-
   // SEO Meta Tags & Document Title
   useEffect(() => {
     // Update document title

@@ -232,6 +232,7 @@ function CoursesPage() {
     runHashScroll();
     window.addEventListener('resize', syncHeaderOffset);
     window.addEventListener('hashchange', runHashScroll);
+    const pageRootNode = pageRootRef.current;
 
     return () => {
       bodyClassObserver.disconnect();
@@ -250,9 +251,9 @@ function CoursesPage() {
       window.removeEventListener('resize', syncHeaderOffset);
       window.removeEventListener('hashchange', runHashScroll);
       document.body.classList.remove('modal-open');
-      if (pageRootRef.current) {
-        pageRootRef.current.classList.remove('modal-open');
-        pageRootRef.current.style.removeProperty('--courses-header-offset');
+      if (pageRootNode) {
+        pageRootNode.classList.remove('modal-open');
+        pageRootNode.style.removeProperty('--courses-header-offset');
       }
     };
   }, []);
@@ -380,7 +381,8 @@ function CoursesPage() {
             }
           });
           createdAnimations.push(animation);
-        } catch (error) {
+        } catch (err) {
+          console.error(err);
           container.dataset.loaded = 'false';
         }
       };
